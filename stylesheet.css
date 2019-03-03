@@ -36,6 +36,18 @@ body {
   color: #ff4a4a;
 }
 
+.contents {
+  height: 500px;
+}
+
+.section-title {
+  border-bottom: 2px solid #dee7ec;
+}
+
+.contents-item {
+  float: left;
+}
+
 .footer {
   background-color: #2f5167;
   color: #fff;
