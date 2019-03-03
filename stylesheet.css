@@ -114,6 +114,7 @@ header {
   height: 500px;
   padding-bottom: 80px;
   background-color: #f7f7f7;
+  text-align: center;
 }
 
 .heading {
@@ -129,4 +130,23 @@ header {
 .lesson {
   float: left;
   width: 25%;
+}
+
+.lesson-icon {
+  position: relative;
+}
+
+.lesson-icon p {
+  position: absolute;
+  top: 90px;
+  width: 100%;
+  color: white;
+}
+
+.txt-contents {
+  width: 80%;
+  display: inline-block;
+  margin-top: 20px;
+  font-size: 12px;
+  color: #b3aeb5;
 }
