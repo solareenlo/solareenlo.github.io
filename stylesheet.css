@@ -87,3 +87,17 @@ header {
   width: 124px;
   margin-top: 20px;
 }
+
+.header-left {
+  float: left;
+}
+
+.header-right {
+  float: right;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+
+.header-right: hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
