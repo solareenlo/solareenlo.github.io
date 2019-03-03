@@ -174,3 +174,17 @@ header {
   position: relative;
   top: 7px;
 }
+
+footer p {
+  color: #b3aeb5;
+  font-size: 12px;
+}
+
+footer li {
+  color: #b3aeb5;
+  font-size: 12px;
+}
+
+footer {
+  padding-top: 30px;
+}
