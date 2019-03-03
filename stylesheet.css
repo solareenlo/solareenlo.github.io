@@ -84,7 +84,7 @@ header {
 }
 
 .logo {
-  width: 124px;
+  width: 248px;
   margin-top: 20px;
 }
 
@@ -95,9 +95,17 @@ header {
 .header-right {
   float: right;
   background-color: rgba(255, 255, 255, 0.3);
+  transition: all 0.5s;
 }
 
 
 .header-right: hover {
   background-color: rgba(255, 255, 255, 0.5);
+}
+
+.header-right a {
+  line-height: 65px;
+  padding: 0px 25px;
+  color: white;
+  display: block;
 }
