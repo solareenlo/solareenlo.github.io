@@ -37,8 +37,11 @@ body {
   float: left;
 }
 
+.footer-list {
+  float: right;
+}
+
 .footer-list li {
   list-style: none;
-  float: right;
   padding-bottom: 20px;
 }
