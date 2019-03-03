@@ -76,3 +76,14 @@ a {
 .fa {
   margin-right: 5px;
 }
+
+header {
+  height: 65px;
+  width: 100%;
+  background-color: rgba(34, 49, 52, 0.9);
+}
+
+.logo {
+  width: 124px;
+  margin-top: 20px;
+}
