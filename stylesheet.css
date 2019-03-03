@@ -4,6 +4,7 @@ body {
 
 li {
   list-style: none;
+  float: left;
 }
 
 .header {
@@ -11,6 +12,10 @@ li {
   height: 90px;
 }
 
+.header-logo {
+  font-size: 36px;
+  float: left;
+}
 .main {
   background-color: #bdf7f1;
   height: 600px;
