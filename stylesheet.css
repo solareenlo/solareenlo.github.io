@@ -2,22 +2,19 @@ body {
   font-family: "Avenir Next";
 }
 
-li {
-  list-style: none;
-}
-
 .header {
   background-color: #f7f2b4;
   height: 90px;
 }
 
 .header-logo {
-  font-size: 36px;
   float: left;
+  font-size: 36px;
   padding: 20px 40px;
 }
 
-.header-list {
+.header-list li {
+  list-style: none;
   float: left;
   padding: 33px 20px;
 }
@@ -29,5 +26,21 @@ li {
 
 .footer {
   background-color: #ceccf3;
-  height: 270px;
+  color: #fff;
+  height: 120px;
+  padding: 40px;
+}
+
+.footer-logo {
+  font-size: 32px;
+  float: left;
+}
+
+.footer-list {
+  list-style: none;
+  float: right;
+}
+
+.footer-list li {
+  padding-bottom: 20px;
 }
