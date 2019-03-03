@@ -25,7 +25,7 @@ body {
 }
 
 .footer {
-  background-color: #ceccf3;
+  background-color: #2f5167;
   color: #fff;
   height: 120px;
   padding: 40px;
@@ -36,11 +36,8 @@ body {
   float: left;
 }
 
-.footer-list {
+.footer-list li {
   list-style: none;
   float: right;
-}
-
-.footer-list li {
   padding-bottom: 20px;
 }
