@@ -11,13 +11,16 @@ a {
   text-decoration: none;
 }
 
+.clear {
+  clear: left;
+}
+
 .container {
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
   margin: 0 auto;
 }
-
 
 .top-wrapper {
   padding-top: 180px;
@@ -119,8 +122,9 @@ header {
 }
 
 .lesson-wrapper {
-  height: 500px;
   padding-bottom: 80px;
+  padding-left: 5%;
+  padding-right: 5%;
   background-color: #f7f7f7;
   text-align: center;
 }
