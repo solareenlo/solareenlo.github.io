@@ -15,7 +15,16 @@ a {
   clear: left;
 }
 
+.menu-icon {
+  color: white;
+  float: right;
+  font-size: 25px;
+  padding: 21px 0;
+  display: none;
+}
+
 .container {
+  max-width: 1170px;
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
