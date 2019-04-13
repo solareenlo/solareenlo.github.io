@@ -1,2 +1,4 @@
 # solareenlo.github.io
-Home Pageのリポジトリ.
+blogのリポジトリ.  
+Hugoで作っています.  
+元ファイルはhttps://github.com/solareenlo/blog-hugo
