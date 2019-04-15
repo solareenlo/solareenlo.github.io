@@ -10,57 +10,12 @@
     
     
     <item>
-      <title>Creating a New Theme</title>
-      <link>https://solareenlo.com/posts/creating-a-new-theme/</link>
-      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://solareenlo.com/posts/creating-a-new-theme/</guid>
-      <description>Introduction This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I&amp;rsquo;ll explain how Hugo uses templates and how you can organize your templates to create a theme. I won&amp;rsquo;t cover using CSS to style your theme.
-We&amp;rsquo;ll start with creating a new site with a very basic template.</description>
-    </item>
-    
-    <item>
-      <title>Migrate to Hugo from Jekyll</title>
-      <link>https://solareenlo.com/posts/migrate-from-jekyll/</link>
-      <pubDate>Mon, 10 Mar 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://solareenlo.com/posts/migrate-from-jekyll/</guid>
-      <description>Move static content to static Jekyll has a rule that any directory not starting with _ will be copied as-is to the _site output. Hugo keeps all static content under static. You should therefore move it all there. With Jekyll, something that looked like
-▾ &amp;lt;root&amp;gt;/ ▾ images/ logo.png  should become
-▾ &amp;lt;root&amp;gt;/ ▾ static/ ▾ images/ logo.png  Additionally, you&amp;rsquo;ll want any files that should reside at the root (such as CNAME) to be moved to static.</description>
-    </item>
-    
-    <item>
       <title>Hello World!</title>
       <link>https://solareenlo.com/posts/hello-world/</link>
       <pubDate>Sun, 14 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>https://solareenlo.com/posts/hello-world/</guid>
       <description>Hello World!</description>
-    </item>
-    
-    <item>
-      <title>(Hu)go Template Primer</title>
-      <link>https://solareenlo.com/posts/goisforlovers/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://solareenlo.com/posts/goisforlovers/</guid>
-      <description>Hugo uses the excellent Go html/template library for its template engine. It is an extremely lightweight engine that provides a very small amount of logic. In our experience that it is just the right amount of logic to be able to create a good static website. If you have used other template systems from different languages or frameworks you will find a lot of similarities in Go templates.
-This document is a brief primer on using Go templates.</description>
-    </item>
-    
-    <item>
-      <title>Getting Started with Hugo</title>
-      <link>https://solareenlo.com/posts/hugoisforlovers/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://solareenlo.com/posts/hugoisforlovers/</guid>
-      <description>Step 1. Install Hugo Go to Hugo releases and download the appropriate version for your OS and architecture.
-Save it somewhere specific as we will be using it in the next step.
-More complete instructions are available at Install Hugo
-Step 2. Build the Docs Hugo has its own example site which happens to also be the documentation site you are reading right now.
-Follow the following steps:
- Clone the Hugo repository Go into the repo Run hugo in server mode and build the docs Open your browser to http://localhost:1313  Corresponding pseudo commands:</description>
     </item>
     
     <item>
@@ -75,12 +30,40 @@ Follow the following steps:
     
     <item>
       <title></title>
+      <link>https://solareenlo.com/docs/bitcoin-fullnode/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://solareenlo.com/docs/bitcoin-fullnode/</guid>
+      <description> フルノードとは  Bitcoinネットワークにおけるすべてのブロックとトランザクションをダウンロードして検証するノードのこと.  Bitcoinフルノードへのアクセス方法 ローカルから直接アクセス curlを使ってローカルからでもリモートからでもアクセス JSON-RPCを使ってローカルからでもリモートからでもアクセス </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://solareenlo.com/docs/bitcoin/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://solareenlo.com/docs/bitcoin/</guid>
+      <description> Bitcoinとは 目的 匿名性を自分で選択できつつ, 安全に価値の移転と保存に特化したシステムを構築すること.
+特徴  非中央集権的 自律分散的 トラストレス ブロックチェーン1.0の代表格  技術  楕円曲線DSA P2P Proo of Work  プレイヤー  コア開発者 マイナー ユーザー 投資家・投機家 法律  お品書き  フルノード  </description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>https://solareenlo.com/docs/client/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://solareenlo.com/docs/client/</guid>
       <description>Ista qua aera Tetigisse hac duc omnipotens urbis per sapiente Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat stringit, frustra Saturnius uteroque inter! Oculis non ritibus Telethusa protulit, sed sed aere valvis inhaesuro Pallas animam: qui quid, ignes. Miseratus fonte Ditis conubia.
 var mnemonicPcmcia = file; if (bookmarkMultiprocessing) { core.intranetDigitize = menu(vdslWordart(enterprise, dviRealityTeraflops)); } else { portal_socket.jsp_shareware_digital = multicasting(component_uml); memory.ppc_title_hit(lunWebFormat + fontSmartphoneView, tween * default_hard, 5 + laptopMethod); wddm_tablet_null.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://solareenlo.com/docs/crypto/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://solareenlo.com/docs/crypto/</guid>
+      <description>暗号通貨とは 暗号技術を用いた通貨のこと.</description>
     </item>
     
     <item>
