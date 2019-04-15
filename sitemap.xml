@@ -3,14 +3,19 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://solareenlo.com/posts/hello-world/</loc>
-    <lastmod>2019-04-15T03:56:10+09:00</lastmod>
+    <loc>https://solareenlo.com/posts/</loc>
+    <lastmod>2019-04-16T06:49:32+09:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://solareenlo.com/posts/</loc>
+    <loc>https://solareenlo.com/posts/how-to-make-this-site/</loc>
+    <lastmod>2019-04-16T06:49:32+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://solareenlo.com/posts/hello-world/</loc>
     <lastmod>2019-04-15T03:56:10+09:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
