@@ -39,7 +39,17 @@
   </url>
   
   <url>
+    <loc>https://solareenlo.com/docs/ethereum/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://solareenlo.com/docs/examples/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://solareenlo.com/docs/iota/</loc>
     <priority>0</priority>
   </url>
   
