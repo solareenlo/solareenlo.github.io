@@ -10,6 +10,22 @@
     
     
     <item>
+      <title>bitcoindへのアクセス方法</title>
+      <link>https://solareenlo.com/posts/bitcoind/</link>
+      <pubDate>Wed, 17 Apr 2019 09:00:00 +0900</pubDate>
+      
+      <guid>https://solareenlo.com/posts/bitcoind/</guid>
+      <description> bitcoindへのアクセス方法3選(bitcoin-cli, curl, POST). 3つともJSON-RPCで通信してる.
+ bitcoindとは, 名前の通りunixのデーモンとして動作する事を目的とするBitcoinのクライアントで, JSON-RPCで開発者向けのAPIを提供する. したがって, Webサービスとして動作するBitcoinウォレットのバックエンドとしてや, マイニングプールのサーバーとして使われる.
+Reference: Bitcoinウォレットの比較
+ 1. bitcoin-cliを使ってアクセスする.  bitcoin-cliとは, bitcoindへJSON-RPCを使ってアクセスするツールのこと.
+ bitcoindを使ってBitcoinのフルノードを立ち上げて,
+bitcoin-cli getblockchaininfo  とか.
+2. cURLを使ってアクセスする.  ネットワーク: mainnet 接続環境: ローカル ポート番号: 8332 ユーザーの名前: user-name パスワード: user-password 投げつけているbitcoin-cliのメソッド: getblockchaininfo  curl --data-binary &#39;{&amp;quot;jsonrpc&amp;quot;:&amp;quot;1.0&amp;quot;,&amp;quot;id&amp;quot;:&amp;quot;curltext&amp;quot;,&amp;quot;method&amp;quot;:&amp;quot;getblockchaininfo&amp;quot;,&amp;quot;params&amp;quot;:[]}&#39; -H &#39;content-type:text/plain;&#39; http://user-name:user-password@127.0.0.1:8332/ | jq  3. 自作プログラムでPOSTしてアクセスする. bitcoindはHTTPリクエストメソッドのPOSTに対応しているのでPOSTを投げつける. 以下のプログラムがその例.
+ https://github.com/solareenlo/bc-json-rpc  </description>
+    </item>
+    
+    <item>
       <title>このサイトの作り方</title>
       <link>https://solareenlo.com/posts/how-to-make-this-site/</link>
       <pubDate>Tue, 16 Apr 2019 06:49:32 +0900</pubDate>
@@ -48,7 +64,7 @@ Mac に Homebrew をインストールする /usr/bin/ruby -e &amp;quot;$(curl -
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://solareenlo.com/docs/bitcoin-fullnode/</guid>
-      <description> フルノードとは  Bitcoinネットワークにおけるすべてのブロックとトランザクションをダウンロードして検証するノードのこと.  Bitcoinフルノードへのアクセス方法 ローカルから直接アクセス curlを使ってローカルからでもリモートからでもアクセス JSON-RPCを使ってローカルからでもリモートからでもアクセス </description>
+      <description> フルノードとは  Bitcoinネットワークにおけるすべてのブロックとトランザクションをダウンロードして検証するノードのこと.  Bitcoinフルノードへのアクセス方法 ローカルから直接アクセス cURLを使ってローカルからでもリモートからでもアクセス JSON-RPCを使ってローカルからでもリモートからでもアクセス </description>
     </item>
     
     <item>
@@ -58,7 +74,7 @@ Mac に Homebrew をインストールする /usr/bin/ruby -e &amp;quot;$(curl -
       
       <guid>https://solareenlo.com/docs/bitcoin/</guid>
       <description> Bitcoinとは 目的 匿名性を自分で選択できつつ, 安全に価値の移転と保存に特化したシステムを構築すること.
-特徴  非中央集権的 自律分散的 トラストレス オープンソース ブロックチェーン1.0の代表格  技術  楕円曲線DSA P2P Proo of Work  プレイヤー  コア開発者 マイナー ユーザー 投資家・投機家 法律  お品書き  フルノード  </description>
+特徴  非中央集権的 自律分散的 トラストレス オープンソース ブロックチェーン1.0の代表格  技術  楕円曲線DSA P2P Proo of Work  プレイヤー  コア開発者 マイナー ユーザー 投資家・投機家 法律  お品書き  フルノード  参考サイト  bitcoinのしくみ Programming The Blockchain C# 日本語  </description>
     </item>
     
     <item>

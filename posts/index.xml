@@ -5,10 +5,26 @@
     <link>https://solareenlo.com/posts/</link>
     <description>Recent content in Posts on solareenlo</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 16 Apr 2019 06:49:32 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 17 Apr 2019 09:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://solareenlo.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>bitcoindへのアクセス方法</title>
+      <link>https://solareenlo.com/posts/bitcoind/</link>
+      <pubDate>Wed, 17 Apr 2019 09:00:00 +0900</pubDate>
+      
+      <guid>https://solareenlo.com/posts/bitcoind/</guid>
+      <description> bitcoindへのアクセス方法3選(bitcoin-cli, curl, POST). 3つともJSON-RPCで通信してる.
+ bitcoindとは, 名前の通りunixのデーモンとして動作する事を目的とするBitcoinのクライアントで, JSON-RPCで開発者向けのAPIを提供する. したがって, Webサービスとして動作するBitcoinウォレットのバックエンドとしてや, マイニングプールのサーバーとして使われる.
+Reference: Bitcoinウォレットの比較
+ 1. bitcoin-cliを使ってアクセスする.  bitcoin-cliとは, bitcoindへJSON-RPCを使ってアクセスするツールのこと.
+ bitcoindを使ってBitcoinのフルノードを立ち上げて,
+bitcoin-cli getblockchaininfo  とか.
+2. cURLを使ってアクセスする.  ネットワーク: mainnet 接続環境: ローカル ポート番号: 8332 ユーザーの名前: user-name パスワード: user-password 投げつけているbitcoin-cliのメソッド: getblockchaininfo  curl --data-binary &#39;{&amp;quot;jsonrpc&amp;quot;:&amp;quot;1.0&amp;quot;,&amp;quot;id&amp;quot;:&amp;quot;curltext&amp;quot;,&amp;quot;method&amp;quot;:&amp;quot;getblockchaininfo&amp;quot;,&amp;quot;params&amp;quot;:[]}&#39; -H &#39;content-type:text/plain;&#39; http://user-name:user-password@127.0.0.1:8332/ | jq  3. 自作プログラムでPOSTしてアクセスする. bitcoindはHTTPリクエストメソッドのPOSTに対応しているのでPOSTを投げつける. 以下のプログラムがその例.
+ https://github.com/solareenlo/bc-json-rpc  </description>
+    </item>
     
     <item>
       <title>このサイトの作り方</title>
