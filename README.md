@@ -1,4 +1,4 @@
 # solareenlo.github.io
-blogのリポジトリ.  
-Hugoで作っています.  
-元ファイルはhttps://github.com/solareenlo/blog-hugo
+[blog](https://solareenlo.com)のリポジトリ.  
+[Hugo](https://gohugo.io)で作っています.  
+元ファイル: https://github.com/solareenlo/blog-hugo
