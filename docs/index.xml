@@ -25,7 +25,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://solareenlo.com/docs/bitcoin-fullnode/</guid>
-      <description> フルノードとは  Bitcoinネットワークにおけるすべてのブロックとトランザクションをダウンロードして検証するノードのこと.  Bitcoinフルノードへのアクセス方法 ローカルから直接アクセス cURLを使ってローカルからでもリモートからでもアクセス JSON-RPCを使ってローカルからでもリモートからでもアクセス </description>
+      <description> フルノードとは  Bitcoinネットワークにおけるすべてのブロックとトランザクションをダウンロードして検証するノードのこと.  Bitcoinフルノードへのアクセス方法 bitcoin-cliを使ってアクセス cURLを使ってアクセス POSTを使ってアクセス </description>
     </item>
     
     <item>
