@@ -86,7 +86,8 @@ MacにHomebrewをインストールする /usr/bin/ruby -e &amp;quot;$(curl -fsS
       
       <guid>https://solareenlo.com/docs/bitcoin/</guid>
       <description> Bitcoinとは 目的 匿名性を自分で選択できつつ, 安全に価値の移転と保存に特化したシステムを構築すること.
-特徴  非中央集権 自律分散 トラストレス オープンソース ブロックチェーン1.0の代表格  技術  楕円曲線DSA P2P Proo of Work  プレイヤー  コア開発者 マイナー ユーザー 投資家・投機家 法律  お品書き  フルノード  参考サイト  bitcoinのしくみ Programming The Blockchain C# 日本語  </description>
+特徴  非中央集権 自律分散 トラストレス オープンソース ブロックチェーン1.0の代表格  技術  楕円曲線DSA P2P Proo of Work  プレイヤー  コア開発者 マイナー ユーザー 投資家・投機家 法律  スケーリング方法  コンセンサスアルゴリズムを速くする（分散性のために1ブロック生成にわざと10分かけてる） ブロックに含まれるトランザクションを増やす（Block weightが4MB以下/segwit導入により） オフチェーン（Lightning networkなど） サイドチェーン シャーディング  Reference: ブロックチェーンとスケーラビリティ
+参考サイト  bitcoinのしくみ Programming The Blockchain C# 日本語  </description>
     </item>
     
     <item>
@@ -114,7 +115,9 @@ var mnemonicPcmcia = file; if (bookmarkMultiprocessing) { core.intranetDigitize 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://solareenlo.com/docs/ethereum/</guid>
-      <description></description>
+      <description> Ethereumとは 目的 ブロックチェーン上でアプリを動かして, スマートコントラクトを実行できるようにして, 経済をさらに発展させる.
+アプリの特徴: 分散型, 管理者不在, 一度デプロイすると修正不可
+特徴  スマートコントラクトのプラットフォーム ブロックチェーン2.0の代表格  スケーリング方法  サイドチェーン  Plasma: Ethereumのメインチェーンとは別のプラズマチェーンと呼ばれるサイドチェーンをマークル木状に連ねることで, メインチェーンに格納される情報量を減少させる取り組み. 初心者向けプラズマ勉強法まとめノートー 0から3週間で学んだこと lightningとplasmaってなにが違うんですか？ Plasma スケーラブルな自律型スマートコントラクト  オフチェーン  Raiden Network: ブロックチェーン内の処理をブロックチェーンの外側に持っていくことで, メインチェーンの負担を軽減する仕組み. 最終的な取引結果のみをブロックチェーンで処理する.  シャーディング  トランザクション処理を各ノードで分割して行うことで, 処理速度の向上を図る. Ethereum2.0のCasperで導入されるPoSと相性が良い. Ethereumのシャーディング概論   </description>
     </item>
     
     <item>
