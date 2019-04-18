@@ -1,0 +1,179 @@
+<!DOCTYPE html><html>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plasma × Substrate 勉強会 #1 | solareenlo</title>
+
+
+<link href="https://fonts.googleapis.com/css?family=Oxygen|Oxygen+Mono:300,400,700" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/normalize.min.css">
+
+<link rel="stylesheet" href="/book.min.10fb0ad8a0ad8e88648d3207b12be2833cd3df8a6e3b0955cbe49dc7fba8541c.css">
+
+
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+
+
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" style="display: none" id="menu-control" />
+  <main class="flex container">
+    <aside class="book-menu fixed">
+      <nav role="navigation">
+<h2 class="book-brand">
+  <a href="https://solareenlo.com/">solareenlo</a>
+</h2>
+
+
+
+    
+  
+  
+
+  <style>
+  nav ul a[href$="\2fposts\2fplasma-substrate01\2f "] {
+      color: #004ed0;
+  }
+  </style><ul>
+<li><a href="/"><strong>はじめに</strong></a></li>
+<li><a href="/posts/"><strong>Blog</strong></a></li>
+<li><a href="/docs/crypto/"><strong>Crypto</strong></a>
+
+<ul>
+<li><a href="/docs/bitcoin/">Bitcoin</a></li>
+<li><a href="/docs/ethereum/">Ethereum</a></li>
+<li><a href="/docs/iota/">IOTA</a></li>
+</ul></li>
+</ul>
+
+<script>
+(function() {
+  var menu = document.querySelector('aside.book-menu nav')
+  addEventListener('beforeunload', function(event) {
+    localStorage.setItem('menu.scrollTop', menu.scrollTop)
+  });
+
+  menu.scrollTop = localStorage.getItem('menu.scrollTop')
+})()
+</script>
+
+
+
+</nav>
+    </aside>
+
+    <div class="book-posts">
+      <header class="align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" />
+  </label>
+  <strong>Plasma × Substrate 勉強会 #1</strong>
+</header>
+
+      <header>
+  <h1>Plasma × Substrate 勉強会 #1</h1>
+  <h5>
+    <strong>Apr 18, 2019</strong>
+  </h5>
+</header>
+<article class="markdown">
+
+<blockquote>
+<p><a href="https://neutrino.connpass.com/event/127035/">Plasma × Substrate 勉強会 #1</a>の自分なりのメモ</p>
+</blockquote>
+
+<h1 id="introducing-plasma-chamber">Introducing Plasma Chamber</h1>
+
+<hr />
+
+<h2 id="プラズマとは">プラズマとは</h2>
+
+<ul>
+<li>セキュアにトランザクションをさばく.</li>
+<li>マークル木を使ってデータを圧縮する.</li>
+<li>1分ごとに行う.</li>
+<li>エンドユーザーが出金したいときはルートチェーンに問い合わせる.</li>
+<li>他の人にチャレンジされなければ許可されて出金される仕組み.</li>
+<li>スケーラブル・セキュリティ・ユーザビリの高いDappasが作れるぞ.</li>
+</ul>
+
+<h2 id="プラズマの悪い点">プラズマの悪い点</h2>
+
+<ul>
+<li>受取手はトランザクションの履歴を確認しないといけない.</li>
+<li>ファイナリティは待たないといけない.</li>
+<li>Exit期間があるのでUIが悪い</li>
+</ul>
+
+<h2 id="plasma-chamberは上記の3つの悪い点を改善するぞ">Plasma Chamberは上記の3つの悪い点を改善するぞ</h2>
+
+<h3 id="what-i-mean-by-usable">What I mean by &lsquo;usable&rsquo;</h3>
+
+<p>High TPS, Less Gas, Work on Mobile, Instant Finality, ERC20使える</p>
+
+<h3 id="特徴">特徴</h3>
+
+<ul>
+<li>Exit Game</li>
+<li>Operatorが資金をかっさらう事がある. それに対する対策を行った.</li>
+<li>Gas Const/Proof Size Reduction</li>
+<li>Instantaneous Finality</li>
+<li>Fast Finality Contract に供託しておく.</li>
+<li>ユーザー, マーチャント, オペレーター, Ethereum</li>
+<li>オペレーターまではhttpsで通信する.</li>
+<li>オペレーターまでなら2秒以下でファイナリティが得られる.</li>
+<li>Ethereumのブロックチェーンまで待つと2.5分から7分かかる.</li>
+<li>Plasma MVP → Plasma Cash → Plasma Cashflow → ???</li>
+<li>Plapp 出金したい人と入金したい人を合わせるPlapp.</li>
+</ul>
+
+<h1 id="plasma-substrate-runtime-module-library">Plasma Substrate Runtime Module Library</h1>
+
+<hr />
+
+<p>PlasmaをSubstrateの上で行おう!</p>
+
+<blockquote>
+<p>発表資料: <a href="https://docs.google.com/presentation/d/1DAgE7AJHSAP-t2pwAKygD8DITCJkkKBcqHtuV_OqbY4/mobilepresent?slide=id.p">Plasm: Plasma Substrate Runtime Module Library</a><br />
+発表資料: <a href="https://speakerdeck.com/staked/0318substratehuresenzi-liao">Staked Substrate</a><br />
+Substrateとはブロックチェーン開発のフレームワークのこと.<br />
+Reference: <a href="https://coinchoice.net/overview-polkadot-and-substrate/">Polkadotとブロックチェーン開発フレームワークSubstrateを俯瞰する</a></p>
+</blockquote>
+
+<p>Plasmaには種類が沢山ある.
+Substrate Chainの上に全てのPlasmaを作れるようにしよう.</p>
+
+<p>親で且つ子でもあるPlasma Chainを作ろう.
+そうする事で無限のスケーラビリティがある.</p>
+
+<h2 id="plasma-dreams">Plasma Dreams</h2>
+
+<p>大きく3つのライブラリがある
+- plasma-utxo
+- plasma-parent
+- plasma-child</p>
+
+<p>UTXOを使って, 自分の残高がけを保存する.
+トランザクションは自分で定義できる.
+マークル木に対応したものと対応していないもの両方に対応したい.</p>
+</article>
+
+      
+    </div>
+  </main>
+
+  
+  
+</body>
+
+</html>
