@@ -113,11 +113,31 @@ var mnemonicPcmcia = file; if (bookmarkMultiprocessing) { core.intranetDigitize 
     
     <item>
       <title></title>
+      <link>https://solareenlo.com/docs/container/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://solareenlo.com/docs/container/</guid>
+      <description>コンテナ技術とは OS上に他のプロセスからは隔離されたアプリケーション実行環境を構築することで, 仮想的な動作環境をより少ないコンピュータリソースで実現する技術のこと.
+Reference: コンテナ技術とは何？</description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>https://solareenlo.com/docs/crypto/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://solareenlo.com/docs/crypto/</guid>
       <description>暗号通貨とは 暗号技術を用いた通貨のこと.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://solareenlo.com/docs/docker/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://solareenlo.com/docs/docker/</guid>
+      <description>dockerとは コンテナ型の仮想環境を作成, 配布, 実行するためのプラットフォーム.
+インストール方法 Linux編 curl -fsSL get.docker.com -o get-docker.sh sh get-docker.</description>
     </item>
     
     <item>

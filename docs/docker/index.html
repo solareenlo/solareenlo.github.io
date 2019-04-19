@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Docs/Bitcoin Fullnode.md | solareenlo</title>
+<title>Docs/Docker.md | solareenlo</title>
 
 
 <link href="https://fonts.googleapis.com/css?family=Oxygen|Oxygen+Mono:300,400,700" rel="stylesheet">
@@ -42,7 +42,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   <style>
-  nav ul a[href$="\2f docs\2f bitcoin-fullnode\2f "] {
+  nav ul a[href$="\2f docs\2f docker\2f "] {
       color: #004ed0;
   }
   </style><ul>
@@ -83,38 +83,33 @@ https://github.com/alex-shpak/hugo-book
   <label for="menu-control">
     <img src="/svg/menu.svg" />
   </label>
-  <strong>Docs/Bitcoin Fullnode.md</strong>
+  <strong>Docs/Docker.md</strong>
 </header>
 
       
 <article class="markdown">
 
-<h1 id="フルノードとは">フルノードとは</h1>
+<h1 id="dockerとは">dockerとは</h1>
 
-<ul>
-<li>Bitcoinネットワークにおけるすべてのブロックとトランザクションをダウンロードして検証するノードのこと.</li>
-</ul>
+<p>コンテナ型の仮想環境を作成, 配布, 実行するためのプラットフォーム.</p>
 
-<h2 id="bitcoinフルノードへのアクセス方法">Bitcoinフルノードへのアクセス方法</h2>
+<h2 id="インストール方法">インストール方法</h2>
 
-<h3 id="bitcoin-cliを使ってアクセス">bitcoin-cliを使ってアクセス</h3>
-
-<h3 id="curlを使ってアクセス">cURLを使ってアクセス</h3>
-
-<h3 id="postを使ってアクセス">POSTを使ってアクセス</h3>
-</article>
+<h3 id="linux編">Linux編</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -fsSL get.docker.com -o get-docker.sh
+sh get-docker.sh</code></pre></div></article>
 
       
 <div class="align-center book-git-footer justify-between">
   
-  <div><a href="https://github.com/solareenlo/blog-hugo/commit/390dcb921713f2cc791aca149e10e1f5b6b10435" title='Last modified Apr 17, 2019 by solareenlo' target="_blank" rel="noopener">
-      <img src="/svg/code-merge.svg" /> Apr 17, 2019
+  <div><a href="https://github.com/solareenlo/blog-hugo/commit/8a3f67569d1ce6ad6427ad6eaa49c212d5b7d54d" title='Last modified Apr 20, 2019 by solareenlo' target="_blank" rel="noopener">
+      <img src="/svg/code-merge.svg" /> Apr 20, 2019
     </a>
   </div>
   
   
   <div>
-    <a href="https://github.com/solareenlo/blog-hugo/edit/master/content/docs/bitcoin-fullnode.md" target="_blank" rel="noopener">
+    <a href="https://github.com/solareenlo/blog-hugo/edit/master/content/docs/docker.md" target="_blank" rel="noopener">
       <img src="/svg/code-fork.svg" /> Edit this page
     </a>
   </div>
@@ -131,13 +126,11 @@ https://github.com/alex-shpak/hugo-book
   <aside class="book-toc fixed">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#フルノードとは">フルノードとは</a>
+<li><a href="#dockerとは">dockerとは</a>
 <ul>
-<li><a href="#bitcoinフルノードへのアクセス方法">Bitcoinフルノードへのアクセス方法</a>
+<li><a href="#インストール方法">インストール方法</a>
 <ul>
-<li><a href="#bitcoin-cliを使ってアクセス">bitcoin-cliを使ってアクセス</a></li>
-<li><a href="#curlを使ってアクセス">cURLを使ってアクセス</a></li>
-<li><a href="#postを使ってアクセス">POSTを使ってアクセス</a></li>
+<li><a href="#linux編">Linux編</a></li>
 </ul></li>
 </ul></li>
 </ul>
