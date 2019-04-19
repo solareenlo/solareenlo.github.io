@@ -5,10 +5,21 @@
     <link>https://solareenlo.com/posts/</link>
     <description>Recent content in Posts on solareenlo</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 18 Apr 2019 08:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 19 Apr 2019 08:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://solareenlo.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>bitbank Drink Meetup #1 〜エンジニア〜</title>
+      <link>https://solareenlo.com/posts/bitbank01/</link>
+      <pubDate>Fri, 19 Apr 2019 08:00:00 +0900</pubDate>
+      
+      <guid>https://solareenlo.com/posts/bitbank01/</guid>
+      <description>  bitbank Drink Meetup #1 〜エンジニア〜の自分なりのメモ
+ 秘密鍵の安全な生成法 用意するもの
+ 電磁波を通さない物質で囲まれたシェルター 電波が通じてない山奥 完全にランダムで賽の目が出るサイコロ 上記のセットを複数個  とってもセキュアに暗号資産を管理してくれるところ  xapo  </description>
+    </item>
     
     <item>
       <title>Plasma × Substrate 勉強会 #1</title>

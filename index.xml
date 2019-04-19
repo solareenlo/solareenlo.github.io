@@ -10,6 +10,17 @@
     
     
     <item>
+      <title>bitbank Drink Meetup #1 〜エンジニア〜</title>
+      <link>https://solareenlo.com/posts/bitbank01/</link>
+      <pubDate>Fri, 19 Apr 2019 08:00:00 +0900</pubDate>
+      
+      <guid>https://solareenlo.com/posts/bitbank01/</guid>
+      <description>  bitbank Drink Meetup #1 〜エンジニア〜の自分なりのメモ
+ 秘密鍵の安全な生成法 用意するもの
+ 電磁波を通さない物質で囲まれたシェルター 電波が通じてない山奥 完全にランダムで賽の目が出るサイコロ 上記のセットを複数個  とってもセキュアに暗号資産を管理してくれるところ  xapo  </description>
+    </item>
+    
+    <item>
       <title>Plasma × Substrate 勉強会 #1</title>
       <link>https://solareenlo.com/posts/plasma-substrate01/</link>
       <pubDate>Thu, 18 Apr 2019 08:00:00 +0900</pubDate>
@@ -87,7 +98,7 @@ MacにHomebrewをインストールする /usr/bin/ruby -e &amp;quot;$(curl -fsS
       <guid>https://solareenlo.com/docs/bitcoin/</guid>
       <description> Bitcoinとは 目的 匿名性を自分で選択できつつ, 安全に価値の移転と保存に特化したシステムを構築すること.
 特徴  非中央集権 自律分散 トラストレス オープンソース ブロックチェーン1.0の代表格  技術  楕円曲線DSA P2P Proo of Work  プレイヤー  コア開発者 マイナー ユーザー 投資家・投機家 法律  スケーリング方法  コンセンサスアルゴリズムを速くする（分散性のために1ブロック生成にわざと10分かけてる） ブロックに含まれるトランザクションを増やす（Block weightが4MB以下/segwit導入により） オフチェーン（Lightning networkなど） サイドチェーン シャーディング  Reference: ブロックチェーンとスケーラビリティ
-参考サイト  bitcoinのしくみ Programming The Blockchain C# 日本語  </description>
+参考サイト  bitcoinのしくみ Programming The Blockchain C# 日本語 Blockchain Core Camp season1のビデオ資料 Blockchain Core Camp season1のpdf資料 Blockchain Core Camp season2のビデオ資料  </description>
     </item>
     
     <item>
