@@ -87,7 +87,35 @@ https://github.com/alex-shpak/hugo-book
 </header>
 
       
-<article class="markdown"></article>
+<article class="markdown">
+
+<h1 id="iota">IOTA</h1>
+
+<h2 id="目的">目的</h2>
+
+<p>オープンIoTでブロックチェーンの良さ(分散性/耐改ざん性/オープン性)を使えるようにしつつ(スケーリング・マイニングコスト・トランザクションの承認の遅さを解決しつつ)インダストリー4.0を推し進めること.</p>
+
+<h2 id="特徴">特徴</h2>
+
+<ul>
+<li>小さなデータの保存と交換に特化した設計.</li>
+<li>平衡三進数を使用.</li>
+<li>量子コンピュータ耐性のために電子署名には<a href="https://eprint.iacr.org/2011/191.pdf">Winternitz One Time Signature</a>を使用.
+
+<ul>
+<li>署名は使い捨てなので送金に使ったアドレスにもう1度入金すると盗まれる可能性特大.</li>
+<li>というか多額のIOTAを盗まれた実績有.</li>
+<li>今はそうならないようにwalletが上手に管理してくれてる.</li>
+</ul></li>
+<li>スケーリングのためにブロックは生成せずに各々のトランザクションがDAG形式で自分より前のトランザションを承認していく.
+
+<ul>
+<li>まだ発展途上なのでチェック機能が存在する.</li>
+<li>トランザクションはInput/Output/Remainderの3種類が1まとめになったBundleとしてTangle内を流れてる.</li>
+</ul></li>
+<li>UTXOを採用.</li>
+</ul>
+</article>
 
       
 <div class="align-center book-git-footer justify-between">
@@ -113,6 +141,18 @@ https://github.com/alex-shpak/hugo-book
     
   
   
+  <aside class="book-toc fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#iota">IOTA</a>
+<ul>
+<li><a href="#目的">目的</a></li>
+<li><a href="#特徴">特徴</a></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
 
 
   </main>
