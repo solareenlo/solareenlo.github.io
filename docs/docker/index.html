@@ -175,12 +175,26 @@ curl https://google.com
 
 <pre><code>sudo docker container exec -it コンテナ名
 </code></pre>
+
+<h3 id="portを指定してnginxを起動する">portを指定してnginxを起動する</h3>
+
+<pre><code>sudo docker container run -p 80:80 --name webhost nginx
+// 80:80の順番はHOST:CONTAINERの順番になっている.
+
+// portの繋がりがどうなっているか確認
+sudo docker container port webhost
+&gt; 80/tcp -&gt; 0.0.0.0:80
+
+// webhostのIPアドレスを表示
+sudo docker container inspect --format '{{ .NetworkSettings.IPAddress }}' webhost
+&gt; 172.17.0.2
+</code></pre>
 </article>
 
       
 <div class="align-center book-git-footer justify-between">
   
-  <div><a href="https://github.com/solareenlo/blog-hugo/commit/e453cc0c7074de6906fa009e1c906082d4a7dd2d" title='Last modified Apr 21, 2019 by solareenlo' target="_blank" rel="noopener">
+  <div><a href="https://github.com/solareenlo/blog-hugo/commit/9d1131f050cf4c092a8eabfcc1f9d9669cda543b" title='Last modified Apr 21, 2019 by solareenlo' target="_blank" rel="noopener">
       <img src="/svg/code-merge.svg" /> Apr 21, 2019
     </a>
   </div>
@@ -217,6 +231,7 @@ curl https://google.com
 <li><a href="#ubuntuを動かす">Ubuntuを動かす</a></li>
 <li><a href="#alpineを動かす">Alpineを動かす</a></li>
 <li><a href="#起動しているコンテナに入る">起動しているコンテナに入る</a></li>
+<li><a href="#portを指定してnginxを起動する">portを指定してnginxを起動する</a></li>
 </ul></li>
 </ul></li>
 </ul>
