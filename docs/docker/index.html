@@ -48,10 +48,16 @@ https://github.com/alex-shpak/hugo-book
   </style><ul>
 <li><a href="/"><strong>はじめに</strong></a></li>
 <li><a href="/posts/"><strong>Blog</strong></a></li>
+<li><a href="/docs/command/"><strong>Command</strong></a></li>
+<li><a href="/docs/programming/"><strong>Programming</strong></a>
+
+<ul>
+<li><a href="/docs/vim/">Vim</a></li>
+</ul></li>
 <li><a href="/docs/container/"><strong>Container</strong></a>
 
 <ul>
-<li><a href="/docs/docker/">docker</a></li>
+<li><a href="/docs/docker/">Docker</a></li>
 </ul></li>
 <li><a href="/docs/crypto/"><strong>Crypto</strong></a>
 
@@ -89,7 +95,7 @@ https://github.com/alex-shpak/hugo-book
       
 <article class="markdown">
 
-<h1 id="dockerとは">dockerとは</h1>
+<h1 id="docker-https-www-docker-com-とは"><a href="https://www.docker.com">Docker</a>とは</h1>
 
 <p>コンテナ型の仮想環境を作成, 配布, 実行するためのプラットフォーム.</p>
 
@@ -97,7 +103,39 @@ https://github.com/alex-shpak/hugo-book
 
 <h3 id="linux編">Linux編</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -fsSL get.docker.com -o get-docker.sh
-sh get-docker.sh</code></pre></div></article>
+sh get-docker.sh</code></pre></div>
+<h2 id="簡単な使い方">簡単な使い方</h2>
+
+<p><strong>Reference:</strong> <a href="https://qiita.com/curseoff/items/a9e64ad01d673abb6866">Dockerコマンドメモ</a></p>
+
+<pre><code>// nginxをコンテナとして起動
+sudo docker container run --publish 80:80 --name webhost nginx
+
+// 上記をデーモンとして動かす
+sudo docker container run --publish 80:80 --detach --name webhost nginx
+
+// コンテナ一覧を表示
+sudo docker container ls
+&gt; CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                NAMES
+&gt; b6e083217819        nginx               &quot;nginx -g 'daemon of…&quot;   7 minutes ago       Up 23 seconds       0.0.0.0:80-&gt;80/tcp   webhost
+&gt; 9ea87fb8e2e1        mongo               &quot;docker-entrypoint.s…&quot;   10 hours ago        Up 10 hours         27017/tcp            mongo
+
+// コンテナが実行しているプロセスを表示
+sudo docker container top &lt;CONTAINERID か NAMES&gt;
+
+// 起動しているコンテナを停止
+sudo docker container stop &lt;CONTAINERID か NAMES&gt;
+
+// 停止しているコンテナを再起動
+sudo docker container start &lt;CONTAINERID か NAMES&gt;
+
+// webhostのlogを見る
+sudo docker container logs &lt;CONTAINERID か NAMES&gt;
+
+// インストールしているコンテナ一覧を見る
+sudo docker container ls -a
+</code></pre>
+</article>
 
       
 <div class="align-center book-git-footer justify-between">
@@ -126,12 +164,13 @@ sh get-docker.sh</code></pre></div></article>
   <aside class="book-toc fixed">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#dockerとは">dockerとは</a>
+<li><a href="#docker-https-www-docker-com-とは"><a href="https://www.docker.com">Docker</a>とは</a>
 <ul>
 <li><a href="#インストール方法">インストール方法</a>
 <ul>
 <li><a href="#linux編">Linux編</a></li>
 </ul></li>
+<li><a href="#簡単な使い方">簡単な使い方</a></li>
 </ul></li>
 </ul>
 </nav>

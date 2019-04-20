@@ -34,11 +34,6 @@
   </url>
   
   <url>
-    <loc>https://solareenlo.com/docs/advanced/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://solareenlo.com/docs/bitcoin-fullnode/</loc>
     <priority>0</priority>
   </url>
@@ -49,7 +44,7 @@
   </url>
   
   <url>
-    <loc>https://solareenlo.com/docs/client/</loc>
+    <loc>https://solareenlo.com/docs/command/</loc>
     <priority>0</priority>
   </url>
   
@@ -74,33 +69,32 @@
   </url>
   
   <url>
-    <loc>https://solareenlo.com/docs/examples/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://solareenlo.com/docs/iota/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://solareenlo.com/docs/server/</loc>
+    <loc>https://solareenlo.com/docs/programming-language/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://solareenlo.com/docs/with-toc/</loc>
+    <loc>https://solareenlo.com/docs/programming/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://solareenlo.com/docs/without-toc/</loc>
-    <lastmod>2019-04-16T05:51:27+09:00</lastmod>
+    <loc>https://solareenlo.com/docs/rust/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://solareenlo.com/docs/vim/</loc>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://solareenlo.com/docs/</loc>
-    <lastmod>2019-04-16T05:51:27+09:00</lastmod>
     <priority>0</priority>
   </url>
   
