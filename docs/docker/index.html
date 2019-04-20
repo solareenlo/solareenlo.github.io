@@ -53,6 +53,7 @@ https://github.com/alex-shpak/hugo-book
 
 <ul>
 <li><a href="/docs/vim/">Vim</a></li>
+<li><a href="/docs/hugo/">Hugo</a></li>
 </ul></li>
 <li><a href="/docs/container/"><strong>Container</strong></a>
 
@@ -153,6 +154,27 @@ sudo docker cotnainer stats &lt;CONTAINERID or NAMES&gt;
 
 <pre><code>sudo docker container run -d --name mysql -e MYSQL_RANDOM_ROOT_PASSWORD=ture mysql
 </code></pre>
+
+<h3 id="ubuntuを動かす">Ubuntuを動かす</h3>
+
+<pre><code>sudo docker container run -it ubuntu /bin/bash
+apt install curl
+curl https://google.lcom
+</code></pre>
+
+<h3 id="alpineを動かす">Alpineを動かす</h3>
+
+<p>Alpineは軽量なLinux distributionの1つ.</p>
+
+<pre><code>sudo docker container run -it alpine /bin/ash
+apk add curl
+curl https://google.com
+</code></pre>
+
+<h3 id="起動しているコンテナに入る">起動しているコンテナに入る</h3>
+
+<pre><code>sudo docker container exec -it コンテナ名
+</code></pre>
 </article>
 
       
@@ -192,6 +214,9 @@ sudo docker cotnainer stats &lt;CONTAINERID or NAMES&gt;
 <ul>
 <li><a href="#コンテナの状態を見る">コンテナの状態を見る</a></li>
 <li><a href="#mysqlを動かす">mysqlを動かす</a></li>
+<li><a href="#ubuntuを動かす">Ubuntuを動かす</a></li>
+<li><a href="#alpineを動かす">Alpineを動かす</a></li>
+<li><a href="#起動しているコンテナに入る">起動しているコンテナに入る</a></li>
 </ul></li>
 </ul></li>
 </ul>
