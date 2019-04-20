@@ -74,6 +74,11 @@
   </url>
   
   <url>
+    <loc>https://solareenlo.com/docs/kubernetes/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://solareenlo.com/docs/programming-language/</loc>
     <priority>0</priority>
   </url>
