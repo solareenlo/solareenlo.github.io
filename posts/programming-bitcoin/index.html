@@ -1,0 +1,135 @@
+<!DOCTYPE html><html>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Programming BitcoinをHTMLで読んでみる | solareenlo</title>
+
+
+<link href="https://fonts.googleapis.com/css?family=Oxygen|Oxygen+Mono:300,400,700" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/normalize.min.css">
+
+<link rel="stylesheet" href="/book.min.10fb0ad8a0ad8e88648d3207b12be2833cd3df8a6e3b0955cbe49dc7fba8541c.css">
+
+
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+
+
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" style="display: none" id="menu-control" />
+  <main class="flex container">
+    <aside class="book-menu fixed">
+      <nav role="navigation">
+<h2 class="book-brand">
+  <a href="https://solareenlo.com/">solareenlo</a>
+</h2>
+
+
+
+    
+  
+  
+
+  <style>
+  nav ul a[href$="\2fposts\2fprogramming-bitcoin\2f "] {
+      color: #004ed0;
+  }
+  </style><ul>
+<li><a href="/"><strong>はじめに</strong></a></li>
+<li><a href="/posts/"><strong>Blog</strong></a></li>
+<li><a href="/docs/command/"><strong>Command</strong></a></li>
+<li><a href="/docs/programming/"><strong>Programming</strong></a>
+
+<ul>
+<li><a href="/docs/vim/">Vim</a></li>
+<li><a href="/docs/hugo/">Hugo</a></li>
+</ul></li>
+<li><a href="/docs/container/"><strong>Container</strong></a>
+
+<ul>
+<li><a href="/docs/docker/">Docker</a></li>
+<li><a href="/docs/kubernetes/">Kubernetes</a></li>
+</ul></li>
+<li><a href="/docs/crypto/"><strong>Crypto</strong></a>
+
+<ul>
+<li><a href="/docs/bitcoin/">Bitcoin</a></li>
+<li><a href="/docs/ethereum/">Ethereum</a></li>
+<li><a href="/docs/iota/">IOTA</a></li>
+</ul></li>
+</ul>
+
+<script>
+(function() {
+  var menu = document.querySelector('aside.book-menu nav')
+  addEventListener('beforeunload', function(event) {
+    localStorage.setItem('menu.scrollTop', menu.scrollTop)
+  });
+
+  menu.scrollTop = localStorage.getItem('menu.scrollTop')
+})()
+</script>
+
+
+
+</nav>
+    </aside>
+
+    <div class="book-posts">
+      <header class="align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" />
+  </label>
+  <strong>Programming BitcoinをHTMLで読んでみる</strong>
+</header>
+
+      <header>
+  <h1>Programming BitcoinをHTMLで読んでみる</h1>
+  <h5>
+    <strong>Apr 21, 2019</strong>
+  </h5>
+</header>
+<article class="markdown">
+
+<h2 id="前提条件">前提条件</h2>
+
+<ul>
+<li>RubyがPCにインストールされている.</li>
+<li>RubyのパッケージマネージャーのgemがPCにインストールされている.</li>
+</ul>
+
+<h2 id="html作成">HTML作成</h2>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone git@github.com:jimmysong/programmingbitcoin.git
+<span style="color:#111">cd</span> programmingbitcoin
+gem install asciidoctor
+find . -name <span style="color:#8045ff">\*</span>.asciidoc -print0 <span style="color:#111">|</span> xargs -0 -n1 asciidoctor</code></pre></div>
+<p>これで.asciidocが.htmlに変換されて出力されるので, 任意のブラウザで開いて読む.</p>
+
+<h2 id="references">References</h2>
+
+<ul>
+<li><a href="https://kiririmode.hatenablog.jp/entry/20190120/1547938372">「Programming Bitcoin」を読んだ</a></li>
+<li><a href="https://github.com/jimmysong/programmingbitcoin">jimmysong/programmingbitcoin</a></li>
+<li><a href="https://qiita.com/tamikura@github/items/5d3f62dae55617ee42bb">脱Word、脱Markdown、asciidocでドキュメント作成する際のアレコレ</a></li>
+</ul>
+</article>
+
+      
+    </div>
+  </main>
+
+  
+  
+</body>
+
+</html>
