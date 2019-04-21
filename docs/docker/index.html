@@ -241,13 +241,21 @@ sudo docker network disconnect bridge new_nginx</code></pre></div>
 <li>コンテナを起動するデフォルトの設定では外部へのポートは閉じられてる.</li>
 <li>なので, -pオプションを使って手動で外部とのポートと繋ぐ必要がある.</li>
 </ul>
-</article>
+
+<h3 id="コンテナからコンテナに問い合わせる">コンテナからコンテナに問い合わせる</h3>
+
+<p>同じネットワーク内にあるコンテナからコンテナへ問い合わせる.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker container run -d --name my_nginx --network my_app_net nginx:alpine
+sudo docker container <span style="color:#111">exec</span> -it my_nginx ping new_nginx
+&gt; <span style="color:#ae81ff">64</span> bytes from <span style="color:#ae81ff">172</span>.18.0.2: <span style="color:#111">seq</span><span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> <span style="color:#111">ttl</span><span style="color:#f92672">=</span><span style="color:#ae81ff">64</span> <span style="color:#111">time</span><span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>.060 ms
+&gt; <span style="color:#ae81ff">64</span> bytes from <span style="color:#ae81ff">172</span>.18.0.2: <span style="color:#111">seq</span><span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> <span style="color:#111">ttl</span><span style="color:#f92672">=</span><span style="color:#ae81ff">64</span> <span style="color:#111">time</span><span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>.069 ms
+&gt; <span style="color:#ae81ff">64</span> bytes from <span style="color:#ae81ff">172</span>.18.0.2: <span style="color:#111">seq</span><span style="color:#f92672">=</span><span style="color:#ae81ff">2</span> <span style="color:#111">ttl</span><span style="color:#f92672">=</span><span style="color:#ae81ff">64</span> <span style="color:#111">time</span><span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>.093 ms</code></pre></div></article>
 
       
 <div class="align-center book-git-footer justify-between">
   
-  <div><a href="https://github.com/solareenlo/blog-hugo/commit/6ac9d8f28f2509163e3875c7bf5c93f08f189828" title='Last modified Apr 21, 2019 by solareenlo' target="_blank" rel="noopener">
-      <img src="/svg/code-merge.svg" /> Apr 21, 2019
+  <div><a href="https://github.com/solareenlo/blog-hugo/commit/e720125a417e0a50d82a296ef2a6a380a4204d7b" title='Last modified Apr 22, 2019 by solareenlo' target="_blank" rel="noopener">
+      <img src="/svg/code-merge.svg" /> Apr 22, 2019
     </a>
   </div>
   
@@ -292,6 +300,7 @@ sudo docker network disconnect bridge new_nginx</code></pre></div>
 <li><a href="#起動しているコンテナに入る">起動しているコンテナに入る</a></li>
 <li><a href="#portを指定してnginxを起動する">portを指定してnginxを起動する</a></li>
 <li><a href="#ネットワークを新規に作って接続して削除する">ネットワークを新規に作って接続して削除する</a></li>
+<li><a href="#コンテナからコンテナに問い合わせる">コンテナからコンテナに問い合わせる</a></li>
 </ul></li>
 </ul></li>
 </ul>
