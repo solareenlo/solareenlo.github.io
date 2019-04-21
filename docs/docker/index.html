@@ -99,7 +99,36 @@ https://github.com/alex-shpak/hugo-book
 
 <h1 id="docker-https-www-docker-com-とは"><a href="https://www.docker.com">Docker</a>とは</h1>
 
-<p>コンテナ型の仮想環境を作成, 配布, 実行するためのプラットフォーム.</p>
+<p>コンテナ型の仮想環境を作成, 配布, 実行するためのプラットフォーム.<br />
+Dockerについての良い読み物→<a href="http://iga-ninja.hatenablog.com/entry/2018/06/28/091412">2018年なぜ私達はコンテナ/Dockerを使うのか</a>.</p>
+
+<h2 id="コンテナのメリット-デメリット">コンテナのメリット/デメリット</h2>
+
+<h3 id="メリット">メリット</h3>
+
+<ul>
+<li>ゲストOSはホストのKernelを直接使うためオーバーヘッドが小さくて高速</li>
+<li>ゲストOSがそれぞれにKernelを持たないため, Memory消費量やDisk消費量を節約できる</li>
+<li>必要とする資源が少ないため, 多くのゲストOSを立ち上げることが可能</li>
+<li>Kernelを新しく起動する必要がないため, ゲストOSの起動が速い</li>
+<li>コンテナのイメージ(雛形)からコンテナ(実体)を作るため, 同一構成のOSを簡単に複数作れる</li>
+<li>テストが通ったイメージは本番環境でもすぐに使える(開発とデプロイのサイクルが速い)
+
+<ul>
+<li><strong>Reference:</strong> <a href="http://docker.yuichi.com/about/strength/index.html">Dockerの利点</a></li>
+</ul></li>
+</ul>
+
+<h3 id="デメリット">デメリット</h3>
+
+<ul>
+<li>提供できるホストの種類が少ない(ホストOSのKernelにLinux使ってたらゲストOSのKernelにWindows Serverは使えない)</li>
+<li>完全仮想化に比べて, 管理者が学ぶべきことが多い
+
+<ul>
+<li><strong>Reference:</strong> <a href="http://docker.yuichi.com/about/strength/index.html">Dockerの欠点</a></li>
+</ul></li>
+</ul>
 
 <h2 id="インストール方法">インストール方法</h2>
 
@@ -241,7 +270,7 @@ sudo docker network disconnect bridge new_nginx
       
 <div class="align-center book-git-footer justify-between">
   
-  <div><a href="https://github.com/solareenlo/blog-hugo/commit/ee5c0dcbfbc1ed2f0099b78d86345e5070d09bdd" title='Last modified Apr 21, 2019 by solareenlo' target="_blank" rel="noopener">
+  <div><a href="https://github.com/solareenlo/blog-hugo/commit/4c9349efa235c35d3f13eac9b79017045a16cc3e" title='Last modified Apr 21, 2019 by solareenlo' target="_blank" rel="noopener">
       <img src="/svg/code-merge.svg" /> Apr 21, 2019
     </a>
   </div>
@@ -267,6 +296,11 @@ sudo docker network disconnect bridge new_nginx
 <ul>
 <li><a href="#docker-https-www-docker-com-とは"><a href="https://www.docker.com">Docker</a>とは</a>
 <ul>
+<li><a href="#コンテナのメリット-デメリット">コンテナのメリット/デメリット</a>
+<ul>
+<li><a href="#メリット">メリット</a></li>
+<li><a href="#デメリット">デメリット</a></li>
+</ul></li>
 <li><a href="#インストール方法">インストール方法</a>
 <ul>
 <li><a href="#linux編">Linux編</a></li>
