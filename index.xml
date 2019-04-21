@@ -160,6 +160,26 @@ Dockerのメリット/デメリット メリット  ゲストOSはホストのKe
     
     <item>
       <title></title>
+      <link>https://solareenlo.com/docs/git/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://solareenlo.com/docs/git/</guid>
+      <description> Gitとは プログラムのソースコードなどの変更履歴を記録・追跡するための分散型バージョン管理システムのこと. とっても便利. 慣れてしまうともう後戻りはできない.
+新しいブランチの作成 ローカルブランチからブランチ作成 cd ディレクトリ // 作業ディレクトリに移動 git branch -a // branchの一覧を表示 git checkout master // master branchに切り替え git checkout -b 作成するbranch名 // masterを元にして新しいbranchを作成 git branch -a git push -u origin 作成したbranch名 // branchをremoteに登録 リモートブランチからブランチ作成 cd ディレクトリ git checkout -b ローカルに作成するブランチ名 origin/再生元のリモートブランチ名 git branch -a ブランチの削除 cd 作業ティレクトり git checkout -b master // 削除したいブランチとは違うブランチにまずは移動する git checkout -d 削除したいブランチ名</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://solareenlo.com/docs/github/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://solareenlo.com/docs/github/</guid>
+      <description>GitHubとは ソフトウェア開発のプラットフォーム兼ソースコードなどのホスティングサービス.
+GitHub Pagesで静的サイトを公開する cd 作業ディレクトリ名 git checkout -b gh-pages vim index.html // index.htmlを作成 git push -u origin gh-pages gh-pagesという名前のブランチにindex.htmlファイルを作っておけば, それが静的サイトとして「https://ユーザー名.github.io/リポジトリ名」として公開される.</description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>https://solareenlo.com/docs/hugo/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -216,7 +236,8 @@ Kubernetesが他と違うところは, ① 様々なOSSと組み合わせるこ�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://solareenlo.com/docs/rust/</guid>
-      <description> Rust </description>
+      <description> Rustとは Mozillaが支援するオープンソースのシステムプログラミング言語のこと. 速度, 安全性, 平行性の3つのゴールにフォーカスしている.
+ドキュメントの日本語訳  Rustの日本語ドキュメント/Japanese Docs for Rust The Embedded Rust Book  チートシート  Rust Language Cheat Sheet  </description>
     </item>
     
     <item>
@@ -225,7 +246,18 @@ Kubernetesが他と違うところは, ① 様々なOSSと組み合わせるこ�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://solareenlo.com/docs/vim/</guid>
-      <description>Vimとは viから派生したテキストエディタ. 自分好みに拡張がどんどんできる.</description>
+      <description> Vimとは viから派生したテキストエディタ. プラグインを導入したり, .vimrcの設定を変更したりして, 自分好みにカスタマイズがどんどんできる.
+プラグインを導入する方法 オススメの使い方記事  さっさと帰りたい怠け者エンジニアは vim をマスターしましょう その2 - 編集 さっさと帰りたい怠け者エンジニアは vim をマスターしましょう その1 - 基本と移動  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://solareenlo.com/docs/vps/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://solareenlo.com/docs/vps/</guid>
+      <description> VPS(バーチャル・プライベート・サーバ)とは 一台の物理的なサーバコンピュータ上で仮想的なサーバコンピュータを何台も起動する技術によってつくられた仮想的なサーバコンピュータのこと. 暗号通貨のフルノードを立てることができる.
+世界のVPSの値段比較サイト  VPSCOMP  SSH接続するには </description>
     </item>
     
   </channel>

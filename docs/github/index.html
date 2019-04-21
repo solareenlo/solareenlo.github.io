@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>
-    Docs | solareenlo</title>
+<title>Docs/Github.md | solareenlo</title>
 
 
 <link href="https://fonts.googleapis.com/css?family=Oxygen|Oxygen+Mono:300,400,700" rel="stylesheet">
@@ -18,7 +17,6 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 
 
-<link rel="alternate" type="application/rss+xml" href="https://solareenlo.com/docs/index.xml" title="solareenlo" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -44,7 +42,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   <style>
-  nav ul a[href$="\2f docs\2f "] {
+  nav ul a[href$="\2f docs\2fgithub\2f "] {
       color: #004ed0;
   }
   </style><ul>
@@ -97,19 +95,32 @@ https://github.com/alex-shpak/hugo-book
   <label for="menu-control">
     <img src="/svg/menu.svg" />
   </label>
-  <strong>
-    Docs</strong>
+  <strong>Docs/Github.md</strong>
 </header>
 
       
-<article class="markdown"></article>
+<article class="markdown">
+
+<h1 id="github-https-github-com-とは"><a href="https://github.com">GitHub</a>とは</h1>
+
+<p>ソフトウェア開発のプラットフォーム兼ソースコードなどのホスティングサービス.</p>
+
+<h2 id="github-pagesで静的サイトを公開する">GitHub Pagesで静的サイトを公開する</h2>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#111">cd</span> 作業ディレクトリ名
+git checkout -b gh-pages
+vim index.html // index.htmlを作成
+git push -u origin gh-pages</code></pre></div>
+<p>gh-pagesという名前のブランチにindex.htmlファイルを作っておけば, それが静的サイトとして「https://ユーザー名.github.io/リポジトリ名」として公開される.</p>
+</article>
 
       
 <div class="align-center book-git-footer justify-end">
   
   
   <div>
-    
+    <a href="https://github.com/solareenlo/blog-hugo/edit/master/content/docs/github.md" target="_blank" rel="noopener">
+      <img src="/svg/code-fork.svg" /> Edit this page
+    </a>
   </div>
   
 </div>
@@ -121,6 +132,17 @@ https://github.com/alex-shpak/hugo-book
     
   
   
+  <aside class="book-toc fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#github-https-github-com-とは"><a href="https://github.com">GitHub</a>とは</a>
+<ul>
+<li><a href="#github-pagesで静的サイトを公開する">GitHub Pagesで静的サイトを公開する</a></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
 
 
   </main>
