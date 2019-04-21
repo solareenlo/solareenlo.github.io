@@ -174,8 +174,9 @@ Dockerのメリット/デメリット メリット  ゲストOSはホストのKe
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://solareenlo.com/docs/github/</guid>
-      <description>GitHubとは ソフトウェア開発のプラットフォーム兼ソースコードなどのホスティングサービス.
-GitHub Pagesで静的サイトを公開する cd 作業ディレクトリ名 git checkout -b gh-pages vim index.html // index.htmlを作成 git push -u origin gh-pages gh-pagesという名前のブランチにindex.htmlファイルを作っておけば, それが静的サイトとして「https://ユーザー名.github.io/リポジトリ名」として公開される.</description>
+      <description> GitHubとは ソフトウェア開発のプラットフォーム兼ソースコードなどのホスティングサービス.
+GitHub Pagesで静的サイトを公開する cd 作業ディレクトリ名 git checkout -b gh-pages vim index.html // index.htmlを作成 git push -u origin gh-pages gh-pagesという名前のブランチにindex.htmlファイルを作っておけば, それが静的サイトとして「https://ユーザー名.github.io/リポジトリ名」として公開される.
+リポジトリに他のリポジトリをリンク付けする git submodule add -b &amp;lt;リンク付けする方のブランチ名&amp;gt; &amp;lt;リンク付けする方のURL&amp;gt; &amp;lt;リンク付けされるディレクトリ名&amp;gt;</description>
     </item>
     
     <item>
