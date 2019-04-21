@@ -144,7 +144,7 @@ Reference: コンテナ技術とは何？
       <description>Dockerとは コンテナ型の仮想環境を作成, 配布, 実行するためのプラットフォーム.
 Dockerについての良い読み物→2018年なぜ私達はコンテナ/Dockerを使うのか.
 Dockerのメリット/デメリット メリット  ゲストOSはホストのKernelを直接使うためオーバーヘッドが小さくて高速 ゲストOSがそれぞれにKernelを持たないため, Memory消費量やDisk消費量を節約できる 必要とする資源が少ないため, 多くのゲストOSを立ち上げることが可能 Kernelを新しく起動する必要がないため, ゲストOSの起動が速い コンテナのイメージ(雛形)からコンテナ(実体)を作るため, 同一構成のOSを簡単に複数作れる テストが通ったイメージは本番環境でもすぐに使える(開発とデプロイのサイクルが速い)  Reference: Dockerの利点   デメリット  提供できるホストの種類が少ない(ホストOSのKernelにLinux使ってたらゲストOSのKernelにWindows Serverは使えない) 完全仮想化に比べて, 管理者が学ぶべきことが多い  Reference: Dockerの欠点   インストール方法 Linux編 curl -fsSL get.docker.com -o get-docker.sh sh get-docker.sh 簡単な使い方 Reference: Dockerコマンドメモ
-// nginxをコンテナとして起動 sudo docker container run --publish 80:80 --name webhost nginx // 上記をデーモンとして動かす sudo docker container run --publish 80:80 --detach --name webhost nginx // コンテナ一覧を表示 sudo docker container ls &amp;gt; CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES &amp;gt; b6e083217819 nginx &amp;quot;nginx -g &#39;daemon of…&amp;quot; 7 minutes ago Up 23 seconds 0.</description>
+一覧/log表示 // nginxをコンテナとして起動 sudo docker container run --publish 80:80 --name webhost nginx // 上記をデーモンとして動かす sudo docker container run --publish 80:80 --detach --name webhost nginx // コンテナ一覧を表示 sudo docker container ls &amp;gt; CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES &amp;gt; b6e083217819 nginx &amp;#34;nginx -g &amp;#39;daemon of…&amp;#34; 7 minutes ago Up 23 seconds 0.</description>
     </item>
     
     <item>
@@ -239,6 +239,19 @@ Kubernetesが他と違うところは, ① 様々なOSSと組み合わせるこ�
       <guid>https://solareenlo.com/docs/rust/</guid>
       <description> Rustとは Mozillaが支援するオープンソースのシステムプログラミング言語のこと. 速度, 安全性, 平行性の3つのゴールにフォーカスしている.
 ドキュメントの日本語訳  Rustの日本語ドキュメント/Japanese Docs for Rust The Embedded Rust Book  チートシート  Rust Language Cheat Sheet  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://solareenlo.com/docs/terminal/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://solareenlo.com/docs/terminal/</guid>
+      <description>ターミナルとは GUIの上でCUIの操作をしたいときに使用するアプリケーションのこと.
+コンソール/ターミナル/シェルの違い  コンソールとは入出力をつかさどる端末ハードウェア ターミナルとはGUIでCUI環境を再現するもの シェルとはCUI環境における対話的インターフェイス  Reference: 【初心者向け】シェル・ターミナル・コンソールの違いとは？   下地にシェルがありコンソールやターミナルから命令をOSへ伝達してくれる. コンソールでアクセスしてもターミナルでアクセスしても対話するものはシェルとなる.
+コンソールの場合はハードウェア的に直にアクセスしているがターミナルの場合はGUI環境でソフトウェア的にシェルを呼び出し命令を実行するようになっている.
+ターミナルのJSON出力に色付けする jqを使う.
+// こんな感じ echo &amp;#39;{&amp;#34;items&amp;#34;:[{&amp;#34;item_id&amp;#34;:1,&amp;#34;name&amp;#34;:&amp;#34;すてきな雑貨&amp;#34;,&amp;#34;price&amp;#34;:2500},{&amp;#34;item_id&amp;#34;:2,&amp;#34;name&amp;#34;:&amp;#34;格好いい置物&amp;#34;,&amp;#34;price&amp;#34;:4500}]}&amp;#39; | jq . &amp;gt; { &amp;gt; &amp;#34;items&amp;#34;: [ &amp;gt; { &amp;gt; &amp;#34;item_id&amp;#34;: 1, &amp;gt; &amp;#34;name&amp;#34;: &amp;#34;すてきな雑貨&amp;#34;, &amp;gt; &amp;#34;price&amp;#34;: 2500 &amp;gt; }, &amp;gt; { &amp;gt; &amp;#34;item_id&amp;#34;: 2, &amp;gt; &amp;#34;name&amp;#34;: &amp;#34;格好いい置物&amp;#34;, &amp;gt; &amp;#34;price&amp;#34;: 4500 &amp;gt; } &amp;gt; ] &amp;gt; } Reference: jq コマンドを使う日常のご紹介</description>
     </item>
     
     <item>

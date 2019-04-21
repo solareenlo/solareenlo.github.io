@@ -1,0 +1,186 @@
+<!DOCTYPE html><html>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Docs/Terminal.md | solareenlo</title>
+
+
+<link href="https://fonts.googleapis.com/css?family=Oxygen|Oxygen+Mono:300,400,700" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/normalize.min.css">
+
+<link rel="stylesheet" href="/book.min.10fb0ad8a0ad8e88648d3207b12be2833cd3df8a6e3b0955cbe49dc7fba8541c.css">
+
+
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+
+
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" style="display: none" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav role="navigation">
+<h2 class="book-brand">
+  <a href="https://solareenlo.com/">solareenlo</a>
+</h2>
+
+
+
+    
+  
+  
+
+  <style>
+  nav ul a[href$="\2f docs\2fterminal\2f "] {
+      color: #004ed0;
+  }
+  </style><ul>
+<li><a href="/"><strong>はじめに</strong></a></li>
+<li><a href="/posts/"><strong>Blog</strong></a></li>
+<li><a href="/docs/programming/"><strong>Programming</strong></a>
+
+<ul>
+<li><a href="/docs/terminal/">Terminal</a></li>
+<li><a href="/docs/command/">Command</a></li>
+<li><a href="/docs/vim/">Vim</a></li>
+<li><a href="/docs/git/">Git</a></li>
+<li><a href="/docs/github/">GitHub</a></li>
+<li><a href="/docs/rust/">Rust</a></li>
+<li><a href="/docs/hugo/">Hugo</a></li>
+</ul></li>
+<li><a href="/docs/vps/"><strong>VPS</strong></a></li>
+<li><a href="/docs/container/"><strong>Container</strong></a>
+
+<ul>
+<li><a href="/docs/docker/">Docker</a></li>
+<li><a href="/docs/kubernetes/">Kubernetes</a></li>
+</ul></li>
+<li><a href="/docs/crypto/"><strong>Crypto</strong></a>
+
+<ul>
+<li><a href="/docs/bitcoin/">Bitcoin</a></li>
+<li><a href="/docs/ethereum/">Ethereum</a></li>
+<li><a href="/docs/iota/">IOTA</a></li>
+</ul></li>
+</ul>
+
+<script>
+(function() {
+  var menu = document.querySelector('aside.book-menu nav')
+  addEventListener('beforeunload', function(event) {
+    localStorage.setItem('menu.scrollTop', menu.scrollTop)
+  });
+
+  menu.scrollTop = localStorage.getItem('menu.scrollTop')
+})()
+</script>
+
+
+
+</nav>
+    </aside>
+
+    <div class="book-page">
+      <header class="align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" />
+  </label>
+  <strong>Docs/Terminal.md</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="ターミナルとは">ターミナルとは</h1>
+
+<p>GUIの上でCUIの操作をしたいときに使用するアプリケーションのこと.</p>
+
+<h2 id="コンソール-ターミナル-シェルの違い">コンソール/ターミナル/シェルの違い</h2>
+
+<ul>
+<li>コンソールとは入出力をつかさどる端末ハードウェア</li>
+<li>ターミナルとはGUIでCUI環境を再現するもの</li>
+<li>シェルとはCUI環境における対話的インターフェイス
+
+<ul>
+<li><strong>Reference:</strong> <a href="https://eng-entrance.com/linux-basic-shell-terminal-console">【初心者向け】シェル・ターミナル・コンソールの違いとは？</a></li>
+</ul></li>
+</ul>
+
+<p>下地にシェルがありコンソールやターミナルから命令をOSへ伝達してくれる.
+コンソールでアクセスしてもターミナルでアクセスしても対話するものはシェルとなる.<br />
+コンソールの場合はハードウェア的に直にアクセスしているがターミナルの場合はGUI環境でソフトウェア的にシェルを呼び出し命令を実行するようになっている.</p>
+
+<h2 id="ターミナルのjson出力に色付けする">ターミナルのJSON出力に色付けする</h2>
+
+<p><a href="https://github.com/stedolan/jq">jq</a>を使う.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">// こんな感じ
+<span style="color:#111">echo</span> <span style="color:#d88200">&#39;{&#34;items&#34;:[{&#34;item_id&#34;:1,&#34;name&#34;:&#34;すてきな雑貨&#34;,&#34;price&#34;:2500},{&#34;item_id&#34;:2,&#34;name&#34;:&#34;格好いい置物&#34;,&#34;price&#34;:4500}]}&#39;</span> <span style="color:#111">|</span> jq .
+&gt; <span style="color:#f92672">{</span>
+&gt;   <span style="color:#d88200">&#34;items&#34;</span>: <span style="color:#f92672">[</span>
+&gt;     <span style="color:#f92672">{</span>
+&gt;       <span style="color:#d88200">&#34;item_id&#34;</span>: <span style="color:#ae81ff">1</span>,
+&gt;       <span style="color:#d88200">&#34;name&#34;</span>: <span style="color:#d88200">&#34;すてきな雑貨&#34;</span>,
+&gt;       <span style="color:#d88200">&#34;price&#34;</span>: <span style="color:#ae81ff">2500</span>
+&gt;     <span style="color:#f92672">}</span>,
+&gt;     <span style="color:#f92672">{</span>
+&gt;       <span style="color:#d88200">&#34;item_id&#34;</span>: <span style="color:#ae81ff">2</span>,
+&gt;       <span style="color:#d88200">&#34;name&#34;</span>: <span style="color:#d88200">&#34;格好いい置物&#34;</span>,
+&gt;       <span style="color:#d88200">&#34;price&#34;</span>: <span style="color:#ae81ff">4500</span>
+&gt;     <span style="color:#f92672">}</span>
+&gt;   <span style="color:#f92672">]</span>
+&gt; <span style="color:#f92672">}</span></code></pre></div>
+<p><strong>Reference:</strong> <a href="https://qiita.com/takeshinoda@github/items/2dec7a72930ec1f658af">jq コマンドを使う日常のご紹介</a></p>
+</article>
+
+      
+<div class="align-center book-git-footer justify-end">
+  
+  
+  <div>
+    <a href="https://github.com/solareenlo/blog-hugo/edit/master/content/docs/terminal.md" target="_blank" rel="noopener">
+      <img src="/svg/code-fork.svg" /> Edit this page
+    </a>
+  </div>
+  
+</div>
+
+
+      
+    </div>
+
+    
+  
+  
+  <aside class="book-toc fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#ターミナルとは">ターミナルとは</a>
+<ul>
+<li><a href="#コンソール-ターミナル-シェルの違い">コンソール/ターミナル/シェルの違い</a></li>
+<li><a href="#ターミナルのjson出力に色付けする">ターミナルのJSON出力に色付けする</a></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+  
+  
+  
+</body>
+
+</html>

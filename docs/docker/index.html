@@ -48,10 +48,11 @@ https://github.com/alex-shpak/hugo-book
   </style><ul>
 <li><a href="/"><strong>はじめに</strong></a></li>
 <li><a href="/posts/"><strong>Blog</strong></a></li>
-<li><a href="/docs/command/"><strong>Command</strong></a></li>
 <li><a href="/docs/programming/"><strong>Programming</strong></a>
 
 <ul>
+<li><a href="/docs/terminal/">Terminal</a></li>
+<li><a href="/docs/command/">Command</a></li>
 <li><a href="/docs/vim/">Vim</a></li>
 <li><a href="/docs/git/">Git</a></li>
 <li><a href="/docs/github/">GitHub</a></li>
@@ -143,99 +144,73 @@ sh get-docker.sh</code></pre></div>
 
 <p><strong>Reference:</strong> <a href="https://qiita.com/curseoff/items/a9e64ad01d673abb6866">Dockerコマンドメモ</a></p>
 
-<pre><code>// nginxをコンテナとして起動
-sudo docker container run --publish 80:80 --name webhost nginx
+<h3 id="一覧-log表示">一覧/log表示</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">// nginxをコンテナとして起動
+sudo docker container run --publish <span style="color:#ae81ff">80</span>:80 --name webhost nginx
 
 // 上記をデーモンとして動かす
-sudo docker container run --publish 80:80 --detach --name webhost nginx
+sudo docker container run --publish <span style="color:#ae81ff">80</span>:80 --detach --name webhost nginx
 
 // コンテナ一覧を表示
 sudo docker container ls
 &gt; CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                NAMES
-&gt; b6e083217819        nginx               &quot;nginx -g 'daemon of…&quot;   7 minutes ago       Up 23 seconds       0.0.0.0:80-&gt;80/tcp   webhost
-&gt; 9ea87fb8e2e1        mongo               &quot;docker-entrypoint.s…&quot;   10 hours ago        Up 10 hours         27017/tcp            mongo
-
-// コンテナが実行しているプロセスを表示
-sudo docker container top &lt;CONTAINERID か NAMES&gt;
-
-// 起動しているコンテナを停止
-sudo docker container stop &lt;CONTAINERID か NAMES&gt;
-
-// 停止しているコンテナを再起動
-sudo docker container start &lt;CONTAINERID か NAMES&gt;
+&gt; b6e083217819        nginx               <span style="color:#d88200">&#34;nginx -g &#39;daemon of…&#34;</span>   <span style="color:#ae81ff">7</span> minutes ago       Up <span style="color:#ae81ff">23</span> seconds       <span style="color:#ae81ff">0</span>.0.0.0:80-&gt;80/tcp   webhost
+&gt; 9ea87fb8e2e1        mongo               <span style="color:#d88200">&#34;docker-entrypoint.s…&#34;</span>   <span style="color:#ae81ff">10</span> hours ago        Up <span style="color:#ae81ff">10</span> hours         <span style="color:#ae81ff">27017</span>/tcp            mongo
 
 // webhostのlogを見る
 sudo docker container logs &lt;CONTAINERID か NAMES&gt;
 
 // インストールしているコンテナ一覧を見る
-sudo docker container ls -a
-</code></pre>
-
+sudo docker container ls -a</code></pre></div>
+<h3 id="コンテナを起動-停止-再起動">コンテナを起動/停止/再起動</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo docker container run nginx // 起動
+sudo docker container run -d nginx // デーモンとして起動
+sudo docker container stop &lt;CONTAINERID か NAMES&gt; // 停止
+sudo docker container start &lt;CONTAINERID か NAMES&gt; // 再起動</code></pre></div>
 <h3 id="コンテナの状態を見る">コンテナの状態を見る</h3>
-
-<pre><code>// コンテナが実行しているプロセスを表示
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">// コンテナが実行しているプロセスを表示
 sudo docker container top &lt;CONTAINERID or NAMES&gt;
 
 // コンテナの詳細を表示
 sudo docker container inspect &lt;CONTAINERID or NAMES&gt;
 
 // コンテナのパフォーマンスを表示
-sudo docker cotnainer stats &lt;CONTAINERID or NAMES&gt;
-</code></pre>
-
+sudo docker cotnainer stats &lt;CONTAINERID or NAMES&gt;</code></pre></div>
 <h3 id="mysqlを動かす">mysqlを動かす</h3>
-
-<pre><code>sudo docker container run -d --name mysql -e MYSQL_RANDOM_ROOT_PASSWORD=ture mysql
-</code></pre>
-
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo docker container run -d --name mysql -e <span style="color:#111">MYSQL_RANDOM_ROOT_PASSWORD</span><span style="color:#f92672">=</span>ture mysql</code></pre></div>
 <h3 id="ubuntuを動かす">Ubuntuを動かす</h3>
-
-<pre><code>sudo docker container run -it ubuntu /bin/bash
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo docker container run -it ubuntu /bin/bash
 apt install curl
-curl https://google.lcom
-</code></pre>
-
+curl https://google.lcom</code></pre></div>
 <h3 id="alpineを動かす">Alpineを動かす</h3>
 
 <p>Alpineは軽量なLinux distributionの1つ.</p>
-
-<pre><code>sudo docker container run -it alpine /bin/ash
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo docker container run -it alpine /bin/ash
 apk add curl
-curl https://google.com
-</code></pre>
-
+curl https://google.com</code></pre></div>
 <h3 id="起動しているコンテナに入る">起動しているコンテナに入る</h3>
-
-<pre><code>sudo docker container exec -it コンテナ名
-</code></pre>
-
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo docker container <span style="color:#111">exec</span> -it コンテナ名</code></pre></div>
 <h3 id="portを指定してnginxを起動する">portを指定してnginxを起動する</h3>
-
-<pre><code>sudo docker container run -p 80:80 --name webhost nginx
-// 80:80の順番はHOST:CONTAINERの順番になっている.
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo docker container run -p <span style="color:#ae81ff">80</span>:80 --name webhost nginx
+// <span style="color:#ae81ff">80</span>:80の順番はHOST:CONTAINERの順番になっている.
 
 // portの繋がりがどうなっているか確認
 sudo docker container port webhost
-&gt; 80/tcp -&gt; 0.0.0.0:80
+&gt; <span style="color:#ae81ff">80</span>/tcp -&gt; <span style="color:#ae81ff">0</span>.0.0.0:80
 
 // webhostのIPアドレスを表示
-sudo docker container inspect --format '{{ .NetworkSettings.IPAddress }}' webhost
-&gt; 172.17.0.2
-</code></pre>
-
+sudo docker container inspect --format <span style="color:#d88200">&#39;{{ .NetworkSettings.IPAddress }}&#39;</span> webhost
+&gt; <span style="color:#ae81ff">172</span>.17.0.2</code></pre></div>
 <h3 id="ネットワークを新規に作って接続して削除する">ネットワークを新規に作って接続して削除する</h3>
-
-<pre><code>sudo docker network ls
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo docker network ls
 &gt; NETWORK ID          NAME                DRIVER              SCOPE
-&gt; bc9b26e5c4d9        bridge              bridge              local
-&gt; ba4557f6a2be        host                host                local
-&gt; 5ac181d8a48b        none                null                local
-</code></pre>
-
+&gt; bc9b26e5c4d9        bridge              bridge              <span style="color:#111">local</span>
+&gt; ba4557f6a2be        host                host                <span style="color:#111">local</span>
+&gt; 5ac181d8a48b        none                null                local</code></pre></div>
 <ul>
-<li>bridgeはLinux bridgeで仮想インタフェースを作成し, そのインタフェースに対してvethでDockerコンテナと接続する方式で, Dockerホストが属するネットワークとは異なる, 仮想bridge上のネットワークにコンテナを作成し, NAT形式で外部のノードと通信する形式.</li>
-<li>hostはDockerホストと同じネットワークにスタックするドライバで, Dockerホストマシンと同じネットワークインタフェース, IPアドレスを持つようになる.</li>
-<li>nullはネットワーク接続を必要としないコンテナを作成する場合に使用する.
+<li><strong>bridge:</strong> Linux bridgeで仮想インタフェースを作成し, そのインタフェースに対してvethでDockerコンテナと接続する方式で, Dockerホストが属するネットワークとは異なる, 仮想bridge上のネットワークにコンテナを作成し, NAT形式で外部のノードと通信する形式.</li>
+<li><strong>host:</strong> Dockerホストと同じネットワークにスタックするドライバで, Dockerホストマシンと同じネットワークインタフェース, IPアドレスを持つようになる.</li>
+<li><strong>null:</strong> ネットワーク接続を必要としないコンテナを作成する場合に使用する.
 
 <ul>
 <li><strong>Reference:</strong> <a href="https://qiita.com/TsutomuNakamura/items/ed046ee21caca4a2ffd9">Docker network 概論</a></li>
@@ -248,8 +223,7 @@ sudo docker container inspect --format '{{ .NetworkSettings.IPAddress }}' webhos
 <li><strong>Reference:</strong> <a href="https://qiita.com/toshihirock/items/f5b9f7799ec8bf8c328e">Docker の bridge と host ネットワークについて勉強する</a></li>
 </ul></li>
 </ul>
-
-<pre><code>// 新規ネットワークを作成
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">// 新規ネットワークを作成
 sudo docker network create my_app_net
 
 // この新規に作成したネットワークでコンテナを走らせる
@@ -262,9 +236,7 @@ sudo docker network inspect my_app_net
 sudo docker network connect bridge new_nginx
 
 // 先ほど繋いだコンテナの接続を切る
-sudo docker network disconnect bridge new_nginx
-</code></pre>
-
+sudo docker network disconnect bridge new_nginx</code></pre></div>
 <ul>
 <li>コンテナを起動するデフォルトの設定では外部へのポートは閉じられてる.</li>
 <li>なので, -pオプションを使って手動で外部とのポートと繋ぐ必要がある.</li>
@@ -311,6 +283,8 @@ sudo docker network disconnect bridge new_nginx
 </ul></li>
 <li><a href="#簡単な使い方">簡単な使い方</a>
 <ul>
+<li><a href="#一覧-log表示">一覧/log表示</a></li>
+<li><a href="#コンテナを起動-停止-再起動">コンテナを起動/停止/再起動</a></li>
 <li><a href="#コンテナの状態を見る">コンテナの状態を見る</a></li>
 <li><a href="#mysqlを動かす">mysqlを動かす</a></li>
 <li><a href="#ubuntuを動かす">Ubuntuを動かす</a></li>
