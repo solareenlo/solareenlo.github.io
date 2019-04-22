@@ -137,6 +137,16 @@ Reference: コンテナ技術とは何？
     
     <item>
       <title></title>
+      <link>https://solareenlo.com/docs/db/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://solareenlo.com/docs/db/</guid>
+      <description> データベースとは 大量のデータを集めて, コンピューターでデータの追加, 削除, 検索をしやすい形に整理したもの. 有料/無料, オープンソース/非オープンソース, SQL型, NoSQL型, オブジェクト型, ドキュメント型, キー・バリュー型, グラフ型などいろんな種類がある.
+DBの使用率ランキング  DB-Engines Ranking  </description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>https://solareenlo.com/docs/docker/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -214,11 +224,30 @@ Kubernetesが他と違うところは, ① 様々なOSSと組み合わせるこ�
     
     <item>
       <title></title>
+      <link>https://solareenlo.com/docs/mongodb/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://solareenlo.com/docs/mongodb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://solareenlo.com/docs/mysql/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://solareenlo.com/docs/mysql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>https://solareenlo.com/docs/programming-language/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://solareenlo.com/docs/programming-language/</guid>
-      <description> プログラミング言語 </description>
+      <description> プログラミング言語とは コンピュータに解釈できるようにつくられた人工言語. コンピュータへの指令であるプログラムを書くのに使われる. いろんな特徴を持っている.
+いろんな指標によるランキング  TIOBE Index (TOIBEによる検索エンジンによる各種プログラミング言語の話題度ランキング) RedMonk (RedMonkによるランキング) Interactive: The Top Programming Languages 2018 (IEEEによる2018年度のランキング) PYPL PopularitY of Programming Language (PYPLによるGoogleによるチュートリアル検索ランキング)  </description>
     </item>
     
     <item>

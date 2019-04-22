@@ -66,6 +66,7 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/docker/">Docker</a></li>
 <li><a href="/docs/kubernetes/">Kubernetes</a></li>
 </ul></li>
+<li><a href="/docs/db/"><strong>DB</strong></a></li>
 <li><a href="/docs/crypto/"><strong>Crypto</strong></a>
 
 <ul>
@@ -285,12 +286,37 @@ sudo docker container run --rm --net dude centos curl -s search:9200 <span style
 &gt;     <span style="color:#d88200">&#34;lucene_version&#34;</span>: <span style="color:#d88200">&#34;5.5.4&#34;</span>
 &gt;   <span style="color:#f92672">}</span>,
 &gt;   <span style="color:#d88200">&#34;tagline&#34;</span>: <span style="color:#d88200">&#34;You Know, for Search&#34;</span>
-&gt; <span style="color:#f92672">}</span></code></pre></div></article>
+&gt; <span style="color:#f92672">}</span></code></pre></div>
+<h2 id="image">Image</h2>
+
+<p>Dockerのイメージは2種類のレイヤ構造になっている.</p>
+
+<ul>
+<li>読み込み専用レイヤのイメージレイヤ</li>
+<li>読み書き可能なコンテナレイヤ</li>
+</ul>
+
+<p>Dockerはユニオンファイルシステム(複数のファイルシステム上のディレクトリやファイルをレイヤとしてスタックし, それらを仮想的に一つのファイルシステムとして扱う技術)を使い, コンテナを軽量化している.
+<strong>Reference:</strong> <a href="https://www.techscore.com/blog/2018/12/10/docker-images-and-layers/">知らないと損する Docker イメージのレイヤ構造とは</a></p>
+
+<h3 id="docker-imageをdocker-hubからpullする">docker imageをDocker Hubからpullする</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo docker pull mysql</code></pre></div>
+<h3 id="一括してイメージを最新へ更新する">一括してイメージを最新へ更新する</h3>
+
+<p><strong>Reference:</strong> <a href="https://qiita.com/suin/items/5d65320ee9fb9596249f">一括してDockerイメージを最新にアップデートしたい</a></p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo docker images <span style="color:#111">|</span> cut -d <span style="color:#d88200">&#39; &#39;</span> -f1 <span style="color:#111">|</span> tail -n +2 <span style="color:#111">|</span> sort <span style="color:#111">|</span> uniq <span style="color:#111">|</span> egrep -v <span style="color:#d88200">&#39;^(&lt;none&gt;|ubuntu)$&#39;</span> <span style="color:#111">|</span> xargs -P0 -L1 sudo docker pull</code></pre></div>
+<h3 id="タグ付けしてpull">タグ付けしてpull</h3>
+
+<p>タグけせずにpullを行うとデフォルトでタグ名がlatestになる.<br />
+タグ付けするときはイメージ名の後ろに「:」を付けて, その後ろにタグ名を指定する.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo docker image pull nginx:mainline</code></pre></div>
+<h3 id="既にあるイメージに新たにタグ付けする">既にあるイメージに新たにタグ付けする</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo docker image tag nginx solareenlo/nginx</code></pre></div></article>
 
       
 <div class="align-center book-git-footer justify-between">
   
-  <div><a href="https://github.com/solareenlo/blog-hugo/commit/f02e2219663a7d9dfeca05e251c3c794ba7e769d" title='Last modified Apr 22, 2019 by solareenlo' target="_blank" rel="noopener">
+  <div><a href="https://github.com/solareenlo/blog-hugo/commit/bebebd1f4bd0620750fd4db2d9248013dfb49e4c" title='Last modified Apr 22, 2019 by solareenlo' target="_blank" rel="noopener">
       <img src="/svg/code-merge.svg" /> Apr 22, 2019
     </a>
   </div>
@@ -341,6 +367,13 @@ sudo docker container run --rm --net dude centos curl -s search:9200 <span style
 <li><a href="#ネットワークを新規に作って接続して削除する">ネットワークを新規に作って接続して削除する</a></li>
 <li><a href="#コンテナからコンテナに問い合わせる">コンテナからコンテナに問い合わせる</a></li>
 <li><a href="#2個コンテナを立ててdnsラウンドロビンを使ってみる">2個コンテナを立ててDNSラウンドロビンを使ってみる</a></li>
+</ul></li>
+<li><a href="#image">Image</a>
+<ul>
+<li><a href="#docker-imageをdocker-hubからpullする">docker imageをDocker Hubからpullする</a></li>
+<li><a href="#一括してイメージを最新へ更新する">一括してイメージを最新へ更新する</a></li>
+<li><a href="#タグ付けしてpull">タグ付けしてpull</a></li>
+<li><a href="#既にあるイメージに新たにタグ付けする">既にあるイメージに新たにタグ付けする</a></li>
 </ul></li>
 </ul></li>
 </ul>
