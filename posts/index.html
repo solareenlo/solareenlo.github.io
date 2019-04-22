@@ -1,10 +1,20 @@
-<!DOCTYPE html><html>
+<!DOCTYPE html>
+
+
+
+
+<html>
 
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>
-    Posts | solareenlo</title>
+  
+    
+    
+    Posts
+  
+ | solareenlo</title>
 
 
 <link href="https://fonts.googleapis.com/css?family=Oxygen|Oxygen+Mono:300,400,700" rel="stylesheet">
@@ -12,7 +22,7 @@
 
 <link rel="stylesheet" href="/normalize.min.css">
 
-<link rel="stylesheet" href="/book.min.10fb0ad8a0ad8e88648d3207b12be2833cd3df8a6e3b0955cbe49dc7fba8541c.css">
+<link rel="stylesheet" href="/book.min.6d733a1bb318d505a4084bad93769aeabd95a85484bce6de5b5c3d1f64e6a212.css">
 
 
 <link rel="icon" href="/favicon.png" type="image/x-icon">
@@ -41,12 +51,15 @@ https://github.com/alex-shpak/hugo-book
     
   
   
+  
 
   <style>
   nav ul a[href$="\2fposts\2f "] {
       color: #004ed0;
   }
-  </style><ul>
+  </style>
+
+<ul>
 <li><a href="/"><strong>はじめに</strong></a></li>
 <li><a href="/posts/"><strong>Blog</strong></a></li>
 <li><a href="/docs/programming/"><strong>Programming</strong></a>
@@ -77,20 +90,26 @@ https://github.com/alex-shpak/hugo-book
 </ul></li>
 </ul>
 
+
+
+
+
+</nav>
+
+
+  
 <script>
 (function() {
   var menu = document.querySelector('aside.book-menu nav')
   addEventListener('beforeunload', function(event) {
     localStorage.setItem('menu.scrollTop', menu.scrollTop)
   });
-
   menu.scrollTop = localStorage.getItem('menu.scrollTop')
 })()
 </script>
 
 
 
-</nav>
     </aside>
 
     <div class="book-posts">
@@ -99,44 +118,66 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" />
   </label>
   <strong>
-    Posts</strong>
+  
+    
+    
+    Posts
+  
+</strong>
 </header>
 
       
   
-  <article>
+  
+  
+  <article class="markdown">
+    <h2>
+      <a href="/posts/docker-pass/">ローカル環境のDocker Hubのパスワードをpassで管理する方法</a>
+    </h2>
+    <h5>
+      <strong>Apr 23, 2019</strong>
+    </h5>
+    <p>Ubuntu用
+ なぜDocker Hubのパスワードをpassを使って管理するか? ローカルからDocker Hubにログインすると, その時のパスワードを平文のまま保存されるから.    ここからdocker-credential-passの最新バージョンをダウンロードする. tar -xvf docker-credential-pass.tar.gz (解凍する.) mv docker-credential-pass /usr/local/bin (PATHが通ってるところにファイルを移動する) apt-get install gpg pass (gpgとpassをインストール.) gpg --generate-keyで新しい秘密鍵と公開鍵の組を作る. gpg --list-keysで出てきた, pubの16進数の40文字(大文字のA-F, 0-9の文字列)をコピーする. pass init AAAAAAAAAABBBBBBBBBBCCCCCCCCCCDDDDDDDDDでpassを初期化する. pass insert docker-credential-helpers/docker-pass-initialized-checkでとりあえずのディレクトリを作成する. docker-credential-pass listで ~/.docker/config.jsonに{&quot;credsStore&quot;: &quot;pass&quot;}と書き込む. docker loginでDockerにログインする.   うまくいかないときは権限をchmodを使って変更してみる.
+ curl -O https://github.com/docker/docker-credential-helpers/releases/download/v0.6.0/docker-credential-pass-v0.6.0-amd64.tar.gz tar -xvf docker-credential-pass.tar.gz mv docker-credential-pass /usr/local/bin apt-get install gpg pass gpg --generate-key gpg --list-keys &gt; pub rsa2048 2019-04-22 [SC] [有効期限: 2021-04-21] &gt; D7D35B60A7FA571541959AF3C4821C32793D5F5A // ここの公開鍵をコピーする &gt; uid [ 究極 ] solareenlo &lt;test@example.
+        <a href="/posts/docker-pass/">...</a>
+      
+    </p>
+  </article>
+  
+  <article class="markdown">
     <h2>
       <a href="/posts/programming-bitcoin/">Programming BitcoinをHTMLで読んでみる</a>
     </h2>
     <h5>
       <strong>Apr 21, 2019</strong>
     </h5>
-    <p class="markdown"> 前提条件  RubyがPCにインストールされている. RubyのパッケージマネージャーのgemがPCにインストールされている.  HTML作成 git clone git@github.com:jimmysong/programmingbitcoin.git cd programmingbitcoin gem install asciidoctor find . -name \*.asciidoc -print0 | xargs -0 -n1 asciidoctor これで.asciidocが.htmlに変換されて出力されるので, 任意のブラウザで開いて読む.
+    <p> 前提条件  RubyがPCにインストールされている. RubyのパッケージマネージャーのgemがPCにインストールされている.  HTML作成 git clone git@github.com:jimmysong/programmingbitcoin.git cd programmingbitcoin gem install asciidoctor find . -name \*.asciidoc -print0 | xargs -0 -n1 asciidoctor これで.asciidocが.htmlに変換されて出力されるので, 任意のブラウザで開いて読む.
 References  「Programming Bitcoin」を読んだ jimmysong/programmingbitcoin 脱Word、脱Markdown、asciidocでドキュメント作成する際のアレコレ  
     </p>
   </article>
   
-  <article>
+  <article class="markdown">
     <h2>
       <a href="/posts/bitbank01/">bitbank Drink Meetup #1 〜エンジニア〜</a>
     </h2>
     <h5>
       <strong>Apr 19, 2019</strong>
     </h5>
-    <p class="markdown">  bitbank Drink Meetup #1 〜エンジニア〜の自分なりのメモ
+    <p>  bitbank Drink Meetup #1 〜エンジニア〜の自分なりのメモ
  秘密鍵の安全な生成法 用意するもの
  電磁波を通さない物質で囲まれたシェルター 電波が通じてない山奥 完全にランダムで賽の目が出るサイコロ 上記のセットを複数個  とってもセキュアに暗号資産を管理してくれるところ  xapo  
     </p>
   </article>
   
-  <article>
+  <article class="markdown">
     <h2>
       <a href="/posts/plasma-substrate01/">Plasma × Substrate 勉強会 #1</a>
     </h2>
     <h5>
       <strong>Apr 18, 2019</strong>
     </h5>
-    <p class="markdown">Plasma × Substrate 勉強会 #1の自分なりのメモ
+    <p>Plasma × Substrate 勉強会 #1の自分なりのメモ
  Introducing Plasma Chamber プラズマとは  セキュアにトランザクションをさばく. マークル木を使ってデータを圧縮する. 1分ごとに行う. エンドユーザーが出金したいときはルートチェーンに問い合わせる. 他の人にチャレンジされなければ許可されて出金される仕組み. スケーラブル・セキュリティ・ユーザビリの高いDappasが作れるぞ.  プラズマの悪い点  受取手はトランザクションの履歴を確認しないといけない. ファイナリティは待たないといけない. Exit期間があるのでUIが悪い  Plasma Chamberは上記の3つの悪い点を改善するぞ What I mean by &lsquo;usable&rsquo; High TPS, Less Gas, Work on Mobile, Instant Finality, ERC20使える
 特徴  Exit Game Operatorが資金をかっさらう事がある. それに対する対策を行った. Gas Const/Proof Size Reduction Instantaneous Finality Fast Finality Contract に供託しておく. ユーザー, マーチャント, オペレーター, Ethereum オペレーターまではhttpsで通信する. オペレーターまでなら2秒以下でファイナリティが得られる. Ethereumのブロックチェーンまで待つと2.5分から7分かかる. Plasma MVP → Plasma Cash → Plasma Cashflow → ?
         <a href="/posts/plasma-substrate01/">...</a>
@@ -144,14 +185,14 @@ References  「Programming Bitcoin」を読んだ jimmysong/programmingbitcoin �
     </p>
   </article>
   
-  <article>
+  <article class="markdown">
     <h2>
       <a href="/posts/bitcoind/">bitcoindへのアクセス方法</a>
     </h2>
     <h5>
       <strong>Apr 17, 2019</strong>
     </h5>
-    <p class="markdown"> bitcoindへのアクセス方法3選(bitcoin-cli, curl, POST). 3つともJSON-RPCで通信してる.
+    <p> bitcoindへのアクセス方法3選(bitcoin-cli, curl, POST). 3つともJSON-RPCで通信してる.
  bitcoindとは, 名前の通りunixのデーモンとして動作する事を目的とするBitcoinのクライアントで, JSON-RPCで開発者向けのAPIを提供する. したがって, Webサービスとして動作するBitcoinウォレットのバックエンドとしてや, マイニングプールのサーバーとして使われる.
 Reference: Bitcoinウォレットの比較
  1. bitcoin-cliを使ってアクセスする.  bitcoin-cliとは, bitcoindへJSON-RPCを使ってアクセスするツールのこと.
@@ -163,14 +204,14 @@ bitcoin-cli getblockchaininfo  とか.
     </p>
   </article>
   
-  <article>
+  <article class="markdown">
     <h2>
       <a href="/posts/how-to-make-this-site/">このサイトの作り方</a>
     </h2>
     <h5>
       <strong>Apr 16, 2019</strong>
     </h5>
-    <p class="markdown">Macユーザー用
+    <p>Macユーザー用
 ものすごい初歩からこのサイトの作り方を説明しています. この手順で作成するとGitHubに全ての内容/更新履歴/更新内容が公開されますので, 適宜読み替えてください.
 Macにgitをインストールする https://git-scm.com/download/mac
 GitHubにアカウントを作成する https://github.com
@@ -181,14 +222,14 @@ MacにHomebrewをインストールする /usr/bin/ruby -e &quot;$(curl -fsSL ht
     </p>
   </article>
   
-  <article>
+  <article class="markdown">
     <h2>
       <a href="/posts/hello-world/">Hello World!</a>
     </h2>
     <h5>
       <strong>Apr 14, 2019</strong>
     </h5>
-    <p class="markdown">Hello World!
+    <p>Hello World!
     </p>
   </article>
   

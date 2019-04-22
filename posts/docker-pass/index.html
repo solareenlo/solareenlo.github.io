@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+
+
+
+
+<html>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  
+    
+    ローカル環境のDocker Hubのパスワードをpassで管理する方法
+  
+ | solareenlo</title>
+
+
+<link href="https://fonts.googleapis.com/css?family=Oxygen|Oxygen+Mono:300,400,700" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/normalize.min.css">
+
+<link rel="stylesheet" href="/book.min.6d733a1bb318d505a4084bad93769aeabd95a85484bce6de5b5c3d1f64e6a212.css">
+
+
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+
+
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" style="display: none" id="menu-control" />
+  <main class="flex container">
+    <aside class="book-menu fixed">
+      <nav role="navigation">
+<h2 class="book-brand">
+  <a href="https://solareenlo.com/">solareenlo</a>
+</h2>
+
+
+
+    
+  
+  
+  
+
+  <style>
+  nav ul a[href$="\2fposts\2f docker-pass\2f "] {
+      color: #004ed0;
+  }
+  </style>
+
+<ul>
+<li><a href="/"><strong>はじめに</strong></a></li>
+<li><a href="/posts/"><strong>Blog</strong></a></li>
+<li><a href="/docs/programming/"><strong>Programming</strong></a>
+
+<ul>
+<li><a href="/docs/terminal/">Terminal</a></li>
+<li><a href="/docs/command/">Command</a></li>
+<li><a href="/docs/vim/">Vim</a></li>
+<li><a href="/docs/git/">Git</a></li>
+<li><a href="/docs/github/">GitHub</a></li>
+<li><a href="/docs/rust/">Rust</a></li>
+<li><a href="/docs/hugo/">Hugo</a></li>
+</ul></li>
+<li><a href="/docs/vps/"><strong>VPS</strong></a></li>
+<li><a href="/docs/container/"><strong>Container</strong></a>
+
+<ul>
+<li><a href="/docs/docker/">Docker</a></li>
+<li><a href="/docs/kubernetes/">Kubernetes</a></li>
+</ul></li>
+<li><a href="/docs/db/"><strong>DB</strong></a></li>
+<li><a href="/docs/crypto/"><strong>Crypto</strong></a>
+
+<ul>
+<li><a href="/docs/bitcoin/">Bitcoin</a></li>
+<li><a href="/docs/ethereum/">Ethereum</a></li>
+<li><a href="/docs/iota/">IOTA</a></li>
+</ul></li>
+</ul>
+
+
+
+
+
+</nav>
+
+
+  
+<script>
+(function() {
+  var menu = document.querySelector('aside.book-menu nav')
+  addEventListener('beforeunload', function(event) {
+    localStorage.setItem('menu.scrollTop', menu.scrollTop)
+  });
+  menu.scrollTop = localStorage.getItem('menu.scrollTop')
+})()
+</script>
+
+
+
+    </aside>
+
+    <div class="book-posts">
+      <header class="align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" />
+  </label>
+  <strong>
+  
+    
+    ローカル環境のDocker Hubのパスワードをpassで管理する方法
+  
+</strong>
+</header>
+
+      
+
+<header class="markdown">
+  <h1>ローカル環境のDocker Hubのパスワードをpassで管理する方法</h1>
+  <h5>
+    <strong>Apr 23, 2019</strong>
+  </h5>
+</header>
+<article class="markdown"><blockquote>
+<p>Ubuntu用</p>
+
+<dl>
+<dt><strong>なぜDocker Hubのパスワードをpassを使って管理するか?</strong></dt>
+<dd>ローカルからDocker Hubにログインすると, その時のパスワードを平文のまま保存されるから.</dd>
+</dl>
+</blockquote>
+
+<ol>
+<li><a href="https://github.com/docker/docker-credential-helpers/releases">ここ</a>から<code>docker-credential-pass</code>の最新バージョンをダウンロードする.</li>
+<li><code>tar -xvf docker-credential-pass.tar.gz</code> (解凍する.)</li>
+<li><code>mv docker-credential-pass /usr/local/bin</code> (PATHが通ってるところにファイルを移動する)</li>
+<li><code>apt-get install gpg pass</code> (<a href="https://www.gnupg.org/index.html">gpg</a>と<a href="https://www.passwordstore.org">pass</a>をインストール.)</li>
+<li><code>gpg --generate-key</code>で新しい秘密鍵と公開鍵の組を作る.</li>
+<li><code>gpg --list-keys</code>で出てきた, pubの16進数の40文字(大文字のA-F, 0-9の文字列)をコピーする.</li>
+<li><code>pass init AAAAAAAAAABBBBBBBBBBCCCCCCCCCCDDDDDDDDD</code>でpassを初期化する.</li>
+<li><code>pass insert docker-credential-helpers/docker-pass-initialized-check</code>でとりあえずのディレクトリを作成する.</li>
+<li><code>docker-credential-pass list</code>で</li>
+<li><code>~/.docker/config.json</code>に<code>{&quot;credsStore&quot;: &quot;pass&quot;}</code>と書き込む.</li>
+<li><code>docker login</code>でDockerにログインする.</li>
+</ol>
+
+<blockquote>
+<p>うまくいかないときは権限を<code>chmod</code>を使って変更してみる.</p>
+</blockquote>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -O https://github.com/docker/docker-credential-helpers/releases/download/v0.6.0/docker-credential-pass-v0.6.0-amd64.tar.gz
+tar -xvf docker-credential-pass.tar.gz
+mv docker-credential-pass /usr/local/bin
+apt-get install gpg pass
+gpg --generate-key
+gpg --list-keys
+&gt; pub   rsa2048 <span style="color:#ae81ff">2019</span>-04-22 <span style="color:#f92672">[</span>SC<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>有効期限: <span style="color:#ae81ff">2021</span>-04-21<span style="color:#f92672">]</span>
+&gt;       D7D35B60A7FA571541959AF3C4821C32793D5F5A // ここの公開鍵をコピーする
+&gt; uid           <span style="color:#f92672">[</span>  究極  <span style="color:#f92672">]</span> solareenlo &lt;test@example.com&gt;
+&gt; sub   rsa2048 <span style="color:#ae81ff">2019</span>-04-22 <span style="color:#f92672">[</span>E<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>有効期限: <span style="color:#ae81ff">2021</span>-04-21<span style="color:#f92672">]</span>
+pass init D7D35B60A7FA571541959AF3C4821C32793D5F5A // 上記でコピーした公開鍵をペーストする
+pass insert docker-credential-helpers/docker-pass-initialized-check // ここで入力するパスワードは初期化されるので何でも良い.
+pass show docker-credential-helpers/docker-pass-initialized-check // 先ほど入力したパスワードが表示される
+docker-credential-pass list
+vim ~/.docker/config.json
+// <span style="color:#f92672">{</span>
+//   <span style="color:#d88200">&#34;credsStore&#34;</span>: <span style="color:#d88200">&#34;pass&#34;</span>
+// <span style="color:#f92672">}</span>
+/* と~/.docker/config.jsonに書き込む. */
+docker login</code></pre></div>
+<ul>
+<li><strong>References:</strong>
+
+<ul>
+<li><a href="https://stackoverflow.com/questions/50151833/cannot-login-to-docker-account/50569553">Cannot login to Docker account</a></li>
+<li><a href="https://github.com/docker/docker-credential-helpers/issues/102">Document how to initialize docker-credentials-pass #102</a></li>
+<li><a href="https://docs.docker.com/engine/reference/commandline/login/#credentials-store">Credentials store</a></li>
+</ul></li>
+</ul>
+</article>
+
+      
+    </div>
+  </main>
+
+  
+  
+</body>
+
+</html>
