@@ -79,7 +79,11 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/docker/">Docker</a></li>
 <li><a href="/docs/kubernetes/">Kubernetes</a></li>
 </ul></li>
-<li><a href="/docs/db/"><strong>DB</strong></a></li>
+<li><a href="/docs/db/"><strong>DB</strong></a>
+
+<ul>
+<li><a href="/docs/mysql/">MySQL</a></li>
+</ul></li>
 <li><a href="/docs/crypto/"><strong>Crypto</strong></a>
 
 <ul>
@@ -125,7 +129,740 @@ https://github.com/alex-shpak/hugo-book
 </header>
 
       
-<article class="markdown"></article>
+<article class="markdown">
+
+<h1 id="mysqlとは">MySQLとは</h1>
+
+<p>オープンソースで公開されている関係データベース管理システム(RDBMS)の一つ.</p>
+
+<h1 id="mysqlの使い方">MySQLの使い方</h1>
+
+<h2 id="mysqlのデータ構造">MySQLのデータ構造</h2>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Database
+  -&gt; 複数のTable
+    -&gt; その中にid, title, bodyを持つ表があって,
+    -&gt; 行をRecord, Row, 列をField, Columと言う.</code></pre></div>
+<p>こういったDatabaseやTableやFieldやRecordを扱う言語をSQL(Structured Query Language)と言う.</p>
+
+<h2 id="sqlの実行順番">SQLの実行順番</h2>
+
+<table>
+<thead>
+<tr>
+<th>順番</th>
+<th>操作名</th>
+<th>命令文</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>1</td>
+<td>テーブルの指定</td>
+<td>from</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>結合</td>
+<td>on, join</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>取得条件</td>
+<td>where</td>
+</tr>
+
+<tr>
+<td>4</td>
+<td>グループ化</td>
+<td>group by</td>
+</tr>
+
+<tr>
+<td>5</td>
+<td>関数</td>
+<td>count, sum, avg, min, max</td>
+</tr>
+
+<tr>
+<td>6</td>
+<td>having</td>
+<td>having</td>
+</tr>
+
+<tr>
+<td>7</td>
+<td>検索</td>
+<td>select, distinct</td>
+</tr>
+
+<tr>
+<td>8</td>
+<td>順序</td>
+<td>order by</td>
+</tr>
+
+<tr>
+<td>9</td>
+<td>limit</td>
+<td>limit</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="mysqlの基本的な使い方">MySQLの基本的な使い方</h2>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Ubuntuへのインストール</span>
+sudo apt install mysql-server mysql-client
+
+<span style="color:#75715e"># 起動確認</span>
+sudo service mysql status
+&gt; mysql.service - MySQL Community Server
+
+<span style="color:#75715e"># MySQLの基本設定を行う</span>
+sudo mysql_secure_instalation
+&gt; Securing the MySQL server deployment.
+<span style="color:#75715e"># で, 色々と設定していく.</span>
+
+<span style="color:#75715e"># コンソールからMySQLサーバに接続</span>
+sudo mysql -u root -p
+&gt; Enter password:
+<span style="color:#75715e"># password入力して, MySQLサーバに接続</span>
+&gt; mysql&gt;
+
+<span style="color:#75715e"># helpを見る</span>
+mysql&gt; help<span style="color:#111">;</span>
+
+<span style="color:#75715e"># 状態を見る</span>
+mysql&gt; status
+
+<span style="color:#75715e"># 現在のユーザーを表示</span>
+mysql&gt; <span style="color:#00a8c8">select</span> user<span style="color:#f92672">()</span><span style="color:#111">;</span>
+&gt; +----------------+
+&gt; <span style="color:#111">|</span> user<span style="color:#f92672">()</span>         <span style="color:#111">|</span>
+&gt; +----------------+
+&gt; <span style="color:#111">|</span> root@localhost <span style="color:#111">|</span>
+&gt; +----------------<span style="color:#111">|</span>
+&gt; <span style="color:#ae81ff">1</span> row in <span style="color:#111">set</span> <span style="color:#f92672">(</span><span style="color:#ae81ff">0</span>.00 sec<span style="color:#f92672">)</span>
+
+<span style="color:#75715e"># ; を忘れると</span>
+mysql&gt; <span style="color:#00a8c8">select</span> user<span style="color:#f92672">()</span>
+    -&gt;
+<span style="color:#75715e"># 続きを打てと催促されるので, 慌てずに ; を打つ.</span>
+    -&gt;<span style="color:#111">;</span>
+&gt; +----------------+
+&gt; <span style="color:#111">|</span> user<span style="color:#f92672">()</span>         <span style="color:#111">|</span>
+&gt; +----------------+
+&gt; <span style="color:#111">|</span> root@localhost <span style="color:#111">|</span>
+&gt; +----------------<span style="color:#111">|</span>
+&gt; <span style="color:#ae81ff">1</span> row in <span style="color:#111">set</span> <span style="color:#f92672">(</span><span style="color:#ae81ff">0</span>.00 sec<span style="color:#f92672">)</span>
+
+<span style="color:#75715e"># 現在のコマンドをキャンセルするには \c を打つ.</span>
+mysql&gt; <span style="color:#00a8c8">select</span> user<span style="color:#f92672">()</span>
+    -&gt; <span style="color:#8045ff">\c</span>
+mysql&gt;
+
+<span style="color:#75715e"># MySQLサーバーへの接続を終了する</span>
+mysql&gt; quit<span style="color:#111">;</span>
+mysql&gt; <span style="color:#8045ff">\q</span>
+&gt;Bye</code></pre></div>
+<h2 id="dbを表示-新規作成-削除-操作対象にする">DBを表示・新規作成・削除・操作対象にする</h2>
+
+<p>mysql&gt; の後に打ち込むコマンドをQuery(クエリ)と言う.
+MySQLでのクエリは大文字小文字の区別がない.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># DBを表示する</span>
+mysql&gt; show databases<span style="color:#111">;</span>
+&gt; +--------------------+
+&gt; <span style="color:#111">|</span> Database           <span style="color:#111">|</span>
+&gt; +--------------------+
+&gt; <span style="color:#111">|</span> information_schema <span style="color:#111">|</span>
+&gt; <span style="color:#111">|</span> mysql              <span style="color:#111">|</span>
+&gt; <span style="color:#111">|</span> performance_schema <span style="color:#111">|</span>
+&gt; <span style="color:#111">|</span> sys                <span style="color:#111">|</span>
+&gt; +--------------------<span style="color:#111">|</span>
+&gt; <span style="color:#ae81ff">4</span> row in <span style="color:#111">set</span> <span style="color:#f92672">(</span><span style="color:#ae81ff">0</span>.00 sec<span style="color:#f92672">)</span>
+<span style="color:#75715e"># これらはシステムが用いているDBなのでうっかり消さないように注意する.</span>
+
+<span style="color:#75715e"># 新規にDBを作成する</span>
+mysql&gt; create database mydb01<span style="color:#111">;</span>
+&gt; Query OK, <span style="color:#ae81ff">1</span> row affected <span style="color:#f92672">(</span><span style="color:#ae81ff">0</span>.00 sec<span style="color:#f92672">)</span>
+<span style="color:#75715e"># OKが出れば成功</span>
+mysql&gt; create database mydb02<span style="color:#111">;</span>
+&gt; Query OK, <span style="color:#ae81ff">1</span> row affected <span style="color:#f92672">(</span><span style="color:#ae81ff">0</span>.00 sec<span style="color:#f92672">)</span>
+mysql&gt; create database mydb03<span style="color:#111">;</span>
+&gt; Query OK, <span style="color:#ae81ff">1</span> row affected <span style="color:#f92672">(</span><span style="color:#ae81ff">0</span>.00 sec<span style="color:#f92672">)</span>
+
+<span style="color:#75715e"># DBを削除する</span>
+mysql&gt; drop database mydb03<span style="color:#111">;</span>
+&gt; Query OK, <span style="color:#ae81ff">0</span> row affected <span style="color:#f92672">(</span><span style="color:#ae81ff">0</span>.00 sec<span style="color:#f92672">)</span>
+<span style="color:#75715e"># OKが出れば成功</span>
+
+<span style="color:#75715e"># 操作対象のDBを確認する</span>
+mysql&gt; <span style="color:#00a8c8">select</span> database<span style="color:#f92672">()</span><span style="color:#111">;</span>
+&gt; +--------------------+
+&gt; <span style="color:#111">|</span> database<span style="color:#f92672">()</span>         <span style="color:#111">|</span>
+&gt; +--------------------+
+&gt; <span style="color:#111">|</span> NULL               <span style="color:#111">|</span>
+&gt; +--------------------<span style="color:#111">|</span>
+&gt; <span style="color:#ae81ff">1</span> row in <span style="color:#111">set</span> <span style="color:#f92672">(</span><span style="color:#ae81ff">0</span>.00 sec<span style="color:#f92672">)</span>
+<span style="color:#75715e"># NULLが帰ってきたので, 操作対象のDBがないと言うこと</span>
+
+<span style="color:#75715e"># 操作対象のDBを選択する</span>
+mysql&gt; use mydb02<span style="color:#111">;</span>
+&gt; Database changed
+mysql&gt; <span style="color:#00a8c8">select</span> database<span style="color:#f92672">()</span><span style="color:#111">;</span>
+&gt; +--------------------+
+&gt; <span style="color:#111">|</span> database<span style="color:#f92672">()</span>         <span style="color:#111">|</span>
+&gt; +--------------------+
+&gt; <span style="color:#111">|</span> mydb02             <span style="color:#111">|</span>
+&gt; +--------------------<span style="color:#111">|</span>
+&gt; <span style="color:#ae81ff">1</span> row in <span style="color:#111">set</span> <span style="color:#f92672">(</span><span style="color:#ae81ff">0</span>.00 sec<span style="color:#f92672">)</span></code></pre></div>
+<h2 id="作業用ユーザーを新規作成-削除する">作業用ユーザーを新規作成・削除する</h2>
+
+<p>rootユーザーでうっかりをすると大変なことになるのでDBごとに作業用ユーザーを作成する.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># userを新規作成</span>
+mysql&gt; create user dbuser01@localhost identified by <span style="color:#d88200">&#39;6AVAkig2@#&#39;</span><span style="color:#111">;</span>
+&gt; Query OK, <span style="color:#ae81ff">0</span> raws affected <span style="color:#f92672">(</span><span style="color:#ae81ff">0</span>.00 sec<span style="color:#f92672">)</span>
+
+<span style="color:#75715e"># userにDBの権限を付与する</span>
+&gt;mysql grant all on mydb01.* to dbuser01@localhost<span style="color:#111">;</span>
+<span style="color:#75715e"># grant は権限を与える.</span>
+<span style="color:#75715e"># all は全ての権限を与える.</span>
+<span style="color:#75715e"># mydb01.* はmydb01にあるテーブル全てに対して と言う意味.</span>
+<span style="color:#75715e"># to dbuser@localhost はdbuser@localhostに対して と言う意味.</span>
+&gt; Query OK, <span style="color:#ae81ff">0</span> raws affected <span style="color:#f92672">(</span><span style="color:#ae81ff">0</span>.00 sec<span style="color:#f92672">)</span>
+
+<span style="color:#75715e"># 一度rootでログアウトして, もう一度dbuser01@localhostでログインする.</span>
+mysql&gt; quit<span style="color:#111">;</span>
+&gt; Bye
+mysql -u dbuser01 -p mydb01
+&gt; Enter password:
+6AVAkig2@#
+&gt; Welcome to the MySQL monitor. Commands end with <span style="color:#111">;</span> or <span style="color:#8045ff">\g</span>.
+<span style="color:#75715e"># で, 無事にdbuser01ユーザーでログインができた.</span>
+
+<span style="color:#75715e"># 一応確認.</span>
+mysql&gt; <span style="color:#00a8c8">select</span> user<span style="color:#f92672">()</span><span style="color:#111">;</span>
+&gt; +--------------------+
+&gt; <span style="color:#111">|</span> user<span style="color:#f92672">()</span>             <span style="color:#111">|</span>
+&gt; +--------------------+
+&gt; <span style="color:#111">|</span> dbuser01@localhost <span style="color:#111">|</span>
+&gt; +--------------------<span style="color:#111">|</span>
+&gt; <span style="color:#ae81ff">1</span> row in <span style="color:#111">set</span> <span style="color:#f92672">(</span><span style="color:#ae81ff">0</span>.00 sec<span style="color:#f92672">)</span>
+<span style="color:#75715e"># ユーザーがdbuser01になってる.</span>
+
+<span style="color:#75715e"># アクセスできるDBも確認.</span>
+mysql&gt; show databases<span style="color:#111">;</span>
+&gt; +--------------------+
+&gt; <span style="color:#111">|</span> Database           <span style="color:#111">|</span>
+&gt; +--------------------+
+&gt; <span style="color:#111">|</span> information_schema <span style="color:#111">|</span>
+&gt; <span style="color:#111">|</span> mydb01             <span style="color:#111">|</span>
+&gt; +--------------------<span style="color:#111">|</span>
+&gt; <span style="color:#ae81ff">2</span> row in <span style="color:#111">set</span> <span style="color:#f92672">(</span><span style="color:#ae81ff">0</span>.00 sec<span style="color:#f92672">)</span>
+<span style="color:#75715e"># きちんとmydb01にだけアクセスするようになってる.</span>
+
+<span style="color:#75715e"># ユーザーの削除</span>
+<span style="color:#75715e"># rootユーザーでログインする</span>
+mysql&gt; quit<span style="color:#111">;</span>
+&gt; Bye
+sudo mysql -u root -p
+&gt; Enter password:
+<span style="color:#75715e"># rootユーザーのpasswordを入力して, エンター</span>
+mysql&gt; drop user dbuser01@localhost<span style="color:#111">;</span>
+&gt; Query OK, <span style="color:#ae81ff">0</span> raws affected <span style="color:#f92672">(</span><span style="color:#ae81ff">0</span>.00 sec<span style="color:#f92672">)</span></code></pre></div>
+<h2 id="外部ファイルを実行する">外部ファイルを実行する</h2>
+
+<p>先ずは, 外部ファイル<a href="https://github.com/solareenlo/mysql-practice/blob/master/create_myapp.sql">create_myapp.sql</a>を作成し, rootユーザーでログインするときに外部ファイルを読み込ます方法.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mysql -u root &lt; create_myapp.sql
+&gt;
+<span style="color:#75715e"># 何も反応がないけど, きちんとできてます.</span></code></pre></div>
+<p>もしくは, rootユーザーでログインした後に, 外部ファイルを読み込ます方法.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo mysql -u root
+&gt; Welcome to the MySQL monitor. Commands end with <span style="color:#111">;</span> or <span style="color:#8045ff">\g</span>.
+mysql&gt; <span style="color:#111">source</span> ./create_myapp.sql
+<span style="color:#75715e"># もしくは</span>
+mysql&gt; <span style="color:#8045ff">\.</span> ./create_myapp.sql</code></pre></div>
+<h2 id="tableを新規作成-一覧表示-中身表示-削除する">Tableを新規作成・一覧表示・中身表示・削除する</h2>
+
+<p>Talbeを外部ファイルで作成して, 削除する.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mysql -u myapp_user -p myapp
+&gt; Enter password:
+2VNAhigo@#
+&gt; Welcome to the MySQL monitor. Commands end with <span style="color:#111">;</span> or <span style="color:#8045ff">\g</span>.
+
+<span style="color:#75715e"># tableを外部ファイルを使って作成する</span>
+mysql&gt; <span style="color:#8045ff">\.</span> ./create_table.sql
+&gt; Query OK, <span style="color:#ae81ff">0</span> rows affected <span style="color:#f92672">(</span><span style="color:#ae81ff">0</span>.00 sec<span style="color:#f92672">)</span>
+
+<span style="color:#75715e"># tableの一覧を見る</span>
+mysql&gt; show tables<span style="color:#111">;</span>
+&gt; tableの一覧が見れる
+
+<span style="color:#75715e"># usersというtableの中身を見る</span>
+mysql&gt; desc users<span style="color:#111">;</span>
+&gt; userというtableの中身が表示される
+&gt; <span style="color:#ae81ff">3</span> rows in <span style="color:#111">set</span> <span style="color:#f92672">(</span><span style="color:#ae81ff">0</span>.00 sec<span style="color:#f92672">)</span>
+
+<span style="color:#75715e"># usersというtableの削除方法</span>
+mysql&gt; drop table users<span style="color:#111">;</span>
+&gt; Query OK, <span style="color:#ae81ff">0</span> rows affected <span style="color:#f92672">(</span><span style="color:#ae81ff">0</span>.00 sec<span style="color:#f92672">)</span>
+mysql&gt; show tables<span style="color:#111">;</span>
+&gt; Empty <span style="color:#111">set</span> <span style="color:#f92672">(</span><span style="color:#ae81ff">0</span>.00 sec<span style="color:#f92672">)</span></code></pre></div>
+<h2 id="mysqlが扱えるデータ型">MySQLが扱えるデータ型</h2>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">number:
+- int <span style="color:#75715e"># 整数型</span>
+- float <span style="color:#75715e"># 実数型</span>
+- double <span style="color:#75715e"># 倍精度実数型</span>
+- int unsigned <span style="color:#75715e"># 正の整数型</span>
+
+string:
+- char <span style="color:#75715e"># 固定長の文字列</span>
+- char<span style="color:#f92672">(</span><span style="color:#ae81ff">4</span><span style="color:#f92672">)</span> <span style="color:#75715e"># 4文字固定の文字列</span>
+- varchar <span style="color:#75715e"># 可変長の文字列</span>
+- varchar<span style="color:#f92672">(</span><span style="color:#ae81ff">255</span><span style="color:#f92672">)</span> <span style="color:#75715e"># 255バイトまでの可変長文字列</span>
+- text <span style="color:#75715e"># 可変長の文字列</span>
+
+data/time<span style="color:#111">;</span>
+- date <span style="color:#75715e"># 日付</span>
+- <span style="color:#111">time</span> <span style="color:#75715e"># 時間</span>
+- datetime <span style="color:#75715e"># 日時 &#39;2020-02-22 20:22:33&#39;と表示することができる</span>
+
+true/false<span style="color:#111">;</span>
+- boolean <span style="color:#75715e"># booleanは1桁の整数の型であるtinyint(1)で返される</span>
+  <span style="color:#111">true</span> -&gt; <span style="color:#ae81ff">1</span> <span style="color:#75715e"># 空文字を含むNull以外は全てtrueになる</span>
+  <span style="color:#111">false</span> -&gt; <span style="color:#ae81ff">0</span> <span style="color:#75715e"># Nullがfalse</span></code></pre></div>
+<h2 id="recordの挿入">Recordの挿入</h2>
+
+<p><a href="https://github.com/solareenlo/mysql-practice/blob/master/insert_record.sql">insert_record.sql</a>をご覧ください.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># まずDBにアクセス</span>
+mysql -u myapp_user -p myapp
+&gt; Enter password:
+2VNAhigo@#
+&gt; Welcome to the MySQL monitor. Commands end with <span style="color:#111">;</span> or <span style="color:#8045ff">\g</span>.
+
+mysql&gt; <span style="color:#8045ff">\.</span> ./insert_record.sql
+&gt; 実行結果が返ってくる.</code></pre></div>
+<h2 id="fieldに制限をかける">Fieldに制限をかける</h2>
+
+<p><a href="https://github.com/solareenlo/mysql-practice/blob/master/restricted_field.sql">restricted_field.sql</a>をご覧ください.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># まずDBにアクセス</span>
+mysql -u myapp_user -p myapp
+&gt; Enter password:
+2VNAhigo@#
+&gt; Welcome to the MySQL monitor. Commands end with <span style="color:#111">;</span> or <span style="color:#8045ff">\g</span>.
+
+mysql&gt; <span style="color:#8045ff">\.</span> ./restricted_field.sql
+&gt; 実行結果が返ってくる.</code></pre></div>
+<h2 id="tableの構造を変える">Tableの構造を変える</h2>
+
+<p><a href="https://github.com/solareenlo/mysql-practice/blob/master/change_table.sql">change_table.sql</a>をご覧ください.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># まずDBにアクセス</span>
+mysql -u myapp_user -p myapp
+&gt; Enter password:
+2VNAhigo@#
+&gt; Welcome to the MySQL monitor. Commands end with <span style="color:#111">;</span> or <span style="color:#8045ff">\g</span>.
+
+<span style="color:#75715e"># column(field)を追加する</span>
+<span style="color:#75715e"># 任意の場所にcolmun(field)を追加する(今回はnameの後ろにemailを追加)</span>
+<span style="color:#75715e"># column(field)を削除する</span>
+<span style="color:#75715e"># column(field)名の変更する</span>
+<span style="color:#75715e"># tableの名前を変更する</span>
+mysql&gt; <span style="color:#8045ff">\.</span> ./change_table.sql
+&gt; 実行結果が返ってくる</code></pre></div>
+<h2 id="recordを抽出する">Recordを抽出する</h2>
+
+<p><a href="https://github.com/solareenlo/mysql-practice/blob/master/extract_record.sql">extract_record.sql</a>をご覧ください.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># まずDBにアクセス</span>
+mysql -u myapp_user -p myapp
+&gt; Enter password:
+2VNAhigo@#
+&gt; Welcome to the MySQL monitor. Commands end with <span style="color:#111">;</span> or <span style="color:#8045ff">\g</span>.
+mysql&gt; <span style="color:#8045ff">\.</span> ./extract_record.sql
+&gt; 実行結果が返ってくる</code></pre></div>
+<h2 id="文字列を抽出条件にする">文字列を抽出条件にする</h2>
+
+<p><a href="https://github.com/solareenlo/mysql-practice/blob/master/extract_using_character.sql">extract_using_character.sql</a>をご覧ください.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># まずDBにアクセス</span>
+mysql -u myapp_user -p myapp
+&gt; Enter password:
+2VNAhigo@#
+&gt; Welcome to the MySQL monitor. Commands end with <span style="color:#111">;</span> or <span style="color:#8045ff">\g</span>.
+mysql&gt; <span style="color:#8045ff">\.</span> ./extract_using_character.sql
+&gt; 実行結果が返ってくる</code></pre></div>
+<h2 id="数字で並び替えたり-抽出条件を制限したりする">数字で並び替えたり, 抽出条件を制限したりする</h2>
+
+<p><a href="https://github.com/solareenlo/mysql-practice/blob/master/extract_using_number.sql">extract_using_number.sql</a>をご覧ください.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># まずDBにアクセス</span>
+mysql -u myapp_user -p myapp
+&gt; Enter password:
+2VNAhigo@#
+&gt; Welcome to the MySQL monitor. Commands end with <span style="color:#111">;</span> or <span style="color:#8045ff">\g</span>.
+mysql&gt; <span style="color:#8045ff">\.</span> ./extract_using_number.sql
+&gt; 実行結果が返ってくる</code></pre></div>
+<h2 id="recordを更新-削除する">Recordを更新, 削除する</h2>
+
+<p><a href="https://github.com/solareenlo/mysql-practice/blob/master/update_record.sql">update_record.sql</a>をご覧ください.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># まずDBにアクセス</span>
+mysql -u myapp_user -p myapp
+&gt; Enter password:
+2VNAhigo@#
+&gt; Welcome to the MySQL monitor. Commands end with <span style="color:#111">;</span> or <span style="color:#8045ff">\g</span>.
+mysql&gt; <span style="color:#8045ff">\.</span> ./update_record.sql
+&gt; 実行結果が返ってくる</code></pre></div>
+<h2 id="数値の演算を行ったり-活用したりする">数値の演算を行ったり, 活用したりする</h2>
+
+<p><a href="https://github.com/solareenlo/mysql-practice/blob/master/calculate.sql">calculate.sql</a>をご覧ください.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># まずDBにアクセス</span>
+mysql -u myapp_user -p myapp
+&gt; Enter password:
+2VNAhigo@#
+&gt; Welcome to the MySQL monitor. Commands end with <span style="color:#111">;</span> or <span style="color:#8045ff">\g</span>.
+mysql&gt; <span style="color:#8045ff">\.</span> ./calculate.sql
+&gt; 実行結果が返ってくる</code></pre></div>
+<h2 id="文字列の演算を行う">文字列の演算を行う</h2>
+
+<p><a href="https://github.com/solareenlo/mysql-practice/blob/master/calculate_using_character.sql">calculate_using_character.sql</a>をご覧ください.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># まずDBにアクセス</span>
+mysql -u myapp_user -p myapp
+&gt; Enter password:
+2VNAhigo@#
+&gt; Welcome to the MySQL monitor. Commands end with <span style="color:#111">;</span> or <span style="color:#8045ff">\g</span>.
+mysql&gt; <span style="color:#8045ff">\.</span> ./calculate_using_character.sql
+&gt; 実行結果が返ってくる</code></pre></div>
+<h2 id="enum型を使う">enum型を使う</h2>
+
+<p>enum型とは複数の文字列の中から１つだけを格納できるデータ型.<br />
+enumを使うことで有効なデータ以外は無効なデータとして扱うことができる.<br />
+<a href="https://github.com/solareenlo/mysql-practice/blob/master/enum.sql">enum.sql</a>をご覧ください.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># まずDBにアクセス</span>
+mysql -u myapp_user -p myapp
+&gt; Enter password:
+2VNAhigo@#
+&gt; Welcome to the MySQL monitor. Commands end with <span style="color:#111">;</span> or <span style="color:#8045ff">\g</span>.
+mysql&gt; <span style="color:#8045ff">\.</span> ./enum.sql
+&gt; 実行結果が返ってくる</code></pre></div>
+<h2 id="set型を使う">set型を使う</h2>
+
+<p>set型を使うと複数の選択肢から複数個選べる.<br />
+<a href="https://github.com/solareenlo/mysql-practice/blob/master/set.sql">set.sql</a>をご覧ください.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># まずDBにアクセス</span>
+mysql -u myapp_user -p myapp
+&gt; Enter password:
+2VNAhigo@#
+&gt; Welcome to the MySQL monitor. Commands end with <span style="color:#111">;</span> or <span style="color:#8045ff">\g</span>.
+mysql&gt; <span style="color:#8045ff">\.</span> ./set.sql
+&gt; 実行結果が返ってくる</code></pre></div>
+<h2 id="if-caseの使い方">if, caseの使い方</h2>
+
+<p><a href="https://github.com/solareenlo/mysql-practice/blob/master/if_case.sql">if_case.sql</a>をご覧ください.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># まずDBにアクセス</span>
+mysql -u myapp_user -p myapp
+&gt; Enter password:
+2VNAhigo@#
+&gt; Welcome to the MySQL monitor. Commands end with <span style="color:#111">;</span> or <span style="color:#8045ff">\g</span>.
+mysql&gt; <span style="color:#8045ff">\.</span> ./if_case.sql
+&gt; 実行結果が返ってくる</code></pre></div>
+<h2 id="抽出結果をtableにする">抽出結果をtableにする</h2>
+
+<ul>
+<li>caseで抽出した結果で新たにtableを作成する.</li>
+<li>既存のtableをそのままコピーして新たなtableを作成する.</li>
+<li>既存のtableの構造だけをコピーして新たなtableを作成する.</li>
+
+<li><p>詳しくは<a href="https://github.com/solareenlo/mysql-practice/blob/master/make_table_using_extracted_data.sql">make_table_using_extracted_data.sql</a>をご覧ください.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># まずDBにアクセス</span>
+mysql -u myapp_user -p myapp
+&gt; Enter password:
+2VNAhigo@#
+&gt; Welcome to the MySQL monitor. Commands end with <span style="color:#111">;</span> or <span style="color:#8045ff">\g</span>.
+mysql&gt; <span style="color:#8045ff">\.</span> ./make_table_using_extracted_data.sql
+&gt; 実行結果が返ってくる</code></pre></div></li>
+</ul>
+
+<h2 id="dataの集計処理を行う">Dataの集計処理を行う</h2>
+
+<ul>
+<li>talbe内のnull以外のdataの個数を調べる.</li>
+<li>table内の全てのdataの個数を調べる.</li>
+<li>fieldの合計値, 最小値, 最大値, 平均値を調べる.</li>
+<li>table内の重複しない値のみを抽出する.</li>
+<li>table内の重複しない値の個数を調べる.</li>
+
+<li><p>詳しくは<a href="https://github.com/solareenlo/mysql-practice/blob/master/aggregate_data.sql">aggregate_data.sql</a>をご覧ください.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># まずDBにアクセス</span>
+mysql -u myapp_user -p myapp
+&gt; Enter password:
+2VNAhigo@#
+&gt; Welcome to the MySQL monitor. Commands end with <span style="color:#111">;</span> or <span style="color:#8045ff">\g</span>.
+mysql&gt; <span style="color:#8045ff">\.</span> ./aggregate_data.sql
+&gt; 実行結果が返ってくる</code></pre></div></li>
+</ul>
+
+<h2 id="group集計">Group集計</h2>
+
+<ul>
+<li>groupごとに値を集計するには group by を用いる.</li>
+<li>group by で集計した後の data に対して条件を付ける場合には where ではなく having を用いる.</li>
+<li>having はグループ化に使った値や集計した値しか条件に使えない.</li>
+<li>where と group by を一緒に使った場合は, where の条件でデータの抽出を行った後に group by でその集計を行うことになる.</li>
+
+<li><p>詳しくは<a href="https://github.com/solareenlo/mysql-practice/blob/master/aggregate_group.sql">aggregate_group.sql</a>をご覧ください.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># まずDBにアクセス</span>
+mysql -u myapp_user -p myapp
+&gt; Enter password:
+2VNAhigo@#
+&gt; Welcome to the MySQL monitor. Commands end with <span style="color:#111">;</span> or <span style="color:#8045ff">\g</span>.
+mysql&gt; <span style="color:#8045ff">\.</span> ./aggregate_group.sql
+&gt; 実行結果が返ってくる</code></pre></div></li>
+</ul>
+
+<h2 id="sub-queryを使う">Sub Queryを使う</h2>
+
+<ul>
+<li>一時的にしか使わない tabale だと sub query を用いて, 新たな table を作らずに表示できる.</li>
+
+<li><p>詳しくは<a href="https://github.com/solareenlo/mysql-practice/blob/master/sub_query.sql">sub_query.sql</a>をご覧ください.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># まずDBにアクセス</span>
+mysql -u myapp_user -p myapp
+&gt; Enter password:
+2VNAhigo@#
+&gt; Welcome to the MySQL monitor. Commands end with <span style="color:#111">;</span> or <span style="color:#8045ff">\g</span>.
+mysql&gt; <span style="color:#8045ff">\.</span> ./sub_query.sql
+&gt; 実行結果が返ってくる</code></pre></div></li>
+</ul>
+
+<h2 id="viewを使う">Viewを使う</h2>
+
+<ul>
+<li>抽出条件に名前を付けて table の用に扱える view.</li>
+
+<li><p>詳しくは<a href="https://github.com/solareenlo/mysql-practice/blob/master/view.sql">view.sql</a>をご覧ください.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># まずDBにアクセス</span>
+mysql -u myapp_user -p myapp
+&gt; Enter password:
+2VNAhigo@#
+&gt; Welcome to the MySQL monitor. Commands end with <span style="color:#111">;</span> or <span style="color:#8045ff">\g</span>.
+mysql&gt; <span style="color:#8045ff">\.</span> ./view.sql
+&gt; 実行結果が返ってくる</code></pre></div></li>
+</ul>
+
+<h2 id="transactionを使う">Transactionを使う</h2>
+
+<ul>
+<li>複数の処理をひとまとめにできる transaction.</li>
+
+<li><p>詳しくは<a href="https://github.com/solareenlo/mysql-practice/blob/master/transaction.sql">transaction.sql</a>をご覧ください.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># まずDBにアクセス</span>
+mysql -u myapp_user -p myapp
+&gt; Enter password:
+2VNAhigo@#
+&gt; Welcome to the MySQL monitor. Commands end with <span style="color:#111">;</span> or <span style="color:#8045ff">\g</span>.
+mysql&gt; <span style="color:#8045ff">\.</span> ./transaction.sql
+&gt; 実行結果が返ってくる</code></pre></div></li>
+</ul>
+
+<h2 id="indexを使う">Indexを使う</h2>
+
+<ul>
+<li>index(索引)の設定をしておくと data の抽出が速くなる.</li>
+<li>でも, index は data の追加や更新処理を行うたびに作り直されるので, あまり index を付けすぎると処理が遅くなる.</li>
+
+<li><p>詳しくは<a href="https://github.com/solareenlo/mysql-practice/blob/master/index.sql">index.sql</a>をご覧ください.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># まずDBにアクセス</span>
+mysql -u myapp_user -p myapp
+&gt; Enter password:
+2VNAhigo@#
+&gt; Welcome to the MySQL monitor. Commands end with <span style="color:#111">;</span> or <span style="color:#8045ff">\g</span>.
+mysql&gt; <span style="color:#8045ff">\.</span> ./index.sql
+&gt; 実行結果が返ってくる</code></pre></div></li>
+</ul>
+
+<h2 id="inner-join-内部結合-を使う">Inner join(内部結合)を使う</h2>
+
+<ul>
+<li>inner join = 2つの table に共通の data だけを取得する方法</li>
+
+<li><p>詳しくは<a href="https://github.com/solareenlo/mysql-practice/blob/master/inner_join.sql">inner_join.sql</a>をご覧ください.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># まずDBにアクセス</span>
+mysql -u myapp_user -p myapp
+&gt; Enter password:
+2VNAhigo@#
+&gt; Welcome to the MySQL monitor. Commands end with <span style="color:#111">;</span> or <span style="color:#8045ff">\g</span>.
+mysql&gt; <span style="color:#8045ff">\.</span> ./inner_join.sql
+&gt; 実行結果が返ってくる</code></pre></div></li>
+</ul>
+
+<h2 id="outter-join-外部結合-を使う">Outter join(外部結合)を使う</h2>
+
+<ul>
+<li>outer join (外部結合) = 2つの table で一致しない data も含めて data を取得する方法</li>
+<li>2つの内どちらを軸にするかを決める必要がある.</li>
+
+<li><p>詳しくは<a href="https://github.com/solareenlo/mysql-practice/blob/master/outter_join.sql">outter_join.sql</a>をご覧ください.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># まずDBにアクセス</span>
+mysql -u myapp_user -p myapp
+&gt; Enter password:
+2VNAhigo@#
+&gt; Welcome to the MySQL monitor. Commands end with <span style="color:#111">;</span> or <span style="color:#8045ff">\g</span>.
+mysql&gt; <span style="color:#8045ff">\.</span> ./outter_join.sql
+&gt; 実行結果が返ってくる</code></pre></div></li>
+</ul>
+
+<h2 id="foreign-keyを使う">Foreign keyを使う</h2>
+
+<ul>
+<li>外部キー制約(foreign key)を使うと先に作られた table の field にない data の挿入を許さない書き方ができる.</li>
+<li>紐付ける値同士の型は一致していないといけない.</li>
+<li>外部キー制約に合わないものはエラーになって table に書き込まれない.</li>
+<li>外部キー制約を設定すると, 関連する data がある場合には data の削除や更新が簡単にはできなくなる.</li>
+
+<li><p>詳しくは<a href="https://github.com/solareenlo/mysql-practice/blob/master/foreign_key.sql">foreign_key.sql</a>をご覧ください.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># まずDBにアクセス</span>
+mysql -u myapp_user -p myapp
+&gt; Enter password:
+2VNAhigo@#
+&gt; Welcome to the MySQL monitor. Commands end with <span style="color:#111">;</span> or <span style="color:#8045ff">\g</span>.
+mysql&gt; <span style="color:#8045ff">\.</span> ./foreign_key.sql
+&gt; 実行結果が返ってくる</code></pre></div></li>
+</ul>
+
+<h2 id="last-insert-id-を使う">last_insert_id()を使う</h2>
+
+<ul>
+<li>last_insert_id() を使うと直前に挿入した record の id を引っ張ってきてくれる.</li>
+
+<li><p>詳しくは<a href="https://github.com/solareenlo/mysql-practice/blob/master/last_insert_id.sql">last_insert_id.sql</a>をご覧ください.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># まずDBにアクセス</span>
+mysql -u myapp_user -p myapp
+&gt; Enter password:
+2VNAhigo@#
+&gt; Welcome to the MySQL monitor. Commands end with <span style="color:#111">;</span> or <span style="color:#8045ff">\g</span>.
+mysql&gt; <span style="color:#8045ff">\.</span> ./last_insert_id.sql
+&gt; 実行結果が返ってくる</code></pre></div></li>
+</ul>
+
+<h2 id="triggerを使う">triggerを使う</h2>
+
+<ul>
+<li>ある table で何らかの処理が行われたら, それを trigger にして, またべつの処理を走らせることができる機能を trigger という.</li>
+<li>insert, delete, updateなどの処理に対して trigger を発動できる.</li>
+<li>after, before で設定できる.</li>
+<li>field を縦表示するには<code>show triggers \G</code>のように, 後ろに<code>\G</code>を付けてあげれば良い.</li>
+
+<li><p>詳しくは<a href="https://github.com/solareenlo/mysql-practice/blob/master/trigger.sql">trigger.sql</a>をご覧ください.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># まずDBにアクセス</span>
+mysql -u myapp_user -p myapp
+&gt; Enter password:
+2VNAhigo@#
+&gt; Welcome to the MySQL monitor. Commands end with <span style="color:#111">;</span> or <span style="color:#8045ff">\g</span>.
+mysql&gt; <span style="color:#8045ff">\.</span> ./trigger.sql
+&gt; 実行結果が返ってくる</code></pre></div></li>
+</ul>
+
+<h2 id="triggerで複数の処理を行う">triggerで複数の処理を行う</h2>
+
+<ul>
+<li>trigger で複数の処理を行うには begin end を使えば良い.</li>
+
+<li><p>詳しくは<a href="https://github.com/solareenlo/mysql-practice/blob/master/trigger2.sql">trigger2.sql</a>をご覧ください.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># まずDBにアクセス</span>
+mysql -u myapp_user -p myapp
+&gt; Enter password:
+2VNAhigo@#
+&gt; Welcome to the MySQL monitor. Commands end with <span style="color:#111">;</span> or <span style="color:#8045ff">\g</span>.
+mysql&gt; <span style="color:#8045ff">\.</span> ./trigger2.sql
+&gt; 実行結果が返ってくる</code></pre></div></li>
+</ul>
+
+<h2 id="current-timestampを使う">current_timestampを使う</h2>
+
+<ul>
+<li>on update current_timestamp で更新時にその時の日時で field を自動更新してくれる.</li>
+
+<li><p>詳しくは<a href="https://github.com/solareenlo/mysql-practice/blob/master/current_timestamp.sql">current_timestamp.sql</a>をご覧ください.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># まずDBにアクセス</span>
+mysql -u myapp_user -p myapp
+&gt; Enter password:
+2VNAhigo@#
+&gt; Welcome to the MySQL monitor. Commands end with <span style="color:#111">;</span> or <span style="color:#8045ff">\g</span>.
+mysql&gt; <span style="color:#8045ff">\.</span> ./current_timestamp.sql
+&gt; とりあえずの table が表示される.
+mysql&gt; update posts <span style="color:#111">set</span> <span style="color:#111">title</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#39;updated&#39;</span> where <span style="color:#111">id</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span><span style="color:#111">;</span>
+mysql&gt; <span style="color:#00a8c8">select</span> * from posts<span style="color:#111">;</span>
+&gt; +----+---------+--------+---------------------+---------------------+
+&gt; <span style="color:#111">|</span> id <span style="color:#111">|</span> title   <span style="color:#111">|</span> body   <span style="color:#111">|</span> created             <span style="color:#111">|</span> updated             <span style="color:#111">|</span>
+&gt; +----+---------+--------+---------------------+---------------------+
+&gt; <span style="color:#111">|</span>  <span style="color:#ae81ff">1</span> <span style="color:#111">|</span> title <span style="color:#ae81ff">1</span> <span style="color:#111">|</span> body <span style="color:#ae81ff">1</span> <span style="color:#111">|</span> <span style="color:#ae81ff">2019</span>-02-28 <span style="color:#ae81ff">15</span>:31:16 <span style="color:#111">|</span> <span style="color:#ae81ff">2019</span>-02-28 <span style="color:#ae81ff">15</span>:31:16 <span style="color:#111">|</span>
+&gt; <span style="color:#111">|</span>  <span style="color:#ae81ff">2</span> <span style="color:#111">|</span> updated <span style="color:#111">|</span> body <span style="color:#ae81ff">2</span> <span style="color:#111">|</span> <span style="color:#ae81ff">2019</span>-02-28 <span style="color:#ae81ff">15</span>:31:16 <span style="color:#111">|</span> <span style="color:#ae81ff">2019</span>-02-28 <span style="color:#ae81ff">15</span>:38:20 <span style="color:#111">|</span>
+&gt; <span style="color:#111">|</span>  <span style="color:#ae81ff">3</span> <span style="color:#111">|</span> title <span style="color:#ae81ff">3</span> <span style="color:#111">|</span> body <span style="color:#ae81ff">3</span> <span style="color:#111">|</span> <span style="color:#ae81ff">2019</span>-02-28 <span style="color:#ae81ff">15</span>:31:16 <span style="color:#111">|</span> <span style="color:#ae81ff">2019</span>-02-28 <span style="color:#ae81ff">15</span>:31:16 <span style="color:#111">|</span>
+&gt; +----+---------+--------+---------------------+---------------------+</code></pre></div></li>
+</ul>
+
+<h2 id="日付を扱う">日付を扱う</h2>
+
+<ul>
+<li>MySQLで日付を扱うには日付っぽい書式を使えば自動で認識してくれる.</li>
+<li>日付の変更, 日付の条件指定, 日付の計算, 日付の書式変更</li>
+
+<li><p>詳しくは<a href="https://github.com/solareenlo/mysql-practice/blob/master/date.sql">date.sql</a>をご覧ください.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># まずDBにアクセス</span>
+mysql -u myapp_user -p myapp
+&gt; Enter password:
+2VNAhigo@#
+&gt; Welcome to the MySQL monitor. Commands end with <span style="color:#111">;</span> or <span style="color:#8045ff">\g</span>.
+mysql&gt; <span style="color:#8045ff">\.</span> ./date.sql
+&gt; 実行結果が返ってくる</code></pre></div></li>
+</ul>
+
+<h2 id="backupを行い復元できるようにする">Backupを行い復元できるようにする</h2>
+
+<ul>
+<li><p>backup を作成する方法はいろいろありますが, 簡単な方法は mysqldump を使うこと.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># まず backup する data を作成する.</span>
+mysql -u myapp_user -p myapp
+&gt; Enter password:
+2VNAhigo@#
+&gt; Welcome to the MySQL monitor. Commands end with <span style="color:#111">;</span> or <span style="color:#8045ff">\g</span>.
+mysql&gt; <span style="color:#8045ff">\.</span> ./date.sql <span style="color:#75715e"># とかで data を作ってあげて,</span>
+mysql&gt; quit<span style="color:#111">;</span> <span style="color:#75715e"># 一度 mysql を抜ける.</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># backupを取る.</span>
+mysqldump -u myapp_user -p myapp &gt; 201902_myapp.backup.sql
+&gt; Enter password:
+2VNAhigo@#
+<span style="color:#75715e"># これで backup が取れたことになる.</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 次に一番はじめに作成した data を更新してから, 先程 backup した data で復元を行ってみる.</span>
+mysql -u myapp_user -p myapp
+&gt; Enter password:
+2VNAhigo@#
+&gt; Welcome to the MySQL monitor. Commands end with <span style="color:#111">;</span> or <span style="color:#8045ff">\g</span>.
+mysql&gt; <span style="color:#00a8c8">select</span> * from posts<span style="color:#111">;</span>
+&gt; +----+---------+--------+---------------------+---------------------+
+&gt; <span style="color:#111">|</span> id <span style="color:#111">|</span> title   <span style="color:#111">|</span> body   <span style="color:#111">|</span> created             <span style="color:#111">|</span> updated             <span style="color:#111">|</span>
+&gt; +----+---------+--------+---------------------+---------------------+
+&gt; <span style="color:#111">|</span>  <span style="color:#ae81ff">1</span> <span style="color:#111">|</span> title <span style="color:#ae81ff">1</span> <span style="color:#111">|</span> body <span style="color:#ae81ff">1</span> <span style="color:#111">|</span> <span style="color:#ae81ff">2019</span>-02-28 <span style="color:#ae81ff">16</span>:26:27 <span style="color:#111">|</span> <span style="color:#ae81ff">2019</span>-02-28 <span style="color:#ae81ff">16</span>:26:27 <span style="color:#111">|</span>
+&gt; <span style="color:#111">|</span>  <span style="color:#ae81ff">2</span> <span style="color:#111">|</span> title <span style="color:#ae81ff">2</span> <span style="color:#111">|</span> body <span style="color:#ae81ff">2</span> <span style="color:#111">|</span> <span style="color:#ae81ff">2016</span>-12-31 <span style="color:#ae81ff">10</span>:10:10 <span style="color:#111">|</span> <span style="color:#ae81ff">2019</span>-02-28 <span style="color:#ae81ff">16</span>:26:27 <span style="color:#111">|</span>
+&gt; <span style="color:#111">|</span>  <span style="color:#ae81ff">3</span> <span style="color:#111">|</span> title <span style="color:#ae81ff">3</span> <span style="color:#111">|</span> body <span style="color:#ae81ff">3</span> <span style="color:#111">|</span> <span style="color:#ae81ff">2019</span>-02-28 <span style="color:#ae81ff">16</span>:26:27 <span style="color:#111">|</span> <span style="color:#ae81ff">2019</span>-02-28 <span style="color:#ae81ff">16</span>:26:27 <span style="color:#111">|</span>
+&gt; +----+---------+--------+---------------------+---------------------+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># うっかり table の data を消す.</span>
+mysql&gt; delete from posts where id &gt; <span style="color:#ae81ff">1</span><span style="color:#111">;</span>
+mysql&gt; <span style="color:#00a8c8">select</span> * from posts<span style="color:#111">;</span>
+&gt; +----+---------+--------+---------------------+---------------------+
+&gt; <span style="color:#111">|</span> id <span style="color:#111">|</span> title   <span style="color:#111">|</span> body   <span style="color:#111">|</span> created             <span style="color:#111">|</span> updated             <span style="color:#111">|</span>
+&gt; +----+---------+--------+---------------------+---------------------+
+&gt; <span style="color:#111">|</span>  <span style="color:#ae81ff">1</span> <span style="color:#111">|</span> title <span style="color:#ae81ff">1</span> <span style="color:#111">|</span> body <span style="color:#ae81ff">1</span> <span style="color:#111">|</span> <span style="color:#ae81ff">2019</span>-02-28 <span style="color:#ae81ff">16</span>:26:27 <span style="color:#111">|</span> <span style="color:#ae81ff">2019</span>-02-28 <span style="color:#ae81ff">16</span>:26:27 <span style="color:#111">|</span>
+&gt; +----+---------+--------+---------------------+---------------------+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># backup data を読み込む.</span>
+mysql&gt; <span style="color:#8045ff">\.</span> ./201902_myapp.backup.sql
+<span style="color:#75715e"># たくさん &gt; Query OK, が出る.</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mysql&gt; <span style="color:#00a8c8">select</span> * from posts<span style="color:#111">;</span>
+&gt; +----+---------+--------+---------------------+---------------------+
+&gt; <span style="color:#111">|</span> id <span style="color:#111">|</span> title   <span style="color:#111">|</span> body   <span style="color:#111">|</span> created             <span style="color:#111">|</span> updated             <span style="color:#111">|</span>
+&gt; +----+---------+--------+---------------------+---------------------+
+&gt; <span style="color:#111">|</span>  <span style="color:#ae81ff">1</span> <span style="color:#111">|</span> title <span style="color:#ae81ff">1</span> <span style="color:#111">|</span> body <span style="color:#ae81ff">1</span> <span style="color:#111">|</span> <span style="color:#ae81ff">2019</span>-02-28 <span style="color:#ae81ff">16</span>:26:27 <span style="color:#111">|</span> <span style="color:#ae81ff">2019</span>-02-28 <span style="color:#ae81ff">16</span>:26:27 <span style="color:#111">|</span>
+&gt; <span style="color:#111">|</span>  <span style="color:#ae81ff">2</span> <span style="color:#111">|</span> title <span style="color:#ae81ff">2</span> <span style="color:#111">|</span> body <span style="color:#ae81ff">2</span> <span style="color:#111">|</span> <span style="color:#ae81ff">2016</span>-12-31 <span style="color:#ae81ff">10</span>:10:10 <span style="color:#111">|</span> <span style="color:#ae81ff">2019</span>-02-28 <span style="color:#ae81ff">16</span>:26:27 <span style="color:#111">|</span>
+&gt; <span style="color:#111">|</span>  <span style="color:#ae81ff">3</span> <span style="color:#111">|</span> title <span style="color:#ae81ff">3</span> <span style="color:#111">|</span> body <span style="color:#ae81ff">3</span> <span style="color:#111">|</span> <span style="color:#ae81ff">2019</span>-02-28 <span style="color:#ae81ff">16</span>:26:27 <span style="color:#111">|</span> <span style="color:#ae81ff">2019</span>-02-28 <span style="color:#ae81ff">16</span>:26:27 <span style="color:#111">|</span>
+&gt; +----+---------+--------+---------------------+---------------------+
+<span style="color:#75715e"># backup の復元完了.</span>
+mysql&gt; quit<span style="color:#111">;</span></code></pre></div></li>
+</ul>
+</article>
 
       
 <div class="align-center book-git-footer justify-between">
@@ -153,6 +890,53 @@ https://github.com/alex-shpak/hugo-book
     
   
   
+  <aside class="book-toc fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#mysqlとは">MySQLとは</a></li>
+<li><a href="#mysqlの使い方">MySQLの使い方</a>
+<ul>
+<li><a href="#mysqlのデータ構造">MySQLのデータ構造</a></li>
+<li><a href="#sqlの実行順番">SQLの実行順番</a></li>
+<li><a href="#mysqlの基本的な使い方">MySQLの基本的な使い方</a></li>
+<li><a href="#dbを表示-新規作成-削除-操作対象にする">DBを表示・新規作成・削除・操作対象にする</a></li>
+<li><a href="#作業用ユーザーを新規作成-削除する">作業用ユーザーを新規作成・削除する</a></li>
+<li><a href="#外部ファイルを実行する">外部ファイルを実行する</a></li>
+<li><a href="#tableを新規作成-一覧表示-中身表示-削除する">Tableを新規作成・一覧表示・中身表示・削除する</a></li>
+<li><a href="#mysqlが扱えるデータ型">MySQLが扱えるデータ型</a></li>
+<li><a href="#recordの挿入">Recordの挿入</a></li>
+<li><a href="#fieldに制限をかける">Fieldに制限をかける</a></li>
+<li><a href="#tableの構造を変える">Tableの構造を変える</a></li>
+<li><a href="#recordを抽出する">Recordを抽出する</a></li>
+<li><a href="#文字列を抽出条件にする">文字列を抽出条件にする</a></li>
+<li><a href="#数字で並び替えたり-抽出条件を制限したりする">数字で並び替えたり, 抽出条件を制限したりする</a></li>
+<li><a href="#recordを更新-削除する">Recordを更新, 削除する</a></li>
+<li><a href="#数値の演算を行ったり-活用したりする">数値の演算を行ったり, 活用したりする</a></li>
+<li><a href="#文字列の演算を行う">文字列の演算を行う</a></li>
+<li><a href="#enum型を使う">enum型を使う</a></li>
+<li><a href="#set型を使う">set型を使う</a></li>
+<li><a href="#if-caseの使い方">if, caseの使い方</a></li>
+<li><a href="#抽出結果をtableにする">抽出結果をtableにする</a></li>
+<li><a href="#dataの集計処理を行う">Dataの集計処理を行う</a></li>
+<li><a href="#group集計">Group集計</a></li>
+<li><a href="#sub-queryを使う">Sub Queryを使う</a></li>
+<li><a href="#viewを使う">Viewを使う</a></li>
+<li><a href="#transactionを使う">Transactionを使う</a></li>
+<li><a href="#indexを使う">Indexを使う</a></li>
+<li><a href="#inner-join-内部結合-を使う">Inner join(内部結合)を使う</a></li>
+<li><a href="#outter-join-外部結合-を使う">Outter join(外部結合)を使う</a></li>
+<li><a href="#foreign-keyを使う">Foreign keyを使う</a></li>
+<li><a href="#last-insert-id-を使う">last_insert_id()を使う</a></li>
+<li><a href="#triggerを使う">triggerを使う</a></li>
+<li><a href="#triggerで複数の処理を行う">triggerで複数の処理を行う</a></li>
+<li><a href="#current-timestampを使う">current_timestampを使う</a></li>
+<li><a href="#日付を扱う">日付を扱う</a></li>
+<li><a href="#backupを行い復元できるようにする">Backupを行い復元できるようにする</a></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
 
 
   </main>
