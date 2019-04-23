@@ -81,7 +81,7 @@ DBの使用率ランキング  DB-Engines Ranking  </description>
       <guid>https://solareenlo.com/docs/docker/</guid>
       <description>Dockerとは コンテナ型の仮想環境を作成, 配布, 実行するためのプラットフォーム.
 Dockerについての良い読み物→2018年なぜ私達はコンテナ/Dockerを使うのか.
-Dockerのメリット/デメリット メリット  ゲストOSはホストのKernelを直接使うためオーバーヘッドが小さくて高速 ゲストOSがそれぞれにKernelを持たないため, Memory消費量やDisk消費量を節約できる 必要とする資源が少ないため, 多くのゲストOSを立ち上げることが可能 Kernelを新しく起動する必要がないため, ゲストOSの起動が速い コンテナのイメージ(雛形)からコンテナ(実体)を作るため, 同一構成のOSを簡単に複数作れる テストが通ったイメージは本番環境でもすぐに使える(開発とデプロイのサイクルが速い)  Reference: Dockerの利点   デメリット  提供できるホストの種類が少ない(ホストOSのKernelにLinux使ってたらゲストOSのKernelにWindows Serverは使えない) 完全仮想化に比べて, 管理者が学ぶべきことが多い  Reference: Dockerの欠点   インストール方法 Linux編 curl -fsSL get.docker.com -o get-docker.sh sh get-docker.sh 基本的な使い方 Reference: Dockerコマンドメモ
+Dockerのメリット/デメリット メリット  ゲストOSはホストのKernelを直接使うためオーバーヘッドが小さくて高速 ゲストOSがそれぞれにKernelを持たないため, Memory消費量やDisk消費量を節約できる 必要とする資源が少ないため, 多くのゲストOSを立ち上げることが可能 Kernelを新しく起動する必要がないため, ゲストOSの起動が速い コンテナのイメージ(雛形)からコンテナ(実体)を作るため, 同一構成のOSを簡単に複数作れる テストが通ったイメージは本番環境でもすぐに使える(開発とデプロイのサイクルが速い)  Reference: Dockerの利点   デメリット  提供できるホストの種類が少ない(ホストOSのKernelにLinux使ってたらゲストOSのKernelにWindows Serverは使えない) 完全仮想化に比べて, 管理者が学ぶべきことが多い  Reference: Dockerの欠点   インストール方法 Linux編 curl -fsSL get.docker.com -o get-docker.sh sh get-docker.sh 基本的な使い方(v18.09.5) Reference: Dockerコマンドメモ
 一覧/log表示 sudo docker container run --publish 80:80 --name webhost nginx // nginxを起動 sudo docker container run --publish 80:80 --detach --name webhost nginx // デーモンとして起動 sudo docker container ls // 起動しているコンテナ一覧表示 &amp;gt; CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES &amp;gt; b6e083217819 nginx &amp;#34;nginx -g &amp;#39;daemon of…&amp;#34; 7 minutes ago Up 23 seconds 0.</description>
     </item>
     
@@ -123,8 +123,8 @@ GitHub Pagesで静的サイトを公開する cd 作業ディレクトリ名 git
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://solareenlo.com/docs/hugo/</guid>
-      <description> Hugoとは 静的なhtmlを生成する事ができる静的サイトジェネレータの1つ. Go言語で書かれてる. 記事を書くだけならGo言語を知らなくても良い. 記事はMarkdownで書ける.
-.mdを削除した時に.htmlも同様に削除するオプション hugo server -D --cleanDestinationDir  </description>
+      <description>Hugoとは 静的なhtmlを生成する事ができる静的サイトジェネレータの1つ. Go言語で書かれてる. 記事を書くだけならGo言語を知らなくても良い. 記事はMarkdownで書ける.
+.mdを削除した時に.htmlも同様に削除するオプション hugo server -D --cleanDestinationDir  MacでHugoとGitHub Pagesを使ってのサイトの作り方 こちら</description>
     </item>
     
     <item>
@@ -157,7 +157,7 @@ Kubernetesが他と違うところは, ① 様々なOSSと組み合わせるこ�
       
       <guid>https://solareenlo.com/docs/mongodb/</guid>
       <description>MongoDBとは オープンソースで公開されているドキュメント指向データベースの1つ.
-mongodbのコンソールからの使い方色々 Excel, Oracle, MongoDB, Object の大まかな比較    Excel Oracle MongoDB Object     ブック Schema Database 特になし   シート Table Collection 特になし   行 Row Document Object群   列 Column Field Key   セル Field Value Value    mongodbの起動の仕方は, $ mongod // mongodbが起動する $ CNTL-C // mongodbを停止する // か, $ sudo service mongod start $ sudo service mongod stop mongodbへのコンソールからのアクセスの仕方は, $ mongo // アクセスして, &amp;gt; exit // 終了.</description>
+mongodb(v4.0.5)のコンソールからの使い方色々 Excel, Oracle, MongoDB, Object の大まかな比較    Excel Oracle MongoDB Object     ブック Schema Database 特になし   シート Table Collection 特になし   行 Row Document Object群   列 Column Field Key   セル Field Value Value    mongodbの起動の仕方は, $ mongod // mongodbが起動する $ CNTL-C // mongodbを停止する // か, $ sudo service mongod start $ sudo service mongod stop mongodbへのコンソールからのアクセスの仕方は, $ mongo // アクセスして, &amp;gt; exit // 終了.</description>
     </item>
     
     <item>
@@ -167,7 +167,8 @@ mongodbのコンソールからの使い方色々 Excel, Oracle, MongoDB, Object
       
       <guid>https://solareenlo.com/docs/mysql/</guid>
       <description>MySQLとは オープンソースで公開されている関係データベース管理システム(RDBMS)の1つ.
-MySQLの使い方 MySQLのデータ構造 Database -&amp;gt; 複数のTable -&amp;gt; その中にid, title, bodyを持つ表があって, -&amp;gt; 行をRecord, Row, 列をField, Columと言う. こういったDatabaseやTableやFieldやRecordを扱う言語をSQL(Structured Query Language)と言う.
+MySQL(v14.14)の使い方 (Ver 14.14 Distrib 5.7.25, for Linux (x86_64))
+MySQLのデータ構造 Database -&amp;gt; 複数のTable -&amp;gt; その中にid, title, bodyを持つ表があって, -&amp;gt; 行をRecord, Row, 列をField, Columと言う. こういったDatabaseやTableやFieldやRecordを扱う言語をSQL(Structured Query Language)と言う.
 SQLの実行順番    順番 操作名 命令文     1 テーブルの指定 from   2 結合 on, join   3 取得条件 where   4 グループ化 group by   5 関数 count, sum, avg, min, max   6 having having   7 検索 select, distinct   8 順序 order by   9 limit limit    MySQLの基本的な使い方 # Ubuntuへのインストール sudo apt install mysql-server mysql-client # 起動確認 sudo service mysql status &amp;gt; mysql.</description>
     </item>
     
@@ -221,7 +222,7 @@ SQLの実行順番    順番 操作名 命令文     1 テーブルの指定 fro
       
       <guid>https://solareenlo.com/docs/vim/</guid>
       <description> Vimとは viから派生したテキストエディタ. プラグインを導入したり, .vimrcの設定を変更したりして, 自分好みにカスタマイズがどんどんできる.
-プラグインを導入する方法 プラグインランキングサイト  VimAwesome  オススメの使い方記事  さっさと帰りたい怠け者エンジニアは vim をマスターしましょう その2 - 編集 さっさと帰りたい怠け者エンジニアは vim をマスターしましょう その1 - 基本と移動  </description>
+プラグインを導入する方法  Shougo/dein.vim  プラグインランキングサイト  VimAwesome  オススメの使い方記事  さっさと帰りたい怠け者エンジニアは vim をマスターしましょう その2 - 編集 さっさと帰りたい怠け者エンジニアは vim をマスターしましょう その1 - 基本と移動  </description>
     </item>
     
     <item>

@@ -170,7 +170,7 @@ Dockerについての良い読み物→<a href="http://iga-ninja.hatenablog.com/
 <h3 id="linux編">Linux編</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -fsSL get.docker.com -o get-docker.sh
 sh get-docker.sh</code></pre></div>
-<h2 id="基本的な使い方">基本的な使い方</h2>
+<h2 id="基本的な使い方-v18-09-5">基本的な使い方(v18.09.5)</h2>
 
 <p><strong>Reference:</strong> <a href="https://qiita.com/curseoff/items/a9e64ad01d673abb6866">Dockerコマンドメモ</a></p>
 
@@ -340,7 +340,17 @@ sudo docker container run --rm --net dude centos curl -s search:9200 <span style
 タグ付けするときはイメージ名の後ろに「:」を付けて, その後ろにタグ名を指定する.</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo docker image pull nginx:mainline</code></pre></div>
 <h3 id="既にあるイメージに新たにタグ付けする">既にあるイメージに新たにタグ付けする</h3>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo docker image tag nginx solareenlo/nginx</code></pre></div></article>
+
+<p>タグ付けするとDocker Hubにタグ別にどんどんイメージをpushできる.<br />
+タグを変えるだけだと同じイメージが使われる.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo docker image tag nginx solareenlo/nginx</code></pre></div>
+<h3 id="docker-hubにログインする">Docker Hubにログインする</h3>
+
+<p>そのままローカル環境からDocker Hubにログインするとパスワードが平文のまま保存されるのでpassなどを使って暗号化して保存する.
+保存方法は<a href="/posts/docker-pass/">こらら</a>.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo docker login</code></pre></div>
+<h3 id="docker-hubに自分でタグ付けしたイメージをpushする">Docker Hubに自分でタグ付けしたイメージをpushする</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo docker push solareenlo/nginx</code></pre></div></article>
 
       
 <div class="align-center book-git-footer justify-between">
@@ -382,7 +392,7 @@ sudo docker container run --rm --net dude centos curl -s search:9200 <span style
 <ul>
 <li><a href="#linux編">Linux編</a></li>
 </ul></li>
-<li><a href="#基本的な使い方">基本的な使い方</a>
+<li><a href="#基本的な使い方-v18-09-5">基本的な使い方(v18.09.5)</a>
 <ul>
 <li><a href="#一覧-log表示">一覧/log表示</a></li>
 <li><a href="#コンテナを起動-停止-再起動">コンテナを起動/停止/再起動</a></li>
@@ -405,6 +415,8 @@ sudo docker container run --rm --net dude centos curl -s search:9200 <span style
 <li><a href="#一括してイメージを最新へ更新する">一括してイメージを最新へ更新する</a></li>
 <li><a href="#タグ付けしてpull">タグ付けしてpull</a></li>
 <li><a href="#既にあるイメージに新たにタグ付けする">既にあるイメージに新たにタグ付けする</a></li>
+<li><a href="#docker-hubにログインする">Docker Hubにログインする</a></li>
+<li><a href="#docker-hubに自分でタグ付けしたイメージをpushする">Docker Hubに自分でタグ付けしたイメージをpushする</a></li>
 </ul></li>
 </ul></li>
 </ul>
