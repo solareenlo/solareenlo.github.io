@@ -206,8 +206,9 @@ GitHub Pagesで静的サイトを公開する cd 作業ディレクトリ名 git
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://solareenlo.com/docs/hugo/</guid>
-      <description>Hugoとは 静的なhtmlを生成する事ができる静的サイトジェネレータの1つ. Go言語で書かれてる. 記事を書くだけならGo言語を知らなくても良い. 記事はMarkdownで書ける.
-.mdを削除した時に.htmlも同様に削除するオプション hugo server -D --cleanDestinationDir  MacでHugoとGitHub Pagesを使ってのサイトの作り方 こちら</description>
+      <description> Hugoとは 静的なhtmlを生成する事ができる静的サイトジェネレータの1つ. Go言語で書かれてる. 記事を書くだけならGo言語を知らなくても良い. 記事はMarkdownで書ける.
+.mdを削除した時に.htmlも同様に削除するオプション hugo server -D --cleanDestinationDir  MacでHugoとGitHub Pagesを使ってのサイトの作り方 こちら
+Hugoのコードの色選択  https://help.farbox.com/pygments.html Chroma Style Gallery  </description>
     </item>
     
     <item>
@@ -282,7 +283,7 @@ SQLの実行順番    順番 操作名 命令文     1 テーブルの指定 fro
       
       <guid>https://solareenlo.com/docs/rust/</guid>
       <description> Rustとは Mozillaが支援するオープンソースのシステムプログラミング言語のこと. 速度, 安全性, 平行性の3つのゴールにフォーカスしている.
-ドキュメントの日本語訳  Rustの日本語ドキュメント/Japanese Docs for Rust The Embedded Rust Book  チートシート  Rust Language Cheat Sheet  </description>
+ドキュメントの日本語訳  Rustの日本語ドキュメント/Japanese Docs for Rust The Embedded Rust Book  チートシート  Rust Language Cheat Sheet  Hello World! fn main() { // 世界よ、こんにちは  println!(&amp;#34;Hello, world!&amp;#34;); } </description>
     </item>
     
     <item>

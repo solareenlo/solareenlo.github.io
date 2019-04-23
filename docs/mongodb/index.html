@@ -21,7 +21,7 @@
 
 <link rel="stylesheet" href="/normalize.min.css">
 
-<link rel="stylesheet" href="/book.min.6d733a1bb318d505a4084bad93769aeabd95a85484bce6de5b5c3d1f64e6a212.css">
+<link rel="stylesheet" href="/book.min.ad85a119994b6629b2ea7682f2b6606ea4797b2765d72bdb48ba0ae36e3be5c6.css">
 
 
 <link rel="icon" href="/favicon.png" type="image/x-icon">
@@ -191,62 +191,62 @@ https://github.com/alex-shpak/hugo-book
 </table>
 
 <h2 id="mongodbの起動の仕方は">mongodbの起動の仕方は,</h2>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ mongod // mongodbが起動する
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ mongod // mongodbが起動する
 $ CNTL-C // mongodbを停止する
 // か,
 $ sudo service mongod start
 $ sudo service mongod stop</code></pre></div>
 <h2 id="mongodbへのコンソールからのアクセスの仕方は">mongodbへのコンソールからのアクセスの仕方は,</h2>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ mongo // アクセスして,
-&gt; <span style="color:#111">exit</span> // 終了.
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ mongo // アクセスして,
+&gt; <span style="color:#b58900">exit</span> // 終了.
 bye</code></pre></div>
 <h2 id="dbの作成-中身を見る">dbの作成&amp;中身を見る</h2>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt; use sample // sampleというdbを作成 or そこにアクセスする
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt; use sample // sampleというdbを作成 or そこにアクセスする
 switched to db sample
 &gt; show dbs // 存在するdbの種類を見せてくれる
-admin   <span style="color:#ae81ff">0</span>.000GB
-<span style="color:#111">local</span>   <span style="color:#ae81ff">0</span>.000GB
-sample  <span style="color:#ae81ff">0</span>.000GB // こんな感じで帰ってくる
-&gt; db.stats<span style="color:#f92672">()</span> // これで中身の情報を見せてくれる</code></pre></div>
+admin   <span style="color:#2aa198">0</span>.000GB
+<span style="color:#b58900">local</span>   <span style="color:#2aa198">0</span>.000GB
+sample  <span style="color:#2aa198">0</span>.000GB // こんな感じで帰ってくる
+&gt; db.stats<span style="color:#719e07">()</span> // これで中身の情報を見せてくれる</code></pre></div>
 <h2 id="collection-ディレクトリ-フォルダみたいなもの-の作成">Collection(ディレクトリ・フォルダみたいなもの)の作成</h2>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt; db.createCollection<span style="color:#f92672">(</span><span style="color:#d88200">&#34;products&#34;</span><span style="color:#f92672">)</span> // productsというCollectionを作成する
-<span style="color:#f92672">{</span> <span style="color:#d88200">&#34;ok&#34;</span> : <span style="color:#ae81ff">1</span><span style="color:#f92672">}</span>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt; db.createCollection<span style="color:#719e07">(</span><span style="color:#2aa198">&#34;products&#34;</span><span style="color:#719e07">)</span> // productsというCollectionを作成する
+<span style="color:#719e07">{</span> <span style="color:#2aa198">&#34;ok&#34;</span> : <span style="color:#2aa198">1</span><span style="color:#719e07">}</span>
 &gt; show collections
 products</code></pre></div>
 <h2 id="dbをコピー-削除する">dbをコピー&amp;削除する</h2>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt; db.copyDatabase<span style="color:#f92672">(</span><span style="color:#d88200">&#39;sample&#39;</span>, <span style="color:#d88200">&#39;new_sample&#39;</span><span style="color:#f92672">)</span> // mongodb4.0で非推奨になった
-<span style="color:#f92672">{</span> <span style="color:#d88200">&#34;ok&#34;</span> : <span style="color:#ae81ff">1</span><span style="color:#f92672">}</span>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt; db.copyDatabase<span style="color:#719e07">(</span><span style="color:#2aa198">&#39;sample&#39;</span>, <span style="color:#2aa198">&#39;new_sample&#39;</span><span style="color:#719e07">)</span> // mongodb4.0で非推奨になった
+<span style="color:#719e07">{</span> <span style="color:#2aa198">&#34;ok&#34;</span> : <span style="color:#2aa198">1</span><span style="color:#719e07">}</span>
 &gt; show dbs
-admin       <span style="color:#ae81ff">0</span>.000GB
-<span style="color:#111">local</span>       <span style="color:#ae81ff">0</span>.000GB
-new_sample  <span style="color:#ae81ff">0</span>.000GB
-sample      <span style="color:#ae81ff">0</span>.000GB
+admin       <span style="color:#2aa198">0</span>.000GB
+<span style="color:#b58900">local</span>       <span style="color:#2aa198">0</span>.000GB
+new_sample  <span style="color:#2aa198">0</span>.000GB
+sample      <span style="color:#2aa198">0</span>.000GB
 &gt; use new_sample
-&gt; db.dropDatabase<span style="color:#f92672">()</span>
-<span style="color:#f92672">{</span> <span style="color:#d88200">&#34;dropped&#34;</span> : <span style="color:#d88200">&#34;new_sample&#34;</span>, <span style="color:#d88200">&#34;ok&#34;</span> : <span style="color:#ae81ff">1</span> <span style="color:#f92672">}</span>
+&gt; db.dropDatabase<span style="color:#719e07">()</span>
+<span style="color:#719e07">{</span> <span style="color:#2aa198">&#34;dropped&#34;</span> : <span style="color:#2aa198">&#34;new_sample&#34;</span>, <span style="color:#2aa198">&#34;ok&#34;</span> : <span style="color:#2aa198">1</span> <span style="color:#719e07">}</span>
 &gt; show dbs
-admin       <span style="color:#ae81ff">0</span>.000GB
-<span style="color:#111">local</span>       <span style="color:#ae81ff">0</span>.000GB
-sample      <span style="color:#ae81ff">0</span>.000GB</code></pre></div>
+admin       <span style="color:#2aa198">0</span>.000GB
+<span style="color:#b58900">local</span>       <span style="color:#2aa198">0</span>.000GB
+sample      <span style="color:#2aa198">0</span>.000GB</code></pre></div>
 <h2 id="collectionの名前変更">Collectionの名前変更</h2>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt; db.createCollection<span style="color:#f92672">(</span><span style="color:#d88200">&#39;pricee&#39;</span><span style="color:#f92672">)</span>
-<span style="color:#f92672">{</span> <span style="color:#d88200">&#34;ok&#34;</span> : <span style="color:#ae81ff">1</span> <span style="color:#f92672">}</span>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt; db.createCollection<span style="color:#719e07">(</span><span style="color:#2aa198">&#39;pricee&#39;</span><span style="color:#719e07">)</span>
+<span style="color:#719e07">{</span> <span style="color:#2aa198">&#34;ok&#34;</span> : <span style="color:#2aa198">1</span> <span style="color:#719e07">}</span>
 &gt; show collections
 pricee
 products
-&gt; db.pricee.renameCollection<span style="color:#f92672">(</span><span style="color:#d88200">&#39;price&#39;</span>, <span style="color:#111">true</span><span style="color:#f92672">)</span> // ここのtrueは名前変更前のcollectionは削除するということ
-<span style="color:#f92672">{</span> <span style="color:#d88200">&#34;ok&#34;</span> : <span style="color:#ae81ff">1</span> <span style="color:#f92672">}</span>
+&gt; db.pricee.renameCollection<span style="color:#719e07">(</span><span style="color:#2aa198">&#39;price&#39;</span>, <span style="color:#b58900">true</span><span style="color:#719e07">)</span> // ここのtrueは名前変更前のcollectionは削除するということ
+<span style="color:#719e07">{</span> <span style="color:#2aa198">&#34;ok&#34;</span> : <span style="color:#2aa198">1</span> <span style="color:#719e07">}</span>
 &gt; show collections
 price
 products</code></pre></div>
 <h2 id="collectionの削除">Collectionの削除</h2>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt; db.price.drop<span style="color:#f92672">()</span>
-<span style="color:#111">true</span>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt; db.price.drop<span style="color:#719e07">()</span>
+<span style="color:#b58900">true</span>
 &gt; show collections
 products</code></pre></div>
 <h2 id="collectionにdocumentを追加">CollectionにDocumentを追加</h2>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt; db.products.insert<span style="color:#f92672">({</span>name: <span style="color:#d88200">&#39;pen&#39;</span>, price: <span style="color:#ae81ff">150</span><span style="color:#f92672">})</span>
-WriteResult<span style="color:#f92672">({</span> <span style="color:#d88200">&#34;nInserted&#34;</span> : <span style="color:#ae81ff">1</span> <span style="color:#f92672">})</span></code></pre></div>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt; db.products.insert<span style="color:#719e07">({</span>name: <span style="color:#2aa198">&#39;pen&#39;</span>, price: <span style="color:#2aa198">150</span><span style="color:#719e07">})</span>
+WriteResult<span style="color:#719e07">({</span> <span style="color:#2aa198">&#34;nInserted&#34;</span> : <span style="color:#2aa198">1</span> <span style="color:#719e07">})</span></code></pre></div>
 <h2 id="オペレーターの種類">オペレーターの種類</h2>
 
 <table>
@@ -296,27 +296,27 @@ WriteResult<span style="color:#f92672">({</span> <span style="color:#d88200">&#3
 </table>
 
 <h2 id="documentを表示-検索">Documentを表示&amp;検索</h2>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt; db.products.find<span style="color:#f92672">()</span> // collectionの中身のdocumentを全部表示
-<span style="color:#f92672">{</span> <span style="color:#d88200">&#34;_id&#34;</span> : ObjectId<span style="color:#f92672">(</span><span style="color:#d88200">&#34;5c2d4199c5195731b5149377&#34;</span><span style="color:#f92672">)</span>, <span style="color:#d88200">&#34;name&#34;</span> : <span style="color:#d88200">&#34;pen&#34;</span>, <span style="color:#d88200">&#34;price&#34;</span> : <span style="color:#ae81ff">150</span> <span style="color:#f92672">}</span>
-&gt; db.products.find<span style="color:#f92672">({</span>price: <span style="color:#f92672">{</span><span style="color:#111">$gt</span>: <span style="color:#ae81ff">100</span><span style="color:#f92672">}})</span> // priceが100より大きいものを検索
-<span style="color:#f92672">{</span> <span style="color:#d88200">&#34;_id&#34;</span> : ObjectId<span style="color:#f92672">(</span><span style="color:#d88200">&#34;5c2d4199c5195731b5149377&#34;</span><span style="color:#f92672">)</span>, <span style="color:#d88200">&#34;name&#34;</span> : <span style="color:#d88200">&#34;pen&#34;</span>, <span style="color:#d88200">&#34;price&#34;</span> : <span style="color:#ae81ff">150</span> <span style="color:#f92672">}</span>
-&gt; db.products.find<span style="color:#f92672">({</span>price: <span style="color:#f92672">{</span><span style="color:#111">$gt</span>: <span style="color:#ae81ff">200</span><span style="color:#f92672">}})</span> // priceが200より小さいものを検索
-&gt;</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt; db.characters.find<span style="color:#f92672">()</span>.pretty<span style="color:#f92672">()</span> // charactersの中身を下のように表現してくれる
-<span style="color:#f92672">{</span>
-  <span style="color:#d88200">&#34;_id&#34;</span> : ObjectId<span style="color:#f92672">(</span><span style="color:#d88200">&#34;5c280309156ceb35b1564cff&#34;</span><span style="color:#f92672">)</span>,
-  <span style="color:#d88200">&#34;name&#34;</span> : <span style="color:#d88200">&#34;sola&#34;</span>,
-  <span style="color:#d88200">&#34;age&#34;</span> : <span style="color:#ae81ff">33</span>,
-  <span style="color:#d88200">&#34;__v&#34;</span> : <span style="color:#ae81ff">0</span>
-<span style="color:#f92672">}</span></code></pre></div>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt; db.products.find<span style="color:#719e07">()</span> // collectionの中身のdocumentを全部表示
+<span style="color:#719e07">{</span> <span style="color:#2aa198">&#34;_id&#34;</span> : ObjectId<span style="color:#719e07">(</span><span style="color:#2aa198">&#34;5c2d4199c5195731b5149377&#34;</span><span style="color:#719e07">)</span>, <span style="color:#2aa198">&#34;name&#34;</span> : <span style="color:#2aa198">&#34;pen&#34;</span>, <span style="color:#2aa198">&#34;price&#34;</span> : <span style="color:#2aa198">150</span> <span style="color:#719e07">}</span>
+&gt; db.products.find<span style="color:#719e07">({</span>price: <span style="color:#719e07">{</span><span style="color:#268bd2">$gt</span>: <span style="color:#2aa198">100</span><span style="color:#719e07">}})</span> // priceが100より大きいものを検索
+<span style="color:#719e07">{</span> <span style="color:#2aa198">&#34;_id&#34;</span> : ObjectId<span style="color:#719e07">(</span><span style="color:#2aa198">&#34;5c2d4199c5195731b5149377&#34;</span><span style="color:#719e07">)</span>, <span style="color:#2aa198">&#34;name&#34;</span> : <span style="color:#2aa198">&#34;pen&#34;</span>, <span style="color:#2aa198">&#34;price&#34;</span> : <span style="color:#2aa198">150</span> <span style="color:#719e07">}</span>
+&gt; db.products.find<span style="color:#719e07">({</span>price: <span style="color:#719e07">{</span><span style="color:#268bd2">$gt</span>: <span style="color:#2aa198">200</span><span style="color:#719e07">}})</span> // priceが200より小さいものを検索
+&gt;</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt; db.characters.find<span style="color:#719e07">()</span>.pretty<span style="color:#719e07">()</span> // charactersの中身を下のように表現してくれる
+<span style="color:#719e07">{</span>
+  <span style="color:#2aa198">&#34;_id&#34;</span> : ObjectId<span style="color:#719e07">(</span><span style="color:#2aa198">&#34;5c280309156ceb35b1564cff&#34;</span><span style="color:#719e07">)</span>,
+  <span style="color:#2aa198">&#34;name&#34;</span> : <span style="color:#2aa198">&#34;sola&#34;</span>,
+  <span style="color:#2aa198">&#34;age&#34;</span> : <span style="color:#2aa198">33</span>,
+  <span style="color:#2aa198">&#34;__v&#34;</span> : <span style="color:#2aa198">0</span>
+<span style="color:#719e07">}</span></code></pre></div>
 <h2 id="document内容の更新">Document内容の更新</h2>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt; db.products.update<span style="color:#f92672">({</span>name: <span style="color:#f92672">{</span><span style="color:#111">$eq</span>: <span style="color:#d88200">&#39;pen&#39;</span><span style="color:#f92672">}}</span>, <span style="color:#f92672">{</span><span style="color:#111">$set</span>: <span style="color:#f92672">{</span>price: <span style="color:#ae81ff">200</span><span style="color:#f92672">}}</span>, <span style="color:#f92672">{</span>upsert: false, multi: true<span style="color:#f92672">})</span>
-WriteResult<span style="color:#f92672">({</span> <span style="color:#d88200">&#34;nMatched&#34;</span> : <span style="color:#ae81ff">1</span>, <span style="color:#d88200">&#34;nUpserted&#34;</span> : <span style="color:#ae81ff">0</span>, <span style="color:#d88200">&#34;nModified&#34;</span> : <span style="color:#ae81ff">1</span> <span style="color:#f92672">})</span>
-&gt; db.products.find<span style="color:#f92672">()</span>
-<span style="color:#f92672">{</span> <span style="color:#d88200">&#34;_id&#34;</span> : ObjectId<span style="color:#f92672">(</span><span style="color:#d88200">&#34;5c2d4199c5195731b5149377&#34;</span><span style="color:#f92672">)</span>, <span style="color:#d88200">&#34;name&#34;</span> : <span style="color:#d88200">&#34;pen&#34;</span>, <span style="color:#d88200">&#34;price&#34;</span> : <span style="color:#ae81ff">200</span> <span style="color:#f92672">}</span></code></pre></div>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt; db.products.update<span style="color:#719e07">({</span>name: <span style="color:#719e07">{</span><span style="color:#268bd2">$eq</span>: <span style="color:#2aa198">&#39;pen&#39;</span><span style="color:#719e07">}}</span>, <span style="color:#719e07">{</span><span style="color:#268bd2">$set</span>: <span style="color:#719e07">{</span>price: <span style="color:#2aa198">200</span><span style="color:#719e07">}}</span>, <span style="color:#719e07">{</span>upsert: false, multi: true<span style="color:#719e07">})</span>
+WriteResult<span style="color:#719e07">({</span> <span style="color:#2aa198">&#34;nMatched&#34;</span> : <span style="color:#2aa198">1</span>, <span style="color:#2aa198">&#34;nUpserted&#34;</span> : <span style="color:#2aa198">0</span>, <span style="color:#2aa198">&#34;nModified&#34;</span> : <span style="color:#2aa198">1</span> <span style="color:#719e07">})</span>
+&gt; db.products.find<span style="color:#719e07">()</span>
+<span style="color:#719e07">{</span> <span style="color:#2aa198">&#34;_id&#34;</span> : ObjectId<span style="color:#719e07">(</span><span style="color:#2aa198">&#34;5c2d4199c5195731b5149377&#34;</span><span style="color:#719e07">)</span>, <span style="color:#2aa198">&#34;name&#34;</span> : <span style="color:#2aa198">&#34;pen&#34;</span>, <span style="color:#2aa198">&#34;price&#34;</span> : <span style="color:#2aa198">200</span> <span style="color:#719e07">}</span></code></pre></div>
 <h2 id="documentの削除">Documentの削除</h2>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt; db.products.remove<span style="color:#f92672">({</span>name: <span style="color:#f92672">{</span><span style="color:#111">$eq</span>: <span style="color:#d88200">&#39;pen&#39;</span><span style="color:#f92672">}})</span>
-WriteResult<span style="color:#f92672">({</span> <span style="color:#d88200">&#34;nRemoved&#34;</span> : <span style="color:#ae81ff">1</span> <span style="color:#f92672">})</span>
-&gt; db.products.find<span style="color:#f92672">()</span>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt; db.products.remove<span style="color:#719e07">({</span>name: <span style="color:#719e07">{</span><span style="color:#268bd2">$eq</span>: <span style="color:#2aa198">&#39;pen&#39;</span><span style="color:#719e07">}})</span>
+WriteResult<span style="color:#719e07">({</span> <span style="color:#2aa198">&#34;nRemoved&#34;</span> : <span style="color:#2aa198">1</span> <span style="color:#719e07">})</span>
+&gt; db.products.find<span style="color:#719e07">()</span>
 &gt;</code></pre></div></article>
 
       
