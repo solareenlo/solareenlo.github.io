@@ -109,7 +109,7 @@ MacにHomebrewをインストールする /usr/bin/ruby -e &amp;quot;$(curl -fsS
       <guid>https://solareenlo.com/docs/bitcoin/</guid>
       <description> Bitcoin 目的 匿名性を自分で選択できつつ, 安全に価値の移転と保存に特化したシステムを構築すること.
 特徴  非中央集権 自律分散 トラストレス オープンソース ブロックチェーン1.0の代表格  技術  楕円曲線DSA P2P Proo of Work  プレイヤー  コア開発者 マイナー ユーザー 投資家・投機家 法律  スケーリング方法  コンセンサスアルゴリズムを速くする（分散性のために1ブロック生成にわざと10分かけてる） ブロックに含まれるトランザクションを増やす（Block weightが4MB以下/segwit導入により） オフチェーン（Lightning networkなど） サイドチェーン シャーディング  Reference: ブロックチェーンとスケーラビリティ
-参考サイト  bitcoinのしくみ Programming The Blockchain C# 日本語 Blockchain Core Camp season1のビデオ資料 Blockchain Core Camp season1のpdf資料 Blockchain Core Camp season2のビデオ資料  </description>
+References  bitcoinのしくみ Programming The Blockchain C# 日本語 Blockchain Core Camp season1のビデオ資料 Blockchain Core Camp season1のpdf資料 Blockchain Core Camp season2のビデオ資料  </description>
     </item>
     
     <item>
@@ -287,6 +287,16 @@ SQLの実行順番    順番 操作名 命令文     1 テーブルの指定 fro
     
     <item>
       <title></title>
+      <link>https://solareenlo.com/docs/substrate/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://solareenlo.com/docs/substrate/</guid>
+      <description> Substrateとは カスタムブロックチェーンプログラムを開発するためのフレームワークのこと. Runtime, SRML, SKD, Client Appを作ることができる. オープンソースで提供されている. 開発元はParity Technologies.
+ References:  第7回ブロックチェーン勉強会 なぜSubstrateでブロックチェーンを作るのか   Substrateを学んでみる  SubstrateKitties 初心者のためのPolkadot  </description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>https://solareenlo.com/docs/terminal/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -316,6 +326,16 @@ SQLの実行順番    順番 操作名 命令文     1 テーブルの指定 fro
       <guid>https://solareenlo.com/docs/vps/</guid>
       <description> VPS(バーチャル・プライベート・サーバ)とは 一台の物理的なサーバコンピュータ上で仮想的なサーバコンピュータを何台も起動する技術によってつくられた仮想的なサーバコンピュータのこと. 暗号通貨のフルノードを立てることができる.
 世界のVPSの値段比較サイト  VPSCOMP  SSH接続するには </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://solareenlo.com/docs/white-paper/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://solareenlo.com/docs/white-paper/</guid>
+      <description> ホワイトペーパーとは 問題に対する解決策を提示した文章のこと. 元々は政府や公的機関による年次報告書(白書)を意味したが現在ではマーケティング用語として使われている. 暗号通貨/暗号資産プロジェクトにおいてもよく使われている.
+ホワイトペーパーの日本語訳一覧  Bitcoin: ビットコイン： P2P 電子通貨システム Ethereum: [Japanese] White Paper  Plasma: Plasma スケーラブルな自律型スマートコントラクト  IOTA: The Tangle Byteball: Byteball:価値の蓄積と移転のための分散型システム Nano: ナノ：手数料不要で分散された仮想通貨ネットワーク NEO: NEO：スマートな経済のための分散型ネットワーク IPFS: IPFS POLKADOT: POLKADOT: VISION FOR A HETEROGENEOUS MULTI-CHAIN FRAMEWORK DRAFT 1  </description>
     </item>
     
   </channel>

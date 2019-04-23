@@ -134,6 +134,11 @@
   </url>
   
   <url>
+    <loc>https://solareenlo.com/docs/substrate/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://solareenlo.com/docs/terminal/</loc>
     <priority>0</priority>
   </url>
@@ -145,6 +150,11 @@
   
   <url>
     <loc>https://solareenlo.com/docs/vps/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://solareenlo.com/docs/white-paper/</loc>
     <priority>0</priority>
   </url>
   
