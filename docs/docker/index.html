@@ -72,7 +72,11 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/hugo/">Hugo</a></li>
 </ul></li>
 <li><a href="/docs/latex/"><strong>LaTeX</strong></a></li>
-<li><a href="/docs/vps/"><strong>VPS</strong></a></li>
+<li><a href="/docs/vps/"><strong>VPS</strong></a>
+
+<ul>
+<li><a href="/docs/ubuntu/">Ubuntu</a></li>
+</ul></li>
 <li><a href="/docs/container/"><strong>Container</strong></a>
 
 <ul>
@@ -183,6 +187,9 @@ sh get-docker.sh</code></pre></div>
 
 <p><strong>Reference:</strong> <a href="https://qiita.com/curseoff/items/a9e64ad01d673abb6866">Dockerコマンドメモ</a></p>
 
+<h3 id="dockerでhello-world">DockerでHello World!</h3>
+<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker container run --rm alpine /bin/echo <span style="color:#00afaf">&#39;Hello World!&#39;</span>
+&gt; Hello World!</code></pre></div>
 <h3 id="一覧-log表示">一覧/log表示</h3>
 <div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo docker container run --publish <span style="color:#00afaf">80</span>:80 --name webhost nginx // nginxを起動
 sudo docker container run --publish <span style="color:#00afaf">80</span>:80 --detach --name webhost nginx // デーモンとして起動
@@ -453,17 +460,61 @@ sudo docker container run -p <span style="color:#00afaf">80</span>:80 --rm nginx
 <h3 id="copyとaddの違い">COPYとADDの違い</h3>
 
 <ul>
-<li>COPYはローカルのファイルをイメージのレイヤーにコピーできる.</li>
-<li>ADDはリモートのファイルもイメージのレイヤーにコピーできる.</li>
+<li><code>COPY</code>はローカルのファイルをイメージのレイヤーにコピーできる.</li>
+<li><code>ADD</code>はリモートのファイルもイメージのレイヤーにコピーできる.</li>
 </ul>
-</article>
+
+<h3 id="workdirで作業ディレクトリを指定する">WORKDIRで作業ディレクトリを指定する</h3>
+
+<ul>
+<li>Dockerfileで<code>RUN</code>, <code>CMD</code>, <code>ENTRYPOINT</code>, <code>COPY</code>, <code>ADD</code>命令実行時の作業ディレクトリを指定できる.</li>
+<li>複数回の利用が可能で, 複数回利用すると相対パスになる.</li>
+</ul>
+<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#5f8700">WORKDIR</span><span style="color:#00afaf"> /a</span>
+<span style="color:#5f8700">WORKDIR</span><span style="color:#00afaf"> b</span>
+<span style="color:#5f8700">WORKDIR</span><span style="color:#00afaf"> c</span>
+<span style="color:#5f8700">RUN</span> pwd</code></pre></div>
+<p>とすると, <code>/a/b/c pwd</code>となる.</p>
+
+<ul>
+<li>WORKDIRはENVを使った環境変数も利用できる.</li>
+</ul>
+<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#5f8700">ENV</span><span style="color:#00afaf"> DIRPATH /path</span>
+<span style="color:#5f8700">WORKDIR</span><span style="color:#00afaf"> $DIRPATH/to</span>
+<span style="color:#5f8700">RUN</span> pwd</code></pre></div>
+<p>とすると, <code>/path/to pwd</code>となる.</p>
+
+<h2 id="node-js用のdockerfileをスクラッチから書いてみる">Node.js用のDockerfileをスクラッチから書いてみる</h2>
+<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#4e4e4e"># alpine用のnodeイメージインストールする</span>
+<span style="color:#5f8700">FROM</span><span style="color:#00afaf"> node:8.16.0-alpine</span>
+<span style="color:#4e4e4e"># コンテナの3000番ポートを開く</span>
+<span style="color:#5f8700">EXPOSE</span><span style="color:#00afaf"> 3000</span>
+<span style="color:#4e4e4e"># tiniをインストールして, 作業ディレクトリを作成する</span>
+<span style="color:#5f8700">RUN</span> apk add --update tini <span style="color:#af0000">\
+</span><span style="color:#af0000"></span>  &amp;&amp; mkdir -p /usr/src/app
+<span style="color:#4e4e4e"># 作業ディレクトリに移動する</span>
+<span style="color:#5f8700">WORKDIR</span><span style="color:#00afaf"> /usr/src/app</span>
+<span style="color:#4e4e4e"># package.jsonを作業ディレクトリにコピーする</span>
+COPY package.json package.json
+<span style="color:#4e4e4e"># 作業ディレクトリにnpmパッケージをインストールする</span>
+<span style="color:#5f8700">RUN</span> npm install
+<span style="color:#5f8700">RUN</span> npm cache clean --force
+<span style="color:#4e4e4e"># コンテナのイメージレイヤーに必要なファイル全てをコピーする</span>
+COPY . .
+<span style="color:#4e4e4e"># tiniでnodeを起動する</span>
+<span style="color:#5f8700">CMD</span><span style="color:#00afaf"> [&#34;/sbin/tini&#34;, &#34;--&#34;, &#34;node&#34;, &#34;./bin/www&#34;]</span></code></pre></div>
+<p>こんな感んじでDokcerfileを作成する.<br />
+ソースコード例は<a href="https://github.com/solareenlo/udemy-docker-mastery/tree/master/dockerfile-assignment-1">こちら</a>.<br />
+そして, イメージをビルドして, コンテナを起動して, localhost:3000にアクセスする.</p>
+<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker image build -t nodetest .
+docker container run --rm -p <span style="color:#00afaf">80</span>:3000 nodetest</code></pre></div></article>
 
       
 <div class="align-center book-git-footer justify-between">
   
   <div>
     
-    <a href="https://github.com/solareenlo/blog-hugo/commit/3b200acaf8062d267e2ab94bcf099888c878d450" title='Last modified Apr 24, 2019 by solareenlo' target="_blank" rel="noopener">
+    <a href="https://github.com/solareenlo/blog-hugo/commit/854d57eadf0ba0f946e1a658dd47399cf868c90b" title='Last modified Apr 24, 2019 by solareenlo' target="_blank" rel="noopener">
       <img src="/svg/code-merge.svg" alt="Changed" /> Apr 24, 2019
     </a>
   </div>
@@ -501,6 +552,7 @@ sudo docker container run -p <span style="color:#00afaf">80</span>:80 --rm nginx
 </ul></li>
 <li><a href="#基本的な使い方-v18-09-5">基本的な使い方(v18.09.5)</a>
 <ul>
+<li><a href="#dockerでhello-world">DockerでHello World!</a></li>
 <li><a href="#一覧-log表示">一覧/log表示</a></li>
 <li><a href="#コンテナを起動-停止-再起動">コンテナを起動/停止/再起動</a></li>
 <li><a href="#コンテナの状態を見る">コンテナの状態を見る</a></li>
@@ -528,7 +580,9 @@ sudo docker container run -p <span style="color:#00afaf">80</span>:80 --rm nginx
 <li><a href="#dockerfileからイメージを作成する">DockerFileからイメージを作成する</a></li>
 <li><a href="#ローカルにあるファイルをコピーしてイメージを作成する">ローカルにあるファイルをコピーしてイメージを作成する</a></li>
 <li><a href="#copyとaddの違い">COPYとADDの違い</a></li>
+<li><a href="#workdirで作業ディレクトリを指定する">WORKDIRで作業ディレクトリを指定する</a></li>
 </ul></li>
+<li><a href="#node-js用のdockerfileをスクラッチから書いてみる">Node.js用のDockerfileをスクラッチから書いてみる</a></li>
 </ul></li>
 </ul>
 </nav>

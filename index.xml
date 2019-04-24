@@ -168,7 +168,7 @@ DBの使用率ランキング  DB-Engines Ranking  </description>
       <description>Dockerとは コンテナ型の仮想環境を作成, 配布, 実行するためのプラットフォーム.
 Dockerについての良い読み物→2018年なぜ私達はコンテナ/Dockerを使うのか.
 Dockerのメリット/デメリット メリット  ゲストOSはホストのKernelを直接使うためオーバーヘッドが小さくて高速 ゲストOSがそれぞれにKernelを持たないため, Memory消費量やDisk消費量を節約できる 必要とする資源が少ないため, 多くのゲストOSを立ち上げることが可能 Kernelを新しく起動する必要がないため, ゲストOSの起動が速い コンテナのイメージ(雛形)からコンテナ(実体)を作るため, 同一構成のOSを簡単に複数作れる テストが通ったイメージは本番環境でもすぐに使える(開発とデプロイのサイクルが速い)  Reference: Dockerの利点   デメリット  提供できるホストの種類が少ない(ホストOSのKernelにLinux使ってたらゲストOSのKernelにWindows Serverは使えない) 完全仮想化に比べて, 管理者が学ぶべきことが多い  Reference: Dockerの欠点   勉強できるサイト  入門 Docker Docker Mastery: The Complete Toolset From a Docker Captain  インストール方法 Linux編 curl -fsSL get.docker.com -o get-docker.sh sh get-docker.sh 基本的な使い方(v18.09.5) Reference: Dockerコマンドメモ
-一覧/log表示 sudo docker container run --publish 80:80 --name webhost nginx // nginxを起動 sudo docker container run --publish 80:80 --detach --name webhost nginx // デーモンとして起動 sudo docker container ls // 起動しているコンテナ一覧表示 &amp;gt; CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES &amp;gt; b6e083217819 nginx &amp;#34;nginx -g &amp;#39;daemon of…&amp;#34; 7 minutes ago Up 23 seconds 0.</description>
+DockerでHello World! docker container run --rm alpine /bin/echo &amp;#39;Hello World!</description>
     </item>
     
     <item>
@@ -323,6 +323,21 @@ SQLの実行順番    順番 操作名 命令文     1 テーブルの指定 fro
 コンソールの場合はハードウェア的に直にアクセスしているがターミナルの場合はGUI環境でソフトウェア的にシェルを呼び出し命令を実行するようになっている.
 ターミナルのJSON出力に色付けする jqを使う.
 // こんな感じ echo &amp;#39;{&amp;#34;items&amp;#34;:[{&amp;#34;item_id&amp;#34;:1,&amp;#34;name&amp;#34;:&amp;#34;すてきな雑貨&amp;#34;,&amp;#34;price&amp;#34;:2500},{&amp;#34;item_id&amp;#34;:2,&amp;#34;name&amp;#34;:&amp;#34;格好いい置物&amp;#34;,&amp;#34;price&amp;#34;:4500}]}&amp;#39; | jq . &amp;gt; { &amp;gt; &amp;#34;items&amp;#34;: [ &amp;gt; { &amp;gt; &amp;#34;item_id&amp;#34;: 1, &amp;gt; &amp;#34;name&amp;#34;: &amp;#34;すてきな雑貨&amp;#34;, &amp;gt; &amp;#34;price&amp;#34;: 2500 &amp;gt; }, &amp;gt; { &amp;gt; &amp;#34;item_id&amp;#34;: 2, &amp;gt; &amp;#34;name&amp;#34;: &amp;#34;格好いい置物&amp;#34;, &amp;gt; &amp;#34;price&amp;#34;: 4500 &amp;gt; } &amp;gt; ] &amp;gt; } Reference: jq コマンドを使う日常のご紹介</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://solareenlo.com/docs/ubuntu/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://solareenlo.com/docs/ubuntu/</guid>
+      <description>Ubuntuとは コミュニティにより開発されているオペレーティングシステムのこと. 無料で提供されている. Linuxディストリビューションの1つ.
+再起動 sudo shutdown -r now // or sudo reboot mountしているSSDのlabel名を変更する Ubuntuのディスクプリで当該のSSDをmountする.
+df -Th &amp;gt; Filesystem Type Size Used Avail Use% Mounted on &amp;gt; /dev/nvme2n1p1 ext4 234G 61M 222G 1% /media/solareenlo/ssd021 でSSDのFilesystem名(この場合は/dev/nvme2n1p1)を確認する.
+sudo umount /dev/nvme2n1p1 で一度SSDをunmountする.
+SSDのTypeがext2/ext3/ext4の場合は,
+sudo e2label /dev/nvme2n1p1 ssd02 とし, label名をssd021からssd02に変更する.
+そして, Ubuntuのディスクアプリで当該のSSDをmountする.</description>
     </item>
     
     <item>
