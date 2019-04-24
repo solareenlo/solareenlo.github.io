@@ -3,7 +3,7 @@
 
 
 
-<html>
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
@@ -19,7 +19,6 @@
 <link href="https://fonts.googleapis.com/css?family=Oxygen|Oxygen+Mono:300,400,700" rel="stylesheet">
 
 
-<link rel="stylesheet" href="/normalize.min.css">
 
 <link rel="stylesheet" href="/book.min.18cd097814acc2d60f57a2962b018cf86c84fba645ece32982add8972f33359a.css">
 
@@ -72,6 +71,7 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/rust/">Rust</a></li>
 <li><a href="/docs/hugo/">Hugo</a></li>
 </ul></li>
+<li><a href="/docs/latex/"><strong>LaTeX</strong></a></li>
 <li><a href="/docs/vps/"><strong>VPS</strong></a></li>
 <li><a href="/docs/container/"><strong>Container</strong></a>
 
@@ -121,7 +121,7 @@ https://github.com/alex-shpak/hugo-book
     <div class="book-page">
       <header class="align-center justify-between book-header">
   <label for="menu-control">
-    <img src="/svg/menu.svg" />
+    <img src="/svg/menu.svg" alt="Menu" />
   </label>
   <strong>
   
@@ -158,22 +158,32 @@ auxオプションは、aとuとxというオプションを組み合わせた�
 <p>こんな感じで標準出力される.</p>
 
 <p><strong>Reference:</strong> <a href="https://usado.jp/spdsk/2018/03/26/post-3479/">ps auxの見方がよく判らない・・・</a></p>
-</article>
+
+<h2 id="sha256を出力">sha256を出力</h2>
+
+<blockquote>
+<p>Mac</p>
+</blockquote>
+<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">shasum -a <span style="color:#00afaf">256</span> &lt;ファイル名&gt;</code></pre></div>
+<blockquote>
+<p>Linux</p>
+</blockquote>
+<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sha256sum &lt;ファイル名&gt;</code></pre></div></article>
 
       
 <div class="align-center book-git-footer justify-between">
   
   <div>
     
-    <a href="https://github.com/solareenlo/blog-hugo/commit/4dfb4275197d1c3476d64f27f98d8b757e7c4925" title='Last modified Apr 20, 2019 by solareenlo' target="_blank" rel="noopener">
-      <img src="/svg/code-merge.svg" /> Apr 20, 2019
+    <a href="https://github.com/solareenlo/blog-hugo/commit/3b200acaf8062d267e2ab94bcf099888c878d450" title='Last modified Apr 24, 2019 by solareenlo' target="_blank" rel="noopener">
+      <img src="/svg/code-merge.svg" alt="Changed" /> Apr 24, 2019
     </a>
   </div>
   
   
   <div>
     <a href="https://github.com/solareenlo/blog-hugo/edit/master/content/docs/command.md" target="_blank" rel="noopener">
-      <img src="/svg/code-fork.svg" /> Edit this page
+      <img src="/svg/code-fork.svg" alt="Edit" /> Edit this page
     </a>
   </div>
   
@@ -192,6 +202,7 @@ auxオプションは、aとuとxというオプションを組み合わせた�
 <li><a href="#コマンドとは">コマンドとは</a>
 <ul>
 <li><a href="#psコマンド">psコマンド</a></li>
+<li><a href="#sha256を出力">sha256を出力</a></li>
 </ul></li>
 </ul>
 </nav>

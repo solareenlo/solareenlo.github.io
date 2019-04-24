@@ -4,7 +4,7 @@
   
   <url>
     <loc>https://solareenlo.com/posts/</loc>
-    <lastmod>2019-04-23T08:56:11+09:00</lastmod>
+    <lastmod>2019-04-24T11:46:56+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -35,7 +35,7 @@
   
   <url>
     <loc>https://solareenlo.com/posts/how-to-make-this-site/</loc>
-    <lastmod>2019-04-17T10:18:45+09:00</lastmod>
+    <lastmod>2019-04-24T11:46:56+09:00</lastmod>
   </url>
   
   <url>
@@ -105,6 +105,11 @@
   
   <url>
     <loc>https://solareenlo.com/docs/kubernetes/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://solareenlo.com/docs/latex/</loc>
     <priority>0</priority>
   </url>
   

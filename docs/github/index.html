@@ -3,7 +3,7 @@
 
 
 
-<html>
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
@@ -19,7 +19,6 @@
 <link href="https://fonts.googleapis.com/css?family=Oxygen|Oxygen+Mono:300,400,700" rel="stylesheet">
 
 
-<link rel="stylesheet" href="/normalize.min.css">
 
 <link rel="stylesheet" href="/book.min.18cd097814acc2d60f57a2962b018cf86c84fba645ece32982add8972f33359a.css">
 
@@ -72,6 +71,7 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/rust/">Rust</a></li>
 <li><a href="/docs/hugo/">Hugo</a></li>
 </ul></li>
+<li><a href="/docs/latex/"><strong>LaTeX</strong></a></li>
 <li><a href="/docs/vps/"><strong>VPS</strong></a></li>
 <li><a href="/docs/container/"><strong>Container</strong></a>
 
@@ -121,7 +121,7 @@ https://github.com/alex-shpak/hugo-book
     <div class="book-page">
       <header class="align-center justify-between book-header">
   <label for="menu-control">
-    <img src="/svg/menu.svg" />
+    <img src="/svg/menu.svg" alt="Menu" />
   </label>
   <strong>
   
@@ -147,6 +147,20 @@ git push -u origin gh-pages</code></pre></div>
 
 <h2 id="リポジトリに他のリポジトリをリンク付けする">リポジトリに他のリポジトリをリンク付けする</h2>
 <div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git submodule add -b &lt;リンク付けする方のブランチ名&gt; &lt;リンク付けする方のURL&gt; &lt;リンク付けされるディレクトリ名&gt;</code></pre></div>
+<h2 id="リポジトリをforkして更新する">リポジトリをforkして更新する</h2>
+
+<p>fork -&gt; clone -&gt; remote -&gt; fethc -&gt; marge -&gt; push</p>
+
+<h2 id="ssh接続ができなくなったときは">ssh接続ができなくなったときは</h2>
+
+<p><code>~/.ssh/config</code>の中身を</p>
+<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Host github github.com
+  Hostname github.com
+  Port <span style="color:#00afaf">22</span>
+  User git
+  IdentityFile ~/.ssh/id_git_rsa</code></pre></div>
+<p>のように, Hostのところに<code>github.com</code>を追加してみる.</p>
+
 <h2 id="チートシート">チートシート</h2>
 
 <ul>
@@ -160,14 +174,14 @@ git push -u origin gh-pages</code></pre></div>
   <div>
     
     <a href="https://github.com/solareenlo/blog-hugo/commit/ad68ea970979aa895154ed52a75f4eb2f3f38f04" title='Last modified Apr 23, 2019 by solareenlo' target="_blank" rel="noopener">
-      <img src="/svg/code-merge.svg" /> Apr 23, 2019
+      <img src="/svg/code-merge.svg" alt="Changed" /> Apr 23, 2019
     </a>
   </div>
   
   
   <div>
     <a href="https://github.com/solareenlo/blog-hugo/edit/master/content/docs/github.md" target="_blank" rel="noopener">
-      <img src="/svg/code-fork.svg" /> Edit this page
+      <img src="/svg/code-fork.svg" alt="Edit" /> Edit this page
     </a>
   </div>
   
@@ -187,6 +201,8 @@ git push -u origin gh-pages</code></pre></div>
 <ul>
 <li><a href="#github-pagesで静的サイトを公開する">GitHub Pagesで静的サイトを公開する</a></li>
 <li><a href="#リポジトリに他のリポジトリをリンク付けする">リポジトリに他のリポジトリをリンク付けする</a></li>
+<li><a href="#リポジトリをforkして更新する">リポジトリをforkして更新する</a></li>
+<li><a href="#ssh接続ができなくなったときは">ssh接続ができなくなったときは</a></li>
 <li><a href="#チートシート">チートシート</a></li>
 </ul></li>
 </ul>
