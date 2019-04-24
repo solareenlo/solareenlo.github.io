@@ -39,7 +39,7 @@ References  bitcoinのしくみ Programming The Blockchain C# 日本語 Blockcha
 psコマンド psコマンドはプロセスの動作状況を確認するためのコマンド.
 auxオプション
 auxオプションは、aとuとxというオプションを組み合わせたものです。
- a: 端末操作のプロセスを表示する u: CPUやメモリの使用率などを表示する x: 端末操作以外のプロセスを表示する  ps aux &amp;gt; USER PID %CPU %MEM VSZ RSS TT STAT STARTED TIME COMMAND &amp;gt; solareenlo 96263 4.3 2.0 5500012 168620 ?? S 水07PM 21:03.04 /Applications/Utilities/Terminal.app/Contents/MacOS/Terminal &amp;gt; その他たくさん  こんな感じで標準出力される.
+ a: 端末操作のプロセスを表示する u: CPUやメモリの使用率などを表示する x: 端末操作以外のプロセスを表示する  ps aux &amp;gt; USER PID %CPU %MEM VSZ RSS TT STAT STARTED TIME COMMAND &amp;gt; solareenlo 96263 4.3 2.0 5500012 168620 ?? S 水07PM 21:03.04 /Applications/Utilities/Terminal.app/Contents/MacOS/Terminal &amp;gt; その他たくさん こんな感じで標準出力される.
 Reference: ps auxの見方がよく判らない・・・</description>
     </item>
     

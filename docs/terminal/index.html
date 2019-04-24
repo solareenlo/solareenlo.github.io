@@ -21,7 +21,7 @@
 
 <link rel="stylesheet" href="/normalize.min.css">
 
-<link rel="stylesheet" href="/book.min.9e3e6c3debd67c297267809de0b083624e71caddd3a59aa76815a75dcad95440.css">
+<link rel="stylesheet" href="/book.min.18cd097814acc2d60f57a2962b018cf86c84fba645ece32982add8972f33359a.css">
 
 
 <link rel="icon" href="/favicon.png" type="image/x-icon">
@@ -157,22 +157,22 @@ https://github.com/alex-shpak/hugo-book
 <h2 id="ターミナルのjson出力に色付けする">ターミナルのJSON出力に色付けする</h2>
 
 <p><a href="https://github.com/stedolan/jq">jq</a>を使う.</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">// こんな感じ
-<span style="color:#b58900">echo</span> <span style="color:#2aa198">&#39;{&#34;items&#34;:[{&#34;item_id&#34;:1,&#34;name&#34;:&#34;すてきな雑貨&#34;,&#34;price&#34;:2500},{&#34;item_id&#34;:2,&#34;name&#34;:&#34;格好いい置物&#34;,&#34;price&#34;:4500}]}&#39;</span> | jq .
-&gt; <span style="color:#719e07">{</span>
-&gt;   <span style="color:#2aa198">&#34;items&#34;</span>: <span style="color:#719e07">[</span>
-&gt;     <span style="color:#719e07">{</span>
-&gt;       <span style="color:#2aa198">&#34;item_id&#34;</span>: <span style="color:#2aa198">1</span>,
-&gt;       <span style="color:#2aa198">&#34;name&#34;</span>: <span style="color:#2aa198">&#34;すてきな雑貨&#34;</span>,
-&gt;       <span style="color:#2aa198">&#34;price&#34;</span>: <span style="color:#2aa198">2500</span>
-&gt;     <span style="color:#719e07">}</span>,
-&gt;     <span style="color:#719e07">{</span>
-&gt;       <span style="color:#2aa198">&#34;item_id&#34;</span>: <span style="color:#2aa198">2</span>,
-&gt;       <span style="color:#2aa198">&#34;name&#34;</span>: <span style="color:#2aa198">&#34;格好いい置物&#34;</span>,
-&gt;       <span style="color:#2aa198">&#34;price&#34;</span>: <span style="color:#2aa198">4500</span>
-&gt;     <span style="color:#719e07">}</span>
-&gt;   <span style="color:#719e07">]</span>
-&gt; <span style="color:#719e07">}</span></code></pre></div>
+<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">// こんな感じ
+<span style="color:#0087ff">echo</span> <span style="color:#00afaf">&#39;{&#34;items&#34;:[{&#34;item_id&#34;:1,&#34;name&#34;:&#34;すてきな雑貨&#34;,&#34;price&#34;:2500},{&#34;item_id&#34;:2,&#34;name&#34;:&#34;格好いい置物&#34;,&#34;price&#34;:4500}]}&#39;</span> | jq .
+&gt; {
+&gt;   <span style="color:#00afaf">&#34;items&#34;</span>: [
+&gt;     {
+&gt;       <span style="color:#00afaf">&#34;item_id&#34;</span>: <span style="color:#00afaf">1</span>,
+&gt;       <span style="color:#00afaf">&#34;name&#34;</span>: <span style="color:#00afaf">&#34;すてきな雑貨&#34;</span>,
+&gt;       <span style="color:#00afaf">&#34;price&#34;</span>: <span style="color:#00afaf">2500</span>
+&gt;     },
+&gt;     {
+&gt;       <span style="color:#00afaf">&#34;item_id&#34;</span>: <span style="color:#00afaf">2</span>,
+&gt;       <span style="color:#00afaf">&#34;name&#34;</span>: <span style="color:#00afaf">&#34;格好いい置物&#34;</span>,
+&gt;       <span style="color:#00afaf">&#34;price&#34;</span>: <span style="color:#00afaf">4500</span>
+&gt;     }
+&gt;   ]
+&gt; }</code></pre></div>
 <p><strong>Reference:</strong> <a href="https://qiita.com/takeshinoda@github/items/2dec7a72930ec1f658af">jq コマンドを使う日常のご紹介</a></p>
 </article>
 
