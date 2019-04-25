@@ -74,6 +74,11 @@
   </url>
   
   <url>
+    <loc>https://solareenlo.com/docs/docker-compose/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://solareenlo.com/docs/docker/</loc>
     <priority>0</priority>
   </url>
@@ -90,6 +95,11 @@
   
   <url>
     <loc>https://solareenlo.com/docs/github/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://solareenlo.com/docs/haskell/</loc>
     <priority>0</priority>
   </url>
   
@@ -135,6 +145,11 @@
   
   <url>
     <loc>https://solareenlo.com/docs/rust/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://solareenlo.com/docs/ssh/</loc>
     <priority>0</priority>
   </url>
   

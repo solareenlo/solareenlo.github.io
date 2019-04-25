@@ -69,18 +69,21 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/git/">Git</a></li>
 <li><a href="/docs/github/">GitHub</a></li>
 <li><a href="/docs/rust/">Rust</a></li>
+<li><a href="/docs/haskell/">Haskell</a></li>
 <li><a href="/docs/hugo/">Hugo</a></li>
 </ul></li>
 <li><a href="/docs/latex/"><strong>LaTeX</strong></a></li>
 <li><a href="/docs/vps/"><strong>VPS</strong></a>
 
 <ul>
+<li><a href="/docs/ssh/">SSH</a></li>
 <li><a href="/docs/ubuntu/">Ubuntu</a></li>
 </ul></li>
 <li><a href="/docs/container/"><strong>Container</strong></a>
 
 <ul>
 <li><a href="/docs/docker/">Docker</a></li>
+<li><a href="/docs/docker-compose/">Docker Compose</a></li>
 <li><a href="/docs/kubernetes/">Kubernetes</a></li>
 </ul></li>
 <li><a href="/docs/db/"><strong>DB</strong></a>
@@ -140,8 +143,20 @@ https://github.com/alex-shpak/hugo-book
 
 <h1 id="docker-https-www-docker-com-とは"><a href="https://www.docker.com">Docker</a>とは</h1>
 
-<p>コンテナ型の仮想環境を作成, 配布, 実行するためのプラットフォーム.<br />
-Dockerについての良い読み物→<a href="http://iga-ninja.hatenablog.com/entry/2018/06/28/091412">2018年なぜ私達はコンテナ/Dockerを使うのか</a>.</p>
+<p>コンテナ型の仮想環境を作成, 配布, 実行するためのプラットフォームのこと.
+プロセスを簡単にコンテナ化(isolate)し, 簡単かつ素早く開発・移動・実行できるプラットフォームのこと.</p>
+
+<ul>
+<li>Dockerコンテナは実行に必要な全てをパッケージして簡単に動かせる</li>
+<li>Dockerイメージは複数のイメージ・レイヤとメタ情報の積み重なりからできている.</li>
+<li>コンテナのプロセスはデフォルトでisolate(隔離・分離)された状態
+
+<ul>
+<li>Dockerについての良い読み物1→<a href="http://iga-ninja.hatenablog.com/entry/2018/06/28/091412">2018年なぜ私達はコンテナ/Dockerを使うのか</a>.</li>
+<li>Dockerについての良い読み物2→<a href="https://codezine.jp/article/detail/11098">標準化が進むコンテナとサーバーレス！ 「提供したい価値」から見極める活用の勘所とは【デブサミ2018 福岡】</a></li>
+<li>Dockerについての良いスライド→<a href="https://www.slideshare.net/zembutsu/docker-compose-guidebook">Docker Compose 徹底解説</a></li>
+</ul></li>
+</ul>
 
 <h2 id="dockerのメリット-デメリット">Dockerのメリット/デメリット</h2>
 
@@ -516,11 +531,14 @@ COPY . .
 docker container run --rm -p <span style="color:#00afaf">80</span>:3000 nodetest</code></pre></div>
 <h2 id="volume">volume</h2>
 
-<p>volumeはDockerが管理するデータ領域(コンテナが消えても残るデータ領域)をコンテナ上にマウントする機能のこと.
-volumeのデータは<code>/var/lib/docker/volumes</code>配下にある.
-設定する方法は<code>-v</code>と<code>--mount</code>の2種類ある.
-新規ユーザーは<code>--mount</code>を使おう.
-<code>--mount</code>が<code>key=value</code>形式で分かりやすいから.</p>
+<ul>
+<li>volumeはDockerが管理するデータ領域(コンテナが消えても残るデータ領域)をコンテナ上にマウントする機能のこと.</li>
+<li>volumeのデータは<code>/var/lib/docker/volumes</code>配下にある.</li>
+<li>設定する方法は<code>-v</code>と<code>--mount</code>の2種類ある.</li>
+<li>コンテナ内のvolumeにマウントしたらよいpathはhub.docker.comにあるイメージのページのタグのページから探すと良い.</li>
+<li>新規ユーザーは<code>--mount</code>を使おう.</li>
+<li><code>--mount</code>が<code>key=value</code>形式で分かりやすいから.</li>
+</ul>
 
 <h3 id="vを使ってvolumeをmysqlコンテナにマウントする">-vを使ってvolumeをmysqlコンテナにマウントする</h3>
 
@@ -530,6 +548,17 @@ volumeのデータは<code>/var/lib/docker/volumes</code>配下にある.
 
 <p><code>--mount</code>は, <code>key=value</code>形式でvolumeの指定をするフラグ.</p>
 <div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker container run -d --name mysql2 -e <span style="color:#0087ff">MYSQL_ALLOW_EMPTY_PASSWORD</span>=True --mount <span style="color:#0087ff">type</span>=volume,src=mysql-db2,dst=/var/lib/mysql mysql</code></pre></div>
+<h3 id="2つのコンテナに同じvolumeをマウントする">2つのコンテナに同じvolumeをマウントする</h3>
+<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker container run -d --name psql --mount <span style="color:#0087ff">type</span>=volume,src=psql,dst=/var/lib/postgresql/data postgres:alpine
+docker container logs -f psql
+&gt; psqlのlogが標準出力される
+docker container stop psql
+docker container run -d --name psql2 --mount <span style="color:#0087ff">type</span>=volume,src=psql,dst=/var/lib/postgresql/data postgres:alpine
+docker container logs -f psql2
+&gt; psql2のlogが出力される
+docker volume ls
+&gt; DRIVER              VOLUME NAME
+&gt; <span style="color:#0087ff">local</span>               psql</code></pre></div>
 <h2 id="bind-mount">bind mount</h2>
 
 <p>bind mountはDocker外の任意のファイル・ディレクトリをコンテナ内にマウントする機能のこと.</p>
@@ -538,22 +567,6 @@ volumeのデータは<code>/var/lib/docker/volumes</code>配下にある.
 <div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone git@github.com:solareenlo/udemy-docker-mastery.git
 ch udemy-docker-mastery/dockerfile-sample-2
 docker container run -d --name nginx -p <span style="color:#00afaf">80</span>:80 -v <span style="color:#5f8700">$(</span><span style="color:#0087ff">pwd</span><span style="color:#5f8700">)</span>:/usr/share/nginx/html nginx</code></pre></div>
-<p>そして, nginxの中に入って, Docker外のデータとコンテナがきちんとマウントされてるかどうかを確かめてみる.</p>
-<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker container <span style="color:#0087ff">exec</span> -it nginx /bin/bash
-<span style="color:#0087ff">cd</span> /usr/share/nginx/html
-ls -la
-&gt; drwxr-xr-x <span style="color:#00afaf">2</span> <span style="color:#00afaf">1000</span> <span style="color:#00afaf">1000</span> <span style="color:#00afaf">4096</span> Apr <span style="color:#00afaf">24</span> <span style="color:#00afaf">16</span>:17 .
-&gt; drwxr-xr-x <span style="color:#00afaf">3</span> root root <span style="color:#00afaf">4096</span> Apr <span style="color:#00afaf">16</span> <span style="color:#00afaf">21</span>:20 ..
-&gt; -rw-r--r-- <span style="color:#00afaf">1</span> <span style="color:#00afaf">1000</span> <span style="color:#00afaf">1000</span>  <span style="color:#00afaf">415</span> Apr <span style="color:#00afaf">19</span> <span style="color:#00afaf">17</span>:34 Dockerfile
-&gt; -rw-r--r-- <span style="color:#00afaf">1</span> <span style="color:#00afaf">1000</span> <span style="color:#00afaf">1000</span>  <span style="color:#00afaf">285</span> Apr <span style="color:#00afaf">23</span> <span style="color:#00afaf">22</span>:54 index.html
-<span style="color:#4e4e4e"># 別のターミナルを開いて, コンテナをマウントしたディレクトリでtest.mdを作成すると,</span>
-ls -la
-&gt; drwxr-xr-x <span style="color:#00afaf">2</span> <span style="color:#00afaf">1000</span> <span style="color:#00afaf">1000</span> <span style="color:#00afaf">4096</span> Apr <span style="color:#00afaf">25</span> <span style="color:#00afaf">01</span>:20 .
-&gt; drwxr-xr-x <span style="color:#00afaf">3</span> root root <span style="color:#00afaf">4096</span> Apr <span style="color:#00afaf">16</span> <span style="color:#00afaf">21</span>:20 ..
-&gt; -rw-r--r-- <span style="color:#00afaf">1</span> <span style="color:#00afaf">1000</span> <span style="color:#00afaf">1000</span>  <span style="color:#00afaf">415</span> Apr <span style="color:#00afaf">19</span> <span style="color:#00afaf">17</span>:34 Dockerfile
-&gt; -rw-r--r-- <span style="color:#00afaf">1</span> <span style="color:#00afaf">1000</span> <span style="color:#00afaf">1000</span>  <span style="color:#00afaf">285</span> Apr <span style="color:#00afaf">23</span> <span style="color:#00afaf">22</span>:54 index.html
-&gt; -rw-rw-r-- <span style="color:#00afaf">1</span> <span style="color:#00afaf">1000</span> <span style="color:#00afaf">1000</span>    <span style="color:#00afaf">0</span> Apr <span style="color:#00afaf">25</span> <span style="color:#00afaf">01</span>:20 test.md
-<span style="color:#4e4e4e"># test.mdがきちんと増えてる.</span></code></pre></div>
 <h3 id="mountを使ってdocker外のデータをnginxコンテナにマウントする">&ndash;mountを使ってDocker外のデータをnginxコンテナにマウントする</h3>
 <div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone git@github.com:solareenlo/udemy-docker-mastery.git
 ch udemy-docker-mastery/dockerfile-sample-2
@@ -573,14 +586,32 @@ ls -la
 &gt; -rw-r--r-- <span style="color:#00afaf">1</span> <span style="color:#00afaf">1000</span> <span style="color:#00afaf">1000</span>  <span style="color:#00afaf">415</span> Apr <span style="color:#00afaf">19</span> <span style="color:#00afaf">17</span>:34 Dockerfile
 &gt; -rw-r--r-- <span style="color:#00afaf">1</span> <span style="color:#00afaf">1000</span> <span style="color:#00afaf">1000</span>  <span style="color:#00afaf">285</span> Apr <span style="color:#00afaf">23</span> <span style="color:#00afaf">22</span>:54 index.html
 &gt; -rw-rw-r-- <span style="color:#00afaf">1</span> <span style="color:#00afaf">1000</span> <span style="color:#00afaf">1000</span>    <span style="color:#00afaf">0</span> Apr <span style="color:#00afaf">25</span> <span style="color:#00afaf">01</span>:20 test.md
-<span style="color:#4e4e4e"># test.mdがきちんと増えてる.</span></code></pre></div></article>
+<span style="color:#4e4e4e"># test.mdがきちんと増えてる.</span></code></pre></div>
+<h3 id="ローカルのjekyllをコンテナのjekllサーバで動かす">ローカルのJekyllをコンテナのJekllサーバで動かす</h3>
+<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone git@github.com:solareenlo/udemy-docker-mastery.git
+<span style="color:#0087ff">cd</span> udemy-docker-mastery/bindmount-sample-1
+docker run -p <span style="color:#00afaf">80</span>:4000 --mount <span style="color:#0087ff">type</span>=bind,src=<span style="color:#5f8700">$(</span><span style="color:#0087ff">pwd</span><span style="color:#5f8700">)</span>,dst=/site bretfisher/jekyll-serve
+&gt; コンテナでJekyllサーバが起動する
+&gt; Configuration file: /site/_config.yml
+&gt;        Deprecation: The <span style="color:#00afaf">&#39;gems&#39;</span> configuration option has been renamed to <span style="color:#00afaf">&#39;plugins&#39;</span>. Please update your config file accordingly.
+&gt;             Source: /site
+&gt;        Destination: /site/_site
+&gt;  Incremental build: disabled. Enable with --incremental
+&gt;       Generating...
+&gt;        Jekyll Feed: Generating feed <span style="color:#5f8700">for</span> posts
+&gt;                     <span style="color:#5f8700">done</span> in <span style="color:#00afaf">0</span>.261 seconds.
+&gt;  Auto-regeneration: enabled <span style="color:#5f8700">for</span> <span style="color:#00afaf">&#39;/site&#39;</span>
+&gt;     Server address: http://0.0.0.0:4000/
+&gt;   Server running... press ctrl-c to stop.</code></pre></div>
+<p>ブラウザで<code>localhost:80</code>にアクセスするとJekyllで作ったサイトが立ち上がってる.</p>
+</article>
 
       
 <div class="align-center book-git-footer justify-between">
   
   <div>
     
-    <a href="https://github.com/solareenlo/blog-hugo/commit/aaf96e93ae07313216cefe21ad448a06c1e473e3" title='Last modified Apr 25, 2019 by solareenlo' target="_blank" rel="noopener">
+    <a href="https://github.com/solareenlo/blog-hugo/commit/63ac9f45fed74be2bf36811bd2af129075e1c955" title='Last modified Apr 25, 2019 by solareenlo' target="_blank" rel="noopener">
       <img src="/svg/code-merge.svg" alt="Changed" /> Apr 25, 2019
     </a>
   </div>
@@ -660,11 +691,13 @@ ls -la
 <ul>
 <li><a href="#vを使ってvolumeをmysqlコンテナにマウントする">-vを使ってvolumeをmysqlコンテナにマウントする</a></li>
 <li><a href="#mountを使ってvolumeをmysqlコンテナにマウントする">&ndash;mountを使ってvolumeをmysqlコンテナにマウントする</a></li>
+<li><a href="#2つのコンテナに同じvolumeをマウントする">2つのコンテナに同じvolumeをマウントする</a></li>
 </ul></li>
 <li><a href="#bind-mount">bind mount</a>
 <ul>
 <li><a href="#vを使ってdocker外のデータをnginxコンテナにマウントする">-vを使ってDocker外のデータをnginxコンテナにマウントする</a></li>
 <li><a href="#mountを使ってdocker外のデータをnginxコンテナにマウントする">&ndash;mountを使ってDocker外のデータをnginxコンテナにマウントする</a></li>
+<li><a href="#ローカルのjekyllをコンテナのjekllサーバで動かす">ローカルのJekyllをコンテナのJekllサーバで動かす</a></li>
 </ul></li>
 </ul></li>
 </ul>

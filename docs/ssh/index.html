@@ -11,7 +11,7 @@
 <title>
   
     
-    Ubuntu
+    Ssh
   
  | solareenlo</title>
 
@@ -52,7 +52,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   <style>
-  nav ul a[href$="\2f docs\2fubuntu\2f "] {
+  nav ul a[href$="\2f docs\2fssh\2f "] {
       color: #004ed0;
   }
   </style>
@@ -133,7 +133,7 @@ https://github.com/alex-shpak/hugo-book
   <strong>
   
     
-    Ubuntu
+    Ssh
   
 </strong>
 </header>
@@ -141,46 +141,18 @@ https://github.com/alex-shpak/hugo-book
       
 <article class="markdown">
 
-<h1 id="ubuntuとは">Ubuntuとは</h1>
+<h1 id="ssh-secure-shell-とは">SSH(Secure Shell)とは</h1>
 
-<p>コミュニティにより開発されているオペレーティングシステムのこと.
-無料で提供されている.
-Linuxディストリビューションの1つ.</p>
-
-<h2 id="再起動">再起動</h2>
-<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo shutdown -r now
-// or
-sudo reboot</code></pre></div>
-<h2 id="mountしているssdのlabel名を変更する">mountしているSSDのlabel名を変更する</h2>
-
-<p>Ubuntuのディスクプリで当該のSSDをmountする.</p>
-<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">df -Th
-&gt; Filesystem     Type      Size  Used Avail Use% Mounted on
-&gt; /dev/nvme2n1p1 ext4      234G   61M  222G   <span style="color:#00afaf">1</span>% /media/solareenlo/ssd021</code></pre></div>
-<p>でSSDのFilesystem名(この場合は<code>/dev/nvme2n1p1</code>)を確認する.</p>
-<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo umount /dev/nvme2n1p1</code></pre></div>
-<p>で一度SSDをunmountする.</p>
-
-<p>SSDのTypeがext2/ext3/ext4の場合は,</p>
-<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo e2label /dev/nvme2n1p1 ssd02</code></pre></div>
-<p>とし, label名を<code>ssd021</code>から<code>ssd02</code>に変更する.</p>
-
-<p>そして, Ubuntuのディスクアプリで当該のSSDをmountする.</p>
+<p>暗号や認証の技術を利用して, 安全にリモートコンピュータと通信するためのプロトコルのこと.
+VPSに接続するときは必須.</p>
 </article>
 
       
-<div class="align-center book-git-footer justify-between">
-  
-  <div>
-    
-    <a href="https://github.com/solareenlo/blog-hugo/commit/aaf96e93ae07313216cefe21ad448a06c1e473e3" title='Last modified Apr 25, 2019 by solareenlo' target="_blank" rel="noopener">
-      <img src="/svg/code-merge.svg" alt="Changed" /> Apr 25, 2019
-    </a>
-  </div>
+<div class="align-center book-git-footer justify-end">
   
   
   <div>
-    <a href="https://github.com/solareenlo/blog-hugo/edit/master/content/docs/ubuntu.md" target="_blank" rel="noopener">
+    <a href="https://github.com/solareenlo/blog-hugo/edit/master/content/docs/ssh.md" target="_blank" rel="noopener">
       <img src="/svg/code-fork.svg" alt="Edit" /> Edit this page
     </a>
   </div>
@@ -197,11 +169,7 @@ sudo reboot</code></pre></div>
   <aside class="book-toc fixed">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#ubuntuとは">Ubuntuとは</a>
-<ul>
-<li><a href="#再起動">再起動</a></li>
-<li><a href="#mountしているssdのlabel名を変更する">mountしているSSDのlabel名を変更する</a></li>
-</ul></li>
+<li><a href="#ssh-secure-shell-とは">SSH(Secure Shell)とは</a></li>
 </ul>
 </nav>
   </aside>

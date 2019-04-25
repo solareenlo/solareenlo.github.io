@@ -11,7 +11,7 @@
 <title>
   
     
-    Ubuntu
+    Docker Compose
   
  | solareenlo</title>
 
@@ -52,7 +52,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   <style>
-  nav ul a[href$="\2f docs\2fubuntu\2f "] {
+  nav ul a[href$="\2f docs\2f docker-compose\2f "] {
       color: #004ed0;
   }
   </style>
@@ -133,7 +133,7 @@ https://github.com/alex-shpak/hugo-book
   <strong>
   
     
-    Ubuntu
+    Docker Compose
   
 </strong>
 </header>
@@ -141,46 +141,61 @@ https://github.com/alex-shpak/hugo-book
       
 <article class="markdown">
 
-<h1 id="ubuntuとは">Ubuntuとは</h1>
+<h1 id="docker-compose-https-github-com-docker-compose-とは"><a href="https://github.com/docker/compose">Docker Compose</a>とは</h1>
 
-<p>コミュニティにより開発されているオペレーティングシステムのこと.
-無料で提供されている.
-Linuxディストリビューションの1つ.</p>
+<p>複数のコンテナで構成されるアプリケーションを定義と実行するためのツールのこと.
+Dockerとは切り離されてる.</p>
 
-<h2 id="再起動">再起動</h2>
-<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo shutdown -r now
-// or
-sudo reboot</code></pre></div>
-<h2 id="mountしているssdのlabel名を変更する">mountしているSSDのlabel名を変更する</h2>
+<ul>
+<li>Composeはアプリケーションのサービスをファイルで定義する.</li>
+<li>Dockerコマンドと高い親和性があるため, 学習コストが比較的低い.</li>
+<li>Swarmモードにサービスをデプロイできるオーケストレーション機能もある.
 
-<p>Ubuntuのディスクプリで当該のSSDをmountする.</p>
-<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">df -Th
-&gt; Filesystem     Type      Size  Used Avail Use% Mounted on
-&gt; /dev/nvme2n1p1 ext4      234G   61M  222G   <span style="color:#00afaf">1</span>% /media/solareenlo/ssd021</code></pre></div>
-<p>でSSDのFilesystem名(この場合は<code>/dev/nvme2n1p1</code>)を確認する.</p>
-<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo umount /dev/nvme2n1p1</code></pre></div>
-<p>で一度SSDをunmountする.</p>
+<ul>
+<li><strong>Reference:</strong> <a href="https://www.slideshare.net/zembutsu/docker-compose-guidebook">Docker Compose 徹底解説</a></li>
+</ul></li>
+</ul>
 
-<p>SSDのTypeがext2/ext3/ext4の場合は,</p>
-<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo e2label /dev/nvme2n1p1 ssd02</code></pre></div>
-<p>とし, label名を<code>ssd021</code>から<code>ssd02</code>に変更する.</p>
+<h2 id="活用場面">活用場面</h2>
 
-<p>そして, Ubuntuのディスクアプリで当該のSSDをmountする.</p>
-</article>
+<ul>
+<li>利用者視点
+
+<ul>
+<li><code>docker-compose.yml</code>があれば, すぐに何でも実行できる.</li>
+</ul></li>
+<li>開発者視点
+
+<ul>
+<li>環境の再構築が簡単</li>
+<li>バージョン違いの環境を作りやすい</li>
+<li>1つのマシン上に, 複数の環境を立ち上げられやすい</li>
+</ul></li>
+</ul>
+
+<p>適切に書かれたYAMLファイルさえあれば, 誰でも簡単に環境構築もアプリケーション実行もできるのが強み.</p>
+
+<h2 id="docker-compose-yml">docker-compose.yml</h2>
+
+<p>services:, networks:, volumes:を定義する.</p>
+
+<h2 id="nginxとhttpdを動かす">nginxとhttpdを動かす</h2>
+<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone git@github.com:solareenlo/udemy-docker-mastery.git
+<span style="color:#0087ff">cd</span> udemy-docker-mastery/compose-sample-2
+docker-compose up -d <span style="color:#4e4e4e"># デーモンでコンテナ群を起動</span>
+docker-compose ps <span style="color:#4e4e4e"># 動いてるコンテナ一覧が見られる</span>
+&gt;           Name                   Command          State         Ports
+&gt; ----------------------------------------------------------------------------
+&gt; compose-sample-2_proxy_1   nginx -g daemon off;   Up      <span style="color:#00afaf">0</span>.0.0.0:80-&gt;80/tcp
+&gt; compose-sample-2_web_1     httpd-foreground       Up      <span style="color:#00afaf">80</span>/tcp
+docker-compose down <span style="color:#4e4e4e"># コンテナ群を停止する</span></code></pre></div></article>
 
       
-<div class="align-center book-git-footer justify-between">
-  
-  <div>
-    
-    <a href="https://github.com/solareenlo/blog-hugo/commit/aaf96e93ae07313216cefe21ad448a06c1e473e3" title='Last modified Apr 25, 2019 by solareenlo' target="_blank" rel="noopener">
-      <img src="/svg/code-merge.svg" alt="Changed" /> Apr 25, 2019
-    </a>
-  </div>
+<div class="align-center book-git-footer justify-end">
   
   
   <div>
-    <a href="https://github.com/solareenlo/blog-hugo/edit/master/content/docs/ubuntu.md" target="_blank" rel="noopener">
+    <a href="https://github.com/solareenlo/blog-hugo/edit/master/content/docs/docker-compose.md" target="_blank" rel="noopener">
       <img src="/svg/code-fork.svg" alt="Edit" /> Edit this page
     </a>
   </div>
@@ -197,10 +212,11 @@ sudo reboot</code></pre></div>
   <aside class="book-toc fixed">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#ubuntuとは">Ubuntuとは</a>
+<li><a href="#docker-compose-https-github-com-docker-compose-とは"><a href="https://github.com/docker/compose">Docker Compose</a>とは</a>
 <ul>
-<li><a href="#再起動">再起動</a></li>
-<li><a href="#mountしているssdのlabel名を変更する">mountしているSSDのlabel名を変更する</a></li>
+<li><a href="#活用場面">活用場面</a></li>
+<li><a href="#docker-compose-yml">docker-compose.yml</a></li>
+<li><a href="#nginxとhttpdを動かす">nginxとhttpdを動かす</a></li>
 </ul></li>
 </ul>
 </nav>
