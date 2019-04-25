@@ -188,10 +188,75 @@ docker-compose ps <span style="color:#4e4e4e"># 動いてるコンテナ一覧�
 &gt; ----------------------------------------------------------------------------
 &gt; compose-sample-2_proxy_1   nginx -g daemon off;   Up      <span style="color:#00afaf">0</span>.0.0.0:80-&gt;80/tcp
 &gt; compose-sample-2_web_1     httpd-foreground       Up      <span style="color:#00afaf">80</span>/tcp
-docker-compose down <span style="color:#4e4e4e"># コンテナ群を停止する</span></code></pre></div></article>
+docker-compose down <span style="color:#4e4e4e"># コンテナ群を停止する</span></code></pre></div>
+<h2 id="drupalとpostgresqlを動かす">DrupalとPostgreSQLを動かす</h2>
+
+<p><code>docker-compose.yml</code>に以下を記述する.</p>
+<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#4e4e4e"># Drupal with PostgreSQL</span>
+<span style="color:#4e4e4e">#</span>
+<span style="color:#4e4e4e"># Access via &#34;http://localhost:8081&#34;</span>
+<span style="color:#4e4e4e">#   (or &#34;http://$(docker-machine ip):8081&#34; if using docker-machine)</span>
+<span style="color:#4e4e4e">#</span>
+<span style="color:#4e4e4e"># During initial Drupal setup,</span>
+<span style="color:#4e4e4e"># Database type: PostgreSQL</span>
+<span style="color:#4e4e4e"># Database name: postgres</span>
+<span style="color:#4e4e4e"># Database username: postgres</span>
+<span style="color:#4e4e4e"># Database password: passwd</span>
+<span style="color:#4e4e4e"># ADVANCED OPTIONS; Database host: postgres</span>
+<span style="color:#4e4e4e"># ADVANCED OPTIONS; Database port: 5432</span>
+
+version: <span style="color:#00afaf">&#39;3.7&#39;</span>
+
+services:
+  drupal:
+    image: drupal:<span style="color:#00afaf">8</span>-apache
+    ports:
+      - <span style="color:#00afaf">8081</span>:<span style="color:#00afaf">80</span>
+    volumes:
+      - drupal-modules:/var/www/html/modules
+      - drupal-profiles:/var/www/html/profiles
+      - drupal-themes:/var/www/html/themes
+      - drupal-sites:/var/www/html/sites
+    restart: always
+
+  postgres:
+    image: postgres:<span style="color:#00afaf">10</span>
+    environment:
+      POSTGRES_PASSWORD: passwd
+    restart: always
+
+volumes:
+  drupal-modules:
+  drupal-profiles:
+  drupal-themes:
+  drupal-sites:</code></pre></div>
+<p>そして, 起動する.</p>
+<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker-compose up -d <span style="color:#4e4e4e"># DrupalとPostgreSQLを起動</span>
+docker-compose ps <span style="color:#4e4e4e"># 起動してるか確認</span>
+&gt;              Name                            Command               State          Ports
+&gt; -----------------------------------------------------------------------------------------------
+&gt; compose-assignment-1_drupal_1     docker-php-entrypoint apac ...   Up      <span style="color:#00afaf">0</span>.0.0.0:8081-&gt;80/tcp
+&gt; compose-assignment-1_postgres_1   docker-entrypoint.sh postgres    Up      <span style="color:#00afaf">5432</span>/tcp</code></pre></div>
+<p>任意のブラウザで<code>localhost:8081</code>を開くとDrupalが立ち上がってる.<br />
+設定値は以下.</p>
+<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Database type: PostgreSQL
+Database name: postgres
+Database username: postgres
+Database password: passwd
+ADVANCED OPTIONS; Database host: postgres
+ADVANCED OPTIONS; Database port: <span style="color:#00afaf">5432</span></code></pre></div>
+<p>そして, 停止する.</p>
+<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker-compose down -v <span style="color:#4e4e4e"># volumeも一緒に削除.</span></code></pre></div></article>
 
       
-<div class="align-center book-git-footer justify-end">
+<div class="align-center book-git-footer justify-between">
+  
+  <div>
+    
+    <a href="https://github.com/solareenlo/blog-hugo/commit/889f1ddc5b01da4d72341a49f4d321f63d1c3f6a" title='Last modified Apr 26, 2019 by solareenlo' target="_blank" rel="noopener">
+      <img src="/svg/code-merge.svg" alt="Changed" /> Apr 26, 2019
+    </a>
+  </div>
   
   
   <div>
@@ -217,6 +282,7 @@ docker-compose down <span style="color:#4e4e4e"># コンテナ群を停止する
 <li><a href="#活用場面">活用場面</a></li>
 <li><a href="#docker-compose-yml">docker-compose.yml</a></li>
 <li><a href="#nginxとhttpdを動かす">nginxとhttpdを動かす</a></li>
+<li><a href="#drupalとpostgresqlを動かす">DrupalとPostgreSQLを動かす</a></li>
 </ul></li>
 </ul>
 </nav>
