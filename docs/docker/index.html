@@ -187,6 +187,8 @@ sh get-docker.sh</code></pre></div>
 
 <p><strong>Reference:</strong> <a href="https://qiita.com/curseoff/items/a9e64ad01d673abb6866">Dockerコマンドメモ</a></p>
 
+<h2 id="container">container</h2>
+
 <h3 id="dockerでhello-world">DockerでHello World!</h3>
 <div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker container run --rm alpine /bin/echo <span style="color:#00afaf">&#39;Hello World!&#39;</span>
 &gt; Hello World!</code></pre></div>
@@ -259,6 +261,8 @@ sudo docker container port webhost // portの繋がりがどうなっている�
 &gt; <span style="color:#00afaf">80</span>/tcp -&gt; <span style="color:#00afaf">0</span>.0.0.0:80
 sudo docker container inspect --format <span style="color:#00afaf">&#39;{{ .NetworkSettings.IPAddress }}&#39;</span> webhost // webhostのIPアドレスを表示
 &gt; <span style="color:#00afaf">172</span>.17.0.2</code></pre></div>
+<h2 id="network">network</h2>
+
 <h3 id="ネットワークを新規に作って接続して削除する">ネットワークを新規に作って接続して削除する</h3>
 <div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo docker network ls
 &gt; NETWORK ID          NAME                DRIVER              SCOPE
@@ -343,7 +347,7 @@ sudo docker container run --rm --net dude centos curl -s search:9200 | jq // dud
 &gt;   },
 &gt;   <span style="color:#00afaf">&#34;tagline&#34;</span>: <span style="color:#00afaf">&#34;You Know, for Search&#34;</span>
 &gt; }</code></pre></div>
-<h2 id="image">Image</h2>
+<h2 id="image">image</h2>
 
 <p>Dockerのイメージは2種類のレイヤ構造になっている.</p>
 
@@ -378,6 +382,8 @@ sudo docker container run --rm --net dude centos curl -s search:9200 | jq // dud
 <div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo docker login</code></pre></div>
 <h3 id="docker-hubに自分でタグ付けしたイメージをpushする">Docker Hubに自分でタグ付けしたイメージをpushする</h3>
 <div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo docker push solareenlo/nginx</code></pre></div>
+<h2 id="dockerfile">Dockerfile</h2>
+
 <h3 id="dockerfileを書いてみる">Dockerfileを書いてみる</h3>
 
 <ul>
@@ -484,7 +490,7 @@ sudo docker container run -p <span style="color:#00afaf">80</span>:80 --rm nginx
 <span style="color:#5f8700">RUN</span> pwd</code></pre></div>
 <p>とすると, <code>/path/to pwd</code>となる.</p>
 
-<h2 id="node-js用のdockerfileをスクラッチから書いてみる">Node.js用のDockerfileをスクラッチから書いてみる</h2>
+<h3 id="node-js用のdockerfileをスクラッチから書いてみる">Node.js用のDockerfileをスクラッチから書いてみる</h3>
 <div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#4e4e4e"># alpine用のnodeイメージインストールする</span>
 <span style="color:#5f8700">FROM</span><span style="color:#00afaf"> node:8.16.0-alpine</span>
 <span style="color:#4e4e4e"># コンテナの3000番ポートを開く</span>
@@ -507,15 +513,75 @@ COPY . .
 ソースコード例は<a href="https://github.com/solareenlo/udemy-docker-mastery/tree/master/dockerfile-assignment-1">こちら</a>.<br />
 そして, イメージをビルドして, コンテナを起動して, localhost:3000にアクセスする.</p>
 <div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker image build -t nodetest .
-docker container run --rm -p <span style="color:#00afaf">80</span>:3000 nodetest</code></pre></div></article>
+docker container run --rm -p <span style="color:#00afaf">80</span>:3000 nodetest</code></pre></div>
+<h2 id="volume">volume</h2>
+
+<p>volumeはDockerが管理するデータ領域(コンテナが消えても残るデータ領域)をコンテナ上にマウントする機能のこと.
+volumeのデータは<code>/var/lib/docker/volumes</code>配下にある.
+設定する方法は<code>-v</code>と<code>--mount</code>の2種類ある.
+新規ユーザーは<code>--mount</code>を使おう.
+<code>--mount</code>が<code>key=value</code>形式で分かりやすいから.</p>
+
+<h3 id="vを使ってvolumeをmysqlコンテナにマウントする">-vを使ってvolumeをmysqlコンテナにマウントする</h3>
+
+<p>下記ではDocker内のvolumeという永続的にデータが保管されるところに<code>mysql-db</code>というディレクトリが作成されて, それがコンテナ内の<code>/var/lib/mysql</code>に紐付くということ.</p>
+<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker container run -d --name mysql -e <span style="color:#0087ff">MYSQL_ALLOW_EMPTY_PASSWORD</span>=True -v mysql-db:/var/lib/mysql mysql</code></pre></div>
+<h3 id="mountを使ってvolumeをmysqlコンテナにマウントする">&ndash;mountを使ってvolumeをmysqlコンテナにマウントする</h3>
+
+<p><code>--mount</code>は, <code>key=value</code>形式でvolumeの指定をするフラグ.</p>
+<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker container run -d --name mysql2 -e <span style="color:#0087ff">MYSQL_ALLOW_EMPTY_PASSWORD</span>=True --mount <span style="color:#0087ff">type</span>=volume,src=mysql-db2,dst=/var/lib/mysql mysql</code></pre></div>
+<h2 id="bind-mount">bind mount</h2>
+
+<p>bind mountはDocker外の任意のファイル・ディレクトリをコンテナ内にマウントする機能のこと.</p>
+
+<h3 id="vを使ってdocker外のデータをnginxコンテナにマウントする">-vを使ってDocker外のデータをnginxコンテナにマウントする</h3>
+<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone git@github.com:solareenlo/udemy-docker-mastery.git
+ch udemy-docker-mastery/dockerfile-sample-2
+docker container run -d --name nginx -p <span style="color:#00afaf">80</span>:80 -v <span style="color:#5f8700">$(</span><span style="color:#0087ff">pwd</span><span style="color:#5f8700">)</span>:/usr/share/nginx/html nginx</code></pre></div>
+<p>そして, nginxの中に入って, Docker外のデータとコンテナがきちんとマウントされてるかどうかを確かめてみる.</p>
+<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker container <span style="color:#0087ff">exec</span> -it nginx /bin/bash
+<span style="color:#0087ff">cd</span> /usr/share/nginx/html
+ls -la
+&gt; drwxr-xr-x <span style="color:#00afaf">2</span> <span style="color:#00afaf">1000</span> <span style="color:#00afaf">1000</span> <span style="color:#00afaf">4096</span> Apr <span style="color:#00afaf">24</span> <span style="color:#00afaf">16</span>:17 .
+&gt; drwxr-xr-x <span style="color:#00afaf">3</span> root root <span style="color:#00afaf">4096</span> Apr <span style="color:#00afaf">16</span> <span style="color:#00afaf">21</span>:20 ..
+&gt; -rw-r--r-- <span style="color:#00afaf">1</span> <span style="color:#00afaf">1000</span> <span style="color:#00afaf">1000</span>  <span style="color:#00afaf">415</span> Apr <span style="color:#00afaf">19</span> <span style="color:#00afaf">17</span>:34 Dockerfile
+&gt; -rw-r--r-- <span style="color:#00afaf">1</span> <span style="color:#00afaf">1000</span> <span style="color:#00afaf">1000</span>  <span style="color:#00afaf">285</span> Apr <span style="color:#00afaf">23</span> <span style="color:#00afaf">22</span>:54 index.html
+<span style="color:#4e4e4e"># 別のターミナルを開いて, コンテナをマウントしたディレクトリでtest.mdを作成すると,</span>
+ls -la
+&gt; drwxr-xr-x <span style="color:#00afaf">2</span> <span style="color:#00afaf">1000</span> <span style="color:#00afaf">1000</span> <span style="color:#00afaf">4096</span> Apr <span style="color:#00afaf">25</span> <span style="color:#00afaf">01</span>:20 .
+&gt; drwxr-xr-x <span style="color:#00afaf">3</span> root root <span style="color:#00afaf">4096</span> Apr <span style="color:#00afaf">16</span> <span style="color:#00afaf">21</span>:20 ..
+&gt; -rw-r--r-- <span style="color:#00afaf">1</span> <span style="color:#00afaf">1000</span> <span style="color:#00afaf">1000</span>  <span style="color:#00afaf">415</span> Apr <span style="color:#00afaf">19</span> <span style="color:#00afaf">17</span>:34 Dockerfile
+&gt; -rw-r--r-- <span style="color:#00afaf">1</span> <span style="color:#00afaf">1000</span> <span style="color:#00afaf">1000</span>  <span style="color:#00afaf">285</span> Apr <span style="color:#00afaf">23</span> <span style="color:#00afaf">22</span>:54 index.html
+&gt; -rw-rw-r-- <span style="color:#00afaf">1</span> <span style="color:#00afaf">1000</span> <span style="color:#00afaf">1000</span>    <span style="color:#00afaf">0</span> Apr <span style="color:#00afaf">25</span> <span style="color:#00afaf">01</span>:20 test.md
+<span style="color:#4e4e4e"># test.mdがきちんと増えてる.</span></code></pre></div>
+<h3 id="mountを使ってdocker外のデータをnginxコンテナにマウントする">&ndash;mountを使ってDocker外のデータをnginxコンテナにマウントする</h3>
+<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone git@github.com:solareenlo/udemy-docker-mastery.git
+ch udemy-docker-mastery/dockerfile-sample-2
+docker container run -d --name nginx2 -p <span style="color:#00afaf">8080</span>:80 --mount <span style="color:#0087ff">type</span>=bind,src=<span style="color:#5f8700">$(</span><span style="color:#0087ff">pwd</span><span style="color:#5f8700">)</span>,dst=/usr/share/nginx/html nginx</code></pre></div>
+<p>そして, nginxの中に入って, Docker外のデータとコンテナがきちんとマウントされてるかどうかを確かめてみる.</p>
+<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker container <span style="color:#0087ff">exec</span> -it nginx /bin/bash
+<span style="color:#0087ff">cd</span> /usr/share/nginx/html
+ls -la
+&gt; drwxr-xr-x <span style="color:#00afaf">2</span> <span style="color:#00afaf">1000</span> <span style="color:#00afaf">1000</span> <span style="color:#00afaf">4096</span> Apr <span style="color:#00afaf">24</span> <span style="color:#00afaf">16</span>:17 .
+&gt; drwxr-xr-x <span style="color:#00afaf">3</span> root root <span style="color:#00afaf">4096</span> Apr <span style="color:#00afaf">16</span> <span style="color:#00afaf">21</span>:20 ..
+&gt; -rw-r--r-- <span style="color:#00afaf">1</span> <span style="color:#00afaf">1000</span> <span style="color:#00afaf">1000</span>  <span style="color:#00afaf">415</span> Apr <span style="color:#00afaf">19</span> <span style="color:#00afaf">17</span>:34 Dockerfile
+&gt; -rw-r--r-- <span style="color:#00afaf">1</span> <span style="color:#00afaf">1000</span> <span style="color:#00afaf">1000</span>  <span style="color:#00afaf">285</span> Apr <span style="color:#00afaf">23</span> <span style="color:#00afaf">22</span>:54 index.html
+<span style="color:#4e4e4e"># 別のターミナルを開いて, コンテナをマウントしたディレクトリでtest.mdを作成すると,</span>
+ls -la
+&gt; drwxr-xr-x <span style="color:#00afaf">2</span> <span style="color:#00afaf">1000</span> <span style="color:#00afaf">1000</span> <span style="color:#00afaf">4096</span> Apr <span style="color:#00afaf">25</span> <span style="color:#00afaf">01</span>:20 .
+&gt; drwxr-xr-x <span style="color:#00afaf">3</span> root root <span style="color:#00afaf">4096</span> Apr <span style="color:#00afaf">16</span> <span style="color:#00afaf">21</span>:20 ..
+&gt; -rw-r--r-- <span style="color:#00afaf">1</span> <span style="color:#00afaf">1000</span> <span style="color:#00afaf">1000</span>  <span style="color:#00afaf">415</span> Apr <span style="color:#00afaf">19</span> <span style="color:#00afaf">17</span>:34 Dockerfile
+&gt; -rw-r--r-- <span style="color:#00afaf">1</span> <span style="color:#00afaf">1000</span> <span style="color:#00afaf">1000</span>  <span style="color:#00afaf">285</span> Apr <span style="color:#00afaf">23</span> <span style="color:#00afaf">22</span>:54 index.html
+&gt; -rw-rw-r-- <span style="color:#00afaf">1</span> <span style="color:#00afaf">1000</span> <span style="color:#00afaf">1000</span>    <span style="color:#00afaf">0</span> Apr <span style="color:#00afaf">25</span> <span style="color:#00afaf">01</span>:20 test.md
+<span style="color:#4e4e4e"># test.mdがきちんと増えてる.</span></code></pre></div></article>
 
       
 <div class="align-center book-git-footer justify-between">
   
   <div>
     
-    <a href="https://github.com/solareenlo/blog-hugo/commit/854d57eadf0ba0f946e1a658dd47399cf868c90b" title='Last modified Apr 24, 2019 by solareenlo' target="_blank" rel="noopener">
-      <img src="/svg/code-merge.svg" alt="Changed" /> Apr 24, 2019
+    <a href="https://github.com/solareenlo/blog-hugo/commit/aaf96e93ae07313216cefe21ad448a06c1e473e3" title='Last modified Apr 25, 2019 by solareenlo' target="_blank" rel="noopener">
+      <img src="/svg/code-merge.svg" alt="Changed" /> Apr 25, 2019
     </a>
   </div>
   
@@ -550,7 +616,8 @@ docker container run --rm -p <span style="color:#00afaf">80</span>:3000 nodetest
 <ul>
 <li><a href="#linux編">Linux編</a></li>
 </ul></li>
-<li><a href="#基本的な使い方-v18-09-5">基本的な使い方(v18.09.5)</a>
+<li><a href="#基本的な使い方-v18-09-5">基本的な使い方(v18.09.5)</a></li>
+<li><a href="#container">container</a>
 <ul>
 <li><a href="#dockerでhello-world">DockerでHello World!</a></li>
 <li><a href="#一覧-log表示">一覧/log表示</a></li>
@@ -564,11 +631,14 @@ docker container run --rm -p <span style="color:#00afaf">80</span>:3000 nodetest
 <li><a href="#コンテナを一度に削除する">コンテナを一度に削除する</a></li>
 <li><a href="#起動しているコンテナに入る">起動しているコンテナに入る</a></li>
 <li><a href="#portを指定してnginxを起動する">portを指定してnginxを起動する</a></li>
+</ul></li>
+<li><a href="#network">network</a>
+<ul>
 <li><a href="#ネットワークを新規に作って接続して削除する">ネットワークを新規に作って接続して削除する</a></li>
 <li><a href="#コンテナからコンテナに問い合わせる">コンテナからコンテナに問い合わせる</a></li>
 <li><a href="#2個コンテナを立ててdnsラウンドロビンを使ってみる">2個コンテナを立ててDNSラウンドロビンを使ってみる</a></li>
 </ul></li>
-<li><a href="#image">Image</a>
+<li><a href="#image">image</a>
 <ul>
 <li><a href="#docker-imageをdocker-hubからpullする">docker imageをDocker Hubからpullする</a></li>
 <li><a href="#一括してイメージを最新へ更新する">一括してイメージを最新へ更新する</a></li>
@@ -576,13 +646,26 @@ docker container run --rm -p <span style="color:#00afaf">80</span>:3000 nodetest
 <li><a href="#既にあるイメージに新たにタグ付けする">既にあるイメージに新たにタグ付けする</a></li>
 <li><a href="#docker-hubにログインする">Docker Hubにログインする</a></li>
 <li><a href="#docker-hubに自分でタグ付けしたイメージをpushする">Docker Hubに自分でタグ付けしたイメージをpushする</a></li>
+</ul></li>
+<li><a href="#dockerfile">Dockerfile</a>
+<ul>
 <li><a href="#dockerfileを書いてみる">Dockerfileを書いてみる</a></li>
 <li><a href="#dockerfileからイメージを作成する">DockerFileからイメージを作成する</a></li>
 <li><a href="#ローカルにあるファイルをコピーしてイメージを作成する">ローカルにあるファイルをコピーしてイメージを作成する</a></li>
 <li><a href="#copyとaddの違い">COPYとADDの違い</a></li>
 <li><a href="#workdirで作業ディレクトリを指定する">WORKDIRで作業ディレクトリを指定する</a></li>
-</ul></li>
 <li><a href="#node-js用のdockerfileをスクラッチから書いてみる">Node.js用のDockerfileをスクラッチから書いてみる</a></li>
+</ul></li>
+<li><a href="#volume">volume</a>
+<ul>
+<li><a href="#vを使ってvolumeをmysqlコンテナにマウントする">-vを使ってvolumeをmysqlコンテナにマウントする</a></li>
+<li><a href="#mountを使ってvolumeをmysqlコンテナにマウントする">&ndash;mountを使ってvolumeをmysqlコンテナにマウントする</a></li>
+</ul></li>
+<li><a href="#bind-mount">bind mount</a>
+<ul>
+<li><a href="#vを使ってdocker外のデータをnginxコンテナにマウントする">-vを使ってDocker外のデータをnginxコンテナにマウントする</a></li>
+<li><a href="#mountを使ってdocker外のデータをnginxコンテナにマウントする">&ndash;mountを使ってDocker外のデータをnginxコンテナにマウントする</a></li>
+</ul></li>
 </ul></li>
 </ul>
 </nav>
