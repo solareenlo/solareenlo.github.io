@@ -175,7 +175,389 @@ auxオプションは、aとuとxというオプションを組み合わせた�
 <blockquote>
 <p>Linux</p>
 </blockquote>
-<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sha256sum &lt;ファイル名&gt;</code></pre></div></article>
+<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sha256sum &lt;ファイル名&gt;</code></pre></div>
+<h1 id="基本的なunixコマンドの使い方">基本的なUnixコマンドの使い方</h1>
+
+<h2 id="mkdirを使って一気にファイルを複数作成する">mkdirを使って一気にファイルを複数作成する</h2>
+<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#4e4e4e"># app1, app2, ... app39, app40というフォルダを一斉に作成する方法</span>
+mkdir app{<span style="color:#00afaf">1</span>..40}</code></pre></div>
+<h2 id="一般ユーザーと管理ユーザー">一般ユーザーと管理ユーザー</h2>
+<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#4e4e4e"># 一般ユーザーだと</span>
+[solareenlo@localhost ~]$
+
+<span style="color:#4e4e4e"># 管理ユーザーだと</span>
+[solareenlo@localhost ~]#</code></pre></div>
+<h2 id="unixシステムのディレクトリの大体の構成">UNIXシステムのディレクトリの大体の構成</h2>
+
+<ul>
+<li>binには, バイナリデータが入ってる.</li>
+<li>binには, catやcpといった, システムを動かすための基本コマンドの実行ファイルがある.</li>
+<li>etcには, アプリケーションの設定ファイルが入っている.</li>
+<li>homeには, 各ユーザーのホームディレクトリが入ってる.</li>
+<li>sbinには, システム管理用のコマンドが入っている.</li>
+<li>usrには, 一般的なアプリケーションが格納されてる.</li>
+<li>varには, システムのログファイルなどの頻繁に書き換わるようなファイルが入ってる.</li>
+</ul>
+
+<h2 id="ディレクリを移動する">ディレクリを移動する</h2>
+<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#4e4e4e"># 現在いるディレクトリを表示</span>
+<span style="color:#0087ff">pwd</span>
+
+<span style="color:#4e4e4e"># 画面をきれいにするには</span>
+clear
+<span style="color:#4e4e4e"># Control + l</span>
+
+<span style="color:#4e4e4e"># ディレクトリへ移動</span>
+<span style="color:#0087ff">cd</span> path/to/directory/
+
+<span style="color:#4e4e4e"># 1つ上の階層へ戻る</span>
+<span style="color:#0087ff">cd</span> ..
+
+<span style="color:#4e4e4e"># 直前のディレクトリへ戻る</span>
+<span style="color:#0087ff">cd</span> -
+
+<span style="color:#4e4e4e"># ホームディレクトリへ戻る</span>
+cd</code></pre></div>
+<h2 id="ディレクトリを操作する">ディレクトリを操作する</h2>
+<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#4e4e4e"># ディレクトリを新規作成</span>
+mkdir <span style="color:#0087ff">test</span>
+
+<span style="color:#4e4e4e"># ディレクトリ一覧表示</span>
+ls
+
+<span style="color:#4e4e4e"># ディレクトリをコピー</span>
+cp -r <span style="color:#0087ff">test</span> test2
+
+<span style="color:#4e4e4e"># test3ディレクトリの中にconfigディレクトリを一気に作成する</span>
+mkdir -p test3/config
+
+<span style="color:#4e4e4e"># test3ディレクトリをtest2ディレクトリに移動する</span>
+mv test3 test2
+
+<span style="color:#4e4e4e"># 空のディレクトリを削除する</span>
+rmdir test2/test3/config
+
+<span style="color:#4e4e4e"># 空でないディレクトリを削除する</span>
+rm -r test2</code></pre></div>
+<h2 id="ファイル操作">ファイル操作</h2>
+<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#4e4e4e"># file.txtの中身を全部一斉に見る</span>
+cat path/to/file.txt
+
+<span style="color:#4e4e4e"># file.txtの中身を少しずつ見るには</span>
+less path/to/file.txt
+<span style="color:#4e4e4e"># 矢印キーでスクロール</span>
+<span style="color:#4e4e4e"># space で下へ移動</span>
+<span style="color:#4e4e4e"># Control + F で一画面先へ移動</span>
+<span style="color:#4e4e4e"># Control + B で一画面前へ移動</span>
+<span style="color:#4e4e4e"># g でファイル先頭へ移動</span>
+<span style="color:#4e4e4e"># G でファイル末尾へ移動</span>
+<span style="color:#4e4e4e"># q で終了</span>
+
+<span style="color:#4e4e4e"># 現在のディレクトリにファイルコピー</span>
+cp path/to/file.txt .
+
+<span style="color:#4e4e4e"># 現在のディレクトリにあるファイルを名前変更</span>
+mv file.txt file2.txt
+
+<span style="color:#4e4e4e"># ファイルを削除</span>
+rm file2.txt</code></pre></div>
+<h2 id="bashの便利機能">bashの便利機能</h2>
+<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#4e4e4e"># 操作をとりあえずキャンセル</span>
+<span style="color:#4e4e4e"># CTRL + C</span>
+
+<span style="color:#4e4e4e"># コマンドの履歴検索</span>
+<span style="color:#4e4e4e"># CTRL + R</span>
+<span style="color:#4e4e4e"># そこで何かしら前に使ったコマンドを途中まで入力してtabキーを押して補完して, エンターキーを押すと実行される</span></code></pre></div>
+<h2 id="コマンドの履歴を使う">コマンドの履歴を使う</h2>
+<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#4e4e4e"># 今までに使用したコマンドの履歴を表示する</span>
+<span style="color:#0087ff">history</span>
+
+<span style="color:#4e4e4e"># 出てきた履歴を使う</span>
+!333
+
+<span style="color:#4e4e4e"># 直前のコマンドを使う</span>
+!!
+
+<span style="color:#4e4e4e"># 2個前のコマンドを使う</span>
+!-2
+
+<span style="color:#4e4e4e"># コマンドに渡した最後の文字列を再利用するには!$を使う</span>
+ls test/
+<span style="color:#0087ff">cd</span> !$
+
+<span style="color:#4e4e4e"># 履歴の予測を使う</span>
+!pw
+<span style="color:#4e4e4e"># 上記のコマンドで, 今までに使ったことがあるpwdを実行してくれる</span>
+
+<span style="color:#4e4e4e"># 記憶があやふやな場合は</span>
+!pw:p
+<span style="color:#4e4e4e"># で, 直近に使ったコマンド予測が実行されずに帰ってくる</span>
+
+<span style="color:#4e4e4e"># !を使ってコマンドの履歴にアクセスできる.</span></code></pre></div>
+<h2 id="コマンドについて詳しく調べる">コマンドについて詳しく調べる</h2>
+<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#4e4e4e"># mkdirについて調べる</span>
+mkdir --help
+
+<span style="color:#4e4e4e"># より詳しく調べる</span>
+man mkdir
+
+<span style="color:#4e4e4e"># マニュアル内での検索は</span>
+/all
+<span style="color:#4e4e4e"># のように/を使って行う.</span>
+<span style="color:#4e4e4e"># 後の操作はvimと一緒.</span></code></pre></div>
+<h2 id="シンボリックリンクの使い方">シンボリックリンクの使い方</h2>
+<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#4e4e4e"># シンボリックリンクの付け方</span>
+mkdir -p config/production/database
+ln -s config/production/database/ dbconfig
+ls -l
+
+<span style="color:#4e4e4e"># シンボリックリンクを解消する</span>
+unlink dbconfig</code></pre></div>
+<h2 id="ユーザーとグループを確認する">ユーザーとグループを確認する</h2>
+<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#4e4e4e"># ユーザーを確認する</span>
+cat /etc/passwd
+&gt; solareenlo:x:1000:1000:solareenlo,,,:/home/solareenlo:/bin/bash
+<span style="color:#4e4e4e"># ユーザー名:パスワード有り:ユーザーID:グループID:グループ名,,,:ホームディレクトリ:シェルの場所</span>
+
+<span style="color:#4e4e4e"># グループを確認する</span>
+cat /etc/group
+&gt; solareenlo:x:1000:
+<span style="color:#4e4e4e"># グループ名:パスワード有り:グループID:所属するユーザー名</span>
+
+<span style="color:#4e4e4e"># 自分が所属しているグループ名を表示</span>
+groups</code></pre></div>
+<h2 id="パーミッションの変更">パーミッションの変更</h2>
+<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#4e4e4e"># 一番はじめの状態が</span>
+ls -l
+&gt; -rwxrw-r--. <span style="color:#00afaf">1</span> solareenlo solareenlo 日付 sample
+<span style="color:#4e4e4e"># としよう.</span>
+<span style="color:#4e4e4e"># rwxrwxrwx の並びは, user group other の並びになっている.</span>
+
+<span style="color:#4e4e4e"># groupに実行権限を付与する</span>
+chmod g+x sample
+&gt; rwx rwx r--
+
+<span style="color:#4e4e4e"># groupとotherに実行権限を与える</span>
+chmod go+x sample
+&gt; rwx rwx r-x
+
+<span style="color:#4e4e4e"># user, group, other全員から実行権限を剥奪する</span>
+chmod a-x sample
+&gt; rw- rw- r--</code></pre></div>
+<h2 id="数値によるパーミッションの変更">数値によるパーミッションの変更</h2>
+<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#4e4e4e"># rwx = 4+2+1 = 7</span>
+<span style="color:#4e4e4e"># と, 2進数の和で表現される.</span>
+<span style="color:#4e4e4e"># ので,</span>
+rwx rw- r-- = <span style="color:#00afaf">4</span>+2+1, <span style="color:#00afaf">4</span>+2+0, <span style="color:#00afaf">4</span>+0+0 = <span style="color:#00afaf">764</span>
+<span style="color:#4e4e4e"># ので,</span>
+chmod <span style="color:#00afaf">774</span> <span style="color:#0087ff">sample</span> = rwx rwx r--
+chmod <span style="color:#00afaf">664</span> <span style="color:#0087ff">sample</span> = rw- rw- r--
+<span style="color:#4e4e4e"># となる</span></code></pre></div>
+<h2 id="独自のコマンドを作る">独自のコマンドを作る</h2>
+<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#4e4e4e"># 先ずはコマンドが先に存在しないことを確認する</span>
+<span style="color:#0087ff">type</span> hi
+&gt; -bash: type: hi: not found
+<span style="color:#4e4e4e"># で, OK</span>
+
+<span style="color:#4e4e4e"># hi!と出力されるコマンドをvimで作成する</span>
+vim hi
+<span style="color:#5f8700">#!/bin/bash
+</span><span style="color:#5f8700"></span><span style="color:#0087ff">echo</span> <span style="color:#00afaf">&#39;hi!&#39;</span>
+:wq
+
+<span style="color:#4e4e4e"># hiコマンドの実行権限を見てみる</span>
+ls -l
+&gt; -rw-rw-r-- solareenlo solareenlo 日付 hi
+<span style="color:#4e4e4e"># 実行権限が無いので付与する</span>
+chmod u+x hi
+ls -l
+&gt; -rwx-rw-r-- solareenlo solareenlo 日付 hi
+./hi
+&gt; hi!</code></pre></div>
+<h2 id="一時的にpathを通す">一時的にpathを通す</h2>
+<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#0087ff">pwd</span>
+&gt; /home/現在の/path/test
+<span style="color:#0087ff">export</span> <span style="color:#0087ff">PATH</span>=/home/現在の/path/test:<span style="color:#0087ff">$PATH</span>
+
+<span style="color:#4e4e4e"># どこにpathが通っているのかを見るには</span>
+<span style="color:#0087ff">echo</span> <span style="color:#0087ff">$PATH</span>
+&gt; /anaconda3/bin:/usr/local/git/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/home/現在の/path/test
+<span style="color:#4e4e4e"># いろいろなpathが通っているディレクトリが見れる</span>
+
+hi
+&gt; hi!
+<span style="color:#4e4e4e"># この方法は一時的なpathの通し方</span>
+
+<span style="color:#4e4e4e"># 実行しようとしているコマンド(hi)がどこから呼び出されているのかを探るには</span>
+which hi
+
+<span style="color:#4e4e4e"># 全体の環境変数を見るには</span>
+printenv
+&gt; <span style="color:#0087ff">TERM_PROGRAM</span>=Apple_Terminal
+&gt; <span style="color:#0087ff">ANDROID_HOME</span>=/Users/solareenlo/Library/Android/sdk
+&gt; <span style="color:#0087ff">TERM</span>=xterm-256color
+&gt; <span style="color:#0087ff">SHELL</span>=/bin/bash
+&gt; <span style="color:#0087ff">CLICOLOR</span>=<span style="color:#00afaf">1</span>
+<span style="color:#4e4e4e"># こんな感じで出てくる</span>
+<span style="color:#0087ff">echo</span> <span style="color:#0087ff">$PATH</span>
+&gt; /anaconda3/bin:/usr/local/git/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/home/現在の/path/test
+<span style="color:#4e4e4e"># 環境変数に$を付けると, その値を意味する</span></code></pre></div>
+<h2 id="管理者ユーザーになる">管理者ユーザーになる</h2>
+<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ls -l /var/log/boot.log
+&gt; -rw------- <span style="color:#00afaf">1</span> root root <span style="color:#00afaf">27000</span> 日付 /var/log/boot.log
+cat !$
+&gt; cat /var/log/boot.log
+&gt; cat: /var/log/boot.log: 許可がありません
+<span style="color:#4e4e4e"># となるので,</span>
+<span style="color:#4e4e4e"># rootユーザーに切り替える</span>
+<span style="color:#4e4e4e"># 現在のディレクトリにログイン</span>
+sudo su
+&gt; Password:
+<span style="color:#4e4e4e"># か,</span>
+<span style="color:#4e4e4e"># ホームディレクトリにログイン</span>
+sudo su -l
+&gt; Password:
+<span style="color:#4e4e4e"># か,</span>
+sudo su -
+&gt; Password:
+
+<span style="color:#0087ff">pwd</span>
+&gt; /root
+cat /var/log/boot.log
+&gt; きちんと中身が見れる
+
+<span style="color:#4e4e4e"># rootユーザーを抜ける</span>
+<span style="color:#0087ff">exit</span>
+
+<span style="color:#4e4e4e"># rootユーザーは何でもできるので, うっかりで大変なことになるので,</span>
+<span style="color:#4e4e4e"># 実際はsudoで1つ1つrootユーザー権限でコマンドを実行する.</span>
+sudo cat /var/log/boot.log
+&gt; きちんと中身が見れる</code></pre></div>
+<h2 id="管理者を変更するchownを使う">管理者を変更するchownを使う</h2>
+<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cp /var/log/boot.log .
+&gt; cp: <span style="color:#00afaf">&#39;/var/log/boot.log&#39;</span> を読み込み用に開くことができません: 許可がありません
+sudo !!
+&gt; sudo cp /var/log/boot.log .
+ls -l
+&gt; -rw------- <span style="color:#00afaf">1</span> root root <span style="color:#00afaf">27000</span> 日付 boot.log
+cat boot.log
+&gt; cat: boot.log: 許可がありません
+<span style="color:#4e4e4e"># boot.logのオーナーを変更する</span>
+sudo chown solareenlo:solareenlo boot.log
+&gt; -rw------- <span style="color:#00afaf">1</span> solareenlo solareenlo <span style="color:#00afaf">27000</span> 日付 boot.log
+cat boot.log
+&gt; boot.logの中身が見れる</code></pre></div>
+<h2 id="wc-head-tail-grepを使う">wc, head, tail, grepを使う</h2>
+<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#4e4e4e"># ファイルの行数, 単語数, 文字数をカウントしてくれるwc</span>
+wc boot.log
+&gt; <span style="color:#00afaf">490</span> <span style="color:#00afaf">3397</span> <span style="color:#00afaf">27077</span> boot.log
+
+<span style="color:#4e4e4e"># ファイルの行数だけ表示</span>
+wc -l boot.log
+&gt; <span style="color:#00afaf">490</span> boot.log
+
+<span style="color:#4e4e4e"># ファイルの先頭10行をcatしたい時</span>
+head boot.log
+&gt; 先頭の10行だけが表示される
+
+<span style="color:#4e4e4e"># ファイルの先頭3行だけを表示したい時</span>
+head -n <span style="color:#00afaf">3</span> boot.log
+head -3 boot.lgo
+&gt; 先頭の3行だけが表示される
+
+<span style="color:#4e4e4e"># ファイルの末尾から10行を表示する</span>
+tail boot.log
+
+<span style="color:#4e4e4e"># ファイルの末尾から3行を表示する</span>
+tail -n <span style="color:#00afaf">3</span> boot.log
+tail -3 boot.log
+
+<span style="color:#4e4e4e"># 特定の単語を検索する</span>
+<span style="color:#4e4e4e"># 正規表現ももちろんできる</span>
+grep <span style="color:#00afaf">&#39;etc&#39;</span> boot.log
+&gt; 検索結果が返ってくる</code></pre></div>
+<h2 id="リダイレクション-パイプを使う">リダイレクション, パイプを使う</h2>
+<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#4e4e4e"># コマンドの実行結果をテキストファイルに出力する</span>
+<span style="color:#0087ff">echo</span> <span style="color:#00afaf">&#39;date&#39;</span> &gt; cmd.txt
+cat cmd.txt
+&gt; date
+<span style="color:#4e4e4e"># cmd.txtの中にdateが書き込まれた</span>
+
+<span style="color:#4e4e4e"># コマンドの実行結果をテキストファイルの末尾に付け加える</span>
+<span style="color:#0087ff">echo</span> <span style="color:#00afaf">&#39;free&#39;</span> &gt;&gt; cmd.txt
+cat cmd.txt
+&gt; date
+&gt; free
+
+<span style="color:#4e4e4e"># 逆にテキストファイルの中身をコマンドに渡して実行する</span>
+bash &lt; cmd.txt
+&gt; 日付
+&gt; メモリの使用状況
+
+<span style="color:#4e4e4e"># テキストファイルの中身をコマンドに渡した実行結果をテキストファイルに書き込む</span>
+bash &lt; cmd.txt &gt; result.txt
+cat result.txt
+&gt; 日付
+&gt; メモリの使用状況
+
+<span style="color:#4e4e4e"># コマンドの実行結果をパイプを使ってコマンドに渡す</span>
+ls -l /etc | grep <span style="color:#00afaf">&#39;bash&#39;</span>
+&gt; bashを含むls -l /etcの結果が返ってくる
+
+<span style="color:#4e4e4e"># さらに, 上記の結果の行数を調べる</span>
+ls -l /etc | grep <span style="color:#00afaf">&#39;bash&#39;</span> | wc -l
+&gt; <span style="color:#00afaf">3</span></code></pre></div>
+<h2 id="ワイルカードを使う">ワイルカードを使う</h2>
+<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#4e4e4e"># 任意の文字列を扱う*を使って, 拡張子が.confを表示する</span>
+ls /etc/*.conf
+&gt; 拡張子が.confのものだけが表示される
+
+<span style="color:#4e4e4e"># cから始まり, 2文字だけ何でも良くて, 拡張子も何でもいい場合は?と*を使う</span>
+ls /etc/c??.*
+&gt; 当該条件に合致するものが表示される</code></pre></div>
+<h2 id="find-xargsを使う">find, xargsを使う</h2>
+<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#4e4e4e"># ファイルを検索してくれるfind</span>
+<span style="color:#4e4e4e"># find 場所 名前で検索 条件(initのあとは何でも良い)</span>
+find /etc -name <span style="color:#00afaf">&#39;init*&#39;</span>
+&gt; 当該ファイルが出力される
+
+<span style="color:#4e4e4e"># ディレクトリを覗いてファイルだけ検索したい場合</span>
+find /etc -name <span style="color:#00afaf">&#39;init*&#39;</span> -type f
+
+<span style="color:#4e4e4e"># さらに, 検索したファイルに対して別のコマンドを実行したい場合は, -exec wc -l {} + を使う.</span>
+<span style="color:#4e4e4e"># {}の中に検索結果を入れて実行してくれる.</span>
+find /etc -name <span style="color:#00afaf">&#39;init*&#39;</span> -type f -exec wc -l {} +
+&gt; 当該ファイルの行数がカウントされて表示される
+
+<span style="color:#4e4e4e"># 複数の結果をコマンドに流し込めるxargsもある</span>
+find /etc -name <span style="color:#00afaf">&#39;init*&#39;</span> -type f | xargs wc -l
+&gt; 当該ファイルの行数がカウントされて表示される</code></pre></div>
+<h2 id="ブレース展開を使う">ブレース展開を使う</h2>
+<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#4e4e4e"># まとめて展開</span>
+<span style="color:#0087ff">echo</span> {a, b, c}
+&gt; a b c
+<span style="color:#0087ff">echo</span> {<span style="color:#00afaf">1</span>..10}
+&gt; <span style="color:#00afaf">1</span> <span style="color:#00afaf">2</span> <span style="color:#00afaf">3</span> <span style="color:#00afaf">4</span> <span style="color:#00afaf">5</span> <span style="color:#00afaf">6</span> <span style="color:#00afaf">7</span> <span style="color:#00afaf">8</span> <span style="color:#00afaf">9</span> <span style="color:#00afaf">10</span>
+<span style="color:#0087ff">echo</span> {<span style="color:#00afaf">1</span>..3}{a..c}
+&gt; 1a 1b 1c 2a 2b 2c 3a 3b 3c
+
+<span style="color:#4e4e4e"># 連続してコマンドを実行するには&amp;&amp;を使う</span>
+mkdir <span style="color:#0087ff">test</span> &amp;&amp; <span style="color:#0087ff">cd</span> <span style="color:#0087ff">test</span>
+
+<span style="color:#4e4e4e"># ブレース展開を使って一気にディレクトリを作成する</span>
+mkdir app{<span style="color:#00afaf">1</span>..3}
+ls
+&gt; app1 app2 app3
+
+<span style="color:#4e4e4e"># ブレース展開を使って一気にディレクトリの中にファイルを作成する</span>
+touch app{<span style="color:#00afaf">1</span>..3}/test{<span style="color:#00afaf">1</span>..3}{.txt,.jpeg,.git}
+ls app2
+&gt; test1.txt test1.jpeg test1.git test2.txt test2.jpeg test2.git test3.txt test3.jpeg test3.git
+
+<span style="color:#4e4e4e"># 上記の中から特定の拡張子のファイルだけ削除する</span>
+rm app{<span style="color:#00afaf">1</span>..3}/test{<span style="color:#00afaf">1</span>..3}{.jpeg,.git}
+ls app2
+&gt; test1.txt test2.txt test3.txtt</code></pre></div></article>
 
       
 <div class="align-center book-git-footer justify-between">
@@ -210,6 +592,31 @@ auxオプションは、aとuとxというオプションを組み合わせた�
 <ul>
 <li><a href="#psコマンド">psコマンド</a></li>
 <li><a href="#sha256を出力">sha256を出力</a></li>
+</ul></li>
+<li><a href="#基本的なunixコマンドの使い方">基本的なUnixコマンドの使い方</a>
+<ul>
+<li><a href="#mkdirを使って一気にファイルを複数作成する">mkdirを使って一気にファイルを複数作成する</a></li>
+<li><a href="#一般ユーザーと管理ユーザー">一般ユーザーと管理ユーザー</a></li>
+<li><a href="#unixシステムのディレクトリの大体の構成">UNIXシステムのディレクトリの大体の構成</a></li>
+<li><a href="#ディレクリを移動する">ディレクリを移動する</a></li>
+<li><a href="#ディレクトリを操作する">ディレクトリを操作する</a></li>
+<li><a href="#ファイル操作">ファイル操作</a></li>
+<li><a href="#bashの便利機能">bashの便利機能</a></li>
+<li><a href="#コマンドの履歴を使う">コマンドの履歴を使う</a></li>
+<li><a href="#コマンドについて詳しく調べる">コマンドについて詳しく調べる</a></li>
+<li><a href="#シンボリックリンクの使い方">シンボリックリンクの使い方</a></li>
+<li><a href="#ユーザーとグループを確認する">ユーザーとグループを確認する</a></li>
+<li><a href="#パーミッションの変更">パーミッションの変更</a></li>
+<li><a href="#数値によるパーミッションの変更">数値によるパーミッションの変更</a></li>
+<li><a href="#独自のコマンドを作る">独自のコマンドを作る</a></li>
+<li><a href="#一時的にpathを通す">一時的にpathを通す</a></li>
+<li><a href="#管理者ユーザーになる">管理者ユーザーになる</a></li>
+<li><a href="#管理者を変更するchownを使う">管理者を変更するchownを使う</a></li>
+<li><a href="#wc-head-tail-grepを使う">wc, head, tail, grepを使う</a></li>
+<li><a href="#リダイレクション-パイプを使う">リダイレクション, パイプを使う</a></li>
+<li><a href="#ワイルカードを使う">ワイルカードを使う</a></li>
+<li><a href="#find-xargsを使う">find, xargsを使う</a></li>
+<li><a href="#ブレース展開を使う">ブレース展開を使う</a></li>
 </ul></li>
 </ul>
 </nav>
