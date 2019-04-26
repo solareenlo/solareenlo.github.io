@@ -20,7 +20,7 @@
 
 
 
-<link rel="stylesheet" href="/book.min.8012c601fc3a000f4f9a58dc8c4425aa8eae12cc82fed8d51e095e382e07aa32.css">
+<link rel="stylesheet" href="/book.min.e9fb4d02fc1836380efabc2c16002f54cbfda56fb1b90313ddf4d57b56b8ddb8.css">
 
 
 <link rel="icon" href="/favicon.png" type="image/x-icon">
@@ -171,24 +171,24 @@ https://github.com/alex-shpak/hugo-book
 <blockquote>
 <p>うまくいかないときは権限を<code>chmod</code>を使って変更してみる.</p>
 </blockquote>
-<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -O https://github.com/docker/docker-credential-helpers/releases/download/v0.6.0/docker-credential-pass-v0.6.0-amd64.tar.gz
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -O https://github.com/docker/docker-credential-helpers/releases/download/v0.6.0/docker-credential-pass-v0.6.0-amd64.tar.gz
 tar -xvf docker-credential-pass.tar.gz
 mv docker-credential-pass /usr/local/bin
 apt-get install gpg pass
 gpg --generate-key
 gpg --list-keys
-&gt; pub   rsa2048 <span style="color:#00afaf">2019</span>-04-22 [SC] [有効期限: <span style="color:#00afaf">2021</span>-04-21]
+&gt; pub   rsa2048 <span style="color:#2aa198">2019</span>-04-22 <span style="color:#719e07">[</span>SC<span style="color:#719e07">]</span> <span style="color:#719e07">[</span>有効期限: <span style="color:#2aa198">2021</span>-04-21<span style="color:#719e07">]</span>
 &gt;       D7D35B60A7FA571541959AF3C4821C32793D5F5A // ここの公開鍵をコピーする
-&gt; uid           [  究極  ] solareenlo &lt;test@example.com&gt;
-&gt; sub   rsa2048 <span style="color:#00afaf">2019</span>-04-22 [E] [有効期限: <span style="color:#00afaf">2021</span>-04-21]
+&gt; uid           <span style="color:#719e07">[</span>  究極  <span style="color:#719e07">]</span> solareenlo &lt;test@example.com&gt;
+&gt; sub   rsa2048 <span style="color:#2aa198">2019</span>-04-22 <span style="color:#719e07">[</span>E<span style="color:#719e07">]</span> <span style="color:#719e07">[</span>有効期限: <span style="color:#2aa198">2021</span>-04-21<span style="color:#719e07">]</span>
 pass init D7D35B60A7FA571541959AF3C4821C32793D5F5A // 上記でコピーした公開鍵をペーストする
 pass insert docker-credential-helpers/docker-pass-initialized-check // ここで入力するパスワードは初期化されるので何でも良い.
 pass show docker-credential-helpers/docker-pass-initialized-check // 先ほど入力したパスワードが表示される
 docker-credential-pass list
 vim ~/.docker/config.json
-// {
-//   <span style="color:#00afaf">&#34;credsStore&#34;</span>: <span style="color:#00afaf">&#34;pass&#34;</span>
-// }
+// <span style="color:#719e07">{</span>
+//   <span style="color:#2aa198">&#34;credsStore&#34;</span>: <span style="color:#2aa198">&#34;pass&#34;</span>
+// <span style="color:#719e07">}</span>
 /* と~/.docker/config.jsonに書き込む. */
 docker login</code></pre></div>
 <ul>

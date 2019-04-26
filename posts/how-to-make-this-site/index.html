@@ -20,7 +20,7 @@
 
 
 
-<link rel="stylesheet" href="/book.min.8012c601fc3a000f4f9a58dc8c4425aa8eae12cc82fed8d51e095e382e07aa32.css">
+<link rel="stylesheet" href="/book.min.e9fb4d02fc1836380efabc2c16002f54cbfda56fb1b90313ddf4d57b56b8ddb8.css">
 
 
 <link rel="icon" href="/favicon.png" type="image/x-icon">
@@ -165,7 +165,7 @@ https://github.com/alex-shpak/hugo-book
 <p><a href="https://github.com">https://github.com</a></p>
 
 <h2 id="macにhomebrewをインストールする">MacにHomebrewをインストールする</h2>
-<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/usr/bin/ruby -e <span style="color:#00afaf">&#34;</span><span style="color:#5f8700">$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install<span style="color:#5f8700">)</span><span style="color:#00afaf">&#34;</span></code></pre></div>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/usr/bin/ruby -e <span style="color:#2aa198">&#34;</span><span style="color:#719e07">$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install<span style="color:#719e07">)</span><span style="color:#2aa198">&#34;</span></code></pre></div>
 <ul>
 <li><strong>References:</strong>
 
@@ -176,7 +176,7 @@ https://github.com/alex-shpak/hugo-book
 </ul>
 
 <h2 id="macにhugo-静的サイトジェネレーター-をインストールする">MacにHugo(静的サイトジェネレーター)をインストールする</h2>
-<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew install hugo</code></pre></div>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew install hugo</code></pre></div>
 <ul>
 <li>Reference: <a href="https://gohugo.io/getting-started/installing/#homebrew-macos">Install Hugo</a></li>
 </ul>
@@ -184,31 +184,31 @@ https://github.com/alex-shpak/hugo-book
 <h3 id="hugoのextendedバージョンをインストールする">HugoのExtendedバージョンをインストールする</h3>
 
 <p>以下内容を<code>hugo_latest.sh</code>名で保存する.</p>
-<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#4e4e4e"># hugo_latest.sh</span>
-<span style="color:#4e4e4e"># Find the latest Hugo from GitHub</span>
-<span style="color:#0087ff">echo</span> <span style="color:#00afaf">&#39;🐹 Starting Hugo Install / Update 🐹&#39;</span>
-<span style="color:#0087ff">echo</span> <span style="color:#00afaf">&#39;      Note: Please be sure to have curl and grep installed&#39;</span>
-<span style="color:#0087ff">echo</span> <span style="color:#00afaf">&#39;&#39;</span>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># hugo_latest.sh</span>
+<span style="color:#586e75"># Find the latest Hugo from GitHub</span>
+<span style="color:#b58900">echo</span> <span style="color:#2aa198">&#39;🐹 Starting Hugo Install / Update 🐹&#39;</span>
+<span style="color:#b58900">echo</span> <span style="color:#2aa198">&#39;      Note: Please be sure to have curl and grep installed&#39;</span>
+<span style="color:#b58900">echo</span> <span style="color:#2aa198">&#39;&#39;</span>
 
-<span style="color:#0087ff">url</span>=<span style="color:#5f8700">$(</span>curl -s <span style="color:#00afaf">&#34;https://api.github.com/repositories/11180687/releases/latest&#34;</span> | grep -o <span style="color:#00afaf">&#39;https://.*hugo_extended.*_macOS-64bit.tar.gz&#39;</span><span style="color:#5f8700">)</span>
-<span style="color:#0087ff">echo</span> <span style="color:#00afaf">&#39;✅ Found latest version&#39;</span>
+<span style="color:#268bd2">url</span><span style="color:#719e07">=</span><span style="color:#719e07">$(</span>curl -s <span style="color:#2aa198">&#34;https://api.github.com/repositories/11180687/releases/latest&#34;</span> | grep -o <span style="color:#2aa198">&#39;https://.*hugo_extended.*_macOS-64bit.tar.gz&#39;</span><span style="color:#719e07">)</span>
+<span style="color:#b58900">echo</span> <span style="color:#2aa198">&#39;✅ Found latest version&#39;</span>
 
-curl -s <span style="color:#0087ff">$url</span> -L -o hugo_latest.tar.gz
-<span style="color:#0087ff">echo</span> <span style="color:#00afaf">&#39;✅ Download complete: &#39;</span> <span style="color:#0087ff">$url</span>
+curl -s <span style="color:#268bd2">$url</span> -L -o hugo_latest.tar.gz
+<span style="color:#b58900">echo</span> <span style="color:#2aa198">&#39;✅ Download complete: &#39;</span> <span style="color:#268bd2">$url</span>
 
 tar -zxf hugo_latest.tar.gz -C /usr/local/bin
 rm /usr/local/bin/README.md
 rm /usr/local/bin/LICENSE
-<span style="color:#0087ff">echo</span> <span style="color:#00afaf">&#39;✅ Extracted to /usr/local/bin&#39;</span>
+<span style="color:#b58900">echo</span> <span style="color:#2aa198">&#39;✅ Extracted to /usr/local/bin&#39;</span>
 
 rm hugo_latest.tar.gz
-<span style="color:#0087ff">echo</span> <span style="color:#00afaf">&#39;✅ Removed downloaded artifacts&#39;</span>
+<span style="color:#b58900">echo</span> <span style="color:#2aa198">&#39;✅ Removed downloaded artifacts&#39;</span>
 
-<span style="color:#0087ff">echo</span> <span style="color:#00afaf">&#39;&#39;</span>
-<span style="color:#0087ff">echo</span> <span style="color:#00afaf">&#39;👉 Current Version&#39;</span> <span style="color:#5f8700">$(</span>hugo version<span style="color:#5f8700">)</span>
+<span style="color:#b58900">echo</span> <span style="color:#2aa198">&#39;&#39;</span>
+<span style="color:#b58900">echo</span> <span style="color:#2aa198">&#39;👉 Current Version&#39;</span> <span style="color:#719e07">$(</span>hugo version<span style="color:#719e07">)</span>
 
-<span style="color:#0087ff">echo</span> <span style="color:#00afaf">&#39;&#39;</span>
-<span style="color:#0087ff">echo</span> <span style="color:#00afaf">&#39;🎉🎉🎉 Happy Hugo-ing! 🎉🎉🎉&#39;</span></code></pre></div>
+<span style="color:#b58900">echo</span> <span style="color:#2aa198">&#39;&#39;</span>
+<span style="color:#b58900">echo</span> <span style="color:#2aa198">&#39;🎉🎉🎉 Happy Hugo-ing! 🎉🎉🎉&#39;</span></code></pre></div>
 <p>そして, コンソールで以下を実行する.</p>
 
 <pre><code>bash hugo_latest.sh
@@ -219,13 +219,13 @@ rm hugo_latest.tar.gz
 </ul>
 
 <h2 id="hugoのテンプレートテーマであるbookをインストールする">Hugoのテンプレートテーマであるbookをインストールする</h2>
-<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#0087ff">cd</span>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#b58900">cd</span>
 hugo new site my-site
-<span style="color:#0087ff">cd</span> my-site
+<span style="color:#b58900">cd</span> my-site
 git init
 git submodule add https://github.com/alex-shpak/hugo-book themes/book</code></pre></div>
 <h3 id="試しにサイトをローカルで動かしてみる">試しにサイトをローカルで動かしてみる.</h3>
-<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hugo server --theme book</code></pre></div>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hugo server --theme book</code></pre></div>
 <ul>
 <li>References:
 

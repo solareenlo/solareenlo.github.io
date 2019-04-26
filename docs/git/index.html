@@ -20,7 +20,7 @@
 
 
 
-<link rel="stylesheet" href="/book.min.8012c601fc3a000f4f9a58dc8c4425aa8eae12cc82fed8d51e095e382e07aa32.css">
+<link rel="stylesheet" href="/book.min.e9fb4d02fc1836380efabc2c16002f54cbfda56fb1b90313ddf4d57b56b8ddb8.css">
 
 
 <link rel="icon" href="/favicon.png" type="image/x-icon">
@@ -150,18 +150,18 @@ https://github.com/alex-shpak/hugo-book
 <h2 id="新しいブランチの作成">新しいブランチの作成</h2>
 
 <h3 id="ローカルブランチからブランチ作成">ローカルブランチからブランチ作成</h3>
-<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#0087ff">cd</span> ディレクトリ // 作業ディレクトリに移動
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#b58900">cd</span> ディレクトリ // 作業ディレクトリに移動
 git branch -a // branchの一覧を表示
 git checkout master // master branchに切り替え
 git checkout -b 作成するbranch名 // masterを元にして新しいbranchを作成
 git branch -a
 git push -u origin 作成したbranch名 // branchをremoteに登録</code></pre></div>
 <h3 id="リモートブランチからブランチ作成">リモートブランチからブランチ作成</h3>
-<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#0087ff">cd</span> ディレクトリ
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#b58900">cd</span> ディレクトリ
 git checkout -b ローカルに作成するブランチ名 origin/再生元のリモートブランチ名
 git branch -a</code></pre></div>
 <h2 id="ブランチの削除">ブランチの削除</h2>
-<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#0087ff">cd</span> 作業ティレクトり
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#b58900">cd</span> 作業ティレクトり
 git checkout -b master // 削除したいブランチとは違うブランチにまずは移動する
 git checkout -d 削除したいブランチ名</code></pre></div>
 <h1 id="gitの基本操作">Gitの基本操作</h1>
@@ -175,220 +175,220 @@ git checkout -d 削除したいブランチ名</code></pre></div>
 </ul>
 
 <h2 id="gitの設定">gitの設定</h2>
-<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#4e4e4e"># gitへユーザー名を登録</span>
-git config --global user.name <span style="color:#00afaf">&#34;solareenlo&#34;</span>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># gitへユーザー名を登録</span>
+git config --global user.name <span style="color:#2aa198">&#34;solareenlo&#34;</span>
 
-<span style="color:#4e4e4e"># gitへメールアドレスを登録</span>
-git config --global user.email <span style="color:#00afaf">&#34;solareenlo@test.com&#34;</span>
+<span style="color:#586e75"># gitへメールアドレスを登録</span>
+git config --global user.email <span style="color:#2aa198">&#34;solareenlo@test.com&#34;</span>
 
-<span style="color:#4e4e4e"># gitを色づける</span>
-git config --global color.ui <span style="color:#0087ff">true</span>
+<span style="color:#586e75"># gitを色づける</span>
+git config --global color.ui <span style="color:#b58900">true</span>
 
-<span style="color:#4e4e4e"># commitしたときのエディタをvimに設定する</span>
+<span style="color:#586e75"># commitしたときのエディタをvimに設定する</span>
 git config --global core.editor vim
 
-<span style="color:#4e4e4e"># gitの設定一覧を見る</span>
+<span style="color:#586e75"># gitの設定一覧を見る</span>
 git config -l
 
-<span style="color:#4e4e4e"># gitのhelpを見る</span>
+<span style="color:#586e75"># gitのhelpを見る</span>
 git config --help</code></pre></div>
 <h2 id="初めてのcommit">初めてのcommit</h2>
-<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#4e4e4e"># gitの初期化</span>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># gitの初期化</span>
 git init
 
-<span style="color:#4e4e4e"># 作業ディレクトリからステージングエリアへ</span>
+<span style="color:#586e75"># 作業ディレクトリからステージングエリアへ</span>
 git add index.html
 
-<span style="color:#4e4e4e"># ステージングエリアからリポジトリへ</span>
+<span style="color:#586e75"># ステージングエリアからリポジトリへ</span>
 git commit
-<span style="color:#4e4e4e"># タイトルとか変更内容を書いて, :wq</span>
+<span style="color:#586e75"># タイトルとか変更内容を書いて, :wq</span>
 
-<span style="color:#4e4e4e"># 変更のlogを見る</span>
+<span style="color:#586e75"># 変更のlogを見る</span>
 git log</code></pre></div>
 <h2 id="gitのlogを見る">gitのlogを見る</h2>
-<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#4e4e4e"># logをコンパクトに見る</span>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># logをコンパクトに見る</span>
 git log --oneline
 
-<span style="color:#4e4e4e"># logと共に変更内容も見る</span>
+<span style="color:#586e75"># logと共に変更内容も見る</span>
 git log -p
 
-<span style="color:#4e4e4e"># どのファイルが変更なったかを見る</span>
+<span style="color:#586e75"># どのファイルが変更なったかを見る</span>
 git log --stat</code></pre></div>
 <h2 id="現在の状態を把握する">現在の状態を把握する</h2>
-<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#4e4e4e"># 現在の状態を見る</span>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># 現在の状態を見る</span>
 git status
 
-<span style="color:#4e4e4e"># ファイルの変更を無かったことにする</span>
+<span style="color:#586e75"># ファイルの変更を無かったことにする</span>
 git checkout -- index.html</code></pre></div>
 <h2 id="差分を確認する">差分を確認する</h2>
-<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#4e4e4e"># ファイルの差分を見る</span>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># ファイルの差分を見る</span>
 git diff
 
-<span style="color:#4e4e4e"># ステージングされたファイルの差分を見る</span>
+<span style="color:#586e75"># ステージングされたファイルの差分を見る</span>
 git diff --cached</code></pre></div>
 <h2 id="gitでのファイル操作">gitでのファイル操作</h2>
-<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#4e4e4e"># 現在のディレクトリ以下全部のファイルをaddする</span>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># 現在のディレクトリ以下全部のファイルをaddする</span>
 git add .
 
-<span style="color:#4e4e4e"># gitでのファイル削除</span>
+<span style="color:#586e75"># gitでのファイル削除</span>
 git rm index.html
 
-<span style="color:#4e4e4e"># gitでのファイル移動</span>
+<span style="color:#586e75"># gitでのファイル移動</span>
 git mv index.html</code></pre></div>
 <h2 id="gitの管理に含めない方法">gitの管理に含めない方法</h2>
-<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#4e4e4e"># .gitignoreファイルを作り, その中にgitに含めないファイルを記述する</span>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># .gitignoreファイルを作り, その中にgitに含めないファイルを記述する</span>
 vim .gitignore
 *.log
 
-<span style="color:#4e4e4e"># .gitignoreがある場所から遡ってはignoreされない.</span>
-<span style="color:#4e4e4e"># ので, サブディレクトリだけ.gitignoreしたい場合は, サブディレクトリ内に.gitignoreを入れておく.</span></code></pre></div>
+<span style="color:#586e75"># .gitignoreがある場所から遡ってはignoreされない.</span>
+<span style="color:#586e75"># ので, サブディレクトリだけ.gitignoreしたい場合は, サブディレクトリ内に.gitignoreを入れておく.</span></code></pre></div>
 <h2 id="直前のcommitを変更する">直前のcommitを変更する</h2>
-<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#4e4e4e"># 1つcommitする</span>
-git commit -m <span style="color:#00afaf">&#39;コミットを1つ追加&#39;</span>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># 1つcommitする</span>
+git commit -m <span style="color:#2aa198">&#39;コミットを1つ追加&#39;</span>
 
-<span style="color:#4e4e4e"># 直前のcommitを上書きする</span>
+<span style="color:#586e75"># 直前のcommitを上書きする</span>
 vim index.html
 git add .
 git commit --amend</code></pre></div>
 <h2 id="過去のバージョンに戻る-１">過去のバージョンに戻る（１）</h2>
-<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#4e4e4e"># 作業ディレクトリもステージングエリアも直前のcommitへ戻す</span>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># 作業ディレクトリもステージングエリアも直前のcommitへ戻す</span>
 git reset --hard HEAD
 
-<span style="color:#4e4e4e"># 2つ前のcommitに戻る</span>
+<span style="color:#586e75"># 2つ前のcommitに戻る</span>
 git reset --hard HEAD^
 
-<span style="color:#4e4e4e"># 指定したidにcommitを戻す</span>
-git reset --hard hash値(最低7桁)</code></pre></div>
+<span style="color:#586e75"># 指定したidにcommitを戻す</span>
+git reset --hard hash値<span style="color:#719e07">(</span>最低7桁<span style="color:#719e07">)</span></code></pre></div>
 <h2 id="過去のバージョンに戻る-２">過去のバージョンに戻る（２）</h2>
-<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#4e4e4e"># commit変更したけど, やっぱり変更前のcommitに戻りたいときは</span>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># commit変更したけど, やっぱり変更前のcommitに戻りたいときは</span>
 git reset --hard ORIG_HEAD
-<span style="color:#4e4e4e"># ORIG_HEADには前回取り消されたHEADの情報が1つだけ入っている.</span></code></pre></div>
+<span style="color:#586e75"># ORIG_HEADには前回取り消されたHEADの情報が1つだけ入っている.</span></code></pre></div>
 <h2 id="branchを使う">branchを使う</h2>
-<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#4e4e4e"># 現在のbranchを確認する</span>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># 現在のbranchを確認する</span>
 git branch
 
-<span style="color:#4e4e4e"># 新しいbranch hogeを作成する</span>
+<span style="color:#586e75"># 新しいbranch hogeを作成する</span>
 git branch hoge
 
-<span style="color:#4e4e4e"># hoge branchに移動する</span>
+<span style="color:#586e75"># hoge branchに移動する</span>
 git checkout hoge
 git branch
 
-<span style="color:#4e4e4e"># master branchに戻る</span>
+<span style="color:#586e75"># master branchに戻る</span>
 git checkout master
 git branch</code></pre></div>
 <h2 id="branchをmergeする">branchをmergeする</h2>
-<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#4e4e4e"># master branchにhoge branchをmergeさせたい</span>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># master branchにhoge branchをmergeさせたい</span>
 git checkout master
 git merge hoge
 
-<span style="color:#4e4e4e"># いらなくなったhoge branchを削除する</span>
+<span style="color:#586e75"># いらなくなったhoge branchを削除する</span>
 git branch -d hoge
 
-<span style="color:#4e4e4e"># masterにmerge済みのbranchを確認する</span>
+<span style="color:#586e75"># masterにmerge済みのbranchを確認する</span>
 git checkout master
 git branch --merged
 
-<span style="color:#4e4e4e"># masterにまだmergeしていないbranchを確認する</span>
+<span style="color:#586e75"># masterにまだmergeしていないbranchを確認する</span>
 git checkout master
 git branch --no-merged
 
-<span style="color:#4e4e4e"># 作業途中でmergeしたときに, まだcommitしたくないときは, stashを使って一時的に変更内容を退避させる.</span>
-git stash save <span style="color:#00afaf">&#39;コメント&#39;</span>
+<span style="color:#586e75"># 作業途中でmergeしたときに, まだcommitしたくないときは, stashを使って一時的に変更内容を退避させる.</span>
+git stash save <span style="color:#2aa198">&#39;コメント&#39;</span>
 
-<span style="color:#4e4e4e"># stashで退避させた情報の一覧表示</span>
+<span style="color:#586e75"># stashで退避させた情報の一覧表示</span>
 git stash list
 
-<span style="color:#4e4e4e"># 退避させるたびに, この一覧の上に退避データが積み上がっていく.</span>
-<span style="color:#4e4e4e"># 対比した内容を取り出すには</span>
+<span style="color:#586e75"># 退避させるたびに, この一覧の上に退避データが積み上がっていく.</span>
+<span style="color:#586e75"># 対比した内容を取り出すには</span>
 git stash pop
-<span style="color:#4e4e4e"># 引数をつけない場合, listで表示された一番上の内容が取り出される.</span></code></pre></div>
+<span style="color:#586e75"># 引数をつけない場合, listで表示された一番上の内容が取り出される.</span></code></pre></div>
 <h2 id="mergeの衝突を解消する">mergeの衝突を解消する</h2>
-<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#4e4e4e"># branch切って, すぐにhogeに移動する</span>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># branch切って, すぐにhogeに移動する</span>
 git checkout -b hoge
 vim index.html
 git add .
-git commit -m <span style="color:#00afaf">&#39;hogeで変更したよ&#39;</span>
+git commit -m <span style="color:#2aa198">&#39;hogeで変更したよ&#39;</span>
 git branch master
 vim index.html
 git add .
-git commit -m <span style="color:#00afaf">&#39;masterでも変更したよ&#39;</span>
+git commit -m <span style="color:#2aa198">&#39;masterでも変更したよ&#39;</span>
 git merge hoge
-&gt; CONFLICT (content): merge conflict in index.html
+&gt; CONFLICT <span style="color:#719e07">(</span>content<span style="color:#719e07">)</span>: merge conflict in index.html
 vim index.html
-<span style="color:#4e4e4e"># index.htmlのいらないところを削除するだけ</span>
-<span style="color:#4e4e4e"># hogeかmasterのどちらかの変更を残すということ.</span>
+<span style="color:#586e75"># index.htmlのいらないところを削除するだけ</span>
+<span style="color:#586e75"># hogeかmasterのどちらかの変更を残すということ.</span>
 git add .
-git comit -m <span style="color:#00afaf">&#39;conflictを解消したよ&#39;</span></code></pre></div>
+git comit -m <span style="color:#2aa198">&#39;conflictを解消したよ&#39;</span></code></pre></div>
 <h2 id="tagを付ける">tagを付ける</h2>
-<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#4e4e4e"># 直前のcommitにidに代わるわかりやすいv1.0というtagを付ける</span>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># 直前のcommitにidに代わるわかりやすいv1.0というtagを付ける</span>
 git tag v1.0
 
-<span style="color:#4e4e4e"># tagを確認する</span>
+<span style="color:#586e75"># tagを確認する</span>
 git tag
 
-<span style="color:#4e4e4e"># tagを使ってcommit内容を確認する</span>
+<span style="color:#586e75"># tagを使ってcommit内容を確認する</span>
 git show v1.0
 
-<span style="color:#4e4e4e"># 特定のcommitにtagを付ける</span>
-git tag v0.9 id(hash値)
+<span style="color:#586e75"># 特定のcommitにtagを付ける</span>
+git tag v0.9 id<span style="color:#719e07">(</span>hash値<span style="color:#719e07">)</span>
 
-<span style="color:#4e4e4e"># tagの削除</span>
+<span style="color:#586e75"># tagの削除</span>
 git -d v0.9</code></pre></div>
 <h2 id="エイリアスを付ける">エイリアスを付ける</h2>
-<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git config --global alias.co checkout
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git config --global alias.co checkout
 git config --global alias.st status
 git config --global alias.br branch
 git config --global alias.ci commit
 git config -l</code></pre></div>
 <h2 id="初めての共同作業">初めての共同作業</h2>
-<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#4e4e4e"># 共有リポジトリを作成</span>
-<span style="color:#4e4e4e"># 共有リポジトリには.gitを付けるのが通例</span>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># 共有リポジトリを作成</span>
+<span style="color:#586e75"># 共有リポジトリには.gitを付けるのが通例</span>
 mkdir ourweb.git
-<span style="color:#0087ff">cd</span> ourweb.git
+<span style="color:#b58900">cd</span> ourweb.git
 git init --bare
-<span style="color:#4e4e4e"># これで管理ファイルだけが管理され, commitとかはしない設定になる.</span>
+<span style="color:#586e75"># これで管理ファイルだけが管理され, commitとかはしない設定になる.</span>
 
-<span style="color:#4e4e4e"># 別のリポジトリを現在のリポジトリにoriginとして登録する</span>
+<span style="color:#586e75"># 別のリポジトリを現在のリポジトリにoriginとして登録する</span>
 git remote add origin ~/path/to/ourweb.git
 git config -l
-&gt; remote.origin.url=/home/path/to/ourweb.git
+&gt; remote.origin.url<span style="color:#719e07">=</span>/home/path/to/ourweb.git
 
-<span style="color:#4e4e4e"># 登録した別のリポジトリ(origin)を削除する</span>
+<span style="color:#586e75"># 登録した別のリポジトリ(origin)を削除する</span>
 git remote rm origin
 
-<span style="color:#4e4e4e"># 現在のリポジトリ(master)の内容をremoteしたディレクトリ(origin)にpushする</span>
+<span style="color:#586e75"># 現在のリポジトリ(master)の内容をremoteしたディレクトリ(origin)にpushする</span>
 git push origin master
-<span style="color:#4e4e4e"># originにmasterをpushする.という意味.</span>
+<span style="color:#586e75"># originにmasterをpushする.という意味.</span>
 
-<span style="color:#4e4e4e"># ourweb.gitをmyweb2としてcloneして作業する</span>
+<span style="color:#586e75"># ourweb.gitをmyweb2としてcloneして作業する</span>
 git clone ~/path/to/ourweb.git myweb2
-<span style="color:#0087ff">cd</span> myweb2
+<span style="color:#b58900">cd</span> myweb2
 git log
 vim index.html
 git add .
-git commit -m <span style="color:#00afaf">&#39;line2 added&#39;</span>
+git commit -m <span style="color:#2aa198">&#39;line2 added&#39;</span>
 git push origin master
-<span style="color:#4e4e4e"># 変更内容(master)をoriginにpushした</span>
+<span style="color:#586e75"># 変更内容(master)をoriginにpushした</span>
 
-<span style="color:#4e4e4e"># 別のユーザーが上記の変更をpullする</span>
+<span style="color:#586e75"># 別のユーザーが上記の変更をpullする</span>
 git pull origin master
 git log</code></pre></div>
 <h2 id="共同作業でコンフリクトが起こったら">共同作業でコンフリクトが起こったら</h2>
-<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#4e4e4e"># Aさんが先に変更を加えた</span>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># Aさんが先に変更を加えた</span>
 vim index.html
-git commit -am <span style="color:#00afaf">&#39;line 3 added&#39;</span>
+git commit -am <span style="color:#2aa198">&#39;line 3 added&#39;</span>
 git push origin master
 
-<span style="color:#4e4e4e"># Bさんも後から同様の場所に変更を加えた</span>
+<span style="color:#586e75"># Bさんも後から同様の場所に変更を加えた</span>
 vim index.html
-git commit -am <span style="color:#00afaf">&#39;line third added&#39;</span>
+git commit -am <span style="color:#2aa198">&#39;line third added&#39;</span>
 git push origin master
-&gt; CONFLICT (content): Merge conflict in index.html
-<span style="color:#4e4e4e"># pushする前にpullしてまずはconflictを解消する</span>
+&gt; CONFLICT <span style="color:#719e07">(</span>content<span style="color:#719e07">)</span>: Merge conflict in index.html
+<span style="color:#586e75"># pushする前にpullしてまずはconflictを解消する</span>
 git pull origin master
 vim index.html
-git commit -am <span style="color:#00afaf">&#39;conflict fixed&#39;</span>
+git commit -am <span style="color:#2aa198">&#39;conflict fixed&#39;</span>
 git push origin master</code></pre></div></article>
 
       

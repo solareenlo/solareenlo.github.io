@@ -20,7 +20,7 @@
 
 
 
-<link rel="stylesheet" href="/book.min.8012c601fc3a000f4f9a58dc8c4425aa8eae12cc82fed8d51e095e382e07aa32.css">
+<link rel="stylesheet" href="/book.min.e9fb4d02fc1836380efabc2c16002f54cbfda56fb1b90313ddf4d57b56b8ddb8.css">
 
 
 <link rel="icon" href="/favicon.png" type="image/x-icon">
@@ -146,14 +146,14 @@ https://github.com/alex-shpak/hugo-book
 <p>ソフトウェア開発のプラットフォーム兼ソースコードなどのホスティングサービス.</p>
 
 <h2 id="github-pagesで静的サイトを公開する">GitHub Pagesで静的サイトを公開する</h2>
-<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#0087ff">cd</span> 作業ディレクトリ名
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#b58900">cd</span> 作業ディレクトリ名
 git checkout -b gh-pages
 vim index.html // index.htmlを作成
 git push -u origin gh-pages</code></pre></div>
 <p>gh-pagesという名前のブランチにindex.htmlファイルを作っておけば, それが静的サイトとして「https://ユーザー名.github.io/リポジトリ名」として公開される.</p>
 
 <h2 id="リポジトリに他のリポジトリをリンク付けする">リポジトリに他のリポジトリをリンク付けする</h2>
-<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git submodule add -b &lt;リンク付けする方のブランチ名&gt; &lt;リンク付けする方のURL&gt; &lt;リンク付けされるディレクトリ名&gt;</code></pre></div>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git submodule add -b &lt;リンク付けする方のブランチ名&gt; &lt;リンク付けする方のURL&gt; &lt;リンク付けされるディレクトリ名&gt;</code></pre></div>
 <h2 id="リポジトリをforkして更新する">リポジトリをforkして更新する</h2>
 
 <p>fork -&gt; clone -&gt; remote -&gt; fethc -&gt; marge -&gt; push</p>
@@ -161,9 +161,9 @@ git push -u origin gh-pages</code></pre></div>
 <h2 id="ssh接続ができなくなったときは">ssh接続ができなくなったときは</h2>
 
 <p><code>~/.ssh/config</code>の中身を</p>
-<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Host github github.com
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Host github github.com
   Hostname github.com
-  Port <span style="color:#00afaf">22</span>
+  Port <span style="color:#2aa198">22</span>
   User git
   IdentityFile ~/.ssh/id_git_rsa</code></pre></div>
 <p>のように, Hostのところに<code>github.com</code>を追加してみる.</p>

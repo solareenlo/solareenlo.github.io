@@ -20,7 +20,7 @@
 
 
 
-<link rel="stylesheet" href="/book.min.8012c601fc3a000f4f9a58dc8c4425aa8eae12cc82fed8d51e095e382e07aa32.css">
+<link rel="stylesheet" href="/book.min.e9fb4d02fc1836380efabc2c16002f54cbfda56fb1b90313ddf4d57b56b8ddb8.css">
 
 
 <link rel="icon" href="/favicon.png" type="image/x-icon">
@@ -148,21 +148,21 @@ https://github.com/alex-shpak/hugo-book
 Linuxディストリビューションの1つ.</p>
 
 <h2 id="再起動">再起動</h2>
-<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo shutdown -r now
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo shutdown -r now
 // or
 sudo reboot</code></pre></div>
 <h2 id="mountしているssdのlabel名を変更する">mountしているSSDのlabel名を変更する</h2>
 
 <p>Ubuntuのディスクプリで当該のSSDをmountする.</p>
-<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">df -Th
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">df -Th
 &gt; Filesystem     Type      Size  Used Avail Use% Mounted on
-&gt; /dev/nvme2n1p1 ext4      234G   61M  222G   <span style="color:#00afaf">1</span>% /media/solareenlo/ssd021</code></pre></div>
+&gt; /dev/nvme2n1p1 ext4      234G   61M  222G   <span style="color:#2aa198">1</span>% /media/solareenlo/ssd021</code></pre></div>
 <p>でSSDのFilesystem名(この場合は<code>/dev/nvme2n1p1</code>)を確認する.</p>
-<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo umount /dev/nvme2n1p1</code></pre></div>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo umount /dev/nvme2n1p1</code></pre></div>
 <p>で一度SSDをunmountする.</p>
 
 <p>SSDのTypeがext2/ext3/ext4の場合は,</p>
-<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo e2label /dev/nvme2n1p1 ssd02</code></pre></div>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo e2label /dev/nvme2n1p1 ssd02</code></pre></div>
 <p>とし, label名を<code>ssd021</code>から<code>ssd02</code>に変更する.</p>
 
 <p>そして, Ubuntuのディスクアプリで当該のSSDをmountする.</p>
