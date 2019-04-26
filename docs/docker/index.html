@@ -20,7 +20,7 @@
 
 
 
-<link rel="stylesheet" href="/book.min.e9fb4d02fc1836380efabc2c16002f54cbfda56fb1b90313ddf4d57b56b8ddb8.css">
+<link rel="stylesheet" href="/book.min.6945439a99cce0ed79a4bcc90af2a1cedb5679c562eb1368d0a281777b8dcefc.css">
 
 
 <link rel="icon" href="/favicon.png" type="image/x-icon">
@@ -207,6 +207,11 @@ sh get-docker.sh</code></pre></div>
 <h3 id="dockerでhello-world">DockerでHello World!</h3>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker container run --rm alpine /bin/echo <span style="color:#2aa198">&#39;Hello World!&#39;</span>
 &gt; Hello World!</code></pre></div>
+<h3 id="コンテナを起動-停止-再起動">コンテナを起動/停止/再起動</h3>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75">`</span>docker run<span style="color:#586e75">`</span> <span style="color:#719e07">=</span> <span style="color:#586e75">`</span>docker create<span style="color:#586e75">`</span> + <span style="color:#586e75">`</span>docker start<span style="color:#586e75">`</span></code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo docker container run nginx // 起動
+sudo docker container run -d nginx // デーモンとして起動
+sudo docker container stop &lt;CONTAINERID か NAMES&gt; // 停止
+sudo docker container start &lt;CONTAINERID か NAMES&gt; // 再起動</code></pre></div>
 <h3 id="一覧-log表示">一覧/log表示</h3>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo docker container run --publish <span style="color:#2aa198">80</span>:80 --name webhost nginx // nginxを起動
 sudo docker container run --publish <span style="color:#2aa198">80</span>:80 --detach --name webhost nginx // デーモンとして起動
@@ -217,11 +222,6 @@ sudo docker container ls // 起動しているコンテナ一覧表示
 sudo docker container logs &lt;CONTAINERID か NAMES&gt; // 指定したコンテナのlogを表示
 sudo docker container ls -a // コンテナの一覧を表示
 sudo docker container ls -aq // コンテナIDだけ表示</code></pre></div>
-<h3 id="コンテナを起動-停止-再起動">コンテナを起動/停止/再起動</h3>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo docker container run nginx // 起動
-sudo docker container run -d nginx // デーモンとして起動
-sudo docker container stop &lt;CONTAINERID か NAMES&gt; // 停止
-sudo docker container start &lt;CONTAINERID か NAMES&gt; // 再起動</code></pre></div>
 <h3 id="コンテナの状態を見る">コンテナの状態を見る</h3>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo docker container top &lt;CONTAINERID or NAMES&gt; // コンテナが実行しているプロセスを表示
 sudo docker container inspect &lt;CONTAINERID or NAMES&gt; // コンテナの詳細を表示
@@ -651,8 +651,8 @@ docker run -p <span style="color:#2aa198">80</span>:4000 --mount <span style="co
 <li><a href="#container">container</a>
 <ul>
 <li><a href="#dockerでhello-world">DockerでHello World!</a></li>
-<li><a href="#一覧-log表示">一覧/log表示</a></li>
 <li><a href="#コンテナを起動-停止-再起動">コンテナを起動/停止/再起動</a></li>
+<li><a href="#一覧-log表示">一覧/log表示</a></li>
 <li><a href="#コンテナの状態を見る">コンテナの状態を見る</a></li>
 <li><a href="#コンテナを動かす">コンテナを動かす</a></li>
 <li><a href="#対話型モードでコンテナを動かす">対話型モードでコンテナを動かす</a></li>
