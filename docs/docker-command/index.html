@@ -11,7 +11,7 @@
 <title>
   
     
-    Vps
+    Docker Command
   
  | solareenlo</title>
 
@@ -52,7 +52,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   <style>
-  nav ul a[href$="\2f docs\2fvps\2f "] {
+  nav ul a[href$="\2f docs\2f docker-command\2f "] {
       color: #004ed0;
   }
   </style>
@@ -135,7 +135,7 @@ https://github.com/alex-shpak/hugo-book
   <strong>
   
     
-    Vps
+    Docker Command
   
 </strong>
 </header>
@@ -143,33 +143,52 @@ https://github.com/alex-shpak/hugo-book
       
 <article class="markdown">
 
-<h1 id="vps-バーチャル-プライベート-サーバ-とは">VPS(バーチャル・プライベート・サーバ)とは</h1>
+<h1 id="dockerのコマンド使用例">Dockerのコマンド使用例</h1>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># run = create + start</span>
+docker run busybox <span style="color:#b58900">echo</span> hi there
+&gt; hi there
 
-<p>一台の物理的なサーバコンピュータ上で仮想的なサーバコンピュータを何台も起動する技術によってつくられた仮想的なサーバコンピュータのこと.
-暗号通貨のフルノードを立てることができる.</p>
+<span style="color:#586e75"># コンテナ作ってスタートさせる</span>
+docker create --name my-busybox busybox <span style="color:#b58900">echo</span> hi there
+docker start -a my-busybox
+&gt; hi there
 
-<h2 id="世界のvpsの値段比較サイト">世界のVPSの値段比較サイト</h2>
+<span style="color:#586e75"># 一定期間後に終了</span>
+docker stop CONTAINER_NAME
+<span style="color:#586e75"># 直ぐに終了</span>
+docker <span style="color:#b58900">kill</span> CONTAINER_NAME
 
-<ul>
-<li><a href="https://vpscomp.com/servers">VPSCOMP</a></li>
-</ul>
+<span style="color:#586e75"># Image,Container,Volumeの数や容量を表示</span>
+docker system df
+<span style="color:#586e75"># 止まってるContainer, 使われてないVolume, 使われてないNetwork, 使われてないImageを削除</span>
+docker system prune
 
-<h2 id="ssh接続するには">SSH接続するには</h2>
-</article>
+<span style="color:#586e75"># 現在動いているredisコンテナにアクセスする</span>
+docker run --name myredis -d redis
+docker <span style="color:#b58900">exec</span> -it myredis redis-cli
+<span style="color:#2aa198">127</span>.0.0.1:6379&gt; <span style="color:#b58900">set</span> my-number <span style="color:#2aa198">5</span>
+&gt; OK
+<span style="color:#2aa198">127</span>.0.0.1:6379&gt; get my-number
+&gt; <span style="color:#2aa198">&#34;5&#34;</span>
+<span style="color:#586e75"># CTL-Cで終了</span>
+
+<span style="color:#586e75"># Shell Scriptモードで起動</span>
+docker run -it busybox sh
+/ <span style="color:#586e75"># ping google.com</span>
+&gt; <span style="color:#2aa198">64</span> bytes from <span style="color:#2aa198">172</span>.217.31.174: <span style="color:#268bd2">seq</span><span style="color:#719e07">=</span><span style="color:#2aa198">0</span> <span style="color:#268bd2">ttl</span><span style="color:#719e07">=</span><span style="color:#2aa198">51</span> <span style="color:#268bd2">time</span><span style="color:#719e07">=</span><span style="color:#2aa198">3</span>.399 ms
+&gt; <span style="color:#2aa198">64</span> bytes from <span style="color:#2aa198">172</span>.217.31.174: <span style="color:#268bd2">seq</span><span style="color:#719e07">=</span><span style="color:#2aa198">1</span> <span style="color:#268bd2">ttl</span><span style="color:#719e07">=</span><span style="color:#2aa198">51</span> <span style="color:#268bd2">time</span><span style="color:#719e07">=</span><span style="color:#2aa198">3</span>.672 ms
+^C
+/ <span style="color:#586e75"># echo hello</span>
+hello
+/ #
+<span style="color:#586e75"># こんな感じでbusyboxはシェルスクリプトが使える</span></code></pre></div></article>
 
       
-<div class="align-center book-git-footer justify-between">
-  
-  <div>
-    
-    <a href="https://github.com/solareenlo/blog-hugo/commit/a76ed5d44f420855bc9dfe4a0ff4d041f20d5dfc" title='Last modified Apr 22, 2019 by solareenlo' target="_blank" rel="noopener">
-      <img src="/svg/code-merge.svg" alt="Changed" /> Apr 22, 2019
-    </a>
-  </div>
+<div class="align-center book-git-footer justify-end">
   
   
   <div>
-    <a href="https://github.com/solareenlo/blog-hugo/edit/master/content/docs/vps.md" target="_blank" rel="noopener">
+    <a href="https://github.com/solareenlo/blog-hugo/edit/master/content/docs/docker-command.md" target="_blank" rel="noopener">
       <img src="/svg/code-fork.svg" alt="Edit" /> Edit this page
     </a>
   </div>
@@ -186,11 +205,7 @@ https://github.com/alex-shpak/hugo-book
   <aside class="book-toc fixed">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#vps-バーチャル-プライベート-サーバ-とは">VPS(バーチャル・プライベート・サーバ)とは</a>
-<ul>
-<li><a href="#世界のvpsの値段比較サイト">世界のVPSの値段比較サイト</a></li>
-<li><a href="#ssh接続するには">SSH接続するには</a></li>
-</ul></li>
+<li><a href="#dockerのコマンド使用例">Dockerのコマンド使用例</a></li>
 </ul>
 </nav>
   </aside>

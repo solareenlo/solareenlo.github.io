@@ -159,6 +159,15 @@ DBの使用率ランキング  DB-Engines Ranking  </description>
     
     <item>
       <title></title>
+      <link>https://solareenlo.com/docs/docker-command/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://solareenlo.com/docs/docker-command/</guid>
+      <description>Dockerのコマンド使用例 # run = create + start docker run busybox echo hi there &amp;gt; hi there # コンテナ作ってスタートさせる docker create --name my-busybox busybox echo hi there docker start -a my-busybox &amp;gt; hi there # 一定期間後に終了 docker stop CONTAINER_NAME # 直ぐに終了 docker kill CONTAINER_NAME # Image,Container,Volumeの数や容量を表示 docker system df # 止まってるContainer, 使われてないVolume, 使われてないNetwork, 使われてないImageを削除 docker system prune # 現在動いているredisコンテナにアクセスする docker run --name myredis -d redis docker exec -it myredis redis-cli 127.</description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>https://solareenlo.com/docs/docker-compose/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -322,6 +331,20 @@ SQLの実行順番    順番 操作名 命令文     1 テーブルの指定 fro
     
     <item>
       <title></title>
+      <link>https://solareenlo.com/docs/shell-script/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://solareenlo.com/docs/shell-script/</guid>
+      <description>シェルスクリプトとは シェルとはOSと対話するためのインターフェースであり, それのスクリプトがシェルスクリプト.
+シェルスクリプトモードで実行するのとfilename.shを作って,
+bash filename.sh で実行する2パターンあります.
+シェルスクリプトモードに突入 /bin/sh $ または
+sh $ Hello World sh $ echo Hello World Hello World $ シェルスクリプトモードから脱出 CTLとdを押す.
+初めてのシェルスクリプト # まず, bashがどこにあるか調べる which bash &amp;gt; /bin/bash  #!のことを「シェバン」もしくは「シバン」という. shell scriptファイルの頭に#! /bin/bashと書いてあげる.  vim hello i #i /bin/bash echo hello Esc :wq ls -l &amp;gt; -rw-rw-r--. 1 solareenlo solareenlo 24 日付 hello chmod +x hello ls -l &amp;gt; -rwxrwxr-x. 1 solareenlo solareenlo 24 日付 hello bash hello &amp;gt; hello 文字列を表示 # helloの中身 #!</description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>https://solareenlo.com/docs/ssh/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -346,7 +369,8 @@ SQLの実行順番    順番 操作名 命令文     1 テーブルの指定 fro
       
       <guid>https://solareenlo.com/docs/terminal/</guid>
       <description>ターミナルとは GUIの上でCUIの操作をしたいときに使用するアプリケーションのこと.
-コンソール/ターミナル/シェルの違い  コンソールとは入出力をつかさどる端末ハードウェア ターミナルとはGUIでCUI環境を再現するもの シェルとはCUI環境における対話的インターフェイス  Reference: 【初心者向け】シェル・ターミナル・コンソールの違いとは？   下地にシェルがありコンソールやターミナルから命令をOSへ伝達してくれる. コンソールでアクセスしてもターミナルでアクセスしても対話するものはシェルとなる.
+コンソール/ターミナル/シェルの違い  コンソールとは入出力をつかさどる端末ハードウェア ターミナルとはGUIでCUI環境を再現するもの シェルとはCUI環境におけるOSとの対話的インターフェイス  Reference: 【初心者向け】シェル・ターミナル・コンソールの違いとは？   下地にシェルがありコンソールやターミナルから命令をOSへ伝達してくれる.
+コンソールでアクセスしてもターミナルでアクセスしても対話するものはシェルとなる.
 コンソールの場合はハードウェア的に直にアクセスしているがターミナルの場合はGUI環境でソフトウェア的にシェルを呼び出し命令を実行するようになっている.
 ターミナルのJSON出力に色付けする jqを使う.
 # こんな感じ echo &amp;#39;{&amp;#34;items&amp;#34;:[{&amp;#34;item_id&amp;#34;:1,&amp;#34;name&amp;#34;:&amp;#34;すてきな雑貨&amp;#34;,&amp;#34;price&amp;#34;:2500},{&amp;#34;item_id&amp;#34;:2,&amp;#34;name&amp;#34;:&amp;#34;格好いい置物&amp;#34;,&amp;#34;price&amp;#34;:4500}]}&amp;#39; | jq . &amp;gt; { &amp;gt; &amp;#34;items&amp;#34;: [ &amp;gt; { &amp;gt; &amp;#34;item_id&amp;#34;: 1, &amp;gt; &amp;#34;name&amp;#34;: &amp;#34;すてきな雑貨&amp;#34;, &amp;gt; &amp;#34;price&amp;#34;: 2500 &amp;gt; }, &amp;gt; { &amp;gt; &amp;#34;item_id&amp;#34;: 2, &amp;gt; &amp;#34;name&amp;#34;: &amp;#34;格好いい置物&amp;#34;, &amp;gt; &amp;#34;price&amp;#34;: 4500 &amp;gt; } &amp;gt; ] &amp;gt; } Reference: jq コマンドを使う日常のご紹介</description>

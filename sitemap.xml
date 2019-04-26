@@ -74,6 +74,11 @@
   </url>
   
   <url>
+    <loc>https://solareenlo.com/docs/docker-command/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://solareenlo.com/docs/docker-compose/</loc>
     <priority>0</priority>
   </url>
@@ -145,6 +150,11 @@
   
   <url>
     <loc>https://solareenlo.com/docs/rust/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://solareenlo.com/docs/shell-script/</loc>
     <priority>0</priority>
   </url>
   
