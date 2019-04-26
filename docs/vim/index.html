@@ -20,7 +20,7 @@
 
 
 
-<link rel="stylesheet" href="/book.min.18cd097814acc2d60f57a2962b018cf86c84fba645ece32982add8972f33359a.css">
+<link rel="stylesheet" href="/book.min.8012c601fc3a000f4f9a58dc8c4425aa8eae12cc82fed8d51e095e382e07aa32.css">
 
 
 <link rel="icon" href="/favicon.png" type="image/x-icon">
@@ -160,10 +160,224 @@ https://github.com/alex-shpak/hugo-book
 
 <h2 id="オススメの使い方記事">オススメの使い方記事</h2>
 
+<h3 id="references">References</h3>
+
 <ul>
 <li><a href="http://wolfbash.hateblo.jp/entry/2017/09/05/234143">さっさと帰りたい怠け者エンジニアは vim をマスターしましょう その2 - 編集</a></li>
 <li><a href="http://wolfbash.hateblo.jp/entry/2017/08/25/121711">さっさと帰りたい怠け者エンジニアは vim をマスターしましょう その1 - 基本と移動</a></li>
 </ul>
+
+<h2 id="nerdtree">NERDTree</h2>
+
+<h3 id="ファイル操作">ファイル操作</h3>
+
+<table>
+<thead>
+<tr>
+<th>o(enter)</th>
+<th>ファイルを開く</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>go</td>
+<td>ファイルを開き、カーソルはツリーに保持する</td>
+</tr>
+
+<tr>
+<td>t</td>
+<td>タブで開く</td>
+</tr>
+
+<tr>
+<td>T</td>
+<td>タブで開き、移動はしない</td>
+</tr>
+
+<tr>
+<td>i</td>
+<td>水平分割して開く</td>
+</tr>
+
+<tr>
+<td>gi</td>
+<td>水平分割して開き、移動はしない</td>
+</tr>
+
+<tr>
+<td>s</td>
+<td>垂直分割して開く</td>
+</tr>
+
+<tr>
+<td>gs</td>
+<td>垂直分割して開き、移動はしない</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="ディレクトリ操作">ディレクトリ操作</h3>
+
+<table>
+<thead>
+<tr>
+<th>コマンド</th>
+<th>説明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>o(enter)</td>
+<td>フォルダを開く</td>
+</tr>
+
+<tr>
+<td>O</td>
+<td>再帰的にディレクトリをすべて開く</td>
+</tr>
+
+<tr>
+<td>x</td>
+<td>親ディレクトリを閉じる</td>
+</tr>
+
+<tr>
+<td>X</td>
+<td>再帰的にすべての子ディレクトリを閉じる</td>
+</tr>
+
+<tr>
+<td>e</td>
+<td>新しいツリーを生成する</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="ツリー操作">ツリー操作</h3>
+
+<table>
+<thead>
+<tr>
+<th>コマンド</th>
+<th>説明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>P</td>
+<td>ルートディレクトリへ移動</td>
+</tr>
+
+<tr>
+<td>p</td>
+<td>親ディレクトリへ移動</td>
+</tr>
+
+<tr>
+<td>K</td>
+<td>一番上へ移動</td>
+</tr>
+
+<tr>
+<td>J</td>
+<td>一番下へ移動</td>
+</tr>
+
+<tr>
+<td>Ctrl+k</td>
+<td>一つ上へ移動</td>
+</tr>
+
+<tr>
+<td>Ctrl+j</td>
+<td>一つ下へ移動</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="ファイルシステム">ファイルシステム</h3>
+
+<table>
+<thead>
+<tr>
+<th>コマンド</th>
+<th>説明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>C</td>
+<td>ツリーのルートを選択したディレクトリに変更</td>
+</tr>
+
+<tr>
+<td>u</td>
+<td>ツリーのルートを上の階層にする</td>
+</tr>
+
+<tr>
+<td>U</td>
+<td>変更前のツリーの状態を保持して、ツリーのルートを上の階層にする</td>
+</tr>
+
+<tr>
+<td>r</td>
+<td>選択したディレクトリをリフレッシュする</td>
+</tr>
+
+<tr>
+<td>R</td>
+<td>ツリーのルートをリフレッシュする</td>
+</tr>
+
+<tr>
+<td>m</td>
+<td>メニューを表示する</td>
+</tr>
+
+<tr>
+<td>cd</td>
+<td>選択したディレクトリにcwdを変更する</td>
+</tr>
+
+<tr>
+<td>CD</td>
+<td>cwdをツリールートに変更する</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="その他">その他</h3>
+
+<table>
+<thead>
+<tr>
+<th>コマンド</th>
+<th>説明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>I</td>
+<td>隠しファイルの表示、非表示</td>
+</tr>
+
+<tr>
+<td>B</td>
+<td>ブックマークの表示・非表示</td>
+</tr>
+
+<tr>
+<td>F</td>
+<td>ファイルの表示・非表示</td>
+</tr>
+</tbody>
+</table>
 </article>
 
       
@@ -199,7 +413,18 @@ https://github.com/alex-shpak/hugo-book
 <ul>
 <li><a href="#プラグインを導入する方法">プラグインを導入する方法</a></li>
 <li><a href="#プラグインランキングサイト">プラグインランキングサイト</a></li>
-<li><a href="#オススメの使い方記事">オススメの使い方記事</a></li>
+<li><a href="#オススメの使い方記事">オススメの使い方記事</a>
+<ul>
+<li><a href="#references">References</a></li>
+</ul></li>
+<li><a href="#nerdtree">NERDTree</a>
+<ul>
+<li><a href="#ファイル操作">ファイル操作</a></li>
+<li><a href="#ディレクトリ操作">ディレクトリ操作</a></li>
+<li><a href="#ツリー操作">ツリー操作</a></li>
+<li><a href="#ファイルシステム">ファイルシステム</a></li>
+<li><a href="#その他">その他</a></li>
+</ul></li>
 </ul></li>
 </ul>
 </nav>

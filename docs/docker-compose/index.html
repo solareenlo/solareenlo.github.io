@@ -20,7 +20,7 @@
 
 
 
-<link rel="stylesheet" href="/book.min.18cd097814acc2d60f57a2962b018cf86c84fba645ece32982add8972f33359a.css">
+<link rel="stylesheet" href="/book.min.8012c601fc3a000f4f9a58dc8c4425aa8eae12cc82fed8d51e095e382e07aa32.css">
 
 
 <link rel="icon" href="/favicon.png" type="image/x-icon">
@@ -246,14 +246,120 @@ Database password: passwd
 ADVANCED OPTIONS; Database host: postgres
 ADVANCED OPTIONS; Database port: <span style="color:#00afaf">5432</span></code></pre></div>
 <p>そして, 停止する.</p>
-<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker-compose down -v <span style="color:#4e4e4e"># volumeも一緒に削除.</span></code></pre></div></article>
+<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker-compose down -v <span style="color:#4e4e4e"># volumeも一緒に削除.</span></code></pre></div>
+<h2 id="複数のイメージを作る">複数のイメージを作る</h2>
+
+<p>Dockerfileからカスタムnginxイメージを作成しつつ, カスタムnginxコンテナとhttpdコンテナを動かしている.</p>
+<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone git@github.com:solareenlo/udemy-docker-mastery.git
+<span style="color:#0087ff">cd</span> udemy-docker-mastery/compose-sample-3</code></pre></div>
+<p><code>docker-compose.yml</code>の中身は以下.</p>
+<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">version: <span style="color:#00afaf">&#39;2&#39;</span>
+services:
+  proxy:
+    build:
+      context: .
+      dockerfile: nginx.Dockerfile
+    image: custom-nginx
+    ports:
+      - <span style="color:#00afaf">&#39;80:80&#39;</span>
+  web:
+    image: httpd
+    volumes:
+      - ./html:/usr/local/apache2/htdocs/</code></pre></div>
+<p>カスタムnginxの<code>nginx.Dockerfile</code>の中身は以下.</p>
+<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#5f8700">FROM</span><span style="color:#00afaf"> nginx:1.13</span>
+COPY nginx.conf /etc/nginx/conf.d/default.conf</code></pre></div>
+<p><code>nginx.conf</code>の中身は以下.</p>
+<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-conf" data-lang="conf">server {
+	listen 80;
+	location / {
+		proxy_pass         http://web;
+		proxy_redirect     off;
+		proxy_set_header   Host $host;
+		proxy_set_header   X-Real-IP $remote_addr;
+		proxy_set_header   X-Forwarded-For $proxy_add_x_forwarded_for;
+		proxy_set_header   X-Forwarded-Host $server_name;
+	}
+}</code></pre></div>
+<p>webコンテナで使っているhtmlディレクトリの中身は<code>https://startbootstrap.com/template-overviews/agency/</code>です.<br />
+そして, 起動する.</p>
+<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker-compose up -d</code></pre></div>
+<p><code>localhost:80</code>を開くとサイトが見られる.<br />
+そして, 停止する.</p>
+<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker-compose down --rmi local</code></pre></div>
+<h2 id="dockerfileでカスタムイメージを作成しつつdocker-composeで動かす">dockerfileでカスタムイメージを作成しつつdocker-composeで動かす</h2>
+
+<p><code>Dockerfile</code>に下記を記入する.</p>
+<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#5f8700">FROM</span><span style="color:#00afaf"> drupal:8-apache</span>
+<span style="color:#5f8700">RUN</span> apt-get update &amp;&amp; apt-get install -y git <span style="color:#af0000">\
+</span><span style="color:#af0000"></span>    &amp;&amp; rm -rf /var/lib/apt/lists/*
+<span style="color:#5f8700">WORKDIR</span><span style="color:#00afaf"> /var/www/html/themes</span>
+<span style="color:#5f8700">RUN</span> git clone --branch <span style="color:#00afaf">8</span>.x-3.x --single-branch --depth <span style="color:#00afaf">1</span> https://git.drupal.org/project/bootstrap.git <span style="color:#af0000">\
+</span><span style="color:#af0000"></span>    &amp;&amp; chown -R www-data:www-data bootstrap
+<span style="color:#5f8700">WORKDIR</span><span style="color:#00afaf"> /var/www/html</span></code></pre></div>
+<p><code>docker-compose.yml</code>に下記を記入する.</p>
+<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#4e4e4e"># Drupal with PostgreSQL</span>
+<span style="color:#4e4e4e">#</span>
+<span style="color:#4e4e4e"># Access via &#34;http://localhost:8081&#34;</span>
+<span style="color:#4e4e4e">#   (or &#34;http://$(docker-machine ip):8081&#34; if using docker-machine)</span>
+<span style="color:#4e4e4e">#</span>
+<span style="color:#4e4e4e"># During initial Drupal setup,</span>
+<span style="color:#4e4e4e"># Database type: PostgreSQL</span>
+<span style="color:#4e4e4e"># Database name: postgres</span>
+<span style="color:#4e4e4e"># Database username: postgres</span>
+<span style="color:#4e4e4e"># Database password: passwd</span>
+<span style="color:#4e4e4e"># ADVANCED OPTIONS; Database host: postgres</span>
+<span style="color:#4e4e4e"># ADVANCED OPTIONS; Database port: 5432</span>
+
+version: <span style="color:#00afaf">&#39;3.7&#39;</span>
+
+services:
+  drupal:
+    image: custom-drupal
+    build: .
+    ports:
+      - <span style="color:#00afaf">8081</span>:<span style="color:#00afaf">80</span>
+    volumes:
+      - drupal-modules:/var/www/html/modules
+      - drupal-profiles:/var/www/html/profiles
+      - drupal-themes:/var/www/html/themes
+      - drupal-sites:/var/www/html/sites
+    restart: always
+
+  postgres:
+    image: postgres:<span style="color:#00afaf">10</span>
+    environment:
+      POSTGRES_PASSWORD: passwd
+    volumes:
+      - drupal-data:/var/lib/postgresql/data
+    restart: always
+
+volumes:
+  drupal-modules:
+  drupal-profiles:
+  drupal-themes:
+  drupal-sites:
+  drupal-data:</code></pre></div>
+<p>そして, 下記を実行する.</p>
+<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">dokcer-compose up -d</code></pre></div>
+<p>すると, 任意のブラウザで<code>localhost:8081</code>を開くとDrupalが走っていて,<br />
+設定値は以下を入力して,</p>
+<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Database type: PostgreSQL
+Database name: postgres
+Database username: postgres
+Database password: passwd
+ADVANCED OPTIONS; Database host: postgres
+ADVANCED OPTIONS; Database port: <span style="color:#00afaf">5432</span></code></pre></div>
+<p>ページのテーマをDockerfileで設定してダウンロードしてきたBootstrapに変えてみる.<br />
+停止するには,</p>
+<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker-compose down</code></pre></div></article>
 
       
 <div class="align-center book-git-footer justify-between">
   
   <div>
     
-    <a href="https://github.com/solareenlo/blog-hugo/commit/889f1ddc5b01da4d72341a49f4d321f63d1c3f6a" title='Last modified Apr 26, 2019 by solareenlo' target="_blank" rel="noopener">
+    <a href="https://github.com/solareenlo/blog-hugo/commit/af8b4a145ef8f630ff1c061f0575feaa2167ed5e" title='Last modified Apr 26, 2019 by solareenlo' target="_blank" rel="noopener">
       <img src="/svg/code-merge.svg" alt="Changed" /> Apr 26, 2019
     </a>
   </div>
@@ -283,6 +389,8 @@ ADVANCED OPTIONS; Database port: <span style="color:#00afaf">5432</span></code><
 <li><a href="#docker-compose-yml">docker-compose.yml</a></li>
 <li><a href="#nginxとhttpdを動かす">nginxとhttpdを動かす</a></li>
 <li><a href="#drupalとpostgresqlを動かす">DrupalとPostgreSQLを動かす</a></li>
+<li><a href="#複数のイメージを作る">複数のイメージを作る</a></li>
+<li><a href="#dockerfileでカスタムイメージを作成しつつdocker-composeで動かす">dockerfileでカスタムイメージを作成しつつdocker-composeで動かす</a></li>
 </ul></li>
 </ul>
 </nav>
