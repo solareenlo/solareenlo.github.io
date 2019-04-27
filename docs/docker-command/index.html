@@ -236,6 +236,37 @@ docker run イメージのハッシュ値
 <li><strong>Reference:</strong> <a href="https://qiita.com/pottava/items/452bf80e334bc1fee69a">効率的に安全な Dockerfile を作るには</a></li>
 </ul></li>
 </ol>
+
+<h2 id="dockerfileの書き方の工夫">Dockerfileの書き方の工夫</h2>
+
+<ul>
+<li>よく変更するところだけを<code>COPY</code>する.
+
+<ul>
+<li>Node.jsにおける<code>index.js</code>だけとか.</li>
+<li><code>package.json</code>はあまり変化させないとして.</li>
+</ul></li>
+<li>何故ならば, 無駄なビルドを無くすため.</li>
+</ul>
+
+<p><code>Dockerfile</code>の例は以下.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#586e75"># ベースとなるイメージ</span>
+<span style="color:#719e07">FROM</span><span style="color:#2aa198"> node:alpine</span>
+
+<span style="color:#586e75"># 以降での作業ディレクトリを指定する</span>
+<span style="color:#719e07">WORKDIR</span><span style="color:#2aa198"> /usr/app</span>
+
+<span style="color:#586e75"># npmだけ先にビルドする</span>
+<span style="color:#586e75"># 無駄な再ビルドを防ぐため</span>
+COPY ./package.json ./
+<span style="color:#719e07">RUN</span> npm install
+
+<span style="color:#586e75"># よく変更があるところを再ビルドするために分けた</span>
+COPY ./ ./
+
+<span style="color:#586e75"># デフォルトのコマンド</span>
+<span style="color:#719e07">CMD</span><span style="color:#2aa198"> [&#34;npm&#34;, &#34;start&#34;]</span></code></pre></div>
+<p>全体的なコード例 -&gt; <a href="https://github.com/solareenlo/simple-docker-nodejs">simple-docker-nodejs</a></p>
 </article>
 
       
@@ -274,6 +305,7 @@ docker run イメージのハッシュ値
 <li><a href="#タグ付け">タグ付け</a></li>
 <li><a href="#1つずつイメージを作っていく">1つずつイメージを作っていく</a></li>
 <li><a href="#dockerfileの効率的な作り方">Dockerfileの効率的な作り方</a></li>
+<li><a href="#dockerfileの書き方の工夫">Dockerfileの書き方の工夫</a></li>
 </ul></li>
 </ul>
 </nav>

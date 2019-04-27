@@ -326,7 +326,7 @@ SQLの実行順番    順番 操作名 命令文     1 テーブルの指定 fro
       
       <guid>https://solareenlo.com/docs/rust/</guid>
       <description> Rustとは Mozillaが支援するオープンソースのシステムプログラミング言語のこと. 速度, 安全性, 平行性の3つのゴールにフォーカスしている.
-ドキュメントの日本語訳  Rustの日本語ドキュメント/Japanese Docs for Rust The Embedded Rust Book  チートシート  Rust Language Cheat Sheet  Hello World! fn main() { // 世界よ、こんにちは  println!(&amp;#34;Hello, world!&amp;#34;); } </description>
+Hello World! fn main() { // 世界よ、こんにちは  println!(&amp;#34;Hello, world!&amp;#34;); }  ドキュメントの日本語訳  Rustの日本語ドキュメント/Japanese Docs for Rust The Embedded Rust Book  チートシート  Rust Language Cheat Sheet  リンク集  Rustのリンク集 実務から見たRustの優位性  </description>
     </item>
     
     <item>
