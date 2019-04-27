@@ -163,7 +163,7 @@ DBの使用率ランキング  DB-Engines Ranking  </description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://solareenlo.com/docs/docker-command/</guid>
-      <description>Dockerのコマンド使用例 コンテナの基本的な動かし方 # run = create + start docker run busybox echo hi there &amp;gt; hi there # コンテナ作ってスタートさせる docker create --name my-busybox busybox echo hi there docker start -a my-busybox &amp;gt; hi there # 一定期間後に終了 docker stop CONTAINER_NAME # 直ぐに終了 docker kill CONTAINER_NAME # Image,Container,Volumeの数や容量を表示 docker system df # 止まってるContainer, 使われてないVolume, 使われてないNetwork, 使われてないImageを削除 docker system prune # 現在動いているredisコンテナにアクセスする docker run --name myredis -d redis docker exec -it myredis redis-cli 127.</description>
+      <description>Docker その2 コンテナの基本的な動かし方 # run = create + start docker run busybox echo hi there &amp;gt; hi there # コンテナ作ってスタートさせる docker create --name my-busybox busybox echo hi there docker start -a my-busybox &amp;gt; hi there # 一定期間後に終了 docker stop CONTAINER_NAME # 直ぐに終了 docker kill CONTAINER_NAME # Image,Container,Volumeの数や容量を表示 docker system df # 止まってるContainer, 使われてないVolume, 使われてないNetwork, 使われてないImageを削除 docker system prune # 現在動いているredisコンテナにアクセスする docker run --name myredis -d redis docker exec -it myredis redis-cli 127.</description>
     </item>
     
     <item>
@@ -174,8 +174,7 @@ DBの使用率ランキング  DB-Engines Ranking  </description>
       <guid>https://solareenlo.com/docs/docker-compose/</guid>
       <description>Docker Composeとは 複数のコンテナで構成されるアプリケーションを定義と実行するためのツールのこと. Dockerとは切り離されてる.
  Composeはアプリケーションのサービスをファイルで定義する. Dockerコマンドと高い親和性があるため, 学習コストが比較的低い. Swarmモードにサービスをデプロイできるオーケストレーション機能もある.  Reference: Docker Compose 徹底解説   活用場面  利用者視点  docker-compose.ymlがあれば, すぐに何でも実行できる.  開発者視点  環境の再構築が簡単 バージョン違いの環境を作りやすい 1つのマシン上に, 複数の環境を立ち上げられやすい   適切に書かれたYAMLファイルさえあれば, 誰でも簡単に環境構築もアプリケーション実行もできるのが強み.
-docker-compose.yml services:, networks:, volumes:を定義する.
-nginxとhttpdを動かす git clone git@github.com:solareenlo/udemy-docker-mastery.git cd udemy-docker-mastery/compose-sample-2 docker-compose up -d # デーモンでコンテナ群を起動 docker-compose ps # 動いてるコンテナ一覧が見られる &amp;gt; Name Command State Ports &amp;gt; ---------------------------------------------------------------------------- &amp;gt; compose-sample-2_proxy_1 nginx -g daemon off; Up 0.0.0.0:80-&amp;gt;80/tcp &amp;gt; compose-sample-2_web_1 httpd-foreground Up 80/tcp docker-compose down # コンテナ群を停止する DrupalとPostgreSQLを動かす docker-compose.</description>
+docker-compose.yml  services:(使うイメージ), networks:(使うネットワーク), volumes:(使うボリューム)を定義する.  起動と停止 # 起動 docker-compose up # ビルドして起動 docker-compose up --build # バックグラウンドで起動 docker-compose up -d # 停止 docker-compose down # ボリュームも削除しつつ停止 docker-compose down -v nginxとhttpd git clone git@github.com:solareenlo/udemy-docker-mastery.git cd udemy-docker-mastery/compose-sample-2 docker-compose up -d # デーモンでコンテナ群を起動 docker-compose ps # 動いてるコンテナ一覧が見られる &amp;gt; Name Command State Ports &amp;gt; ---------------------------------------------------------------------------- &amp;gt; compose-sample-2_proxy_1 nginx -g daemon off; Up 0.</description>
     </item>
     
     <item>

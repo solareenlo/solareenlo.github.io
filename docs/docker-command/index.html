@@ -143,7 +143,7 @@ https://github.com/alex-shpak/hugo-book
       
 <article class="markdown">
 
-<h1 id="dockerのコマンド使用例">Dockerのコマンド使用例</h1>
+<h1 id="docker-その2">Docker その2</h1>
 
 <h2 id="コンテナの基本的な動かし方">コンテナの基本的な動かし方</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># run = create + start</span>
@@ -267,6 +267,39 @@ COPY ./ ./
 <span style="color:#586e75"># デフォルトのコマンド</span>
 <span style="color:#719e07">CMD</span><span style="color:#2aa198"> [&#34;npm&#34;, &#34;start&#34;]</span></code></pre></div>
 <p>全体的なコード例 -&gt; <a href="https://github.com/solareenlo/simple-docker-nodejs">simple-docker-nodejs</a></p>
+
+<h2 id="再起動">再起動</h2>
+
+<table>
+<thead>
+<tr>
+<th>オプション</th>
+<th>意味</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>no</td>
+<td>再起動しない (デフォルト)</td>
+</tr>
+
+<tr>
+<td>on-failure[:max-retries]</td>
+<td>プロセスが0以外のステータスで終了した場合,  最大:max_retriesの分だけ再起動を行う.</td>
+</tr>
+
+<tr>
+<td>always</td>
+<td>明示的にstopがされない限り, 終了ステータスに関係なく常に再起動を行う.</td>
+</tr>
+
+<tr>
+<td>unless-stopped</td>
+<td>最後にdocker daemonが起動していた際にステータスが終了状態だった場合は再起動しない. それ以外はalwaysと同じ.</td>
+</tr>
+</tbody>
+</table>
 </article>
 
       
@@ -298,7 +331,7 @@ COPY ./ ./
   <aside class="book-toc fixed">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#dockerのコマンド使用例">Dockerのコマンド使用例</a>
+<li><a href="#docker-その2">Docker その2</a>
 <ul>
 <li><a href="#コンテナの基本的な動かし方">コンテナの基本的な動かし方</a></li>
 <li><a href="#dockerfile">Dockerfile</a></li>
@@ -306,6 +339,7 @@ COPY ./ ./
 <li><a href="#1つずつイメージを作っていく">1つずつイメージを作っていく</a></li>
 <li><a href="#dockerfileの効率的な作り方">Dockerfileの効率的な作り方</a></li>
 <li><a href="#dockerfileの書き方の工夫">Dockerfileの書き方の工夫</a></li>
+<li><a href="#再起動">再起動</a></li>
 </ul></li>
 </ul>
 </nav>

@@ -179,9 +179,22 @@ Dockerとは切り離されてる.</p>
 
 <h2 id="docker-compose-yml">docker-compose.yml</h2>
 
-<p>services:, networks:, volumes:を定義する.</p>
+<ul>
+<li><strong>services:</strong>(使うイメージ), <strong>networks:</strong>(使うネットワーク), <strong>volumes:</strong>(使うボリューム)を定義する.</li>
+</ul>
 
-<h2 id="nginxとhttpdを動かす">nginxとhttpdを動かす</h2>
+<h2 id="起動と停止">起動と停止</h2>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># 起動</span>
+docker-compose up
+<span style="color:#586e75"># ビルドして起動</span>
+docker-compose up --build
+<span style="color:#586e75"># バックグラウンドで起動</span>
+docker-compose up -d
+<span style="color:#586e75"># 停止</span>
+docker-compose down
+<span style="color:#586e75"># ボリュームも削除しつつ停止</span>
+docker-compose down -v</code></pre></div>
+<h2 id="nginxとhttpd">nginxとhttpd</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone git@github.com:solareenlo/udemy-docker-mastery.git
 <span style="color:#b58900">cd</span> udemy-docker-mastery/compose-sample-2
 docker-compose up -d <span style="color:#586e75"># デーモンでコンテナ群を起動</span>
@@ -191,7 +204,7 @@ docker-compose ps <span style="color:#586e75"># 動いてるコンテナ一覧�
 &gt; compose-sample-2_proxy_1   nginx -g daemon off;   Up      <span style="color:#2aa198">0</span>.0.0.0:80-&gt;80/tcp
 &gt; compose-sample-2_web_1     httpd-foreground       Up      <span style="color:#2aa198">80</span>/tcp
 docker-compose down <span style="color:#586e75"># コンテナ群を停止する</span></code></pre></div>
-<h2 id="drupalとpostgresqlを動かす">DrupalとPostgreSQLを動かす</h2>
+<h2 id="drupalとpostgresql">DrupalとPostgreSQL</h2>
 
 <p><code>docker-compose.yml</code>に以下を記述する.</p>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#586e75"># Drupal with PostgreSQL</span>
@@ -249,6 +262,11 @@ ADVANCED OPTIONS; Database host: postgres
 ADVANCED OPTIONS; Database port: <span style="color:#2aa198">5432</span></code></pre></div>
 <p>そして, 停止する.</p>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker-compose down -v <span style="color:#586e75"># volumeも一緒に削除.</span></code></pre></div>
+<h2 id="node-jsとredix">Node.jsとRedix</h2>
+
+<p>コード例
+- <a href="https://github.com/solareenlo/visits-docker-nodejs">visits-docker-nodejs</a></p>
+
 <h2 id="複数のイメージを作る">複数のイメージを作る</h2>
 
 <p>Dockerfileからカスタムnginxイメージを作成しつつ, カスタムnginxコンテナとhttpdコンテナを動かしている.</p>
@@ -389,8 +407,10 @@ ADVANCED OPTIONS; Database port: <span style="color:#2aa198">5432</span></code><
 <ul>
 <li><a href="#活用場面">活用場面</a></li>
 <li><a href="#docker-compose-yml">docker-compose.yml</a></li>
-<li><a href="#nginxとhttpdを動かす">nginxとhttpdを動かす</a></li>
-<li><a href="#drupalとpostgresqlを動かす">DrupalとPostgreSQLを動かす</a></li>
+<li><a href="#起動と停止">起動と停止</a></li>
+<li><a href="#nginxとhttpd">nginxとhttpd</a></li>
+<li><a href="#drupalとpostgresql">DrupalとPostgreSQL</a></li>
+<li><a href="#node-jsとredix">Node.jsとRedix</a></li>
 <li><a href="#複数のイメージを作る">複数のイメージを作る</a></li>
 <li><a href="#dockerfileでカスタムイメージを作成しつつdocker-composeで動かす">dockerfileでカスタムイメージを作成しつつdocker-composeで動かす</a></li>
 </ul></li>
