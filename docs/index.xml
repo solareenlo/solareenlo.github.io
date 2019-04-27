@@ -80,7 +80,7 @@ DBの使用率ランキング  DB-Engines Ranking  </description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://solareenlo.com/docs/docker-command/</guid>
-      <description>Dockerのコマンド使用例 # run = create + start docker run busybox echo hi there &amp;gt; hi there # コンテナ作ってスタートさせる docker create --name my-busybox busybox echo hi there docker start -a my-busybox &amp;gt; hi there # 一定期間後に終了 docker stop CONTAINER_NAME # 直ぐに終了 docker kill CONTAINER_NAME # Image,Container,Volumeの数や容量を表示 docker system df # 止まってるContainer, 使われてないVolume, 使われてないNetwork, 使われてないImageを削除 docker system prune # 現在動いているredisコンテナにアクセスする docker run --name myredis -d redis docker exec -it myredis redis-cli 127.</description>
+      <description>Dockerのコマンド使用例 コンテナの基本的な動かし方 # run = create + start docker run busybox echo hi there &amp;gt; hi there # コンテナ作ってスタートさせる docker create --name my-busybox busybox echo hi there docker start -a my-busybox &amp;gt; hi there # 一定期間後に終了 docker stop CONTAINER_NAME # 直ぐに終了 docker kill CONTAINER_NAME # Image,Container,Volumeの数や容量を表示 docker system df # 止まってるContainer, 使われてないVolume, 使われてないNetwork, 使われてないImageを削除 docker system prune # 現在動いているredisコンテナにアクセスする docker run --name myredis -d redis docker exec -it myredis redis-cli 127.</description>
     </item>
     
     <item>

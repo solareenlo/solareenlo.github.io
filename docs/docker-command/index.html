@@ -144,6 +144,8 @@ https://github.com/alex-shpak/hugo-book
 <article class="markdown">
 
 <h1 id="dockerのコマンド使用例">Dockerのコマンド使用例</h1>
+
+<h2 id="コンテナの基本的な動かし方">コンテナの基本的な動かし方</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># run = create + start</span>
 docker run busybox <span style="color:#b58900">echo</span> hi there
 &gt; hi there
@@ -181,10 +183,70 @@ docker run -it busybox sh
 / <span style="color:#586e75"># echo hello</span>
 hello
 / #
-<span style="color:#586e75"># こんな感じでbusyboxはシェルスクリプトが使える</span></code></pre></div></article>
+<span style="color:#586e75"># こんな感じでbusyboxはシェルスクリプトが使える</span></code></pre></div>
+<h2 id="dockerfile">Dockerfile</h2>
+
+<ul>
+<li><code>Dockerfile</code> -&gt; <code>Docker Client</code> -&gt; <code>Docker Server</code> -&gt; <code>Image</code>の流れでイメージが作られる.</li>
+<li><code>Dockerfile</code>に書かれてあること1行ずつに対して履歴を取っている.</li>
+</ul>
+
+<p>以下を<code>Dockerfile</code>として保存して,</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#719e07">FROM</span><span style="color:#2aa198"> alpine</span>
+<span style="color:#719e07">RUN</span> apk add --update redis
+<span style="color:#719e07">CMD</span><span style="color:#2aa198"> [&#34;redis-server&#34;]</span></code></pre></div>
+<p>以下でイメージをし,</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># 最後の「.」はDockerfileがある場所を指定している.</span>
+docker build .
+&gt; 色々出てくる
+&gt; Successfully built 8fcebe7331d6</code></pre></div>
+<p>以下でコンテナを走らせる.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run 8fcebe7331d6
+&gt; 色々出てくる</code></pre></div>
+<h2 id="タグ付け">タグ付け</h2>
+
+<p>以下のようにしてタグ付けを行う.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker build -t solareenlo/redis:latest .</code></pre></div>
+<h2 id="1つずつイメージを作っていく">1つずつイメージを作っていく</h2>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run -it alpine sh
+/ <span style="color:#586e75"># apk add --update redis</span>
+&gt; インストールされる</code></pre></div>
+<p>別のターミナルを開いて, 以下のように<code>commit</code>で新たにイメージを作成する.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker ps
+&gt; コンテナの情報
+docker commit -c <span style="color:#2aa198">&#39;CMD [&#34;redis-server&#34;]&#39;</span> &lt;コンテナのhash値か名前&gt;
+&gt; sha256: イメージのハッシュ値
+docker run イメージのハッシュ値
+&gt; 新たに作ったイメージからコンテナが走る</code></pre></div>
+<h2 id="dockerfileの効率的な作り方">Dockerfileの効率的な作り方</h2>
+
+<ol>
+<li>ベースにするDockerイメージを決める.</li>
+<li><code>docker run -it --name custom-container &lt;元となるdocker image&gt; sh</code>でコンテナに入る.</li>
+<li>コンテナ内で色々インストールしたり, 設定したりする.</li>
+<li>うまくいったらその内容を1行ずつメモする.</li>
+<li>いい頃合いで, <code>exit</code>でコンテナからログアウトし,</li>
+<li><code>docker commit custom-container solareenlo/custom-image:latest</code>で新しいDockerイメージを作成する.</li>
+<li>そして, <code>docker attach custom-image</code>で再度コンテナに入る.</li>
+<li>失敗したら<code>exit</code>して, 再度<code>docker run -it solareenlo/custom-image:latest sh</code>して, コンテナに入る.</li>
+<li>ファイルの取り込みやポートの外部公開が必要ならオプション付きで<code>docker run</code>を行う.</li>
+<li>最後に作業内容を<code>Dockerfile</code>に書き込む.
+
+<ul>
+<li><strong>Reference:</strong> <a href="https://qiita.com/pottava/items/452bf80e334bc1fee69a">効率的に安全な Dockerfile を作るには</a></li>
+</ul></li>
+</ol>
+</article>
 
       
-<div class="align-center book-git-footer justify-end">
+<div class="align-center book-git-footer justify-between">
+  
+  <div>
+    
+    <a href="https://github.com/solareenlo/blog-hugo/commit/adb4bd1bb0d08d2f5773c62795e975bd77217fa4" title='Last modified Apr 27, 2019 by solareenlo' target="_blank" rel="noopener">
+      <img src="/svg/code-merge.svg" alt="Changed" /> Apr 27, 2019
+    </a>
+  </div>
   
   
   <div>
@@ -205,7 +267,14 @@ hello
   <aside class="book-toc fixed">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#dockerのコマンド使用例">Dockerのコマンド使用例</a></li>
+<li><a href="#dockerのコマンド使用例">Dockerのコマンド使用例</a>
+<ul>
+<li><a href="#コンテナの基本的な動かし方">コンテナの基本的な動かし方</a></li>
+<li><a href="#dockerfile">Dockerfile</a></li>
+<li><a href="#タグ付け">タグ付け</a></li>
+<li><a href="#1つずつイメージを作っていく">1つずつイメージを作っていく</a></li>
+<li><a href="#dockerfileの効率的な作り方">Dockerfileの効率的な作り方</a></li>
+</ul></li>
 </ul>
 </nav>
   </aside>
