@@ -44,12 +44,7 @@
   </url>
   
   <url>
-    <loc>https://solareenlo.com/docs/bitcoin-fullnode/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://solareenlo.com/docs/bitcoin/</loc>
+    <loc>https://solareenlo.com/docs/c/</loc>
     <priority>0</priority>
   </url>
   
@@ -69,22 +64,17 @@
   </url>
   
   <url>
-    <loc>https://solareenlo.com/docs/db/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://solareenlo.com/docs/docker-command/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://solareenlo.com/docs/docker-compose/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://solareenlo.com/docs/docker/</loc>
+    <loc>https://solareenlo.com/docs/docker1/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://solareenlo.com/docs/docker2/</loc>
     <priority>0</priority>
   </url>
   
@@ -114,27 +104,7 @@
   </url>
   
   <url>
-    <loc>https://solareenlo.com/docs/iota/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://solareenlo.com/docs/kubernetes/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://solareenlo.com/docs/latex/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://solareenlo.com/docs/mongodb/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://solareenlo.com/docs/mysql/</loc>
     <priority>0</priority>
   </url>
   
@@ -194,13 +164,53 @@
   </url>
   
   <url>
+    <loc>https://solareenlo.com/docs/bitcoin/</loc>
+    <lastmod>2019-04-24T02:29:28+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://solareenlo.com/docs/ci-cd/</loc>
+  </url>
+  
+  <url>
+    <loc>https://solareenlo.com/docs/db/</loc>
+    <lastmod>2019-04-22T22:39:55+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://solareenlo.com/docs/</loc>
+    <lastmod>2019-04-24T22:44:32+09:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://solareenlo.com/docs/iota/</loc>
+    <lastmod>2019-04-20T23:35:17+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://solareenlo.com/docs/latex/</loc>
+    <lastmod>2019-04-24T22:44:32+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://solareenlo.com/docs/mongodb/</loc>
+    <lastmod>2019-04-23T23:57:41+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://solareenlo.com/docs/mysql/</loc>
+    <lastmod>2019-04-23T23:57:41+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://solareenlo.com/</loc>
     <lastmod>2019-04-24T02:29:28+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://solareenlo.com/docs/bitcoin-fullnode/</loc>
+    <lastmod>2019-04-17T13:39:04+09:00</lastmod>
   </url>
   
 </urlset>

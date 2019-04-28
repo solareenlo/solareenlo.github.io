@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>はじめに on solareenlo</title>
+    <title>はじめに on SOLAREENLO</title>
     <link>https://solareenlo.com/</link>
-    <description>Recent content in はじめに on solareenlo</description>
+    <description>Recent content in はじめに on SOLAREENLO</description>
     <generator>Hugo -- gohugo.io</generator>
     
 	<atom:link href="https://solareenlo.com/index.xml" rel="self" type="application/rss+xml" />
@@ -94,22 +94,12 @@ MacにHomebrewをインストールする /usr/bin/ruby -e &amp;#34;$(curl -fsSL
     
     <item>
       <title></title>
-      <link>https://solareenlo.com/docs/bitcoin-fullnode/</link>
+      <link>https://solareenlo.com/docs/c/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://solareenlo.com/docs/bitcoin-fullnode/</guid>
-      <description> フルノードとは  Bitcoinネットワークにおけるすべてのブロックとトランザクションをダウンロードして検証するノードのこと.  Bitcoinフルノードへのアクセス方法 bitcoin-cliを使ってアクセス cURLを使ってアクセス POSTを使ってアクセス </description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://solareenlo.com/docs/bitcoin/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://solareenlo.com/docs/bitcoin/</guid>
-      <description> Bitcoin 目的 匿名性を自分で選択できつつ, 安全に価値の移転と保存に特化したシステムを構築すること.
-特徴  非中央集権 自律分散 トラストレス オープンソース ブロックチェーン1.0の代表格  技術  楕円曲線DSA P2P Proo of Work  プレイヤー  コア開発者 マイナー ユーザー 投資家・投機家 法律  スケーリング方法  コンセンサスアルゴリズムを速くする（分散性のために1ブロック生成にわざと10分かけてる） ブロックに含まれるトランザクションを増やす（Block weightが4MB以下/segwit導入により） オフチェーン（Lightning networkなど） サイドチェーン シャーディング  Reference: ブロックチェーンとスケーラビリティ
-References  bitcoinのしくみ Programming The Blockchain C# 日本語 Blockchain Core Camp season1のビデオ資料 Blockchain Core Camp season1のpdf資料 Blockchain Core Camp season2のビデオ資料  </description>
+      <guid>https://solareenlo.com/docs/c/</guid>
+      <description> C言語とは 1972年のAT&amp;amp;Tベル研究所で, ブライアン・カーニハンとデニス・リッチーによって開発された, コンパイル型の汎用プログラミング言語のこと.
+Hello World #include &amp;lt;stdio.h&amp;gt; int main(void) { puts(&amp;#34;Hello, world!&amp;#34;); return 0; } コンパイラ  低レイヤを知りたい人のためのCコンパイラ作成入門  </description>
     </item>
     
     <item>
@@ -150,25 +140,6 @@ Reference: コンテナ技術とは何？
     
     <item>
       <title></title>
-      <link>https://solareenlo.com/docs/db/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://solareenlo.com/docs/db/</guid>
-      <description> データベースとは 大量のデータを集めて, コンピューターでデータの追加, 削除, 検索をしやすい形に整理したもの. 有料/無料, オープンソース/非オープンソース, SQL型, NoSQL型, オブジェクト型, ドキュメント型, キー・バリュー型, グラフ型などいろんな種類がある.
-DBの使用率ランキング  DB-Engines Ranking  </description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://solareenlo.com/docs/docker-command/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://solareenlo.com/docs/docker-command/</guid>
-      <description>Docker その2 コンテナの基本的な動かし方 # run = create + start docker run busybox echo hi there &amp;gt; hi there # コンテナ作ってスタートさせる docker create --name my-busybox busybox echo hi there docker start -a my-busybox &amp;gt; hi there # 一定期間後に終了 docker stop CONTAINER_NAME # 直ぐに終了 docker kill CONTAINER_NAME # Image,Container,Volumeの数や容量を表示 docker system df # 止まってるContainer, 使われてないVolume, 使われてないNetwork, 使われてないImageを削除 docker system prune # 現在動いているredisコンテナにアクセスする docker run --name myredis -d redis docker exec -it myredis redis-cli 127.</description>
-    </item>
-    
-    <item>
-      <title></title>
       <link>https://solareenlo.com/docs/docker-compose/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -180,12 +151,21 @@ docker-compose.yml  services:(使うイメージ), networks:(使うネットワ�
     
     <item>
       <title></title>
-      <link>https://solareenlo.com/docs/docker/</link>
+      <link>https://solareenlo.com/docs/docker1/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://solareenlo.com/docs/docker/</guid>
+      <guid>https://solareenlo.com/docs/docker1/</guid>
       <description>Dockerとは コンテナ型の仮想環境を作成, 配布, 実行するためのプラットフォームのこと. プロセスを簡単にコンテナ化(isolate)し, 簡単かつ素早く開発・移動・実行できるプラットフォームのこと.
  Dockerコンテナは実行に必要な全てをパッケージして簡単に動かせる Dockerイメージは複数のイメージ・レイヤとメタ情報の積み重なりからできている. コンテナのプロセスはデフォルトでisolate(隔離・分離)された状態  Dockerについての良い読み物1→2018年なぜ私達はコンテナ/Dockerを使うのか. Dockerについての良い読み物2→標準化が進むコンテナとサーバーレス！ 「提供したい価値」から見極める活用の勘所とは【デブサミ2018 福岡】 Dockerについての良いスライド→Docker Compose 徹底解説   Dockerのメリット/デメリット メリット  ゲストOSはホストのKernelを直接使うためオーバーヘッドが小さくて高速 ゲストOSがそれぞれにKernelを持たないため, Memory消費量やDisk消費量を節約できる 必要とする資源が少ないため, 多くのゲストOSを立ち上げることが可能 Kernelを新しく起動する必要がないため, ゲストOSの起動が速い コンテナのイメージ(雛形)からコンテナ(実体)を作るため, 同一構成のOSを簡単に複数作れる テストが通ったイメージは本番環境でもすぐに使える(開発とデプロイのサイクルが速い)  Reference: Dockerの利点   デメリット  提供できるホストの種類が少ない(ホストOSのKernelにLinux使ってたらゲストOSのKernelにWindows Serverは使えない) 完全仮想化に比べて, 管理者が学ぶべきことが多い  Reference: Dockerの欠点   勉強できるサイト  入門 Docker Docker Mastery: The Complete Toolset From a Docker Captain  インストール方法 Linux編 curl -fsSL get.docker.com -o get-docker.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://solareenlo.com/docs/docker2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://solareenlo.com/docs/docker2/</guid>
+      <description>Docker その2 コンテナの基本的な動かし方 # run = create + start docker run busybox echo hi there &amp;gt; hi there # コンテナ作ってスタートさせる docker create --name my-busybox busybox echo hi there docker start -a my-busybox &amp;gt; hi there # 一定期間後に終了 docker stop CONTAINER_NAME # 直ぐに終了 docker kill CONTAINER_NAME # Image,Container,Volumeの数や容量を表示 docker system df # 止まってるContainer, 使われてないVolume, 使われてないNetwork, 使われてないImageを削除 docker system prune # 現在動いているredisコンテナにアクセスする docker run --name myredis -d redis docker exec -it myredis redis-cli 127.</description>
     </item>
     
     <item>
@@ -246,16 +226,6 @@ Hugoのコードの色選択  https://help.farbox.com/pygments.html Chroma Style
     
     <item>
       <title></title>
-      <link>https://solareenlo.com/docs/iota/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://solareenlo.com/docs/iota/</guid>
-      <description> IOTA 目的 オープンIoTでブロックチェーンの良さ(分散性/耐改ざん性/オープン性)を使えるようにしつつ(スケーリング・マイニングコスト・トランザクションの承認の遅さを解決しつつ)インダストリー4.0を推し進めること.
-特徴  小さなデータの保存と交換に特化した設計. 平衡三進数を使用. 量子コンピュータ耐性のために電子署名にはWinternitz One Time Signatureを使用.  署名は使い捨てなので送金に使ったアドレスにもう1度入金すると盗まれる可能性特大. というか多額のIOTAを盗まれた実績有. 今はそうならないようにwalletが上手に管理してくれてる.  スケーリングのためにブロックは生成せずに各々のトランザクションがDAG形式で自分より前のトランザションを承認していく.  まだ発展途上なのでチェック機能が存在する. トランザクションはInput/Output/Remainderの3種類が1まとめになったBundleとしてTangle内を流れてる.  UTXOを採用.  </description>
-    </item>
-    
-    <item>
-      <title></title>
       <link>https://solareenlo.com/docs/kubernetes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -265,38 +235,6 @@ Kubernetesが他と違うところは, ① 様々なOSSと組み合わせるこ�
  コンテナ運用を更に効率化 / 高速化  詳細なメトリック監視と可視化・・・Prometheus + Grafana コンテナのログの転送収集・・・Fluentd / Fluent Bit ネットワークトラフィックの制御・・・ Istio + Envoy  Kubernetesの適応領域の拡大  機械学習プラットフォーム・・・Kubeflow 分散ストレージ・・・Rook 分散型データベース・・・Vitess   ② 本格的な宣言的オペレーションとInfrastructure as Codeを実現可能
 ③ クラスター上にデプロイするシステムの構成をコード(マニフェストファイル)によって定義できる
  運用オペレーションはコードの変更によって実施し, 作業を簡素化する. 複数Kubernetesクラスターでの相互運用を実現する  Reference: Kubernetesの基礎</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://solareenlo.com/docs/latex/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://solareenlo.com/docs/latex/</guid>
-      <description> LaTeXとは テキストベースの組版処理システムのこと. 学術機関における論文執筆ツールとしてよく使われている.
-オンラインジェネレーター  Cloud LaTeX OverLeaf  </description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://solareenlo.com/docs/mongodb/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://solareenlo.com/docs/mongodb/</guid>
-      <description>MongoDBとは オープンソースで公開されているドキュメント指向データベースの1つ.
-mongodb(v4.0.5)のコンソールからの使い方色々 Excel, Oracle, MongoDB, Object の大まかな比較    Excel Oracle MongoDB Object     ブック Schema Database 特になし   シート Table Collection 特になし   行 Row Document Object群   列 Column Field Key   セル Field Value Value    mongodbの起動の仕方は, $ mongod // mongodbが起動する $ CNTL-C // mongodbを停止する // か, $ sudo service mongod start $ sudo service mongod stop mongodbへのコンソールからのアクセスの仕方は, $ mongo // アクセスして, &amp;gt; exit // 終了.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://solareenlo.com/docs/mysql/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://solareenlo.com/docs/mysql/</guid>
-      <description>MySQLとは オープンソースで公開されている関係データベース管理システム(RDBMS)の1つ.
-MySQL(v14.14)の使い方 (Ver 14.14 Distrib 5.7.25, for Linux (x86_64))
-MySQLのデータ構造 Database -&amp;gt; 複数のTable -&amp;gt; その中にid, title, bodyを持つ表があって, -&amp;gt; 行をRecord, Row, 列をField, Columと言う. こういったDatabaseやTableやFieldやRecordを扱う言語をSQL(Structured Query Language)と言う.
-SQLの実行順番    順番 操作名 命令文     1 テーブルの指定 from   2 結合 on, join   3 取得条件 where   4 グループ化 group by   5 関数 count, sum, avg, min, max   6 having having   7 検索 select, distinct   8 順序 order by   9 limit limit    MySQLの基本的な使い方 # Ubuntuへのインストール sudo apt install mysql-server mysql-client # 起動確認 sudo service mysql status &amp;gt; mysql.</description>
     </item>
     
     <item>
@@ -423,6 +361,88 @@ sudo e2label /dev/nvme2n1p1 ssd02 とし, label名をssd021からssd02に変更�
       <guid>https://solareenlo.com/docs/white-paper/</guid>
       <description> ホワイトペーパーとは 問題に対する解決策を提示した文章のこと. 元々は政府や公的機関による年次報告書(白書)を意味したが現在ではマーケティング用語として使われている. 暗号通貨/暗号資産プロジェクトにおいてもよく使われている.
 ホワイトペーパーの日本語訳一覧  Bitcoin: ビットコイン： P2P 電子通貨システム Ethereum: [Japanese] White Paper  Plasma: Plasma スケーラブルな自律型スマートコントラクト  IOTA: The Tangle Byteball: Byteball:価値の蓄積と移転のための分散型システム Nano: ナノ：手数料不要で分散された仮想通貨ネットワーク NEO: NEO：スマートな経済のための分散型ネットワーク IPFS: IPFS POLKADOT: POLKADOT: VISION FOR A HETEROGENEOUS MULTI-CHAIN FRAMEWORK DRAFT 1  </description>
+    </item>
+    
+    <item>
+      <title>Bitcoin</title>
+      <link>https://solareenlo.com/docs/bitcoin/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://solareenlo.com/docs/bitcoin/</guid>
+      <description> Bitcoin 目的 匿名性を自分で選択できつつ, 安全に価値の移転と保存に特化したシステムを構築すること.
+特徴  非中央集権 自律分散 トラストレス オープンソース ブロックチェーン1.0の代表格  技術  楕円曲線DSA P2P Proo of Work  プレイヤー  コア開発者 マイナー ユーザー 投資家・投機家 法律  スケーリング方法  コンセンサスアルゴリズムを速くする（分散性のために1ブロック生成にわざと10分かけてる） ブロックに含まれるトランザクションを増やす（Block weightが4MB以下/segwit導入により） オフチェーン（Lightning networkなど） サイドチェーン シャーディング  Reference: ブロックチェーンとスケーラビリティ
+References  bitcoinのしくみ Programming The Blockchain C# 日本語 Blockchain Core Camp season1のビデオ資料 Blockchain Core Camp season1のpdf資料 Blockchain Core Camp season2のビデオ資料  </description>
+    </item>
+    
+    <item>
+      <title>CI/CD</title>
+      <link>https://solareenlo.com/docs/ci-cd/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://solareenlo.com/docs/ci-cd/</guid>
+      <description> CI/CDとは ソフトウェアのビルド・テスト・デプロイを自動化し, スモールステップでバージョンアップが行えるようにし, 大きなバグが発生する確率を下げ, 開発スピードを向上させた手法のこと.
+CIとは  Continuous Integrationl（継続的インテグレーション）の略. ソフトウェア開発におけるビルドやテストを自動化したことに対する名称. ホスティングサービスへソースコードがコミットされると, CIによって自動的に「コードにエラーがないか」/「既存の機能を破壊していないか」といったテストが行える.  CDとは  Continuous Delivery（継続的デリバリー）の略. CIによってテストされたコードのマージや, 本番環境向けのビルドの作成を自動化したことに対する名称. 運用環境へのデプロイが明示的な承認なしで自動的に行われる「継続的デプロイ」とは異なる.  References  「CI/CD」とは  Jenkinsとは  CI/CDのオンプレミスにおけるツール. Jenkinsが全てのビルドプロセスの自動化を行うものではない. テストやデプロイなどの各フェーズはそれぞれ専用のツールで自動化を行い, Jenkinsはどういったタイミングでどのツールを呼び出すのかを指示し, エラーが出たら即座にフィードバックを行う処理をする.  </description>
+    </item>
+    
+    <item>
+      <title>DB</title>
+      <link>https://solareenlo.com/docs/db/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://solareenlo.com/docs/db/</guid>
+      <description> データベースとは 大量のデータを集めて, コンピューターでデータの追加, 削除, 検索をしやすい形に整理したもの. 有料/無料, オープンソース/非オープンソース, SQL型, NoSQL型, オブジェクト型, ドキュメント型, キー・バリュー型, グラフ型などいろんな種類がある.
+DBの使用率ランキング  DB-Engines Ranking  </description>
+    </item>
+    
+    <item>
+      <title>IOTA</title>
+      <link>https://solareenlo.com/docs/iota/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://solareenlo.com/docs/iota/</guid>
+      <description> IOTA 目的 オープンIoTでブロックチェーンの良さ(分散性/耐改ざん性/オープン性)を使えるようにしつつ(スケーリング・マイニングコスト・トランザクションの承認の遅さを解決しつつ)インダストリー4.0を推し進めること.
+特徴  小さなデータの保存と交換に特化した設計. 平衡三進数を使用. 量子コンピュータ耐性のために電子署名にはWinternitz One Time Signatureを使用.  署名は使い捨てなので送金に使ったアドレスにもう1度入金すると盗まれる可能性特大. というか多額のIOTAを盗まれた実績有. 今はそうならないようにwalletが上手に管理してくれてる.  スケーリングのためにブロックは生成せずに各々のトランザクションがDAG形式で自分より前のトランザションを承認していく.  まだ発展途上なのでチェック機能が存在する. トランザクションはInput/Output/Remainderの3種類が1まとめになったBundleとしてTangle内を流れてる.  UTXOを採用.  </description>
+    </item>
+    
+    <item>
+      <title>LaTeX</title>
+      <link>https://solareenlo.com/docs/latex/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://solareenlo.com/docs/latex/</guid>
+      <description> LaTeXとは テキストベースの組版処理システムのこと. 学術機関における論文執筆ツールとしてよく使われている.
+オンラインジェネレーター  Cloud LaTeX OverLeaf  </description>
+    </item>
+    
+    <item>
+      <title>MongoDB</title>
+      <link>https://solareenlo.com/docs/mongodb/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://solareenlo.com/docs/mongodb/</guid>
+      <description>MongoDBとは オープンソースで公開されているドキュメント指向データベースの1つ.
+mongodb(v4.0.5)のコンソールからの使い方色々 Excel, Oracle, MongoDB, Object の大まかな比較    Excel Oracle MongoDB Object     ブック Schema Database 特になし   シート Table Collection 特になし   行 Row Document Object群   列 Column Field Key   セル Field Value Value    mongodbの起動の仕方は, $ mongod // mongodbが起動する $ CNTL-C // mongodbを停止する // か, $ sudo service mongod start $ sudo service mongod stop mongodbへのコンソールからのアクセスの仕方は, $ mongo // アクセスして, &amp;gt; exit // 終了.</description>
+    </item>
+    
+    <item>
+      <title>MySQL</title>
+      <link>https://solareenlo.com/docs/mysql/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://solareenlo.com/docs/mysql/</guid>
+      <description>MySQLとは オープンソースで公開されている関係データベース管理システム(RDBMS)の1つ.
+MySQL(v14.14)の使い方 (Ver 14.14 Distrib 5.7.25, for Linux (x86_64))
+MySQLのデータ構造 Database -&amp;gt; 複数のTable -&amp;gt; その中にid, title, bodyを持つ表があって, -&amp;gt; 行をRecord, Row, 列をField, Columと言う. こういったDatabaseやTableやFieldやRecordを扱う言語をSQL(Structured Query Language)と言う.
+SQLの実行順番    順番 操作名 命令文     1 テーブルの指定 from   2 結合 on, join   3 取得条件 where   4 グループ化 group by   5 関数 count, sum, avg, min, max   6 having having   7 検索 select, distinct   8 順序 order by   9 limit limit    MySQLの基本的な使い方 # Ubuntuへのインストール sudo apt install mysql-server mysql-client # 起動確認 sudo service mysql status &amp;gt; mysql.</description>
+    </item>
+    
+    <item>
+      <title>フルノード</title>
+      <link>https://solareenlo.com/docs/bitcoin-fullnode/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://solareenlo.com/docs/bitcoin-fullnode/</guid>
+      <description> フルノードとは  Bitcoinネットワークにおけるすべてのブロックとトランザクションをダウンロードして検証するノードのこと.  Bitcoinフルノードへのアクセス方法 bitcoin-cliを使ってアクセス cURLを使ってアクセス POSTを使ってアクセス </description>
     </item>
     
   </channel>

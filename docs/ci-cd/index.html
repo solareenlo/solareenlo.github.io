@@ -11,7 +11,7 @@
 <title>
   
     
-    Programming
+    CI/CD
   
  | SOLAREENLO</title>
 
@@ -52,7 +52,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   <style>
-  nav ul a[href$="\2f docs\2fprogramming\2f "] {
+  nav ul a[href$="\2f docs\2f ci-cd\2f "] {
       color: #004ed0;
   }
   </style>
@@ -137,7 +137,7 @@ https://github.com/alex-shpak/hugo-book
   <strong>
   
     
-    Programming
+    CI/CD
   
 </strong>
 </header>
@@ -145,63 +145,47 @@ https://github.com/alex-shpak/hugo-book
       
 <article class="markdown">
 
-<h1 id="プログラミングとは">プログラミングとは</h1>
+<h1 id="ci-cdとは">CI/CDとは</h1>
 
-<p>コンピュータプログラムを作成することにより, 人間の意図した処理を行うようにコンピュータに指示を与える行為のこと.
-その為の便利なツールがたくさんある.</p>
+<p>ソフトウェアのビルド・テスト・デプロイを自動化し, スモールステップでバージョンアップが行えるようにし, 大きなバグが発生する確率を下げ, 開発スピードを向上させた手法のこと.</p>
 
-<h2 id="プログラミングをするのに役立つツール">プログラミングをするのに役立つツール</h2>
-
-<ul>
-<li>プログラミング言語 (C, Java, JavaScript, Pythonなど)
+<h2 id="ciとは">CIとは</h2>
 
 <ul>
-<li>手続き型, オブジェクト指向型, 関数型, 静的型付け, 動的型付けなどいろんな種類がある.</li>
-<li>最終的にバイナリデータになって, コンピュータが処理する.</li>
-</ul></li>
-<li>テキストエディタ (<a href="https://github.com/Microsoft/vscode">Visual Studio Code</a>, <a href="https://github.com/vim/vim">Vim</a>など)
-
-<ul>
-<li>コードを書くのに役に立つエディタ.</li>
-</ul></li>
-<li>統合開発環境 (<a href="https://visualstudio.microsoft.com/ja/">Visual Studio</a>, <a href="https://www.jetbrains.com">Jet Brains</a>など)
-
-<ul>
-<li>コンパイル, テキストエディタ, デバッガなどを1つのソフトで行えるようにしたもの.</li>
-</ul></li>
-<li>バージョン管理システム (<a href="https://git-scm.com">git</a>など)
-
-<ul>
-<li>ファイルの変更履歴を管理する為のシステム.</li>
-</ul></li>
-<li>ホスティングサービス (<a href="https://github.com">GitHub</a>, <a href="https://gitlab.com">GitLab</a>など)
-
-<ul>
-<li>上記gitを使って様々なプログラムをweb上に公開したり, それを通じて交流したりすることができるサービス.</li>
-<li>無償・有償がある.</li>
-</ul></li>
+<li>Continuous Integrationl（継続的インテグレーション）の略.</li>
+<li>ソフトウェア開発におけるビルドやテストを自動化したことに対する名称.</li>
+<li>ホスティングサービスへソースコードがコミットされると, CIによって自動的に「コードにエラーがないか」/「既存の機能を破壊していないか」といったテストが行える.</li>
 </ul>
 
-<h2 id="オンラインide">オンラインIDE</h2>
+<h2 id="cdとは">CDとは</h2>
 
 <ul>
-<li><a href="https://repl.it">repl.it</a></li>
+<li>Continuous Delivery（継続的デリバリー）の略.</li>
+<li>CIによってテストされたコードのマージや, 本番環境向けのビルドの作成を自動化したことに対する名称.</li>
+<li>運用環境へのデプロイが明示的な承認なしで自動的に行われる「継続的デプロイ」とは異なる.</li>
+</ul>
+
+<h2 id="references">References</h2>
+
+<ul>
+<li><a href="https://pfs.nifcloud.com/navi/words/ci_cd.htm">「CI/CD」とは</a></li>
+</ul>
+
+<h2 id="jenkinsとは">Jenkinsとは</h2>
+
+<ul>
+<li>CI/CDのオンプレミスにおけるツール.</li>
+<li>Jenkinsが全てのビルドプロセスの自動化を行うものではない.</li>
+<li>テストやデプロイなどの各フェーズはそれぞれ専用のツールで自動化を行い, Jenkinsはどういったタイミングでどのツールを呼び出すのかを指示し, エラーが出たら即座にフィードバックを行う処理をする.</li>
 </ul>
 </article>
 
       
-<div class="align-center book-git-footer justify-between">
-  
-  <div>
-    
-    <a href="https://github.com/solareenlo/blog-hugo/commit/854d57eadf0ba0f946e1a658dd47399cf868c90b" title='Last modified Apr 24, 2019 by solareenlo' target="_blank" rel="noopener">
-      <img src="/svg/code-merge.svg" alt="Changed" /> Apr 24, 2019
-    </a>
-  </div>
+<div class="align-center book-git-footer justify-end">
   
   
   <div>
-    <a href="https://github.com/solareenlo/blog-hugo/edit/master/content/docs/programming.md" target="_blank" rel="noopener">
+    <a href="https://github.com/solareenlo/blog-hugo/edit/master/content/docs/ci-cd.md" target="_blank" rel="noopener">
       <img src="/svg/code-fork.svg" alt="Edit" /> Edit this page
     </a>
   </div>
@@ -218,10 +202,12 @@ https://github.com/alex-shpak/hugo-book
   <aside class="book-toc fixed">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#プログラミングとは">プログラミングとは</a>
+<li><a href="#ci-cdとは">CI/CDとは</a>
 <ul>
-<li><a href="#プログラミングをするのに役立つツール">プログラミングをするのに役立つツール</a></li>
-<li><a href="#オンラインide">オンラインIDE</a></li>
+<li><a href="#ciとは">CIとは</a></li>
+<li><a href="#cdとは">CDとは</a></li>
+<li><a href="#references">References</a></li>
+<li><a href="#jenkinsとは">Jenkinsとは</a></li>
 </ul></li>
 </ul>
 </nav>
