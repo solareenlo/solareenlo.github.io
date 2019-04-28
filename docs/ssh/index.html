@@ -20,7 +20,7 @@
 
 
 
-<link rel="stylesheet" href="/book.min.2cd693df4572345cb73d11dd8dcb6edf6bbace901edc0b81a1d270990ef66cd8.css">
+<link rel="stylesheet" href="/book.min.a0cd0780ea115a1c8b0e2c75baaa38475d1917639a4e902a659c4279b706b946.css">
 
 
 <link rel="icon" href="/favicon.png" type="image/x-icon">
@@ -69,8 +69,8 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/vim/">Vim</a></li>
 <li><a href="/docs/git/">Git</a></li>
 <li><a href="/docs/github/">GitHub</a></li>
-<li><a href="/docs/rust/">Rust</a></li>
 <li><a href="/docs/haskell/">Haskell</a></li>
+<li><a href="/docs/rust/">Rust</a></li>
 <li><a href="/docs/hugo/">Hugo</a></li>
 </ul></li>
 <li><a href="/docs/latex/"><strong>LaTeX</strong></a></li>
@@ -84,7 +84,7 @@ https://github.com/alex-shpak/hugo-book
 
 <ul>
 <li><a href="/docs/docker/">Docker</a></li>
-<li><a href="/docs/docker-command/">Docker Command</a></li>
+<li><a href="/docs/docker-command/">Docker2</a></li>
 <li><a href="/docs/docker-compose/">Docker Compose</a></li>
 <li><a href="/docs/kubernetes/">Kubernetes</a></li>
 </ul></li>
@@ -147,7 +147,83 @@ https://github.com/alex-shpak/hugo-book
 
 <p>暗号や認証の技術を利用して, 安全にリモートコンピュータと通信するためのプロトコルのこと.
 VPSに接続するときは必須.</p>
-</article>
+
+<h2 id="mac-ubuntu-を公開鍵暗号方式で接続する">Mac -&gt; Ubuntu を公開鍵暗号方式で接続する</h2>
+
+<h3 id="ubuntuをssh接続可にする">UbuntuをSSH接続可にする</h3>
+
+<p>Ubuntu側で</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt-get install openssh-server</code></pre></div>
+<p>で, Ubuntu側へSSHで接続できるようになる.</p>
+
+<h3 id="macで秘密鍵と公開鍵のペアを作成する">Macで秘密鍵と公開鍵のペアを作成する</h3>
+
+<p>まずMacで秘密鍵と公開鍵のペアを作成する.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh-keygen -t rsa
+&gt; Generating public/private rsa key pair.
+&gt; Enter file in which to save the key <span style="color:#719e07">(</span>/Users/solareenlo/.ssh/id_rsa<span style="color:#719e07">)</span>:
+<span style="color:#586e75"># ここでエンターを押せば/User/solareenlo/.ssh/id_rsaで保存される.</span>
+&gt; Enter passphrase <span style="color:#719e07">(</span>empty <span style="color:#719e07">for</span> no passphrase<span style="color:#719e07">)</span>:
+<span style="color:#586e75"># パスフレーズを入力</span>
+&gt; Enter same passphrase again:
+<span style="color:#586e75"># 再度パスフレーズを入力</span>
+&gt; Your identification has been saved in /Users/solareenlo/.ssh/id_rsa.
+&gt; Your public key has been saved in /Users/solareenlo/.ssh/id_rsa.pub.
+&gt; The key fingerprint is:
+&gt; SHA256:a7CbAlk8ns2XVz8roZ8kkN42EFEgXcE+oftgUcFCQ38 solareenlo@solareenlo-mbp13.local
+&gt; The key&#39;s randomart image is:
+&gt; +---<span style="color:#719e07">[</span>RSA <span style="color:#2aa198">2048</span><span style="color:#719e07">]</span>----+
+&gt; |      .+**<span style="color:#719e07">=</span>o     |
+&gt; |       .o+<span style="color:#719e07">=</span>      |
+&gt; |   .    .<span style="color:#719e07">=</span>..E    |
+&gt; |    +   ooo..    |
+&gt; |   + <span style="color:#719e07">=</span>. S+ o .   |
+&gt; |  o o o+*<span style="color:#719e07">=</span>. . o  |
+&gt; |   .  .o++<span style="color:#719e07">=</span>... o |
+&gt; |    .  + .o+...  |
+&gt; |     .o    .o.   |
+&gt; +----<span style="color:#719e07">[</span>SHA256<span style="color:#719e07">]</span>-----+</code></pre></div>
+<p>これで秘密鍵は<code>id_rsa</code>に, 公開鍵は<code>id_rsa.pub</code>に作成された.</p>
+
+<h3 id="macの公開鍵をubuntuへ渡す">Macの公開鍵をUbuntuへ渡す</h3>
+
+<p><code>scp</code>を使って公開鍵をUbuntuへ持っていく.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#b58900">cd</span> ~/.ssh
+scp id_rsa.pub solareenlo@111.222.333.444:~/.</code></pre></div>
+<p>これでユーザー名<code>solareenlo</code>, IPアドレスが<code>111.222.333.444</code>のUbuntuのホームディレクトリに先ほど作った公開鍵が渡った.</p>
+
+<h3 id="ubuntuでmacの公開鍵を設置する">UbuntuでMacの公開鍵を設置する</h3>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#b58900">cd</span> ~/.ssh
+touch authorized_keys
+cat id_rsa.pub &gt;&gt; authorized_keys
+rm id_rsa.pub
+sudo chmod <span style="color:#2aa198">700</span> ~/.ssh
+sudo chmod <span style="color:#2aa198">600</span> ~/.ssh/authorized_keys</code></pre></div>
+<h3 id="ubuntuでssh接続での公開鍵認証を有効にする">UbuntuでSSH接続での公開鍵認証を有効にする</h3>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo <span style="color:#b58900">cd</span> /etc/ssh
+sudo cp -p sshd_config sshd_config.org
+sudo vi sshd_config
+/* viで以下をコメントアウトかつ変更
+PubkeyAuthentication yes <span style="color:#586e75"># 公開鍵認証の許可</span>
+AuthorizedKeysFile .ssh/authorized_keys <span style="color:#586e75">#公開鍵ファイルのパス</span>
+PasswordAuthentication no <span style="color:#586e75"># パスワード認証禁止</span>
+*/
+
+sudo service sshd restart <span style="color:#586e75"># sshdを再起動</span></code></pre></div>
+<h3 id="configファイルを作成する">Configファイルを作成する</h3>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#b58900">cd</span> ~/.ssh
+vi config
+~~~ viで以下をconfigに書き込む ~~~
+Host ubuntu
+  HostName <span style="color:#2aa198">111</span>.222.333.444
+  Port <span style="color:#2aa198">22</span>
+  User solareenlo
+  IdentityFile ~/.ssh/id_rsa
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</code></pre></div>
+<h3 id="macからubuntuへssh接続する">MacからUbuntuへSSH接続する</h3>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh ubuntu
+<span style="color:#586e75"># もしくは</span>
+ssh -i ~/.ssh/id_rsa solareenlo@111.222.333.444</code></pre></div></article>
 
       
 <div class="align-center book-git-footer justify-between">
@@ -178,7 +254,19 @@ VPSに接続するときは必須.</p>
   <aside class="book-toc fixed">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#ssh-secure-shell-とは">SSH(Secure Shell)とは</a></li>
+<li><a href="#ssh-secure-shell-とは">SSH(Secure Shell)とは</a>
+<ul>
+<li><a href="#mac-ubuntu-を公開鍵暗号方式で接続する">Mac -&gt; Ubuntu を公開鍵暗号方式で接続する</a>
+<ul>
+<li><a href="#ubuntuをssh接続可にする">UbuntuをSSH接続可にする</a></li>
+<li><a href="#macで秘密鍵と公開鍵のペアを作成する">Macで秘密鍵と公開鍵のペアを作成する</a></li>
+<li><a href="#macの公開鍵をubuntuへ渡す">Macの公開鍵をUbuntuへ渡す</a></li>
+<li><a href="#ubuntuでmacの公開鍵を設置する">UbuntuでMacの公開鍵を設置する</a></li>
+<li><a href="#ubuntuでssh接続での公開鍵認証を有効にする">UbuntuでSSH接続での公開鍵認証を有効にする</a></li>
+<li><a href="#configファイルを作成する">Configファイルを作成する</a></li>
+<li><a href="#macからubuntuへssh接続する">MacからUbuntuへSSH接続する</a></li>
+</ul></li>
+</ul></li>
 </ul>
 </nav>
   </aside>

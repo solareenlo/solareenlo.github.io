@@ -41,7 +41,8 @@ auxオプション
 auxオプションは、aとuとxというオプションを組み合わせたものです。
  a: 端末操作のプロセスを表示する u: CPUやメモリの使用率などを表示する x: 端末操作以外のプロセスを表示する  ps aux &amp;gt; USER PID %CPU %MEM VSZ RSS TT STAT STARTED TIME COMMAND &amp;gt; solareenlo 96263 4.3 2.0 5500012 168620 ?? S 水07PM 21:03.04 /Applications/Utilities/Terminal.app/Contents/MacOS/Terminal &amp;gt; その他たくさん こんな感じで標準出力される.
 Reference: ps auxの見方がよく判らない・・・
-sha256を出力 # Mac shasum -a 256 &amp;lt;ファイル名&amp;gt; # Linux sha256sum &amp;lt;ファイル名&amp;gt; 基本的なUnixコマンドの使い方 mkdirを使って一気にファイルを複数作成する # app1, app2, ... app39, app40というフォルダを一斉に作成する方法 mkdir app{1..40} 一般ユーザーと管理ユーザー # 一般ユーザーだと [solareenlo@localhost ~]$ # 管理ユーザーだと [solareenlo@localhost ~]# UNIXシステムのディレクトリの大体の構成  binには, バイナリデータが入ってる.</description>
+sha256を出力 # Mac shasum -a 256 &amp;lt;ファイル名&amp;gt; # Linux sha256sum &amp;lt;ファイル名&amp;gt; ファイルのユーザー所有権とグループ所有権を変更 ファイルのユーザー所有権とグループ所有権をrootからsolareenloへ変更する
+sudo chown solareenlo:solareenlo ファイル名 基本的なUnixコマンドの使い方 mkdirを使って一気にファイルを複数作成する # app1, app2, .</description>
     </item>
     
     <item>
@@ -242,7 +243,7 @@ SQLの実行順番    順番 操作名 命令文     1 テーブルの指定 fro
       
       <guid>https://solareenlo.com/docs/rust/</guid>
       <description> Rustとは Mozillaが支援するオープンソースのシステムプログラミング言語のこと. 速度, 安全性, 平行性の3つのゴールにフォーカスしている.
-Hello World! fn main() { // 世界よ、こんにちは  println!(&amp;#34;Hello, world!&amp;#34;); }  ドキュメントの日本語訳  Rustの日本語ドキュメント/Japanese Docs for Rust The Embedded Rust Book  チートシート  Rust Language Cheat Sheet  リンク集  Rustのリンク集 実務から見たRustの優位性  </description>
+Hello World! fn main() { // 世界よ、こんにちは  println!(&amp;#34;Hello, world!&amp;#34;); }  ドキュメントの日本語訳  Rustの日本語ドキュメント/Japanese Docs for Rust The Embedded Rust Book  チートシート  Rust Language Cheat Sheet  リンク集  Rustのリンク集  </description>
     </item>
     
     <item>
@@ -265,7 +266,11 @@ sh $ Hello World sh $ echo Hello World Hello World $ シェルスクリプトモ
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://solareenlo.com/docs/ssh/</guid>
-      <description>SSH(Secure Shell)とは 暗号や認証の技術を利用して, 安全にリモートコンピュータと通信するためのプロトコルのこと. VPSに接続するときは必須.</description>
+      <description>SSH(Secure Shell)とは 暗号や認証の技術を利用して, 安全にリモートコンピュータと通信するためのプロトコルのこと. VPSに接続するときは必須.
+Mac -&amp;gt; Ubuntu を公開鍵暗号方式で接続する UbuntuをSSH接続可にする Ubuntu側で
+sudo apt-get install openssh-server で, Ubuntu側へSSHで接続できるようになる.
+Macで秘密鍵と公開鍵のペアを作成する まずMacで秘密鍵と公開鍵のペアを作成する.
+ssh-keygen -t rsa &amp;gt; Generating public/private rsa key pair. &amp;gt; Enter file in which to save the key (/Users/solareenlo/.ssh/id_rsa): # ここでエンターを押せば/User/solareenlo/.ssh/id_rsaで保存される. &amp;gt; Enter passphrase (empty for no passphrase): # パスフレーズを入力 &amp;gt; Enter same passphrase again: # 再度パスフレーズを入力 &amp;gt; Your identification has been saved in /Users/solareenlo/.ssh/id_rsa. &amp;gt; Your public key has been saved in /Users/solareenlo/.</description>
     </item>
     
     <item>

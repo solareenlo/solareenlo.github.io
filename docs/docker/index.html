@@ -20,7 +20,7 @@
 
 
 
-<link rel="stylesheet" href="/book.min.2cd693df4572345cb73d11dd8dcb6edf6bbace901edc0b81a1d270990ef66cd8.css">
+<link rel="stylesheet" href="/book.min.a0cd0780ea115a1c8b0e2c75baaa38475d1917639a4e902a659c4279b706b946.css">
 
 
 <link rel="icon" href="/favicon.png" type="image/x-icon">
@@ -69,8 +69,8 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/vim/">Vim</a></li>
 <li><a href="/docs/git/">Git</a></li>
 <li><a href="/docs/github/">GitHub</a></li>
-<li><a href="/docs/rust/">Rust</a></li>
 <li><a href="/docs/haskell/">Haskell</a></li>
+<li><a href="/docs/rust/">Rust</a></li>
 <li><a href="/docs/hugo/">Hugo</a></li>
 </ul></li>
 <li><a href="/docs/latex/"><strong>LaTeX</strong></a></li>
@@ -84,7 +84,7 @@ https://github.com/alex-shpak/hugo-book
 
 <ul>
 <li><a href="/docs/docker/">Docker</a></li>
-<li><a href="/docs/docker-command/">Docker Command</a></li>
+<li><a href="/docs/docker-command/">Docker2</a></li>
 <li><a href="/docs/docker-compose/">Docker Compose</a></li>
 <li><a href="/docs/kubernetes/">Kubernetes</a></li>
 </ul></li>
@@ -531,6 +531,10 @@ COPY . .
 そして, イメージをビルドして, コンテナを起動して, localhost:3000にアクセスする.</p>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker image build -t nodetest .
 docker container run --rm -p <span style="color:#2aa198">80</span>:3000 nodetest</code></pre></div>
+<h3 id="任意のdockerfileを指定する">任意のDockerfileを指定する</h3>
+
+<p><code>-f</code>を使う.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker build -f Dockerfile.dev .</code></pre></div>
 <h2 id="volume">volume</h2>
 
 <ul>
@@ -688,6 +692,7 @@ docker run -p <span style="color:#2aa198">80</span>:4000 --mount <span style="co
 <li><a href="#copyとaddの違い">COPYとADDの違い</a></li>
 <li><a href="#workdirで作業ディレクトリを指定する">WORKDIRで作業ディレクトリを指定する</a></li>
 <li><a href="#node-js用のdockerfileをスクラッチから書いてみる">Node.js用のDockerfileをスクラッチから書いてみる</a></li>
+<li><a href="#任意のdockerfileを指定する">任意のDockerfileを指定する</a></li>
 </ul></li>
 <li><a href="#volume">volume</a>
 <ul>

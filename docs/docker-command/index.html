@@ -20,7 +20,7 @@
 
 
 
-<link rel="stylesheet" href="/book.min.2cd693df4572345cb73d11dd8dcb6edf6bbace901edc0b81a1d270990ef66cd8.css">
+<link rel="stylesheet" href="/book.min.a0cd0780ea115a1c8b0e2c75baaa38475d1917639a4e902a659c4279b706b946.css">
 
 
 <link rel="icon" href="/favicon.png" type="image/x-icon">
@@ -69,8 +69,8 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/vim/">Vim</a></li>
 <li><a href="/docs/git/">Git</a></li>
 <li><a href="/docs/github/">GitHub</a></li>
-<li><a href="/docs/rust/">Rust</a></li>
 <li><a href="/docs/haskell/">Haskell</a></li>
+<li><a href="/docs/rust/">Rust</a></li>
 <li><a href="/docs/hugo/">Hugo</a></li>
 </ul></li>
 <li><a href="/docs/latex/"><strong>LaTeX</strong></a></li>
@@ -84,7 +84,7 @@ https://github.com/alex-shpak/hugo-book
 
 <ul>
 <li><a href="/docs/docker/">Docker</a></li>
-<li><a href="/docs/docker-command/">Docker Command</a></li>
+<li><a href="/docs/docker-command/">Docker2</a></li>
 <li><a href="/docs/docker-compose/">Docker Compose</a></li>
 <li><a href="/docs/kubernetes/">Kubernetes</a></li>
 </ul></li>
@@ -300,14 +300,19 @@ COPY ./ ./
 </tr>
 </tbody>
 </table>
-</article>
+
+<h2 id="例">例</h2>
+
+<h3 id="react">React</h3>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker build -f Dockerfile.dev -t frontend .
+docker run -d -p <span style="color:#2aa198">3000</span>:3000 --name frontend frontend</code></pre></div></article>
 
       
 <div class="align-center book-git-footer justify-between">
   
   <div>
     
-    <a href="https://github.com/solareenlo/blog-hugo/commit/3f3e18d85dfb4f69542b65de37fb993dd47a6d46" title='Last modified Apr 28, 2019 by solareenlo' target="_blank" rel="noopener">
+    <a href="https://github.com/solareenlo/blog-hugo/commit/5a2dfa3c4e1d10b79be8cdf5d72605a49c87e720" title='Last modified Apr 28, 2019 by solareenlo' target="_blank" rel="noopener">
       <img src="/svg/code-merge.svg" alt="Changed" /> Apr 28, 2019
     </a>
   </div>
@@ -340,6 +345,10 @@ COPY ./ ./
 <li><a href="#dockerfileの効率的な作り方">Dockerfileの効率的な作り方</a></li>
 <li><a href="#dockerfileの書き方の工夫">Dockerfileの書き方の工夫</a></li>
 <li><a href="#再起動">再起動</a></li>
+<li><a href="#例">例</a>
+<ul>
+<li><a href="#react">React</a></li>
+</ul></li>
 </ul></li>
 </ul>
 </nav>

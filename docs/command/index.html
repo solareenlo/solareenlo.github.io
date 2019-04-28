@@ -20,7 +20,7 @@
 
 
 
-<link rel="stylesheet" href="/book.min.2cd693df4572345cb73d11dd8dcb6edf6bbace901edc0b81a1d270990ef66cd8.css">
+<link rel="stylesheet" href="/book.min.a0cd0780ea115a1c8b0e2c75baaa38475d1917639a4e902a659c4279b706b946.css">
 
 
 <link rel="icon" href="/favicon.png" type="image/x-icon">
@@ -69,8 +69,8 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/vim/">Vim</a></li>
 <li><a href="/docs/git/">Git</a></li>
 <li><a href="/docs/github/">GitHub</a></li>
-<li><a href="/docs/rust/">Rust</a></li>
 <li><a href="/docs/haskell/">Haskell</a></li>
+<li><a href="/docs/rust/">Rust</a></li>
 <li><a href="/docs/hugo/">Hugo</a></li>
 </ul></li>
 <li><a href="/docs/latex/"><strong>LaTeX</strong></a></li>
@@ -84,7 +84,7 @@ https://github.com/alex-shpak/hugo-book
 
 <ul>
 <li><a href="/docs/docker/">Docker</a></li>
-<li><a href="/docs/docker-command/">Docker Command</a></li>
+<li><a href="/docs/docker-command/">Docker2</a></li>
 <li><a href="/docs/docker-compose/">Docker Compose</a></li>
 <li><a href="/docs/kubernetes/">Kubernetes</a></li>
 </ul></li>
@@ -174,6 +174,10 @@ shasum -a <span style="color:#2aa198">256</span> &lt;ファイル名&gt;
 
 <span style="color:#586e75"># Linux</span>
 sha256sum &lt;ファイル名&gt;</code></pre></div>
+<h2 id="ファイルのユーザー所有権とグループ所有権を変更">ファイルのユーザー所有権とグループ所有権を変更</h2>
+
+<p>ファイルのユーザー所有権とグループ所有権をrootからsolareenloへ変更する</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo chown solareenlo:solareenlo ファイル名</code></pre></div>
 <h1 id="基本的なunixコマンドの使い方">基本的なUnixコマンドの使い方</h1>
 
 <h2 id="mkdirを使って一気にファイルを複数作成する">mkdirを使って一気にファイルを複数作成する</h2>
@@ -431,7 +435,7 @@ cat /var/log/boot.log
 <span style="color:#586e75"># 実際はsudoで1つ1つrootユーザー権限でコマンドを実行する.</span>
 sudo cat /var/log/boot.log
 &gt; きちんと中身が見れる</code></pre></div>
-<h2 id="管理者を変更するchownを使う">管理者を変更するchownを使う</h2>
+<h2 id="管理者を変更するchown">管理者を変更するchown</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cp /var/log/boot.log .
 &gt; cp: <span style="color:#2aa198">&#39;/var/log/boot.log&#39;</span> を読み込み用に開くことができません: 許可がありません
 sudo !!
@@ -590,6 +594,7 @@ ls app2
 <ul>
 <li><a href="#psコマンド">psコマンド</a></li>
 <li><a href="#sha256を出力">sha256を出力</a></li>
+<li><a href="#ファイルのユーザー所有権とグループ所有権を変更">ファイルのユーザー所有権とグループ所有権を変更</a></li>
 </ul></li>
 <li><a href="#基本的なunixコマンドの使い方">基本的なUnixコマンドの使い方</a>
 <ul>
@@ -609,7 +614,7 @@ ls app2
 <li><a href="#独自のコマンドを作る">独自のコマンドを作る</a></li>
 <li><a href="#一時的にpathを通す">一時的にpathを通す</a></li>
 <li><a href="#管理者ユーザーになる">管理者ユーザーになる</a></li>
-<li><a href="#管理者を変更するchownを使う">管理者を変更するchownを使う</a></li>
+<li><a href="#管理者を変更するchown">管理者を変更するchown</a></li>
 <li><a href="#wc-head-tail-grepを使う">wc, head, tail, grepを使う</a></li>
 <li><a href="#リダイレクション-パイプを使う">リダイレクション, パイプを使う</a></li>
 <li><a href="#ワイルカードを使う">ワイルカードを使う</a></li>
