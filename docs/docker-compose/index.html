@@ -372,7 +372,35 @@ ADVANCED OPTIONS; Database host: postgres
 ADVANCED OPTIONS; Database port: <span style="color:#2aa198">5432</span></code></pre></div>
 <p>ページのテーマをDockerfileで設定してダウンロードしてきたBootstrapに変えてみる.<br />
 停止するには,</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker-compose down</code></pre></div></article>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker-compose down</code></pre></div>
+<h2 id="テストを行う">テストを行う</h2>
+
+<p>以下のように<code>docker-compose.yml</code>に<code>tests</code>項目を追加する.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">version: <span style="color:#2aa198">&#39;3&#39;</span>
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - <span style="color:#2aa198">&#34;3001:3000&#34;</span>
+    volumes:
+      - /app/node_modules
+      - .:/app
+  tests:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+      - /app/node_modules
+      - .:/app
+    command: [<span style="color:#2aa198">&#34;npm&#34;</span>, <span style="color:#2aa198">&#34;run&#34;</span>, <span style="color:#2aa198">&#34;test&#34;</span>]</code></pre></div>
+<p>そして, 以下でビルドし, 実行する.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker-compose up --build</code></pre></div>
+<p>テスト用のコードを変更すると, 標準出力で結果が出てくる.</p>
+
+<p>コード例: <a href="https://github.com/solareenlo/frontend-docker-react">frontend-docker-react</a></p>
+</article>
 
       
 <div class="align-center book-git-footer justify-between">
@@ -413,6 +441,7 @@ ADVANCED OPTIONS; Database port: <span style="color:#2aa198">5432</span></code><
 <li><a href="#node-jsとredix">Node.jsとRedix</a></li>
 <li><a href="#複数のイメージを作る">複数のイメージを作る</a></li>
 <li><a href="#dockerfileでカスタムイメージを作成しつつdocker-composeで動かす">dockerfileでカスタムイメージを作成しつつdocker-composeで動かす</a></li>
+<li><a href="#テストを行う">テストを行う</a></li>
 </ul></li>
 </ul>
 </nav>

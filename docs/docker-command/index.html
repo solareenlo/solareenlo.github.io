@@ -301,18 +301,37 @@ COPY ./ ./
 </tbody>
 </table>
 
-<h2 id="例">例</h2>
-
-<h3 id="react">React</h3>
+<h2 id="テストを行う">テストを行う</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker build -f Dockerfile.dev -t frontend .
-docker run -d -p <span style="color:#2aa198">3000</span>:3000 --name frontend frontend</code></pre></div></article>
+docker run -d -p <span style="color:#2aa198">3000</span>:3000 --name frontend frontend</code></pre></div>
+<p>コード例: <a href="https://github.com/solareenlo/frontend-docker-react">frontend-docker-react</a></p>
+
+<h2 id="react-nginx-と繋げるのをdockerfileだけで行う">React -&gt; Nginx と繋げるのをDockerfileだけで行う</h2>
+
+<p><code>Dokcerfile</code>に以下のように書き込む.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#719e07">FROM</span><span style="color:#2aa198"> node:alpine as builder</span>
+<span style="color:#719e07">WORKDIR</span><span style="color:#2aa198"> &#39;/app&#39;</span>
+COPY package.json .
+<span style="color:#719e07">RUN</span> npm install
+COPY . .
+<span style="color:#719e07">RUN</span> npm run build
+
+<span style="color:#719e07">FROM</span><span style="color:#2aa198"> nginx</span>
+COPY --from<span style="color:#719e07">=</span>builder /app/build /usr/share/nginx/html</code></pre></div>
+<p>そして,</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker build -t nginx-react .</code></pre></div>
+<p>1つ目の<code>FROM</code>でReactのイメージができ, 2つ目の<code>FROM</code>でReactの結果を引き継いだNginxのイメージができる.
+そして, 以下でコンテナを走らせる.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run -p <span style="color:#2aa198">3001</span>:80 nginx-react</code></pre></div>
+<p>コード例: <a href="https://github.com/solareenlo/frontend-docker-react">frontend-docker-react</a></p>
+</article>
 
       
 <div class="align-center book-git-footer justify-between">
   
   <div>
     
-    <a href="https://github.com/solareenlo/blog-hugo/commit/5a2dfa3c4e1d10b79be8cdf5d72605a49c87e720" title='Last modified Apr 28, 2019 by solareenlo' target="_blank" rel="noopener">
+    <a href="https://github.com/solareenlo/blog-hugo/commit/8b57a9dc1e6ae1708ffc540065df5376a97d6cd9" title='Last modified Apr 28, 2019 by solareenlo' target="_blank" rel="noopener">
       <img src="/svg/code-merge.svg" alt="Changed" /> Apr 28, 2019
     </a>
   </div>
@@ -345,10 +364,8 @@ docker run -d -p <span style="color:#2aa198">3000</span>:3000 --name frontend fr
 <li><a href="#dockerfileの効率的な作り方">Dockerfileの効率的な作り方</a></li>
 <li><a href="#dockerfileの書き方の工夫">Dockerfileの書き方の工夫</a></li>
 <li><a href="#再起動">再起動</a></li>
-<li><a href="#例">例</a>
-<ul>
-<li><a href="#react">React</a></li>
-</ul></li>
+<li><a href="#テストを行う">テストを行う</a></li>
+<li><a href="#react-nginx-と繋げるのをdockerfileだけで行う">React -&gt; Nginx と繋げるのをDockerfileだけで行う</a></li>
 </ul></li>
 </ul>
 </nav>
