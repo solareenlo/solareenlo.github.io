@@ -69,13 +69,18 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/vim/">Vim</a></li>
 <li><a href="/docs/git/">Git</a></li>
 <li><a href="/docs/github/">GitHub</a></li>
-<li><a href="/docs/haskell/">Haskell</a></li>
 <li><a href="/docs/c/">C</a></li>
 <li><a href="/docs/rust/">Rust</a></li>
+<li><a href="/docs/haskell/">Haskell</a></li>
 <li><a href="/docs/hugo/">Hugo</a></li>
 </ul></li>
 <li><a href="/docs/latex/"><strong>LaTeX</strong></a></li>
-<li><a href="/docs/ci-cd/"><strong>CI/CD</strong></a></li>
+<li><a href="/docs/ci-cd/"><strong>CI/CD</strong></a>
+
+<ul>
+<li><a href="/docs/jenkins/">Jenkins</a></li>
+<li><a href="/docs/travis-ci/">Travis</a></li>
+</ul></li>
 <li><a href="/docs/vps/"><strong>VPS</strong></a>
 
 <ul>
@@ -308,7 +313,7 @@ COPY ./ ./
 docker run -d -p <span style="color:#2aa198">3000</span>:3000 --name frontend frontend</code></pre></div>
 <p><strong>コード例:</strong> <a href="https://github.com/solareenlo/frontend-docker-react">frontend-docker-react</a></p>
 
-<h2 id="react-nginx-と繋げるのをdockerfileだけで行う">React -&gt; Nginx と繋げるのをDockerfileだけで行う</h2>
+<h2 id="react-nginx-と繋げるのをdockerfileだけで行う">React &gt; Nginx と繋げるのをDockerfileだけで行う</h2>
 
 <p><code>Dokcerfile</code>に以下のように書き込む.</p>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#719e07">FROM</span><span style="color:#2aa198"> node:alpine as builder</span>
@@ -327,7 +332,7 @@ COPY --from<span style="color:#719e07">=</span>builder /app/build /usr/share/ngi
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run -p <span style="color:#2aa198">3001</span>:80 nginx-react</code></pre></div>
 <p><strong>コード例:</strong> <a href="https://github.com/solareenlo/frontend-docker-react">frontend-docker-react</a></p>
 
-<h2 id="travisに繋げてテストを実行">Travisに繋げてテストを実行</h2>
+<h2 id="travis-ciに繋げてテストを実行">Travis CIに繋げてテストを実行</h2>
 
 <p>Travisにアカウントを作成して, GitHubと連携して, リポジトリを登録して, 登録したリポジトリの<code>.travis.yml</code>に以下を書き込む.</p>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">sudo: required
@@ -341,6 +346,68 @@ script:
   - docker run -e CI=<span style="color:#cb4b16">true</span> solareenlo/frontend-docker-react npm run test -- --watchAll=<span style="color:#cb4b16">false</span></code></pre></div>
 <p>そして, GitHubにpushすると自動的にtestが行われる.<br />
 <strong>コード例:</strong> <a href="https://github.com/solareenlo/frontend-docker-react">frontend-docker-react</a></p>
+
+<h2 id="dockerfile-react-nginx-github-travis-ci-aws-elastic-beanstalkとデプロイする">Dockerfile(React, Nginx) &gt; GitHub &gt; Travis CI &gt; AWS Elastic Beanstalkとデプロイする</h2>
+
+<p>大まかな流れ</p>
+
+<ol>
+<li><code>npm install -g create-react-app</code>で<code>create-react-app</code>をインストールして簡単なページを作成する.</li>
+
+<li><p>上記のDokerfileを作成する.
+こんな感じ.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#719e07">FROM</span><span style="color:#2aa198"> node:alpine as builder</span>
+<span style="color:#719e07">WORKDIR</span><span style="color:#2aa198"> &#39;/app&#39;</span>
+COPY package.json .
+<span style="color:#719e07">RUN</span> npm install
+COPY . .
+
+<span style="color:#719e07">RUN</span> npm run build
+<span style="color:#719e07">FROM</span><span style="color:#2aa198"> nginx</span>
+<span style="color:#719e07">EXPOSE</span><span style="color:#2aa198"> 80</span>
+COPY --from<span style="color:#719e07">=</span>builder /app/build /usr/share/nginx/html</code></pre></div></li>
+
+<li><p>GitHub, Travis CI, AWSでそれぞれアカウントを作成する.</p></li>
+
+<li><p>GitHubにコードを1度<code>push</code>する.</p></li>
+
+<li><p>AWS<code>Elastic Beanstalk</code>でDocker(React, Nginx)用のwebアプリケーションの基盤を作成する.</p></li>
+
+<li><p><code>Elastic Beanstalk</code>で作ったwebアプリケーションのファイルを保存しておくためのストレージをAWSの<code>S3</code>を使って作成する.</p></li>
+
+<li><p><code>Elastic Beanstalk</code>にアクセスするためのアクセスキーとシークレットキーをAWSの<code>IAM</code>を使って作成・保存する.</p></li>
+
+<li><p>Travis CIでAWSのアクセスキーとシークレットキーを設定をする.</p></li>
+
+<li><p><code>.travis.yml</code>を作成する.
+こんな感じ.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">  sudo: required
+  services:
+    - docker
+  before_install:
+    - docker build -t solareenlo/frontend-docker-react -f Dockerfile.dev .
+  script:
+    - docker run -e CI=<span style="color:#cb4b16">true</span> solareenlo/frontend-docker-react npm run test -- --watchAll=<span style="color:#cb4b16">false</span>
+  deploy:
+    provider: elasticbeanstalk
+    region: <span style="color:#2aa198">&#34;us-east-1&#34;</span>
+    app: <span style="color:#2aa198">&#34;frontend-docker-react&#34;</span>
+    env: <span style="color:#2aa198">&#34;FrontendDockerReact-env&#34;</span>
+    bucket_name: <span style="color:#2aa198">&#34;elasticbeanstalk-us-east-1-998768475306&#34;</span>
+    bucket_path: <span style="color:#2aa198">&#34;frontend-docker-react&#34;</span>
+    on:
+      branch: master
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key:
+      secure: <span style="color:#2aa198">&#34;$AWS_SECRET_KEY&#34;</span></code></pre></div></li>
+
+<li><p>ローカルのソースコードをGitHubに<code>push</code>する.
+全ての連携が上手くできていれば, GitHubのpushを感知して, Travis CIでビルドとテストが行われ, テストがOKならAWSの<code>Elastic Beanstalk</code>に自動でデプロイされ, 規定のURLにReactのサイトが表示される.</p></li>
+
+<li><p>出来たサイト: <a href="http://frontenddockerreact-env.fbdmefkujd.us-east-1.elasticbeanstalk.com">http://frontenddockerreact-env.fbdmefkujd.us-east-1.elasticbeanstalk.com</a></p></li>
+</ol>
+
+<p><strong>コード例:</strong> <a href="https://github.com/solareenlo/frontend-docker-react">frontend-docker-react</a></p>
 </article>
 
       
@@ -382,8 +449,9 @@ script:
 <li><a href="#dockerfileの書き方の工夫">Dockerfileの書き方の工夫</a></li>
 <li><a href="#再起動">再起動</a></li>
 <li><a href="#テストを行う">テストを行う</a></li>
-<li><a href="#react-nginx-と繋げるのをdockerfileだけで行う">React -&gt; Nginx と繋げるのをDockerfileだけで行う</a></li>
-<li><a href="#travisに繋げてテストを実行">Travisに繋げてテストを実行</a></li>
+<li><a href="#react-nginx-と繋げるのをdockerfileだけで行う">React &gt; Nginx と繋げるのをDockerfileだけで行う</a></li>
+<li><a href="#travis-ciに繋げてテストを実行">Travis CIに繋げてテストを実行</a></li>
+<li><a href="#dockerfile-react-nginx-github-travis-ci-aws-elastic-beanstalkとデプロイする">Dockerfile(React, Nginx) &gt; GitHub &gt; Travis CI &gt; AWS Elastic Beanstalkとデプロイする</a></li>
 </ul></li>
 </ul>
 </nav>

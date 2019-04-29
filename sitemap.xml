@@ -104,6 +104,11 @@
   </url>
   
   <url>
+    <loc>https://solareenlo.com/docs/jenkins/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://solareenlo.com/docs/kubernetes/</loc>
     <priority>0</priority>
   </url>
@@ -140,6 +145,11 @@
   
   <url>
     <loc>https://solareenlo.com/docs/terminal/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://solareenlo.com/docs/travis-ci/</loc>
     <priority>0</priority>
   </url>
   

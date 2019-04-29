@@ -143,6 +143,15 @@ Hugoのコードの色選択  https://help.farbox.com/pygments.html Chroma Style
     
     <item>
       <title></title>
+      <link>https://solareenlo.com/docs/jenkins/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://solareenlo.com/docs/jenkins/</guid>
+      <description> Jenkinsとは  CI/CDのオンプレミスにおけるツール. Jenkinsが全てのビルドプロセスの自動化を行うものではない. テストやデプロイなどの各フェーズはそれぞれ専用のツールで自動化を行い, Jenkinsはどういったタイミングでどのツールを呼び出すのかを指示し, エラーが出たら即座にフィードバックを行う処理をする.  </description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>https://solareenlo.com/docs/kubernetes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -237,6 +246,17 @@ ssh-keygen -t rsa &amp;gt; Generating public/private rsa key pair. &amp;gt; Ente
     
     <item>
       <title></title>
+      <link>https://solareenlo.com/docs/travis-ci/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://solareenlo.com/docs/travis-ci/</guid>
+      <description> Travis CIとは GitHub上のソフトウェアのビルドやテストを行う, オンラインで分散型の継続的インテグレーション(CI)サービスのこと.
+https://travis-ci.org と https://travis-ci.com の両方があるけど, 今後は.comの方を使っていく方針.
+Travis CiからAWS Elastic Beanstalkへ  AWS Elastic Beanstalk Deployment  </description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>https://solareenlo.com/docs/ubuntu/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -298,7 +318,7 @@ References  bitcoinのしくみ Programming The Blockchain C# 日本語 Blockcha
       
       <guid>https://solareenlo.com/docs/ci-cd/</guid>
       <description> CI/CDとは ソフトウェアのビルド・テスト・デプロイを自動化することで, 1つ1つの工程が小さくなり, リスクマネージメントを容易にしたり, 変更に対するフィードバックを素早く得られたりする開発手法のこと.
-CIとは  Continuous Integrationl（継続的インテグレーション）の略. ソフトウェア開発におけるビルドやテストを自動化したこと. ホスティングサービスへソースコードがコミットされると, CIによって自動的に「コードにエラーがないか」/「既存の機能を破壊していないか」といったテストが行える.  CDとは  Continuous Delivery（継続的デリバリー）の略. CIによってテストされたコードのマージや, 本番環境向けのビルドの作成を自動化したこと. 運用環境へのデプロイが明示的な承認なしで自動的に行われる「継続的デプロイ」とは異なる.  References  「CI/CD」とは CI/CDのエキスパートが解説：CI/CDとは何か？ なぜ今、必要とされるのか？  Jenkinsとは  CI/CDのオンプレミスにおけるツール. Jenkinsが全てのビルドプロセスの自動化を行うものではない. テストやデプロイなどの各フェーズはそれぞれ専用のツールで自動化を行い, Jenkinsはどういったタイミングでどのツールを呼び出すのかを指示し, エラーが出たら即座にフィードバックを行う処理をする.  </description>
+CIとは  Continuous Integrationl（継続的インテグレーション）の略. ソフトウェア開発におけるビルドやテストを自動化したこと. ホスティングサービスへソースコードがコミットされると, CIによって自動的に「コードにエラーがないか」/「既存の機能を破壊していないか」といったテストが行える.  CDとは  Continuous Delivery（継続的デリバリー）の略. CIによってテストされたコードのマージや, 本番環境向けのビルドの作成を自動化したこと. 運用環境へのデプロイが明示的な承認なしで自動的に行われる「継続的デプロイ」とは異なる.  References  「CI/CD」とは CI/CDのエキスパートが解説：CI/CDとは何か？ なぜ今、必要とされるのか？  </description>
     </item>
     
     <item>
