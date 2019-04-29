@@ -20,7 +20,7 @@
 
 
 
-<link rel="stylesheet" href="/book.min.a0cd0780ea115a1c8b0e2c75baaa38475d1917639a4e902a659c4279b706b946.css">
+<link rel="stylesheet" href="/book.min.e808b24e3674004fbe99a302bd76d42b88fa35c0df5eb39bcc1fac7a64afaebd.css">
 
 
 <link rel="icon" href="/favicon.png" type="image/x-icon">
@@ -529,7 +529,7 @@ COPY . .
 <span style="color:#586e75"># tiniでnodeを起動する</span>
 <span style="color:#719e07">CMD</span><span style="color:#2aa198"> [&#34;/sbin/tini&#34;, &#34;--&#34;, &#34;node&#34;, &#34;./bin/www&#34;]</span></code></pre></div>
 <p>こんな感んじでDokcerfileを作成する.<br />
-ソースコード例は<a href="https://github.com/solareenlo/udemy-docker-mastery/tree/master/dockerfile-assignment-1">こちら</a>.<br />
+<strong>コード例:</strong> <a href="https://github.com/solareenlo/udemy-docker-mastery/tree/master/dockerfile-assignment-1">dockerfile-assignment-1</a><br />
 そして, イメージをビルドして, コンテナを起動して, localhost:3000にアクセスする.</p>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker image build -t nodetest .
 docker container run --rm -p <span style="color:#2aa198">80</span>:3000 nodetest</code></pre></div>
@@ -615,7 +615,14 @@ docker run -p <span style="color:#2aa198">80</span>:4000 --mount <span style="co
 </article>
 
       
-<div class="align-center book-git-footer justify-end">
+<div class="align-center book-git-footer justify-between">
+  
+  <div>
+    
+    <a href="https://github.com/solareenlo/blog-hugo/commit/8080d3ce07296cc293a8f5677529817c66942922" title='Last modified Apr 29, 2019 by solareenlo' target="_blank" rel="noopener">
+      <img src="/svg/code-merge.svg" alt="Changed" /> Apr 29, 2019
+    </a>
+  </div>
   
   
   <div>

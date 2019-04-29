@@ -20,7 +20,7 @@
 
 
 
-<link rel="stylesheet" href="/book.min.a0cd0780ea115a1c8b0e2c75baaa38475d1917639a4e902a659c4279b706b946.css">
+<link rel="stylesheet" href="/book.min.e808b24e3674004fbe99a302bd76d42b88fa35c0df5eb39bcc1fac7a64afaebd.css">
 
 
 <link rel="icon" href="/favicon.png" type="image/x-icon">
@@ -306,7 +306,7 @@ COPY ./ ./
 <h2 id="テストを行う">テストを行う</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker build -f Dockerfile.dev -t frontend .
 docker run -d -p <span style="color:#2aa198">3000</span>:3000 --name frontend frontend</code></pre></div>
-<p>コード例: <a href="https://github.com/solareenlo/frontend-docker-react">frontend-docker-react</a></p>
+<p><strong>コード例:</strong> <a href="https://github.com/solareenlo/frontend-docker-react">frontend-docker-react</a></p>
 
 <h2 id="react-nginx-と繋げるのをdockerfileだけで行う">React -&gt; Nginx と繋げるのをDockerfileだけで行う</h2>
 
@@ -325,11 +325,33 @@ COPY --from<span style="color:#719e07">=</span>builder /app/build /usr/share/ngi
 <p>1つ目の<code>FROM</code>でReactのイメージができ, 2つ目の<code>FROM</code>でReactの結果を引き継いだNginxのイメージができる.
 そして, 以下でコンテナを走らせる.</p>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run -p <span style="color:#2aa198">3001</span>:80 nginx-react</code></pre></div>
-<p>コード例: <a href="https://github.com/solareenlo/frontend-docker-react">frontend-docker-react</a></p>
+<p><strong>コード例:</strong> <a href="https://github.com/solareenlo/frontend-docker-react">frontend-docker-react</a></p>
+
+<h2 id="travisに繋げてテストを実行">Travisに繋げてテストを実行</h2>
+
+<p>Travisにアカウントを作成して, GitHubと連携して, リポジトリを登録して, 登録したリポジトリの<code>.travis.yml</code>に以下を書き込む.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t solareenlo/frontend-docker-react -f Dockerfile.dev .
+
+script:
+  - docker run -e CI=<span style="color:#cb4b16">true</span> solareenlo/frontend-docker-react npm run test -- --watchAll=<span style="color:#cb4b16">false</span></code></pre></div>
+<p>そして, GitHubにpushすると自動的にtestが行われる.<br />
+<strong>コード例:</strong> <a href="https://github.com/solareenlo/frontend-docker-react">frontend-docker-react</a></p>
 </article>
 
       
-<div class="align-center book-git-footer justify-end">
+<div class="align-center book-git-footer justify-between">
+  
+  <div>
+    
+    <a href="https://github.com/solareenlo/blog-hugo/commit/8080d3ce07296cc293a8f5677529817c66942922" title='Last modified Apr 29, 2019 by solareenlo' target="_blank" rel="noopener">
+      <img src="/svg/code-merge.svg" alt="Changed" /> Apr 29, 2019
+    </a>
+  </div>
   
   
   <div>
@@ -361,6 +383,7 @@ COPY --from<span style="color:#719e07">=</span>builder /app/build /usr/share/ngi
 <li><a href="#再起動">再起動</a></li>
 <li><a href="#テストを行う">テストを行う</a></li>
 <li><a href="#react-nginx-と繋げるのをdockerfileだけで行う">React -&gt; Nginx と繋げるのをDockerfileだけで行う</a></li>
+<li><a href="#travisに繋げてテストを実行">Travisに繋げてテストを実行</a></li>
 </ul></li>
 </ul>
 </nav>
