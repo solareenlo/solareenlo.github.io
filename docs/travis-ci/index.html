@@ -161,6 +161,24 @@ https://github.com/alex-shpak/hugo-book
 <ul>
 <li><a href="https://docs.travis-ci.com/user/deployment/elasticbeanstalk/">AWS Elastic Beanstalk Deployment</a></li>
 </ul>
+
+<h2 id="dokcerのテストがpassedにならない時の対処法">Dokcerのテストがpassedにならない時の対処法</h2>
+
+<p>Travis CIでDockerのテストを以下のように設定するとpassedにならないことがある.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">script:
+  docker run solareenlo/react-test npm run test -- --coverage</code></pre></div>
+<p>そんな時は以下のようにテストを設定する.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">script:
+  docker run -e CI=<span style="color:#cb4b16">true</span> solareenlo/react-test npm run test -- --watchAll=falseb</code></pre></div>
+<h2 id="環境変数が設定できない時">環境変数が設定できない時</h2>
+
+<p>Travis CIの環境変数を設定する項目では特殊文字(; &amp; ( ) | ^ &lt; &gt; ? * [ ] $ ` &lsquo; &ldquo; \ ! { } 改行 タブ スペース)がそのままの入力ではエスケープされないので, シングルクォーテーション(&ldquo;)で囲む必要がある.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># 例</span>
+<span style="color:#719e07">=</span>rrTDKhZYgT2Zm4&amp;TF+D^pyp84Uf9<span style="color:#719e07">[</span>Tw7xZ9Parhx<span style="color:#719e07">[</span><span style="color:#268bd2">$A83QCGRb</span>.NKxAnqUd%7<span style="color:#719e07">(</span>t</code></pre></div>
+<p>を</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># 例</span>
+<span style="color:#2aa198">&#39;=rrTDKhZYgT2Zm4&amp;TF+D^pyp84Uf9[Tw7xZ9Parhx[$A83QCGRb.NKxAnqUd%7(t&#39;</span></code></pre></div>
+<p>と入力する.</p>
 </article>
 
       
@@ -195,6 +213,8 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="#travis-ciとは">Travis CIとは</a>
 <ul>
 <li><a href="#travis-ciからaws-elastic-beanstalkへ">Travis CiからAWS Elastic Beanstalkへ</a></li>
+<li><a href="#dokcerのテストがpassedにならない時の対処法">Dokcerのテストがpassedにならない時の対処法</a></li>
+<li><a href="#環境変数が設定できない時">環境変数が設定できない時</a></li>
 </ul></li>
 </ul>
 </nav>
