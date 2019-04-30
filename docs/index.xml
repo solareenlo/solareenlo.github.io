@@ -63,7 +63,7 @@ Reference: コンテナ技術とは何？
       <guid>https://solareenlo.com/docs/docker-compose/</guid>
       <description>Docker Composeとは 複数のコンテナで構成されるアプリケーションを定義と実行するためのツールのこと. Dockerとは切り離されてる.
  Composeはアプリケーションのサービスをファイルで定義する. Dockerコマンドと高い親和性があるため, 学習コストが比較的低い. Swarmモードにサービスをデプロイできるオーケストレーション機能もある.  Reference: Docker Compose 徹底解説   活用場面  利用者視点  docker-compose.ymlがあれば, すぐに何でも実行できる.  開発者視点  環境の再構築が簡単 バージョン違いの環境を作りやすい 1つのマシン上に, 複数の環境を立ち上げられやすい   適切に書かれたYAMLファイルさえあれば, 誰でも簡単に環境構築もアプリケーション実行もできるのが強み.
-docker-compose.yml  services:(使うイメージ), networks:(使うネットワーク), volumes:(使うボリューム)を定義する.  起動と停止 # 起動 docker-compose up # ビルドして起動 docker-compose up --build # バックグラウンドで起動 docker-compose up -d # 停止 docker-compose down # ボリュームも削除しつつ停止 docker-compose down -v nginxとhttpd git clone git@github.com:solareenlo/udemy-docker-mastery.git cd udemy-docker-mastery/compose-sample-2 docker-compose up -d # デーモンでコンテナ群を起動 docker-compose ps # 動いてるコンテナ一覧が見られる &amp;gt; Name Command State Ports &amp;gt; ---------------------------------------------------------------------------- &amp;gt; compose-sample-2_proxy_1 nginx -g daemon off; Up 0.</description>
+docker-compose.yml  services:(使うイメージ), networks:(使うネットワーク), volumes:(使うボリューム)を定義する. docker-compose.ymlの書き方を解説してる -&amp;gt; Docker Compose - docker-compose.yml リファレンス  起動と停止 # 起動 docker-compose up # ビルドして起動 docker-compose up --build # バックグラウンドで起動 docker-compose up -d # 停止 docker-compose down # ボリュームも削除しつつ停止 docker-compose down -v nginxとhttpd git clone git@github.</description>
     </item>
     
     <item>

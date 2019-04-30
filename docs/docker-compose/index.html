@@ -188,6 +188,7 @@ Dockerとは切り離されてる.</p>
 
 <ul>
 <li><strong>services:</strong>(使うイメージ), <strong>networks:</strong>(使うネットワーク), <strong>volumes:</strong>(使うボリューム)を定義する.</li>
+<li>docker-compose.ymlの書き方を解説してる -&gt; <a href="https://qiita.com/zembutsu/items/9e9d80e05e36e882caaa">Docker Compose - docker-compose.yml リファレンス</a></li>
 </ul>
 
 <h2 id="起動と停止">起動と停止</h2>
@@ -406,6 +407,40 @@ services:
 <p>テスト用のコードを変更すると, 標準出力で結果が出てくる.</p>
 
 <p><strong>コード例:</strong> <a href="https://github.com/solareenlo/frontend-docker-react">frontend-docker-react</a></p>
+
+<h2 id="環境変数">環境変数</h2>
+
+<p>以下のように<code>variabeleName=value</code>と書けばコンテナの中で有効な環境変数になる.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">environment:
+  - <span style="color:#268bd2">REDIS_HOST</span><span style="color:#719e07">=</span>redis
+  - <span style="color:#268bd2">REDIS_PORT</span><span style="color:#719e07">=</span><span style="color:#2aa198">6378</span></code></pre></div>
+<p>以下のように<code>variableName</code>とだけ書けばホストから環境変数を取ってきてコンテナの中で有効な環境変数になる.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">environment:
+  - REDIS_HOST</code></pre></div>
+<ul>
+<li><strong>Referece:</strong>
+
+<ul>
+<li><a href="https://qiita.com/kimullaa/items/f556431b8103e686f356">Docker-Compose の変数定義について</a></li>
+</ul></li>
+</ul>
+
+<h2 id="volumes">volumes</h2>
+
+<p>以下のようにパスを<code>volumes</code>に指定するとボリュームとしてマウントしてくれる.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">volumes
+  - /path/to/filename</code></pre></div>
+<p>以下のように<code>ホストのパス:コンテナのパス</code>と書くとホストをマウントしてくれる.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">volumes
+  - host/path:./path/to/test</code></pre></div>
+<ul>
+<li><strong>References:</strong>
+
+<ul>
+<li><a href="https://qiita.com/gounx2/items/23b0dc8b8b95cc629f32">Docker、ボリューム(Volume)について真面目に調べた</a></li>
+<li><a href="https://qiita.com/zembutsu/items/9e9d80e05e36e882caaa">Docker Compose - docker-compose.yml リファレンス</a></li>
+</ul></li>
+</ul>
 </article>
 
       
@@ -448,6 +483,8 @@ services:
 <li><a href="#複数のイメージを作る">複数のイメージを作る</a></li>
 <li><a href="#dockerfileでカスタムイメージを作成しつつdocker-composeで動かす">dockerfileでカスタムイメージを作成しつつdocker-composeで動かす</a></li>
 <li><a href="#テストを行う">テストを行う</a></li>
+<li><a href="#環境変数">環境変数</a></li>
+<li><a href="#volumes">volumes</a></li>
 </ul></li>
 </ul>
 </nav>
