@@ -11,7 +11,7 @@
 <title>
   
     
-    Github
+    Aws
   
  | SOLAREENLO</title>
 
@@ -52,7 +52,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   <style>
-  nav ul a[href$="\2f docs\2fgithub\2f "] {
+  nav ul a[href$="\2f docs\2f aws\2f "] {
       color: #004ed0;
   }
   </style>
@@ -149,7 +149,7 @@ https://github.com/alex-shpak/hugo-book
   <strong>
   
     
-    Github
+    Aws
   
 </strong>
 </header>
@@ -157,53 +157,59 @@ https://github.com/alex-shpak/hugo-book
       
 <article class="markdown">
 
-<h1 id="github-https-github-com-とは"><a href="https://github.com">GitHub</a>とは</h1>
+<h1 id="アマゾンウェブサービス-aws-とは">アマゾンウェブサービス（AWS）とは</h1>
 
-<p>ソフトウェア開発のプラットフォーム兼ソースコードなどのホスティングサービス.</p>
+<p>Amazonが提供するクラウドコンピューティングのこと.<br />
+従量課金制.<br />
+コンピューティング, ストレージ, データベース, 分析, ネットワーキング, モバイル, 開発者用ツール, 管理ツール, IoT, セキュリティ, エンタープライズアプリケーションなど, グローバルなクラウドベース製品を幅広く利用できる.</p>
 
-<h2 id="github-pagesで静的サイトを公開する">GitHub Pagesで静的サイトを公開する</h2>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#b58900">cd</span> 作業ディレクトリ名
-git checkout -b gh-pages
-vim index.html // index.htmlを作成
-git push -u origin gh-pages</code></pre></div>
-<p>gh-pagesという名前のブランチにindex.htmlファイルを作っておけば, それが静的サイトとして「https://ユーザー名.github.io/リポジトリ名」として公開される.</p>
+<h2 id="s3">S3</h2>
 
-<h2 id="リポジトリに他のリポジトリをリンク付けする">リポジトリに他のリポジトリをリンク付けする</h2>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git submodule add -b &lt;リンク付けする方のブランチ名&gt; &lt;リンク付けする方のURL&gt; &lt;リンク付けされるディレクトリ名&gt;</code></pre></div>
-<h2 id="リポジトリをforkして更新する">リポジトリをforkして更新する</h2>
+<p>インターネット用のオブジェクトストレージサービスのこと.<br />
+Amazon Simple Storage Serviceの略.</p>
 
-<p>fork -&gt; clone -&gt; remote -&gt; fethc -&gt; marge -&gt; push</p>
+<h2 id="elastic-beanstalk">Elastic Beanstalk</h2>
 
-<h2 id="ssh接続ができなくなったときは">ssh接続ができなくなったときは</h2>
+<p>Java, .NET, PHP, Node.js, Python, Ruby, GoおよびDockerを使用して開発されたウェブアプリケーションやサービスを, Apache, Nginx, Passenger, IISなどのサーバーでデプロイおよびスケーリングするためのサービスのこと.</p>
 
-<p><code>~/.ssh/config</code>の中身を</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Host github github.com
-  Hostname github.com
-  Port <span style="color:#2aa198">22</span>
-  User git
-  IdentityFile ~/.ssh/id_git_rsa</code></pre></div>
-<p>のように, Hostのところに<code>github.com</code>を追加してみる.</p>
+<h2 id="iam">IAM</h2>
 
-<h2 id="チートシート">チートシート</h2>
+<p>ユーザーに対してAWSへのアクセスを安全に制御するための仕組みのこと.<br />
+AWS Identity and Access Managementの略.</p>
 
-<ul>
-<li><a href="https://github.github.com/training-kit/">Git Cheat Sheets</a></li>
-</ul>
+<h2 id="ecs">ECS</h2>
+
+<p>Dockerアプリケーションをスケーラブルなクラスターで実行するために使用するサービスのこと.<br />
+Amazon Elastic Container Serviceの略.</p>
+
+<h2 id="rds">RDS</h2>
+
+<p>クラウド上でリレーショナルデータベースをセットアップ, 運用, スケーリングできるサービスのこと.<br />
+RDBで作ったコンテナの代わりに使える.<br />
+Amazon Relational Database Serviceの略.</p>
+
+<h2 id="memcached">Memcached</h2>
+
+<p>高パフォーマンスキャッシュやセッションストアとして使用できる, 分散型インメモリkey-valueストアのこと.<br />
+Redisで作ったコンテナの代わりに使える.</p>
+
+<h2 id="vpc">VPC</h2>
+
+<p>AWSアカウント専用の仮想ネットワークのこと.
+定義した仮想ネットワーク内でAWSリソースを起動することができる.<br />
+Amazon Virtual Private Cloudの略.</p>
+
+<h2 id="vpcセキュリティグループ">VPCセキュリティグループ</h2>
+
+<p>同一グループ外のインスタンスと通信を行う際のトラフィックを制御する仮想ファイアウォールのこと.</p>
 </article>
 
       
-<div class="align-center book-git-footer justify-between">
-  
-  <div>
-    
-    <a href="https://github.com/solareenlo/blog-hugo/commit/854d57eadf0ba0f946e1a658dd47399cf868c90b" title='Last modified Apr 24, 2019 by solareenlo' target="_blank" rel="noopener">
-      <img src="/svg/code-merge.svg" alt="Changed" /> Apr 24, 2019
-    </a>
-  </div>
+<div class="align-center book-git-footer justify-end">
   
   
   <div>
-    <a href="https://github.com/solareenlo/blog-hugo/edit/master/content/docs/github.md" target="_blank" rel="noopener">
+    <a href="https://github.com/solareenlo/blog-hugo/edit/master/content/docs/aws.md" target="_blank" rel="noopener">
       <img src="/svg/code-fork.svg" alt="Edit" /> Edit this page
     </a>
   </div>
@@ -220,13 +226,16 @@ git push -u origin gh-pages</code></pre></div>
   <aside class="book-toc fixed">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#github-https-github-com-とは"><a href="https://github.com">GitHub</a>とは</a>
+<li><a href="#アマゾンウェブサービス-aws-とは">アマゾンウェブサービス（AWS）とは</a>
 <ul>
-<li><a href="#github-pagesで静的サイトを公開する">GitHub Pagesで静的サイトを公開する</a></li>
-<li><a href="#リポジトリに他のリポジトリをリンク付けする">リポジトリに他のリポジトリをリンク付けする</a></li>
-<li><a href="#リポジトリをforkして更新する">リポジトリをforkして更新する</a></li>
-<li><a href="#ssh接続ができなくなったときは">ssh接続ができなくなったときは</a></li>
-<li><a href="#チートシート">チートシート</a></li>
+<li><a href="#s3">S3</a></li>
+<li><a href="#elastic-beanstalk">Elastic Beanstalk</a></li>
+<li><a href="#iam">IAM</a></li>
+<li><a href="#ecs">ECS</a></li>
+<li><a href="#rds">RDS</a></li>
+<li><a href="#memcached">Memcached</a></li>
+<li><a href="#vpc">VPC</a></li>
+<li><a href="#vpcセキュリティグループ">VPCセキュリティグループ</a></li>
 </ul></li>
 </ul>
 </nav>

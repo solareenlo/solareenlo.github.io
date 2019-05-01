@@ -15,7 +15,7 @@
       <pubDate>Tue, 30 Apr 2019 10:00:00 +0900</pubDate>
       
       <guid>https://solareenlo.com/posts/app/</guid>
-      <description> 作図  draw.io  マークダウン表示  typora  wikiの新しい形  Scrapbox  ノートアプリ  Notion  サーバーレスアプリのホスティングサービス  Now  </description>
+      <description> 作図  draw.io  マークダウン表示  typora  wikiの新しい形  Scrapbox  ノートアプリ  Notion  サーバーレスアプリのホスティングサービス  Now  JSONの書きミスチェッカー  JOSNLint  </description>
     </item>
     
     <item>
@@ -103,12 +103,58 @@ MacにHomebrewをインストールする /usr/bin/ruby -e &amp;#34;$(curl -fsSL
     
     <item>
       <title></title>
+      <link>https://solareenlo.com/docs/aws/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://solareenlo.com/docs/aws/</guid>
+      <description>アマゾンウェブサービス（AWS）とは Amazonが提供するクラウドコンピューティングのこと.
+従量課金制.
+コンピューティング, ストレージ, データベース, 分析, ネットワーキング, モバイル, 開発者用ツール, 管理ツール, IoT, セキュリティ, エンタープライズアプリケーションなど, グローバルなクラウドベース製品を幅広く利用できる.
+S3 インターネット用のオブジェクトストレージサービスのこと.
+Amazon Simple Storage Serviceの略.
+Elastic Beanstalk Java, .NET, PHP, Node.js, Python, Ruby, GoおよびDockerを使用して開発されたウェブアプリケーションやサービスを, Apache, Nginx, Passenger, IISなどのサーバーでデプロイおよびスケーリングするためのサービスのこと.
+IAM ユーザーに対してAWSへのアクセスを安全に制御するための仕組みのこと.
+AWS Identity and Access Managementの略.
+ECS Dockerアプリケーションをスケーラブルなクラスターで実行するために使用するサービスのこと.
+Amazon Elastic Container Serviceの略.
+RDS クラウド上でリレーショナルデータベースをセットアップ, 運用, スケーリングできるサービスのこと.
+RDBで作ったコンテナの代わりに使える.
+Amazon Relational Database Serviceの略.
+Memcached 高パフォーマンスキャッシュやセッションストアとして使用できる, 分散型インメモリkey-valueストアのこと.
+Redisで作ったコンテナの代わりに使える.
+VPC AWSアカウント専用の仮想ネットワークのこと. 定義した仮想ネットワーク内でAWSリソースを起動することができる.
+Amazon Virtual Private Cloudの略.
+VPCセキュリティグループ 同一グループ外のインスタンスと通信を行う際のトラフィックを制御する仮想ファイアウォールのこと.</description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>https://solareenlo.com/docs/c/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://solareenlo.com/docs/c/</guid>
       <description> C言語とは 1972年のAT&amp;amp;Tベル研究所で, ブライアン・カーニハンとデニス・リッチーによって開発された, コンパイル型の汎用プログラミング言語のこと.
 Hello World #include &amp;lt;stdio.h&amp;gt; int main(void) { puts(&amp;#34;Hello, world!&amp;#34;); return 0; } コンパイラ  低レイヤを知りたい人のためのCコンパイラ作成入門  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://solareenlo.com/docs/circleci/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://solareenlo.com/docs/circleci/</guid>
+      <description> CircleCiとは クラウド上でCI/CDを行なってくれるサービスの1つ.
+docs  CircleCI Documentation  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://solareenlo.com/docs/cloud/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://solareenlo.com/docs/cloud/</guid>
+      <description>クラウドコンピューティングとは クラウド・コンピューティングとは, クラウドサービスプラットフォームからインターネット経由で処理能力, データベースストレージ, アプリケーション, および他のITリソースをオンデマンドかつ従量制料金で利用するシステムのこと.
+2019年5月現在は, AWS, Azure, GCP, IBM Cloud, Alibaba Cloudなどが有名.</description>
     </item>
     
     <item>
@@ -165,7 +211,7 @@ docker-compose.yml  services:(使うイメージ), networks:(使うネットワ�
       
       <guid>https://solareenlo.com/docs/docker1/</guid>
       <description>Dockerとは コンテナ型の仮想環境を作成, 配布, 実行するためのプラットフォームのこと. プロセスを簡単にコンテナ化(isolate)し, 簡単かつ素早く開発・移動・実行できるプラットフォームのこと.
- Dockerコンテナは実行に必要な全てをパッケージして簡単に動かせる Dockerイメージは複数のイメージ・レイヤとメタ情報の積み重なりからできている. コンテナのプロセスはデフォルトでisolate(隔離・分離)された状態  Dockerについての良い読み物1→2018年なぜ私達はコンテナ/Dockerを使うのか. Dockerについての良い読み物2→標準化が進むコンテナとサーバーレス！ 「提供したい価値」から見極める活用の勘所とは【デブサミ2018 福岡】 Dockerについての良いスライド→Docker Compose 徹底解説   Dockerのメリット/デメリット メリット  ゲストOSはホストのKernelを直接使うためオーバーヘッドが小さくて高速 ゲストOSがそれぞれにKernelを持たないため, Memory消費量やDisk消費量を節約できる 必要とする資源が少ないため, 多くのゲストOSを立ち上げることが可能 Kernelを新しく起動する必要がないため, ゲストOSの起動が速い コンテナのイメージ(雛形)からコンテナ(実体)を作るため, 同一構成のOSを簡単に複数作れる テストが通ったイメージは本番環境でもすぐに使える(開発とデプロイのサイクルが速い)  Reference: Dockerの利点   デメリット  提供できるホストの種類が少ない(ホストOSのKernelにLinux使ってたらゲストOSのKernelにWindows Serverは使えない) 完全仮想化に比べて, 管理者が学ぶべきことが多い  Reference: Dockerの欠点   勉強できるサイト  入門 Docker Docker Mastery: The Complete Toolset From a Docker Captain  インストール方法 Linux編 curl -fsSL get.docker.com -o get-docker.</description>
+ Dockerコンテナは実行に必要な全てをパッケージして簡単に動かせる Dockerイメージは複数のイメージ・レイヤとメタ情報の積み重なりからできている. コンテナのプロセスはデフォルトでisolate(隔離・分離)された状態  Dockerについての良い読み物1→2018年なぜ私達はコンテナ/Dockerを使うのか. Dockerについての良い読み物2→標準化が進むコンテナとサーバーレス！ 「提供したい価値」から見極める活用の勘所とは【デブサミ2018 福岡】 Dockerについての良い説明→いまさらDockerに入門したので分かりやすくまとめます Dockerについての良いスライド→Docker Compose 徹底解説   Dockerのメリット/デメリット メリット  ゲストOSはホストのKernelを直接使うためオーバーヘッドが小さくて高速 ゲストOSがそれぞれにKernelを持たないため, Memory消費量やDisk消費量を節約できる 必要とする資源が少ないため, 多くのゲストOSを立ち上げることが可能 Kernelを新しく起動する必要がないため, ゲストOSの起動が速い コンテナのイメージ(雛形)からコンテナ(実体)を作るため, 同一構成のOSを簡単に複数作れる テストが通ったイメージは本番環境でもすぐに使える(開発とデプロイのサイクルが速い)  Reference: Dockerの利点   デメリット  提供できるホストの種類が少ない(ホストOSのKernelにLinux使ってたらゲストOSのKernelにWindows Serverは使えない) 完全仮想化に比べて, 管理者が学ぶべきことが多い  Reference: Dockerの欠点   勉強できるサイト  入門 Docker Docker Mastery: The Complete Toolset From a Docker Captain  インストール方法 Linux編 curl -fsSL get.docker.com -o get-docker.</description>
     </item>
     
     <item>
@@ -239,7 +285,7 @@ Hugoのコードの色選択  https://help.farbox.com/pygments.html Chroma Style
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://solareenlo.com/docs/jenkins/</guid>
-      <description> Jenkinsとは  CI/CDのオンプレミスにおけるツール. Jenkinsが全てのビルドプロセスの自動化を行うものではない. テストやデプロイなどの各フェーズはそれぞれ専用のツールで自動化を行い, Jenkinsはどういったタイミングでどのツールを呼び出すのかを指示し, エラーが出たら即座にフィードバックを行う処理をする.  </description>
+      <description> Jenkinsとは  オンプレミスのCI/CDツール. Jenkinsが全てのビルドプロセスの自動化を行うものではない. テストやデプロイなどの各フェーズはそれぞれ専用のツールで自動化を行い, Jenkinsはどういったタイミングでどのツールを呼び出すのかを指示し, エラーが出たら即座にフィードバックを行う処理をする.  </description>
     </item>
     
     <item>
@@ -273,6 +319,15 @@ Kubernetesが他と違うところは, ① 様々なOSSと組み合わせるこ�
       <guid>https://solareenlo.com/docs/programming/</guid>
       <description> プログラミングとは コンピュータプログラムを作成することにより, 人間の意図した処理を行うようにコンピュータに指示を与える行為のこと. その為の便利なツールがたくさんある.
 プログラミングをするのに役立つツール  プログラミング言語 (C, Java, JavaScript, Pythonなど)  手続き型, オブジェクト指向型, 関数型, 静的型付け, 動的型付けなどいろんな種類がある. 最終的にバイナリデータになって, コンピュータが処理する.  テキストエディタ (Visual Studio Code, Vimなど)  コードを書くのに役に立つエディタ.  統合開発環境 (Visual Studio, Jet Brainsなど)  コンパイル, テキストエディタ, デバッガなどを1つのソフトで行えるようにしたもの.  バージョン管理システム (gitなど)  ファイルの変更履歴を管理する為のシステム.  ホスティングサービス (GitHub, GitLabなど)  上記gitを使って様々なプログラムをweb上に公開したり, それを通じて交流したりすることができるサービス. 無償・有償がある.   オンラインIDE  repl.it  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://solareenlo.com/docs/redis/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://solareenlo.com/docs/redis/</guid>
+      <description>Redisとは ネットワーク接続された永続化可能なインメモリデータベースのひとつ. インメモリデータベースとは, メモリ上にデータを保存するタイプのデータベースのこと. メモリはCPUから直接アクセスできるため, （RDBなどの）ストレージにデータを保存するオンディスクDBに比べ, とても高速に動作することができる.</description>
     </item>
     
     <item>

@@ -4,13 +4,13 @@
   
   <url>
     <loc>https://solareenlo.com/posts/</loc>
-    <lastmod>2019-04-30T11:49:46+09:00</lastmod>
+    <lastmod>2019-05-01T05:20:47+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://solareenlo.com/posts/app/</loc>
-    <lastmod>2019-04-30T11:49:46+09:00</lastmod>
+    <lastmod>2019-05-01T05:20:47+09:00</lastmod>
   </url>
   
   <url>
@@ -49,7 +49,22 @@
   </url>
   
   <url>
+    <loc>https://solareenlo.com/docs/aws/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://solareenlo.com/docs/c/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://solareenlo.com/docs/circleci/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://solareenlo.com/docs/cloud/</loc>
     <priority>0</priority>
   </url>
   
@@ -125,6 +140,11 @@
   
   <url>
     <loc>https://solareenlo.com/docs/programming/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://solareenlo.com/docs/redis/</loc>
     <priority>0</priority>
   </url>
   
