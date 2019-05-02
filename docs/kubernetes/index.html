@@ -161,10 +161,12 @@ https://github.com/alex-shpak/hugo-book
 
 <p>Dockerコンテナのクラスタ管理を始めとしたオーケストレーションを行うサービスのこと.
 ホスト間の連携やデプロイについても総括的に管理できる(ここがDocker Composeと違うところ).<br />
-<strong>Reference:</strong> <a href="https://speakerdeck.com/kkoudev/introduction-to-kubernetes-for-docker-compose-user">Docker Compose利用者から見た Kubernetes 開発環境構築入門</a><br />
-Kubernetesの大きな特徴の1つに宣言的設定がある.
+<strong>Reference:</strong> <a href="https://speakerdeck.com/kkoudev/introduction-to-kubernetes-for-docker-compose-user">Docker Compose利用者から見た Kubernetes 開発環境構築入門</a></p>
+
+<p>Kubernetesの大きな特徴の1つに宣言的設定がある.
 宣言的設定とは, イミュータブルなインフラを作るための基本的な考え方で, 「システムのあるべき姿」を設定ファイルに宣言する！という考え方.
-Kubernetesは設定ファイルに書いたとおりのインフラを維持するように設計されている.</p>
+Kubernetesは設定ファイルに書いたとおりのインフラを維持するように設計されている.
+ので, 設定ファイル(yamlファイル)をたくさん書く事になる.</p>
 
 <h2 id="他と違うところ">他と違うところ</h2>
 
@@ -332,6 +334,69 @@ Kubernetesは設定ファイルに書いたとおりのインフラを維持す�
 </tbody>
 </table>
 
+<h3 id="apiversionの調べ方">apiVersionの調べ方</h3>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl api-resources <span style="color:#586e75"># リソースとAPIGROUPの対応を調べる</span>
+kubectl api-versions <span style="color:#586e75"># APIGROUPで利用可能なversionを調べる</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th>APIGROUPあるなし</th>
+<th></th>
+<th>書き方</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>APIGROUPがあるとき</td>
+<td>→</td>
+<td>apiVersion: (APIGROUP)/(APIVERSION)</td>
+</tr>
+
+<tr>
+<td>APIGROUPがないとき(= Core groupに属する)</td>
+<td>→</td>
+<td>apiVersion: v1</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Reference:</strong> <a href="https://qiita.com/soymsk/items/69aeaa7945fe1f875822">Kubernetesの apiVersion に何を書けばいいか</a></p>
+
+<h3 id="serviceのtype4種類">ServiceのType4種類</h3>
+
+<ul>
+<li><strong>ClusterIp</strong>
+
+<ul>
+<li>クラスタ内のIPにServiceを公開する.</li>
+<li>この値ではServiceはクラスタ内からのみアクセス可能.</li>
+<li>デフォルトはこれ.</li>
+</ul></li>
+<li><strong>NodePort</strong>
+
+<ul>
+<li>各ノードのIP上のServiceを静的ポート(NordPort)に公開する.</li>
+<li>NodePort ServiceがルーティングするClusterIP Serviceが自動的に作成される.</li>
+<li><code>NodeIp: NordPort</code>を要求することで, クラスタ外からNordPort Serviceにアクセスできる.</li>
+</ul></li>
+<li><strong>LoadBalancer</strong>
+
+<ul>
+<li>クラウドプロバイダのロードバランサを使用して外部にServiceを公開する.</li>
+<li>外部ロードバランサがルーティングするNordPort ServiceとClusterIP Serviceが自動的に作成される.</li>
+</ul></li>
+<li><strong>ExternalName</strong>
+
+<ul>
+<li>値を含むCNAMEレコードを返すことにより, ServiceをexternalNameフィールドのコンテンツ(たとえば, foo.bar.example.com)にマッピングする.</li>
+<li>この場合, どのような種類のプロキシも設定されない.</li>
+<li>この型を使うには, バージョン1.7以上のkube-dnsが必要.</li>
+</ul></li>
+</ul>
+
+<p><strong>Reference:</strong> <a href="https://qiita.com/kouares/items/94a073baed9dffe86ea0">Kubernetesの Service についてまとめてみた</a></p>
+
 <h2 id="macのローカル環境で動かす">Macのローカル環境で動かす</h2>
 
 <ol>
@@ -386,20 +451,35 @@ Kubernetesは設定ファイルに書いたとおりのインフラを維持す�
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">minikube status <span style="color:#586e75"># 動いているか確認</span>
 minikube start <span style="color:#586e75"># minikubeをスタート</span>
 minikube ip <span style="color:#586e75"># ipを確認</span>
-minikube dashboard <span style="color:#586e75"># ダッシュボード出現</span></code></pre></div>
+minikube dashboard <span style="color:#586e75"># ダッシュボード出現</span>
+minikube docker-env <span style="color:#586e75"># 環境変数を出力</span></code></pre></div>
 <h3 id="kubectl-の使い方"><code>kubectl</code>の使い方</h3>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl apply -f client-pod.yaml <span style="color:#586e75"># オブジェクトの新規作成・差分反映</span>
 kubectl get pods <span style="color:#586e75"># 動いているpodを確認</span>
 kubectl get deployments <span style="color:#586e75"># 動いているdeploymentを確認</span>
 kubectl describe &lt;object type&gt; &lt;object name&gt; <span style="color:#586e75"># オブジェクトの詳細表示</span>
-kubectl delete -f client-pod.yaml <span style="color:#586e75"># オブジェクトが存在すれば削除</span></code></pre></div></article>
+kubectl delete -f client-pod.yaml <span style="color:#586e75"># オブジェクトが存在すれば削除</span>
+kubectl delete deployment client-deployment <span style="color:#586e75"># deploymentの削除</span>
+kubectl delete pod client-node-port <span style="color:#586e75"># podの削除</span>
+kubectl api-resources <span style="color:#586e75"># リソースとAPIGROUPの対応を調べる</span>
+kubectl api-versions <span style="color:#586e75"># APIGROUPで利用可能なversionを調べる</span></code></pre></div>
+<h3 id="自分のpcからvmにアクセスしてdockerコンテナを見る方法">自分のPCからVMにアクセスしてDockerコンテナを見る方法</h3>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#b58900">eval</span> <span style="color:#719e07">$(</span>minikube docker-env<span style="color:#719e07">)</span>
+docker ps</code></pre></div>
+<h2 id="1度デプロイしたイメージのバージョンアップ方法">1度デプロイしたイメージのバージョンアップ方法</h2>
+
+<p>以下のようにDocker Hubにバージョンを指定してpushし,</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker build -t solareenlo/multi-client:v5
+docker push solareenlo/multi-client:v5</code></pre></div>
+<p>以下のようにコマンドラインからイメージのバージョンアップを行う.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl <span style="color:#b58900">set</span> image deployment/client-deployment <span style="color:#268bd2">client</span><span style="color:#719e07">=</span>solareenlo/multi-client:v5</code></pre></div></article>
 
       
 <div class="align-center book-git-footer justify-between">
   
   <div>
     
-    <a href="https://github.com/solareenlo/blog-hugo/commit/8ba7aff9b82751238a8031fd4ea976eb2db75263" title='Last modified May 2, 2019 by solareenlo' target="_blank" rel="noopener">
+    <a href="https://github.com/solareenlo/blog-hugo/commit/44d638308ef1890eabb016c3ca734e47eb300b16" title='Last modified May 2, 2019 by solareenlo' target="_blank" rel="noopener">
       <img src="/svg/code-merge.svg" alt="Changed" /> May 2, 2019
     </a>
   </div>
@@ -428,13 +508,19 @@ kubectl delete -f client-pod.yaml <span style="color:#586e75"># オブジェク�
 <li><a href="#他と違うところ">他と違うところ</a></li>
 <li><a href="#docker-composeとの違い">Docker Composeとの違い</a></li>
 <li><a href="#用語集">用語集</a></li>
-<li><a href="#yaml内の用語集">yaml内の用語集</a></li>
+<li><a href="#yaml内の用語集">yaml内の用語集</a>
+<ul>
+<li><a href="#apiversionの調べ方">apiVersionの調べ方</a></li>
+<li><a href="#serviceのtype4種類">ServiceのType4種類</a></li>
+</ul></li>
 <li><a href="#macのローカル環境で動かす">Macのローカル環境で動かす</a></li>
 <li><a href="#ubuntuのローカル環境で動かす">Ubuntuのローカル環境で動かす</a>
 <ul>
 <li><a href="#minikube-の使い方"><code>minikube</code>の使い方</a></li>
 <li><a href="#kubectl-の使い方"><code>kubectl</code>の使い方</a></li>
+<li><a href="#自分のpcからvmにアクセスしてdockerコンテナを見る方法">自分のPCからVMにアクセスしてDockerコンテナを見る方法</a></li>
 </ul></li>
+<li><a href="#1度デプロイしたイメージのバージョンアップ方法">1度デプロイしたイメージのバージョンアップ方法</a></li>
 </ul></li>
 </ul>
 </nav>
