@@ -20,7 +20,7 @@
 
 
 
-<link rel="stylesheet" href="/book.min.e808b24e3674004fbe99a302bd76d42b88fa35c0df5eb39bcc1fac7a64afaebd.css">
+<link rel="stylesheet" href="/book.min.5a5bfb9b0ed3d2cfe5bee31a17c019bea44d44efa3cbe6e948af845134986c5e.css">
 
 
 <link rel="icon" href="/favicon.png" type="image/x-icon">
@@ -160,10 +160,10 @@ https://github.com/alex-shpak/hugo-book
 <h1 id="kubernetes-https-github-com-kubernetes-とは"><a href="https://github.com/kubernetes">Kubernetes</a>とは</h1>
 
 <p>Dockerコンテナのクラスタ管理を始めとしたオーケストレーションを行うサービスのこと.
-ホスト間の連携やデプロイについても総括的に管理できる(ここがDocker Composeと違うところ).
-<strong>Reference:</strong><a href="https://speakerdeck.com/kkoudev/introduction-to-kubernetes-for-docker-compose-user">Docker Compose利用者から見た Kubernetes 開発環境構築入門</a></p>
+ホスト間の連携やデプロイについても総括的に管理できる(ここがDocker Composeと違うところ).<br />
+<strong>Reference:</strong> <a href="https://speakerdeck.com/kkoudev/introduction-to-kubernetes-for-docker-compose-user">Docker Compose利用者から見た Kubernetes 開発環境構築入門</a></p>
 
-<h2 id="kubernetesが他と違うところは">Kubernetesが他と違うところは,</h2>
+<h2 id="他と違うところ">他と違うところ</h2>
 
 <p>① 様々なOSSと組み合わせることにより, 柔軟に機能拡張なところ.</p>
 
@@ -194,6 +194,130 @@ https://github.com/alex-shpak/hugo-book
 </ul>
 
 <p><strong>Reference:</strong> <a href="https://crash.academy/ng/video/731/2060">Kubernetesの基礎</a></p>
+
+<h2 id="docker-composeとの違い">Docker Composeとの違い</h2>
+
+<p>Docker Composeは動作させるコンテナを意識するだけでほとんど良かったが, Kubernetesではそれに加えて動作させるホスト(Node)やコンテナのグループ化(Pod), その複製(ReplicaSet)と公開(Service, Ingress)といったインフラレベルで意識していたことも全て設定ファイルの1つとして管理できる.<br />
+<strong>Reference:</strong> <a href="https://speakerdeck.com/kkoudev/introduction-to-kubernetes-for-docker-compose-user">Docker Compose利用者から見た Kubernetes 開発環境構築入門</a></p>
+
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>Docker Compose</th>
+<th>→</th>
+<th>Kubernetes</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Image</td>
+<td>各エントリーは, イメージを構築するためにオプションでdocker-composeを取得できる.</td>
+<td>→</td>
+<td>すべてのイメージがすでに構築されているとする.</td>
+</tr>
+
+<tr>
+<td>Container</td>
+<td>各エントリが作成したいコンテナを表す.</td>
+<td>→</td>
+<td>作成したいオブジェクトごとに1つの設定ファイル</td>
+</tr>
+
+<tr>
+<td>Network</td>
+<td>各エントリがネットワーク要件を定義する.</td>
+<td>→</td>
+<td>手動ですべてのネットワークを設定する必要がある.</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="用語集">用語集</h2>
+
+<table>
+<thead>
+<tr>
+<th>用語</th>
+<th>説明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Node</td>
+<td>コンテナが動作するサーバのこと.<br>- 全Nodeを管理するMaster(Master Node)と,<br>- 各リソースを動かすNode(Worker Node)に分かれる.</td>
+</tr>
+
+<tr>
+<td>Pod</td>
+<td>関連したコンテナの集まりを1つにしたもの.</td>
+</tr>
+
+<tr>
+<td>ReplicaSet</td>
+<td>対象Podのクラスタ全体における複製数を定義する.<br>そうすることで, Podのセルフヒーリングができる.</td>
+</tr>
+
+<tr>
+<td>Deployment</td>
+<td>ReplicaSetの作成・維持の管理を行う.</td>
+</tr>
+
+<tr>
+<td>Service</td>
+<td>Podへのアクセス経路を提供する.<br>OSI参照モデルのL4層まで扱える.<br>- クラスタ内部のみで利用できるService(ClusterIP)や,<br>- クラスタ外部からアクセス可能なService(NodePort)などを作成することができる.</td>
+</tr>
+
+<tr>
+<td>Ingress</td>
+<td>Serviceの上位リソース.<br>OSI参照モデルのL7層レベルまで扱える.</td>
+</tr>
+
+<tr>
+<td>ConfigMap</td>
+<td>環境変数のような設定値, また設定ファイル情報そのものを管理する.<br>Key-Value形式.</td>
+</tr>
+
+<tr>
+<td>Secret</td>
+<td>パスワードのような秘匿情報を扱う際に利用する.</td>
+</tr>
+
+<tr>
+<td>PersistentVolume</td>
+<td>ボリューム領域を定義する.<br>EBSやNFSのような外部ストレージも定義できる.</td>
+</tr>
+
+<tr>
+<td>PersistentVolumeClaim</td>
+<td>利用するボリューム領域の要求を定義する.<br>PersistentVolumeとPodを紐付けるために利用する.</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="macのローカル環境で動かす">Macのローカル環境で動かす</h2>
+
+<ol>
+<li><a href="https://brew.sh">https://brew.sh</a> からbrewをインストールする.</li>
+<li><code>brew install kubectl</code>をターミナルで実行する.
+
+<ul>
+<li><code>kubectl</code>はKubernetesのmasterを動かすもの.</li>
+</ul></li>
+<li><a href="https://www.virtualbox.org">https://www.virtualbox.org</a> からMac用のVirtualBoxをインストールする.
+
+<ul>
+<li>VirtualBoxはコンテナ群を動かす環境.</li>
+</ul></li>
+<li><code>brew cask install minikube</code>をターミナルで実行する.
+
+<ul>
+<li><code>minikube</code>コンテナをVM上でコンテナを動かすもの.</li>
+</ul></li>
+<li><code>minidube start</code>をターミナルで実行する.</li>
+</ol>
 </article>
 
       
@@ -227,7 +351,10 @@ https://github.com/alex-shpak/hugo-book
 <ul>
 <li><a href="#kubernetes-https-github-com-kubernetes-とは"><a href="https://github.com/kubernetes">Kubernetes</a>とは</a>
 <ul>
-<li><a href="#kubernetesが他と違うところは">Kubernetesが他と違うところは,</a></li>
+<li><a href="#他と違うところ">他と違うところ</a></li>
+<li><a href="#docker-composeとの違い">Docker Composeとの違い</a></li>
+<li><a href="#用語集">用語集</a></li>
+<li><a href="#macのローカル環境で動かす">Macのローカル環境で動かす</a></li>
 </ul></li>
 </ul>
 </nav>

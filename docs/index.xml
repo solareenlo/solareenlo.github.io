@@ -109,7 +109,7 @@ Reference: コンテナ技術とは何？
       <guid>https://solareenlo.com/docs/docker-compose/</guid>
       <description>Docker Composeとは 複数のコンテナで構成されるアプリケーションを定義と実行するためのツールのこと. Dockerとは切り離されてる.
  Composeはアプリケーションのサービスをファイルで定義する. Dockerコマンドと高い親和性があるため, 学習コストが比較的低い. Swarmモードにサービスをデプロイできるオーケストレーション機能もある.  Reference: Docker Compose 徹底解説   活用場面  利用者視点  docker-compose.ymlがあれば, すぐに何でも実行できる.  開発者視点  環境の再構築が簡単 バージョン違いの環境を作りやすい 1つのマシン上に, 複数の環境を立ち上げられやすい   適切に書かれたYAMLファイルさえあれば, 誰でも簡単に環境構築もアプリケーション実行もできるのが強み.
-docker-compose.yml  services:(使うイメージ), networks:(使うネットワーク), volumes:(使うボリューム)を定義する. docker-compose.ymlの書き方を解説してる -&amp;gt; Docker Compose - docker-compose.yml リファレンス  起動と停止 # 起動 docker-compose up # ビルドして起動 docker-compose up --build # バックグラウンドで起動 docker-compose up -d # 停止 docker-compose down # ボリュームも削除しつつ停止 docker-compose down -v nginxとhttpd git clone git@github.</description>
+docker-compose.ymlの書き方  services:(使うイメージ), networks:(使うネットワーク), volumes:(使うボリューム)を定義する. docker-compose.ymlの書き方 -&amp;gt; Docker Compose - docker-compose.yml リファレンス  起動と停止 # 起動 docker-compose up # ビルドして起動 docker-compose up --build # バックグラウンドで起動 docker-compose up -d # 停止 docker-compose down # ボリュームも削除しつつ停止 docker-compose down -v nginxとhttpd git clone git@github.</description>
     </item>
     
     <item>
@@ -202,11 +202,15 @@ Hugoのコードの色選択  https://help.farbox.com/pygments.html Chroma Style
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://solareenlo.com/docs/kubernetes/</guid>
-      <description>Kubernetesとは Dockerコンテナのクラスタ管理を始めとしたオーケストレーションを行うサービスのこと. ホスト間の連携やデプロイについても総括的に管理できる(ここがDocker Composeと違うところ). Reference:Docker Compose利用者から見た Kubernetes 開発環境構築入門
-Kubernetesが他と違うところは, ① 様々なOSSと組み合わせることにより, 柔軟に機能拡張なところ.
+      <description>Kubernetesとは Dockerコンテナのクラスタ管理を始めとしたオーケストレーションを行うサービスのこと. ホスト間の連携やデプロイについても総括的に管理できる(ここがDocker Composeと違うところ).
+Reference: Docker Compose利用者から見た Kubernetes 開発環境構築入門
+他と違うところ ① 様々なOSSと組み合わせることにより, 柔軟に機能拡張なところ.
  コンテナ運用を更に効率化 / 高速化  詳細なメトリック監視と可視化・・・Prometheus + Grafana コンテナのログの転送収集・・・Fluentd / Fluent Bit ネットワークトラフィックの制御・・・ Istio + Envoy  Kubernetesの適応領域の拡大  機械学習プラットフォーム・・・Kubeflow 分散ストレージ・・・Rook 分散型データベース・・・Vitess   ② 本格的な宣言的オペレーションとInfrastructure as Codeを実現可能
 ③ クラスター上にデプロイするシステムの構成をコード(マニフェストファイル)によって定義できる
- 運用オペレーションはコードの変更によって実施し, 作業を簡素化する. 複数Kubernetesクラスターでの相互運用を実現する  Reference: Kubernetesの基礎</description>
+ 運用オペレーションはコードの変更によって実施し, 作業を簡素化する. 複数Kubernetesクラスターでの相互運用を実現する  Reference: Kubernetesの基礎
+Docker Composeとの違い Docker Composeは動作させるコンテナを意識するだけでほとんど良かったが, Kubernetesではそれに加えて動作させるホスト(Node)やコンテナのグループ化(Pod), その複製(ReplicaSet)と公開(Service, Ingress)といったインフラレベルで意識していたことも全て設定ファイルの1つとして管理できる.
+Reference: Docker Compose利用者から見た Kubernetes 開発環境構築入門
+   項目 Docker Compose → Kubernetes     Image 各エントリーは, イメージを構築するためにオプションでdocker-composeを取得できる.</description>
     </item>
     
     <item>
