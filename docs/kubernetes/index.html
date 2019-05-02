@@ -260,12 +260,12 @@ Kubernetesは設定ファイルに書いたとおりのインフラを維持す�
 
 <tr>
 <td>ReplicaSet</td>
-<td>対象Podのクラスタ全体における複製数を定義する.<br>そうすることで, Podのセルフヒーリングができる.</td>
+<td>対象Podのクラスタ全体における生成・管理を行う.<br>PodTemplateと呼ばれるPodのテンプレートをもとに、Podを指定された数(レプリカ数)に調整・管理を行う仕組み.<br>そうすることで, Podのセルフヒーリングを行う.</td>
 </tr>
 
 <tr>
 <td>Deployment</td>
-<td>ReplicaSetの作成・維持の管理を行う.</td>
+<td>ReplicaSetの生成・管理を行う.<br>ローリングアップデートやロールバックといったデプロイ管理の仕組みを提供する.</td>
 </tr>
 
 <tr>
@@ -300,6 +300,15 @@ Kubernetesは設定ファイルに書いたとおりのインフラを維持す�
 </tbody>
 </table>
 
+<ul>
+<li><strong>References:</strong>
+
+<ul>
+<li><a href="https://qiita.com/tkusumi/items/01cd18c59b742eebdc6a">Kubernetes: Deployment の仕組み</a></li>
+<li><a href="https://speakerdeck.com/kkoudev/introduction-to-kubernetes-for-docker-compose-user">Docker Compose利用者から見た Kubernetes 開発環境構築入門</a></li>
+</ul></li>
+</ul>
+
 <h2 id="yaml内の用語集">yaml内の用語集</h2>
 
 <table>
@@ -327,7 +336,7 @@ Kubernetesは設定ファイルに書いたとおりのインフラを維持す�
 
 <ol>
 <li><a href="https://brew.sh">https://brew.sh</a> からbrewをインストールする.</li>
-<li><code>brew install kubectl</code>をターミナルで実行する.
+<li><code>brew install kubernetes-cli</code>をターミナルで実行する.
 
 <ul>
 <li><code>kubectl</code>はKubernetesのmasterを動かすもの.</li>
@@ -340,10 +349,38 @@ Kubernetesは設定ファイルに書いたとおりのインフラを維持す�
 <li><code>brew cask install minikube</code>をターミナルで実行する.
 
 <ul>
-<li><code>minikube</code>コンテナをVM上でコンテナを動かすもの.</li>
+<li><code>minikube</code>はコンテナをVM上で動かすもの.</li>
 </ul></li>
 <li><code>minikube start</code>をターミナルで実行する.</li>
 </ol>
+
+<ul>
+<li><strong>References:</strong>
+
+<ul>
+<li><a href="https://kubernetes.io/docs/tasks/tools/install-kubectl/">https://kubernetes.io/docs/tasks/tools/install-kubectl/</a></li>
+<li><a href="https://www.virtualbox.org/wiki/Downloads">https://www.virtualbox.org/wiki/Downloads</a></li>
+<li><a href="https://kubernetes.io/docs/tasks/tools/install-minikube/">https://kubernetes.io/docs/tasks/tools/install-minikube/</a></li>
+</ul></li>
+</ul>
+
+<h2 id="ubuntuのローカル環境で動かす">Ubuntuのローカル環境で動かす</h2>
+
+<ol>
+<li><code>kubectl</code>をインストールする.</li>
+<li>VirtualBoxをインストールする.</li>
+<li><code>minikube</code>をインストールする.</li>
+</ol>
+
+<ul>
+<li><strong>References:</strong>
+
+<ul>
+<li><a href="https://kubernetes.io/docs/tasks/tools/install-kubectl/">https://kubernetes.io/docs/tasks/tools/install-kubectl/</a></li>
+<li><a href="https://www.virtualbox.org/wiki/Downloads">https://www.virtualbox.org/wiki/Downloads</a></li>
+<li><a href="https://kubernetes.io/docs/tasks/tools/install-minikube/">https://kubernetes.io/docs/tasks/tools/install-minikube/</a></li>
+</ul></li>
+</ul>
 
 <h3 id="minikube-の使い方"><code>minikube</code>の使い方</h3>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">minikube status <span style="color:#586e75"># 動いているか確認</span>
@@ -351,16 +388,18 @@ minikube start <span style="color:#586e75"># minikubeをスタート</span>
 minikube ip <span style="color:#586e75"># ipを確認</span>
 minikube dashboard <span style="color:#586e75"># ダッシュボード出現</span></code></pre></div>
 <h3 id="kubectl-の使い方"><code>kubectl</code>の使い方</h3>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl apply -f client-node-port.yaml --validate<span style="color:#719e07">=</span><span style="color:#b58900">false</span> <span style="color:#586e75"># 設定フィルを設定</span>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl apply -f client-pod.yaml <span style="color:#586e75"># オブジェクトの新規作成・差分反映</span>
 kubectl get pods <span style="color:#586e75"># 動いているpodを確認</span>
-kubectl describe &lt;object type&gt; &lt;object name&gt; <span style="color:#586e75"># オブジェクトの詳細表示</span></code></pre></div></article>
+kubectl get deployments <span style="color:#586e75"># 動いているdeploymentを確認</span>
+kubectl describe &lt;object type&gt; &lt;object name&gt; <span style="color:#586e75"># オブジェクトの詳細表示</span>
+kubectl delete -f client-pod.yaml <span style="color:#586e75"># オブジェクトが存在すれば削除</span></code></pre></div></article>
 
       
 <div class="align-center book-git-footer justify-between">
   
   <div>
     
-    <a href="https://github.com/solareenlo/blog-hugo/commit/08edffb9e35e42c0230224502153e6705de316f3" title='Last modified May 2, 2019 by solareenlo' target="_blank" rel="noopener">
+    <a href="https://github.com/solareenlo/blog-hugo/commit/8ba7aff9b82751238a8031fd4ea976eb2db75263" title='Last modified May 2, 2019 by solareenlo' target="_blank" rel="noopener">
       <img src="/svg/code-merge.svg" alt="Changed" /> May 2, 2019
     </a>
   </div>
@@ -390,7 +429,8 @@ kubectl describe &lt;object type&gt; &lt;object name&gt; <span style="color:#586
 <li><a href="#docker-composeとの違い">Docker Composeとの違い</a></li>
 <li><a href="#用語集">用語集</a></li>
 <li><a href="#yaml内の用語集">yaml内の用語集</a></li>
-<li><a href="#macのローカル環境で動かす">Macのローカル環境で動かす</a>
+<li><a href="#macのローカル環境で動かす">Macのローカル環境で動かす</a></li>
+<li><a href="#ubuntuのローカル環境で動かす">Ubuntuのローカル環境で動かす</a>
 <ul>
 <li><a href="#minikube-の使い方"><code>minikube</code>の使い方</a></li>
 <li><a href="#kubectl-の使い方"><code>kubectl</code>の使い方</a></li>
