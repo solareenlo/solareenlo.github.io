@@ -204,6 +204,7 @@ Hugoのコードの色選択  https://help.farbox.com/pygments.html Chroma Style
       <guid>https://solareenlo.com/docs/kubernetes/</guid>
       <description>Kubernetesとは Dockerコンテナのクラスタ管理を始めとしたオーケストレーションを行うサービスのこと. ホスト間の連携やデプロイについても総括的に管理できる(ここがDocker Composeと違うところ).
 Reference: Docker Compose利用者から見た Kubernetes 開発環境構築入門
+Kubernetesの大きな特徴の1つに宣言的設定がある. 宣言的設定とは, イミュータブルなインフラを作るための基本的な考え方で, 「システムのあるべき姿」を設定ファイルに宣言する！という考え方. Kubernetesは設定ファイルに書いたとおりのインフラを維持するように設計されている.
 他と違うところ ① 様々なOSSと組み合わせることにより, 柔軟に機能拡張なところ.
  コンテナ運用を更に効率化 / 高速化  詳細なメトリック監視と可視化・・・Prometheus + Grafana コンテナのログの転送収集・・・Fluentd / Fluent Bit ネットワークトラフィックの制御・・・ Istio + Envoy  Kubernetesの適応領域の拡大  機械学習プラットフォーム・・・Kubeflow 分散ストレージ・・・Rook 分散型データベース・・・Vitess   ② 本格的な宣言的オペレーションとInfrastructure as Codeを実現可能
 ③ クラスター上にデプロイするシステムの構成をコード(マニフェストファイル)によって定義できる

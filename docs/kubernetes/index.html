@@ -161,7 +161,10 @@ https://github.com/alex-shpak/hugo-book
 
 <p>Dockerコンテナのクラスタ管理を始めとしたオーケストレーションを行うサービスのこと.
 ホスト間の連携やデプロイについても総括的に管理できる(ここがDocker Composeと違うところ).<br />
-<strong>Reference:</strong> <a href="https://speakerdeck.com/kkoudev/introduction-to-kubernetes-for-docker-compose-user">Docker Compose利用者から見た Kubernetes 開発環境構築入門</a></p>
+<strong>Reference:</strong> <a href="https://speakerdeck.com/kkoudev/introduction-to-kubernetes-for-docker-compose-user">Docker Compose利用者から見た Kubernetes 開発環境構築入門</a><br />
+Kubernetesの大きな特徴の1つに宣言的設定がある.
+宣言的設定とは, イミュータブルなインフラを作るための基本的な考え方で, 「システムのあるべき姿」を設定ファイルに宣言する！という考え方.
+Kubernetesは設定ファイルに書いたとおりのインフラを維持するように設計されている.</p>
 
 <h2 id="他と違うところ">他と違うところ</h2>
 
@@ -220,9 +223,9 @@ https://github.com/alex-shpak/hugo-book
 
 <tr>
 <td>Container</td>
-<td>各エントリが作成したいコンテナを表す.</td>
+<td>各エントリーが作成したいコンテナを表す.</td>
 <td>→</td>
-<td>作成したいオブジェクトごとに1つの設定ファイル</td>
+<td>作成したいオブジェクト(Kubernetesクラスタ上で機能する構成要素のこと. Pod, Service, Volume, Namespace, Controllerのこと.)ごとに1つの設定ファイル</td>
 </tr>
 
 <tr>
@@ -297,6 +300,29 @@ https://github.com/alex-shpak/hugo-book
 </tbody>
 </table>
 
+<h2 id="yaml内の用語集">yaml内の用語集</h2>
+
+<table>
+<thead>
+<tr>
+<th>用語</th>
+<th>意味</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>label</td>
+<td>Kubernetes上のオブジェクト(Podなど)に付けることができるKey/Valueペアの文字列で, オブジェクトに任意のメタ情報のようなものを持たせることができる.</td>
+</tr>
+
+<tr>
+<td>selector</td>
+<td>Labelの集合をもとにKubernetesオブジェクトをフィルタリングすることができる.</td>
+</tr>
+</tbody>
+</table>
+
 <h2 id="macのローカル環境で動かす">Macのローカル環境で動かす</h2>
 
 <ol>
@@ -316,17 +342,26 @@ https://github.com/alex-shpak/hugo-book
 <ul>
 <li><code>minikube</code>コンテナをVM上でコンテナを動かすもの.</li>
 </ul></li>
-<li><code>minidube start</code>をターミナルで実行する.</li>
+<li><code>minikube start</code>をターミナルで実行する.</li>
 </ol>
-</article>
+
+<h3 id="minikube-の使い方"><code>minikube</code>の使い方</h3>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">minikube status <span style="color:#586e75"># 動いているか確認</span>
+minikube start <span style="color:#586e75"># minikubeをスタート</span>
+minikube ip <span style="color:#586e75"># ipを確認</span>
+minikube dashboard <span style="color:#586e75"># ダッシュボード出現</span></code></pre></div>
+<h3 id="kubectl-の使い方"><code>kubectl</code>の使い方</h3>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl apply -f client-node-port.yaml --validate<span style="color:#719e07">=</span><span style="color:#b58900">false</span> <span style="color:#586e75"># 設定フィルを設定</span>
+kubectl get pods <span style="color:#586e75"># 動いているpodを確認</span>
+kubectl describe &lt;object type&gt; &lt;object name&gt; <span style="color:#586e75"># オブジェクトの詳細表示</span></code></pre></div></article>
 
       
 <div class="align-center book-git-footer justify-between">
   
   <div>
     
-    <a href="https://github.com/solareenlo/blog-hugo/commit/889f1ddc5b01da4d72341a49f4d321f63d1c3f6a" title='Last modified Apr 26, 2019 by solareenlo' target="_blank" rel="noopener">
-      <img src="/svg/code-merge.svg" alt="Changed" /> Apr 26, 2019
+    <a href="https://github.com/solareenlo/blog-hugo/commit/08edffb9e35e42c0230224502153e6705de316f3" title='Last modified May 2, 2019 by solareenlo' target="_blank" rel="noopener">
+      <img src="/svg/code-merge.svg" alt="Changed" /> May 2, 2019
     </a>
   </div>
   
@@ -354,7 +389,12 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="#他と違うところ">他と違うところ</a></li>
 <li><a href="#docker-composeとの違い">Docker Composeとの違い</a></li>
 <li><a href="#用語集">用語集</a></li>
-<li><a href="#macのローカル環境で動かす">Macのローカル環境で動かす</a></li>
+<li><a href="#yaml内の用語集">yaml内の用語集</a></li>
+<li><a href="#macのローカル環境で動かす">Macのローカル環境で動かす</a>
+<ul>
+<li><a href="#minikube-の使い方"><code>minikube</code>の使い方</a></li>
+<li><a href="#kubectl-の使い方"><code>kubectl</code>の使い方</a></li>
+</ul></li>
 </ul></li>
 </ul>
 </nav>
