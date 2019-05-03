@@ -397,6 +397,39 @@ kubectl api-versions <span style="color:#586e75"># APIGROUPで利用可能なver
 
 <p><strong>Reference:</strong> <a href="https://qiita.com/kouares/items/94a073baed9dffe86ea0">Kubernetesの Service についてまとめてみた</a></p>
 
+<h3 id="persistentvolumeclaimのaccessmodes3種類">PersistentVolumeClaimのaccessModes3種類</h3>
+
+<ul>
+<li><strong>PeadWriteOnce</strong>
+
+<ul>
+<li>1つのノードが読み書き可能</li>
+</ul></li>
+<li><strong>ReadOnlyMany</strong>
+
+<ul>
+<li>複数のノードが読み込みだけ可能</li>
+</ul></li>
+<li><strong>ReadWriteMany</strong>
+
+<ul>
+<li>複数のノードから読み書き可能</li>
+</ul></li>
+</ul>
+
+<h3 id="storageclassの一覧">StorageClassの一覧</h3>
+
+<ul>
+<li><a href="https://kubernetes.io/docs/concepts/storage/storage-classes/#the-storageclass-resource">The StorageClass Resource</a></li>
+</ul>
+
+<h3 id="volumemountsのsubpath">volumeMountsのsubPath</h3>
+
+<p><code>subPath</code>を指定してあげると<code>volume</code>をルートディレクトリからマウントしないで, サブディレクトリからマウントする.
+<code>volume</code>をそんなに使わない時にオススメ.</p>
+
+<p><strong>Reference:</strong> <a href="https://qiita.com/MahoTakara/items/fbe5ffb9fd9b9d35ddbe">永続ストレージのサブディレクトリにマウントする方法</a></p>
+
 <h2 id="macのローカル環境で動かす">Macのローカル環境で動かす</h2>
 
 <ol>
@@ -462,7 +495,13 @@ kubectl delete -f client-pod.yaml <span style="color:#586e75"># オブジェク�
 kubectl delete deployment client-deployment <span style="color:#586e75"># deploymentの削除</span>
 kubectl delete pod client-node-port <span style="color:#586e75"># podの削除</span>
 kubectl api-resources <span style="color:#586e75"># リソースとAPIGROUPの対応を調べる</span>
-kubectl api-versions <span style="color:#586e75"># APIGROUPで利用可能なversionを調べる</span></code></pre></div>
+kubectl api-versions <span style="color:#586e75"># APIGROUPで利用可能なversionを調べる</span>
+kubectl get storageclass <span style="color:#586e75"># 管理者が提供するストレージのクラスを表示</span>
+kubectl get pv <span style="color:#586e75"># PersistentVolumeの一覧を表示</span>
+kubectl get pvc <span style="color:#586e75"># PersistentVolumeClaimの一覧を表示</span>
+kubectl create secret generic pgpassword --from-literal <span style="color:#268bd2">PGPASSWORD</span><span style="color:#719e07">=</span>******** <span style="color:#586e75"># パスワードを生成</span>
+kubectl create secret generic &lt;secret_name&gt; --from-literal &lt;<span style="color:#268bd2">key</span><span style="color:#719e07">=</span>value&gt; <span style="color:#586e75"># パスワードを生成</span>
+kubectl get secret <span style="color:#586e75"># secret一覧を表示</span></code></pre></div>
 <h3 id="自分のpcからvmにアクセスしてdockerコンテナを見る方法">自分のPCからVMにアクセスしてDockerコンテナを見る方法</h3>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#b58900">eval</span> <span style="color:#719e07">$(</span>minikube docker-env<span style="color:#719e07">)</span>
 docker ps</code></pre></div>
@@ -479,8 +518,8 @@ docker push solareenlo/multi-client:v5</code></pre></div>
   
   <div>
     
-    <a href="https://github.com/solareenlo/blog-hugo/commit/44d638308ef1890eabb016c3ca734e47eb300b16" title='Last modified May 2, 2019 by solareenlo' target="_blank" rel="noopener">
-      <img src="/svg/code-merge.svg" alt="Changed" /> May 2, 2019
+    <a href="https://github.com/solareenlo/blog-hugo/commit/6f465aea54587287f6b3575ad92dc4cd81082f12" title='Last modified May 3, 2019 by solareenlo' target="_blank" rel="noopener">
+      <img src="/svg/code-merge.svg" alt="Changed" /> May 3, 2019
     </a>
   </div>
   
@@ -512,6 +551,9 @@ docker push solareenlo/multi-client:v5</code></pre></div>
 <ul>
 <li><a href="#apiversionの調べ方">apiVersionの調べ方</a></li>
 <li><a href="#serviceのtype4種類">ServiceのType4種類</a></li>
+<li><a href="#persistentvolumeclaimのaccessmodes3種類">PersistentVolumeClaimのaccessModes3種類</a></li>
+<li><a href="#storageclassの一覧">StorageClassの一覧</a></li>
+<li><a href="#volumemountsのsubpath">volumeMountsのsubPath</a></li>
 </ul></li>
 <li><a href="#macのローカル環境で動かす">Macのローカル環境で動かす</a></li>
 <li><a href="#ubuntuのローカル環境で動かす">Ubuntuのローカル環境で動かす</a>
