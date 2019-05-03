@@ -69,7 +69,12 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/vim/">Vim</a></li>
 <li><a href="/docs/git/">Git</a></li>
 <li><a href="/docs/github/">GitHub</a></li>
+</ul></li>
+<li><a href="/docs/programming-language/"><strong>Programming Language</strong></a>
+
+<ul>
 <li><a href="/docs/c/">C</a></li>
+<li><a href="/docs/nodejs/">Node.js</a></li>
 <li><a href="/docs/rust/">Rust</a></li>
 <li><a href="/docs/haskell/">Haskell</a></li>
 <li><a href="/docs/hugo/">Hugo</a></li>
@@ -323,6 +328,31 @@ Kubernetesは設定ファイルに書いたとおりのインフラを維持す�
 
 <tbody>
 <tr>
+<td>apiVersion</td>
+<td>リソースで利用するAPIのバージョンを指定.</td>
+</tr>
+
+<tr>
+<td>kind</td>
+<td>リソースの種別を指定.<br>(Deployment, Serviceとか)</td>
+</tr>
+
+<tr>
+<td>metadata</td>
+<td>リソースへ付与可能なメタデータ.<br>主に名称やラベルを付与する.</td>
+</tr>
+
+<tr>
+<td>spec</td>
+<td>リソース固定の設定を指定.</td>
+</tr>
+
+<tr>
+<td>data</td>
+<td>ConfigMapやSecretなどの設定データを記述するリソースで使用される.</td>
+</tr>
+
+<tr>
 <td>label</td>
 <td>Kubernetes上のオブジェクト(Podなど)に付けることができるKey/Valueペアの文字列で, オブジェクトに任意のメタ情報のようなものを持たせることができる.</td>
 </tr>
@@ -507,18 +537,27 @@ kubectl get secret <span style="color:#586e75"># secret一覧を表示</span></c
 docker ps</code></pre></div>
 <h2 id="1度デプロイしたイメージのバージョンアップ方法">1度デプロイしたイメージのバージョンアップ方法</h2>
 
+<p>Kubernetesでは<code>latest</code>タグイメージの運用は適切なロールバックを行うことが難しいので推奨されていない.<br />
+ので, できる限り<code>Vsersion</code>, もしくは<code>digest</code>でイメージ指定を行うようにする.</p>
+
 <p>以下のようにDocker Hubにバージョンを指定してpushし,</p>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker build -t solareenlo/multi-client:v5
 docker push solareenlo/multi-client:v5</code></pre></div>
 <p>以下のようにコマンドラインからイメージのバージョンアップを行う.</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl <span style="color:#b58900">set</span> image deployment/client-deployment <span style="color:#268bd2">client</span><span style="color:#719e07">=</span>solareenlo/multi-client:v5</code></pre></div></article>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl <span style="color:#b58900">set</span> image deployment/client-deployment <span style="color:#268bd2">client</span><span style="color:#719e07">=</span>solareenlo/multi-client:v5</code></pre></div>
+<h2 id="ローカルで動かした例">ローカルで動かした例</h2>
+
+<ul>
+<li><a href="https://github.com/solareenlo/complex-k8s-local">solareenlo/complex-k8s-local</a></li>
+</ul>
+</article>
 
       
 <div class="align-center book-git-footer justify-between">
   
   <div>
     
-    <a href="https://github.com/solareenlo/blog-hugo/commit/6f465aea54587287f6b3575ad92dc4cd81082f12" title='Last modified May 3, 2019 by solareenlo' target="_blank" rel="noopener">
+    <a href="https://github.com/solareenlo/blog-hugo/commit/d05e4484a7566ccde5e326a7a4316f4017303a85" title='Last modified May 3, 2019 by solareenlo' target="_blank" rel="noopener">
       <img src="/svg/code-merge.svg" alt="Changed" /> May 3, 2019
     </a>
   </div>
@@ -563,6 +602,7 @@ docker push solareenlo/multi-client:v5</code></pre></div>
 <li><a href="#自分のpcからvmにアクセスしてdockerコンテナを見る方法">自分のPCからVMにアクセスしてDockerコンテナを見る方法</a></li>
 </ul></li>
 <li><a href="#1度デプロイしたイメージのバージョンアップ方法">1度デプロイしたイメージのバージョンアップ方法</a></li>
+<li><a href="#ローカルで動かした例">ローカルで動かした例</a></li>
 </ul></li>
 </ul>
 </nav>

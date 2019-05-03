@@ -134,6 +134,16 @@
   </url>
   
   <url>
+    <loc>https://solareenlo.com/docs/nodejs/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://solareenlo.com/docs/npm/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://solareenlo.com/docs/programming-language/</loc>
     <priority>0</priority>
   </url>
@@ -241,7 +251,7 @@
   
   <url>
     <loc>https://solareenlo.com/</loc>
-    <lastmod>2019-05-02T17:35:14+09:00</lastmod>
+    <lastmod>2019-05-03T12:55:59+09:00</lastmod>
   </url>
   
   <url>
