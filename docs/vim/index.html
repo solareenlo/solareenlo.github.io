@@ -13,7 +13,7 @@
     
     Vim
   
- | SOLAREENLO</title>
+ | solareenlo</title>
 
 
 <link href="https://fonts.googleapis.com/css?family=Oxygen|Oxygen+Mono:300,400,700" rel="stylesheet">
@@ -41,7 +41,7 @@ https://github.com/alex-shpak/hugo-book
     <aside class="book-menu fixed">
       <nav role="navigation">
 <h2 class="book-brand">
-  <a href="https://solareenlo.com/">SOLAREENLO</a>
+  <a href="https://solareenlo.com/">solareenlo</a>
 </h2>
 
 
@@ -185,10 +185,12 @@ https://github.com/alex-shpak/hugo-book
 
 <p>プラグインを簡単にインストールしてくれるやつ.</p>
 
-<ul>
-<li><a href="https://github.com/Shougo/dein.vim">Shougo/dein.vim</a></li>
-</ul>
-
+<h3 id="shougo-dein-vim-https-github-com-shougo-dein-vim"><a href="https://github.com/Shougo/dein.vim">Shougo/dein.vim</a></h3>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh &gt; installer.sh
+<span style="color:#586e75"># For example, we just use `~/.cache/dein` as installation directory</span>
+sh ./installer.sh ~/.cache/dein</code></pre></div>
+<p>そして, vimを開いて,</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">:call dein#install<span style="color:#719e07">()</span></code></pre></div>
 <h2 id="nerdtree">NERDTree</h2>
 
 <h3 id="ファイル操作">ファイル操作</h3>
@@ -444,7 +446,10 @@ https://github.com/alex-shpak/hugo-book
 <ul>
 <li><a href="#references">References</a></li>
 </ul></li>
-<li><a href="#プラグインマネージャー">プラグインマネージャー</a></li>
+<li><a href="#プラグインマネージャー">プラグインマネージャー</a>
+<ul>
+<li><a href="#shougo-dein-vim-https-github-com-shougo-dein-vim"><a href="https://github.com/Shougo/dein.vim">Shougo/dein.vim</a></a></li>
+</ul></li>
 <li><a href="#nerdtree">NERDTree</a>
 <ul>
 <li><a href="#ファイル操作">ファイル操作</a></li>

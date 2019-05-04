@@ -11,9 +11,9 @@
 <title>
   
     
-    Ssh
+    SSH
   
- | SOLAREENLO</title>
+ | solareenlo</title>
 
 
 <link href="https://fonts.googleapis.com/css?family=Oxygen|Oxygen+Mono:300,400,700" rel="stylesheet">
@@ -41,7 +41,7 @@ https://github.com/alex-shpak/hugo-book
     <aside class="book-menu fixed">
       <nav role="navigation">
 <h2 class="book-brand">
-  <a href="https://solareenlo.com/">SOLAREENLO</a>
+  <a href="https://solareenlo.com/">solareenlo</a>
 </h2>
 
 
@@ -154,7 +154,7 @@ https://github.com/alex-shpak/hugo-book
   <strong>
   
     
-    Ssh
+    SSH
   
 </strong>
 </header>
@@ -212,7 +212,9 @@ scp id_rsa.pub solareenlo@111.222.333.444:~/.</code></pre></div>
 <p>これでユーザー名<code>solareenlo</code>, IPアドレスが<code>111.222.333.444</code>のUbuntuのホームディレクトリに先ほど作った公開鍵が渡った.</p>
 
 <h3 id="ubuntuでmacの公開鍵を設置する">UbuntuでMacの公開鍵を設置する</h3>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#b58900">cd</span> ~/.ssh
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir .ssh
+mv id_rsa.pub .ssh
+<span style="color:#b58900">cd</span> ~/.ssh
 touch authorized_keys
 cat id_rsa.pub &gt;&gt; authorized_keys
 rm id_rsa.pub

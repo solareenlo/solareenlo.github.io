@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>はじめに on SOLAREENLO</title>
+    <title>はじめに on solareenlo</title>
     <link>https://solareenlo.com/</link>
-    <description>Recent content in はじめに on SOLAREENLO</description>
+    <description>Recent content in はじめに on solareenlo</description>
     <generator>Hugo -- gohugo.io</generator>
     
 	<atom:link href="https://solareenlo.com/index.xml" rel="self" type="application/rss+xml" />
@@ -315,7 +315,8 @@ Reference: Docker Compose利用者から見た Kubernetes 開発環境構築入�
 インストール Mac: https://nodejs.org/en/
 Ubuntu: Official Node.js binary distributions
 NPMとは Node.jsのパッケージ管理ツールのこと.
-npm自体のupdate npm update -y npm</description>
+npm自体のupdate npm update -y npm パッケージを最新バージョンへ npm outdated # 新しいバージョンを確認 npm install -g npm-check-updates # アップデートマネージャーをインストール ncu # 新しいバージョンを確認 ncu -u # package.jsonを更新 npm update # パッケージを更新 yarn こちらもパッケージ管理ツール.
+パッケージを最新バージョンへ yarn outdated # 新しいバージョンを確認 yarn upgrade # パッケージのアップグレード yarn upgrade-interactive # 上記2つを一緒に行う</description>
     </item>
     
     <item>
@@ -375,22 +376,9 @@ Hello World! fn main() { // 世界よ、こんにちは  println!(&amp;#34;Hello
       <description>シェルスクリプトとは シェルとはOSと対話するためのインターフェースであり, それのスクリプトがシェルスクリプト.
 シェルスクリプトモードで実行するのとfilename.shを作って,
 bash filename.sh で実行する2パターンあります.
-シェルスクリプトモードに突入 /bin/sh $ または
+チェック  ShellCheck  シェルスクリプトモードに突入 /bin/sh $ または
 sh $ Hello World sh $ echo Hello World Hello World $ シェルスクリプトモードから脱出 CTLとdを押す.
 初めてのシェルスクリプト # まず, bashがどこにあるか調べる which bash &amp;gt; /bin/bash  #!のことを「シェバン」もしくは「シバン」という. shell scriptファイルの頭に#! /bin/bashと書いてあげる.  vim hello i #i /bin/bash echo hello Esc :wq ls -l &amp;gt; -rw-rw-r--. 1 solareenlo solareenlo 24 日付 hello chmod +x hello ls -l &amp;gt; -rwxrwxr-x. 1 solareenlo solareenlo 24 日付 hello bash hello &amp;gt; hello 文字列を表示 # helloの中身 #!</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://solareenlo.com/docs/ssh/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://solareenlo.com/docs/ssh/</guid>
-      <description>SSH(Secure Shell)とは 暗号や認証の技術を利用して, 安全にリモートコンピュータと通信するためのプロトコルのこと. VPSに接続するときは必須.
-Mac -&amp;gt; Ubuntu を公開鍵暗号方式で接続する UbuntuをSSH接続可にする Ubuntu側で
-sudo apt-get install openssh-server で, Ubuntu側へSSHで接続できるようになる.
-Macで秘密鍵と公開鍵のペアを作成する まずMacで秘密鍵と公開鍵のペアを作成する.
-ssh-keygen -t rsa &amp;gt; Generating public/private rsa key pair. &amp;gt; Enter file in which to save the key (/Users/solareenlo/.ssh/id_rsa): # ここでエンターを押せば/User/solareenlo/.ssh/id_rsaで保存される. &amp;gt; Enter passphrase (empty for no passphrase): # パスフレーズを入力 &amp;gt; Enter same passphrase again: # 再度パスフレーズを入力 &amp;gt; Your identification has been saved in /Users/solareenlo/.ssh/id_rsa. &amp;gt; Your public key has been saved in /Users/solareenlo/.</description>
     </item>
     
     <item>
@@ -413,7 +401,8 @@ ssh-keygen -t rsa &amp;gt; Generating public/private rsa key pair. &amp;gt; Ente
 コンソール/ターミナル/シェルの違い  コンソールとは入出力をつかさどる端末ハードウェア ターミナルとはGUIでCUI環境を再現するもの シェルとはCUI環境におけるOSとの対話的インターフェイス  Reference: 【初心者向け】シェル・ターミナル・コンソールの違いとは？   下地にシェルがありコンソールやターミナルから命令をOSへ伝達してくれる.
 コンソールでアクセスしてもターミナルでアクセスしても対話するものはシェルとなる.
 コンソールの場合はハードウェア的に直にアクセスしているがターミナルの場合はGUI環境でソフトウェア的にシェルを呼び出し命令を実行するようになっている.
-ターミナルのJSON出力に色付けする jqを使う.
+ターミナルの色を変える ~/.bashrcの当該部分を以下の様に書き換える.
+if [ &amp;#34;$color_prompt&amp;#34; = yes ]; then PS1=&amp;#39;${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\033[01;31m\]$(__git_ps1)\[\033[00m\]\n\[\033[01;35m\]-&amp;gt; \$\[\033[00m\] &amp;#39; else PS1=&amp;#39;${debian_chroot:+($debian_chroot)}\u@\h:\w\$ &amp;#39; fi ターミナルのJSON出力に色付けする jqを使う.
 # こんな感じ echo &amp;#39;{&amp;#34;items&amp;#34;:[{&amp;#34;item_id&amp;#34;:1,&amp;#34;name&amp;#34;:&amp;#34;すてきな雑貨&amp;#34;,&amp;#34;price&amp;#34;:2500},{&amp;#34;item_id&amp;#34;:2,&amp;#34;name&amp;#34;:&amp;#34;格好いい置物&amp;#34;,&amp;#34;price&amp;#34;:4500}]}&amp;#39; | jq . &amp;gt; { &amp;gt; &amp;#34;items&amp;#34;: [ &amp;gt; { &amp;gt; &amp;#34;item_id&amp;#34;: 1, &amp;gt; &amp;#34;name&amp;#34;: &amp;#34;すてきな雑貨&amp;#34;, &amp;gt; &amp;#34;price&amp;#34;: 2500 &amp;gt; }, &amp;gt; { &amp;gt; &amp;#34;item_id&amp;#34;: 2, &amp;gt; &amp;#34;name&amp;#34;: &amp;#34;格好いい置物&amp;#34;, &amp;gt; &amp;#34;price&amp;#34;: 4500 &amp;gt; } &amp;gt; ] &amp;gt; } Reference: jq コマンドを使う日常のご紹介</description>
     </item>
     
@@ -436,15 +425,13 @@ script: docker run -e CI=true solareenlo/react-test npm run test -- --watchAll=f
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://solareenlo.com/docs/ubuntu/</guid>
-      <description> Ubuntuとは コミュニティにより開発されているオペレーティングシステムのこと. 無料で提供されている. Linuxディストリビューションの1つ.
-再起動 sudo shutdown -r now // or sudo reboot mountしているSSDのlabel名を変更する Ubuntuのディスクプリで当該のSSDをmountする.
-df -Th &amp;gt; Filesystem Type Size Used Avail Use% Mounted on &amp;gt; /dev/nvme2n1p1 ext4 234G 61M 222G 1% /media/solareenlo/ssd021 でSSDのFilesystem名(この場合は/dev/nvme2n1p1)を確認する.
-sudo umount /dev/nvme2n1p1 で一度SSDをunmountする.
-SSDのTypeがext2/ext3/ext4の場合は,
-sudo e2label /dev/nvme2n1p1 ssd02 とし, label名をssd021からssd02に変更する.
-そして, Ubuntuのディスクアプリで当該のSSDをmountする.
-snapでのupdate snapとはLinuxのパッケージ管理システムの1つ.
-snap refresh バージョン確認 cat /etc/os-release</description>
+      <description>Ubuntuとは コミュニティにより開発されているオペレーティングシステムのこと. 無料で提供されている. Linuxディストリビューションの1つ.
+git補完 Reference: 「Git補完をしらない」「git statusを1日100回は使う」そんなあなたに朗報【git-completionとgit-prompt】
+git-completion.bashをインストール git-completion.bash: gitコマンドの補完スクリプト. Tabで保管できる.
+wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -O ~/.git-completion.bash chmod a+x ~/.git-completion.bash echo &amp;#34;source ~/.git-completion.bash&amp;#34; &amp;gt;&amp;gt; ~/.bashrc source ~/.bashrc git-prompt.shのインストール git-prompt.sh: プロンプトに各種追加情報を表示可能にするスクリプト.
+wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -O ~/.git-prompt.sh chmod a+x ~/.git-prompt.sh 下記を一度にコピペしてエンターを押す.
+cat &amp;lt;&amp;lt; EOF | tee -a ~/.bashrc &amp;gt; /dev/null source ~/.git-prompt.sh GIT_PS1_SHOWDIRTYSTATE=true GIT_PS1_SHOWSTASHSTATE=true GIT_PS1_SHOWUNTRACKEDFILES=true GIT_PS1_SHOWUPSTREAM=&amp;#34;auto&amp;#34; GIT_PS1_SHOWCOLORHINTS=true EOFsource ~/.bashrc ターミナルの色を変える ~/.bashrcの当該部分を以下の様に書き換える.
+if [ &amp;#34;$color_prompt&amp;#34; = yes ]; then PS1=&amp;#39;${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\033[01;31m\]$(__git_ps1)\[\033[00m\]\n\[\033[01;35m\]-&amp;gt; \$\[\033[00m\] &amp;#39; else PS1=&amp;#39;${debian_chroot:+($debian_chroot)}\u@\h:\w\$ &amp;#39; fi 再起動 sudo shutdown -r now // or sudo reboot mountしているSSDのlabel名を変更する Ubuntuのディスクプリで当該のSSDをmountする.</description>
     </item>
     
     <item>
@@ -456,7 +443,8 @@ snap refresh バージョン確認 cat /etc/os-release</description>
       <description> Vimとは viから派生したテキストエディタ. プラグインを導入したり, .vimrcの設定を変更したりして, 自分好みにカスタマイズがどんどんできる.
 外部コマンド実行 :!を使う.
 vim # vimモードに突入 :!ls # lsを表示してくれる オススメの使い方記事 References  さっさと帰りたい怠け者エンジニアは vim をマスターしましょう その2 - 編集 さっさと帰りたい怠け者エンジニアは vim をマスターしましょう その1 - 基本と移動  プラグインマネージャー プラグインを簡単にインストールしてくれるやつ.
- Shougo/dein.vim  NERDTree ファイル操作    o(enter) ファイルを開く     go ファイルを開き、カーソルはツリーに保持する   t タブで開く   T タブで開き、移動はしない   i 水平分割して開く   gi 水平分割して開き、移動はしない   s 垂直分割して開く   gs 垂直分割して開き、移動はしない    ディレクトリ操作    コマンド 説明     o(enter) フォルダを開く   O 再帰的にディレクトリをすべて開く   x 親ディレクトリを閉じる   X 再帰的にすべての子ディレクトリを閉じる   e 新しいツリーを生成する    ツリー操作    コマンド 説明     P ルートディレクトリへ移動   p 親ディレクトリへ移動   K 一番上へ移動   J 一番下へ移動   Ctrl+k 一つ上へ移動   Ctrl+j 一つ下へ移動    ファイルシステム    コマンド 説明     C ツリーのルートを選択したディレクトリに変更   u ツリーのルートを上の階層にする   U 変更前のツリーの状態を保持して、ツリーのルートを上の階層にする   r 選択したディレクトリをリフレッシュする   R ツリーのルートをリフレッシュする   m メニューを表示する   cd 選択したディレクトリにcwdを変更する   CD cwdをツリールートに変更する    その他    コマンド 説明     I 隠しファイルの表示、非表示   B ブックマークの表示・非表示   F ファイルの表示・非表示    プラグインランキングサイト  VimAwesome  </description>
+Shougo/dein.vim curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh &amp;gt; installer.sh # For example, we just use `~/.cache/dein` as installation directory sh ./installer.sh ~/.cache/dein そして, vimを開いて,
+:call dein#install() NERDTree ファイル操作    o(enter) ファイルを開く     go ファイルを開き、カーソルはツリーに保持する   t タブで開く   T タブで開き、移動はしない   i 水平分割して開く   gi 水平分割して開き、移動はしない   s 垂直分割して開く   gs 垂直分割して開き、移動はしない    ディレクトリ操作    コマンド 説明     o(enter) フォルダを開く   O 再帰的にディレクトリをすべて開く   x 親ディレクトリを閉じる   X 再帰的にすべての子ディレクトリを閉じる   e 新しいツリーを生成する    ツリー操作    コマンド 説明     P ルートディレクトリへ移動   p 親ディレクトリへ移動   K 一番上へ移動   J 一番下へ移動   Ctrl+k 一つ上へ移動   Ctrl+j 一つ下へ移動    ファイルシステム    コマンド 説明     C ツリーのルートを選択したディレクトリに変更   u ツリーのルートを上の階層にする   U 変更前のツリーの状態を保持して、ツリーのルートを上の階層にする   r 選択したディレクトリをリフレッシュする   R ツリーのルートをリフレッシュする   m メニューを表示する   cd 選択したディレクトリにcwdを変更する   CD cwdをツリールートに変更する    その他    コマンド 説明     I 隠しファイルの表示、非表示   B ブックマークの表示・非表示   F ファイルの表示・非表示    プラグインランキングサイト  VimAwesome  </description>
     </item>
     
     <item>
@@ -550,6 +538,19 @@ mongodb(v4.0.5)のコンソールからの使い方色々 Excel, Oracle, MongoDB
 MySQL(v14.14)の使い方 (Ver 14.14 Distrib 5.7.25, for Linux (x86_64))
 MySQLのデータ構造 Database -&amp;gt; 複数のTable -&amp;gt; その中にid, title, bodyを持つ表があって, -&amp;gt; 行をRecord, Row, 列をField, Columと言う. こういったDatabaseやTableやFieldやRecordを扱う言語をSQL(Structured Query Language)と言う.
 SQLの実行順番    順番 操作名 命令文     1 テーブルの指定 from   2 結合 on, join   3 取得条件 where   4 グループ化 group by   5 関数 count, sum, avg, min, max   6 having having   7 検索 select, distinct   8 順序 order by   9 limit limit    MySQLの基本的な使い方 # Ubuntuへのインストール sudo apt install mysql-server mysql-client # 起動確認 sudo service mysql status &amp;gt; mysql.</description>
+    </item>
+    
+    <item>
+      <title>SSH</title>
+      <link>https://solareenlo.com/docs/ssh/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://solareenlo.com/docs/ssh/</guid>
+      <description>SSH(Secure Shell)とは 暗号や認証の技術を利用して, 安全にリモートコンピュータと通信するためのプロトコルのこと. VPSに接続するときは必須.
+Mac -&amp;gt; Ubuntu を公開鍵暗号方式で接続する UbuntuをSSH接続可にする Ubuntu側で
+sudo apt-get install openssh-server で, Ubuntu側へSSHで接続できるようになる.
+Macで秘密鍵と公開鍵のペアを作成する まずMacで秘密鍵と公開鍵のペアを作成する.
+ssh-keygen -t rsa &amp;gt; Generating public/private rsa key pair. &amp;gt; Enter file in which to save the key (/Users/solareenlo/.ssh/id_rsa): # ここでエンターを押せば/User/solareenlo/.ssh/id_rsaで保存される. &amp;gt; Enter passphrase (empty for no passphrase): # パスフレーズを入力 &amp;gt; Enter same passphrase again: # 再度パスフレーズを入力 &amp;gt; Your identification has been saved in /Users/solareenlo/.ssh/id_rsa. &amp;gt; Your public key has been saved in /Users/solareenlo/.</description>
     </item>
     
     <item>

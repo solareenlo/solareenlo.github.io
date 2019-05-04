@@ -13,7 +13,7 @@
     
     Terminal
   
- | SOLAREENLO</title>
+ | solareenlo</title>
 
 
 <link href="https://fonts.googleapis.com/css?family=Oxygen|Oxygen+Mono:300,400,700" rel="stylesheet">
@@ -41,7 +41,7 @@ https://github.com/alex-shpak/hugo-book
     <aside class="book-menu fixed">
       <nav role="navigation">
 <h2 class="book-brand">
-  <a href="https://solareenlo.com/">SOLAREENLO</a>
+  <a href="https://solareenlo.com/">solareenlo</a>
 </h2>
 
 
@@ -182,6 +182,14 @@ https://github.com/alex-shpak/hugo-book
 コンソールでアクセスしてもターミナルでアクセスしても対話するものはシェルとなる.<br />
 コンソールの場合はハードウェア的に直にアクセスしているがターミナルの場合はGUI環境でソフトウェア的にシェルを呼び出し命令を実行するようになっている.</p>
 
+<h2 id="ターミナルの色を変える">ターミナルの色を変える</h2>
+
+<p><code>~/.bashrc</code>の当該部分を以下の様に書き換える.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#719e07">if</span> <span style="color:#719e07">[</span> <span style="color:#2aa198">&#34;</span><span style="color:#268bd2">$color_prompt</span><span style="color:#2aa198">&#34;</span> <span style="color:#719e07">=</span> yes <span style="color:#719e07">]</span>; <span style="color:#719e07">then</span>
+    <span style="color:#268bd2">PS1</span><span style="color:#719e07">=</span><span style="color:#2aa198">&#39;${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\033[01;31m\]$(__git_ps1)\[\033[00m\]\n\[\033[01;35m\]-&gt; \$\[\033[00m\] &#39;</span>
+<span style="color:#719e07">else</span>
+    <span style="color:#268bd2">PS1</span><span style="color:#719e07">=</span><span style="color:#2aa198">&#39;${debian_chroot:+($debian_chroot)}\u@\h:\w\$ &#39;</span>
+<span style="color:#719e07">fi</span></code></pre></div>
 <h2 id="ターミナルのjson出力に色付けする">ターミナルのJSON出力に色付けする</h2>
 
 <p><a href="https://github.com/stedolan/jq">jq</a>を使う.</p>
@@ -236,6 +244,7 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="#ターミナルとは">ターミナルとは</a>
 <ul>
 <li><a href="#コンソール-ターミナル-シェルの違い">コンソール/ターミナル/シェルの違い</a></li>
+<li><a href="#ターミナルの色を変える">ターミナルの色を変える</a></li>
 <li><a href="#ターミナルのjson出力に色付けする">ターミナルのJSON出力に色付けする</a></li>
 </ul></li>
 </ul>

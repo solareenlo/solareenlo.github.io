@@ -13,7 +13,7 @@
     
     Nodejs
   
- | SOLAREENLO</title>
+ | solareenlo</title>
 
 
 <link href="https://fonts.googleapis.com/css?family=Oxygen|Oxygen+Mono:300,400,700" rel="stylesheet">
@@ -41,7 +41,7 @@ https://github.com/alex-shpak/hugo-book
     <aside class="book-menu fixed">
       <nav role="navigation">
 <h2 class="book-brand">
-  <a href="https://solareenlo.com/">SOLAREENLO</a>
+  <a href="https://solareenlo.com/">solareenlo</a>
 </h2>
 
 
@@ -178,10 +178,31 @@ https://github.com/alex-shpak/hugo-book
 <p>Node.jsのパッケージ管理ツールのこと.</p>
 
 <h2 id="npm自体のupdate">npm自体のupdate</h2>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm update -y npm</code></pre></div></article>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm update -y npm</code></pre></div>
+<h2 id="パッケージを最新バージョンへ">パッケージを最新バージョンへ</h2>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm outdated <span style="color:#586e75"># 新しいバージョンを確認</span>
+npm install -g npm-check-updates <span style="color:#586e75"># アップデートマネージャーをインストール</span>
+ncu <span style="color:#586e75"># 新しいバージョンを確認</span>
+ncu -u <span style="color:#586e75"># package.jsonを更新</span>
+npm update <span style="color:#586e75"># パッケージを更新</span></code></pre></div>
+<h1 id="yarn">yarn</h1>
+
+<p>こちらもパッケージ管理ツール.</p>
+
+<h2 id="パッケージを最新バージョンへ-1">パッケージを最新バージョンへ</h2>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">yarn outdated <span style="color:#586e75"># 新しいバージョンを確認</span>
+yarn upgrade <span style="color:#586e75"># パッケージのアップグレード</span>
+yarn upgrade-interactive <span style="color:#586e75"># 上記2つを一緒に行う</span></code></pre></div></article>
 
       
-<div class="align-center book-git-footer justify-end">
+<div class="align-center book-git-footer justify-between">
+  
+  <div>
+    
+    <a href="https://github.com/solareenlo/blog-hugo/commit/d7c38cd5a93c45fe809b39a9c5aa45c02d94f5a1" title='Last modified May 4, 2019 by solareenlo' target="_blank" rel="noopener">
+      <img src="/svg/code-merge.svg" alt="Changed" /> May 4, 2019
+    </a>
+  </div>
   
   
   <div>
@@ -209,6 +230,11 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="#npmとは">NPMとは</a>
 <ul>
 <li><a href="#npm自体のupdate">npm自体のupdate</a></li>
+<li><a href="#パッケージを最新バージョンへ">パッケージを最新バージョンへ</a></li>
+</ul></li>
+<li><a href="#yarn">yarn</a>
+<ul>
+<li><a href="#パッケージを最新バージョンへ-1">パッケージを最新バージョンへ</a></li>
 </ul></li>
 </ul>
 </nav>

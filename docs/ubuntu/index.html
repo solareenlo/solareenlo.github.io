@@ -13,7 +13,7 @@
     
     Ubuntu
   
- | SOLAREENLO</title>
+ | solareenlo</title>
 
 
 <link href="https://fonts.googleapis.com/css?family=Oxygen|Oxygen+Mono:300,400,700" rel="stylesheet">
@@ -41,7 +41,7 @@ https://github.com/alex-shpak/hugo-book
     <aside class="book-menu fixed">
       <nav role="navigation">
 <h2 class="book-brand">
-  <a href="https://solareenlo.com/">SOLAREENLO</a>
+  <a href="https://solareenlo.com/">solareenlo</a>
 </h2>
 
 
@@ -168,6 +168,40 @@ https://github.com/alex-shpak/hugo-book
 無料で提供されている.
 Linuxディストリビューションの1つ.</p>
 
+<h2 id="git補完">git補完</h2>
+
+<p><strong>Reference:</strong> <a href="https://qiita.com/varmil/items/9b0aeafa85975474e9b6">「Git補完をしらない」「git statusを1日100回は使う」そんなあなたに朗報【git-completionとgit-prompt】</a></p>
+
+<h3 id="git-completion-bash-をインストール"><code>git-completion.bash</code>をインストール</h3>
+
+<p><code>git-completion.bash</code>: gitコマンドの補完スクリプト.
+Tabで保管できる.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -O ~/.git-completion.bash
+chmod a+x ~/.git-completion.bash
+<span style="color:#b58900">echo</span> <span style="color:#2aa198">&#34;source ~/.git-completion.bash&#34;</span> &gt;&gt; ~/.bashrc
+<span style="color:#b58900">source</span> ~/.bashrc</code></pre></div>
+<h3 id="git-prompt-sh-のインストール"><code>git-prompt.sh</code>のインストール</h3>
+
+<p><code>git-prompt.sh</code>: プロンプトに各種追加情報を表示可能にするスクリプト.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -O ~/.git-prompt.sh
+chmod a+x ~/.git-prompt.sh</code></pre></div>
+<p>下記を一度にコピペしてエンターを押す.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat <span style="color:#2aa198">&lt;&lt; EOF | tee -a ~/.bashrc &gt; /dev/null
+</span><span style="color:#2aa198">source ~/.git-prompt.sh
+</span><span style="color:#2aa198">GIT_PS1_SHOWDIRTYSTATE=true
+</span><span style="color:#2aa198">GIT_PS1_SHOWSTASHSTATE=true
+</span><span style="color:#2aa198">GIT_PS1_SHOWUNTRACKEDFILES=true
+</span><span style="color:#2aa198">GIT_PS1_SHOWUPSTREAM=&#34;auto&#34;
+</span><span style="color:#2aa198">GIT_PS1_SHOWCOLORHINTS=true
+</span><span style="color:#2aa198">EOF</span></code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#b58900">source</span> ~/.bashrc</code></pre></div>
+<h2 id="ターミナルの色を変える">ターミナルの色を変える</h2>
+
+<p><code>~/.bashrc</code>の当該部分を以下の様に書き換える.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#719e07">if</span> <span style="color:#719e07">[</span> <span style="color:#2aa198">&#34;</span><span style="color:#268bd2">$color_prompt</span><span style="color:#2aa198">&#34;</span> <span style="color:#719e07">=</span> yes <span style="color:#719e07">]</span>; <span style="color:#719e07">then</span>
+    <span style="color:#268bd2">PS1</span><span style="color:#719e07">=</span><span style="color:#2aa198">&#39;${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\033[01;31m\]$(__git_ps1)\[\033[00m\]\n\[\033[01;35m\]-&gt; \$\[\033[00m\] &#39;</span>
+<span style="color:#719e07">else</span>
+    <span style="color:#268bd2">PS1</span><span style="color:#719e07">=</span><span style="color:#2aa198">&#39;${debian_chroot:+($debian_chroot)}\u@\h:\w\$ &#39;</span>
+<span style="color:#719e07">fi</span></code></pre></div>
 <h2 id="再起動">再起動</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo shutdown -r now
 // or
@@ -200,8 +234,8 @@ sudo reboot</code></pre></div>
   
   <div>
     
-    <a href="https://github.com/solareenlo/blog-hugo/commit/6f465aea54587287f6b3575ad92dc4cd81082f12" title='Last modified May 3, 2019 by solareenlo' target="_blank" rel="noopener">
-      <img src="/svg/code-merge.svg" alt="Changed" /> May 3, 2019
+    <a href="https://github.com/solareenlo/blog-hugo/commit/d7c38cd5a93c45fe809b39a9c5aa45c02d94f5a1" title='Last modified May 4, 2019 by solareenlo' target="_blank" rel="noopener">
+      <img src="/svg/code-merge.svg" alt="Changed" /> May 4, 2019
     </a>
   </div>
   
@@ -226,6 +260,12 @@ sudo reboot</code></pre></div>
 <ul>
 <li><a href="#ubuntuとは">Ubuntuとは</a>
 <ul>
+<li><a href="#git補完">git補完</a>
+<ul>
+<li><a href="#git-completion-bash-をインストール"><code>git-completion.bash</code>をインストール</a></li>
+<li><a href="#git-prompt-sh-のインストール"><code>git-prompt.sh</code>のインストール</a></li>
+</ul></li>
+<li><a href="#ターミナルの色を変える">ターミナルの色を変える</a></li>
 <li><a href="#再起動">再起動</a></li>
 <li><a href="#mountしているssdのlabel名を変更する">mountしているSSDのlabel名を変更する</a></li>
 <li><a href="#snapでのupdate">snapでのupdate</a></li>
