@@ -167,6 +167,35 @@ https://github.com/alex-shpak/hugo-book
 <p>暗号や認証の技術を利用して, 安全にリモートコンピュータと通信するためのプロトコルのこと.
 VPSに接続するときは必須.</p>
 
+<h2 id="sshの流れ">SSHの流れ</h2>
+
+<p><strong>Reference:</strong> <a href="https://qiita.com/naoki_mochizuki/items/aea14a65a4a513e4816f">SSH通信って、結局何してるの？</a></p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#719e07">[</span>local<span style="color:#719e07">]</span><span style="color:#2aa198">1</span>.通信用の秘密鍵・公開鍵の作成する.
+<span style="color:#719e07">[</span>local<span style="color:#719e07">]</span><span style="color:#2aa198">2</span>.サーバーに公開鍵を渡す.
+
+<span style="color:#719e07">[</span>server<span style="color:#719e07">]</span>A.サーバーにユーザーを登録する<span style="color:#719e07">(</span>sudo権限<span style="color:#719e07">)</span>.
+<span style="color:#719e07">[</span>server<span style="color:#719e07">]</span>B.サーバーに登録されているユーザーと, 渡された公開鍵を紐づける.
+※この状態で初めて作成したユーザーによるサーバーへのログインが可能となる.
+
+<span style="color:#719e07">[</span>local<span style="color:#719e07">]</span><span style="color:#2aa198">3</span>.作成したユーザーでログインする.
+
+<span style="color:#719e07">[</span>server<span style="color:#719e07">]</span>C.ログイン時に乱数を生成する.
+<span style="color:#719e07">[</span>server<span style="color:#719e07">]</span>D.Cで生成した乱数から, ハッシュ値を生成する.
+※このハッシュ値は認証で使うのでサーバー側で保持しておく.
+<span style="color:#719e07">[</span>server<span style="color:#719e07">]</span>E.受け取った公開鍵 + Cで生成した乱数を用いて暗号を生成する.
+<span style="color:#719e07">[</span>server<span style="color:#719e07">]</span>F.Dで作成した暗号をローカルに送る.
+
+<span style="color:#719e07">[</span>local<span style="color:#719e07">]</span><span style="color:#2aa198">4</span>.1で作成した秘密鍵を用いて, 送られてきた暗号を解読し乱数を復元する.
+<span style="color:#719e07">[</span>local<span style="color:#719e07">]</span><span style="color:#2aa198">5</span>.乱数からハッシュ値を計算し, そのハッシュ値をサーバーに送る.
+
+<span style="color:#719e07">[</span>server<span style="color:#719e07">]</span>G.送られてきたハッシュ値と、Dで生成したハッシュ値を比較する.
+一致していれば認証成功. 以後全ての通信は暗号化される.</code></pre></div>
+<h2 id="scp">scp</h2>
+
+<p><code>scp</code>とはSSHを用いてファイルを秘匿化してコピーする技術のこと.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># sshのconfigファイルを用いて通信する方法</span>
+scp file_name.txt -F ~/.ssh/config iota3:~/github
+scp &lt;渡したいファイルの名前&gt; -F &lt;コンフィグファイルの名前&gt; &lt;渡し先のマシン名&gt;:&lt;渡し先のディレクトリ&gt;</code></pre></div>
 <h2 id="mac-ubuntu-を公開鍵暗号方式で接続する">Mac -&gt; Ubuntu を公開鍵暗号方式で接続する</h2>
 
 <h3 id="ubuntuをssh接続可にする">UbuntuをSSH接続可にする</h3>
@@ -258,8 +287,8 @@ ssh -i ~/.ssh/id_rsa solareenlo@111.222.333.444</code></pre></div>
   
   <div>
     
-    <a href="https://github.com/solareenlo/blog-hugo/commit/2f57ba1c14146bc090dbc8e9e624302cfda704f6" title='Last modified Apr 29, 2019 by solareenlo' target="_blank" rel="noopener">
-      <img src="/svg/code-merge.svg" alt="Changed" /> Apr 29, 2019
+    <a href="https://github.com/solareenlo/blog-hugo/commit/2c600787699f8fa8c8bedfd653cad044cabf9dd7" title='Last modified May 4, 2019 by solareenlo' target="_blank" rel="noopener">
+      <img src="/svg/code-merge.svg" alt="Changed" /> May 4, 2019
     </a>
   </div>
   
@@ -284,6 +313,8 @@ ssh -i ~/.ssh/id_rsa solareenlo@111.222.333.444</code></pre></div>
 <ul>
 <li><a href="#ssh-secure-shell-とは">SSH(Secure Shell)とは</a>
 <ul>
+<li><a href="#sshの流れ">SSHの流れ</a></li>
+<li><a href="#scp">scp</a></li>
 <li><a href="#mac-ubuntu-を公開鍵暗号方式で接続する">Mac -&gt; Ubuntu を公開鍵暗号方式で接続する</a>
 <ul>
 <li><a href="#ubuntuをssh接続可にする">UbuntuをSSH接続可にする</a></li>

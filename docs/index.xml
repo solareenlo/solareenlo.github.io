@@ -338,8 +338,7 @@ git補完 Reference: 「Git補完をしらない」「git statusを1日100回は
 git-completion.bashをインストール git-completion.bash: gitコマンドの補完スクリプト. Tabで保管できる.
 wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -O ~/.git-completion.bash chmod a+x ~/.git-completion.bash echo &amp;#34;source ~/.git-completion.bash&amp;#34; &amp;gt;&amp;gt; ~/.bashrc source ~/.bashrc git-prompt.shのインストール git-prompt.sh: プロンプトに各種追加情報を表示可能にするスクリプト.
 wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -O ~/.git-prompt.sh chmod a+x ~/.git-prompt.sh 下記を一度にコピペしてエンターを押す.
-cat &amp;lt;&amp;lt; EOF | tee -a ~/.bashrc &amp;gt; /dev/null source ~/.git-prompt.sh GIT_PS1_SHOWDIRTYSTATE=true GIT_PS1_SHOWSTASHSTATE=true GIT_PS1_SHOWUNTRACKEDFILES=true GIT_PS1_SHOWUPSTREAM=&amp;#34;auto&amp;#34; GIT_PS1_SHOWCOLORHINTS=true EOFsource ~/.bashrc ターミナルの色を変える ~/.bashrcの当該部分を以下の様に書き換える.
-if [ &amp;#34;$color_prompt&amp;#34; = yes ]; then PS1=&amp;#39;${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\033[01;31m\]$(__git_ps1)\[\033[00m\]\n\[\033[01;35m\]-&amp;gt; \$\[\033[00m\] &amp;#39; else PS1=&amp;#39;${debian_chroot:+($debian_chroot)}\u@\h:\w\$ &amp;#39; fi 再起動 sudo shutdown -r now // or sudo reboot mountしているSSDのlabel名を変更する Ubuntuのディスクプリで当該のSSDをmountする.</description>
+cat &amp;lt;&amp;lt; EOF | tee -a ~/.bashrc &amp;gt; /dev/null source ~/.git-prompt.sh GIT_PS1_SHOWDIRTYSTATE=true GIT_PS1_SHOWSTASHSTATE=true GIT_PS1_SHOWUNTRACKEDFILES=true GIT_PS1_SHOWUPSTREAM=&amp;#34;auto&amp;#34; GIT_PS1_SHOWCOLORHINTS=true EOFsource ~/.bashrc Raid0作成  Reference: How To Create RAID Arrays with mdadm on Ubuntu 18.04  ターミナルの色を変える ~/.</description>
     </item>
     
     <item>
@@ -350,7 +349,7 @@ if [ &amp;#34;$color_prompt&amp;#34; = yes ]; then PS1=&amp;#39;${debian_chroot:
       <guid>https://solareenlo.com/docs/vim/</guid>
       <description> Vimとは viから派生したテキストエディタ. プラグインを導入したり, .vimrcの設定を変更したりして, 自分好みにカスタマイズがどんどんできる.
 外部コマンド実行 :!を使う.
-vim # vimモードに突入 :!ls # lsを表示してくれる オススメの使い方記事 References  さっさと帰りたい怠け者エンジニアは vim をマスターしましょう その2 - 編集 さっさと帰りたい怠け者エンジニアは vim をマスターしましょう その1 - 基本と移動  プラグインマネージャー プラグインを簡単にインストールしてくれるやつ.
+vim # vimモードに突入 :!ls # lsを表示してくれる Vimの設定ファイル(.vimrc)の例  solareenlo/vim-config  オススメの使い方記事  References:  さっさと帰りたい怠け者エンジニアは vim をマスターしましょう その2 - 編集 さっさと帰りたい怠け者エンジニアは vim をマスターしましょう その1 - 基本と移動   プラグインマネージャー プラグインを簡単にインストールしてくれるやつ.
 Shougo/dein.vim curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh &amp;gt; installer.sh # For example, we just use `~/.cache/dein` as installation directory sh ./installer.sh ~/.cache/dein そして, vimを開いて,
 :call dein#install() NERDTree ファイル操作    o(enter) ファイルを開く     go ファイルを開き、カーソルはツリーに保持する   t タブで開く   T タブで開き、移動はしない   i 水平分割して開く   gi 水平分割して開き、移動はしない   s 垂直分割して開く   gs 垂直分割して開き、移動はしない    ディレクトリ操作    コマンド 説明     o(enter) フォルダを開く   O 再帰的にディレクトリをすべて開く   x 親ディレクトリを閉じる   X 再帰的にすべての子ディレクトリを閉じる   e 新しいツリーを生成する    ツリー操作    コマンド 説明     P ルートディレクトリへ移動   p 親ディレクトリへ移動   K 一番上へ移動   J 一番下へ移動   Ctrl+k 一つ上へ移動   Ctrl+j 一つ下へ移動    ファイルシステム    コマンド 説明     C ツリーのルートを選択したディレクトリに変更   u ツリーのルートを上の階層にする   U 変更前のツリーの状態を保持して、ツリーのルートを上の階層にする   r 選択したディレクトリをリフレッシュする   R ツリーのルートをリフレッシュする   m メニューを表示する   cd 選択したディレクトリにcwdを変更する   CD cwdをツリールートに変更する    その他    コマンド 説明     I 隠しファイルの表示、非表示   B ブックマークの表示・非表示   F ファイルの表示・非表示    プラグインランキングサイト  VimAwesome  </description>
     </item>
@@ -455,10 +454,12 @@ SQLの実行順番    順番 操作名 命令文     1 テーブルの指定 fro
       
       <guid>https://solareenlo.com/docs/ssh/</guid>
       <description>SSH(Secure Shell)とは 暗号や認証の技術を利用して, 安全にリモートコンピュータと通信するためのプロトコルのこと. VPSに接続するときは必須.
-Mac -&amp;gt; Ubuntu を公開鍵暗号方式で接続する UbuntuをSSH接続可にする Ubuntu側で
+SSHの流れ Reference: SSH通信って、結局何してるの？
+[local]1.通信用の秘密鍵・公開鍵の作成する. [local]2.サーバーに公開鍵を渡す. [server]A.サーバーにユーザーを登録する(sudo権限). [server]B.サーバーに登録されているユーザーと, 渡された公開鍵を紐づける. ※この状態で初めて作成したユーザーによるサーバーへのログインが可能となる. [local]3.作成したユーザーでログインする. [server]C.ログイン時に乱数を生成する. [server]D.Cで生成した乱数から, ハッシュ値を生成する. ※このハッシュ値は認証で使うのでサーバー側で保持しておく. [server]E.受け取った公開鍵 + Cで生成した乱数を用いて暗号を生成する. [server]F.Dで作成した暗号をローカルに送る. [local]4.1で作成した秘密鍵を用いて, 送られてきた暗号を解読し乱数を復元する. [local]5.乱数からハッシュ値を計算し, そのハッシュ値をサーバーに送る. [server]G.送られてきたハッシュ値と、Dで生成したハッシュ値を比較する. 一致していれば認証成功. 以後全ての通信は暗号化される. scp scpとはSSHを用いてファイルを秘匿化してコピーする技術のこと.
+# sshのconfigファイルを用いて通信する方法 scp file_name.txt -F ~/.ssh/config iota3:~/github scp &amp;lt;渡したいファイルの名前&amp;gt; -F &amp;lt;コンフィグファイルの名前&amp;gt; &amp;lt;渡し先のマシン名&amp;gt;:&amp;lt;渡し先のディレクトリ&amp;gt; Mac -&amp;gt; Ubuntu を公開鍵暗号方式で接続する UbuntuをSSH接続可にする Ubuntu側で
 sudo apt-get install openssh-server で, Ubuntu側へSSHで接続できるようになる.
 Macで秘密鍵と公開鍵のペアを作成する まずMacで秘密鍵と公開鍵のペアを作成する.
-ssh-keygen -t rsa &amp;gt; Generating public/private rsa key pair. &amp;gt; Enter file in which to save the key (/Users/solareenlo/.ssh/id_rsa): # ここでエンターを押せば/User/solareenlo/.ssh/id_rsaで保存される. &amp;gt; Enter passphrase (empty for no passphrase): # パスフレーズを入力 &amp;gt; Enter same passphrase again: # 再度パスフレーズを入力 &amp;gt; Your identification has been saved in /Users/solareenlo/.ssh/id_rsa. &amp;gt; Your public key has been saved in /Users/solareenlo/.</description>
+ssh-keygen -t rsa &amp;gt; Generating public/private rsa key pair. &amp;gt; Enter file in which to save the key (/Users/solareenlo/.</description>
     </item>
     
     <item>

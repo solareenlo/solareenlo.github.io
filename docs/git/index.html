@@ -213,7 +213,7 @@ git config -l
 
 <span style="color:#586e75"># gitのhelpを見る</span>
 git config --help</code></pre></div>
-<h2 id="初めてのcommit">初めてのcommit</h2>
+<h2 id="commit">commit</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># gitの初期化</span>
 git init
 
@@ -226,7 +226,7 @@ git commit
 
 <span style="color:#586e75"># 変更のlogを見る</span>
 git log</code></pre></div>
-<h2 id="gitのlogを見る">gitのlogを見る</h2>
+<h2 id="log">log</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># logをコンパクトに見る</span>
 git log --oneline
 
@@ -263,7 +263,7 @@ vim .gitignore
 
 <span style="color:#586e75"># .gitignoreがある場所から遡ってはignoreされない.</span>
 <span style="color:#586e75"># ので, サブディレクトリだけ.gitignoreしたい場合は, サブディレクトリ内に.gitignoreを入れておく.</span></code></pre></div>
-<h2 id="直前のcommitを変更する">直前のcommitを変更する</h2>
+<h2 id="直前のcommitを変更">直前のcommitを変更</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># 1つcommitする</span>
 git commit -m <span style="color:#2aa198">&#39;コミットを1つ追加&#39;</span>
 
@@ -284,7 +284,7 @@ git reset --hard hash値<span style="color:#719e07">(</span>最低7桁<span styl
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># commit変更したけど, やっぱり変更前のcommitに戻りたいときは</span>
 git reset --hard ORIG_HEAD
 <span style="color:#586e75"># ORIG_HEADには前回取り消されたHEADの情報が1つだけ入っている.</span></code></pre></div>
-<h2 id="branchを使う">branchを使う</h2>
+<h2 id="branch">branch</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># 現在のbranchを確認する</span>
 git branch
 
@@ -298,7 +298,7 @@ git branch
 <span style="color:#586e75"># master branchに戻る</span>
 git checkout master
 git branch</code></pre></div>
-<h2 id="branchをmergeする">branchをmergeする</h2>
+<h2 id="branchをmerge">branchをmerge</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># master branchにhoge branchをmergeさせたい</span>
 git checkout master
 git merge hoge
@@ -324,7 +324,7 @@ git stash list
 <span style="color:#586e75"># 対比した内容を取り出すには</span>
 git stash pop
 <span style="color:#586e75"># 引数をつけない場合, listで表示された一番上の内容が取り出される.</span></code></pre></div>
-<h2 id="mergeの衝突を解消する">mergeの衝突を解消する</h2>
+<h2 id="mergeの衝突を解消">mergeの衝突を解消</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># branch切って, すぐにhogeに移動する</span>
 git checkout -b hoge
 vim index.html
@@ -341,7 +341,7 @@ vim index.html
 <span style="color:#586e75"># hogeかmasterのどちらかの変更を残すということ.</span>
 git add .
 git comit -m <span style="color:#2aa198">&#39;conflictを解消したよ&#39;</span></code></pre></div>
-<h2 id="tagを付ける">tagを付ける</h2>
+<h2 id="tag">tag</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># 直前のcommitにidに代わるわかりやすいv1.0というtagを付ける</span>
 git tag v1.0
 
@@ -356,11 +356,16 @@ git tag v0.9 id<span style="color:#719e07">(</span>hash値<span style="color:#71
 
 <span style="color:#586e75"># tagの削除</span>
 git -d v0.9</code></pre></div>
-<h2 id="エイリアスを付ける">エイリアスを付ける</h2>
+<h2 id="エイリアス">エイリアス</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git config --global alias.co checkout
 git config --global alias.st status
 git config --global alias.br branch
 git config --global alias.ci commit
+git config --global alias.cm <span style="color:#2aa198">&#39;commit -m&#39;</span>
+git config --global alias.a add
+<span style="color:#586e75"># エイリアスの確認</span>
+git config --global --list | grep ^alias<span style="color:#cb4b16">\.</span>
+<span style="color:#586e75"># 設定一覧</span>
 git config -l</code></pre></div>
 <h2 id="初めての共同作業">初めての共同作業</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># 共有リポジトリを作成</span>
@@ -417,8 +422,8 @@ git push origin master</code></pre></div></article>
   
   <div>
     
-    <a href="https://github.com/solareenlo/blog-hugo/commit/63ac9f45fed74be2bf36811bd2af129075e1c955" title='Last modified Apr 25, 2019 by solareenlo' target="_blank" rel="noopener">
-      <img src="/svg/code-merge.svg" alt="Changed" /> Apr 25, 2019
+    <a href="https://github.com/solareenlo/blog-hugo/commit/2c600787699f8fa8c8bedfd653cad044cabf9dd7" title='Last modified May 4, 2019 by solareenlo' target="_blank" rel="noopener">
+      <img src="/svg/code-merge.svg" alt="Changed" /> May 4, 2019
     </a>
   </div>
   
@@ -454,20 +459,20 @@ git push origin master</code></pre></div></article>
 <ul>
 <li><a href="#gitの構成">gitの構成</a></li>
 <li><a href="#gitの設定">gitの設定</a></li>
-<li><a href="#初めてのcommit">初めてのcommit</a></li>
-<li><a href="#gitのlogを見る">gitのlogを見る</a></li>
+<li><a href="#commit">commit</a></li>
+<li><a href="#log">log</a></li>
 <li><a href="#現在の状態を把握する">現在の状態を把握する</a></li>
 <li><a href="#差分を確認する">差分を確認する</a></li>
 <li><a href="#gitでのファイル操作">gitでのファイル操作</a></li>
 <li><a href="#gitの管理に含めない方法">gitの管理に含めない方法</a></li>
-<li><a href="#直前のcommitを変更する">直前のcommitを変更する</a></li>
+<li><a href="#直前のcommitを変更">直前のcommitを変更</a></li>
 <li><a href="#過去のバージョンに戻る-１">過去のバージョンに戻る（１）</a></li>
 <li><a href="#過去のバージョンに戻る-２">過去のバージョンに戻る（２）</a></li>
-<li><a href="#branchを使う">branchを使う</a></li>
-<li><a href="#branchをmergeする">branchをmergeする</a></li>
-<li><a href="#mergeの衝突を解消する">mergeの衝突を解消する</a></li>
-<li><a href="#tagを付ける">tagを付ける</a></li>
-<li><a href="#エイリアスを付ける">エイリアスを付ける</a></li>
+<li><a href="#branch">branch</a></li>
+<li><a href="#branchをmerge">branchをmerge</a></li>
+<li><a href="#mergeの衝突を解消">mergeの衝突を解消</a></li>
+<li><a href="#tag">tag</a></li>
+<li><a href="#エイリアス">エイリアス</a></li>
 <li><a href="#初めての共同作業">初めての共同作業</a></li>
 <li><a href="#共同作業でコンフリクトが起こったら">共同作業でコンフリクトが起こったら</a></li>
 </ul></li>

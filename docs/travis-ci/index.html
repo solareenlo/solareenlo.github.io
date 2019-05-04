@@ -191,15 +191,22 @@ https://github.com/alex-shpak/hugo-book
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># 例</span>
 <span style="color:#2aa198">&#39;=rrTDKhZYgT2Zm4&amp;TF+D^pyp84Uf9[Tw7xZ9Parhx[$A83QCGRb.NKxAnqUd%7(t&#39;</span></code></pre></div>
 <p>と入力する.</p>
-</article>
+
+<h1 id="travis-cli">Travis CLI</h1>
+
+<p>Travis CIをCLIで使うツール.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run -it -v <span style="color:#719e07">$(</span><span style="color:#b58900">pwd</span><span style="color:#719e07">)</span>:/app ruby:2.3 sh
+gem install travis --no-document
+gem install travis
+travis login</code></pre></div></article>
 
       
 <div class="align-center book-git-footer justify-between">
   
   <div>
     
-    <a href="https://github.com/solareenlo/blog-hugo/commit/68baad71908386dc2c3a8edb98158ba6a9fd7186" title='Last modified May 1, 2019 by solareenlo' target="_blank" rel="noopener">
-      <img src="/svg/code-merge.svg" alt="Changed" /> May 1, 2019
+    <a href="https://github.com/solareenlo/blog-hugo/commit/2c600787699f8fa8c8bedfd653cad044cabf9dd7" title='Last modified May 4, 2019 by solareenlo' target="_blank" rel="noopener">
+      <img src="/svg/code-merge.svg" alt="Changed" /> May 4, 2019
     </a>
   </div>
   
@@ -228,6 +235,7 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="#dokcerのテストがpassedにならない時の対処法">Dokcerのテストがpassedにならない時の対処法</a></li>
 <li><a href="#環境変数が設定できない時">環境変数が設定できない時</a></li>
 </ul></li>
+<li><a href="#travis-cli">Travis CLI</a></li>
 </ul>
 </nav>
   </aside>
