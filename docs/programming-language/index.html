@@ -81,24 +81,31 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/hugo/">Hugo</a></li>
 </ul></li>
 <li><a href="/docs/latex/"><strong>LaTeX</strong></a></li>
-<li><a href="/docs/ci-cd/"><strong>CI/CD</strong></a>
-
-<ul>
-<li><a href="/docs/jenkins/">Jenkins</a></li>
-<li><a href="/docs/travis-ci/">Travis CI</a></li>
-<li><a href="/docs/circleci/">CircleCI</a></li>
-</ul></li>
 <li><a href="/docs/vps/"><strong>VPS</strong></a>
 
 <ul>
 <li><a href="/docs/ssh/">SSH</a></li>
 <li><a href="/docs/ubuntu/">Ubuntu</a></li>
 </ul></li>
+<li><a href="/docs/db/"><strong>DB</strong></a>
+
+<ul>
+<li><a href="/docs/mysql/">MySQL</a></li>
+<li><a href="/docs/mongodb/">MongoDB</a></li>
+<li><a href="/docs/redis/">Redis</a></li>
+</ul></li>
 <li><a href="/docs/cloud/"><strong>Cloud</strong></a>
 
 <ul>
 <li><a href="/docs/aws/">AWS</a></li>
 <li><a href="/docs/gcp/">GCP</a></li>
+</ul></li>
+<li><a href="/docs/ci-cd/"><strong>CI/CD</strong></a>
+
+<ul>
+<li><a href="/docs/jenkins/">Jenkins</a></li>
+<li><a href="/docs/travis-ci/">Travis CI</a></li>
+<li><a href="/docs/circleci/">CircleCI</a></li>
 </ul></li>
 <li><a href="/docs/container/"><strong>Container</strong></a>
 
@@ -107,13 +114,6 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/docker2/">Docker2</a></li>
 <li><a href="/docs/docker-compose/">Docker Compose</a></li>
 <li><a href="/docs/kubernetes/">Kubernetes</a></li>
-</ul></li>
-<li><a href="/docs/db/"><strong>DB</strong></a>
-
-<ul>
-<li><a href="/docs/mysql/">MySQL</a></li>
-<li><a href="/docs/mongodb/">MongoDB</a></li>
-<li><a href="/docs/redis/">Redis</a></li>
 </ul></li>
 <li><a href="/docs/crypto/"><strong>Crypto</strong></a>
 
@@ -178,6 +178,72 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="https://spectrum.ieee.org/static/interactive-the-top-programming-languages-2018">Interactive: The Top Programming Languages 2018</a> (IEEEによる2018年度のランキング)</li>
 <li><a href="http://pypl.github.io/PYPL.html">PYPL PopularitY of Programming Language</a> (PYPLによるGoogleによるチュートリアル検索ランキング)</li>
 </ul>
+
+<h2 id="プログラミング言語の型">プログラミング言語の型</h2>
+
+<p>代表的なもの3つ</p>
+
+<table>
+<thead>
+<tr>
+<th>種類</th>
+<th>説明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>オブジェクト指向型</td>
+<td>「モノ」を組み立てるように表現して, コンピュータに動作をさせる.</td>
+</tr>
+
+<tr>
+<td>続き型</td>
+<td>上から下まで単調なルールで文章を読むように動作する.</td>
+</tr>
+
+<tr>
+<td>関数型プログラミング</td>
+<td>数学の関数のイメージでデータに何かしらの処理をして答えを取得するように動作する.</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="オブジェクト指向プログラミング">オブジェクト指向プログラミング</h3>
+
+<p>いろんな特徴.</p>
+
+<table>
+<thead>
+<tr>
+<th>原則</th>
+<th>説明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>カプセル化</td>
+<td>自由なアクセスからデータを保護する仕組み</td>
+</tr>
+
+<tr>
+<td>継承</td>
+<td>再利用性を高めて, 冗長性を避けるための強力なツール</td>
+</tr>
+
+<tr>
+<td>ポリモーフィズム</td>
+<td>メッセージの送信側とメッセージの受信側が動的に決まる仕組み</td>
+</tr>
+</tbody>
+</table>
+
+<ul>
+<li>オブジェクトは, オブジェクトに含まれるデータを操作する関数を有している.</li>
+<li>クラスはオブジェクトのインスタンスを作成するために使用されるテンプレート.</li>
+<li>OOPは冗長だが, 他のコーディングパラダイムに比べて読みやすい.</li>
+</ul>
 </article>
 
       
@@ -212,6 +278,10 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="#プログラミング言語とは">プログラミング言語とは</a>
 <ul>
 <li><a href="#いろんな指標によるランキング">いろんな指標によるランキング</a></li>
+<li><a href="#プログラミング言語の型">プログラミング言語の型</a>
+<ul>
+<li><a href="#オブジェクト指向プログラミング">オブジェクト指向プログラミング</a></li>
+</ul></li>
 </ul></li>
 </ul>
 </nav>
