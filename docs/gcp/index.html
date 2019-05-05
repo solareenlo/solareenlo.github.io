@@ -11,7 +11,7 @@
 <title>
   
     
-    Bitcoin
+    Gcp
   
  | solareenlo</title>
 
@@ -52,7 +52,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   <style>
-  nav ul a[href$="\2f docs\2f bitcoin\2f "] {
+  nav ul a[href$="\2f docs\2fgcp\2f "] {
       color: #004ed0;
   }
   </style>
@@ -156,7 +156,7 @@ https://github.com/alex-shpak/hugo-book
   <strong>
   
     
-    Bitcoin
+    Gcp
   
 </strong>
 </header>
@@ -164,76 +164,32 @@ https://github.com/alex-shpak/hugo-book
       
 <article class="markdown">
 
-<h1 id="bitcoin-https-github-com-bitcoin"><a href="https://github.com/bitcoin">Bitcoin</a></h1>
+<h1 id="google-cloud-platform-gcp-とは">Google Cloud Platform(GCP)とは</h1>
 
-<h2 id="目的">目的</h2>
+<p>Gogleが提供するパブリッククラウドコンピューティングのこと.</p>
 
-<p>匿名性を自分で選択できつつ, 安全に価値の移転と保存に特化したシステムを構築すること.</p>
+<h2 id="gke">GKE</h2>
 
-<h2 id="特徴">特徴</h2>
+<p>コンテナ化されたアプリケーションをデプロイするためのマネージド型の本番環境のこと.<br />
+Google Kubernetes Engineの略.</p>
 
-<ul>
-<li>非中央集権</li>
-<li>自律分散</li>
-<li>トラストレス</li>
-<li>オープンソース</li>
-<li>ブロックチェーン1.0の代表格</li>
-</ul>
+<h2 id="cloud-shell">Cloud Shell</h2>
 
-<h2 id="技術">技術</h2>
-
-<ul>
-<li><a href="https://ja.wikipedia.org/wiki/楕円曲線DSA">楕円曲線DSA</a></li>
-<li>P2P</li>
-<li>Proo of Work</li>
-</ul>
-
-<h2 id="プレイヤー">プレイヤー</h2>
-
-<ul>
-<li><a href="https://github.com/bitcoin">コア開発者</a></li>
-<li>マイナー</li>
-<li>ユーザー</li>
-<li>投資家・投機家</li>
-<li>法律</li>
-</ul>
-
-<h2 id="スケーリング方法">スケーリング方法</h2>
-
-<ul>
-<li>コンセンサスアルゴリズムを速くする（分散性のために1ブロック生成にわざと10分かけてる）</li>
-<li>ブロックに含まれるトランザクションを増やす（Block weightが4MB以下/segwit導入により）</li>
-<li>オフチェーン（Lightning networkなど）</li>
-<li>サイドチェーン</li>
-<li>シャーディング</li>
-</ul>
-
-<p>Reference: <a href="https://medium.com/uniqys/blockchain-scalability-d95ee27c5092">ブロックチェーンとスケーラビリティ</a></p>
-
-<h2 id="references">References</h2>
-
-<ul>
-<li><a href="https://bitcoin.peryaudo.org/index.html">bitcoinのしくみ</a></li>
-<li><a href="https://programmingblockchain.gitbook.io/programmingblockchain-japanese/">Programming The Blockchain C# 日本語</a></li>
-<li><a href="https://bc-2.jp/season1">Blockchain Core Camp season1のビデオ資料</a></li>
-<li><a href="https://bc-2.jp/season1/materials">Blockchain Core Camp season1のpdf資料</a></li>
-<li><a href="https://bc-2.jp/season2">Blockchain Core Camp season2のビデオ資料</a></li>
-</ul>
-</article>
+<p>ブラウザでShellが扱える.<br />
+右上のメニューに起動するためのボタンがある.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># 使うプロジェクトの設定</span>
+gcloud config <span style="color:#b58900">set</span> project &lt;プロジェクトID&gt;
+<span style="color:#586e75"># 使うゾーンの設定</span>
+gcloud config <span style="color:#b58900">set</span> compute/zone asia-east1-c
+<span style="color:#586e75"># 使うコンテナクラスタを設定</span>
+gcloud container clusters get-credentials &lt;クラスタ名&gt;</code></pre></div></article>
 
       
-<div class="align-center book-git-footer justify-between">
-  
-  <div>
-    
-    <a href="https://github.com/solareenlo/blog-hugo/commit/8080d3ce07296cc293a8f5677529817c66942922" title='Last modified Apr 29, 2019 by solareenlo' target="_blank" rel="noopener">
-      <img src="/svg/code-merge.svg" alt="Changed" /> Apr 29, 2019
-    </a>
-  </div>
+<div class="align-center book-git-footer justify-end">
   
   
   <div>
-    <a href="https://github.com/solareenlo/blog-hugo/edit/master/content/docs/bitcoin.md" target="_blank" rel="noopener">
+    <a href="https://github.com/solareenlo/blog-hugo/edit/master/content/docs/gcp.md" target="_blank" rel="noopener">
       <img src="/svg/code-fork.svg" alt="Edit" /> Edit this page
     </a>
   </div>
@@ -250,14 +206,10 @@ https://github.com/alex-shpak/hugo-book
   <aside class="book-toc fixed">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#bitcoin-https-github-com-bitcoin"><a href="https://github.com/bitcoin">Bitcoin</a></a>
+<li><a href="#google-cloud-platform-gcp-とは">Google Cloud Platform(GCP)とは</a>
 <ul>
-<li><a href="#目的">目的</a></li>
-<li><a href="#特徴">特徴</a></li>
-<li><a href="#技術">技術</a></li>
-<li><a href="#プレイヤー">プレイヤー</a></li>
-<li><a href="#スケーリング方法">スケーリング方法</a></li>
-<li><a href="#references">References</a></li>
+<li><a href="#gke">GKE</a></li>
+<li><a href="#cloud-shell">Cloud Shell</a></li>
 </ul></li>
 </ul>
 </nav>

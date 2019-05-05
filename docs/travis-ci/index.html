@@ -20,7 +20,7 @@
 
 
 
-<link rel="stylesheet" href="/book.min.5a5bfb9b0ed3d2cfe5bee31a17c019bea44d44efa3cbe6e948af845134986c5e.css">
+<link rel="stylesheet" href="/book.min.2e1d9daa3d2f72eb4cac24f3451f2b92bb2054c8b27e3256196500defa009cbf.css">
 
 
 <link rel="icon" href="/favicon.png" type="image/x-icon">
@@ -74,9 +74,10 @@ https://github.com/alex-shpak/hugo-book
 
 <ul>
 <li><a href="/docs/c/">C</a></li>
-<li><a href="/docs/nodejs/">Node.js</a></li>
 <li><a href="/docs/rust/">Rust</a></li>
+<li><a href="/docs/nodejs/">Node.js</a></li>
 <li><a href="/docs/haskell/">Haskell</a></li>
+<li><a href="/docs/angular/">Angular</a></li>
 <li><a href="/docs/hugo/">Hugo</a></li>
 </ul></li>
 <li><a href="/docs/latex/"><strong>LaTeX</strong></a></li>
@@ -97,6 +98,7 @@ https://github.com/alex-shpak/hugo-book
 
 <ul>
 <li><a href="/docs/aws/">AWS</a></li>
+<li><a href="/docs/gcp/">GCP</a></li>
 </ul></li>
 <li><a href="/docs/container/"><strong>Container</strong></a>
 
@@ -192,13 +194,26 @@ https://github.com/alex-shpak/hugo-book
 <span style="color:#2aa198">&#39;=rrTDKhZYgT2Zm4&amp;TF+D^pyp84Uf9[Tw7xZ9Parhx[$A83QCGRb.NKxAnqUd%7(t&#39;</span></code></pre></div>
 <p>と入力する.</p>
 
-<h1 id="travis-cli">Travis CLI</h1>
+<h2 id="秘密情報を暗号化">秘密情報を暗号化</h2>
 
-<p>Travis CIをCLIで使うツール.</p>
+<p>DockerでTravis CLIを使って送る.</p>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run -it -v <span style="color:#719e07">$(</span><span style="color:#b58900">pwd</span><span style="color:#719e07">)</span>:/app ruby:2.3 sh
 gem install travis --no-document
 gem install travis
-travis login</code></pre></div></article>
+travis login
+&gt; Username:
+solareenlo
+&gt; Password <span style="color:#719e07">for</span> solareenlo:
+******************************
+&gt; Two-factor authentication code <span style="color:#719e07">for</span> solareenlo:
+<span style="color:#2aa198">999999</span>
+&gt; Successfully logged in as solareenlo!
+<span style="color:#586e75"># そして$(pwd)に秘匿情報が載ったファイル(ここではservice-account.json)を置いて,</span>
+<span style="color:#586e75"># 以下でTravis CIのsolareenlo/multi-k8s-gke用にservice-account.jsonを暗号化するし,</span>
+<span style="color:#586e75"># Travis CIの当該プロジェクトに登録もする.</span>
+travis encrypt-file service-account.json -r solareenlo/multi-k8s-gke</code></pre></div>
+<p>これで, <code>service-account.json</code>ファイルから暗号化された<code>service-account.json.enc</code>ファイルが作成される.</p>
+</article>
 
       
 <div class="align-center book-git-footer justify-between">
@@ -234,8 +249,8 @@ travis login</code></pre></div></article>
 <li><a href="#travis-ciからaws-elastic-beanstalkへ">Travis CiからAWS Elastic Beanstalkへ</a></li>
 <li><a href="#dokcerのテストがpassedにならない時の対処法">Dokcerのテストがpassedにならない時の対処法</a></li>
 <li><a href="#環境変数が設定できない時">環境変数が設定できない時</a></li>
+<li><a href="#秘密情報を暗号化">秘密情報を暗号化</a></li>
 </ul></li>
-<li><a href="#travis-cli">Travis CLI</a></li>
 </ul>
 </nav>
   </aside>

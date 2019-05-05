@@ -20,7 +20,7 @@
 
 
 
-<link rel="stylesheet" href="/book.min.5a5bfb9b0ed3d2cfe5bee31a17c019bea44d44efa3cbe6e948af845134986c5e.css">
+<link rel="stylesheet" href="/book.min.2e1d9daa3d2f72eb4cac24f3451f2b92bb2054c8b27e3256196500defa009cbf.css">
 
 
 <link rel="icon" href="/favicon.png" type="image/x-icon">
@@ -74,9 +74,10 @@ https://github.com/alex-shpak/hugo-book
 
 <ul>
 <li><a href="/docs/c/">C</a></li>
-<li><a href="/docs/nodejs/">Node.js</a></li>
 <li><a href="/docs/rust/">Rust</a></li>
+<li><a href="/docs/nodejs/">Node.js</a></li>
 <li><a href="/docs/haskell/">Haskell</a></li>
+<li><a href="/docs/angular/">Angular</a></li>
 <li><a href="/docs/hugo/">Hugo</a></li>
 </ul></li>
 <li><a href="/docs/latex/"><strong>LaTeX</strong></a></li>
@@ -97,6 +98,7 @@ https://github.com/alex-shpak/hugo-book
 
 <ul>
 <li><a href="/docs/aws/">AWS</a></li>
+<li><a href="/docs/gcp/">GCP</a></li>
 </ul></li>
 <li><a href="/docs/container/"><strong>Container</strong></a>
 
@@ -415,7 +417,11 @@ git push origin master
 git pull origin master
 vim index.html
 git commit -am <span style="color:#2aa198">&#39;conflict fixed&#39;</span>
-git push origin master</code></pre></div></article>
+git push origin master</code></pre></div>
+<h2 id="git-rev-parse">git rev-parse</h2>
+
+<p>機能がたくさんあるが, ここではHEADのダイジェスト返してくれる方法.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git rev-parse HEAD</code></pre></div></article>
 
       
 <div class="align-center book-git-footer justify-between">
@@ -475,6 +481,7 @@ git push origin master</code></pre></div></article>
 <li><a href="#エイリアス">エイリアス</a></li>
 <li><a href="#初めての共同作業">初めての共同作業</a></li>
 <li><a href="#共同作業でコンフリクトが起こったら">共同作業でコンフリクトが起こったら</a></li>
+<li><a href="#git-rev-parse">git rev-parse</a></li>
 </ul></li>
 </ul>
 </nav>

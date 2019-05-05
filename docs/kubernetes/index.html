@@ -20,7 +20,7 @@
 
 
 
-<link rel="stylesheet" href="/book.min.5a5bfb9b0ed3d2cfe5bee31a17c019bea44d44efa3cbe6e948af845134986c5e.css">
+<link rel="stylesheet" href="/book.min.2e1d9daa3d2f72eb4cac24f3451f2b92bb2054c8b27e3256196500defa009cbf.css">
 
 
 <link rel="icon" href="/favicon.png" type="image/x-icon">
@@ -74,9 +74,10 @@ https://github.com/alex-shpak/hugo-book
 
 <ul>
 <li><a href="/docs/c/">C</a></li>
-<li><a href="/docs/nodejs/">Node.js</a></li>
 <li><a href="/docs/rust/">Rust</a></li>
+<li><a href="/docs/nodejs/">Node.js</a></li>
 <li><a href="/docs/haskell/">Haskell</a></li>
+<li><a href="/docs/angular/">Angular</a></li>
 <li><a href="/docs/hugo/">Hugo</a></li>
 </ul></li>
 <li><a href="/docs/latex/"><strong>LaTeX</strong></a></li>
@@ -97,6 +98,7 @@ https://github.com/alex-shpak/hugo-book
 
 <ul>
 <li><a href="/docs/aws/">AWS</a></li>
+<li><a href="/docs/gcp/">GCP</a></li>
 </ul></li>
 <li><a href="/docs/container/"><strong>Container</strong></a>
 
@@ -173,7 +175,7 @@ https://github.com/alex-shpak/hugo-book
 Kubernetesは設定ファイルに書いたとおりのインフラを維持するように設計されている.
 ので, 設定ファイル(yamlファイル)をたくさん書く事になる.</p>
 
-<h2 id="他と違うところ">他と違うところ</h2>
+<h2 id="他のオーケストレーションと違うところ">他のオーケストレーションと違うところ</h2>
 
 <p>① 様々なOSSと組み合わせることにより, 柔軟に機能拡張なところ.</p>
 
@@ -257,7 +259,7 @@ Kubernetesは設定ファイルに書いたとおりのインフラを維持す�
 <tbody>
 <tr>
 <td>Node</td>
-<td>コンテナが動作するサーバのこと.<br>- 全Nodeを管理するMaster(Master Node)と,<br>- 各リソースを動かすNode(Worker Node)に分かれる.</td>
+<td>コンテナが動作するサーバのこと.<br><li>Master(Master Node): 全Nodeを管理する.<li>Node(Woker Node): 各リソースを動かす.</td>
 </tr>
 
 <tr>
@@ -303,6 +305,11 @@ Kubernetesは設定ファイルに書いたとおりのインフラを維持す�
 <tr>
 <td>PersistentVolumeClaim</td>
 <td>利用するボリューム領域の要求を定義する.<br>PersistentVolumeとPodを紐付けるために利用する.</td>
+</tr>
+
+<tr>
+<td>Namespace</td>
+<td>仮想的なKubernetesクラスタの分離機能.<br><li><strong>default</strong>: デフォルトのNamespace<li><strong>kube-system</strong>: Kubernetesクラスタのコンポーネントやaddonが展開されるNamespace<li><strong>kube-public</strong>: 全ユーザが利用できるConfigMapなどを配置するNamespace</td>
 </tr>
 </tbody>
 </table>
@@ -529,9 +536,14 @@ kubectl api-versions <span style="color:#586e75"># APIGROUPで利用可能なver
 kubectl get storageclass <span style="color:#586e75"># 管理者が提供するストレージのクラスを表示</span>
 kubectl get pv <span style="color:#586e75"># PersistentVolumeの一覧を表示</span>
 kubectl get pvc <span style="color:#586e75"># PersistentVolumeClaimの一覧を表示</span>
+<span style="color:#586e75"># 以下3つはパスワードを設定する時に使用</span>
 kubectl create secret generic pgpassword --from-literal <span style="color:#268bd2">PGPASSWORD</span><span style="color:#719e07">=</span>******** <span style="color:#586e75"># パスワードを生成</span>
 kubectl create secret generic &lt;secret_name&gt; --from-literal &lt;<span style="color:#268bd2">key</span><span style="color:#719e07">=</span>value&gt; <span style="color:#586e75"># パスワードを生成</span>
-kubectl get secret <span style="color:#586e75"># secret一覧を表示</span></code></pre></div>
+kubectl get secret <span style="color:#586e75"># secret一覧を表示</span>
+<span style="color:#586e75"># 以下2つはGKEでユーザーの権限を与える時に使用</span>
+kubectl create serviceaccount --namespace kube-system tiller <span style="color:#586e75"># tillerというサービスアカウントを作成</span>
+kubectl create clusterrolebinding tiller-cluster-rule --clusterrole<span style="color:#719e07">=</span>cluster-ad
+min --serviceaccount<span style="color:#719e07">=</span>kube-system:tiller</code></pre></div>
 <h3 id="自分のpcからvmにアクセスしてdockerコンテナを見る方法">自分のPCからVMにアクセスしてDockerコンテナを見る方法</h3>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#b58900">eval</span> <span style="color:#719e07">$(</span>minikube docker-env<span style="color:#719e07">)</span>
 docker ps</code></pre></div>
@@ -545,10 +557,112 @@ docker ps</code></pre></div>
 docker push solareenlo/multi-client:v5</code></pre></div>
 <p>以下のようにコマンドラインからイメージのバージョンアップを行う.</p>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl <span style="color:#b58900">set</span> image deployment/client-deployment <span style="color:#268bd2">client</span><span style="color:#719e07">=</span>solareenlo/multi-client:v5</code></pre></div>
+<h2 id="イメージのバージョンにgitのshaを使う">イメージのバージョンにgitのshaを使う</h2>
+
+<p>以下の様に<code>.travis.yml</code>に<code>$SHA</code>を設定して,</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">sudo: required
+services:
+  - docker
+env:
+  global:
+    - SHA=$(git rev-parse HEAD)</code></pre></div>
+<p>以下の様に<code>build</code>, <code>push</code>, <code>set</code>を行うと良い.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker build -t solareenlo/multi-client:latest -t solareenlo/multi-client:<span style="color:#268bd2">$SHA</span> -f ./client/Dockerfile ./client
+docker build -t solareenlo/multi-server:latest -t solareenlo/multi-server:<span style="color:#268bd2">$SHA</span> -f ./server/Dockerfile ./server
+docker build -t solareenlo/multi-worker:latest -t solareenlo/multi-worker:<span style="color:#268bd2">$SHA</span> -f ./worker/Dockerfile ./worker
+
+docker push solareenlo/multi-client:latest
+docker push solareenlo/multi-server:latest
+docker push solareenlo/multi-worker:latest
+
+docker push solareenlo/multi-client:<span style="color:#268bd2">$SHA</span>
+docker push solareenlo/multi-server:<span style="color:#268bd2">$SHA</span>
+docker push solareenlo/multi-worker:<span style="color:#268bd2">$SHA</span>
+
+kubectl apply -f k8s
+kubectl <span style="color:#b58900">set</span> image solareenlo/server-deployment <span style="color:#268bd2">server</span><span style="color:#719e07">=</span>solareenlo/multi-server:<span style="color:#268bd2">$SHA</span>
+kubectl <span style="color:#b58900">set</span> image solareenlo/client-deployment <span style="color:#268bd2">client</span><span style="color:#719e07">=</span>solareenlo/multi-client:<span style="color:#268bd2">$SHA</span>
+kubectl <span style="color:#b58900">set</span> image solareenlo/worker-deployment <span style="color:#268bd2">worker</span><span style="color:#719e07">=</span>solareenlo/multi-worker:<span style="color:#268bd2">$SHA</span></code></pre></div>
 <h2 id="ローカルで動かした例">ローカルで動かした例</h2>
 
 <ul>
 <li><a href="https://github.com/solareenlo/complex-k8s-local">solareenlo/complex-k8s-local</a></li>
+</ul>
+
+<h2 id="gkeで動かした例">GKEで動かした例</h2>
+
+<ul>
+<li><a href="https://github.com/solareenlo/multi-k8s-gke">solareenlo/multi-k8s-gke</a></li>
+</ul>
+
+<h2 id="tls">TLS</h2>
+
+<ul>
+<li><a href="https://github.com/jetstack/cert-manager">jetstack/cert-manager</a></li>
+</ul>
+
+<h1 id="helm-https-github-com-helm-helm"><a href="https://github.com/helm/helm">Helm</a></h1>
+
+<p>Kubernetesのパッケージ管理ツールのこと.<br />
+デフォルトで使用可能なChartは<code>kubernetes/charts</code>の<code>stable</code>ディレクトリで確認可能.</p>
+
+<table>
+<thead>
+<tr>
+<th>用語</th>
+<th>意味</th>
+<th>役割</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>helm</td>
+<td>船のかじ</td>
+<td>Kubernetesのパッケージマネージャー.</td>
+</tr>
+
+<tr>
+<td>chart</td>
+<td>海図</td>
+<td>Kubernetesのマニフェストのテンプレートをまとめたもの.</td>
+</tr>
+
+<tr>
+<td>tiller</td>
+<td>舵柄</td>
+<td>デプロイを担うサーバーコンポーネント.</td>
+</tr>
+
+<tr>
+<td>package</td>
+<td>-</td>
+<td>1つのアプリケーションとして成り立つchartの単位.<br>この単位でデプロイを行う.</td>
+</tr>
+
+<tr>
+<td>release</td>
+<td>-</td>
+<td>packageがデプロイされて, k8s上でpodとして実際に動作しているもの.</td>
+</tr>
+
+<tr>
+<td>repository</td>
+<td>-</td>
+<td>chartの置き場所. yumのリポジトリのようなイメージ.</td>
+</tr>
+</tbody>
+</table>
+
+<ul>
+<li><strong>Reference:</strong>
+
+<ul>
+<li><a href="https://qiita.com/tkusumi/items/12857780d8c8463f9b9c">Kubernetes: パッケージマネージャHelm</a></li>
+<li><a href="https://y-ohgi.hatenablog.com/entry/2018/05/21/010839">helm覚書</a></li>
+<li><a href="https://qiita.com/Ladicle/items/63cad824e27aa8aac7e1#構成と通信方法">helmの過去、現在、未来</a></li>
+<li><a href="https://qiita.com/thinksphere/items/5f3e918015cf4e63a0bc">Helmの概要とChart(チャート)の作り方</a></li>
+</ul></li>
 </ul>
 </article>
 
@@ -583,7 +697,7 @@ docker push solareenlo/multi-client:v5</code></pre></div>
 <ul>
 <li><a href="#kubernetes-https-github-com-kubernetes-とは"><a href="https://github.com/kubernetes">Kubernetes</a>とは</a>
 <ul>
-<li><a href="#他と違うところ">他と違うところ</a></li>
+<li><a href="#他のオーケストレーションと違うところ">他のオーケストレーションと違うところ</a></li>
 <li><a href="#docker-composeとの違い">Docker Composeとの違い</a></li>
 <li><a href="#用語集">用語集</a></li>
 <li><a href="#yaml内の用語集">yaml内の用語集</a>
@@ -602,8 +716,12 @@ docker push solareenlo/multi-client:v5</code></pre></div>
 <li><a href="#自分のpcからvmにアクセスしてdockerコンテナを見る方法">自分のPCからVMにアクセスしてDockerコンテナを見る方法</a></li>
 </ul></li>
 <li><a href="#1度デプロイしたイメージのバージョンアップ方法">1度デプロイしたイメージのバージョンアップ方法</a></li>
+<li><a href="#イメージのバージョンにgitのshaを使う">イメージのバージョンにgitのshaを使う</a></li>
 <li><a href="#ローカルで動かした例">ローカルで動かした例</a></li>
+<li><a href="#gkeで動かした例">GKEで動かした例</a></li>
+<li><a href="#tls">TLS</a></li>
 </ul></li>
+<li><a href="#helm-https-github-com-helm-helm"><a href="https://github.com/helm/helm">Helm</a></a></li>
 </ul>
 </nav>
   </aside>

@@ -11,6 +11,15 @@
     
     <item>
       <title></title>
+      <link>https://solareenlo.com/docs/angular/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://solareenlo.com/docs/angular/</guid>
+      <description>Angularとは Typescript/JavaScriptやその他の言語を使用してモバイルおよびデスクトップWebアプリケーションを構築するための開発プラットフォーム.</description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>https://solareenlo.com/docs/aws/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -109,7 +118,7 @@ Reference: コンテナ技術とは何？
       <guid>https://solareenlo.com/docs/docker-compose/</guid>
       <description>Docker Composeとは 複数のコンテナで構成されるアプリケーションを定義と実行するためのツールのこと. Dockerとは切り離されてる.
  Composeはアプリケーションのサービスをファイルで定義する. Dockerコマンドと高い親和性があるため, 学習コストが比較的低い. Swarmモードにサービスをデプロイできるオーケストレーション機能もある.  Reference: Docker Compose 徹底解説   活用場面  利用者視点  docker-compose.ymlがあれば, すぐに何でも実行できる.  開発者視点  環境の再構築が簡単 バージョン違いの環境を作りやすい 1つのマシン上に, 複数の環境を立ち上げられやすい   適切に書かれたYAMLファイルさえあれば, 誰でも簡単に環境構築もアプリケーション実行もできるのが強み.
-docker-compose.ymlの書き方  services:(使うイメージ), networks:(使うネットワーク), volumes:(使うボリューム)を定義する. docker-compose.ymlの書き方 -&amp;gt; Docker Compose - docker-compose.yml リファレンス  起動と停止 # 起動 docker-compose up # ビルドして起動 docker-compose up --build # バックグラウンドで起動 docker-compose up -d # 停止 docker-compose down # ボリュームも削除しつつ停止 docker-compose down -v nginxとhttpd git clone git@github.</description>
+インストール  https://docs.docker.com/compose/install/  docker-compose.ymlの書き方  services:(使うイメージ), networks:(使うネットワーク), volumes:(使うボリューム)を定義する. docker-compose.ymlの書き方 -&amp;gt; Docker Compose - docker-compose.yml リファレンス  起動と停止 # 起動 docker-compose up # ビルドして起動 docker-compose up --build # バックグラウンドで起動 docker-compose up -d # 停止 docker-compose down # ボリュームも削除しつつ停止 docker-compose down -v nginxとhttpd git clone git@github.</description>
     </item>
     
     <item>
@@ -140,6 +149,20 @@ docker-compose.ymlの書き方  services:(使うイメージ), networks:(使う�
       <description> Ethereum 目的 ブロックチェーン上でアプリを動かして, スマートコントラクトを実行できるようにして, 経済をさらに発展させる.
 アプリの特徴: 分散型, 管理者不在, 一度デプロイすると修正不可
 特徴  スマートコントラクトのプラットフォーム アカウントベース ブロックチェーン2.0の代表格  スケーリング方法  サイドチェーン  Plasma: Ethereumのメインチェーンとは別のプラズマチェーンと呼ばれるサイドチェーンをマークル木状にどんどん連ねることで, メインチェーンに格納される情報量を減少させる仕組み. エンドユーザーが出金したいときはルートチェーンに問い合わせる. 初心者向けプラズマ勉強法まとめノートー 0から3週間で学んだこと lightningとplasmaってなにが違うんですか？ Plasma スケーラブルな自律型スマートコントラクト  オフチェーン  Raiden Network: ブロックチェーン内の処理をブロックチェーンの外側に持っていくことで, メインチェーンの負担を軽減する仕組み. 最終的な取引結果のみをブロックチェーンで処理する.  シャーディング  トランザクション処理を各ノードで分割して行うことで, 処理速度の向上を図る仕組み. Ethereum2.0のCasperで導入されるPoSと相性が良い. Ethereumのシャーディング概論   </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://solareenlo.com/docs/gcp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://solareenlo.com/docs/gcp/</guid>
+      <description> Google Cloud Platform(GCP)とは Gogleが提供するパブリッククラウドコンピューティングのこと.
+GKE コンテナ化されたアプリケーションをデプロイするためのマネージド型の本番環境のこと.
+Google Kubernetes Engineの略.
+Cloud Shell ブラウザでShellが扱える.
+右上のメニューに起動するためのボタンがある.
+# 使うプロジェクトの設定 gcloud config set project &amp;lt;プロジェクトID&amp;gt; # 使うゾーンの設定 gcloud config set compute/zone asia-east1-c # 使うコンテナクラスタを設定 gcloud container clusters get-credentials &amp;lt;クラスタ名&amp;gt;</description>
     </item>
     
     <item>
@@ -205,7 +228,7 @@ Hugoのコードの色選択  https://help.farbox.com/pygments.html Chroma Style
       <description>Kubernetesとは Dockerコンテナのクラスタ管理を始めとしたオーケストレーションを行うサービスのこと. ホスト間の連携やデプロイについても総括的に管理できる(ここがDocker Composeと違うところ).
 Reference: Docker Compose利用者から見た Kubernetes 開発環境構築入門
 Kubernetesの大きな特徴の1つに宣言的設定がある. 宣言的設定とは, イミュータブルなインフラを作るための基本的な考え方で, 「システムのあるべき姿」を設定ファイルに宣言する！という考え方. Kubernetesは設定ファイルに書いたとおりのインフラを維持するように設計されている. ので, 設定ファイル(yamlファイル)をたくさん書く事になる.
-他と違うところ ① 様々なOSSと組み合わせることにより, 柔軟に機能拡張なところ.
+他のオーケストレーションと違うところ ① 様々なOSSと組み合わせることにより, 柔軟に機能拡張なところ.
  コンテナ運用を更に効率化 / 高速化  詳細なメトリック監視と可視化・・・Prometheus + Grafana コンテナのログの転送収集・・・Fluentd / Fluent Bit ネットワークトラフィックの制御・・・ Istio + Envoy  Kubernetesの適応領域の拡大  機械学習プラットフォーム・・・Kubeflow 分散ストレージ・・・Rook 分散型データベース・・・Vitess   ② 本格的な宣言的オペレーションとInfrastructure as Codeを実現可能
 ③ クラスター上にデプロイするシステムの構成をコード(マニフェストファイル)によって定義できる
  運用オペレーションはコードの変更によって実施し, 作業を簡素化する. 複数Kubernetesクラスターでの相互運用を実現する  Reference: Kubernetesの基礎
@@ -222,7 +245,7 @@ Reference: Docker Compose利用者から見た Kubernetes 開発環境構築入�
       <description> Node.jsとは サーバーサイドJavaScript環境のこと. サーバーサイドもJavaScripで記述できるようにした.
 インストール Mac: https://nodejs.org/en/
 Ubuntu: Official Node.js binary distributions
-NPMとは Node.jsのパッケージ管理ツールのこと.
+NPM Node.jsのパッケージ管理ツールのこと.
 npm自体のupdate npm update -y npm パッケージを最新バージョンへ npm outdated # 新しいバージョンを確認 npm install -g npm-check-updates # アップデートマネージャーをインストール ncu # 新しいバージョンを確認 ncu -u # package.jsonを更新 npm update # パッケージを更新 yarn こちらもパッケージ管理ツール.
 パッケージを最新バージョンへ yarn outdated # 新しいバージョンを確認 yarn upgrade # パッケージのアップグレード yarn upgrade-interactive # 上記2つを一緒に行う</description>
     </item>
@@ -432,7 +455,7 @@ DBの使用率ランキング  DB-Engines Ranking  </description>
       
       <guid>https://solareenlo.com/docs/mongodb/</guid>
       <description>MongoDBとは オープンソースで公開されているドキュメント指向データベースの1つ.
-mongodb(v4.0.5)のコンソールからの使い方色々 Excel, Oracle, MongoDB, Object の大まかな比較    Excel Oracle MongoDB Object     ブック Schema Database 特になし   シート Table Collection 特になし   行 Row Document Object群   列 Column Field Key   セル Field Value Value    mongodbの起動の仕方は, $ mongod // mongodbが起動する $ CNTL-C // mongodbを停止する // か, $ sudo service mongod start $ sudo service mongod stop mongodbへのコンソールからのアクセスの仕方は, $ mongo // アクセスして, &amp;gt; exit // 終了.</description>
+インストール  https://docs.mongodb.com/manual/installation/  mongodb(v4.0.5)のコンソールからの使い方色々 Excel, Oracle, MongoDB, Object の大まかな比較    Excel Oracle MongoDB Object     ブック Schema Database 特になし   シート Table Collection 特になし   行 Row Document Object群   列 Column Field Key   セル Field Value Value    mongodbの起動の仕方は, $ mongod // mongodbが起動する $ CNTL-C // mongodbを停止する // か, $ sudo service mongod start $ sudo service mongod stop mongodbへのコンソールからのアクセスの仕方は, $ mongo // アクセスして, &amp;gt; exit // 終了.</description>
     </item>
     
     <item>
