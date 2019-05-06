@@ -287,7 +287,7 @@ COPY ./ ./
 
 <span style="color:#586e75"># デフォルトのコマンド</span>
 <span style="color:#719e07">CMD</span><span style="color:#2aa198"> [&#34;npm&#34;, &#34;start&#34;]</span></code></pre></div>
-<p>全体的なコード例 -&gt; <a href="https://github.com/solareenlo/simple-docker-nodejs">simple-docker-nodejs</a></p>
+<p><strong>コード例:</strong> <a href="https://github.com/solareenlo/simple-docker-nodejs">solareenlo/simple-docker-nodejs</a></p>
 
 <h2 id="再起動">再起動</h2>
 
@@ -325,7 +325,7 @@ COPY ./ ./
 <h2 id="テストを行う">テストを行う</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker build -f Dockerfile.dev -t frontend .
 docker run -d -p <span style="color:#2aa198">3000</span>:3000 --name frontend frontend</code></pre></div>
-<p><strong>コード例:</strong> <a href="https://github.com/solareenlo/frontend-docker-react">frontend-docker-react</a></p>
+<p><strong>コード例:</strong> <a href="https://github.com/solareenlo/frontend-docker-react">solareenlo/frontend-docker-react</a></p>
 
 <h2 id="react-nginx-と繋げるのをdockerfileだけで行う">React &gt; Nginx と繋げるのをDockerfileだけで行う</h2>
 
@@ -359,7 +359,7 @@ before_install:
 script:
   - docker run -e CI=<span style="color:#cb4b16">true</span> solareenlo/frontend-docker-react npm run test -- --watchAll=<span style="color:#cb4b16">false</span></code></pre></div>
 <p>そして, GitHubにpushすると自動的にtestが行われる.<br />
-<strong>コード例:</strong> <a href="https://github.com/solareenlo/frontend-docker-react">frontend-docker-react</a></p>
+<strong>コード例:</strong> <a href="https://github.com/solareenlo/frontend-docker-react">solareenlo/frontend-docker-react</a></p>
 
 <h2 id="dockerfile-react-nginx-github-travis-ci-aws-elastic-beanstalkとデプロイする">Dockerfile(React, Nginx) &gt; GitHub &gt; Travis CI &gt; AWS Elastic Beanstalkとデプロイする</h2>
 
@@ -421,7 +421,7 @@ COPY --from<span style="color:#719e07">=</span>builder /app/build /usr/share/ngi
 <li><p>出来たサイト: <a href="http://frontenddockerreact-env.fbdmefkujd.us-east-1.elasticbeanstalk.com">http://frontenddockerreact-env.fbdmefkujd.us-east-1.elasticbeanstalk.com</a></p></li>
 </ol>
 
-<p><strong>コード例:</strong> <a href="https://github.com/solareenlo/frontend-docker-react">frontend-docker-react</a></p>
+<p><strong>コード例:</strong> <a href="https://github.com/solareenlo/frontend-docker-react">solareenlo/frontend-docker-react</a></p>
 </article>
 
       
