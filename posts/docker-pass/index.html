@@ -179,14 +179,14 @@ https://github.com/alex-shpak/hugo-book
 
 <ol>
 <li><a href="https://github.com/docker/docker-credential-helpers/releases">ここ</a>から<code>docker-credential-pass</code>の最新バージョンをダウンロードする.</li>
-<li><code>tar -xvf docker-credential-pass.tar.gz</code> (解凍する.)</li>
-<li><code>mv docker-credential-pass /usr/local/bin</code> (PATHが通ってるところにファイルを移動する)</li>
-<li><code>apt-get install gpg pass</code> (<a href="https://www.gnupg.org/index.html">gpg</a>と<a href="https://www.passwordstore.org">pass</a>をインストール.)</li>
+<li><code>tar -zxvf docker-credential-pass.tar.gz</code> (解凍する.)</li>
+<li><code>mv docker-credential-pass /usr/local/bin</code> (PATHが通ってるところにファイルを移動する.)</li>
+<li><code>sudo apt-get install gpg pass</code> (<a href="https://www.gnupg.org/index.html">gpg</a>と<a href="https://www.passwordstore.org">pass</a>をインストール.)</li>
 <li><code>gpg --generate-key</code>で新しい秘密鍵と公開鍵の組を作る.</li>
 <li><code>gpg --list-keys</code>で出てきた, pubの16進数の40文字(大文字のA-F, 0-9の文字列)をコピーする.</li>
 <li><code>pass init AAAAAAAAAABBBBBBBBBBCCCCCCCCCCDDDDDDDDD</code>でpassを初期化する.</li>
 <li><code>pass insert docker-credential-helpers/docker-pass-initialized-check</code>でとりあえずのディレクトリを作成する.</li>
-<li><code>docker-credential-pass list</code>で</li>
+<li><code>docker-credential-pass list</code>で<code>{}</code>と返ってくる.</li>
 <li><code>~/.docker/config.json</code>に<code>{&quot;credsStore&quot;: &quot;pass&quot;}</code>と書き込む.</li>
 <li><code>docker login</code>でDockerにログインする.</li>
 </ol>
