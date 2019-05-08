@@ -187,6 +187,23 @@ git branch -a</code></pre></div>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#b58900">cd</span> 作業ティレクトり
 git checkout -b master // 削除したいブランチとは違うブランチにまずは移動する
 git checkout -d 削除したいブランチ名</code></pre></div>
+<h2 id="submodule">submodule</h2>
+
+<h3 id="submoduleの追加">submoduleの追加</h3>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git submodule add -b &lt;リンク付けする方のブランチ名&gt; &lt;リンク付けする方のURL&gt; &lt;リンク付けされるディレクトリ名&gt;
+<span style="color:#586e75"># 例</span>
+git submodule add -b master git@github.com:solareenlo/hugo-book.git themes/book</code></pre></div>
+<h3 id="submoduleの削除">submoduleの削除</h3>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># コミットの参照を削除</span>
+git submodule deinit themes/book
+<span style="color:#586e75"># .gitmodulesから削除</span>
+git rm themes/book</code></pre></div>
+<h3 id="submoduleも一緒にclone">submoduleも一緒にclone</h3>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone --recursive-submodule &lt;アドレス&gt;</code></pre></div>
+<h3 id="submoduleのcloneをし忘れたら">submoduleのcloneをし忘れたら</h3>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone &lt;アドレス&gt;
+<span style="color:#b58900">cd</span> &lt;ディレクトリ名&gt;
+git submodule update --init --recursive</code></pre></div>
 <h1 id="gitの基本操作">Gitの基本操作</h1>
 
 <h2 id="gitの構成">gitの構成</h2>
@@ -460,6 +477,13 @@ git push origin master</code></pre></div>
 <li><a href="#リモートブランチからブランチ作成">リモートブランチからブランチ作成</a></li>
 </ul></li>
 <li><a href="#ブランチの削除">ブランチの削除</a></li>
+<li><a href="#submodule">submodule</a>
+<ul>
+<li><a href="#submoduleの追加">submoduleの追加</a></li>
+<li><a href="#submoduleの削除">submoduleの削除</a></li>
+<li><a href="#submoduleも一緒にclone">submoduleも一緒にclone</a></li>
+<li><a href="#submoduleのcloneをし忘れたら">submoduleのcloneをし忘れたら</a></li>
+</ul></li>
 </ul></li>
 <li><a href="#gitの基本操作">Gitの基本操作</a>
 <ul>

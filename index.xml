@@ -277,7 +277,7 @@ Cloud Shell ブラウザでShellが扱える.
       
       <guid>https://solareenlo.com/docs/git/</guid>
       <description>Gitとは プログラムのソースコードなどの変更履歴を記録・追跡するための分散型バージョン管理システムのこと. とっても便利. 慣れてしまうともう後戻りはできない.
-新しいブランチの作成 ローカルブランチからブランチ作成 cd ディレクトリ // 作業ディレクトリに移動 git branch -a // branchの一覧を表示 git checkout master // master branchに切り替え git checkout -b 作成するbranch名 // masterを元にして新しいbranchを作成 git branch -a git push -u origin 作成したbranch名 // branchをremoteに登録 リモートブランチからブランチ作成 cd ディレクトリ git checkout -b ローカルに作成するブランチ名 origin/再生元のリモートブランチ名 git branch -a ブランチの削除 cd 作業ティレクトり git checkout -b master // 削除したいブランチとは違うブランチにまずは移動する git checkout -d 削除したいブランチ名 Gitの基本操作 gitの構成  作業ディレクトリ ステージングエリア（インデックス） リポジトリ（ローカル, リモート）  gitの設定 # gitへユーザー名を登録 git config --global user.</description>
+新しいブランチの作成 ローカルブランチからブランチ作成 cd ディレクトリ // 作業ディレクトリに移動 git branch -a // branchの一覧を表示 git checkout master // master branchに切り替え git checkout -b 作成するbranch名 // masterを元にして新しいbranchを作成 git branch -a git push -u origin 作成したbranch名 // branchをremoteに登録 リモートブランチからブランチ作成 cd ディレクトリ git checkout -b ローカルに作成するブランチ名 origin/再生元のリモートブランチ名 git branch -a ブランチの削除 cd 作業ティレクトり git checkout -b master // 削除したいブランチとは違うブランチにまずは移動する git checkout -d 削除したいブランチ名 submodule submoduleの追加 git submodule add -b &amp;lt;リンク付けする方のブランチ名&amp;gt; &amp;lt;リンク付けする方のURL&amp;gt; &amp;lt;リンク付けされるディレクトリ名&amp;gt; # 例 git submodule add -b master git@github.</description>
     </item>
     
     <item>
@@ -347,12 +347,12 @@ Reference: Docker Compose利用者から見た Kubernetes 開発環境構築入�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://solareenlo.com/docs/nodejs/</guid>
-      <description> Node.jsとは サーバーサイドJavaScript環境のこと. サーバーサイドもJavaScripで記述できるようにした.
+      <description>Node.jsとは サーバーサイドJavaScript環境のこと. サーバーサイドもJavaScripで記述できるようにした.
 インストール Mac: https://nodejs.org/en/
 Ubuntu: Official Node.js binary distributions
-NPM Node.jsのパッケージ管理ツールのこと.
-npm自体のupdate npm update -y npm パッケージを最新バージョンへ npm outdated # 新しいバージョンを確認 npm install -g npm-check-updates # アップデートマネージャーをインストール ncu # 新しいバージョンを確認 ncu -u # package.jsonを更新 npm update # パッケージを更新 yarn こちらもパッケージ管理ツール.
-パッケージを最新バージョンへ yarn outdated # 新しいバージョンを確認 yarn upgrade # パッケージのアップグレード yarn upgrade-interactive # 上記2つを一緒に行う</description>
+テストの種類  単体テスト: 入力をモック化し, 個々の関数やクラスをテストし, 出力結果が予想通りであることを確認するテスト. 統合テスト: いくつかのモジュールを組み合わせて予想通りに動作することを保証するテスト. 機能テスト: 製品自体を使って(例えばブラウザを使って), あるシナリオをテストする. 確実に想定した動作をするかといった内部構造は考慮しない. リグレッションテスト: プログラムに機能を追加したり変更を加えたことによって、今まで普通に動いていた部分が動かなくなっていないかを確認するテスト. 受け入れテスト: システム開発を外注して, 発注者の本来の目的や意図通りに稼働するかのテスト.  Reference: 2017年JavaScriptのテスト概論
+テストツールの種類  テストの環境を提供する（Mocha, Jasmine, Jest, Karma） テストの構造を提供する（Mocha, Jasmine, Jest, Cucumber） アサーション機能を提供する（Chai, Jasmine, Jest, Unexpected） 生成, 表示, テスト結果をウォッチする（Mocha, Jasmine, Jest, Karma）
+以前の実行時からの変更が意図されたものであることを確認するために, コンポーネントやデータ構造を生成し, スナップショットを比較する（Jest, Ava） モック, スパイ, スタブを提供する（Sinon, Jasmine, enzyme, Jest, testdouble) コードカバレッジのレポートを生成する（Istanbul, Jest) シナリオ実行の管理ができるブラウザ, または疑似ブラウザの環境を提供する（Protractor, Nightwatch, Phantom, Casper）  Reference: 2017年JavaScriptのテスト概論</description>
     </item>
     
     <item>

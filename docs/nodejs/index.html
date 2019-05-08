@@ -175,6 +175,34 @@ https://github.com/alex-shpak/hugo-book
 
 <p><strong>Ubuntu:</strong> <a href="https://github.com/nodesource/distributions/blob/master/README.md">Official Node.js binary distributions</a></p>
 
+<h2 id="テストの種類">テストの種類</h2>
+
+<ul>
+<li><strong>単体テスト:</strong> 入力をモック化し, 個々の関数やクラスをテストし, 出力結果が予想通りであることを確認するテスト.</li>
+<li><strong>統合テスト:</strong> いくつかのモジュールを組み合わせて予想通りに動作することを保証するテスト.</li>
+<li><strong>機能テスト:</strong> 製品自体を使って(例えばブラウザを使って), あるシナリオをテストする. 確実に想定した動作をするかといった内部構造は考慮しない.</li>
+<li><strong>リグレッションテスト:</strong> プログラムに機能を追加したり変更を加えたことによって、今まで普通に動いていた部分が動かなくなっていないかを確認するテスト.</li>
+<li><strong>受け入れテスト:</strong> システム開発を外注して, 発注者の本来の目的や意図通りに稼働するかのテスト.</li>
+</ul>
+
+<p><strong>Reference:</strong> <a href="https://postd.cc/a-complete-guide-to-testing-javascript-in-2017/">2017年JavaScriptのテスト概論</a></p>
+
+<h2 id="テストツールの種類">テストツールの種類</h2>
+
+<ol>
+<li>テストの環境を提供する（<a href="https://github.com/mochajs/mocha">Mocha</a>, <a href="https://github.com/jasmine/jasmine">Jasmine</a>, <a href="https://github.com/facebook/jest">Jest</a>, <a href="https://github.com/karma-runner/karma">Karma</a>）</li>
+<li>テストの構造を提供する（<a href="https://github.com/mochajs/mocha">Mocha</a>, <a href="https://github.com/jasmine/jasmine">Jasmine</a>, <a href="https://github.com/facebook/jest">Jest</a>, Cucumber）</li>
+<li>アサーション機能を提供する（<a href="https://github.com/chaijs/chai">Chai</a>, <a href="https://github.com/jasmine/jasmine">Jasmine</a>, <a href="https://github.com/facebook/jest">Jest</a>, Unexpected）</li>
+<li>生成, 表示, テスト結果をウォッチする（<a href="https://github.com/mochajs/mocha">Mocha</a>, <a href="https://github.com/jasmine/jasmine">Jasmine</a>, <a href="https://github.com/facebook/jest">Jest</a>, <a href="https://github.com/karma-runner/karma">Karma</a>）<br>
+以前の実行時からの変更が意図されたものであることを確認するために,</li>
+<li>コンポーネントやデータ構造を生成し, スナップショットを比較する（<a href="https://github.com/facebook/jest">Jest</a>, <a href="https://github.com/avajs/ava">Ava</a>）</li>
+<li>モック, スパイ, スタブを提供する（<a href="https://github.com/sinonjs/sinon">Sinon</a>, <a href="https://github.com/jasmine/jasmine">Jasmine</a>, <a href="https://github.com/airbnb/enzyme">enzyme</a>, <a href="https://github.com/facebook/jest">Jest</a>, testdouble)</li>
+<li>コードカバレッジのレポートを生成する（Istanbul, <a href="https://github.com/facebook/jest">Jest</a>)</li>
+<li>シナリオ実行の管理ができるブラウザ, または疑似ブラウザの環境を提供する（<a href="https://github.com/angular/protractor">Protractor</a>, <a href="https://github.com/nightwatchjs/nightwatch">Nightwatch</a>, Phantom, Casper）</li>
+</ol>
+
+<p><strong>Reference:</strong> <a href="https://postd.cc/a-complete-guide-to-testing-javascript-in-2017/">2017年JavaScriptのテスト概論</a></p>
+
 <h1 id="npm">NPM</h1>
 
 <p>Node.jsのパッケージ管理ツールのこと.</p>
@@ -228,6 +256,8 @@ yarn upgrade-interactive <span style="color:#586e75"># 上記2つを一緒に行
 <li><a href="#node-jsとは">Node.jsとは</a>
 <ul>
 <li><a href="#インストール">インストール</a></li>
+<li><a href="#テストの種類">テストの種類</a></li>
+<li><a href="#テストツールの種類">テストツールの種類</a></li>
 </ul></li>
 <li><a href="#npm">NPM</a>
 <ul>
