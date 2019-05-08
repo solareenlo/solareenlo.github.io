@@ -117,9 +117,10 @@ MacにHomebrewをインストールする /usr/bin/ruby -e &amp;#34;$(curl -fsSL
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://solareenlo.com/docs/angular/</guid>
-      <description> Angularとは Typescript/JavaScriptやその他の言語を使用してモバイルおよびデスクトップWebアプリケーションを構築するための開発プラットフォーム.
+      <description>Angularとは Typescript/JavaScriptやその他の言語を使用してモバイルおよびデスクトップWebアプリケーションを構築するための開発プラットフォーム.
 DockerでAngular Dockerfileの中身
-RUN npm i -g @angular/cli \  &amp;amp;&amp;amp;</description>
+FROMnode:10.15.3-alpine RUN apk update \  &amp;amp;&amp;amp; npm install -g @angular/cli@7.3.8 \  &amp;amp;&amp;amp; rm -rf /tmp/* /var/cache/apk/* *.tar.gz ~/.npm \  &amp;amp;&amp;amp; npm cache clear --force \  &amp;amp;&amp;amp; yarn cache clean \  &amp;amp;&amp;amp; sed -i -e &amp;#34;s/bin\/ash/bin\/sh/&amp;#34; /etc/passwd WORKDIR/app docker-compose.serve.ymlの中身
+version: &amp;#34;3&amp;#34; services: angular: image: solareenlo/angular-cli build: . command: ash -c &amp;#34;ng serve --host=0.0.0.0&amp;#34; volumes: - ./first-app:/app ports: - &amp;#34;4200:4200&amp;#34; として, Dockerfileだけでコンテナを動かすときは,</description>
     </item>
     
     <item>

@@ -171,8 +171,53 @@ https://github.com/alex-shpak/hugo-book
 <h2 id="dockerでangular">DockerでAngular</h2>
 
 <p><code>Dockerfile</code>の中身</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#719e07">RUN</span> npm i -g @angular/cli <span style="color:#cb4b16">\
-</span><span style="color:#cb4b16"></span>  <span style="color:#719e07">&amp;&amp;</span></code></pre></div></article>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#719e07">FROM</span><span style="color:#2aa198"> node:10.15.3-alpine</span>
+
+<span style="color:#719e07">RUN</span> apk update <span style="color:#cb4b16">\
+</span><span style="color:#cb4b16"></span>  <span style="color:#719e07">&amp;&amp;</span> npm install -g @angular/cli@7.3.8 <span style="color:#cb4b16">\
+</span><span style="color:#cb4b16"></span>  <span style="color:#719e07">&amp;&amp;</span> rm -rf /tmp/* /var/cache/apk/* *.tar.gz ~/.npm <span style="color:#cb4b16">\
+</span><span style="color:#cb4b16"></span>  <span style="color:#719e07">&amp;&amp;</span> npm cache clear --force <span style="color:#cb4b16">\
+</span><span style="color:#cb4b16"></span>  <span style="color:#719e07">&amp;&amp;</span> yarn cache clean <span style="color:#cb4b16">\
+</span><span style="color:#cb4b16"></span>  <span style="color:#719e07">&amp;&amp;</span> sed -i -e <span style="color:#2aa198">&#34;s/bin\/ash/bin\/sh/&#34;</span> /etc/passwd
+
+<span style="color:#719e07">WORKDIR</span><span style="color:#2aa198"> /app</span></code></pre></div>
+<p><code>docker-compose.serve.yml</code>の中身</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">version: <span style="color:#2aa198">&#34;3&#34;</span>
+services:
+  angular:
+    image: solareenlo/angular-cli
+    build: .
+    command: ash -c <span style="color:#2aa198">&#34;ng serve --host=0.0.0.0&#34;</span>
+    volumes:
+      - ./first-app:/app
+    ports:
+      - <span style="color:#2aa198">&#34;4200:4200&#34;</span></code></pre></div>
+<p>として, <code>Dockerfile</code>だけでコンテナを動かすときは,</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># first-appを作成</span>
+docker run -it --rm -w /app -v <span style="color:#719e07">$(</span><span style="color:#b58900">pwd</span><span style="color:#719e07">)</span>:/app solareenlo/angular-cli ng new first-app
+<span style="color:#586e75"># コンテナに入って作業する</span>
+docker run -it --rm -w /app -v <span style="color:#719e07">$(</span><span style="color:#b58900">pwd</span><span style="color:#719e07">)</span>/first-app:/app solareenlo/angular-cli sh
+<span style="color:#586e75"># コンポーネントを作成</span>
+docker run -it --rm -w /app -v <span style="color:#719e07">$(</span><span style="color:#b58900">pwd</span><span style="color:#719e07">)</span>/first-app:/app solareenlo/angular-cli ng g component sample-component
+<span style="color:#586e75"># コンテナを立ち上げる</span>
+docker run -d -w /app -v <span style="color:#719e07">$(</span><span style="color:#b58900">pwd</span><span style="color:#719e07">)</span>/first-app:/app -p <span style="color:#2aa198">4200</span>:4200 solareenlo/angular-cli ng serve --host <span style="color:#2aa198">0</span>.0.0.0</code></pre></div>
+<p>で, <code>localhost:4200</code>を開く.</p>
+
+<p><code>Dockerfile</code>と<code>docker-compose.serve.yml</code>でコンテナを動かすときは,</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># first-appを作成</span>
+docker run -it --rm -w /app -v <span style="color:#719e07">$(</span><span style="color:#b58900">pwd</span><span style="color:#719e07">)</span>:/app solareenlo/angular-cli ng new first-app
+<span style="color:#586e75"># コンテナに入って作業する</span>
+docker run -it --rm -w /app -v <span style="color:#719e07">$(</span><span style="color:#b58900">pwd</span><span style="color:#719e07">)</span>/first-app:/app solareenlo/angular-cli sh
+<span style="color:#586e75"># docker-compose を使ってコンテナを立ち上げる</span>
+docker-compose -f docker-compose.serve.yml up -d
+<span style="color:#586e75"># コンテナの中に入って作業する</span>
+docker-compose -f docker-compose.serve.yml <span style="color:#b58900">exec</span> angular sh
+<span style="color:#586e75"># 関連するコンテンを全て止める</span>
+docker-compose -f docker-compose.serve.yml stop
+<span style="color:#586e75"># 関連するコンテナを全削除</span>
+docker-compose -f docker-compose.serve.yml rm</code></pre></div>
+<p>で, <code>localhost:4200</code>を開く.</p>
+</article>
 
       
 <div class="align-center book-git-footer justify-between">
