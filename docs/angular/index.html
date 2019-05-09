@@ -76,8 +76,9 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/c/">C</a></li>
 <li><a href="/docs/rust/">Rust</a></li>
 <li><a href="/docs/nodejs/">Node.js</a></li>
-<li><a href="/docs/haskell/">Haskell</a></li>
+<li><a href="/docs/typescript/">TypeScript</a></li>
 <li><a href="/docs/angular/">Angular</a></li>
+<li><a href="/docs/haskell/">Haskell</a></li>
 <li><a href="/docs/hugo/">Hugo</a></li>
 </ul></li>
 <li><a href="/docs/latex/"><strong>LaTeX</strong></a></li>
@@ -168,6 +169,97 @@ https://github.com/alex-shpak/hugo-book
 
 <p>Typescript/JavaScriptやその他の言語を使用してモバイルおよびデスクトップWebアプリケーションを構築するための開発プラットフォーム.</p>
 
+<h2 id="用語">用語</h2>
+
+<table>
+<thead>
+<tr>
+<th>用語</th>
+<th>意味</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>モジュール</td>
+<td>アプリを構成するコンポーネントを束ねたもの</td>
+</tr>
+
+<tr>
+<td>ルートモジュール</td>
+<td>アプリが起動する時に呼びされるモジュール</td>
+</tr>
+
+<tr>
+<td>コンポーネント</td>
+<td>各要素</td>
+</tr>
+
+<tr>
+<td>デコレーター</td>
+<td>モジュールやクラスなどの要素に対してメタ情報を付与するもの</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="デコレーターのパラメーター">デコレーターのパラメーター</h3>
+
+<table>
+<thead>
+<tr>
+<th>パラメーター名</th>
+<th>意味</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>imports</td>
+<td>現在のモジュールで利用する他のモジュール／コンポーネント</td>
+</tr>
+
+<tr>
+<td>exports</td>
+<td>現在のモジュールで外部に公開するコンポーネントなど</td>
+</tr>
+
+<tr>
+<td>declarations</td>
+<td>モジュール配下のコンポーネント</td>
+</tr>
+
+<tr>
+<td>bootstrap</td>
+<td>最初に起動すべき最上位のコンポーネント(＝ルートコンポーネント)</td>
+</tr>
+
+<tr>
+<td>templateUrl</td>
+<td>描画するhtml</td>
+</tr>
+
+<tr>
+<td>template</td>
+<td>描画する内容</td>
+</tr>
+
+<tr>
+<td>styleUrls</td>
+<td>どのcssを使うか</td>
+</tr>
+
+<tr>
+<td>styles</td>
+<td>直接cssの内容を記述する</td>
+</tr>
+
+<tr>
+<td>selector</td>
+<td>コンポーネントの適応先を表す(html, css, classなどとして指定できる)</td>
+</tr>
+</tbody>
+</table>
+
 <h2 id="dockerでangular">DockerでAngular</h2>
 
 <p><code>Dockerfile</code>の中身</p>
@@ -226,8 +318,8 @@ docker-compose -f docker-compose.serve.yml rm</code></pre></div>
   
   <div>
     
-    <a href="https://github.com/solareenlo/blog-hugo/commit/8cc3a016cb4c8649f69390c2eafd8b72fcea33de" title='Last modified May 6, 2019 by solareenlo' target="_blank" rel="noopener">
-      <img src="/svg/code-merge.svg" alt="Changed" /> May 6, 2019
+    <a href="https://github.com/solareenlo/blog-hugo/commit/451a32d535ac57f3a94dc4beb3f14689d854daea" title='Last modified May 8, 2019 by solareenlo' target="_blank" rel="noopener">
+      <img src="/svg/code-merge.svg" alt="Changed" /> May 8, 2019
     </a>
   </div>
   
@@ -252,6 +344,10 @@ docker-compose -f docker-compose.serve.yml rm</code></pre></div>
 <ul>
 <li><a href="#angular-https-github-com-angular-angular-とは"><a href="https://github.com/angular/angular">Angular</a>とは</a>
 <ul>
+<li><a href="#用語">用語</a>
+<ul>
+<li><a href="#デコレーターのパラメーター">デコレーターのパラメーター</a></li>
+</ul></li>
 <li><a href="#dockerでangular">DockerでAngular</a></li>
 </ul></li>
 </ul>
