@@ -119,6 +119,7 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/crypto/"><strong>Crypto</strong></a>
 
 <ul>
+<li><a href="/docs/blockchain/">Blockchain</a></li>
 <li><a href="/docs/bitcoin/">Bitcoin</a></li>
 <li><a href="/docs/ethereum/">Ethereum</a></li>
 <li><a href="/docs/iota/">IOTA</a></li>
@@ -311,15 +312,64 @@ docker-compose -f docker-compose.serve.yml rm</code></pre></div>
 <p>で, <code>localhost:4200</code>を開く.</p>
 
 <p><strong>コード例:</strong> <a href="https://github.com/solareenlo/angular-cli">solareenlo/angular-cli</a></p>
-</article>
+
+<h2 id="npmの脆弱性を指摘されたら">npmの脆弱性を指摘されたら</h2>
+
+<p><a href="https://qiita.com/disneyduffy/items/383ac95bb6a568f6360f">Angularでtarの脆弱性（Arbitrary File Overwrite）を指摘されたので修正する</a></p>
+
+<h2 id="基本的な使い方">基本的な使い方</h2>
+
+<ul>
+<li><p>コンポーネント単位で作っていく.
+以下の様な感じで<code>xxx.component.ts</code>にコンポーネントの名前を<code>selector: 'app-servers'</code>で指定して, <code>xxx.component.html</code>の中で<code>&lt;app-server&gt;&lt;/app-server&gt;</code>と書いてどんどん使っていく.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#268bd2">@Component</span>({
+selector<span style="color:#719e07">:</span> <span style="color:#2aa198">&#39;app-servers&#39;</span>,
+templateUrl<span style="color:#719e07">:</span> <span style="color:#2aa198">&#39;./servers.component.html&#39;</span>,
+<span style="color:#586e75">// template: &#39;&lt;app-server&gt;&lt;/app-server&gt;&#39;,
+</span><span style="color:#586e75"></span>styleUrls<span style="color:#719e07">:</span> [<span style="color:#2aa198">&#39;./servers.component.css&#39;</span>]
+})</code></pre></div></li>
+
+<li><p>必要なコンポーネント・モジュールができたら<code>app.module.ts</code>に追加していく.</p></li>
+
+<li><p><code>xxx.component.html</code>にhtmlを, <code>xxx.component.cs</code>にcssを, <code>xxx.component.ts</code>にjsをどんどん書いてく.</p></li>
+</ul>
+
+<h3 id="input-の仕方"><code>input</code>の仕方</h3>
+
+<p><code>xxx.component.html</code>に以下の様に書く.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#586e75">&lt;!-- eventのbindを使う方法 --&gt;</span>
+&lt;<span style="color:#268bd2">input</span>
+  type<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;text&#34;</span>
+  class<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;form-control&#34;</span>
+  (input)=&#34;onUpdateServerName($event)&#34;&gt;
+&lt;<span style="color:#268bd2">p</span>&gt;{{ serverName }}&lt;/<span style="color:#268bd2">p</span>&gt; <span style="color:#586e75">&lt;!-- serverNameが表示される --&gt;</span>
+
+<span style="color:#586e75">&lt;!--
+</span><span style="color:#586e75">ngModelモジュールを使う方法
+</span><span style="color:#586e75">これを使う場合はapp.module.tsに
+</span><span style="color:#586e75">---
+</span><span style="color:#586e75">import { FormsModule } from &#39;@angular/forms&#39;;
+</span><span style="color:#586e75">@NgModule({
+</span><span style="color:#586e75">  imports: [
+</span><span style="color:#586e75">    ngModel
+</span><span style="color:#586e75">  ]
+</span><span style="color:#586e75">})
+</span><span style="color:#586e75">---
+</span><span style="color:#586e75">を追加する必要がある.
+</span><span style="color:#586e75">--&gt;</span>
+&lt;<span style="color:#268bd2">input</span>
+ type<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;text&#34;</span>
+ class<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;form-control&#34;</span>
+ [(ngModel)]=&#34;serverName&#34;&gt;
+&lt;<span style="color:#268bd2">p</span>&gt;{{ serverName }}&lt;/<span style="color:#268bd2">p</span>&gt; <span style="color:#586e75">&lt;!-- serverNameが表示される --&gt;</span></code></pre></div></article>
 
       
 <div class="align-center book-git-footer justify-between">
   
   <div>
     
-    <a href="https://github.com/solareenlo/blog-hugo/commit/451a32d535ac57f3a94dc4beb3f14689d854daea" title='Last modified May 8, 2019 by solareenlo' target="_blank" rel="noopener">
-      <img src="/svg/code-merge.svg" alt="Changed" /> May 8, 2019
+    <a href="https://github.com/solareenlo/blog-hugo/commit/a354b11fab8016b42538910cef3fa64b70e36024" title='Last modified May 9, 2019 by solareenlo' target="_blank" rel="noopener">
+      <img src="/svg/code-merge.svg" alt="Changed" /> May 9, 2019
     </a>
   </div>
   
@@ -349,6 +399,11 @@ docker-compose -f docker-compose.serve.yml rm</code></pre></div>
 <li><a href="#デコレーターのパラメーター">デコレーターのパラメーター</a></li>
 </ul></li>
 <li><a href="#dockerでangular">DockerでAngular</a></li>
+<li><a href="#npmの脆弱性を指摘されたら">npmの脆弱性を指摘されたら</a></li>
+<li><a href="#基本的な使い方">基本的な使い方</a>
+<ul>
+<li><a href="#input-の仕方"><code>input</code>の仕方</a></li>
+</ul></li>
 </ul></li>
 </ul>
 </nav>

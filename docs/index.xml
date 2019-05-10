@@ -47,6 +47,15 @@ VPCセキュリティグループ 同一グループ外のインスタンスと�
     
     <item>
       <title></title>
+      <link>https://solareenlo.com/docs/blockchain/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://solareenlo.com/docs/blockchain/</guid>
+      <description>Blockchainとは  正しい記録しか記録できず、記録を変更・改ざんできない。（耐改ざん性） 管理者不在で、参加者全員で共有・運用する。（非中央集権・トラストレス・自律的） ネットワーク共有型データベース。（分散型DB） 後方参照するハッシュポインタをもつ連結リスト Reference: ブロックチェーンのデータ構造をJavascriptで作ろう  Blockchainの仕組み  プロトコルに従った書式のDBだけが記録される。 参加者全員によって合意されたデータだけが有効となる。 一度書き込まれたデータは変更も削除もできない。 システム全体を止めることはほぼできない。 記録されるのは取引の履歴だけ。  BlockChainの歴史  1980年代のリバタリアニズム. 中央集権が可能な限り最小限でなければならいという考え. 政治的イデオロギー. 1990年代のサイファーパンクの結成  個人の通信における本当のプライバシーを我々に与える保障を、法的にではなく物理的・数学的に保証する。  サイファーパンクの理念  プライバシーというのは選択的に自己開示する力のことをいう。 開かれた社会においてはプライバシーには匿名の取引システムが必須だ。 我々サイファーパンクは匿名システムの建設に献身する。 Reference: ビットコインに実は４０年の歴史【サイファーパンク宣言を読む】全文和訳掲載   BlockChainにはブロックが必要？  台帳記録にはブロックは必須要素ではない. ブロックの承認のためのルールが記載されている. コンセンサスを駆動する本体はブロック ノードは単なるスクリプト処理系  BlockChainのコンセンサスによるガバナンス  ブロックチェーンノードが コンセンサスの主体 ブロックを承認する ブロック作成者（マイナー）は 信頼点ではない コンセンサスの結果（承認）に支配される Reference: 地域におけるブロックチェーン活用の可能性  BlockChainが発達すると消える産業  公証人 各種仲介業者（アート的発想で価値を判断する人は必要） 第一次産業・トレーサビリティー 貧困解消 裁判の証拠 References:  第21 『#ブロックチェーンビジネスに今すぐ参入すべき？』Part2 3 第21 『#ブロックチェーンビジネスに今すぐ参入すべき？』Part2 2   Blockchainの進化 パターン1  Blockchain 1.</description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>https://solareenlo.com/docs/c/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -419,9 +428,8 @@ Shougo/dein.vim curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bi
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://solareenlo.com/docs/bitcoin/</guid>
-      <description> Bitcoin 目的 匿名性を自分で選択できつつ, 安全に価値の移転と保存に特化したシステムを構築すること.
-特徴  非中央集権 自律分散 トラストレス オープンソース ブロックチェーン1.0の代表格  技術  楕円曲線DSA P2P Proo of Work  プレイヤー  コア開発者 マイナー ユーザー 投資家・投機家 法律  スケーリング方法  コンセンサスアルゴリズムを速くする（分散性のために1ブロック生成にわざと10分かけてる） ブロックに含まれるトランザクションを増やす（Block weightが4MB以下/segwit導入により） オフチェーン（Lightning networkなど） サイドチェーン シャーディング  Reference: ブロックチェーンとスケーラビリティ
-References  bitcoinのしくみ Programming The Blockchain C# 日本語 Blockchain Core Camp season1のビデオ資料 Blockchain Core Camp season1のpdf資料 Blockchain Core Camp season2のビデオ資料  </description>
+      <description>Bitcoin 目的 匿名性を自分で選択できつつ, 安全に価値の移転と保存に特化したシステムを構築すること.
+特徴  非中央集権 自律分散 トラストレス 耐改ざん性 オープンソース 匿名性を選択できる 二重支払いができない 払い(価値の保存と移転)に特化したとても堅牢なシステム(チューリング不完全/マルチシグ/HDウォレット/ニーモニック/Base58とか)  技術  電子署名 公開鍵暗号  楕円曲線DSA  ハッシュ関数 ネットワーク  P2P Proof of Work   プレイヤー  コア開発者 マイナー ユーザー 投資家・投機家 法律  スケーリング方法  コンセンサスアルゴリズムを速くする（分散性のために1ブロック生成にわざと10分かけてる） ブロックに含まれるトランザクションを増やす（Block weightが4MB以下/segwit導入により） オフチェーン（Lightning networkなど） サイドチェーン シャーディング Reference: ブロックチェーンとスケーラビリティ  フルノード フルノードの立て方  ビットコインのフルノードを立てる方法 Bitcoin ClockUpMemo bitcoindのブロック保存先ディレクトリを指定する Bitcoin.conf Configuration File  フルノードの分布図  BITNODES  マイナーとノードの違い  マイナーも1つのノードではあるが, マイナーの主な役割はプルーフオブワーク（PoW）を行い取引をブロックに収納しネットワークに送信すること.</description>
     </item>
     
     <item>
