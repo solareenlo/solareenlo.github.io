@@ -11,6 +11,15 @@
     
     <item>
       <title></title>
+      <link>https://solareenlo.com/docs/alpine-linux/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://solareenlo.com/docs/alpine-linux/</guid>
+      <description> Alpine Linuxとは  muslとBusyBoxをベースとしたLinuxディストリビューションの1つ. セキュリティ・シンプル・リソース効率を重視するパワーユーザー向けに設計されている. とても軽量でセキュアなのでDockerのイメージ作りに使われる.  簡単な使い方 # gitをインストール apk add git</description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>https://solareenlo.com/docs/angular/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -80,8 +89,8 @@ docs  CircleCI Documentation  </description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://solareenlo.com/docs/cloud/</guid>
-      <description>クラウドコンピューティングとは クラウドサービスプラットフォームからインターネット経由で処理能力, データベースストレージ, アプリケーション, および他のITリソースをオンデマンドかつ従量制料金で利用するシステムのこと.
-2019年5月現在は, AWS, Azure, GCP, IBM Cloud, Alibaba Cloudなどが有名.</description>
+      <description> クラウドコンピューティングとは クラウドサービスプラットフォームからインターネット経由で処理能力, データベースストレージ, アプリケーション, および他のITリソースをオンデマンドかつ従量制料金で利用するシステムのこと.
+比較  ilyas-it83/CloudComparer  </description>
     </item>
     
     <item>
@@ -128,8 +137,18 @@ Reference: コンテナ技術とは何？
       <guid>https://solareenlo.com/docs/docker-compose/</guid>
       <description>Docker Composeとは 複数のコンテナで構成されるアプリケーションを定義と実行するためのツールのこと. Dockerとは切り離されてる.
  Composeはアプリケーションのサービスをファイルで定義する. Dockerコマンドと高い親和性があるため, 学習コストが比較的低い. Swarmモードにサービスをデプロイできるオーケストレーション機能もある.  Reference: Docker Compose 徹底解説   活用場面  利用者視点  docker-compose.ymlがあれば, すぐに何でも実行できる.  開発者視点  環境の再構築が簡単 バージョン違いの環境を作りやすい 1つのマシン上に, 複数の環境を立ち上げられやすい   適切に書かれたYAMLファイルさえあれば, 誰でも簡単に環境構築もアプリケーション実行もできるのが強み.
-インストール  https://docs.docker.com/compose/install/  docker-compose.ymlの書き方  services:(使うイメージ), networks:(使うネットワーク), volumes:(使うボリューム)を定義する. docker-compose.ymlの書き方 -&amp;gt; Docker Compose - docker-compose.yml リファレンス  working directory指定 working_dirを使う.
-version: &amp;#39;3&amp;#39; services: angular: image: angular-first-app ports: - &amp;#34;4200:4200&amp;#34; volumes: - .:/usr/src/app working_dir: /usr/src/app/first-app command: ng serve --host=0.</description>
+インストール  https://docs.docker.com/compose/install/  docker-compose.ymlの書き方  services:(使うイメージ), networks:(使うネットワーク), volumes:(使うボリューム)を定義する. docker-compose.ymlの書き方 -&amp;gt; Docker Compose - docker-compose.yml リファレンス  公式Reference  Compose file version 3 reference  working directory指定 working_dirを使う.
+version: &amp;#39;3&amp;#39; services: angular: image: angular-first-app ports: - &amp;#34;4200:4200&amp;#34; volumes: - .</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://solareenlo.com/docs/docker-hub/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://solareenlo.com/docs/docker-hub/</guid>
+      <description> Docker Hubとは コンテナイメージをビルドしたり配布したりする場所.
+配布方法 イメージをそのままpush # 先ずはDocker Hubにログインする docker login # 自分の名前でtag付けしてイメージを作成する docker image build -t solareenlo/test . # そして, Docker Hubにpushする docker push solareenlo/test GitHubからDockerfileをpush </description>
     </item>
     
     <item>
@@ -200,7 +219,7 @@ GitHub Pagesで静的サイトを公開する cd 作業ディレクトリ名 git
 リポジトリに他のリポジトリをリンク付けする git submodule add -b &amp;lt;リンク付けする方のブランチ名&amp;gt; &amp;lt;リンク付けする方のURL&amp;gt; &amp;lt;リンク付けされるディレクトリ名&amp;gt; リポジトリをforkして更新する fork -&amp;gt; clone -&amp;gt; remote -&amp;gt; fethc -&amp;gt; marge -&amp;gt; push
 ssh接続ができなくなったときは ~/.ssh/configの中身を
 Host github github.com Hostname github.com Port 22 User git IdentityFile ~/.ssh/id_git_rsa のように, Hostのところにgithub.comを追加してみる.
-チートシート  Git Cheat Sheets  </description>
+スライドショー  hiroppy/fusuma hakimel/reveal.js gnab/remark gitpitch/gitpitch  チートシート  Git Cheat Sheets  </description>
     </item>
     
     <item>
@@ -372,8 +391,9 @@ script: docker run -e CI=true solareenlo/react-test npm run test -- --watchAll=f
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://solareenlo.com/docs/typescript/</guid>
-      <description>TypeScriptとは マイクロソフトによって開発されているオープンソースのプログラミング言語のこと. JavaScriptに, 静的型付け・クラスベースオブジェクト指向を加えた.
-初めてのTypeScript solareenlo/Typescript-Practice/01_Getting_Started</description>
+      <description> TypeScriptとは マイクロソフトによって開発されているオープンソースのプログラミング言語のこと. JavaScriptに, 静的型付け・クラスベースオブジェクト指向を加えた.
+初めてのTypeScript solareenlo/Typescript-Practice/01_Getting_Started
+インストール npm i --save-dev typescript</description>
     </item>
     
     <item>

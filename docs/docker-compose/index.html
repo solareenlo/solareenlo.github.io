@@ -87,6 +87,7 @@ https://github.com/alex-shpak/hugo-book
 <ul>
 <li><a href="/docs/ssh/">SSH</a></li>
 <li><a href="/docs/ubuntu/">Ubuntu</a></li>
+<li><a href="/docs/alpine-linux/">Alpine Linux</a></li>
 </ul></li>
 <li><a href="/docs/db/"><strong>DB</strong></a>
 
@@ -113,6 +114,7 @@ https://github.com/alex-shpak/hugo-book
 <ul>
 <li><a href="/docs/docker1/">Docker1</a></li>
 <li><a href="/docs/docker2/">Docker2</a></li>
+<li><a href="/docs/docker-hub/">Docker Hub</a></li>
 <li><a href="/docs/docker-compose/">Docker Compose</a></li>
 <li><a href="/docs/kubernetes/">Kubernetes</a></li>
 </ul></li>
@@ -211,6 +213,12 @@ Dockerとは切り離されてる.</p>
 <ul>
 <li><strong>services:</strong>(使うイメージ), <strong>networks:</strong>(使うネットワーク), <strong>volumes:</strong>(使うボリューム)を定義する.</li>
 <li>docker-compose.ymlの書き方 -&gt; <a href="https://qiita.com/zembutsu/items/9e9d80e05e36e882caaa">Docker Compose - docker-compose.yml リファレンス</a></li>
+</ul>
+
+<h3 id="公式reference">公式Reference</h3>
+
+<ul>
+<li><a href="https://docs.docker.com/compose/compose-file/">Compose file version 3 reference</a></li>
 </ul>
 
 <h3 id="working-directory指定">working directory指定</h3>
@@ -481,7 +489,8 @@ ADVANCED OPTIONS; Database port: <span style="color:#2aa198">5432</span></code><
 <h2 id="テストを行う">テストを行う</h2>
 
 <p>以下のように<code>docker-compose.yml</code>に<code>tests</code>項目を追加する.</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">version: <span style="color:#2aa198">&#39;3&#39;</span>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#586e75"># docker-compose.ymlの中身</span>
+version: <span style="color:#2aa198">&#39;3&#39;</span>
 services:
   web:
     build:
@@ -499,7 +508,17 @@ services:
     volumes:
       - /app/node_modules
       - .:/app
-    command: [<span style="color:#2aa198">&#34;npm&#34;</span>, <span style="color:#2aa198">&#34;run&#34;</span>, <span style="color:#2aa198">&#34;test&#34;</span>]</code></pre></div>
+    command: [<span style="color:#2aa198">&#34;npm&#34;</span>, <span style="color:#2aa198">&#34;run&#34;</span>, <span style="color:#2aa198">&#34;test&#34;</span>]</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#586e75"># Dockerfile.devの中身</span>
+<span style="color:#719e07">FROM</span><span style="color:#2aa198"> node:alpine</span>
+
+<span style="color:#719e07">WORKDIR</span><span style="color:#2aa198"> &#39;/app&#39;</span>
+
+COPY package.json .
+<span style="color:#719e07">RUN</span> npm install
+
+COPY . .
+
+<span style="color:#719e07">CMD</span><span style="color:#2aa198"> [&#34;npm&#34;, &#34;run&#34;, &#34;start&#34;]</span></code></pre></div>
 <p>そして, 以下でビルドし, 実行する.</p>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker-compose up --build</code></pre></div>
 <p>テスト用のコードを変更すると, 標準出力で結果が出てくる.</p>
@@ -588,6 +607,7 @@ services:
 <li><a href="#インストール">インストール</a></li>
 <li><a href="#docker-compose-ymlの書き方">docker-compose.ymlの書き方</a>
 <ul>
+<li><a href="#公式reference">公式Reference</a></li>
 <li><a href="#working-directory指定">working directory指定</a></li>
 </ul></li>
 <li><a href="#起動と停止">起動と停止</a></li>

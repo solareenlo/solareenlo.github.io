@@ -87,6 +87,7 @@ https://github.com/alex-shpak/hugo-book
 <ul>
 <li><a href="/docs/ssh/">SSH</a></li>
 <li><a href="/docs/ubuntu/">Ubuntu</a></li>
+<li><a href="/docs/alpine-linux/">Alpine Linux</a></li>
 </ul></li>
 <li><a href="/docs/db/"><strong>DB</strong></a>
 
@@ -113,6 +114,7 @@ https://github.com/alex-shpak/hugo-book
 <ul>
 <li><a href="/docs/docker1/">Docker1</a></li>
 <li><a href="/docs/docker2/">Docker2</a></li>
+<li><a href="/docs/docker-hub/">Docker Hub</a></li>
 <li><a href="/docs/docker-compose/">Docker Compose</a></li>
 <li><a href="/docs/kubernetes/">Kubernetes</a></li>
 </ul></li>
@@ -205,6 +207,14 @@ https://github.com/alex-shpak/hugo-book
 
 <p><strong>Reference:</strong> <a href="https://postd.cc/a-complete-guide-to-testing-javascript-in-2017/">2017年JavaScriptのテスト概論</a></p>
 
+<h2 id="引数で判定">引数で判定</h2>
+
+<p>引数1つでok. それ以外は強制終了する.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#719e07">if</span>(process.argv.length <span style="color:#719e07">!==</span> <span style="color:#2aa198">3</span>) {
+  console.log(<span style="color:#586e75">`csvファイル名を入力してください.`</span>);
+  process.exit(<span style="color:#2aa198">1</span>); <span style="color:#586e75">// 正常に強制終了する
+</span><span style="color:#586e75"></span>}
+</code></pre></div>
 <h1 id="npm">NPM</h1>
 
 <p>Node.jsのパッケージ管理ツールのこと.</p>
@@ -260,6 +270,7 @@ yarn upgrade-interactive <span style="color:#586e75"># 上記2つを一緒に行
 <li><a href="#インストール">インストール</a></li>
 <li><a href="#テストの種類">テストの種類</a></li>
 <li><a href="#テストツールの種類">テストツールの種類</a></li>
+<li><a href="#引数で判定">引数で判定</a></li>
 </ul></li>
 <li><a href="#npm">NPM</a>
 <ul>

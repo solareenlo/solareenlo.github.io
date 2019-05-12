@@ -54,6 +54,11 @@
   </url>
   
   <url>
+    <loc>https://solareenlo.com/docs/alpine-linux/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://solareenlo.com/docs/angular/</loc>
     <priority>0</priority>
   </url>
@@ -100,6 +105,11 @@
   
   <url>
     <loc>https://solareenlo.com/docs/docker-compose/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://solareenlo.com/docs/docker-hub/</loc>
     <priority>0</priority>
   </url>
   

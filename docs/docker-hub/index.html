@@ -11,7 +11,7 @@
 <title>
   
     
-    とっても使えるアプリたち
+    Docker Hub
   
  | solareenlo</title>
 
@@ -37,6 +37,7 @@ https://github.com/alex-shpak/hugo-book
 <body>
   <input type="checkbox" style="display: none" id="menu-control" />
   <main class="flex container">
+
     <aside class="book-menu fixed">
       <nav role="navigation">
 <h2 class="book-brand">
@@ -51,7 +52,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   <style>
-  nav ul a[href$="\2fposts\2f app\2f "] {
+  nav ul a[href$="\2f docs\2f docker-hub\2f "] {
       color: #004ed0;
   }
   </style>
@@ -151,7 +152,7 @@ https://github.com/alex-shpak/hugo-book
 
     </aside>
 
-    <div class="book-posts">
+    <div class="book-page">
       <header class="align-center justify-between book-header">
   <label for="menu-control">
     <img src="/svg/menu.svg" alt="Menu" />
@@ -159,76 +160,68 @@ https://github.com/alex-shpak/hugo-book
   <strong>
   
     
-    とっても使えるアプリたち
+    Docker Hub
   
 </strong>
 </header>
 
       
-
-<header class="markdown">
-  <h1>とっても使えるアプリたち</h1>
-  <h5>
-    <strong>Apr 30, 2019</strong>
-  </h5>
-</header>
 <article class="markdown">
 
-<h2 id="作図">作図</h2>
+<h1 id="docker-hub-https-hub-docker-com-とは"><a href="https://hub.docker.com">Docker Hub</a>とは</h1>
 
-<ul>
-<li><a href="https://www.draw.io">draw.io</a></li>
-</ul>
+<p>コンテナイメージをビルドしたり配布したりする場所.</p>
 
-<h2 id="マークダウン表示">マークダウン表示</h2>
+<h2 id="配布方法">配布方法</h2>
 
-<ul>
-<li><a href="https://typora.io">typora</a></li>
-</ul>
-
-<h2 id="wikiの新しい形">wikiの新しい形</h2>
-
-<ul>
-<li><a href="https://scrapbox.io">Scrapbox</a></li>
-</ul>
-
-<h2 id="ノートアプリ">ノートアプリ</h2>
-
-<ul>
-<li><a href="https://www.notion.so">Notion</a></li>
-</ul>
-
-<h2 id="サーバーレスアプリのホスティングサービス">サーバーレスアプリのホスティングサービス</h2>
-
-<ul>
-<li><a href="https://zeit.co/now">Now</a></li>
-</ul>
-
-<h2 id="jsonの書きミスチェッカー">JSONの書きミスチェッカー</h2>
-
-<ul>
-<li><a href="https://jsonlint.com">JOSNLint</a></li>
-</ul>
-
-<h2 id="全文検索">全文検索</h2>
-
-<ul>
-<li><a href="https://github.com/elastic/elasticsearch">Elasticsearch</a></li>
-</ul>
-
-<h2 id="モニタリング">モニタリング</h2>
-
-<ul>
-<li><a href="https://github.com/elastic/kibana">KIBANA</a></li>
-<li><a href="https://github.com/grafana/">Grafana</a></li>
-<li><a href="https://github.com/prometheus">Prometheus</a></li>
-</ul>
+<h3 id="イメージをそのままpush">イメージをそのままpush</h3>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># 先ずはDocker Hubにログインする</span>
+docker login
+<span style="color:#586e75"># 自分の名前でtag付けしてイメージを作成する</span>
+docker image build -t solareenlo/test .
+<span style="color:#586e75"># そして, Docker Hubにpushする</span>
+docker push solareenlo/test</code></pre></div>
+<h3 id="githubからdockerfileをpush">GitHubからDockerfileをpush</h3>
 </article>
 
       
-    </div>
-  </main>
+<div class="align-center book-git-footer justify-end">
+  
+  
+  <div>
+    <a href="https://github.com/solareenlo/blog-hugo/edit/master/content/docs/docker-hub.md" target="_blank" rel="noopener">
+      <img src="/svg/code-fork.svg" alt="Edit" /> Edit this page
+    </a>
+  </div>
+  
+</div>
 
+
+      
+    </div>
+
+    
+  
+  
+  <aside class="book-toc fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#docker-hub-https-hub-docker-com-とは"><a href="https://hub.docker.com">Docker Hub</a>とは</a>
+<ul>
+<li><a href="#配布方法">配布方法</a>
+<ul>
+<li><a href="#イメージをそのままpush">イメージをそのままpush</a></li>
+<li><a href="#githubからdockerfileをpush">GitHubからDockerfileをpush</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+  
   
   
 </body>

@@ -87,6 +87,7 @@ https://github.com/alex-shpak/hugo-book
 <ul>
 <li><a href="/docs/ssh/">SSH</a></li>
 <li><a href="/docs/ubuntu/">Ubuntu</a></li>
+<li><a href="/docs/alpine-linux/">Alpine Linux</a></li>
 </ul></li>
 <li><a href="/docs/db/"><strong>DB</strong></a>
 
@@ -113,6 +114,7 @@ https://github.com/alex-shpak/hugo-book
 <ul>
 <li><a href="/docs/docker1/">Docker1</a></li>
 <li><a href="/docs/docker2/">Docker2</a></li>
+<li><a href="/docs/docker-hub/">Docker Hub</a></li>
 <li><a href="/docs/docker-compose/">Docker Compose</a></li>
 <li><a href="/docs/kubernetes/">Kubernetes</a></li>
 </ul></li>
@@ -209,6 +211,14 @@ hello
 <span style="color:#586e75"># こんな感じでbusyboxはシェルスクリプトが使える</span></code></pre></div>
 <h2 id="dockerfile">Dockerfile</h2>
 
+<h3 id="公式reference">公式Reference</h3>
+
+<ul>
+<li><a href="https://docs.docker.com/engine/reference/builder/">Dockerfile reference</a></li>
+</ul>
+
+<h3 id="書き方">書き方</h3>
+
 <ul>
 <li><code>Dockerfile</code> -&gt; <code>Docker Client</code> -&gt; <code>Docker Server</code> -&gt; <code>Image</code>の流れでイメージが作られる.</li>
 <li><code>Dockerfile</code>に書かれてあること1行ずつに対して履歴を取っている.</li>
@@ -261,7 +271,27 @@ docker run イメージのハッシュ値
 </ol>
 
 <h2 id="node-jsを動かした例">Node.jsを動かした例</h2>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#586e75"># ベースとなるイメージ</span>
+<span style="color:#719e07">FROM</span><span style="color:#2aa198"> node:alpine</span>
 
+<span style="color:#586e75"># 以降での作業ディレクトリを指定する</span>
+<span style="color:#719e07">WORKDIR</span><span style="color:#2aa198"> /usr/app</span>
+
+<span style="color:#586e75"># package.jsonとpackage-lock.jsonを先にコピーする.</span>
+<span style="color:#586e75"># package*.jsonだけを先に個別コピーすることで, パッケージ変更時は`RUN npm install`が走るが</span>
+<span style="color:#586e75"># それ以外のファイル変更時は同コマンドにはキャッシュ利用で飛ばされるため, ビルド時間を短縮できる.</span>
+COPY ./package.json ./
+<span style="color:#719e07">RUN</span> npm install
+
+COPY ./ ./
+
+<span style="color:#586e75"># デフォルトのコマンド</span>
+<span style="color:#719e07">CMD</span><span style="color:#2aa198"> [&#34;npm&#34;, &#34;start&#34;]</span></code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># イメージをビルドする</span>
+docker build -t solareenlo/simple-docker-nodejs .
+<span style="color:#586e75"># コンテナを走らせる</span>
+docker run -d --name simple-docker-nodejs solareenlo/simple-docker-nodejs
+<span style="color:#586e75"># コンテナの中に入る</span>
+docker <span style="color:#b58900">exec</span> -it simple-docker-nodejs sh</code></pre></div>
 <p><strong>コード例:</strong> <a href="https://github.com/solareenlo/simple-docker-nodejs">solareenlo/simple-docker-nodejs</a></p>
 
 <h2 id="再起動">再起動</h2>
@@ -431,7 +461,11 @@ COPY --from<span style="color:#719e07">=</span>builder /app/build /usr/share/ngi
 <li><a href="#docker-その2">Docker その2</a>
 <ul>
 <li><a href="#コンテナの基本的な動かし方">コンテナの基本的な動かし方</a></li>
-<li><a href="#dockerfile">Dockerfile</a></li>
+<li><a href="#dockerfile">Dockerfile</a>
+<ul>
+<li><a href="#公式reference">公式Reference</a></li>
+<li><a href="#書き方">書き方</a></li>
+</ul></li>
 <li><a href="#タグ付け">タグ付け</a></li>
 <li><a href="#1つずつイメージを作っていく">1つずつイメージを作っていく</a></li>
 <li><a href="#dockerfileの効率的な作り方">Dockerfileの効率的な作り方</a></li>
