@@ -20,7 +20,7 @@
 
 
 
-<link rel="stylesheet" href="/book.min.8aeb3c2fcdbfe9cbbbad123ec13bedbbcd0d7f5b6278686a4bf41a848efaf94b.css">
+<link rel="stylesheet" href="/book.min.bbfd160b2ca3266ee56863b9bb8f8903ac3622dd7bcf29bdf4485c513147ceee.css">
 
 
 <link rel="icon" href="/favicon.png" type="image/x-icon">
@@ -227,7 +227,7 @@ mkdir app<span style="color:#719e07">{</span><span style="color:#2aa198">1</span
 <li>varには, システムのログファイルなどの頻繁に書き換わるようなファイルが入ってる.</li>
 </ul>
 
-<h2 id="ディレクリを移動する">ディレクリを移動する</h2>
+<h2 id="ディレクリを移動">ディレクリを移動</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># 現在いるディレクトリを表示</span>
 <span style="color:#b58900">pwd</span>
 
@@ -246,7 +246,7 @@ clear
 
 <span style="color:#586e75"># ホームディレクトリへ戻る</span>
 cd</code></pre></div>
-<h2 id="ディレクトリを操作する">ディレクトリを操作する</h2>
+<h2 id="ディレクトリを操作">ディレクトリを操作</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># ディレクトリを新規作成</span>
 mkdir <span style="color:#b58900">test</span>
 
@@ -296,7 +296,7 @@ rm file2.txt</code></pre></div>
 <span style="color:#586e75"># コマンドの履歴検索</span>
 <span style="color:#586e75"># CTRL + R</span>
 <span style="color:#586e75"># そこで何かしら前に使ったコマンドを途中まで入力してtabキーを押して補完して, エンターキーを押すと実行される</span></code></pre></div>
-<h2 id="コマンドの履歴を使う">コマンドの履歴を使う</h2>
+<h2 id="コマンドの履歴">コマンドの履歴</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># 今までに使用したコマンドの履歴を表示する</span>
 <span style="color:#b58900">history</span>
 
@@ -341,7 +341,7 @@ ls -l
 
 <span style="color:#586e75"># シンボリックリンクを解消する</span>
 unlink dbconfig</code></pre></div>
-<h2 id="ユーザーとグループを確認する">ユーザーとグループを確認する</h2>
+<h2 id="ユーザーとグループを確認">ユーザーとグループを確認</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># ユーザーを確認する</span>
 cat /etc/passwd
 &gt; solareenlo:x:1000:1000:solareenlo,,,:/home/solareenlo:/bin/bash
@@ -381,7 +381,7 @@ rwx rw- r-- <span style="color:#719e07">=</span> <span style="color:#2aa198">4</
 chmod <span style="color:#2aa198">774</span> <span style="color:#268bd2">sample</span> <span style="color:#719e07">=</span> rwx rwx r--
 chmod <span style="color:#2aa198">664</span> <span style="color:#268bd2">sample</span> <span style="color:#719e07">=</span> rw- rw- r--
 <span style="color:#586e75"># となる</span></code></pre></div>
-<h2 id="独自のコマンドを作る">独自のコマンドを作る</h2>
+<h2 id="独自のコマンドを作成">独自のコマンドを作成</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># 先ずはコマンドが先に存在しないことを確認する</span>
 <span style="color:#b58900">type</span> hi
 &gt; -bash: type: hi: not found
@@ -535,7 +535,7 @@ ls -l /etc | grep <span style="color:#2aa198">&#39;bash&#39;</span>
 <span style="color:#586e75"># さらに, 上記の結果の行数を調べる</span>
 ls -l /etc | grep <span style="color:#2aa198">&#39;bash&#39;</span> | wc -l
 &gt; <span style="color:#2aa198">3</span></code></pre></div>
-<h2 id="ワイルカードを使う">ワイルカードを使う</h2>
+<h2 id="ワイルカード">ワイルカード</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># 任意の文字列を扱う*を使って, 拡張子が.confを表示する</span>
 ls /etc/*.conf
 &gt; 拡張子が.confのものだけが表示される
@@ -543,7 +543,7 @@ ls /etc/*.conf
 <span style="color:#586e75"># cから始まり, 2文字だけ何でも良くて, 拡張子も何でもいい場合は?と*を使う</span>
 ls /etc/c??.*
 &gt; 当該条件に合致するものが表示される</code></pre></div>
-<h2 id="find-xargsを使う">find, xargsを使う</h2>
+<h2 id="find-xargs">find, xargs</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># ファイルを検索してくれるfind</span>
 <span style="color:#586e75"># find 場所 名前で検索 条件(initのあとは何でも良い)</span>
 find /etc -name <span style="color:#2aa198">&#39;init*&#39;</span>
@@ -560,7 +560,7 @@ find /etc -name <span style="color:#2aa198">&#39;init*&#39;</span> -type f -exec
 <span style="color:#586e75"># 複数の結果をコマンドに流し込めるxargsもある</span>
 find /etc -name <span style="color:#2aa198">&#39;init*&#39;</span> -type f | xargs wc -l
 &gt; 当該ファイルの行数がカウントされて表示される</code></pre></div>
-<h2 id="ブレース展開を使う">ブレース展開を使う</h2>
+<h2 id="ブレース展開">ブレース展開</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># まとめて展開</span>
 <span style="color:#b58900">echo</span> <span style="color:#719e07">{</span>a, b, c<span style="color:#719e07">}</span>
 &gt; a b c
@@ -627,25 +627,25 @@ ls app2
 <li><a href="#mkdirを使って一気にファイルを複数作成する">mkdirを使って一気にファイルを複数作成する</a></li>
 <li><a href="#一般ユーザーと管理ユーザー">一般ユーザーと管理ユーザー</a></li>
 <li><a href="#unixシステムのディレクトリの大体の構成">UNIXシステムのディレクトリの大体の構成</a></li>
-<li><a href="#ディレクリを移動する">ディレクリを移動する</a></li>
-<li><a href="#ディレクトリを操作する">ディレクトリを操作する</a></li>
+<li><a href="#ディレクリを移動">ディレクリを移動</a></li>
+<li><a href="#ディレクトリを操作">ディレクトリを操作</a></li>
 <li><a href="#ファイル操作">ファイル操作</a></li>
 <li><a href="#bashの便利機能">bashの便利機能</a></li>
-<li><a href="#コマンドの履歴を使う">コマンドの履歴を使う</a></li>
+<li><a href="#コマンドの履歴">コマンドの履歴</a></li>
 <li><a href="#コマンドについて詳しく調べる">コマンドについて詳しく調べる</a></li>
 <li><a href="#シンボリックリンクの使い方">シンボリックリンクの使い方</a></li>
-<li><a href="#ユーザーとグループを確認する">ユーザーとグループを確認する</a></li>
+<li><a href="#ユーザーとグループを確認">ユーザーとグループを確認</a></li>
 <li><a href="#パーミッションの変更">パーミッションの変更</a></li>
 <li><a href="#数値によるパーミッションの変更">数値によるパーミッションの変更</a></li>
-<li><a href="#独自のコマンドを作る">独自のコマンドを作る</a></li>
+<li><a href="#独自のコマンドを作成">独自のコマンドを作成</a></li>
 <li><a href="#一時的にpathを通す">一時的にpathを通す</a></li>
 <li><a href="#管理者ユーザーになる">管理者ユーザーになる</a></li>
 <li><a href="#管理者を変更するchown">管理者を変更するchown</a></li>
 <li><a href="#wc-head-tail-grepを使う">wc, head, tail, grepを使う</a></li>
 <li><a href="#リダイレクション-パイプを使う">リダイレクション, パイプを使う</a></li>
-<li><a href="#ワイルカードを使う">ワイルカードを使う</a></li>
-<li><a href="#find-xargsを使う">find, xargsを使う</a></li>
-<li><a href="#ブレース展開を使う">ブレース展開を使う</a></li>
+<li><a href="#ワイルカード">ワイルカード</a></li>
+<li><a href="#find-xargs">find, xargs</a></li>
+<li><a href="#ブレース展開">ブレース展開</a></li>
 </ul></li>
 </ul>
 </nav>
