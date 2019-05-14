@@ -192,6 +192,44 @@ Go言語で書かれてる.
 <h2 id="全文検索">全文検索</h2>
 
 <p><a href="https://gohugo.io/tools/search/">Search for your Hugo Website</a></p>
+
+<h2 id="見た目変更">見た目変更</h2>
+
+<p>このサイトだと<code>/サイトのディレクトリ/themes/book-fork/assets/</code>の中の.scssファイルを操作する.</p>
+
+<h2 id="イラストの追加">イラストの追加</h2>
+
+<ol>
+<li><p>このサイトだと<code>/ブログのディレクトリ/layouts/shortcodes/fontawesome.html</code>に</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#268bd2">span</span> class<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;inline-svg&#34;</span> &gt;
+{{- $fname:=print &#34;fontawesome/&#34; ( .Get 0 ) &#34;.svg&#34; -}}
+{{- $path:=&#34;&lt;<span style="color:#268bd2">path</span>&#34; -}}
+{{- $fill:<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;&lt;path fill=\&#34;</span>currentColor\&#34;&#34; -}}
+{{ replace (readFile $fname) $path $fill | safeHTML }}
+&lt;/span&gt;</code></pre></div>
+<p>を追加する.</p></li>
+
+<li><p>svgファイルをどこからかダウンロードしてくる.
+オススメは<a href="https://fontawesome.com">Fontawesome</a>の<a href="https://github.com/FortAwesome/Font-Awesome">GitHubリポジトリ</a>から目当ての<a href="https://github.com/FortAwesome/Font-Awesome/blob/master/svgs/brands/github.svg">svgファイル</a>を見つけて, curlとかで<code>/ブログのディレクトリ/content/fontawesome/</code>にダウンロードしてくる.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># GitHubのイラストだとこんな感じ.</span>
+curl -O https://raw.githubusercontent.com/FortAwesome/Font-Awesome/master/svgs/brands/github.svg</code></pre></div></li>
+
+<li><p>このサイトだと<code>/ブログのディレクトリ/thems/book-fork/assets/custom.scss</code>に</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#268bd2">inline-svg</span> {
+<span style="color:#719e07">display</span>: <span style="color:#cb4b16">inline</span><span style="color:#719e07">-</span><span style="color:#cb4b16">block</span>;
+<span style="color:#719e07">height</span>: <span style="color:#2aa198">1.15</span><span style="color:#dc322f">rem</span>;
+<span style="color:#719e07">width</span>: <span style="color:#2aa198">1.15</span><span style="color:#dc322f">rem</span>;
+<span style="color:#719e07">top</span>: <span style="color:#2aa198">0.15</span><span style="color:#dc322f">rem</span>;
+<span style="color:#719e07">position</span>: <span style="color:#cb4b16">relative</span>;
+}</code></pre></div>
+<p>を追加する.</p></li>
+
+<li><p>.mdファイルの中で</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">{{\% fontawesome github %}}</code></pre></div>
+<p>と使う.</p></li>
+
+<li><p><strong>Reference:</strong> <a href="https://www.client9.com/using-font-awesome-icons-in-hugo/">Using Font Awesome Icons in Hugo</a></p></li>
+</ol>
 </article>
 
       
@@ -229,6 +267,8 @@ Go言語で書かれてる.
 <li><a href="#macでhugoとgithub-pagesを使ってのサイトの作り方">MacでHugoとGitHub Pagesを使ってのサイトの作り方</a></li>
 <li><a href="#hugoのコードの色選択">Hugoのコードの色選択</a></li>
 <li><a href="#全文検索">全文検索</a></li>
+<li><a href="#見た目変更">見た目変更</a></li>
+<li><a href="#イラストの追加">イラストの追加</a></li>
 </ul></li>
 </ul>
 </nav>

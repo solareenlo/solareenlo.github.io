@@ -250,7 +250,12 @@ Host github github.com Hostname github.com Port 22 User git IdentityFile ~/.ssh/
       <guid>https://solareenlo.com/docs/hugo/</guid>
       <description>Hugoとは 静的なhtmlを生成する事ができる静的サイトジェネレータの1つ. Go言語で書かれてる. 記事を書くだけならGo言語を知らなくても良い. 記事はMarkdownで書ける.
 .mdを削除した時に.htmlも同様に削除するオプション hugo server -D --cleanDestinationDir MacでHugoとGitHub Pagesを使ってのサイトの作り方 こちら
-Hugoのコードの色選択  https://help.farbox.com/pygments.html Chroma Style Gallery  全文検索 Search for your Hugo Website</description>
+Hugoのコードの色選択  https://help.farbox.com/pygments.html Chroma Style Gallery  全文検索 Search for your Hugo Website
+見た目変更 このサイトだと/サイトのディレクトリ/themes/book-fork/assets/の中の.scssファイルを操作する.
+イラストの追加  このサイトだと/ブログのディレクトリ/layouts/shortcodes/fontawesome.htmlに
+&amp;lt;span class=&amp;#34;inline-svg&amp;#34; &amp;gt; {{- $fname:=print &amp;#34;fontawesome/&amp;#34; ( .Get 0 ) &amp;#34;.svg&amp;#34; -}} {{- $path:=&amp;#34;&amp;lt;path&amp;#34; -}} {{- $fill:=&amp;#34;&amp;lt;path fill=\&amp;#34;currentColor\&amp;#34;&amp;#34; -}} {{ replace (readFile $fname) $path $fill | safeHTML }} &amp;lt;/span&amp;gt; を追加する.
+ svgファイルをどこからかダウンロードしてくる. オススメはFontawesomeのGitHubリポジトリから目当てのsvgファイルを見つけて, curlとかで/ブログのディレクトリ/content/fontawesome/にダウンロードしてくる.
+# GitHubのイラストだとこんな感じ. curl -O https://raw.</description>
     </item>
     
     <item>
@@ -285,8 +290,7 @@ Reference: Docker Compose利用者から見た Kubernetes 開発環境構築入�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://solareenlo.com/docs/nodejs/</guid>
-      <description>Node.jsとは サーバーサイドJavaScript環境のこと. サーバーサイドもJavaScripで記述できるようにした.
-インストール Mac: https://nodejs.org/en/
+      <description>Node.jsとは  サーバーサイドJavaScript環境のこと. サーバーサイドもJavaScripで記述できるようにした. シングルスレッドでノンブロッキングI/Oを行う.  インストール Mac: https://nodejs.org/en/
 Ubuntu: Official Node.js binary distributions
 テストの種類  単体テスト: 入力をモック化し, 個々の関数やクラスをテストし, 出力結果が予想通りであることを確認するテスト. 統合テスト: いくつかのモジュールを組み合わせて予想通りに動作することを保証するテスト. 機能テスト: 製品自体を使って(例えばブラウザを使って), あるシナリオをテストする. 確実に想定した動作をするかといった内部構造は考慮しない. リグレッションテスト: プログラムに機能を追加したり変更を加えたことによって、今まで普通に動いていた部分が動かなくなっていないかを確認するテスト. 受け入れテスト: システム開発を外注して, 発注者の本来の目的や意図通りに稼働するかのテスト.  Reference: 2017年JavaScriptのテスト概論
 テストツールの種類  テストの環境を提供する（Mocha, Jasmine, Jest, Karma） テストの構造を提供する（Mocha, Jasmine, Jest, Cucumber） アサーション機能を提供する（Chai, Jasmine, Jest, Unexpected） 生成, 表示, テスト結果をウォッチする（Mocha, Jasmine, Jest, Karma）

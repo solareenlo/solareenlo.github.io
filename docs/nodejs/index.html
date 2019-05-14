@@ -171,8 +171,11 @@ https://github.com/alex-shpak/hugo-book
 
 <h1 id="node-js-https-github-com-nodejs-とは"><a href="https://github.com/nodejs">Node.js</a>とは</h1>
 
-<p>サーバーサイドJavaScript環境のこと.
-サーバーサイドもJavaScripで記述できるようにした.</p>
+<ul>
+<li>サーバーサイドJavaScript環境のこと.</li>
+<li>サーバーサイドもJavaScripで記述できるようにした.</li>
+<li>シングルスレッドでノンブロッキングI/Oを行う.</li>
+</ul>
 
 <h2 id="インストール">インストール</h2>
 
@@ -216,6 +219,147 @@ https://github.com/alex-shpak/hugo-book
   process.exit(<span style="color:#2aa198">1</span>); <span style="color:#586e75">// 正常に強制終了する
 </span><span style="color:#586e75"></span>}
 </code></pre></div>
+<h2 id="csvを扱う">CSVを扱う</h2>
+
+<ul>
+<li><a href="https://csv.js.org">csv.js</a>を使えば簡単.</li>
+<li>CSVの生成/読み取り/変換/書き出しができる.</li>
+<li>stream/コールバック/同期的にデータを処理ができる.</li>
+</ul>
+
+<h3 id="stream">stream</h3>
+
+<p>以下を行ってから</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm init -y
+npm i --save csv
+touch index.js</code></pre></div>
+<p><code>index.js</code>に以下を書き込んで</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#719e07">const</span> csv <span style="color:#719e07">=</span> require(<span style="color:#2aa198">&#39;csv&#39;</span>);
+
+<span style="color:#719e07">const</span> generator <span style="color:#719e07">=</span> csv.generate({seed<span style="color:#719e07">:</span> <span style="color:#2aa198">1</span>, columns<span style="color:#719e07">:</span> <span style="color:#2aa198">2</span>, length<span style="color:#719e07">:</span> <span style="color:#2aa198">3</span>});
+<span style="color:#719e07">const</span> parser <span style="color:#719e07">=</span> csv.parse();
+<span style="color:#719e07">const</span> transformer <span style="color:#719e07">=</span> csv.transform(data =&gt; {
+  <span style="color:#719e07">return</span> data.map(value =&gt; {<span style="color:#719e07">return</span> value.toUpperCase()});
+});
+<span style="color:#719e07">const</span> stringifier <span style="color:#719e07">=</span> csv.stringify();
+<span style="color:#586e75">// CSVを生成して
+</span><span style="color:#586e75"></span>generator.on(<span style="color:#2aa198">&#39;readable&#39;</span>, () =&gt; {
+  <span style="color:#719e07">while</span>(data <span style="color:#719e07">=</span> generator.read()){
+    parser.write(data);
+  }
+});
+<span style="color:#586e75">// CSVを読み込んで
+</span><span style="color:#586e75"></span>parser.on(<span style="color:#2aa198">&#39;readable&#39;</span>, () =&gt; {
+  <span style="color:#719e07">while</span>(data <span style="color:#719e07">=</span> parser.read()){
+    transformer.write(data);
+  }
+});
+<span style="color:#586e75">// データを変換して
+</span><span style="color:#586e75"></span>transformer.on(<span style="color:#2aa198">&#39;readable&#39;</span>, () =&gt; {
+  <span style="color:#719e07">while</span>(data <span style="color:#719e07">=</span> transformer.read()){
+    stringifier.write(data);
+  }
+});
+<span style="color:#586e75">// 文字列に変換して
+</span><span style="color:#586e75"></span>stringifier.on(<span style="color:#2aa198">&#39;readable&#39;</span>, () =&gt; {
+  <span style="color:#719e07">while</span>(data <span style="color:#719e07">=</span> stringifier.read()){
+    <span style="color:#586e75">// 標準出力する.
+</span><span style="color:#586e75"></span>    process.stdout.write(data);
+  }
+});
+</code></pre></div>
+<p>以下を実行する.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">node index.js</code></pre></div>
+<h3 id="pipeでstream">pipeでstream</h3>
+
+<p>以下を行ってから</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm init -y
+npm i --save csv
+touch index.js</code></pre></div>
+<p><code>index.js</code>に以下を書き込んで</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#719e07">const</span> csv <span style="color:#719e07">=</span> require(<span style="color:#2aa198">&#39;csv&#39;</span>);
+
+<span style="color:#586e75">// CSVを生成して
+</span><span style="color:#586e75"></span>csv.generate  ({seed<span style="color:#719e07">:</span> <span style="color:#2aa198">1</span>, length<span style="color:#719e07">:</span> <span style="color:#2aa198">3</span>}).pipe(
+<span style="color:#586e75">// CSVを読み込んで
+</span><span style="color:#586e75"></span>csv.parse     ()).pipe(
+<span style="color:#586e75">// データを変換して
+</span><span style="color:#586e75"></span>csv.transform (record =&gt; {
+                <span style="color:#719e07">return</span> record.map(value =&gt; {
+                  <span style="color:#719e07">return</span> value.toUpperCase()
+              })})).pipe(
+<span style="color:#586e75">// 文字列にして
+</span><span style="color:#586e75"></span>csv.stringify ()).pipe(
+<span style="color:#586e75">// 標準出力する.
+</span><span style="color:#586e75"></span>process.stdout);
+</code></pre></div>
+<p>以下を実行する.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">node index.js</code></pre></div>
+<h3 id="コールバック">コールバック</h3>
+
+<p>以下を行ってから</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm init -y
+npm i --save csv
+touch index.js</code></pre></div>
+<p><code>index.js</code>に以下を書き込んで</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#719e07">const</span> csv <span style="color:#719e07">=</span> require(<span style="color:#2aa198">&#39;csv&#39;</span>);
+
+<span style="color:#586e75">// CSVを生成して
+</span><span style="color:#586e75"></span>csv.generate({seed<span style="color:#719e07">:</span> <span style="color:#2aa198">1</span>, columns<span style="color:#719e07">:</span> <span style="color:#2aa198">2</span>, length<span style="color:#719e07">:</span> <span style="color:#2aa198">3</span>}, (err, data) =&gt; {
+  <span style="color:#586e75">// CSVを読み込んで
+</span><span style="color:#586e75"></span>  csv.parse(data, (err, data) =&gt; {
+    <span style="color:#586e75">// データを変換して
+</span><span style="color:#586e75"></span>    csv.transform(data, data =&gt; {
+      <span style="color:#719e07">return</span> data.map(value =&gt; {<span style="color:#719e07">return</span> value.toUpperCase()});
+    }, (err, data) =&gt; {
+      <span style="color:#586e75">// 文字列に変換して
+</span><span style="color:#586e75"></span>      csv.stringify(data, (err, data) =&gt; {
+        <span style="color:#586e75">// 標準出力する.
+</span><span style="color:#586e75"></span>        process.stdout.write(data);
+      });
+    });
+  });
+});
+</code></pre></div>
+<p>以下を実行する.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">node index.js</code></pre></div>
+<h3 id="同期処理">同期処理</h3>
+
+<p>以下を行ってから</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm init -y
+npm i --save csv-generate csv-parse stream-transform csv-stringify
+touch index.js</code></pre></div>
+<p><code>index.js</code>に以下を書き込んで</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#719e07">const</span> generate <span style="color:#719e07">=</span> require(<span style="color:#2aa198">&#39;csv-generate/lib/sync&#39;</span>);
+<span style="color:#719e07">const</span> parse <span style="color:#719e07">=</span> require(<span style="color:#2aa198">&#39;csv-parse/lib/sync&#39;</span>);
+<span style="color:#719e07">const</span> transform <span style="color:#719e07">=</span> require(<span style="color:#2aa198">&#39;stream-transform/lib/sync&#39;</span>);
+<span style="color:#719e07">const</span> stringify <span style="color:#719e07">=</span> require(<span style="color:#2aa198">&#39;csv-stringify&#39;</span>);
+
+<span style="color:#586e75">// CSVを生成して
+</span><span style="color:#586e75"></span><span style="color:#719e07">const</span> csvFile <span style="color:#719e07">=</span> generate({
+  seed<span style="color:#719e07">:</span> <span style="color:#2aa198">1</span>,
+  objectMode<span style="color:#719e07">:</span> <span style="color:#cb4b16">true</span>,
+  columns<span style="color:#719e07">:</span> <span style="color:#2aa198">2</span>,
+  length<span style="color:#719e07">:</span> <span style="color:#2aa198">2</span>
+});
+<span style="color:#586e75">// CSVを読み込んで
+</span><span style="color:#586e75"></span><span style="color:#719e07">const</span> input <span style="color:#719e07">=</span> parse(csvFile, {
+  columns<span style="color:#719e07">:</span> <span style="color:#cb4b16">true</span>,
+  skip_empty_lines<span style="color:#719e07">:</span> <span style="color:#cb4b16">true</span>
+});
+<span style="color:#586e75">// データを変換して
+</span><span style="color:#586e75"></span><span style="color:#719e07">const</span> records <span style="color:#719e07">=</span> transform(input, record =&gt; {
+  record.push(record.shift())
+  <span style="color:#719e07">return</span> record
+});
+<span style="color:#586e75">// 文字列に変換して
+</span><span style="color:#586e75"></span><span style="color:#719e07">const</span> moji <span style="color:#719e07">=</span> stringify(records, (err, output) =&gt; {
+  <span style="color:#586e75">// 出力する.
+</span><span style="color:#586e75"></span>  console.log(output);
+});
+</code></pre></div>
+<p>以下を実行する.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">node index.js</code></pre></div>
 <h2 id="streamとは">Streamとは</h2>
 
 <ul>
@@ -346,6 +490,13 @@ yarn upgrade-interactive <span style="color:#586e75"># 上記2つを一緒に行
 <li><a href="#テストの種類">テストの種類</a></li>
 <li><a href="#テストツールの種類">テストツールの種類</a></li>
 <li><a href="#引数で判定">引数で判定</a></li>
+<li><a href="#csvを扱う">CSVを扱う</a>
+<ul>
+<li><a href="#stream">stream</a></li>
+<li><a href="#pipeでstream">pipeでstream</a></li>
+<li><a href="#コールバック">コールバック</a></li>
+<li><a href="#同期処理">同期処理</a></li>
+</ul></li>
 <li><a href="#streamとは">Streamとは</a>
 <ul>
 <li><a href="#streamの種類">Streamの種類</a></li>
