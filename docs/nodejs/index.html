@@ -101,6 +101,7 @@ https://github.com/alex-shpak/hugo-book
 <ul>
 <li><a href="/docs/aws/">AWS</a></li>
 <li><a href="/docs/gcp/">GCP</a></li>
+<li><a href="/docs/firebase/">Firebase</a></li>
 </ul></li>
 <li><a href="/docs/ci-cd/"><strong>CI/CD</strong></a>
 
@@ -168,7 +169,7 @@ https://github.com/alex-shpak/hugo-book
       
 <article class="markdown">
 
-<h1 id="node-jsとは">Node.jsとは</h1>
+<h1 id="node-js-https-github-com-nodejs-とは"><a href="https://github.com/nodejs">Node.js</a>とは</h1>
 
 <p>サーバーサイドJavaScript環境のこと.
 サーバーサイドもJavaScripで記述できるようにした.</p>
@@ -215,6 +216,80 @@ https://github.com/alex-shpak/hugo-book
   process.exit(<span style="color:#2aa198">1</span>); <span style="color:#586e75">// 正常に強制終了する
 </span><span style="color:#586e75"></span>}
 </code></pre></div>
+<h2 id="streamとは">Streamとは</h2>
+
+<ul>
+<li>データストリーム(データの転送単位がブロックより細かいバイト単位で行う方式)を扱うオブジェクト.</li>
+<li>Streamオブジェクトはデータをストリームとして(データを流れる様にして)扱いたい時に使う.</li>
+<li><strong>References:</strong>
+
+<ul>
+<li><a href="https://qiita.com/masakura/items/5683e8e3e655bfda6756">Node.js Stream を使いこなす</a></li>
+<li><a href="https://qiita.com/Mizunashi_Mana/items/872354cd7bf25090932f">Stream API入門</a></li>
+</ul></li>
+</ul>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#586e75">// ブロッキングでファイルを読み書きする.
+</span><span style="color:#586e75">// データを読み込んでる間は全ての処理がストップする.
+</span><span style="color:#586e75"></span><span style="color:#719e07">const</span> text <span style="color:#719e07">=</span> fs.readFileSync(<span style="color:#2aa198">&#39;src.txt&#39;</span>, <span style="color:#2aa198">&#39;utf8&#39;</span>);
+fs.writeFileSync(<span style="color:#2aa198">&#39;dest.txt&#39;</span>, text);
+
+<span style="color:#586e75">// 非ブロッキングI/Oでファイルを読み書きする.
+</span><span style="color:#586e75">// データを読み込んでる間も他の処理はできるが, 書き込みは読み込みが終わってから.
+</span><span style="color:#586e75"></span>fs.readFile(<span style="color:#2aa198">&#39;src.txt&#39;</span>, <span style="color:#2aa198">&#39;utf8&#39;</span>, (err, data) =&gt; {
+  fs.writeFile(<span style="color:#2aa198">&#39;dest.txt&#39;</span>, data);
+});
+
+<span style="color:#586e75">// 一定量だけデータを読み込んで書き込みを行う.
+</span><span style="color:#586e75">// 大きなファイルだと大活躍.
+</span><span style="color:#586e75"></span><span style="color:#719e07">const</span> src <span style="color:#719e07">=</span> fs.createReadStream(<span style="color:#2aa198">&#39;src.txt&#39;</span>, <span style="color:#2aa198">&#39;utf8&#39;</span>);
+<span style="color:#719e07">const</span> dest <span style="color:#719e07">=</span> fs.createWriteStream(<span style="color:#2aa198">&#39;dest.txt&#39;</span>, <span style="color:#2aa198">&#39;utf8&#39;</span>);
+src.on(<span style="color:#2aa198">&#39;data&#39;</span>, chunk =&gt; dest.write(chunk));
+src.on(<span style="color:#2aa198">&#39;end&#39;</span>, () =&gt; dest.end());
+
+<span style="color:#586e75">// pipeも使える.
+</span><span style="color:#586e75"></span><span style="color:#719e07">const</span> src <span style="color:#719e07">=</span> fs.createReadStream(<span style="color:#2aa198">&#39;src.txt&#39;</span>, <span style="color:#2aa198">&#39;utf8&#39;</span>);
+<span style="color:#719e07">const</span> dest <span style="color:#719e07">=</span> fs.createWriteStream(<span style="color:#2aa198">&#39;dest.txt&#39;</span>, <span style="color:#2aa198">&#39;utf8&#39;</span>);
+src.pipe(dest);
+</code></pre></div>
+<h3 id="streamの種類">Streamの種類</h3>
+
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>意味</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>stream.Readable</td>
+<td>読み取りだけができるストリーム</td>
+</tr>
+
+<tr>
+<td>stream.Writable</td>
+<td>書き込みだけができるストリーム</td>
+</tr>
+
+<tr>
+<td>stream.Duplex</td>
+<td>読み取りも書き込みもできるストリーム</td>
+</tr>
+
+<tr>
+<td>stream.Transform</td>
+<td>読み取ったデータを変換して出力するストリーム</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="公式reference">公式Reference</h3>
+
+<ul>
+<li><a href="https://nodejs.org/api/stream.html">Stream</a></li>
+</ul>
+
 <h1 id="npm">NPM</h1>
 
 <p>Node.jsのパッケージ管理ツールのこと.</p>
@@ -241,8 +316,8 @@ yarn upgrade-interactive <span style="color:#586e75"># 上記2つを一緒に行
   
   <div>
     
-    <a href="https://github.com/solareenlo/blog-hugo/commit/fbe46e79dff2d3abe285bae6450b08f6c436ddca" title='Last modified May 8, 2019 by solareenlo' target="_blank" rel="noopener">
-      <img src="/svg/code-merge.svg" alt="Changed" /> May 8, 2019
+    <a href="https://github.com/solareenlo/blog-hugo/commit/d9668e71aeb7726fe61c67cb4dcf4f875de42080" title='Last modified May 12, 2019 by solareenlo' target="_blank" rel="noopener">
+      <img src="/svg/code-merge.svg" alt="Changed" /> May 12, 2019
     </a>
   </div>
   
@@ -265,12 +340,17 @@ yarn upgrade-interactive <span style="color:#586e75"># 上記2つを一緒に行
   <aside class="book-toc fixed">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#node-jsとは">Node.jsとは</a>
+<li><a href="#node-js-https-github-com-nodejs-とは"><a href="https://github.com/nodejs">Node.js</a>とは</a>
 <ul>
 <li><a href="#インストール">インストール</a></li>
 <li><a href="#テストの種類">テストの種類</a></li>
 <li><a href="#テストツールの種類">テストツールの種類</a></li>
 <li><a href="#引数で判定">引数で判定</a></li>
+<li><a href="#streamとは">Streamとは</a>
+<ul>
+<li><a href="#streamの種類">Streamの種類</a></li>
+<li><a href="#公式reference">公式Reference</a></li>
+</ul></li>
 </ul></li>
 <li><a href="#npm">NPM</a>
 <ul>

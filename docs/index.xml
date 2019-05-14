@@ -79,8 +79,8 @@ Hello World #include &amp;lt;stdio.h&amp;gt; int main(void) { puts(&amp;#34;Hell
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://solareenlo.com/docs/circleci/</guid>
-      <description> CircleCiとは クラウド上でCI/CDを行なってくれるサービスの1つ.
-docs  CircleCI Documentation  </description>
+      <description> CircleCIとは クラウド上でCI/CDを行なってくれるサービスの1つ.
+docs  CircleCI Documentation  参考スライド  CircleCI 2.1の機能を使ってインフラの&amp;rdquo;ほぼ&amp;rdquo;全自動構成管理をやってみた話  </description>
     </item>
     
     <item>
@@ -178,10 +178,20 @@ Reference: Dockerでユーザーをdockerグループに追加することの危
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://solareenlo.com/docs/ethereum/</guid>
-      <description>Ethereum 目的 ブロックチェーン上でアプリを動かして, スマートコントラクトを実行できるようにし, 経済をさらに発展させる.
+      <description>Ethereumとは 目的 ブロックチェーン上でアプリを動かして, スマートコントラクトを実行できるようにし, 経済をさらに発展させる.
 アプリの特徴: 分散型, 管理者不在, 一度デプロイすると修正不可
 特徴  分散型アプリケーション(スマートコントラクト)のプラットフォーム 各ノードにバーチャルマシーン(通称: EVM)を積んでいるのでチューリング完全なスクリプトがEthereum上で書ける. アカウントベース ブロックチェーン2.0の代表格  スケーリング方法  サイドチェーン  Plasma: Ethereumのメインチェーンとは別のプラズマチェーンと呼ばれるサイドチェーンをマークル木状にどんどん連ねることで, メインチェーンに格納される情報量を減少させる仕組み. エンドユーザーが出金したいときはルートチェーンに問い合わせる. 初心者向けプラズマ勉強法まとめノートー 0から3週間で学んだこと lightningとplasmaってなにが違うんですか？ Plasma スケーラブルな自律型スマートコントラクト  オフチェーン  Raiden Network: ブロックチェーン内の処理をブロックチェーンの外側に持っていくことで, メインチェーンの負担を軽減する仕組み. 最終的な取引結果のみをブロックチェーンで処理する.  シャーディング  トランザクション処理を各ノードで分割して行うことで, 処理速度の向上を図る仕組み. Ethereum2.0のCasperで導入されるPoSと相性が良い. Ethereumのシャーディング概論   スマートコントラクトとは  何人かが合意した内容（契約）を、ヒトがいなくても自動的に実行する仕組み  例は自動販売機   Ethereum dapps開発七つ道具  Solidity MetaMask Truffle, Ganache web3.js OpenZepplien Remix Google翻訳  と, 上記の内容を広く浅く説明してくれてるサイト
  EthereumとContracts開発を取り巻くエコシステムの概要  gethの使い方 gethとはGoで実装された完全なethereumノードを実行するためのコマンドラインインターフェースのこと.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://solareenlo.com/docs/firebase/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://solareenlo.com/docs/firebase/</guid>
+      <description> Firebaseとは GCPのmobile Backend as a Service (mBaaS)のこと.
+ハンズオン  web Android iOS  </description>
     </item>
     
     <item>
@@ -449,7 +459,7 @@ Shougo/dein.vim curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bi
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://solareenlo.com/docs/bitcoin/</guid>
-      <description>Bitcoin 目的 匿名性を自分で選択できつつ, 安全に価値の移転と保存に特化したシステムを構築すること.
+      <description>Bitcoinとは 目的 匿名性を自分で選択できつつ, 安全に価値の移転と保存に特化したシステムを構築すること.
 特徴  非中央集権 自律分散 トラストレス 耐改ざん性 オープンソース 匿名性を選択できる 二重支払いができない 払い(価値の保存と移転)に特化したとても堅牢なシステム(チューリング不完全/マルチシグ/HDウォレット/ニーモニック/Base58とか)  技術  電子署名 公開鍵暗号  楕円曲線DSA  ハッシュ関数 ネットワーク  P2P Proof of Work   プレイヤー  コア開発者 マイナー ユーザー 投資家・投機家 法律  スケーリング方法  コンセンサスアルゴリズムを速くする（分散性のために1ブロック生成にわざと10分かけてる） ブロックに含まれるトランザクションを増やす（Block weightが4MB以下/segwit導入により） オフチェーン（Lightning networkなど） サイドチェーン シャーディング Reference: ブロックチェーンとスケーラビリティ  フルノード フルノードの立て方  ビットコインのフルノードを立てる方法 Bitcoin ClockUpMemo bitcoindのブロック保存先ディレクトリを指定する Bitcoin.conf Configuration File  フルノードの分布図  BITNODES  マイナーとノードの違い  マイナーも1つのノードではあるが, マイナーの主な役割はプルーフオブワーク（PoW）を行い取引をブロックに収納しネットワークに送信すること.</description>
     </item>
     
@@ -479,7 +489,7 @@ DBの使用率ランキング  DB-Engines Ranking  </description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://solareenlo.com/docs/iota/</guid>
-      <description> IOTA 目的 オープンIoTでブロックチェーンの良さ(分散性/耐改ざん性/オープン性)を使えるようにしつつ(スケーリング・マイニングコスト・トランザクションの承認の遅さを解決しつつ)インダストリー4.0を推し進めること.
+      <description> IOTAとは 目的 オープンIoTでブロックチェーンの良さ(分散性/耐改ざん性/オープン性)を使えるようにしつつ(スケーリング・マイニングコスト・トランザクションの承認の遅さを解決しつつ)インダストリー4.0を推し進めること.
 特徴  小さなデータの保存と交換に特化した設計. 平衡三進数を使用. 量子コンピュータ耐性のために電子署名にはWinternitz One Time Signatureを使用.  署名は使い捨てなので送金に使ったアドレスにもう1度入金すると盗まれる可能性特大. というか多額のIOTAを盗まれた実績有. 今はそうならないようにwalletが上手に管理してくれてる.  スケーリングのためにブロックは生成せずに各々のトランザクションがDAG形式で自分より前のトランザションを承認していく.  まだ発展途上なのでチェック機能が存在する. トランザクションはInput/Output/Remainderの3種類が1まとめになったBundleとしてTangle内を流れてる.  UTXOを採用.  DBのある所  iota.partners iri-playbook  C#  https://patriq.gitbook.io/iota/  </description>
     </item>
     

@@ -101,6 +101,7 @@ https://github.com/alex-shpak/hugo-book
 <ul>
 <li><a href="/docs/aws/">AWS</a></li>
 <li><a href="/docs/gcp/">GCP</a></li>
+<li><a href="/docs/firebase/">Firebase</a></li>
 </ul></li>
 <li><a href="/docs/ci-cd/"><strong>CI/CD</strong></a>
 
@@ -236,6 +237,17 @@ docker build .
 <p>以下でコンテナを走らせる.</p>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run 8fcebe7331d6
 &gt; 色々出てくる</code></pre></div>
+<h3 id="best-practices">Best Practices</h3>
+
+<ul>
+<li>ビルド時間</li>
+<li>イメージサイズ</li>
+<li>メンテナンス性/可読性</li>
+<li>セキュリティ</li>
+<li>持続性/再現性</li>
+<li><strong>Reference:</strong> <a href="https://www.slideshare.net/Docker/dcsf19-dockerfile-best-practices">DCSF19 Dockerfile Best Practices</a></li>
+</ul>
+
 <h2 id="タグ付け">タグ付け</h2>
 
 <p>以下のようにしてタグ付けを行う.</p>
@@ -434,8 +446,8 @@ COPY --from<span style="color:#719e07">=</span>builder /app/build /usr/share/ngi
   
   <div>
     
-    <a href="https://github.com/solareenlo/blog-hugo/commit/84a746fa1703f6800f3fa8c4c9e90d2200edbcb6" title='Last modified May 8, 2019 by solareenlo' target="_blank" rel="noopener">
-      <img src="/svg/code-merge.svg" alt="Changed" /> May 8, 2019
+    <a href="https://github.com/solareenlo/blog-hugo/commit/d9668e71aeb7726fe61c67cb4dcf4f875de42080" title='Last modified May 12, 2019 by solareenlo' target="_blank" rel="noopener">
+      <img src="/svg/code-merge.svg" alt="Changed" /> May 12, 2019
     </a>
   </div>
   
@@ -465,6 +477,7 @@ COPY --from<span style="color:#719e07">=</span>builder /app/build /usr/share/ngi
 <ul>
 <li><a href="#公式reference">公式Reference</a></li>
 <li><a href="#書き方">書き方</a></li>
+<li><a href="#best-practices">Best Practices</a></li>
 </ul></li>
 <li><a href="#タグ付け">タグ付け</a></li>
 <li><a href="#1つずつイメージを作っていく">1つずつイメージを作っていく</a></li>
