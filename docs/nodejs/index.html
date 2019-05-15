@@ -69,6 +69,7 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/vim/">Vim</a></li>
 <li><a href="/docs/git/">Git</a></li>
 <li><a href="/docs/github/">GitHub</a></li>
+<li><a href="/docs/test/">Test</a></li>
 </ul></li>
 <li><a href="/docs/programming-language/"><strong>Programming Language</strong></a>
 
@@ -183,18 +184,6 @@ https://github.com/alex-shpak/hugo-book
 
 <p><strong>Ubuntu:</strong> <a href="https://github.com/nodesource/distributions/blob/master/README.md">Official Node.js binary distributions</a></p>
 
-<h2 id="テストの種類">テストの種類</h2>
-
-<ul>
-<li><strong>単体テスト:</strong> 入力をモック化し, 個々の関数やクラスをテストし, 出力結果が予想通りであることを確認するテスト.</li>
-<li><strong>統合テスト:</strong> いくつかのモジュールを組み合わせて予想通りに動作することを保証するテスト.</li>
-<li><strong>機能テスト:</strong> 製品自体を使って(例えばブラウザを使って), あるシナリオをテストする. 確実に想定した動作をするかといった内部構造は考慮しない.</li>
-<li><strong>リグレッションテスト:</strong> プログラムに機能を追加したり変更を加えたことによって、今まで普通に動いていた部分が動かなくなっていないかを確認するテスト.</li>
-<li><strong>受け入れテスト:</strong> システム開発を外注して, 発注者の本来の目的や意図通りに稼働するかのテスト.</li>
-</ul>
-
-<p><strong>Reference:</strong> <a href="https://postd.cc/a-complete-guide-to-testing-javascript-in-2017/">2017年JavaScriptのテスト概論</a></p>
-
 <h2 id="テストツールの種類">テストツールの種類</h2>
 
 <ol>
@@ -211,6 +200,13 @@ https://github.com/alex-shpak/hugo-book
 
 <p><strong>Reference:</strong> <a href="https://postd.cc/a-complete-guide-to-testing-javascript-in-2017/">2017年JavaScriptのテスト概論</a></p>
 
+<h2 id="日付を扱う">日付を扱う</h2>
+
+<ul>
+<li><a href="https://github.com/moment/moment">moment/moment</a></li>
+<li><a href="https://github.com/iamkun/dayjs">iamkun/dayjs</a></li>
+</ul>
+
 <h2 id="引数で判定">引数で判定</h2>
 
 <p>引数1つでok. それ以外は強制終了する.</p>
@@ -219,6 +215,14 @@ https://github.com/alex-shpak/hugo-book
   process.exit(<span style="color:#2aa198">1</span>); <span style="color:#586e75">// 正常に強制終了する
 </span><span style="color:#586e75"></span>}
 </code></pre></div>
+<h2 id="mapの中で非同期処理">mapの中で非同期処理</h2>
+
+<ul>
+<li><a href="https://t-kojima.github.io/2018/07/18/0028-async-await-in-loop/">Node 高階関数内での非同期処理（async/await）をどう書くか</a></li>
+<li><a href="https://qiita.com/toniov/items/127267fb64a960e8166e">async/awaitやPromiseで簡単に配列のイテレーションできるようにする</a></li>
+<li><a href="https://github.com/toniov/p-iteration">toniov/p-iteration</a></li>
+</ul>
+
 <h2 id="csvを扱う">CSVを扱う</h2>
 
 <ul>
@@ -446,6 +450,12 @@ npm install -g npm-check-updates <span style="color:#586e75"># アップデー�
 ncu <span style="color:#586e75"># 新しいバージョンを確認</span>
 ncu -u <span style="color:#586e75"># package.jsonを更新</span>
 npm update <span style="color:#586e75"># パッケージを更新</span></code></pre></div>
+<h2 id="npmを視覚的に比較">npmを視覚的に比較</h2>
+
+<ul>
+<li><a href="https://github.com/johnmpotter/npm-trends">johnmpotter/npm-trends</a></li>
+</ul>
+
 <h1 id="yarn">yarn</h1>
 
 <p>こちらもパッケージ管理ツール.</p>
@@ -487,9 +497,10 @@ yarn upgrade-interactive <span style="color:#586e75"># 上記2つを一緒に行
 <li><a href="#node-js-https-github-com-nodejs-とは"><a href="https://github.com/nodejs">Node.js</a>とは</a>
 <ul>
 <li><a href="#インストール">インストール</a></li>
-<li><a href="#テストの種類">テストの種類</a></li>
 <li><a href="#テストツールの種類">テストツールの種類</a></li>
+<li><a href="#日付を扱う">日付を扱う</a></li>
 <li><a href="#引数で判定">引数で判定</a></li>
+<li><a href="#mapの中で非同期処理">mapの中で非同期処理</a></li>
 <li><a href="#csvを扱う">CSVを扱う</a>
 <ul>
 <li><a href="#stream">stream</a></li>
@@ -507,6 +518,7 @@ yarn upgrade-interactive <span style="color:#586e75"># 上記2つを一緒に行
 <ul>
 <li><a href="#npm自体のupdate">npm自体のupdate</a></li>
 <li><a href="#パッケージを最新バージョンへ">パッケージを最新バージョンへ</a></li>
+<li><a href="#npmを視覚的に比較">npmを視覚的に比較</a></li>
 </ul></li>
 <li><a href="#yarn">yarn</a>
 <ul>

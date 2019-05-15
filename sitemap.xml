@@ -214,6 +214,11 @@
   </url>
   
   <url>
+    <loc>https://solareenlo.com/docs/test/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://solareenlo.com/docs/travis-ci/</loc>
     <priority>0</priority>
   </url>

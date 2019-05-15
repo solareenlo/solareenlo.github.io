@@ -69,6 +69,7 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/vim/">Vim</a></li>
 <li><a href="/docs/git/">Git</a></li>
 <li><a href="/docs/github/">GitHub</a></li>
+<li><a href="/docs/test/">Test</a></li>
 </ul></li>
 <li><a href="/docs/programming-language/"><strong>Programming Language</strong></a>
 
@@ -175,6 +176,34 @@ https://github.com/alex-shpak/hugo-book
 とっても便利.
 慣れてしまうともう後戻りはできない.</p>
 
+<h2 id="git補完">git補完</h2>
+
+<p><strong>Reference:</strong> <a href="https://qiita.com/varmil/items/9b0aeafa85975474e9b6">「Git補完をしらない」「git statusを1日100回は使う」そんなあなたに朗報【git-completionとgit-prompt】</a></p>
+
+<h3 id="git-completion-bash-をインストール"><code>git-completion.bash</code>をインストール</h3>
+
+<p><code>git-completion.bash</code>: gitコマンドの補完スクリプト.
+Tabで保管できる.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -O ~/.git-completion.bash
+chmod a+x ~/.git-completion.bash
+<span style="color:#b58900">echo</span> <span style="color:#2aa198">&#34;source ~/.git-completion.bash&#34;</span> &gt;&gt; ~/.bashrc
+<span style="color:#b58900">source</span> ~/.bashrc</code></pre></div>
+<h3 id="git-prompt-sh-のインストール"><code>git-prompt.sh</code>のインストール</h3>
+
+<p><code>git-prompt.sh</code>: プロンプトに各種追加情報を表示可能にするスクリプト.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -O ~/.git-prompt.sh
+chmod a+x ~/.git-prompt.sh</code></pre></div>
+<p>下記を一度にコピペしてエンターをして,</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat <span style="color:#2aa198">&lt;&lt; EOF | tee -a ~/.bashrc &gt; /dev/null
+</span><span style="color:#2aa198">source ~/.git-prompt.sh
+</span><span style="color:#2aa198">GIT_PS1_SHOWDIRTYSTATE=true
+</span><span style="color:#2aa198">GIT_PS1_SHOWSTASHSTATE=true
+</span><span style="color:#2aa198">GIT_PS1_SHOWUNTRACKEDFILES=true
+</span><span style="color:#2aa198">GIT_PS1_SHOWUPSTREAM=&#34;auto&#34;
+</span><span style="color:#2aa198">GIT_PS1_SHOWCOLORHINTS=true
+</span><span style="color:#2aa198">EOF</span></code></pre></div>
+<p>下記を実行する.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#b58900">source</span> ~/.bashrc</code></pre></div>
 <h2 id="新しいブランチの作成">新しいブランチの作成</h2>
 
 <h3 id="ローカルブランチからブランチ作成">ローカルブランチからブランチ作成</h3>
@@ -476,6 +505,11 @@ git push origin master</code></pre></div>
 <ul>
 <li><a href="#git-https-git-scm-com-とは"><a href="https://git-scm.com">Git</a>とは</a>
 <ul>
+<li><a href="#git補完">git補完</a>
+<ul>
+<li><a href="#git-completion-bash-をインストール"><code>git-completion.bash</code>をインストール</a></li>
+<li><a href="#git-prompt-sh-のインストール"><code>git-prompt.sh</code>のインストール</a></li>
+</ul></li>
 <li><a href="#新しいブランチの作成">新しいブランチの作成</a>
 <ul>
 <li><a href="#ローカルブランチからブランチ作成">ローカルブランチからブランチ作成</a></li>

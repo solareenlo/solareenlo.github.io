@@ -11,7 +11,7 @@
 <title>
   
     
-    C
+    Test
   
  | solareenlo</title>
 
@@ -52,7 +52,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   <style>
-  nav ul a[href$="\2f docs\2f c\2f "] {
+  nav ul a[href$="\2f docs\2ftest\2f "] {
       color: #004ed0;
   }
   </style>
@@ -162,7 +162,7 @@ https://github.com/alex-shpak/hugo-book
   <strong>
   
     
-    C
+    Test
   
 </strong>
 </header>
@@ -170,37 +170,33 @@ https://github.com/alex-shpak/hugo-book
       
 <article class="markdown">
 
-<h1 id="c言語とは">C言語とは</h1>
+<h1 id="テストとは">テストとは</h1>
 
-<p>1972年のAT&amp;Tベル研究所で, ブライアン・カーニハンとデニス・リッチーによって開発された, コンパイル型の汎用プログラミング言語のこと.</p>
+<p>書いたコードにバグがないか確認する行為.</p>
 
-<h2 id="hello-world">Hello World</h2>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#719e07">#include</span> <span style="color:#719e07">&lt;stdio.h&gt;</span><span style="color:#719e07">
-</span><span style="color:#719e07"></span>
-<span style="color:#dc322f">int</span> <span style="color:#268bd2">main</span>(<span style="color:#dc322f">void</span>) {
-  puts(<span style="color:#2aa198">&#34;Hello, world!&#34;</span>);
-  <span style="color:#719e07">return</span> <span style="color:#2aa198">0</span>;
-}</code></pre></div>
-<h2 id="コンパイラ">コンパイラ</h2>
+<h2 id="テストの種類">テストの種類</h2>
 
 <ul>
-<li><a href="https://www.sigbus.info/compilerbook/">低レイヤを知りたい人のためのCコンパイラ作成入門</a></li>
+<li><strong>単体テスト:</strong> 入力をモック化し, 個々の関数やクラスをテストし, 出力結果が予想通りであることを確認するテスト.</li>
+<li><strong>統合テスト:</strong> いくつかのモジュールを組み合わせて予想通りに動作することを保証するテスト.</li>
+<li><strong>機能テスト:</strong> 製品自体を使って(例えばブラウザを使って), あるシナリオをテストする. 確実に想定した動作をするかといった内部構造は考慮しない.</li>
+<li><strong>リグレッションテスト:</strong> プログラムに機能を追加したり変更を加えたことによって、今まで普通に動いていた部分が動かなくなっていないかを確認するテスト.</li>
+<li><strong>受け入れテスト:</strong> システム開発を外注して, 発注者の本来の目的や意図通りに稼働するかのテスト.</li>
+<li><strong>References:</strong>
+
+<ul>
+<li><a href="https://postd.cc/a-complete-guide-to-testing-javascript-in-2017/">2017年JavaScriptのテスト概論</a></li>
+<li><a href="https://qiita.com/ktarow/items/8c3d94d6c21a0c86b799">テストの種類と技法</a></li>
+</ul></li>
 </ul>
 </article>
 
       
-<div class="align-center book-git-footer justify-between">
-  
-  <div>
-    
-    <a href="https://github.com/solareenlo/blog-hugo/commit/8080d3ce07296cc293a8f5677529817c66942922" title='Last modified Apr 29, 2019 by solareenlo' target="_blank" rel="noopener">
-      <img src="/svg/code-merge.svg" alt="Changed" /> Apr 29, 2019
-    </a>
-  </div>
+<div class="align-center book-git-footer justify-end">
   
   
   <div>
-    <a href="https://github.com/solareenlo/blog-hugo/edit/master/content/docs/c.md" target="_blank" rel="noopener">
+    <a href="https://github.com/solareenlo/blog-hugo/edit/master/content/docs/test.md" target="_blank" rel="noopener">
       <img src="/svg/code-fork.svg" alt="Edit" /> Edit this page
     </a>
   </div>
@@ -217,10 +213,9 @@ https://github.com/alex-shpak/hugo-book
   <aside class="book-toc fixed">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#c言語とは">C言語とは</a>
+<li><a href="#テストとは">テストとは</a>
 <ul>
-<li><a href="#hello-world">Hello World</a></li>
-<li><a href="#コンパイラ">コンパイラ</a></li>
+<li><a href="#テストの種類">テストの種類</a></li>
 </ul></li>
 </ul>
 </nav>
