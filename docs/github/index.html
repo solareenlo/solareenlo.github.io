@@ -174,6 +174,19 @@ https://github.com/alex-shpak/hugo-book
 
 <p>ソフトウェア開発のプラットフォーム兼ソースコードなどのホスティングサービス.</p>
 
+<h2 id="githubとgitlab同時にpush">GitHubとGitLab同時にpush</h2>
+
+<p>先ずは普通にGitHubとGitLabにリポジトリを作成し,
+リモートリポジトリを追加する.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># GitLabのリポジトリをリモートに追加</span>
+git remote set-url --add origin git@gitlab.com/solareenlo/リポジトリ名
+<span style="color:#586e75"># 確認</span>
+git remote -v
+&gt; origin  git@github.com:solareenlo/リポジトリ名.git <span style="color:#719e07">(</span>fetch<span style="color:#719e07">)</span>
+&gt; origin  git@github.com:solareenlo/リポジトリ名.git <span style="color:#719e07">(</span>push<span style="color:#719e07">)</span>
+&gt; origin  git@gitlab.com:solareenlo/リポジトリ名.git <span style="color:#719e07">(</span>push<span style="color:#719e07">)</span>
+<span style="color:#586e75"># 以下を行うとGitHubとGitLabに同時にpushされる.</span>
+git push -u origin master</code></pre></div>
 <h2 id="github-pagesで静的サイトを公開する">GitHub Pagesで静的サイトを公開する</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#b58900">cd</span> 作業ディレクトリ名
 git checkout -b gh-pages
@@ -244,6 +257,7 @@ git push -u origin gh-pages</code></pre></div>
 <ul>
 <li><a href="#github-https-github-com-とは"><a href="https://github.com">GitHub</a>とは</a>
 <ul>
+<li><a href="#githubとgitlab同時にpush">GitHubとGitLab同時にpush</a></li>
 <li><a href="#github-pagesで静的サイトを公開する">GitHub Pagesで静的サイトを公開する</a></li>
 <li><a href="#リポジトリに他のリポジトリをリンク付けする">リポジトリに他のリポジトリをリンク付けする</a></li>
 <li><a href="#リポジトリをforkして更新する">リポジトリをforkして更新する</a></li>

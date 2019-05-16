@@ -180,13 +180,14 @@ https://github.com/alex-shpak/hugo-book
 <p><code>:!</code>を使う.</p>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vim <span style="color:#586e75"># vimモードに突入</span>
 :!ls <span style="color:#586e75"># lsを表示してくれる</span></code></pre></div>
-<h2 id="vimの設定ファイル-vimrc-の例">Vimの設定ファイル(.vimrc)の例</h2>
+<h2 id="vimrcの例">.vimrcの例</h2>
 
 <ul>
 <li><a href="https://github.com/solareenlo/vim-config">solareenlo/vim-config</a></li>
+<li><a href="https://qiita.com/reireias/items/230c77b3ff5575832654">よく使われているvimrcの設定ランキング</a></li>
 </ul>
 
-<h2 id="オススメの使い方記事">オススメの使い方記事</h2>
+<h2 id="オススメの使い方">オススメの使い方</h2>
 
 <ul>
 <li><strong>References:</strong>
@@ -197,19 +198,61 @@ https://github.com/alex-shpak/hugo-book
 </ul></li>
 </ul>
 
+<h2 id="オススメのプラグイン">オススメのプラグイン</h2>
+
+<ul>
+<li><a href="https://qiita.com/reireias/items/5364dcaada1a5b88a206">よく使われているvimのプラグイン top20</a></li>
+<li><a href="https://qiita.com/reireias/items/beaa3bb0e299ae934217">オレ的vimプラグイン10選</a></li>
+</ul>
+
 <h2 id="プラグインマネージャー">プラグインマネージャー</h2>
 
-<p>プラグインを簡単にインストールしてくれるやつ.</p>
+<p>たくさんのプラグインを簡単にインストールできるマネージャー.</p>
 
-<h3 id="shougo-dein-vim-https-github-com-shougo-dein-vim"><a href="https://github.com/Shougo/dein.vim">Shougo/dein.vim</a></h3>
+<h3 id="dein-vim">dein.vim</h3>
+
+<ul>
+<li><a href="https://github.com/Shougo/dein.vim">Shougo/dein.vim</a></li>
+</ul>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh &gt; installer.sh
 <span style="color:#586e75"># For example, we just use `~/.cache/dein` as installation directory</span>
 sh ./installer.sh ~/.cache/dein</code></pre></div>
 <p>そして, vimを開いて,</p>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">:call dein#install<span style="color:#719e07">()</span></code></pre></div>
-<h2 id="nerdtree">NERDTree</h2>
+<h2 id="コメントアウト">コメントアウト</h2>
 
-<h3 id="ファイル操作">ファイル操作</h3>
+<h3 id="tcomment">tcomment</h3>
+
+<ul>
+<li><a href="https://github.com/tomtom/tcomment_vim">tomtom/tcomment_vim</a></li>
+</ul>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># 複数行コメントアウト</span>
+<span style="color:#586e75"># SHIFT + V で複数行を選択してから,</span>
+gc
+<span style="color:#586e75"># 1行コメントアウト</span>
+gcc</code></pre></div>
+<h2 id="シンボル置換">シンボル置換</h2>
+
+<h3 id="surround-vim">surround.vim</h3>
+
+<ul>
+<li><a href="https://github.com/tpope/vim-surround">tpope/vim-surround</a></li>
+</ul>
+
+<p>&ldquo;Hello World!&rdquo;</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#586e75"># 単語の終始の置換(&#39;→&#34;)</span>
+cs&#39;<span style="color:#2aa198">&#34;
+</span><span style="color:#2aa198"># 単語の終始の&#34;</span>削除
+ds<span style="color:#2aa198">&#34;</span></code></pre></div>
+<h2 id="ツリー表示">&lsquo;ツリー表示&rsquo;</h2>
+
+<h3 id="nerdtree">NERDTree</h3>
+
+<ul>
+<li><a href="https://github.com/scrooloose/nerdtree">scrooloose/nerdtree</a></li>
+</ul>
+
+<h4 id="ファイル操作">ファイル操作</h4>
 
 <table>
 <thead>
@@ -257,7 +300,7 @@ sh ./installer.sh ~/.cache/dein</code></pre></div>
 </tbody>
 </table>
 
-<h3 id="ディレクトリ操作">ディレクトリ操作</h3>
+<h4 id="ディレクトリ操作">ディレクトリ操作</h4>
 
 <table>
 <thead>
@@ -295,7 +338,7 @@ sh ./installer.sh ~/.cache/dein</code></pre></div>
 </tbody>
 </table>
 
-<h3 id="ツリー操作">ツリー操作</h3>
+<h4 id="ツリー操作">ツリー操作</h4>
 
 <table>
 <thead>
@@ -338,7 +381,7 @@ sh ./installer.sh ~/.cache/dein</code></pre></div>
 </tbody>
 </table>
 
-<h3 id="ファイルシステム">ファイルシステム</h3>
+<h4 id="ファイルシステム">ファイルシステム</h4>
 
 <table>
 <thead>
@@ -391,7 +434,7 @@ sh ./installer.sh ~/.cache/dein</code></pre></div>
 </tbody>
 </table>
 
-<h3 id="その他">その他</h3>
+<h4 id="その他">その他</h4>
 
 <table>
 <thead>
@@ -419,10 +462,16 @@ sh ./installer.sh ~/.cache/dein</code></pre></div>
 </tbody>
 </table>
 
-<h2 id="プラグインランキングサイト">プラグインランキングサイト</h2>
+<h2 id="プラグインランキング">プラグインランキング</h2>
 
 <ul>
 <li><a href="https://vimawesome.com">VimAwesome</a></li>
+</ul>
+
+<h2 id="vim-script">Vim Script</h2>
+
+<ul>
+<li><a href="https://mattn.kaoriya.net/software/vim/20111202085236.htm">モテる男のVim script短期集中講座</a></li>
 </ul>
 </article>
 
@@ -458,12 +507,23 @@ sh ./installer.sh ~/.cache/dein</code></pre></div>
 <li><a href="#vim-https-github-com-vim-vim-とは"><a href="https://github.com/vim/vim">Vim</a>とは</a>
 <ul>
 <li><a href="#外部コマンド実行">外部コマンド実行</a></li>
-<li><a href="#vimの設定ファイル-vimrc-の例">Vimの設定ファイル(.vimrc)の例</a></li>
-<li><a href="#オススメの使い方記事">オススメの使い方記事</a></li>
+<li><a href="#vimrcの例">.vimrcの例</a></li>
+<li><a href="#オススメの使い方">オススメの使い方</a></li>
+<li><a href="#オススメのプラグイン">オススメのプラグイン</a></li>
 <li><a href="#プラグインマネージャー">プラグインマネージャー</a>
 <ul>
-<li><a href="#shougo-dein-vim-https-github-com-shougo-dein-vim"><a href="https://github.com/Shougo/dein.vim">Shougo/dein.vim</a></a></li>
+<li><a href="#dein-vim">dein.vim</a></li>
 </ul></li>
+<li><a href="#コメントアウト">コメントアウト</a>
+<ul>
+<li><a href="#tcomment">tcomment</a></li>
+</ul></li>
+<li><a href="#シンボル置換">シンボル置換</a>
+<ul>
+<li><a href="#surround-vim">surround.vim</a></li>
+</ul></li>
+<li><a href="#ツリー表示">&lsquo;ツリー表示&rsquo;</a>
+<ul>
 <li><a href="#nerdtree">NERDTree</a>
 <ul>
 <li><a href="#ファイル操作">ファイル操作</a></li>
@@ -472,7 +532,9 @@ sh ./installer.sh ~/.cache/dein</code></pre></div>
 <li><a href="#ファイルシステム">ファイルシステム</a></li>
 <li><a href="#その他">その他</a></li>
 </ul></li>
-<li><a href="#プラグインランキングサイト">プラグインランキングサイト</a></li>
+</ul></li>
+<li><a href="#プラグインランキング">プラグインランキング</a></li>
+<li><a href="#vim-script">Vim Script</a></li>
 </ul></li>
 </ul>
 </nav>

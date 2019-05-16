@@ -205,6 +205,7 @@ https://github.com/alex-shpak/hugo-book
 <ul>
 <li><a href="https://github.com/moment/moment">moment/moment</a></li>
 <li><a href="https://github.com/iamkun/dayjs">iamkun/dayjs</a></li>
+<li><a href="https://github.com/date-fns/date-fns">date-fns/date-fns</a></li>
 </ul>
 
 <h2 id="引数で判定">引数で判定</h2>
@@ -442,15 +443,23 @@ src.pipe(dest);
 
 <p>Node.jsのパッケージ管理ツールのこと.</p>
 
+<h2 id="インストール-1">インストール</h2>
+
+<ul>
+<li><a href="https://docs.npmjs.com/downloading-and-installing-node-js-and-npm">Downloading and installing Node.js and npm</a></li>
+</ul>
+
 <h2 id="npm自体のupdate">npm自体のupdate</h2>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm update -y npm</code></pre></div>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm update -y npm
+<span style="color:#586e75"># もしくは</span>
+npm install npm@latest -g</code></pre></div>
 <h2 id="パッケージを最新バージョンへ">パッケージを最新バージョンへ</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm outdated <span style="color:#586e75"># 新しいバージョンを確認</span>
 npm install -g npm-check-updates <span style="color:#586e75"># アップデートマネージャーをインストール</span>
 ncu <span style="color:#586e75"># 新しいバージョンを確認</span>
 ncu -u <span style="color:#586e75"># package.jsonを更新</span>
 npm update <span style="color:#586e75"># パッケージを更新</span></code></pre></div>
-<h2 id="npmを視覚的に比較">npmを視覚的に比較</h2>
+<h2 id="比較">比較</h2>
 
 <ul>
 <li><a href="https://github.com/johnmpotter/npm-trends">johnmpotter/npm-trends</a></li>
@@ -470,8 +479,8 @@ yarn upgrade-interactive <span style="color:#586e75"># 上記2つを一緒に行
   
   <div>
     
-    <a href="https://github.com/solareenlo/blog-hugo/commit/2da8f655917cb9c74ce68926fea730399a7ff1e2" title='Last modified May 14, 2019 by solareenlo' target="_blank" rel="noopener">
-      <img src="/svg/code-merge.svg" alt="Changed" /> May 14, 2019
+    <a href="https://github.com/solareenlo/blog-hugo/commit/4f2f548d09c20b1523a2d27f0bd9d859cd7a76c1" title='Last modified May 15, 2019 by solareenlo' target="_blank" rel="noopener">
+      <img src="/svg/code-merge.svg" alt="Changed" /> May 15, 2019
     </a>
   </div>
   
@@ -516,9 +525,10 @@ yarn upgrade-interactive <span style="color:#586e75"># 上記2つを一緒に行
 </ul></li>
 <li><a href="#npm">NPM</a>
 <ul>
+<li><a href="#インストール-1">インストール</a></li>
 <li><a href="#npm自体のupdate">npm自体のupdate</a></li>
 <li><a href="#パッケージを最新バージョンへ">パッケージを最新バージョンへ</a></li>
-<li><a href="#npmを視覚的に比較">npmを視覚的に比較</a></li>
+<li><a href="#比較">比較</a></li>
 </ul></li>
 <li><a href="#yarn">yarn</a>
 <ul>

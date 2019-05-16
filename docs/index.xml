@@ -191,7 +191,7 @@ Reference: Dockerでユーザーをdockerグループに追加することの危
       
       <guid>https://solareenlo.com/docs/firebase/</guid>
       <description> Firebaseとは GCPのmobile Backend as a Service (mBaaS)のこと.
-ハンズオン  web Android iOS  </description>
+ハンズオン  web Android iOS  ハンズオンプレゼン資料  Firebase Hands-on  </description>
     </item>
     
     <item>
@@ -229,12 +229,10 @@ source ~/.bashrc 新しいブランチの作成 ローカルブランチから�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://solareenlo.com/docs/github/</guid>
-      <description> GitHubとは ソフトウェア開発のプラットフォーム兼ソースコードなどのホスティングサービス.
-GitHub Pagesで静的サイトを公開する cd 作業ディレクトリ名 git checkout -b gh-pages vim index.html // index.htmlを作成 git push -u origin gh-pages gh-pagesという名前のブランチにindex.htmlファイルを作っておけば, それが静的サイトとして「https://ユーザー名.github.io/リポジトリ名」として公開される.
-リポジトリに他のリポジトリをリンク付けする git submodule add -b &amp;lt;リンク付けする方のブランチ名&amp;gt; &amp;lt;リンク付けする方のURL&amp;gt; &amp;lt;リンク付けされるディレクトリ名&amp;gt; リポジトリをforkして更新する fork -&amp;gt; clone -&amp;gt; remote -&amp;gt; fethc -&amp;gt; marge -&amp;gt; push
-ssh接続ができなくなったときは ~/.ssh/configの中身を
-Host github github.com Hostname github.com Port 22 User git IdentityFile ~/.ssh/id_git_rsa のように, Hostのところにgithub.comを追加してみる.
-スライドショー  hiroppy/fusuma hakimel/reveal.js gnab/remark gitpitch/gitpitch  チートシート  Git Cheat Sheets  </description>
+      <description>GitHubとは ソフトウェア開発のプラットフォーム兼ソースコードなどのホスティングサービス.
+GitHubとGitLab同時にpush 先ずは普通にGitHubとGitLabにリポジトリを作成し, リモートリポジトリを追加する.
+# GitLabのリポジトリをリモートに追加 git remote set-url --add origin git@gitlab.com/solareenlo/リポジトリ名 # 確認 git remote -v &amp;gt; origin git@github.com:solareenlo/リポジトリ名.git (fetch) &amp;gt; origin git@github.com:solareenlo/リポジトリ名.git (push) &amp;gt; origin git@gitlab.com:solareenlo/リポジトリ名.git (push) # 以下を行うとGitHubとGitLabに同時にpushされる. git push -u origin master GitHub Pagesで静的サイトを公開する cd 作業ディレクトリ名 git checkout -b gh-pages vim index.html // index.htmlを作成 git push -u origin gh-pages gh-pagesという名前のブランチにindex.htmlファイルを作っておけば, それが静的サイトとして「https://ユーザー名.github.io/リポジトリ名」として公開される.
+リポジトリに他のリポジトリをリンク付けする git submodule add -b &amp;lt;リンク付けする方のブランチ名&amp;gt; &amp;lt;リンク付けする方のURL&amp;gt; &amp;lt;リンク付けされるディレクトリ名&amp;gt; リポジトリをforkして更新する fork -&amp;gt; clone -&amp;gt; remote -&amp;gt; fethc -&amp;gt; marge -&amp;gt; push</description>
     </item>
     
     <item>
@@ -299,8 +297,8 @@ Reference: Docker Compose利用者から見た Kubernetes 開発環境構築入�
 Ubuntu: Official Node.js binary distributions
 テストツールの種類  テストの環境を提供する（Mocha, Jasmine, Jest, Karma） テストの構造を提供する（Mocha, Jasmine, Jest, Cucumber） アサーション機能を提供する（Chai, Jasmine, Jest, Unexpected） 生成, 表示, テスト結果をウォッチする（Mocha, Jasmine, Jest, Karma）
 以前の実行時からの変更が意図されたものであることを確認するために, コンポーネントやデータ構造を生成し, スナップショットを比較する（Jest, Ava） モック, スパイ, スタブを提供する（Sinon, Jasmine, enzyme, Jest, testdouble) コードカバレッジのレポートを生成する（Istanbul, Jest) シナリオ実行の管理ができるブラウザ, または疑似ブラウザの環境を提供する（Protractor, Nightwatch, Phantom, Casper）  Reference: 2017年JavaScriptのテスト概論
-日付を扱う  moment/moment iamkun/dayjs  引数で判定 引数1つでok. それ以外は強制終了する.
-if(process.argv.length !== 3) { console.log(`csvファイル名を入力してください.`); process.exit(1); // 正常に強制終了する }  mapの中で非同期処理  Node 高階関数内での非同期処理（async/await）をどう書くか async/awaitやPromiseで簡単に配列のイテレーションできるようにする toniov/p-iteration  CSVを扱う  csv.</description>
+日付を扱う  moment/moment iamkun/dayjs date-fns/date-fns  引数で判定 引数1つでok. それ以外は強制終了する.
+if(process.argv.length !== 3) { console.log(`csvファイル名を入力してください.`); process.</description>
     </item>
     
     <item>
@@ -445,11 +443,11 @@ sudo umount /dev/nvme2n1p1 で一度SSDをunmountする.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://solareenlo.com/docs/vim/</guid>
-      <description> Vimとは viから派生したテキストエディタ. プラグインを導入したり, .vimrcの設定を変更したりして, 自分好みにカスタマイズがどんどんできる.
+      <description>Vimとは viから派生したテキストエディタ. プラグインを導入したり, .vimrcの設定を変更したりして, 自分好みにカスタマイズがどんどんできる.
 外部コマンド実行 :!を使う.
-vim # vimモードに突入 :!ls # lsを表示してくれる Vimの設定ファイル(.vimrc)の例  solareenlo/vim-config  オススメの使い方記事  References:  さっさと帰りたい怠け者エンジニアは vim をマスターしましょう その2 - 編集 さっさと帰りたい怠け者エンジニアは vim をマスターしましょう その1 - 基本と移動   プラグインマネージャー プラグインを簡単にインストールしてくれるやつ.
-Shougo/dein.vim curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh &amp;gt; installer.sh # For example, we just use `~/.cache/dein` as installation directory sh ./installer.sh ~/.cache/dein そして, vimを開いて,
-:call dein#install() NERDTree ファイル操作    o(enter) ファイルを開く     go ファイルを開き、カーソルはツリーに保持する   t タブで開く   T タブで開き、移動はしない   i 水平分割して開く   gi 水平分割して開き、移動はしない   s 垂直分割して開く   gs 垂直分割して開き、移動はしない    ディレクトリ操作    コマンド 説明     o(enter) フォルダを開く   O 再帰的にディレクトリをすべて開く   x 親ディレクトリを閉じる   X 再帰的にすべての子ディレクトリを閉じる   e 新しいツリーを生成する    ツリー操作    コマンド 説明     P ルートディレクトリへ移動   p 親ディレクトリへ移動   K 一番上へ移動   J 一番下へ移動   Ctrl+k 一つ上へ移動   Ctrl+j 一つ下へ移動    ファイルシステム    コマンド 説明     C ツリーのルートを選択したディレクトリに変更   u ツリーのルートを上の階層にする   U 変更前のツリーの状態を保持して、ツリーのルートを上の階層にする   r 選択したディレクトリをリフレッシュする   R ツリーのルートをリフレッシュする   m メニューを表示する   cd 選択したディレクトリにcwdを変更する   CD cwdをツリールートに変更する    その他    コマンド 説明     I 隠しファイルの表示、非表示   B ブックマークの表示・非表示   F ファイルの表示・非表示    プラグインランキングサイト  VimAwesome  </description>
+vim # vimモードに突入 :!ls # lsを表示してくれる .vimrcの例  solareenlo/vim-config よく使われているvimrcの設定ランキング  オススメの使い方  References:  さっさと帰りたい怠け者エンジニアは vim をマスターしましょう その2 - 編集 さっさと帰りたい怠け者エンジニアは vim をマスターしましょう その1 - 基本と移動   オススメのプラグイン  よく使われているvimのプラグイン top20 オレ的vimプラグイン10選  プラグインマネージャー たくさんのプラグインを簡単にインストールできるマネージャー.
+dein.vim  Shougo/dein.vim  curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh &amp;gt; installer.sh # For example, we just use `~/.cache/dein` as installation directory sh ./installer.sh ~/.cache/dein そして, vimを開いて,
+:call dein#install() コメントアウト tcomment  tomtom/tcomment_vim  # 複数行コメントアウト # SHIFT + V で複数行を選択してから, gc # 1行コメントアウト gcc シンボル置換 surround.</description>
     </item>
     
     <item>

@@ -365,7 +365,30 @@ templateUrl<span style="color:#719e07">:</span> <span style="color:#2aa198">&#39
  type<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;text&#34;</span>
  class<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;form-control&#34;</span>
  [(ngModel)]=&#34;serverName&#34;&gt;
-&lt;<span style="color:#268bd2">p</span>&gt;{{ serverName }}&lt;/<span style="color:#268bd2">p</span>&gt; <span style="color:#586e75">&lt;!-- serverNameが表示される --&gt;</span></code></pre></div></article>
+&lt;<span style="color:#268bd2">p</span>&gt;{{ serverName }}&lt;/<span style="color:#268bd2">p</span>&gt; <span style="color:#586e75">&lt;!-- serverNameが表示される --&gt;</span></code></pre></div>
+<h3 id="ngif">ngIf</h3>
+
+<p>特定の状況下でのみアプリケーションがビューまたはビューの一部を表示する様にする.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#586e75">&lt;!--  *.htmlの中身 --&gt;</span>
+&lt;<span style="color:#268bd2">p</span> *ngIf<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;serverCreated&#34;</span>&gt;Server was created, server name is {{ serverName }}&lt;/<span style="color:#268bd2">p</span>&gt;</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#586e75">// *.tsの中身
+</span><span style="color:#586e75"></span><span style="color:#719e07">import</span> { Component, OnInit } from <span style="color:#2aa198">&#39;@angular/core&#39;</span>;
+
+@Component({
+  selector<span style="color:#719e07">:</span> <span style="color:#2aa198">&#39;app-servers&#39;</span>,
+  templateUrl<span style="color:#719e07">:</span> <span style="color:#2aa198">&#39;./servers.component.html&#39;</span>,
+  styleUrls<span style="color:#719e07">:</span> [<span style="color:#2aa198">&#39;./servers.component.css&#39;</span>]
+})
+<span style="color:#719e07">export</span> <span style="color:#719e07">class</span> ServersComponent <span style="color:#268bd2">implements</span> OnInit {
+  serverCreated <span style="color:#719e07">=</span> <span style="color:#cb4b16">false</span>;
+  constructor() {}
+  ngOnInit() {
+  }
+  onCreateServer() {
+    <span style="color:#719e07">this</span>.serverCreated <span style="color:#719e07">=</span> <span style="color:#cb4b16">true</span>;
+    <span style="color:#719e07">this</span>.serverCreationStatus <span style="color:#719e07">=</span> <span style="color:#2aa198">&#39;Server was created!&#39;</span>;
+  }
+}
+</code></pre></div></article>
 
       
 <div class="align-center book-git-footer justify-between">
@@ -407,6 +430,7 @@ templateUrl<span style="color:#719e07">:</span> <span style="color:#2aa198">&#39
 <li><a href="#基本的な使い方">基本的な使い方</a>
 <ul>
 <li><a href="#input-の仕方"><code>input</code>の仕方</a></li>
+<li><a href="#ngif">ngIf</a></li>
 </ul></li>
 </ul></li>
 </ul>
