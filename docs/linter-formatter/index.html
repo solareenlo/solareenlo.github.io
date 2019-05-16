@@ -11,7 +11,7 @@
 <title>
   
     
-    Container
+    Linter Formatter
   
  | solareenlo</title>
 
@@ -52,7 +52,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   <style>
-  nav ul a[href$="\2f docs\2f container\2f "] {
+  nav ul a[href$="\2f docs\2flinter-formatter\2f "] {
       color: #004ed0;
   }
   </style>
@@ -164,7 +164,7 @@ https://github.com/alex-shpak/hugo-book
   <strong>
   
     
-    Container
+    Linter Formatter
   
 </strong>
 </header>
@@ -172,44 +172,43 @@ https://github.com/alex-shpak/hugo-book
       
 <article class="markdown">
 
-<h1 id="コンテナ技術とは">コンテナ技術とは</h1>
+<h1 id="linterとは">Linterとは</h1>
 
-<p>OS上に他のプロセスからは隔離されたアプリケーション実行環境を構築することで, 仮想的な動作環境をより少ないコンピュータリソースで実現する技術のこと.</p>
+<p>コードの間違いを指摘するもの.</p>
 
-<p><strong>Reference:</strong> <a href="https://www.weblio.jp/content/コンテナ技術">コンテナ技術とは何？</a></p>
+<h1 id="formatterとは">Formatterとは</h1>
 
-<h2 id="コンテナとは">コンテナとは</h2>
+<p>コードのスタイルを統一/調整するもの.</p>
 
-<ul>
-<li>コンテンは仮想マシンの一種.</li>
-<li>コンテナ型仮想化という技術を使っている.</li>
-<li>特徴
+<h2 id="prettier">Prettier</h2>
 
 <ul>
-<li>コンテナの容量が小さい</li>
-<li>現実的な速度で, インターネット経由で受け渡しできる.</li>
-<li>動作が軽い</li>
-<li>１つのホストOS上でたくさんのコンテナを動かすことができる.</li>
-</ul></li>
-<li>そしてコンテナが増えすぎたので, 複数のコンテナを管理するコンテナ・オーケストレーションが生み出された.</li>
+<li>JavaScript(including ES2017), JSX, Angular, Vue, Flow, TypeScrip,t CSS, Less, SCSS, HTML, JSON, GraphQL, Markdown,  GFM, MDX, YAMLをフォーマットしてくれる.</li>
+<li><strong>リポジトリ:</strong> <a href="https://github.com/prettier/prettier">prettier/prettier</a></li>
 </ul>
 
-<p><strong>Reference:</strong> <a href="https://crash.academy/ng/video/730/2059">Kubernetesってなにそれおいしいの？という人向けの超入門</a></p>
+<h3 id="vimでの使い方">vimでの使い方</h3>
+
+<ol>
+<li><a href="https://github.com/solareenlo/vim-config/blob/master/.vimrc">こちら</a>の.vimrcの様に<a href="https://github.com/prettier/vim-prettier">vim-prettier</a>を設定する.</li>
+
+<li><p>当該のディレクトリで,</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">yarn add prettier --dev --exact</code></pre></div></li>
+
+<li><p>コードを開いて, コードの一番上に<code>// @format</code>を記入して,</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">:w</code></pre></div>
+<p>で, 自動でコードをフォーマットしてくれる.</p></li>
+
+<li><p><strong>Reference:</strong> <a href="https://github.com/prettier/vim-prettier">prettier/vim-prettier</a></p></li>
+</ol>
 </article>
 
       
-<div class="align-center book-git-footer justify-between">
-  
-  <div>
-    
-    <a href="https://github.com/solareenlo/blog-hugo/commit/e453cc0c7074de6906fa009e1c906082d4a7dd2d" title='Last modified Apr 21, 2019 by solareenlo' target="_blank" rel="noopener">
-      <img src="/svg/code-merge.svg" alt="Changed" /> Apr 21, 2019
-    </a>
-  </div>
+<div class="align-center book-git-footer justify-end">
   
   
   <div>
-    <a href="https://github.com/solareenlo/blog-hugo/edit/master/content/docs/container.md" target="_blank" rel="noopener">
+    <a href="https://github.com/solareenlo/blog-hugo/edit/master/content/docs/linter-formatter.md" target="_blank" rel="noopener">
       <img src="/svg/code-fork.svg" alt="Edit" /> Edit this page
     </a>
   </div>
@@ -226,9 +225,13 @@ https://github.com/alex-shpak/hugo-book
   <aside class="book-toc fixed">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#コンテナ技術とは">コンテナ技術とは</a>
+<li><a href="#linterとは">Linterとは</a></li>
+<li><a href="#formatterとは">Formatterとは</a>
 <ul>
-<li><a href="#コンテナとは">コンテナとは</a></li>
+<li><a href="#prettier">Prettier</a>
+<ul>
+<li><a href="#vimでの使い方">vimでの使い方</a></li>
+</ul></li>
 </ul></li>
 </ul>
 </nav>

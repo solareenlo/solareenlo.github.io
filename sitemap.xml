@@ -159,12 +159,22 @@
   </url>
   
   <url>
+    <loc>https://solareenlo.com/docs/javascript/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://solareenlo.com/docs/jenkins/</loc>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://solareenlo.com/docs/kubernetes/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://solareenlo.com/docs/linter-formatter/</loc>
     <priority>0</priority>
   </url>
   

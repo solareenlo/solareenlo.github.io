@@ -69,6 +69,7 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/vim/">Vim</a></li>
 <li><a href="/docs/git/">Git</a></li>
 <li><a href="/docs/github/">GitHub</a></li>
+<li><a href="/docs/linter-formatter/">Linter/Formatter</a></li>
 <li><a href="/docs/test/">Test</a></li>
 </ul></li>
 <li><a href="/docs/programming-language/"><strong>Programming Language</strong></a>
@@ -76,6 +77,7 @@ https://github.com/alex-shpak/hugo-book
 <ul>
 <li><a href="/docs/c/">C</a></li>
 <li><a href="/docs/rust/">Rust</a></li>
+<li><a href="/docs/javascript/">JavaScript</a></li>
 <li><a href="/docs/nodejs/">Node.js</a></li>
 <li><a href="/docs/typescript/">TypeScript</a></li>
 <li><a href="/docs/angular/">Angular</a></li>
@@ -366,7 +368,7 @@ templateUrl<span style="color:#719e07">:</span> <span style="color:#2aa198">&#39
  class<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;form-control&#34;</span>
  [(ngModel)]=&#34;serverName&#34;&gt;
 &lt;<span style="color:#268bd2">p</span>&gt;{{ serverName }}&lt;/<span style="color:#268bd2">p</span>&gt; <span style="color:#586e75">&lt;!-- serverNameが表示される --&gt;</span></code></pre></div>
-<h3 id="ngif">ngIf</h3>
+<h3 id="ngif-else">ngIf else</h3>
 
 <p>特定の状況下でのみアプリケーションがビューまたはビューの一部を表示する様にする.</p>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#586e75">&lt;!--  *.htmlの中身 --&gt;</span>
@@ -388,6 +390,61 @@ templateUrl<span style="color:#719e07">:</span> <span style="color:#2aa198">&#39
     <span style="color:#719e07">this</span>.serverCreationStatus <span style="color:#719e07">=</span> <span style="color:#2aa198">&#39;Server was created!&#39;</span>;
   }
 }
+</code></pre></div>
+<h3 id="ngstyle">ngStyle</h3>
+
+<p>コンポーネントのスタイルを操作する.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#586e75">&lt;!--  *.htmlの中身
+</span><span style="color:#586e75">Hello World!が緑になったり赤になったりする.--&gt;</span>
+&lt;<span style="color:#268bd2">p</span> [ngStyle]=&#34;{backgroundColor: getColor()}&#34;&gt;Hello World!&lt;/<span style="color:#268bd2">p</span>&gt;</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#586e75">// *.tsの中身
+</span><span style="color:#586e75"></span><span style="color:#719e07">import</span> { Component } from <span style="color:#2aa198">&#39;@angular/core&#39;</span>;
+@Component({
+  selector<span style="color:#719e07">:</span> <span style="color:#2aa198">&#39;app-server&#39;</span>,
+  templateUrl<span style="color:#719e07">:</span> <span style="color:#2aa198">&#39;./server.component.html&#39;</span>
+})
+<span style="color:#719e07">export</span> <span style="color:#719e07">class</span> ServerComponent {
+  serverStatus <span style="color:#719e07">=</span> <span style="color:#2aa198">&#39;offline&#39;</span>;
+  constructor() {
+    <span style="color:#719e07">this</span>.serverStatus <span style="color:#719e07">=</span> <span style="color:#b58900">Math</span>.random() <span style="color:#719e07">&gt;</span> <span style="color:#2aa198">0.5</span> <span style="color:#719e07">?</span> <span style="color:#2aa198">&#39;online&#39;</span> <span style="color:#719e07">:</span> <span style="color:#2aa198">&#39;offline&#39;</span>;
+  }
+  getServerStatus() {
+    <span style="color:#719e07">return</span> <span style="color:#719e07">this</span>.serverStatus;
+  }
+  getColor() {
+    <span style="color:#719e07">return</span> <span style="color:#719e07">this</span>.serverStatus <span style="color:#719e07">===</span> <span style="color:#2aa198">&#39;online&#39;</span> <span style="color:#719e07">?</span> <span style="color:#2aa198">&#39;green&#39;</span> <span style="color:#719e07">:</span> <span style="color:#2aa198">&#39;red&#39;</span>;
+  }
+}
+</code></pre></div>
+<h3 id="ngclass">ngClass</h3>
+
+<p>コンポーネントのクラスを扱う.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#586e75">&lt;!--  *.htmlの中身
+</span><span style="color:#586e75">Hello World!の背景が緑になったり赤になったりする.
+</span><span style="color:#586e75">背景が緑の時に文字が白色になる.
+</span><span style="color:#586e75">--&gt;</span>
+&lt;<span style="color:#268bd2">p</span>
+  [ngStyle]=&#34;{backgroundColor: getColor()}&#34;
+  [ngClass]=&#34;{online: serverStatus <span style="color:#719e07">=</span><span style="color:#2aa198">==</span> &#39;online&#39;}&#34;&gt;
+  Hello World!
+&lt;/<span style="color:#268bd2">p</span>&gt;</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#586e75">// *.tsの中身
+</span><span style="color:#586e75"></span><span style="color:#719e07">import</span> { Component } from <span style="color:#2aa198">&#39;@angular/core&#39;</span>;
+@Component({
+  selector<span style="color:#719e07">:</span> <span style="color:#2aa198">&#39;app-server&#39;</span>,
+  templateUrl<span style="color:#719e07">:</span> <span style="color:#2aa198">&#39;./server.component.html&#39;</span>,
+  styles<span style="color:#719e07">:</span> [<span style="color:#586e75">`.online { color: white; }`</span>]
+})
+<span style="color:#719e07">export</span> <span style="color:#719e07">class</span> ServerComponent {
+  serverStatus <span style="color:#719e07">=</span> <span style="color:#2aa198">&#39;offline&#39;</span>;
+  constructor() {
+    <span style="color:#719e07">this</span>.serverStatus <span style="color:#719e07">=</span> <span style="color:#b58900">Math</span>.random() <span style="color:#719e07">&gt;</span> <span style="color:#2aa198">0.5</span> <span style="color:#719e07">?</span> <span style="color:#2aa198">&#39;online&#39;</span> <span style="color:#719e07">:</span> <span style="color:#2aa198">&#39;offline&#39;</span>;
+  }
+  getServerStatus() {
+    <span style="color:#719e07">return</span> <span style="color:#719e07">this</span>.serverStatus;
+  }
+  getColor() {
+    <span style="color:#719e07">return</span> <span style="color:#719e07">this</span>.serverStatus <span style="color:#719e07">===</span> <span style="color:#2aa198">&#39;online&#39;</span> <span style="color:#719e07">?</span> <span style="color:#2aa198">&#39;green&#39;</span> <span style="color:#719e07">:</span> <span style="color:#2aa198">&#39;red&#39;</span>;
+  }
+}
 </code></pre></div></article>
 
       
@@ -395,8 +452,8 @@ templateUrl<span style="color:#719e07">:</span> <span style="color:#2aa198">&#39
   
   <div>
     
-    <a href="https://github.com/solareenlo/blog-hugo/commit/555d8905e2c706c6e79fe3c8f9f7c02a164ce328" title='Last modified May 10, 2019 by solareenlo' target="_blank" rel="noopener">
-      <img src="/svg/code-merge.svg" alt="Changed" /> May 10, 2019
+    <a href="https://github.com/solareenlo/blog-hugo/commit/a33c814f9bfe2ff2ca3f90888d76f5249d1be76d" title='Last modified May 16, 2019 by solareenlo' target="_blank" rel="noopener">
+      <img src="/svg/code-merge.svg" alt="Changed" /> May 16, 2019
     </a>
   </div>
   
@@ -430,7 +487,9 @@ templateUrl<span style="color:#719e07">:</span> <span style="color:#2aa198">&#39
 <li><a href="#基本的な使い方">基本的な使い方</a>
 <ul>
 <li><a href="#input-の仕方"><code>input</code>の仕方</a></li>
-<li><a href="#ngif">ngIf</a></li>
+<li><a href="#ngif-else">ngIf else</a></li>
+<li><a href="#ngstyle">ngStyle</a></li>
+<li><a href="#ngclass">ngClass</a></li>
 </ul></li>
 </ul></li>
 </ul>

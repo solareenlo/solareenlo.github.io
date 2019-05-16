@@ -263,6 +263,18 @@ Hugoのコードの色選択  https://help.farbox.com/pygments.html Chroma Style
     
     <item>
       <title></title>
+      <link>https://solareenlo.com/docs/javascript/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://solareenlo.com/docs/javascript/</guid>
+      <description> JavaScriptとは Webページを構成する全てのオブジェクトを操作できるプログラミング言語.
+人間の顔に例えると,
+ 骨格がhtml お化粧がcss 表情がJavaScript  といった感じ.
+フレームワーク 比較  2019年イチ押しのJavaScriptフレームワークオーバービュー JavaScript: フレームワーク React/Vue/Angularについて 2018 JavaScript Rising Stars  </description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>https://solareenlo.com/docs/jenkins/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -285,6 +297,21 @@ Kubernetesの大きな特徴の1つに宣言的設定がある. 宣言的設定�
  運用オペレーションはコードの変更によって実施し, 作業を簡素化する. 複数Kubernetesクラスターでの相互運用を実現する  Reference: Kubernetesの基礎
 Docker Composeとの違い Docker Composeは動作させるコンテナを意識するだけでほとんど良かったが, Kubernetesではそれに加えて動作させるホスト(Node)やコンテナのグループ化(Pod), その複製(ReplicaSet)と公開(Service, Ingress)といったインフラレベルで意識していたことも全て設定ファイルの1つとして管理できる.
 Reference: Docker Compose利用者から見た Kubernetes 開発環境構築入門</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://solareenlo.com/docs/linter-formatter/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://solareenlo.com/docs/linter-formatter/</guid>
+      <description> Linterとは コードの間違いを指摘するもの.
+Formatterとは コードのスタイルを統一/調整するもの.
+Prettier  JavaScript(including ES2017), JSX, Angular, Vue, Flow, TypeScrip,t CSS, Less, SCSS, HTML, JSON, GraphQL, Markdown, GFM, MDX, YAMLをフォーマットしてくれる. リポジトリ: prettier/prettier  vimでの使い方  こちらの.vimrcの様にvim-prettierを設定する. 当該のディレクトリで,
+yarn add prettier --dev --exact コードを開いて, コードの一番上に// @formatを記入して,
+:w で, 自動でコードをフォーマットしてくれる.
+ Reference: prettier/vim-prettier
+  </description>
     </item>
     
     <item>
@@ -329,7 +356,7 @@ if(process.argv.length !== 3) { console.log(`csvファイル名を入力して�
       
       <guid>https://solareenlo.com/docs/programming/</guid>
       <description>プログラミングとは コンピュータプログラムを作成することにより, 人間の意図した処理を行うようにコンピュータに指示を与える行為のこと. その為の便利なツールがたくさんある.
-プログラミングをするのに役立つツール  プログラミング言語 (C, Java, JavaScript, Pythonなど)  手続き型, オブジェクト指向型, 関数型, 静的型付け, 動的型付けなどいろんな種類がある. 最終的にバイナリデータになって, コンピュータが処理する.  テキストエディタ (Visual Studio Code, Vimなど)  コードを書くのに役に立つエディタ.  統合開発環境 (Visual Studio, Jet Brainsなど)  コンパイル, テキストエディタ, デバッガなどを1つのソフトで行えるようにしたもの.  バージョン管理システム (gitなど)  ファイルの変更履歴を管理する為のシステム.  ホスティングサービス (GitHub, GitLabなど)  上記gitを使って様々なプログラムをweb上に公開したり, それを通じて交流したりすることができるサービス. 無償・有償がある.   勉強する  repl.it (オンラインIDE) hackr.io (コースやチュートリアルの紹介サイト)  ディベロッパーロードマップ  フロントエンド - https://roadmap.sh/frontend バックエンド - https://roadmap.sh/backend DevOps - https://roadmap.</description>
+プログラミングをするのに役立つツール  プログラミング言語 (C, Java, JavaScript, Pythonなど)  手続き型, オブジェクト指向型, 関数型, 静的型付け, 動的型付けなどいろんな種類がある. 最終的にバイナリデータになって, コンピュータが処理する.  テキストエディタ (Visual Studio Code, Vimなど)  コードを書くのに役に立つエディタ.  統合開発環境 (Visual Studio, Jet Brainsなど)  コンパイル, テキストエディタ, デバッガなどを1つのソフトで行えるようにしたもの.  バージョン管理システム (gitなど)  ファイルの変更履歴を管理する為のシステム.  ホスティングサービス (GitHub, GitLabなど)  上記gitを使って様々なプログラムをweb上に公開したり, それを通じて交流したりすることができるサービス. 無償・有償がある.  Linter/Formatter  コードのエラー指摘やスタイル調整をしてくれる.   勉強する  repl.it (オンラインIDE) hackr.io (コースやチュートリアルの紹介サイト)  ディベロッパーロードマップ  フロントエンド - https://roadmap.sh/frontend バックエンド - https://roadmap.</description>
     </item>
     
     <item>
