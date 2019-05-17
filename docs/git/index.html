@@ -172,11 +172,20 @@ https://github.com/alex-shpak/hugo-book
       
 <article class="markdown">
 
-<h1 id="git-https-git-scm-com-とは"><a href="https://git-scm.com">Git</a>とは</h1>
+<h1 id="gitとは">Gitとは</h1>
 
-<p>プログラムのソースコードなどの変更履歴を記録・追跡するための分散型バージョン管理システムのこと.
-とっても便利.
-慣れてしまうともう後戻りはできない.</p>
+<ul>
+<li>プログラムのソースコードなどの変更履歴を記録・追跡するための分散型バージョン管理システムのこと.</li>
+<li><strong>公式サイト:</strong> <a href="https://git-scm.com">https://git-scm.com</a></li>
+</ul>
+
+<h2 id="gitの構成">gitの構成</h2>
+
+<ul>
+<li>作業ディレクトリ</li>
+<li>ステージングエリア（インデックス）</li>
+<li>リポジトリ（ローカル, リモート）</li>
+</ul>
 
 <h2 id="git補完">git補完</h2>
 
@@ -223,6 +232,15 @@ git branch -a</code></pre></div>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#b58900">cd</span> 作業ティレクトり
 git checkout -b master // 削除したいブランチとは違うブランチにまずは移動する
 git checkout -d 削除したいブランチ名</code></pre></div>
+<h2 id="一時的に過去のcommitに戻る">一時的に過去のcommitに戻る</h2>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># 戻りたいcommitのhash値を探す</span>
+git log --oneline
+<span style="color:#586e75"># 過去に戻る</span>
+git checkout &lt;commit hash&gt;
+<span style="color:#586e75"># 元に戻す</span>
+git checkout -f master</code></pre></div>
+<p><strong>Reference:</strong> <a href="https://tmytokai.github.io/open-ed/activity/git/text02/page09.html">9. 一時的に過去のコミットに戻る</a></p>
+
 <h2 id="submodule">submodule</h2>
 
 <h3 id="submoduleの追加">submoduleの追加</h3>
@@ -240,32 +258,19 @@ git rm themes/book</code></pre></div>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone &lt;アドレス&gt;
 <span style="color:#b58900">cd</span> &lt;ディレクトリ名&gt;
 git submodule update --init --recursive</code></pre></div>
-<h1 id="gitの基本操作">Gitの基本操作</h1>
-
-<h2 id="gitの構成">gitの構成</h2>
-
-<ul>
-<li>作業ディレクトリ</li>
-<li>ステージングエリア（インデックス）</li>
-<li>リポジトリ（ローカル, リモート）</li>
-</ul>
+<h1 id="基本操作">基本操作</h1>
 
 <h2 id="gitの設定">gitの設定</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># gitへユーザー名を登録</span>
 git config --global user.name <span style="color:#2aa198">&#34;solareenlo&#34;</span>
-
 <span style="color:#586e75"># gitへメールアドレスを登録</span>
 git config --global user.email <span style="color:#2aa198">&#34;solareenlo@test.com&#34;</span>
-
 <span style="color:#586e75"># gitを色づける</span>
 git config --global color.ui <span style="color:#b58900">true</span>
-
 <span style="color:#586e75"># commitしたときのエディタをvimに設定する</span>
 git config --global core.editor vim
-
 <span style="color:#586e75"># gitの設定一覧を見る</span>
 git config -l
-
 <span style="color:#586e75"># gitのhelpを見る</span>
 git config --help</code></pre></div>
 <h2 id="commit">commit</h2>
@@ -505,8 +510,9 @@ git push origin master</code></pre></div>
   <aside class="book-toc fixed">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#git-https-git-scm-com-とは"><a href="https://git-scm.com">Git</a>とは</a>
+<li><a href="#gitとは">Gitとは</a>
 <ul>
+<li><a href="#gitの構成">gitの構成</a></li>
 <li><a href="#git補完">git補完</a>
 <ul>
 <li><a href="#git-completion-bash-をインストール"><code>git-completion.bash</code>をインストール</a></li>
@@ -518,6 +524,7 @@ git push origin master</code></pre></div>
 <li><a href="#リモートブランチからブランチ作成">リモートブランチからブランチ作成</a></li>
 </ul></li>
 <li><a href="#ブランチの削除">ブランチの削除</a></li>
+<li><a href="#一時的に過去のcommitに戻る">一時的に過去のcommitに戻る</a></li>
 <li><a href="#submodule">submodule</a>
 <ul>
 <li><a href="#submoduleの追加">submoduleの追加</a></li>
@@ -526,9 +533,8 @@ git push origin master</code></pre></div>
 <li><a href="#submoduleのcloneをし忘れたら">submoduleのcloneをし忘れたら</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#gitの基本操作">Gitの基本操作</a>
+<li><a href="#基本操作">基本操作</a>
 <ul>
-<li><a href="#gitの構成">gitの構成</a></li>
 <li><a href="#gitの設定">gitの設定</a></li>
 <li><a href="#commit">commit</a></li>
 <li><a href="#log">log</a></li>

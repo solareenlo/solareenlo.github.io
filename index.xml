@@ -316,13 +316,12 @@ Cloud Shell ブラウザでShellが扱える.
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://solareenlo.com/docs/git/</guid>
-      <description>Gitとは プログラムのソースコードなどの変更履歴を記録・追跡するための分散型バージョン管理システムのこと. とっても便利. 慣れてしまうともう後戻りはできない.
-git補完 Reference: 「Git補完をしらない」「git statusを1日100回は使う」そんなあなたに朗報【git-completionとgit-prompt】
+      <description>Gitとは  プログラムのソースコードなどの変更履歴を記録・追跡するための分散型バージョン管理システムのこと. 公式サイト: https://git-scm.com  gitの構成  作業ディレクトリ ステージングエリア（インデックス） リポジトリ（ローカル, リモート）  git補完 Reference: 「Git補完をしらない」「git statusを1日100回は使う」そんなあなたに朗報【git-completionとgit-prompt】
 git-completion.bashをインストール git-completion.bash: gitコマンドの補完スクリプト. Tabで保管できる.
 wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -O ~/.git-completion.bash chmod a+x ~/.git-completion.bash echo &amp;#34;source ~/.git-completion.bash&amp;#34; &amp;gt;&amp;gt; ~/.bashrc source ~/.bashrc git-prompt.shのインストール git-prompt.sh: プロンプトに各種追加情報を表示可能にするスクリプト.
 wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -O ~/.git-prompt.sh chmod a+x ~/.git-prompt.sh 下記を一度にコピペしてエンターをして,
 cat &amp;lt;&amp;lt; EOF | tee -a ~/.bashrc &amp;gt; /dev/null source ~/.git-prompt.sh GIT_PS1_SHOWDIRTYSTATE=true GIT_PS1_SHOWSTASHSTATE=true GIT_PS1_SHOWUNTRACKEDFILES=true GIT_PS1_SHOWUPSTREAM=&amp;#34;auto&amp;#34; GIT_PS1_SHOWCOLORHINTS=true EOF 下記を実行する.
-source ~/.bashrc 新しいブランチの作成 ローカルブランチからブランチ作成 cd ディレクトリ // 作業ディレクトリに移動 git branch -a // branchの一覧を表示 git checkout master // master branchに切り替え git checkout -b 作成するbranch名 // masterを元にして新しいbranchを作成 git branch -a git push -u origin 作成したbranch名 // branchをremoteに登録 リモートブランチからブランチ作成 cd ディレクトリ git checkout -b ローカルに作成するブランチ名 origin/再生元のリモートブランチ名 git branch -a ブランチの削除 cd 作業ティレクトり git checkout -b master // 削除したいブランチとは違うブランチにまずは移動する git checkout -d 削除したいブランチ名 submodule submoduleの追加 git submodule add -b &amp;lt;リンク付けする方のブランチ名&amp;gt; &amp;lt;リンク付けする方のURL&amp;gt; &amp;lt;リンク付けされるディレクトリ名&amp;gt; # 例 git submodule add -b master git@github.</description>
+source ~/.bashrc 新しいブランチの作成 ローカルブランチからブランチ作成 cd ディレクトリ // 作業ディレクトリに移動 git branch -a // branchの一覧を表示 git checkout master // master branchに切り替え git checkout -b 作成するbranch名 // masterを元にして新しいbranchを作成 git branch -a git push -u origin 作成したbranch名 // branchをremoteに登録 リモートブランチからブランチ作成 cd ディレクトリ git checkout -b ローカルに作成するブランチ名 origin/再生元のリモートブランチ名 git branch -a ブランチの削除 cd 作業ティレクトり git checkout -b master // 削除したいブランチとは違うブランチにまずは移動する git checkout -d 削除したいブランチ名 一時的に過去のcommitに戻る # 戻りたいcommitのhash値を探す git log --oneline # 過去に戻る git checkout &amp;lt;commit hash&amp;gt; # 元に戻す git checkout -f master Reference: 9.</description>
     </item>
     
     <item>
@@ -572,11 +571,9 @@ sudo umount /dev/nvme2n1p1 で一度SSDをunmountする.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://solareenlo.com/docs/vim/</guid>
-      <description>Vimとは viから派生したテキストエディタ. プラグインを導入したり, .vimrcの設定を変更したりして, 自分好みにカスタマイズがどんどんできる.
-外部コマンド実行 :!を使う.
+      <description>Vimとは  viから派生したテキストエディタ. プラグインを導入したり, .vimrcの設定を変更したりして, 自分好みにカスタマイズがどんどんできる. GitHubリポジトリ: https://github.com/vim/vim  外部コマンド実行 :!を使う.
 vim # vimモードに突入 :!ls # lsを表示してくれる .vimrcの例  solareenlo/vim-config よく使われているvimrcの設定ランキング  オススメの使い方  References:  さっさと帰りたい怠け者エンジニアは vim をマスターしましょう その2 - 編集 さっさと帰りたい怠け者エンジニアは vim をマスターしましょう その1 - 基本と移動   オススメのプラグイン  よく使われているvimのプラグイン top20 オレ的vimプラグイン10選  プラグインマネージャー たくさんのプラグインを簡単にインストールできるマネージャー.
-dein.vim  Shougo/dein.vim  curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh &amp;gt; installer.sh # For example, we just use `~/.cache/dein` as installation directory sh ./installer.sh ~/.cache/dein そして, vimを開いて,
-:call dein#install() コメントアウト tcomment  tomtom/tcomment_vim  # 複数行コメントアウト # SHIFT + V で複数行を選択してから, gc # 1行コメントアウト gcc シンボル置換 surround.</description>
+dein.vim  Shougo/dein.vim  curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh &amp;gt; installer.sh # For example, we just use `~/.cache/dein` as installation directory sh ./installer.sh ~/.cache/dein そして, vimを開いて,</description>
     </item>
     
     <item>
