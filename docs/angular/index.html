@@ -78,6 +78,7 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/c/">C</a></li>
 <li><a href="/docs/rust/">Rust</a></li>
 <li><a href="/docs/javascript/">JavaScript</a></li>
+<li><a href="/docs/css/">CSS</a></li>
 <li><a href="/docs/nodejs/">Node.js</a></li>
 <li><a href="/docs/typescript/">TypeScript</a></li>
 <li><a href="/docs/angular/">Angular</a></li>
@@ -172,9 +173,12 @@ https://github.com/alex-shpak/hugo-book
       
 <article class="markdown">
 
-<h1 id="angular-https-github-com-angular-angular-とは"><a href="https://github.com/angular/angular">Angular</a>とは</h1>
+<h1 id="angularとは">Angularとは</h1>
 
-<p>Typescript/JavaScriptやその他の言語を使用してモバイルおよびデスクトップWebアプリケーションを構築するための開発プラットフォーム.</p>
+<ul>
+<li>Typescript/JavaScriptやその他の言語を使用してモバイルおよびデスクトップWebアプリケーションを構築するための開発プラットフォーム.</li>
+<li><strong>GitHubリポジトリ:</strong> <a href="https://github.com/angular/angular">https://github.com/angular/angular</a></li>
+</ul>
 
 <h2 id="用語">用語</h2>
 
@@ -299,7 +303,8 @@ docker run -it --rm -w /app -v <span style="color:#719e07">$(</span><span style=
 <span style="color:#586e75"># コンテナに入って作業する</span>
 docker run -it --rm -w /app -v <span style="color:#719e07">$(</span><span style="color:#b58900">pwd</span><span style="color:#719e07">)</span>:/app solareenlo/angular-cli sh
 <span style="color:#586e75"># コンポーネントを作成</span>
-docker run -it --rm -w /app -v <span style="color:#719e07">$(</span><span style="color:#b58900">pwd</span><span style="color:#719e07">)</span>:/app solareenlo/angular-cli ng g component sample-component
+docker run -it --rm -w /app -v <span style="color:#719e07">$(</span><span style="color:#b58900">pwd</span><span style="color:#719e07">)</span>:/app solareenlo/angular-cli ng generate component sample-component
+docker run -it --rm -w /app -v <span style="color:#719e07">$(</span><span style="color:#b58900">pwd</span><span style="color:#719e07">)</span>:/app solareenlo/angular-cli ng g c sample-component
 <span style="color:#586e75"># コンテナを立ち上げる</span>
 docker run -d -w /app -v <span style="color:#719e07">$(</span><span style="color:#b58900">pwd</span><span style="color:#719e07">)</span>:/app -p <span style="color:#2aa198">4200</span>:4200 solareenlo/angular-cli ng serve --host <span style="color:#2aa198">0</span>.0.0.0</code></pre></div>
 <p>で, <code>localhost:4200</code>を開く.</p>
@@ -315,6 +320,13 @@ docker run -it --rm -w /app -v <span style="color:#719e07">$(</span><span style=
 docker-compose up -d
 <span style="color:#586e75"># コンテナの中に入って作業する</span>
 docker-compose <span style="color:#b58900">exec</span> angular sh
+<span style="color:#586e75"># コンポーネント作成</span>
+docker-compose <span style="color:#b58900">exec</span> ng generate component sample-component
+docker-compose <span style="color:#b58900">exec</span> ng g c sample-component
+<span style="color:#586e75"># テストは作らずにコンポーネント作成</span>
+docker-compose <span style="color:#b58900">exec</span> ng g c sample-component --spec <span style="color:#b58900">false</span>
+<span style="color:#586e75"># コンポーネントの中にコンポーネントを作成</span>
+docker-compose <span style="color:#b58900">exec</span> ng g c sample-component/test --spec <span style="color:#b58900">false</span>
 <span style="color:#586e75"># 関連するコンテンを全て止める</span>
 docker-compose stop
 <span style="color:#586e75"># 関連するコンテナを全削除</span>
@@ -480,7 +492,7 @@ templateUrl<span style="color:#719e07">:</span> <span style="color:#2aa198">&#39
   <aside class="book-toc fixed">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#angular-https-github-com-angular-angular-とは"><a href="https://github.com/angular/angular">Angular</a>とは</a>
+<li><a href="#angularとは">Angularとは</a>
 <ul>
 <li><a href="#用語">用語</a>
 <ul>

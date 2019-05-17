@@ -126,8 +126,7 @@ MacにHomebrewをインストールする /usr/bin/ruby -e &amp;#34;$(curl -fsSL
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://solareenlo.com/docs/angular/</guid>
-      <description>Angularとは Typescript/JavaScriptやその他の言語を使用してモバイルおよびデスクトップWebアプリケーションを構築するための開発プラットフォーム.
-用語    用語 意味     モジュール アプリを構成するコンポーネントを束ねたもの   ルートモジュール アプリが起動する時に呼びされるモジュール   コンポーネント 各要素   デコレーター モジュールやクラスなどの要素に対してメタ情報を付与するもの    デコレーターのパラメーター    パラメーター名 意味     imports 現在のモジュールで利用する他のモジュール／コンポーネント   exports 現在のモジュールで外部に公開するコンポーネントなど   declarations モジュール配下のコンポーネント   bootstrap 最初に起動すべき最上位のコンポーネント(＝ルートコンポーネント)   templateUrl 描画するhtml   template 描画する内容   styleUrls どのcssを使うか   styles 直接cssの内容を記述する   selector コンポーネントの適応先を表す(html, css, classなどとして指定できる)    DockerでAngular Dockerfileの中身</description>
+      <description>Angularとは  Typescript/JavaScriptやその他の言語を使用してモバイルおよびデスクトップWebアプリケーションを構築するための開発プラットフォーム. GitHubリポジトリ: https://github.com/angular/angular  用語    用語 意味     モジュール アプリを構成するコンポーネントを束ねたもの   ルートモジュール アプリが起動する時に呼びされるモジュール   コンポーネント 各要素   デコレーター モジュールやクラスなどの要素に対してメタ情報を付与するもの    デコレーターのパラメーター    パラメーター名 意味     imports 現在のモジュールで利用する他のモジュール／コンポーネント   exports 現在のモジュールで外部に公開するコンポーネントなど   declarations モジュール配下のコンポーネント   bootstrap 最初に起動すべき最上位のコンポーネント(＝ルートコンポーネント)   templateUrl 描画するhtml   template 描画する内容   styleUrls どのcssを使うか   styles 直接cssの内容を記述する   selector コンポーネントの適応先を表す(html, css, classなどとして指定できる)    DockerでAngular Dockerfileの中身</description>
     </item>
     
     <item>
@@ -201,14 +200,13 @@ docs  CircleCI Documentation  参考スライド  CircleCI 2.1の機能を使っ
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://solareenlo.com/docs/command/</guid>
-      <description>コマンドとは コンピュータに特定の機能の実行を指示する命令のこと. たくさんのコマンドがあり, 黒い画面に直接入力する.
-psコマンド psコマンドはプロセスの動作状況を確認するためのコマンド.
+      <description>コマンドとは  コンピュータに特定の機能の実行を指示する命令のこと. たくさんのコマンドがあり, 黒い画面に直接入力する.  プロセスの動作状況 (ps) psコマンドはプロセスの動作状況を確認するためのコマンド.
 auxオプション
 auxオプションは、aとuとxというオプションを組み合わせたものです。
  a: 端末操作のプロセスを表示する u: CPUやメモリの使用率などを表示する x: 端末操作以外のプロセスを表示する  ps aux &amp;gt; USER PID %CPU %MEM VSZ RSS TT STAT STARTED TIME COMMAND &amp;gt; solareenlo 96263 4.3 2.0 5500012 168620 ?? S 水07PM 21:03.04 /Applications/Utilities/Terminal.app/Contents/MacOS/Terminal &amp;gt; その他たくさん こんな感じで標準出力される.
 Reference: ps auxの見方がよく判らない・・・
-sha256を出力 # Mac shasum -a 256 &amp;lt;ファイル名&amp;gt; # Linux sha256sum &amp;lt;ファイル名&amp;gt; ファイルのユーザー所有権とグループ所有権を変更 ファイルのユーザー所有権とグループ所有権をrootからsolareenloへ変更する
-sudo chown solareenlo:solareenlo ファイル名 基本的なUnixコマンドの使い方 mkdirを使って一気にファイルを複数作成する # app1, app2, .</description>
+sha256を出力 # Mac shasum -a 256 &amp;lt;ファイル名&amp;gt; # Linux sha256sum &amp;lt;ファイル名&amp;gt; 所有権を変更 (chown) ファイルのユーザー所有権とグループ所有権をrootからsolareenloへ変更する
+sudo chown solareenlo:solareenlo ファイル名 # 再帰的に変更 sudo chown -R solareenlo:solareenlo ファイル名 基本的なUnixコマンドの使い方 mkdirを使って一気にファイルを複数作成する # app1, app2, .</description>
     </item>
     
     <item>
@@ -229,6 +227,16 @@ Reference: コンテナ技術とは何？
       
       <guid>https://solareenlo.com/docs/crypto/</guid>
       <description>暗号通貨/暗号資産とは 暗号技術を用いた通貨/資産のこと.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://solareenlo.com/docs/css/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://solareenlo.com/docs/css/</guid>
+      <description>CSSとは  ウェブページのスタイルを指定するための言語. Cascading Style Sheetsの略.  フレームワーク Bootstrap グリッドシステム Reference: Bootstrapのグリッドシステムの使い方を初心者に向けておさらいする
+&amp;lt;div class=&amp;#34;contaiiner&amp;#34;&amp;gt; /* 固定枠 */ &amp;lt;div class=&amp;#34;row&amp;#34;&amp;gt; /* row枠 */ &amp;lt;div class=&amp;#34;col-xs-12&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; /* スマホ枠 */ &amp;lt;div class=&amp;#34;col-sm-12&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; /* タブレット枠 */ &amp;lt;div class=&amp;#34;col-md-12&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; /* PC枠 */ &amp;lt;div class=&amp;#34;col-lg-12&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; /* PC大枠 */ &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; Reference: Bootstrapのグリッドシステムについてまとめてみた</description>
     </item>
     
     <item>
@@ -389,15 +397,11 @@ Hugoのコードの色選択  https://help.farbox.com/pygments.html Chroma Style
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://solareenlo.com/docs/kubernetes/</guid>
-      <description>Kubernetesとは Dockerコンテナのクラスタ管理を始めとしたオーケストレーションを行うサービスのこと. ホスト間の連携やデプロイについても総括的に管理できる(ここがDocker Composeと違うところ).
-Reference: Docker Compose利用者から見た Kubernetes 開発環境構築入門
-Kubernetesの大きな特徴の1つに宣言的設定がある. 宣言的設定とは, イミュータブルなインフラを作るための基本的な考え方で, 「システムのあるべき姿」を設定ファイルに宣言する！という考え方. Kubernetesは設定ファイルに書いたとおりのインフラを維持するように設計されている. ので, 設定ファイル(yamlファイル)をたくさん書く事になる.
-他のオーケストレーションと違うところ ① 様々なOSSと組み合わせることにより, 柔軟に機能拡張なところ.
+      <description>Kubernetesとは  Dockerコンテナのクラスタ管理を始めとしたオーケストレーションを行うサービスのこと. ホスト間の連携やデプロイについても総括的に管理できる(ここがDocker Composeと違うところ). Kubernetesの大きな特徴の1つに宣言的設定がある.  宣言的設定とは, イミュータブルなインフラを作るための基本的な考え方で, 「システムのあるべき姿」を設定ファイルに宣言する！という考え方.  Kubernetesは設定ファイルに書いたとおりのインフラを維持するように設計されている.  ので, 設定ファイル(yamlファイル)をたくさん書く事になる.  Reference: Docker Compose利用者から見た Kubernetes 開発環境構築入門 GitHubリポジトリ: https://github.com/kubernetes  他のオーケストレーションと違うところ ① 様々なOSSと組み合わせることにより, 柔軟に機能拡張なところ.
  コンテナ運用を更に効率化 / 高速化  詳細なメトリック監視と可視化・・・Prometheus + Grafana コンテナのログの転送収集・・・Fluentd / Fluent Bit ネットワークトラフィックの制御・・・ Istio + Envoy  Kubernetesの適応領域の拡大  機械学習プラットフォーム・・・Kubeflow 分散ストレージ・・・Rook 分散型データベース・・・Vitess   ② 本格的な宣言的オペレーションとInfrastructure as Codeを実現可能
 ③ クラスター上にデプロイするシステムの構成をコード(マニフェストファイル)によって定義できる
  運用オペレーションはコードの変更によって実施し, 作業を簡素化する. 複数Kubernetesクラスターでの相互運用を実現する  Reference: Kubernetesの基礎
-Docker Composeとの違い Docker Composeは動作させるコンテナを意識するだけでほとんど良かったが, Kubernetesではそれに加えて動作させるホスト(Node)やコンテナのグループ化(Pod), その複製(ReplicaSet)と公開(Service, Ingress)といったインフラレベルで意識していたことも全て設定ファイルの1つとして管理できる.
-Reference: Docker Compose利用者から見た Kubernetes 開発環境構築入門</description>
+Docker Composeとの違い Docker Composeは動作させるコンテナを意識するだけでほとんど良かったが, Kubernetesではそれに加えて動作させるホスト(Node)やコンテナのグループ化(Pod), その複製(ReplicaSet)と公開(Service, Ingress)といったインフラレベルで意識していたことも全て設定ファイルの1つとして管理できる.</description>
     </item>
     
     <item>
@@ -408,7 +412,7 @@ Reference: Docker Compose利用者から見た Kubernetes 開発環境構築入�
       <guid>https://solareenlo.com/docs/linter-formatter/</guid>
       <description> Linterとは コードの間違いを指摘するもの.
 Formatterとは コードのスタイルを統一/調整するもの.
-Prettier  JavaScript(including ES2017), JSX, Angular, Vue, Flow, TypeScrip,t CSS, Less, SCSS, HTML, JSON, GraphQL, Markdown, GFM, MDX, YAMLをフォーマットしてくれる. リポジトリ: prettier/prettier  vimでの使い方  こちらの.vimrcの様にvim-prettierを設定する. 当該のディレクトリで,
+Prettier  JavaScript(including ES2017), JSX, Angular, Vue, Flow, TypeScrip,t CSS, Less, SCSS, HTML, JSON, GraphQL, Markdown, GFM, MDX, YAMLをフォーマットしてくれる. GitHubリポジトリ: prettier/prettier  vimでの使い方  こちらの.vimrcの様にvim-prettierを設定する. 当該のディレクトリで,
 yarn add prettier --dev --exact コードを開いて, コードの一番上に// @formatを記入して,
 :w で, 自動でコードをフォーマットしてくれる.
  Reference: prettier/vim-prettier

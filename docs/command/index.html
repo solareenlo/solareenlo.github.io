@@ -78,6 +78,7 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/c/">C</a></li>
 <li><a href="/docs/rust/">Rust</a></li>
 <li><a href="/docs/javascript/">JavaScript</a></li>
+<li><a href="/docs/css/">CSS</a></li>
 <li><a href="/docs/nodejs/">Node.js</a></li>
 <li><a href="/docs/typescript/">TypeScript</a></li>
 <li><a href="/docs/angular/">Angular</a></li>
@@ -174,10 +175,12 @@ https://github.com/alex-shpak/hugo-book
 
 <h1 id="コマンドとは">コマンドとは</h1>
 
-<p>コンピュータに特定の機能の実行を指示する命令のこと.
-たくさんのコマンドがあり, 黒い画面に直接入力する.</p>
+<ul>
+<li>コンピュータに特定の機能の実行を指示する命令のこと.</li>
+<li>たくさんのコマンドがあり, 黒い画面に直接入力する.</li>
+</ul>
 
-<h2 id="psコマンド">psコマンド</h2>
+<h2 id="プロセスの動作状況-ps">プロセスの動作状況 (ps)</h2>
 
 <p>psコマンドはプロセスの動作状況を確認するためのコマンド.</p>
 
@@ -203,10 +206,12 @@ shasum -a <span style="color:#2aa198">256</span> &lt;ファイル名&gt;
 
 <span style="color:#586e75"># Linux</span>
 sha256sum &lt;ファイル名&gt;</code></pre></div>
-<h2 id="ファイルのユーザー所有権とグループ所有権を変更">ファイルのユーザー所有権とグループ所有権を変更</h2>
+<h2 id="所有権を変更-chown">所有権を変更 (chown)</h2>
 
 <p>ファイルのユーザー所有権とグループ所有権をrootからsolareenloへ変更する</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo chown solareenlo:solareenlo ファイル名</code></pre></div>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo chown solareenlo:solareenlo ファイル名
+<span style="color:#586e75"># 再帰的に変更</span>
+sudo chown -R solareenlo:solareenlo ファイル名</code></pre></div>
 <h1 id="基本的なunixコマンドの使い方">基本的なUnixコマンドの使い方</h1>
 
 <h2 id="mkdirを使って一気にファイルを複数作成する">mkdirを使って一気にファイルを複数作成する</h2>
@@ -621,9 +626,9 @@ ls app2
 <ul>
 <li><a href="#コマンドとは">コマンドとは</a>
 <ul>
-<li><a href="#psコマンド">psコマンド</a></li>
+<li><a href="#プロセスの動作状況-ps">プロセスの動作状況 (ps)</a></li>
 <li><a href="#sha256を出力">sha256を出力</a></li>
-<li><a href="#ファイルのユーザー所有権とグループ所有権を変更">ファイルのユーザー所有権とグループ所有権を変更</a></li>
+<li><a href="#所有権を変更-chown">所有権を変更 (chown)</a></li>
 </ul></li>
 <li><a href="#基本的なunixコマンドの使い方">基本的なUnixコマンドの使い方</a>
 <ul>
