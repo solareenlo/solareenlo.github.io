@@ -219,19 +219,19 @@ chmod a+x ~/.git-prompt.sh</code></pre></div>
 <h2 id="新しいブランチの作成">新しいブランチの作成</h2>
 
 <h3 id="ローカルブランチからブランチ作成">ローカルブランチからブランチ作成</h3>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#b58900">cd</span> ディレクトリ // 作業ディレクトリに移動
-git branch -a // branchの一覧を表示
-git checkout master // master branchに切り替え
-git checkout -b 作成するbranch名 // masterを元にして新しいbranchを作成
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#b58900">cd</span> ディレクトリ <span style="color:#586e75"># 作業ディレクトリに移動</span>
+git branch -a <span style="color:#586e75"># branchの一覧を表示</span>
+git checkout master <span style="color:#586e75"># master branchに切り替え</span>
+git checkout -b 作成するbranch名 <span style="color:#586e75"># masterを元にして新しいbranchを作成</span>
 git branch -a
-git push -u origin 作成したbranch名 // branchをremoteに登録</code></pre></div>
+git push -u origin 作成したbranch名 <span style="color:#586e75"># branchをremoteに登録</span></code></pre></div>
 <h3 id="リモートブランチからブランチ作成">リモートブランチからブランチ作成</h3>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#b58900">cd</span> ディレクトリ
 git checkout -b ローカルに作成するブランチ名 origin/再生元のリモートブランチ名
 git branch -a</code></pre></div>
 <h2 id="ブランチの削除">ブランチの削除</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#b58900">cd</span> 作業ティレクトり
-git checkout -b master // 削除したいブランチとは違うブランチにまずは移動する
+git checkout -b master <span style="color:#586e75"># 削除したいブランチとは違うブランチにまずは移動する</span>
 git checkout -d 削除したいブランチ名</code></pre></div>
 <h2 id="一時的に過去のcommitに戻る">一時的に過去のcommitに戻る</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># 戻りたいcommitのhash値を探す</span>
@@ -277,44 +277,34 @@ git config --help</code></pre></div>
 <h2 id="commit">commit</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># gitの初期化</span>
 git init
-
 <span style="color:#586e75"># 作業ディレクトリからステージングエリアへ</span>
 git add index.html
-
 <span style="color:#586e75"># ステージングエリアからリポジトリへ</span>
 git commit
-<span style="color:#586e75"># タイトルとか変更内容を書いて, :wq</span>
-
 <span style="color:#586e75"># 変更のlogを見る</span>
 git log</code></pre></div>
 <h2 id="log">log</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># logをコンパクトに見る</span>
 git log --oneline
-
 <span style="color:#586e75"># logと共に変更内容も見る</span>
 git log -p
-
 <span style="color:#586e75"># どのファイルが変更なったかを見る</span>
 git log --stat</code></pre></div>
 <h2 id="現在の状態を把握する">現在の状態を把握する</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># 現在の状態を見る</span>
 git status
-
 <span style="color:#586e75"># ファイルの変更を無かったことにする</span>
 git checkout -- index.html</code></pre></div>
 <h2 id="差分を確認する">差分を確認する</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># ファイルの差分を見る</span>
 git diff
-
 <span style="color:#586e75"># ステージングされたファイルの差分を見る</span>
 git diff --cached</code></pre></div>
 <h2 id="gitでのファイル操作">gitでのファイル操作</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># 現在のディレクトリ以下全部のファイルをaddする</span>
 git add .
-
 <span style="color:#586e75"># gitでのファイル削除</span>
 git rm index.html
-
 <span style="color:#586e75"># gitでのファイル移動</span>
 git mv index.html</code></pre></div>
 <h2 id="gitの管理に含めない方法">gitの管理に含めない方法</h2>
@@ -327,7 +317,6 @@ vim .gitignore
 <h2 id="直前のcommitを変更">直前のcommitを変更</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># 1つcommitする</span>
 git commit -m <span style="color:#2aa198">&#39;コミットを1つ追加&#39;</span>
-
 <span style="color:#586e75"># 直前のcommitを上書きする</span>
 vim index.html
 git add .
@@ -335,10 +324,8 @@ git commit --amend</code></pre></div>
 <h2 id="過去のバージョンに戻る-１">過去のバージョンに戻る（１）</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># 作業ディレクトリもステージングエリアも直前のcommitへ戻す</span>
 git reset --hard HEAD
-
 <span style="color:#586e75"># 2つ前のcommitに戻る</span>
 git reset --hard HEAD^
-
 <span style="color:#586e75"># 指定したidにcommitを戻す</span>
 git reset --hard hash値<span style="color:#719e07">(</span>最低7桁<span style="color:#719e07">)</span></code></pre></div>
 <h2 id="過去のバージョンに戻る-２">過去のバージョンに戻る（２）</h2>
@@ -348,14 +335,11 @@ git reset --hard ORIG_HEAD
 <h2 id="branch">branch</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># 現在のbranchを確認する</span>
 git branch
-
 <span style="color:#586e75"># 新しいbranch hogeを作成する</span>
 git branch hoge
-
 <span style="color:#586e75"># hoge branchに移動する</span>
 git checkout hoge
 git branch
-
 <span style="color:#586e75"># master branchに戻る</span>
 git checkout master
 git branch</code></pre></div>
@@ -363,21 +347,16 @@ git branch</code></pre></div>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># master branchにhoge branchをmergeさせたい</span>
 git checkout master
 git merge hoge
-
 <span style="color:#586e75"># いらなくなったhoge branchを削除する</span>
 git branch -d hoge
-
 <span style="color:#586e75"># masterにmerge済みのbranchを確認する</span>
 git checkout master
 git branch --merged
-
 <span style="color:#586e75"># masterにまだmergeしていないbranchを確認する</span>
 git checkout master
 git branch --no-merged
-
 <span style="color:#586e75"># 作業途中でmergeしたときに, まだcommitしたくないときは, stashを使って一時的に変更内容を退避させる.</span>
 git stash save <span style="color:#2aa198">&#39;コメント&#39;</span>
-
 <span style="color:#586e75"># stashで退避させた情報の一覧表示</span>
 git stash list
 
@@ -405,16 +384,12 @@ git comit -m <span style="color:#2aa198">&#39;conflictを解消したよ&#39;</s
 <h2 id="tag">tag</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># 直前のcommitにidに代わるわかりやすいv1.0というtagを付ける</span>
 git tag v1.0
-
 <span style="color:#586e75"># tagを確認する</span>
 git tag
-
 <span style="color:#586e75"># tagを使ってcommit内容を確認する</span>
 git show v1.0
-
 <span style="color:#586e75"># 特定のcommitにtagを付ける</span>
 git tag v0.9 id<span style="color:#719e07">(</span>hash値<span style="color:#719e07">)</span>
-
 <span style="color:#586e75"># tagの削除</span>
 git -d v0.9</code></pre></div>
 <h2 id="エイリアス">エイリアス</h2>
@@ -487,8 +462,8 @@ git push origin master</code></pre></div>
   
   <div>
     
-    <a href="https://github.com/solareenlo/blog-hugo/commit/2d1f4dfdae8da3d8bec873ba7396c4d13dfffa8c" title='Last modified May 17, 2019 by solareenlo' target="_blank" rel="noopener">
-      <img src="/svg/code-merge.svg" alt="Changed" /> May 17, 2019
+    <a href="https://github.com/solareenlo/blog-hugo/commit/1ee1f5af74edfb741efa9ec5f4bc8c27eb1d8a6a" title='Last modified May 19, 2019 by solareenlo' target="_blank" rel="noopener">
+      <img src="/svg/code-merge.svg" alt="Changed" /> May 19, 2019
     </a>
   </div>
   

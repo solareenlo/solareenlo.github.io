@@ -321,12 +321,12 @@ docker-compose up -d
 <span style="color:#586e75"># コンテナの中に入って作業する</span>
 docker-compose <span style="color:#b58900">exec</span> angular sh
 <span style="color:#586e75"># コンポーネント作成</span>
-docker-compose <span style="color:#b58900">exec</span> ng generate component sample-component
-docker-compose <span style="color:#b58900">exec</span> ng g c sample-component
+docker-compose <span style="color:#b58900">exec</span> angular ng generate component sample-component
+docker-compose <span style="color:#b58900">exec</span> angular ng g c sample-component
 <span style="color:#586e75"># テストは作らずにコンポーネント作成</span>
-docker-compose <span style="color:#b58900">exec</span> ng g c sample-component --spec <span style="color:#b58900">false</span>
+docker-compose <span style="color:#b58900">exec</span> angular ng g c sample-component --spec <span style="color:#b58900">false</span>
 <span style="color:#586e75"># コンポーネントの中にコンポーネントを作成</span>
-docker-compose <span style="color:#b58900">exec</span> ng g c sample-component/test --spec <span style="color:#b58900">false</span>
+docker-compose <span style="color:#b58900">exec</span> angular ng g c sample-component/test --spec <span style="color:#b58900">false</span>
 <span style="color:#586e75"># 関連するコンテンを全て止める</span>
 docker-compose stop
 <span style="color:#586e75"># 関連するコンテナを全削除</span>
@@ -461,15 +461,90 @@ templateUrl<span style="color:#719e07">:</span> <span style="color:#2aa198">&#39
     <span style="color:#719e07">return</span> <span style="color:#719e07">this</span>.serverStatus <span style="color:#719e07">===</span> <span style="color:#2aa198">&#39;online&#39;</span> <span style="color:#719e07">?</span> <span style="color:#2aa198">&#39;green&#39;</span> <span style="color:#719e07">:</span> <span style="color:#2aa198">&#39;red&#39;</span>;
   }
 }
-</code></pre></div></article>
+</code></pre></div>
+<h3 id="input-output">@input(), @output()</h3>
+
+<ul>
+<li>親→子 が<code>@input()</code>で, データを渡す</li>
+<li>子→親 が<code>@output()</code>で, データを渡す</li>
+</ul>
+
+<h3 id="入力された値をコンポーネント内で操作する">入力された値をコンポーネント内で操作する</h3>
+
+<p><code>*.html</code>内において,</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#586e75">&lt;!-- ↓は親にそのまま入力した値がnewServerNameとして渡る --&gt;</span>
+&lt;<span style="color:#268bd2">input</span> type<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;text&#34;</span> class<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;form-control&#34;</span> [(ngModel)]=&#34;newServerName&#34;&gt;
+<span style="color:#586e75">&lt;!-- ↓は子に入力された値が#serverNameInputとして残ってる --&gt;</span>
+&lt;<span style="color:#268bd2">input</span> type<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;text&#34;</span> class<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;form-control&#34;</span> #serverNameInput&gt;</code></pre></div>
+<h3 id="要素を渡す">要素を渡す</h3>
+
+<p>Aコンポーネントが利用させるときに,
+Aコンポーネントのタグに挟まっている要素をAコンポーネントが取得してきて,
+Aコンポーネント内の<code>&lt;ng-content&gt;&lt;/ng-content&gt;</code>の部分に展開する.</p>
+
+<h3 id="コンポーネントのライフサイクル">コンポーネントのライフサイクル</h3>
+
+<table>
+<thead>
+<tr>
+<th>フック</th>
+<th>目的とタイミング</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>ngOnChanges()</td>
+<td><li>Angularがデータバインドされた入力プロパティを(再)設定するときに応答する.<li>このメソッドは, 現在および以前のプロパティ値のSimpleChangesオブジェクトを受け取る.<li>ngOnInit()の前に呼び出され, データバインドされた入力プロパティが変更されるたびに呼び出される.</td>
+</tr>
+
+<tr>
+<td>ngOnInit()</td>
+<td><li>Angularがデータバインドされたプロパティを最初に表示し, ディレクティブ/コンポーネントの入力プロパティを設定した後で, ディレクティブ/コンポーネントを初期化する.<li>最初のngOnChanges()の後に一度呼び出される.</td>
+</tr>
+
+<tr>
+<td>ngDoCheck()</td>
+<td><li>Angularが検出できない, または検出できない変更を検出して, それに基づいて実行する.<li>変更検知の実行中に毎回, そしてngOnChanges()とngOnInit()の直後に呼び出される.</td>
+</tr>
+
+<tr>
+<td>ngAfterContentInit()</td>
+<td><li>Angularがコンポーネントのビューあるいはディレクティブが存在するビューに, 外部コンテンツを投影した後に応答する.<li>最初のngDoCheck()の後に1度呼び出される.</td>
+</tr>
+
+<tr>
+<td>ngAfterContentChecked()</td>
+<td><li>Angularがディレクティブ/コンポーネントに投影された外部コンテンツをチェックした後に応答する. <li>ngAfterContentInit()とその後全てのngDoCheck()の後に呼び出される.</td>
+</tr>
+
+<tr>
+<td>ngAfterViewInit()</td>
+<td><li>Angularがコンポーネントのビューと子のビュー, あるいはディレクティブが存在するビューを初期化した後に応答する.<li>最初のngAfterContentChecked()の後に1度呼び出される.</td>
+</tr>
+
+<tr>
+<td>ngAfterViewChecked()</td>
+<td><li>Angularがコンポーネントのビューと子のビュー, あるいはディレクティブが存在するビューをチェックした後に応答する.<li>ngAfterViewInit()とその後のすべてのngAfterContentChecked()の後に呼び出される.</td>
+</tr>
+
+<tr>
+<td>ngOnDestroy()</td>
+<td><li>Angularがディレクティブ/コンポーネントを破棄する直前に, クリーンアップする.<li>メモリリークを回避するためにObservableの購読を解除し, イベントハンドラをデタッチしましょう.<li>Angularがディレクティブ/コンポーネントを破棄する直前に呼び出される.</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Reference:</strong> <a href="https://angular.jp/guide/lifecycle-hooks">ライフサイクル・フック</a></p>
+</article>
 
       
 <div class="align-center book-git-footer justify-between">
   
   <div>
     
-    <a href="https://github.com/solareenlo/blog-hugo/commit/e154607ef5dcf8d991b7c45cae6decc0b89824ee" title='Last modified May 17, 2019 by solareenlo' target="_blank" rel="noopener">
-      <img src="/svg/code-merge.svg" alt="Changed" /> May 17, 2019
+    <a href="https://github.com/solareenlo/blog-hugo/commit/1ee1f5af74edfb741efa9ec5f4bc8c27eb1d8a6a" title='Last modified May 19, 2019 by solareenlo' target="_blank" rel="noopener">
+      <img src="/svg/code-merge.svg" alt="Changed" /> May 19, 2019
     </a>
   </div>
   
@@ -506,6 +581,10 @@ templateUrl<span style="color:#719e07">:</span> <span style="color:#2aa198">&#39
 <li><a href="#ngif-else">ngIf else</a></li>
 <li><a href="#ngstyle">ngStyle</a></li>
 <li><a href="#ngclass">ngClass</a></li>
+<li><a href="#input-output">@input(), @output()</a></li>
+<li><a href="#入力された値をコンポーネント内で操作する">入力された値をコンポーネント内で操作する</a></li>
+<li><a href="#要素を渡す">要素を渡す</a></li>
+<li><a href="#コンポーネントのライフサイクル">コンポーネントのライフサイクル</a></li>
 </ul></li>
 </ul></li>
 </ul>
