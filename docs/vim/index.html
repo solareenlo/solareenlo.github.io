@@ -193,7 +193,63 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="https://qiita.com/reireias/items/230c77b3ff5575832654">よく使われているvimrcの設定ランキング</a></li>
 </ul>
 
-<h2 id="オススメの使い方">オススメの使い方</h2>
+<h2 id="使い方">使い方</h2>
+
+<h3 id="削除">削除</h3>
+
+<table>
+<thead>
+<tr>
+<th>コマンド</th>
+<th>動作</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>D</td>
+<td>カーソル以降を削除</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="置換">置換</h3>
+
+<table>
+<thead>
+<tr>
+<th>コマンド</th>
+<th>動作</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>:%s/old/new/c</td>
+<td>ファイル上の<code>old</code>を1つずつ確認しながら<code>new</code>に置換</td>
+</tr>
+
+<tr>
+<td>:%s/old/new/g</td>
+<td>ファイル上の全ての<code>old</code>を<code>new</code>に置換</td>
+</tr>
+
+<tr>
+<td>:s/old/new/g</td>
+<td>カーソル行の全ての<code>old</code>を<code>new</code>に置換</td>
+</tr>
+
+<tr>
+<td>:10,20s/old/new/g</td>
+<td>10~20行目の全ての<code>old</code>を<code>new</code>に置換</td>
+</tr>
+
+<tr>
+<td>:<code>'&lt;,'&gt;</code>s/old/new/g</td>
+<td>ビジュアルモードで選択中の範囲の全ての<code>old</code>を<code>new</code>に置換.<br><code>'&lt;,'&gt;</code>の部分は, 範囲を選択中に<code>:</code>を押すと自動的に出る.</td>
+</tr>
+</tbody>
+</table>
 
 <ul>
 <li><strong>References:</strong>
@@ -514,7 +570,11 @@ ds<span style="color:#2aa198">&#34;</span></code></pre></div>
 <ul>
 <li><a href="#外部コマンド実行">外部コマンド実行</a></li>
 <li><a href="#vimrcの例">.vimrcの例</a></li>
-<li><a href="#オススメの使い方">オススメの使い方</a></li>
+<li><a href="#使い方">使い方</a>
+<ul>
+<li><a href="#削除">削除</a></li>
+<li><a href="#置換">置換</a></li>
+</ul></li>
 <li><a href="#オススメのプラグイン">オススメのプラグイン</a></li>
 <li><a href="#プラグインマネージャー">プラグインマネージャー</a>
 <ul>

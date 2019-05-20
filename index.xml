@@ -329,7 +329,7 @@ git-completion.bashをインストール git-completion.bash: gitコマンドの
 wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -O ~/.git-completion.bash chmod a+x ~/.git-completion.bash echo &amp;#34;source ~/.git-completion.bash&amp;#34; &amp;gt;&amp;gt; ~/.bashrc source ~/.bashrc git-prompt.shのインストール git-prompt.sh: プロンプトに各種追加情報を表示可能にするスクリプト.
 wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -O ~/.git-prompt.sh chmod a+x ~/.git-prompt.sh 下記を一度にコピペしてエンターをして,
 cat &amp;lt;&amp;lt; EOF | tee -a ~/.bashrc &amp;gt; /dev/null source ~/.git-prompt.sh GIT_PS1_SHOWDIRTYSTATE=true GIT_PS1_SHOWSTASHSTATE=true GIT_PS1_SHOWUNTRACKEDFILES=true GIT_PS1_SHOWUPSTREAM=&amp;#34;auto&amp;#34; GIT_PS1_SHOWCOLORHINTS=true EOF 下記を実行する.
-source ~/.bashrc 新しいブランチの作成 ローカルブランチからブランチ作成 cd ディレクトリ # 作業ディレクトリに移動 git branch -a # branchの一覧を表示 git checkout master # master branchに切り替え git checkout -b 作成するbranch名 # masterを元にして新しいbranchを作成 git branch -a git push -u origin 作成したbranch名 # branchをremoteに登録 リモートブランチからブランチ作成 cd ディレクトリ git checkout -b ローカルに作成するブランチ名 origin/再生元のリモートブランチ名 git branch -a ブランチの削除 cd 作業ティレクトり git checkout -b master # 削除したいブランチとは違うブランチにまずは移動する git checkout -d 削除したいブランチ名 一時的に過去のcommitに戻る # 戻りたいcommitのhash値を探す git log --oneline # 過去に戻る git checkout &amp;lt;commit hash&amp;gt; # 元に戻す git checkout -f master Reference: 9.</description>
+source ~/.bashrc 新しいbranchの作成 local branchからbranch作成 cd ディレクトリ # 作業ディレクトリに移動 git branch -a # branchの一覧を表示 git checkout master # master branchに切り替え git checkout -b 作成するbranch名 # masterを元にして新しいbranchを作成 git branch -a git push -u origin 作成したbranch名 # branchをremoteに登録 リモートbranchからbranch作成 cd ディレクトリ git checkout -b ローカルに作成するbranch名 origin/再生元のリモートbranch名 git branch -a remoteから特定のbranchを指定してcloneする git clone -b japanese git@github.</description>
     </item>
     
     <item>
@@ -575,8 +575,8 @@ sudo umount /dev/nvme2n1p1 で一度SSDをunmountする.</description>
       
       <guid>https://solareenlo.com/docs/vim/</guid>
       <description>Vimとは  viから派生したテキストエディタ. プラグインを導入したり, .vimrcの設定を変更したりして, 自分好みにカスタマイズがどんどんできる. GitHubリポジトリ: https://github.com/vim/vim  外部コマンド実行 :!を使う.
-vim # vimモードに突入 :!ls # lsを表示してくれる .vimrcの例  solareenlo/vim-config よく使われているvimrcの設定ランキング  オススメの使い方  References:  さっさと帰りたい怠け者エンジニアは vim をマスターしましょう その2 - 編集 さっさと帰りたい怠け者エンジニアは vim をマスターしましょう その1 - 基本と移動   オススメのプラグイン  よく使われているvimのプラグイン top20 オレ的vimプラグイン10選  プラグインマネージャー たくさんのプラグインを簡単にインストールできるマネージャー.
-dein.vim  Shougo/dein.vim  curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh &amp;gt; installer.sh # For example, we just use `~/.cache/dein` as installation directory sh ./installer.sh ~/.cache/dein そして, vimを開いて,</description>
+vim # vimモードに突入 :!ls # lsを表示してくれる .vimrcの例  solareenlo/vim-config よく使われているvimrcの設定ランキング  使い方 削除    コマンド 動作     D カーソル以降を削除    置換    コマンド 動作     :%s/old/new/c ファイル上のoldを1つずつ確認しながらnewに置換   :%s/old/new/g ファイル上の全てのoldをnewに置換   :s/old/new/g カーソル行の全てのoldをnewに置換   :10,20s/old/new/g 10~20行目の全てのoldをnewに置換   :&#39;&amp;lt;,&#39;&amp;gt;s/old/new/g ビジュアルモードで選択中の範囲の全てのoldをnewに置換.
+&#39;&amp;lt;,&#39;&amp;gt;の部分は, 範囲を選択中に:を押すと自動的に出る.     References:  さっさと帰りたい怠け者エンジニアは vim をマスターしましょう その2 - 編集 さっさと帰りたい怠け者エンジニアは vim をマスターしましょう その1 - 基本と移動   オススメのプラグイン  よく使われているvimのプラグイン top20 オレ的vimプラグイン10選  プラグインマネージャー たくさんのプラグインを簡単にインストールできるマネージャー.</description>
     </item>
     
     <item>

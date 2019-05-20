@@ -216,23 +216,25 @@ chmod a+x ~/.git-prompt.sh</code></pre></div>
 </span><span style="color:#2aa198">EOF</span></code></pre></div>
 <p>下記を実行する.</p>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#b58900">source</span> ~/.bashrc</code></pre></div>
-<h2 id="新しいブランチの作成">新しいブランチの作成</h2>
+<h2 id="新しいbranchの作成">新しいbranchの作成</h2>
 
-<h3 id="ローカルブランチからブランチ作成">ローカルブランチからブランチ作成</h3>
+<h3 id="local-branchからbranch作成">local branchからbranch作成</h3>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#b58900">cd</span> ディレクトリ <span style="color:#586e75"># 作業ディレクトリに移動</span>
 git branch -a <span style="color:#586e75"># branchの一覧を表示</span>
 git checkout master <span style="color:#586e75"># master branchに切り替え</span>
 git checkout -b 作成するbranch名 <span style="color:#586e75"># masterを元にして新しいbranchを作成</span>
 git branch -a
 git push -u origin 作成したbranch名 <span style="color:#586e75"># branchをremoteに登録</span></code></pre></div>
-<h3 id="リモートブランチからブランチ作成">リモートブランチからブランチ作成</h3>
+<h3 id="リモートbranchからbranch作成">リモートbranchからbranch作成</h3>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#b58900">cd</span> ディレクトリ
-git checkout -b ローカルに作成するブランチ名 origin/再生元のリモートブランチ名
+git checkout -b ローカルに作成するbranch名 origin/再生元のリモートbranch名
 git branch -a</code></pre></div>
-<h2 id="ブランチの削除">ブランチの削除</h2>
+<h2 id="remoteから特定のbranchを指定してcloneする">remoteから特定のbranchを指定してcloneする</h2>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone -b japanese git@github.com:solareenlo/documentation.git</code></pre></div>
+<h2 id="branchの削除">branchの削除</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#b58900">cd</span> 作業ティレクトり
-git checkout -b master <span style="color:#586e75"># 削除したいブランチとは違うブランチにまずは移動する</span>
-git checkout -d 削除したいブランチ名</code></pre></div>
+git checkout -b master <span style="color:#586e75"># 削除したいbranchとは違うbranchにまずは移動する</span>
+git checkout -d 削除したいbranch名</code></pre></div>
 <h2 id="一時的に過去のcommitに戻る">一時的に過去のcommitに戻る</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># 戻りたいcommitのhash値を探す</span>
 git log --oneline
@@ -245,7 +247,7 @@ git checkout -f master</code></pre></div>
 <h2 id="submodule">submodule</h2>
 
 <h3 id="submoduleの追加">submoduleの追加</h3>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git submodule add -b &lt;リンク付けする方のブランチ名&gt; &lt;リンク付けする方のURL&gt; &lt;リンク付けされるディレクトリ名&gt;
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git submodule add -b &lt;リンク付けする方のbranch名&gt; &lt;リンク付けする方のURL&gt; &lt;リンク付けされるディレクトリ名&gt;
 <span style="color:#586e75"># 例</span>
 git submodule add -b master git@github.com:solareenlo/hugo-book.git themes/book</code></pre></div>
 <h3 id="submoduleの削除">submoduleの削除</h3>
@@ -494,12 +496,13 @@ git push origin master</code></pre></div>
 <li><a href="#git-completion-bash-をインストール"><code>git-completion.bash</code>をインストール</a></li>
 <li><a href="#git-prompt-sh-のインストール"><code>git-prompt.sh</code>のインストール</a></li>
 </ul></li>
-<li><a href="#新しいブランチの作成">新しいブランチの作成</a>
+<li><a href="#新しいbranchの作成">新しいbranchの作成</a>
 <ul>
-<li><a href="#ローカルブランチからブランチ作成">ローカルブランチからブランチ作成</a></li>
-<li><a href="#リモートブランチからブランチ作成">リモートブランチからブランチ作成</a></li>
+<li><a href="#local-branchからbranch作成">local branchからbranch作成</a></li>
+<li><a href="#リモートbranchからbranch作成">リモートbranchからbranch作成</a></li>
 </ul></li>
-<li><a href="#ブランチの削除">ブランチの削除</a></li>
+<li><a href="#remoteから特定のbranchを指定してcloneする">remoteから特定のbranchを指定してcloneする</a></li>
+<li><a href="#branchの削除">branchの削除</a></li>
 <li><a href="#一時的に過去のcommitに戻る">一時的に過去のcommitに戻る</a></li>
 <li><a href="#submodule">submodule</a>
 <ul>
