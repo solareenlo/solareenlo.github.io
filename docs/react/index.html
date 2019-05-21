@@ -11,7 +11,7 @@
 <title>
   
     
-    DB
+    React
   
  | solareenlo</title>
 
@@ -52,7 +52,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   <style>
-  nav ul a[href$="\2f docs\2f db\2f "] {
+  nav ul a[href$="\2f docs\2freact\2f "] {
       color: #004ed0;
   }
   </style>
@@ -166,7 +166,7 @@ https://github.com/alex-shpak/hugo-book
   <strong>
   
     
-    DB
+    React
   
 </strong>
 </header>
@@ -174,31 +174,62 @@ https://github.com/alex-shpak/hugo-book
       
 <article class="markdown">
 
-<h1 id="データベースとは">データベースとは</h1>
-
-<p>大量のデータを集めて, コンピューターでデータの追加, 削除, 検索をしやすい形に整理したもの.
-有料/無料, オープンソース/非オープンソース, SQL型, NoSQL型, オブジェクト型, ドキュメント型, キー・バリュー型, グラフ型などいろんな種類がある.</p>
-
-<h2 id="dbの使用率ランキング">DBの使用率ランキング</h2>
+<h1 id="reactとは">Reactとは</h1>
 
 <ul>
-<li><a href="https://db-engines.com/en/ranking">DB-Engines Ranking</a></li>
+<li>Facebookとコミュニティによって開発されているUIに特化したJavaScriptライブラリ.</li>
+<li>Facebookはコアの部分だけを作成して, コミュニティがその周りをどんどん作っている.</li>
+<li>Virtual DOM(仮想DOM)と呼ばれるレンダリング機構を採用している.</li>
+<li>Virtual DOMを採用しているので, ページに表示されている広いエリアの情報をJavaScriptで管理しておき、なにか変更があった場合に変更箇所のみを再描画するUIなどに向いている.</li>
+<li><strong>GitHubリポジトリ:</strong> <a href="https://github.com/facebook/react/">https://github.com/facebook/react/</a></li>
+<li><strong>Reference:</strong> <a href="https://www.to-r.net/media/react-tutorial01/">Reactとは? – React入門</a></li>
 </ul>
+
+<h2 id="用語">用語</h2>
+
+<table>
+<thead>
+<tr>
+<th>名前</th>
+<th>意味</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Virtual DOM</td>
+<td><li>DOMを作るために必要な情報を持っているオブジェクト.<li>Virtual DOMの内容を元にHTMLを作成してブラウザに描画する.</td>
+</tr>
+
+<tr>
+<td>JSX</td>
+<td><li>Virtual DOMの元となる構文.<li>Babelがscript要素の内容をブラウザが解釈できるように変換を行う.<li>JSV -&gt; JavaScriptと変換される.<li>基本的にはHTMLと同じ記法.</td>
+</tr>
+
+<tr>
+<td>コンポーネント</td>
+<td><li>個々の部品<li>HTMLのパーツをコンポーネント単位で管理し組み合わせてUIの作成を行う.</td>
+</tr>
+
+<tr>
+<td>props</td>
+<td><li>親コンポーネントから渡されたプロパティ<li>不変のデータ</td>
+</tr>
+
+<tr>
+<td>state</td>
+<td><li>そのコンポーネントが持っている状態<li>可変のデータ</td>
+</tr>
+</tbody>
+</table>
 </article>
 
       
-<div class="align-center book-git-footer justify-between">
-  
-  <div>
-    
-    <a href="https://github.com/solareenlo/blog-hugo/commit/8080d3ce07296cc293a8f5677529817c66942922" title='Last modified Apr 29, 2019 by solareenlo' target="_blank" rel="noopener">
-      <img src="/svg/code-merge.svg" alt="Changed" /> Apr 29, 2019
-    </a>
-  </div>
+<div class="align-center book-git-footer justify-end">
   
   
   <div>
-    <a href="https://github.com/solareenlo/blog-hugo/edit/master/content/docs/db.md" target="_blank" rel="noopener">
+    <a href="https://github.com/solareenlo/blog-hugo/edit/master/content/docs/react.md" target="_blank" rel="noopener">
       <img src="/svg/code-fork.svg" alt="Edit" /> Edit this page
     </a>
   </div>
@@ -215,9 +246,9 @@ https://github.com/alex-shpak/hugo-book
   <aside class="book-toc fixed">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#データベースとは">データベースとは</a>
+<li><a href="#reactとは">Reactとは</a>
 <ul>
-<li><a href="#dbの使用率ランキング">DBの使用率ランキング</a></li>
+<li><a href="#用語">用語</a></li>
 </ul></li>
 </ul>
 </nav>
