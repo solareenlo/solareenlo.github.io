@@ -235,7 +235,8 @@ git branch -a</code></pre></div>
 <h2 id="branchの削除">branchの削除</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#b58900">cd</span> 作業ティレクトり
 git checkout -b master <span style="color:#586e75"># 削除したいbranchとは違うbranchにまずは移動する</span>
-git checkout -d 削除したいbranch名</code></pre></div>
+git branch --delete 削除したいbranch名 <span style="color:#586e75"># mergeしたbranchを削除</span>
+git branch -D 削除したいbranch名 <span style="color:#586e75"># mergeしたかどうかは問わずに削除</span></code></pre></div>
 <h2 id="一時的に過去のcommitに戻る">一時的に過去のcommitに戻る</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># 戻りたいcommitのhash値を探す</span>
 git log --oneline
