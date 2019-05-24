@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docker Hub on solareenlo</title>
+    <link>https://solareenlo.com/tags/Docker-Hub/</link>
+    <description>Recent content in Docker Hub on solareenlo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 23 Apr 2019 08:00:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://solareenlo.com/tags/Docker-Hub/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ローカル環境のDocker Hubのパスワードをpassで管理する方法</title>
+      <link>https://solareenlo.com/posts/docker-pass/</link>
+      <pubDate>Tue, 23 Apr 2019 08:00:00 +0900</pubDate>
+      
+      <guid>https://solareenlo.com/posts/docker-pass/</guid>
+      <description>Ubuntu用
+ なぜDocker Hubのパスワードをpassを使って管理するか? ローカルからDocker Hubにログインすると, その時のパスワードを平文のまま保存されるから.    ここからdocker-credential-passの最新バージョンをダウンロードする. tar -zxvf docker-credential-pass.tar.gz (解凍する.) mv docker-credential-pass /usr/local/bin (PATHが通ってるところにファイルを移動する.) sudo apt-get install gpg pass (gpgとpassをインストール.) gpg --generate-keyで新しい秘密鍵と公開鍵の組を作る. gpg --list-keysで出てきた, pubの16進数の40文字(大文字のA-F, 0-9の文字列)をコピーする. pass init AAAAAAAAAABBBBBBBBBBCCCCCCCCCCDDDDDDDDDでpassを初期化する. pass insert docker-credential-helpers/docker-pass-initialized-checkでとりあえずのディレクトリを作成する. docker-credential-pass listで{}と返ってくる. ~/.docker/config.jsonに{&amp;quot;credsStore&amp;quot;: &amp;quot;pass&amp;quot;}と書き込む. docker loginでDockerにログインする.   うまくいかないときは権限をchmodを使って変更してみる.
+ curl -O https://github.com/docker/docker-credential-helpers/releases/download/v0.6.0/docker-credential-pass-v0.6.0-amd64.tar.gz tar -xvf docker-credential-pass.tar.gz mv docker-credential-pass /usr/local/bin apt-get install gpg pass gpg --generate-key gpg --list-keys &amp;gt; pub rsa2048 2019-04-22 [SC] [有効期限: 2021-04-21] &amp;gt; D7D35B60A7FA571541959AF3C4821C32793D5F5A // ここの公開鍵をコピーする &amp;gt; uid [ 究極 ] solareenlo &amp;lt;test@example.</description>
+    </item>
+    
+  </channel>
+</rss>

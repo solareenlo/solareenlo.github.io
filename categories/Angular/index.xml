@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Angular on solareenlo</title>
+    <link>https://solareenlo.com/categories/Angular/</link>
+    <description>Recent content in Angular on solareenlo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 06 May 2019 10:00:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://solareenlo.com/categories/Angular/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>DockerでAngularを動かす</title>
+      <link>https://solareenlo.com/posts/angular-docker/</link>
+      <pubDate>Mon, 06 May 2019 10:00:00 +0900</pubDate>
+      
+      <guid>https://solareenlo.com/posts/angular-docker/</guid>
+      <description>以下を参照のこと.
+solareenlo/angular-cli</description>
+    </item>
+    
+  </channel>
+</rss>

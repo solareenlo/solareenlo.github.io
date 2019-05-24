@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on solareenlo</title>
+    <link>https://solareenlo.com/categories/</link>
+    <description>Recent content in Categories on solareenlo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 06 May 2019 10:00:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://solareenlo.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Angular</title>
+      <link>https://solareenlo.com/categories/Angular/</link>
+      <pubDate>Mon, 06 May 2019 10:00:00 +0900</pubDate>
+      
+      <guid>https://solareenlo.com/categories/Angular/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Docker</title>
+      <link>https://solareenlo.com/categories/Docker/</link>
+      <pubDate>Mon, 06 May 2019 10:00:00 +0900</pubDate>
+      
+      <guid>https://solareenlo.com/categories/Docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>application</title>
+      <link>https://solareenlo.com/categories/application/</link>
+      <pubDate>Tue, 30 Apr 2019 10:00:00 +0900</pubDate>
+      
+      <guid>https://solareenlo.com/categories/application/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Docker Hub</title>
+      <link>https://solareenlo.com/categories/Docker-Hub/</link>
+      <pubDate>Tue, 23 Apr 2019 08:00:00 +0900</pubDate>
+      
+      <guid>https://solareenlo.com/categories/Docker-Hub/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Bitcoin</title>
+      <link>https://solareenlo.com/categories/Bitcoin/</link>
+      <pubDate>Sun, 21 Apr 2019 08:00:00 +0900</pubDate>
+      
+      <guid>https://solareenlo.com/categories/Bitcoin/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Programming</title>
+      <link>https://solareenlo.com/categories/Programming/</link>
+      <pubDate>Sun, 21 Apr 2019 08:00:00 +0900</pubDate>
+      
+      <guid>https://solareenlo.com/categories/Programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Meetup</title>
+      <link>https://solareenlo.com/categories/Meetup/</link>
+      <pubDate>Fri, 19 Apr 2019 08:00:00 +0900</pubDate>
+      
+      <guid>https://solareenlo.com/categories/Meetup/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Plasma</title>
+      <link>https://solareenlo.com/categories/Plasma/</link>
+      <pubDate>Thu, 18 Apr 2019 08:00:00 +0900</pubDate>
+      
+      <guid>https://solareenlo.com/categories/Plasma/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Substrate</title>
+      <link>https://solareenlo.com/categories/Substrate/</link>
+      <pubDate>Thu, 18 Apr 2019 08:00:00 +0900</pubDate>
+      
+      <guid>https://solareenlo.com/categories/Substrate/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Development</title>
+      <link>https://solareenlo.com/categories/Development/</link>
+      <pubDate>Sun, 14 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://solareenlo.com/categories/Development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>golang</title>
+      <link>https://solareenlo.com/categories/golang/</link>
+      <pubDate>Sun, 14 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://solareenlo.com/categories/golang/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

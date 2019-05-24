@@ -245,8 +245,7 @@ Reference: コンテナ技術とは何？
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://solareenlo.com/docs/docker-compose/</guid>
-      <description>Docker Composeとは 複数のコンテナで構成されるアプリケーションを定義と実行するためのツールのこと. Dockerとは切り離されてる.
- Composeはアプリケーションのサービスをファイルで定義する. Dockerコマンドと高い親和性があるため, 学習コストが比較的低い. Swarmモードにサービスをデプロイできるオーケストレーション機能もある.  Reference: Docker Compose 徹底解説   活用場面  利用者視点  docker-compose.ymlがあれば, すぐに何でも実行できる.  開発者視点  環境の再構築が簡単 バージョン違いの環境を作りやすい 1つのマシン上に, 複数の環境を立ち上げられやすい   適切に書かれたYAMLファイルさえあれば, 誰でも簡単に環境構築もアプリケーション実行もできるのが強み.
+      <description>Docker Composeとは  複数のコンテナで構成されるアプリケーションを定義と実行するためのツールのこと. Dockerとは切り離されてる. Composeはアプリケーションのサービスをファイルで定義する. Dockerコマンドと高い親和性があるため, 学習コストが比較的低い. Swarmモードにサービスをデプロイできるオーケストレーション機能もある.  Reference: Docker Compose 徹底解説  GitHubリポジトリ: https://github.com/docker/compose  活用場面  利用者視点  docker-compose.ymlがあれば, すぐに何でも実行できる.  開発者視点  環境の再構築が簡単 バージョン違いの環境を作りやすい 1つのマシン上に, 複数の環境を立ち上げられやすい   適切に書かれたYAMLファイルさえあれば, 誰でも簡単に環境構築もアプリケーション実行もできるのが強み.
 インストール  https://docs.docker.com/compose/install/  docker-compose.ymlの書き方  services:(使うイメージ), networks:(使うネットワーク), volumes:(使うボリューム)を定義する. docker-compose.ymlの書き方 -&amp;gt; Docker Compose - docker-compose.yml リファレンス  公式Reference  Compose file version 3 reference  working directory指定 working_dirを使う.
 version: &amp;#39;3&amp;#39; services: angular: image: angular-first-app ports: - &amp;#34;4200:4200&amp;#34; volumes: - .</description>
     </item>
@@ -424,12 +423,12 @@ yarn add prettier --dev --exact コードを開いて, コードの一番上に/
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://solareenlo.com/docs/nodejs/</guid>
-      <description>Node.jsとは  サーバーサイドJavaScript環境のこと. サーバーサイドもJavaScripで記述できるようにした. シングルスレッドでノンブロッキングI/Oを行う.  インストール Mac: https://nodejs.org/en/
+      <description>Node.jsとは  サーバーサイドJavaScript環境のこと. サーバーサイドもJavaScripで記述できるようにした. シングルスレッドでノンブロッキングI/Oを行う. GitHubリポジトリ: https://github.com/nodejs  インストール Mac: https://nodejs.org/en/
 Ubuntu: Official Node.js binary distributions
 テストツールの種類  テストの環境を提供する（Mocha, Jasmine, Jest, Karma） テストの構造を提供する（Mocha, Jasmine, Jest, Cucumber） アサーション機能を提供する（Chai, Jasmine, Jest, Unexpected） 生成, 表示, テスト結果をウォッチする（Mocha, Jasmine, Jest, Karma）
 以前の実行時からの変更が意図されたものであることを確認するために, コンポーネントやデータ構造を生成し, スナップショットを比較する（Jest, Ava） モック, スパイ, スタブを提供する（Sinon, Jasmine, enzyme, Jest, testdouble) コードカバレッジのレポートを生成する（Istanbul, Jest) シナリオ実行の管理ができるブラウザ, または疑似ブラウザの環境を提供する（Protractor, Nightwatch, Phantom, Casper）  Reference: 2017年JavaScriptのテスト概論
 日付を扱う  moment/moment iamkun/dayjs date-fns/date-fns  引数で判定 引数1つでok. それ以外は強制終了する.
-if(process.argv.length !== 3) { console.log(`csvファイル名を入力してください.`); process.</description>
+if(process.argv.length !== 3) { console.</description>
     </item>
     
     <item>
@@ -487,8 +486,7 @@ if(process.argv.length !== 3) { console.log(`csvファイル名を入力して�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://solareenlo.com/docs/rust/</guid>
-      <description> Rustとは Mozillaが支援するオープンソースのシステムプログラミング言語のこと. 速度, 安全性, 平行性の3つのゴールにフォーカスしている.
-Hello World! fn main() { // 世界よ、こんにちは  println!(&amp;#34;Hello, world!&amp;#34;); }  ドキュメントの日本語訳  Rustの日本語ドキュメント/Japanese Docs for Rust The Embedded Rust Book  チートシート  Rust Language Cheat Sheet  RustでOSを書く  Writing an OS in Rust (Second Edition)  リンク  Rustのリンク集  </description>
+      <description> Rustとは  Mozillaが支援するオープンソースのシステムプログラミング言語のこと. 速度, 安全性, 平行性の3つのゴールにフォーカスしている. GitHubリポジトリ: https://github.com/rust-lang/rust  Hello World! fn main() { // 世界よ、こんにちは  println!(&amp;#34;Hello, world!&amp;#34;); }  ドキュメントの日本語訳  Rustの日本語ドキュメント/Japanese Docs for Rust The Embedded Rust Book  チートシート  Rust Language Cheat Sheet  RustでOSを書く  Writing an OS in Rust (Second Edition)  リンク  Rustのリンク集  </description>
     </item>
     
     <item>
@@ -506,12 +504,10 @@ Hello World! fn main() { // 世界よ、こんにちは  println!(&amp;#34;Hello
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://solareenlo.com/docs/shell-script/</guid>
-      <description>シェルスクリプトとは シェルとはOSと対話するためのインターフェースであり, それのスクリプトがシェルスクリプト.
-シェルスクリプトモードで実行するのとfilename.shを作って,
-bash filename.sh で実行する2パターンあります.
-チェック  ShellCheck  シェルスクリプトモードに突入 /bin/sh $ または
+      <description>シェルスクリプトとは  シェルとはOSと対話するためのインターフェースであり, それのスクリプトがシェルスクリプト.
+ シェルスクリプトモードで実行するのとfilename.shを作って, bash bash filename.sh  で実行する2パターンあります.  チェック  ShellCheck  シェルスクリプトモードに突入 /bin/sh $ または
 sh $ Hello World sh $ echo Hello World Hello World $ シェルスクリプトモードから脱出 CTLとdを押す.
-初めてのシェルスクリプト # まず, bashがどこにあるか調べる which bash &amp;gt; /bin/bash  #!のことを「シェバン」もしくは「シバン」という. shell scriptファイルの頭に#! /bin/bashと書いてあげる.  vim hello i #i /bin/bash echo hello Esc :wq ls -l &amp;gt; -rw-rw-r--. 1 solareenlo solareenlo 24 日付 hello chmod +x hello ls -l &amp;gt; -rwxrwxr-x. 1 solareenlo solareenlo 24 日付 hello bash hello &amp;gt; hello 文字列を表示 # helloの中身 #!</description>
+初めてのシェルスクリプト # まず, bashがどこにあるか調べる which bash &amp;gt; /bin/bash  #!のことを「シェバン」もしくは「シバン」という. shell scriptファイルの頭に#! /bin/bashと書いてあげる.  vim hello i #i /bin/bash echo hello Esc :wq ls -l &amp;gt; -rw-rw-r--. 1 solareenlo solareenlo 24 日付 hello chmod +x hello ls -l &amp;gt; -rwxrwxr-x.</description>
     </item>
     
     <item>
@@ -604,7 +600,7 @@ vim # vimモードに突入 :!ls # lsを表示してくれる 新規にファイ
       
       <guid>https://solareenlo.com/docs/vps/</guid>
       <description> VPS(バーチャル・プライベート・サーバ)とは 一台の物理的なサーバコンピュータ上で仮想的なサーバコンピュータを何台も起動する技術によってつくられた仮想的なサーバコンピュータのこと. 暗号通貨のフルノードを立てることができる.
-世界のVPSの値段比較サイト  VPSCOMP  SSH接続するには </description>
+世界のVPSの値段比較サイト  VPSCOMP  </description>
     </item>
     
     <item>
@@ -662,8 +658,7 @@ CIとは  Continuous Integrationl（継続的インテグレーション）の�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://solareenlo.com/docs/latex/</guid>
-      <description> LaTeXとは テキストベースの組版処理システムのこと. 学術機関における論文執筆ツールとしてよく使われている.
-オンラインジェネレーター  Cloud LaTeX OverLeaf  </description>
+      <description> LaTeXとは  テキストベースの組版処理システムのこと. 学術機関における論文執筆ツールとしてよく使われている. GitHubリポジトリ: https://github.com/latex3/latex3  オンラインジェネレーター  Cloud LaTeX OverLeaf  </description>
     </item>
     
     <item>
