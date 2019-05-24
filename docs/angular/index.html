@@ -193,28 +193,33 @@ https://github.com/alex-shpak/hugo-book
 
 <tbody>
 <tr>
-<td>モジュール</td>
+<td>module</td>
 <td>アプリを構成するコンポーネントを束ねたもの</td>
 </tr>
 
 <tr>
-<td>ルートモジュール</td>
+<td>root module</td>
 <td>アプリが起動する時に呼びされるモジュール</td>
 </tr>
 
 <tr>
-<td>コンポーネント</td>
+<td>component</td>
 <td>各要素</td>
 </tr>
 
 <tr>
-<td>デコレーター</td>
+<td>Decorators</td>
 <td>モジュールやクラスなどの要素に対してメタ情報を付与するもの</td>
+</tr>
+
+<tr>
+<td>constructor</td>
+<td>TS, JSに付随するものでClassの初期化時に発動する</td>
 </tr>
 </tbody>
 </table>
 
-<h3 id="デコレーターのパラメーター">デコレーターのパラメーター</h3>
+<h3 id="decoratorsのパラメーター">Decoratorsのパラメーター</h3>
 
 <table>
 <thead>
@@ -517,6 +522,47 @@ templateUrl<span style="color:#719e07">:</span> <span style="color:#2aa198">&#39
   @Input() posts <span style="color:#719e07">=</span> [];
 }
 </code></pre></div>
+<h3 id="eventemitter">EventEmitter</h3>
+
+<ul>
+<li>コンポーネントからその上位コンポーネントへの, 任意の値の通知を提供する.</li>
+</ul>
+
+<p>下位コンポーネントの<code>.ts</code>に以下の様にして使う.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#719e07">import</span> { EventEmitter, Output } from <span style="color:#2aa198">&#39;@angular/core&#39;</span>;
+<span style="color:#719e07">export</span> <span style="color:#719e07">class</span> TestComponent {
+  @output() postCreated <span style="color:#719e07">=</span> <span style="color:#719e07">new</span> EventEmitter();
+  onAddPost() {
+    <span style="color:#719e07">const</span> post <span style="color:#719e07">=</span> test;
+    <span style="color:#719e07">this</span>.postCreated.emit(post);
+  }
+}
+</code></pre></div>
+<h3 id="コンポーネント間で値を渡す">コンポーネント間で値を渡す</h3>
+
+<ul>
+<li><code>xxx.service.ts</code>を使えば良い.</li>
+<li>その際には<code>Injectable</code>コンポーネントを使用する.</li>
+<li><code>xxx.service.ts</code>で, 渡す<code>class</code>を作って,
+それを2つのコンポーネントの<code>constructor</code>でそれぞれ作って,
+渡される方の子コンポーネントの<code>ngOnInit</code>で値を渡してあげる.</li>
+<li><code>RxJS</code>ライブラリを使って, streamで非同期でコンポーネント間でデータを渡せる.</li>
+</ul>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#586e75">// xxx.service.tsの例
+</span><span style="color:#586e75"></span><span style="color:#719e07">import</span> { Injectable } from <span style="color:#2aa198">&#39;@angular/core&#39;</span>;
+<span style="color:#719e07">import</span> { Post } from <span style="color:#2aa198">&#39;./post.model&#39;</span>;
+@Injectable({providedIn<span style="color:#719e07">:</span> <span style="color:#2aa198">&#39;root&#39;</span>})
+<span style="color:#719e07">export</span> <span style="color:#719e07">class</span> PostsService {
+  <span style="color:#268bd2">private</span> posts<span style="color:#719e07">:</span> Post[] <span style="color:#719e07">=</span> [];
+  getPosts() {
+    <span style="color:#719e07">return</span> [...<span style="color:#719e07">this</span>.posts];
+  }
+  addPosts(title<span style="color:#719e07">:</span> string, content<span style="color:#719e07">:</span> string) {
+    <span style="color:#719e07">const</span> post<span style="color:#719e07">:</span> Post <span style="color:#719e07">=</span> {title, content};
+    <span style="color:#719e07">this</span>.posts.push(post);
+  }
+}
+</code></pre></div>
 <h2 id="ngif-else">ngIf else</h2>
 
 <p>特定の状況下でのみアプリケーションがビューまたはビューの一部を表示する様にする.</p>
@@ -656,30 +702,42 @@ Aコンポーネント内の<code>&lt;ng-content&gt;&lt;/ng-content&gt;</code>�
 
 <p><strong>Reference:</strong> <a href="https://angular.jp/guide/lifecycle-hooks">ライフサイクル・フック</a></p>
 
-<h2 id="eventemitter">EventEmitter</h2>
+<h2 id="formを使う">formを使う</h2>
 
-<ul>
-<li>コンポーネントからその上位コンポーネントへの, 任意の値の通知を提供する.</li>
-</ul>
-
-<p>下位コンポーネントの<code>.ts</code>に以下の様にして使う.</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#719e07">import</span> { EventEmitter, Output } from <span style="color:#2aa198">&#39;@angular/core&#39;</span>;
+<p><code>NgForm</code>モジュールを使えば良い.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#586e75">// .tsの例
+</span><span style="color:#586e75"></span><span style="color:#719e07">import</span> { NgForm } from <span style="color:#586e75">`@angular/forms`</span>;
 <span style="color:#719e07">export</span> <span style="color:#719e07">class</span> TestComponent {
-  @output() postCreated <span style="color:#719e07">=</span> <span style="color:#719e07">new</span> EventEmitter();
-  onAddPost() {
-    <span style="color:#719e07">const</span> post <span style="color:#719e07">=</span> test;
-    <span style="color:#719e07">this</span>.postCreated.emit(post);
+  onAddPost(form<span style="color:#719e07">:</span> NgForm) {
+    <span style="color:#719e07">if</span> (form.invalid) {
+      <span style="color:#719e07">return</span> ;
+    }
+    <span style="color:#719e07">const</span> post <span style="color:#719e07">=</span> {
+      title<span style="color:#719e07">:</span> form.value.title;
+    }
   }
 }
-</code></pre></div></article>
+</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#586e75">&lt;!-- .htmlの例 --&gt;</span>
+&lt;<span style="color:#268bd2">form</span> (submit)=&#34;onAddPost(postForm)&#34; #postForm<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;ngForm&#34;</span>&gt;
+  &lt;<span style="color:#268bd2">mat-form-field</span>&gt;
+    &lt;<span style="color:#268bd2">input</span>
+      matInput
+      type<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;text&#34;</span>
+      name<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;title&#34;</span>
+      ngModel
+      required
+      #title<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;ngModel&#34;</span>&gt;
+    &lt;<span style="color:#268bd2">mat-error</span> *ngIf<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;title.invalid&#34;</span>&gt;タイトルを入力してください.&lt;/<span style="color:#268bd2">mat-error</span>&gt;
+  &lt;/<span style="color:#268bd2">mat-form-field</span>&gt;
+&lt;/<span style="color:#268bd2">form</span>&gt;</code></pre></div></article>
 
       
 <div class="align-center book-git-footer justify-between">
   
   <div>
     
-    <a href="https://github.com/solareenlo/blog-hugo/commit/1ee1f5af74edfb741efa9ec5f4bc8c27eb1d8a6a" title='Last modified May 19, 2019 by solareenlo' target="_blank" rel="noopener">
-      <img src="/svg/code-merge.svg" alt="Changed" /> May 19, 2019
+    <a href="https://github.com/solareenlo/blog-hugo/commit/48f513bccd8a81bbf7e1f2247d77dc45087732ce" title='Last modified May 23, 2019 by solareenlo' target="_blank" rel="noopener">
+      <img src="/svg/code-merge.svg" alt="Changed" /> May 23, 2019
     </a>
   </div>
   
@@ -706,7 +764,7 @@ Aコンポーネント内の<code>&lt;ng-content&gt;&lt;/ng-content&gt;</code>�
 <ul>
 <li><a href="#用語">用語</a>
 <ul>
-<li><a href="#デコレーターのパラメーター">デコレーターのパラメーター</a></li>
+<li><a href="#decoratorsのパラメーター">Decoratorsのパラメーター</a></li>
 </ul></li>
 <li><a href="#dockerでangular">DockerでAngular</a></li>
 <li><a href="#npmの脆弱性を指摘されたら">npmの脆弱性を指摘されたら</a></li>
@@ -723,13 +781,15 @@ Aコンポーネント内の<code>&lt;ng-content&gt;&lt;/ng-content&gt;</code>�
 <li><a href="#ユーザーからの-input-を受け付ける">ユーザーからの<code>input</code>を受け付ける.</a></li>
 <li><a href="#入力された値をコンポーネント内で操作する">入力された値をコンポーネント内で操作する</a></li>
 <li><a href="#子a-親-子bと渡す">子A &gt; 親 &gt; 子Bと渡す</a></li>
+<li><a href="#eventemitter">EventEmitter</a></li>
+<li><a href="#コンポーネント間で値を渡す">コンポーネント間で値を渡す</a></li>
 </ul></li>
 <li><a href="#ngif-else">ngIf else</a></li>
 <li><a href="#ngstyle">ngStyle</a></li>
 <li><a href="#ngclass">ngClass</a></li>
 <li><a href="#要素を渡す">要素を渡す</a></li>
 <li><a href="#コンポーネントのライフサイクル">コンポーネントのライフサイクル</a></li>
-<li><a href="#eventemitter">EventEmitter</a></li>
+<li><a href="#formを使う">formを使う</a></li>
 </ul></li>
 </ul>
 </nav>
