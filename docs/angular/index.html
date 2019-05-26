@@ -345,6 +345,25 @@ docker-compose rm</code></pre></div>
 
 <p><a href="https://qiita.com/disneyduffy/items/383ac95bb6a568f6360f">Angularでtarの脆弱性（Arbitrary File Overwrite）を指摘されたので修正する</a></p>
 
+<h2 id="travisci経由でgithub-pagesに公開">TravisCI経由でGitHub Pagesに公開</h2>
+
+<h3 id="手順">手順</h3>
+
+<ol>
+<li>新規リポジトリを作成</li>
+<li>GitHub APIトークンを生成</li>
+<li>Travi CIの設定</li>
+<li>APIトークンの設定</li>
+<li>リポジトリをクローン</li>
+<li>Angular CLIで新規アプリを作成</li>
+<li>(単体テスト)karma.conf.jsの修正</li>
+<li>(総合テスト)protractor.conf.jsの修正</li>
+<li>.travis.ymlの追加</li>
+<li>GitHub Pagesにアクセス</li>
+</ol>
+
+<p><strong>Reference:</strong> <a href="https://qiita.com/puku0x/items/0143af73c4d7af948fc8">AngularアプリをTravis CIからGitHub Pagesへデプロイする</a></p>
+
 <h2 id="マテリアルデザイン">マテリアルデザイン</h2>
 
 <ul>
@@ -774,6 +793,10 @@ Aコンポーネント内の<code>&lt;ng-content&gt;&lt;/ng-content&gt;</code>�
 </ul></li>
 <li><a href="#dockerでangular">DockerでAngular</a></li>
 <li><a href="#npmの脆弱性を指摘されたら">npmの脆弱性を指摘されたら</a></li>
+<li><a href="#travisci経由でgithub-pagesに公開">TravisCI経由でGitHub Pagesに公開</a>
+<ul>
+<li><a href="#手順">手順</a></li>
+</ul></li>
 <li><a href="#マテリアルデザイン">マテリアルデザイン</a>
 <ul>
 <li><a href="#インストール">インストール</a></li>
