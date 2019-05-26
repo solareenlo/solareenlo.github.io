@@ -211,9 +211,26 @@ ssh -i sshkey.pem ec2-user@000.000.000.000</code></pre></div></li>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat /etc/system-release</code></pre></div>
 <h3 id="お名前-comで取得したドメインを割り当てる">お名前.comで取得したドメインを割り当てる</h3>
 
+<h4 id="手順">手順</h4>
+
+<ol>
+<li><code>Route 53</code>で<code>Create Hosted Zone</code>ボタンを押す.</li>
+<li><code>Domain Name</code>に, <code>example.jp</code>など独自ドメインを入れて, <code>Create</code>を押す.</li>
+<li>NS（ネームサーバー）のアドレス4つをコピペしておく.</li>
+<li><code>Create Record Set</code>ボタンを押す.
+
 <ul>
-<li><a href="https://qiita.com/roba4coding/items/9eaa542caa29d588e4d1">Elastic Beanstalkのサーバーにお名前.comで取得した独自ドメインを割り当てる</a></li>
-</ul>
+<li>Type: A - IPv4 address もしくは iPV6 address</li>
+<li>Alias: Yes</li>
+<li>Alias Hostedを選択するとプルダウン表示されるので, そこからElastic Beanstalkのデフォルトのホスト名を選択</li>
+</ul></li>
+<li>お名前.comのドメイン設定のネームサーバー変更を選択する.</li>
+<li><code>Elastic Beanstalk</code>に割り当てたいドメインにチェックを入れる.</li>
+<li>他のネームサーバーの利用を選択して, Route 53で控えたネームサーバーのアドレス4つを入れて確認画面へ進むを押して保存する.</li>
+<li>数時間後には独自ドメインでアクセスできる.</li>
+</ol>
+
+<p><strong>Reference:</strong> <a href="https://qiita.com/roba4coding/items/9eaa542caa29d588e4d1">Elastic Beanstalkのサーバーにお名前.comで取得した独自ドメインを割り当てる</a></p>
 
 <h2 id="iam">IAM</h2>
 
@@ -268,6 +285,13 @@ Amazon Elastic Container Serviceの略.</li>
 <h2 id="certificate-manager">Certificate Manager</h2>
 
 <p>AWSでのウェブアプリのhttps化の設定の時に使用する.</p>
+
+<h2 id="ざっくり料金計算">ざっくり料金計算</h2>
+
+<ul>
+<li><a href="https://aws.noplan.cc">ざっくりAWS</a></li>
+<li><a href="https://github.com/noplan1989/aws-rough">noplan1989/aws-rough</a></li>
+</ul>
 </article>
 
       
@@ -306,7 +330,10 @@ Amazon Elastic Container Serviceの略.</li>
 <ul>
 <li><a href="#ssh接続">SSH接続</a></li>
 <li><a href="#amazon-linuxのバージョン確認">Amazon Linuxのバージョン確認</a></li>
-<li><a href="#お名前-comで取得したドメインを割り当てる">お名前.comで取得したドメインを割り当てる</a></li>
+<li><a href="#お名前-comで取得したドメインを割り当てる">お名前.comで取得したドメインを割り当てる</a>
+<ul>
+<li><a href="#手順">手順</a></li>
+</ul></li>
 </ul></li>
 <li><a href="#iam">IAM</a></li>
 <li><a href="#ecs">ECS</a></li>
@@ -316,6 +343,7 @@ Amazon Elastic Container Serviceの略.</li>
 <li><a href="#vpcセキュリティグループ">VPCセキュリティグループ</a></li>
 <li><a href="#amplify-console">Amplify Console</a></li>
 <li><a href="#certificate-manager">Certificate Manager</a></li>
+<li><a href="#ざっくり料金計算">ざっくり料金計算</a></li>
 </ul></li>
 </ul>
 </nav>

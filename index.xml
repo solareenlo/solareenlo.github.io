@@ -137,7 +137,7 @@ MacにHomebrewをインストールする /usr/bin/ruby -e &amp;#34;$(curl -fsSL
       <guid>https://solareenlo.com/docs/aws/</guid>
       <description>アマゾンウェブサービス（AWS）とは  Amazonが提供するパブリッククラウドコンピューティングのこと. 従量課金制. コンピューティング, ストレージ, データベース, 分析, ネットワーキング, モバイル, 開発者用ツール, 管理ツール, IoT, セキュリティ, エンタープライズアプリケーションなど, グローバルなクラウドベース製品を幅広く利用できる.  S3  インターネット用のオブジェクトストレージサービスのこと. Amazon Simple Storage Serviceの略.  Elastic Beanstalk  Java, .NET, PHP, Node.js, Python, Ruby, GoおよびDockerを使用して開発されたウェブアプリケーションやサービスを, Apache, Nginx, Passenger, IISなどのサーバーでデプロイおよびスケーリングするためのサービスのこと. 平たく言うとアマゾン版VPS.  SSH接続  インスタンスを立ち上げる. インスタンスにキーペア(秘密鍵/公開鍵のペア)を設定する. 秘密鍵をダウンロードして(ファイル名sshkey.pem), インスタンスのIPアドレスを確認して, 以下を実行.
 chmod 600 sshkey.pem ssh -i sshkey.pem ec2-user@000.000.000.000 後は普通のVPSと同じ.
-  Amazon Linuxのバージョン確認 cat /etc/system-release お名前.comで取得したドメインを割り当てる  Elastic Beanstalkのサーバーにお名前.comで取得した独自ドメインを割り当てる  IAM  ユーザーに対してAWSへのアクセスを安全に制御するための仕組みのこと.</description>
+  Amazon Linuxのバージョン確認 cat /etc/system-release お名前.comで取得したドメインを割り当てる 手順  Route 53でCreate Hosted Zoneボタンを押す. Domain Nameに, example.</description>
     </item>
     
     <item>
