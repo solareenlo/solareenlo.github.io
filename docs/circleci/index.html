@@ -193,9 +193,60 @@ https://github.com/alex-shpak/hugo-book
 
 <h2 id="awsのelastic-beanstalkへデプロイ">AWSのElastic Beanstalkへデプロイ</h2>
 
+<ol>
+<li><p>以下で<code>CircleCI</code>で<code>Elastic Beanstalk CLI</code>を起動して, デプロイする.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#586e75"># .circleci/config.yml</span>
+version: <span style="color:#2aa198">2</span>
+jobs:
+  deploy:
+    working_directory: ~/app
+    docker:
+      - image: circleci/ruby:<span style="color:#2aa198">2.6</span>.<span style="color:#2aa198">3</span>
+    steps:
+      - checkout
+      - run:
+          name: Installing deployment dependencies
+          working_directory: /
+          command: <span style="color:#2aa198">|
+</span><span style="color:#2aa198">            sudo apt-get -y -qq update</span>
+            sudo apt-get install python-pip python-dev build-essential
+            sudo pip install --upgrade setuptools
+            sudo pip install awsebcli --upgrade
+      - run:
+          name: Deploying
+          command: eb deploy master-TaxPlusAws01-env
+
+workflows:
+  version: <span style="color:#2aa198">2</span>
+  build:
+    jobs:
+      - deploy:
+          filters:
+            branches:
+              only:
+                - master</code></pre></div></li>
+
+<li><p>以下は<code>Elastci Beanstalk CLI</code>の設定.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#586e75"># .elasticbeanstalk/config.yml</span>
+branch-defaults:
+  master:
+    environment: master-TaxPlusAws01-env
+global:
+  application_name: tax-plus-aws-<span style="color:#2aa198">01</span>
+  default_ec2_keyname: tax-plus
+  default_platform: 64bit Amazon Linux <span style="color:#2aa198">2018.03</span> v4.<span style="color:#2aa198">8.2</span> running Node.js
+  default_region: ap-northeast-<span style="color:#2aa198">1</span>
+  sc: git</code></pre></div></li>
+
+<li><p>そして, <code>CircleCI</code>の<code>Project Settings &gt; Environment Variables</code>で<code>AWS_ACCESS_KEY_ID</code>と<code>AWS_SECRET_ACCESS_KEY</code>を設定する.</p></li>
+
+<li><p><strong>Reference:</strong></p>
+
 <ul>
 <li><a href="https://gist.github.com/ryansimms/808214137d219be649e010a07af44bad">Deploying to Elastic Beanstalk via CircleCi 2.0</a></li>
-</ul>
+<li><a href="https://github.com/solareenlo/tax-plus-aws">https://github.com/solareenlo/tax-plus-aws</a></li>
+</ul></li>
+</ol>
 
 <h2 id="参考サイト">参考サイト</h2>
 
@@ -210,8 +261,8 @@ https://github.com/alex-shpak/hugo-book
   
   <div>
     
-    <a href="https://github.com/solareenlo/blog-hugo/commit/3851451673f49dba785ea142804e991a64ba6eb5" title='Last modified May 14, 2019 by solareenlo' target="_blank" rel="noopener">
-      <img src="/svg/calendar.svg" alt="Changed" /> May 14, 2019
+    <a href="https://github.com/solareenlo/blog-hugo/commit/7d44de66d86bd7e29cc0b2575281dc0e0838fd43" title='Last modified May 26, 2019 by solareenlo' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" alt="Changed" /> May 26, 2019
     </a>
   </div>
   
