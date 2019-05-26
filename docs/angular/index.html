@@ -347,8 +347,6 @@ docker-compose rm</code></pre></div>
 
 <h2 id="travisci経由でgithub-pagesに公開">TravisCI経由でGitHub Pagesに公開</h2>
 
-<h3 id="手順">手順</h3>
-
 <ol>
 <li>新規リポジトリを作成</li>
 <li>GitHub APIトークンを生成</li>
@@ -375,6 +373,7 @@ docker-compose rm</code></pre></div>
 
 <h3 id="インストール">インストール</h3>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm i --save @angular/material
+<span style="color:#586e75"># or</span>
 ng add @angular/material</code></pre></div>
 <h3 id="簡単な使い方">簡単な使い方</h3>
 
@@ -409,6 +408,64 @@ ng add @angular/material</code></pre></div>
 <span style="color:#268bd2">textarea</span> {
   <span style="color:#719e07">width</span>: <span style="color:#2aa198">100</span><span style="color:#dc322f">%</span>;
 }</code></pre></div>
+<h3 id="ファイル選択ボタンをmaterial化">ファイル選択ボタンをMaterial化</h3>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#586e75">/* .cssファイル */</span>
+.<span style="color:#268bd2">file-select-button</span><span style="color:#719e07">,</span> .<span style="color:#268bd2">file-name</span> {
+  <span style="color:#719e07">display</span>: <span style="color:#cb4b16">inline</span><span style="color:#719e07">-</span><span style="color:#cb4b16">block</span>;
+  <span style="color:#719e07">margin</span>: <span style="color:#2aa198">8</span><span style="color:#dc322f">px</span>;
+  }</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#586e75">&lt;!-- .htmlファイル --&gt;</span>
+&lt;<span style="color:#268bd2">div</span> class<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;container&#34;</span>&gt;
+  &lt;<span style="color:#268bd2">input</span> type<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;file&#34;</span> style<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;display: none&#34;</span> #fileInput accept<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;image/*&#34;</span> (change)=&#34;onChangeFileInput()&#34; /&gt;
+  &lt;<span style="color:#268bd2">button</span> mat-raised-button color<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;primary&#34;</span> class<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;file-select-button&#34;</span> (click)=&#34;onClickFileInputButton()&#34;&gt;
+    &lt;<span style="color:#268bd2">mat-icon</span>&gt;attach_file&lt;/<span style="color:#268bd2">mat-icon</span>&gt;
+    ファイルを選択
+  &lt;/<span style="color:#268bd2">button</span>&gt;
+
+  &lt;<span style="color:#268bd2">p</span> class<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;file-name&#34;</span> *ngIf<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;!file; else fileName&#34;</span>&gt;ファイルが選択されていません&lt;/<span style="color:#268bd2">p</span>&gt;
+  &lt;<span style="color:#268bd2">ng-template</span> #fileName&gt;
+    &lt;<span style="color:#268bd2">p</span> class<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;file-name&#34;</span>&gt;{{ file?.name }}&lt;/<span style="color:#268bd2">p</span>&gt;
+  &lt;/<span style="color:#268bd2">ng-template</span>&gt;
+&lt;/<span style="color:#268bd2">div</span>&gt;</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#586e75">// .tsファイル
+</span><span style="color:#586e75"></span><span style="color:#719e07">import</span> { Component, ViewChild } from <span style="color:#2aa198">&#39;@angular/core&#39;</span>;
+
+@Component({
+  selector<span style="color:#719e07">:</span> <span style="color:#2aa198">&#39;my-app&#39;</span>,
+  templateUrl<span style="color:#719e07">:</span> <span style="color:#2aa198">&#39;./app.component.html&#39;</span>,
+  styleUrls<span style="color:#719e07">:</span> [ <span style="color:#2aa198">&#39;./app.component.css&#39;</span> ]
+})
+<span style="color:#719e07">export</span> <span style="color:#719e07">class</span> AppComponent  {
+  @ViewChild(<span style="color:#2aa198">&#39;fileInput&#39;</span>)
+  fileInput;
+
+  file<span style="color:#719e07">:</span> File <span style="color:#719e07">|</span> <span style="color:#cb4b16">null</span> <span style="color:#719e07">=</span> <span style="color:#cb4b16">null</span>;
+
+  onClickFileInputButton()<span style="color:#719e07">:</span> <span style="color:#719e07">void</span> {
+    <span style="color:#719e07">this</span>.fileInput.nativeElement.click();
+  }
+
+  onChangeFileInput()<span style="color:#719e07">:</span> <span style="color:#719e07">void</span> {
+    <span style="color:#719e07">const</span> files<span style="color:#719e07">:</span> { [key<span style="color:#719e07">:</span> string]<span style="color:#719e07">:</span> File } <span style="color:#719e07">=</span> <span style="color:#719e07">this</span>.fileInput.nativeElement.files;
+    <span style="color:#719e07">this</span>.file <span style="color:#719e07">=</span> files[<span style="color:#2aa198">0</span>];
+  }
+  }
+</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#586e75">// app.module.tsファイル
+</span><span style="color:#586e75"></span><span style="color:#719e07">import</span> { NgModule } from <span style="color:#2aa198">&#39;@angular/core&#39;</span>;
+<span style="color:#719e07">import</span> { BrowserModule } from <span style="color:#2aa198">&#39;@angular/platform-browser&#39;</span>;
+<span style="color:#719e07">import</span> { FormsModule } from <span style="color:#2aa198">&#39;@angular/forms&#39;</span>;
+<span style="color:#719e07">import</span> { MatButtonModule, MatIconModule } from <span style="color:#2aa198">&#39;@angular/material&#39;</span>;
+
+<span style="color:#719e07">import</span> { AppComponent } from <span style="color:#2aa198">&#39;./app.component&#39;</span>;
+<span style="color:#719e07">import</span> { HelloComponent } from <span style="color:#2aa198">&#39;./hello.component&#39;</span>;
+
+@NgModule({
+  imports<span style="color:#719e07">:</span>      [ BrowserModule, FormsModule, MatButtonModule, MatIconModule ],
+  declarations<span style="color:#719e07">:</span> [ AppComponent, HelloComponent ],
+  bootstrap<span style="color:#719e07">:</span>    [ AppComponent ]
+})
+<span style="color:#719e07">export</span> <span style="color:#719e07">class</span> AppModule { }
+</code></pre></div>
+<p><strong>Reference:</strong> <a href="https://qiita.com/daikiojm/items/d744d63300915b2d8c4b">Angular Materialでファイル選択ボタン</a></p>
+
 <h2 id="基本的な使い方">基本的な使い方</h2>
 
 <ul>
@@ -761,7 +818,7 @@ Aコンポーネント内の<code>&lt;ng-content&gt;&lt;/ng-content&gt;</code>�
   
   <div>
     
-    <a href="https://github.com/solareenlo/blog-hugo/commit/434c0ad1898e826b85b26acd075a3ac93f612cc7" title='Last modified May 26, 2019 by solareenlo' target="_blank" rel="noopener">
+    <a href="https://github.com/solareenlo/blog-hugo/commit/eb2ccebb12a469aea666453afd339be669553701" title='Last modified May 26, 2019 by solareenlo' target="_blank" rel="noopener">
       <img src="/svg/calendar.svg" alt="Changed" /> May 26, 2019
     </a>
   </div>
@@ -793,14 +850,12 @@ Aコンポーネント内の<code>&lt;ng-content&gt;&lt;/ng-content&gt;</code>�
 </ul></li>
 <li><a href="#dockerでangular">DockerでAngular</a></li>
 <li><a href="#npmの脆弱性を指摘されたら">npmの脆弱性を指摘されたら</a></li>
-<li><a href="#travisci経由でgithub-pagesに公開">TravisCI経由でGitHub Pagesに公開</a>
-<ul>
-<li><a href="#手順">手順</a></li>
-</ul></li>
+<li><a href="#travisci経由でgithub-pagesに公開">TravisCI経由でGitHub Pagesに公開</a></li>
 <li><a href="#マテリアルデザイン">マテリアルデザイン</a>
 <ul>
 <li><a href="#インストール">インストール</a></li>
 <li><a href="#簡単な使い方">簡単な使い方</a></li>
+<li><a href="#ファイル選択ボタンをmaterial化">ファイル選択ボタンをMaterial化</a></li>
 </ul></li>
 <li><a href="#基本的な使い方">基本的な使い方</a></li>
 <li><a href="#値を渡す">値を渡す</a>
