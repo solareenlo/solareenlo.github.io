@@ -484,30 +484,32 @@ templateUrl<span style="color:#719e07">:</span> <span style="color:#2aa198">&#39
 <li><p><code>xxx.component.html</code>にhtmlを, <code>xxx.component.cs</code>にcssを, <code>xxx.component.ts</code>にjsをどんどん書いてく.</p></li>
 </ul>
 
-<h2 id="値を渡す">値を渡す</h2>
+<h2 id="値を渡す-バインド">値を渡す(バインド)</h2>
+
+<ul>
+<li><code>[]</code>は, TypeScriptからHTMLへのバインドを表す.</li>
+<li><code>()</code>は, HTMLからTypeScriptへのバインドを表す.</li>
+<li><code>[()]</code>は, 双方向のバインドを表す.</li>
+</ul>
 
 <h3 id="ts-から-html-へ値を渡す"><code>.ts</code>から<code>.html</code>へ値を渡す</h3>
-
-<p><code>.ts</code>側</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#719e07">export</span> <span style="color:#719e07">class</span> TestComponent <span style="color:#268bd2">implements</span> OnInit {
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#586e75">// .tx側
+</span><span style="color:#586e75"></span><span style="color:#719e07">export</span> <span style="color:#719e07">class</span> TestComponent <span style="color:#268bd2">implements</span> OnInit {
   newPost <span style="color:#719e07">=</span> <span style="color:#2aa198">&#39;Yes&#39;</span>;
   constructor() {}
   ngOnInit() {}
 }
-</code></pre></div>
-<p><code>.html</code>側</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#268bd2">h1</span>&gt;{{ newPost }}&lt;/<span style="color:#268bd2">h1</span>&gt;</code></pre></div>
+</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#586e75">&lt;!-- .thml側 --&gt;</span>
+&lt;<span style="color:#268bd2">h1</span>&gt;{{ newPost }}&lt;/<span style="color:#268bd2">h1</span>&gt;</code></pre></div>
 <h3 id="ts-から-html-の-の中に値を渡す"><code>.ts</code>から<code>.html</code>の<code>&lt;&gt;</code>の中に値を渡す</h3>
-
-<p><code>.ts</code>側</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#719e07">export</span> <span style="color:#719e07">class</span> TestComponent <span style="color:#268bd2">implements</span> OnInit {
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#586e75">// .ts側
+</span><span style="color:#586e75"></span><span style="color:#719e07">export</span> <span style="color:#719e07">class</span> TestComponent <span style="color:#268bd2">implements</span> OnInit {
   newPost <span style="color:#719e07">=</span> <span style="color:#2aa198">&#39;Yes&#39;</span>;
   constructor() {}
   ngOnInit() {}
 }
-</code></pre></div>
-<p><code>.html</code>側</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#268bd2">textarea</span> [value]=&#34;newPost&#34;&gt;&lt;/<span style="color:#268bd2">textarea</span>&gt;</code></pre></div>
+</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#586e75">&lt;!-- .thml側 --&gt;</span>
+&lt;<span style="color:#268bd2">textarea</span> [value]=&#34;newPost&#34;&gt;&lt;/<span style="color:#268bd2">textarea</span>&gt;</code></pre></div>
 <h3 id="ユーザーからの-input-を受け付ける">ユーザーからの<code>input</code>を受け付ける.</h3>
 
 <p>1文字ずつ受け付けるのは2種類ある.<br />
@@ -537,13 +539,12 @@ templateUrl<span style="color:#719e07">:</span> <span style="color:#2aa198">&#39
  class<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;form-control&#34;</span>
  [(ngModel)]=&#34;serverName&#34;&gt;
 &lt;<span style="color:#268bd2">p</span>&gt;{{ serverName }}&lt;/<span style="color:#268bd2">p</span>&gt; <span style="color:#586e75">&lt;!-- serverNameが表示される --&gt;</span></code></pre></div>
-<p>ボタンを押して受け付けるのは1つある.<br />
-<code>.html</code>側</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#268bd2">textarea</span> #postInput&gt;&lt;/<span style="color:#268bd2">textarea</span>&gt;
+<p>ボタンを押して受け付けるのは1つある.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#586e75">&lt;!-- .html側 --&gt;</span>
+&lt;<span style="color:#268bd2">textarea</span> #postInput&gt;&lt;/<span style="color:#268bd2">textarea</span>&gt;
 &lt;<span style="color:#268bd2">button</span> (click)=&#34;onAddPost(postInput)&gt;&lt;/<span style="color:#268bd2">button</span>&gt;
-&lt;<span style="color:#268bd2">p</span>&gt;{{ newPost }}&lt;/<span style="color:#268bd2">p</span>&gt;</code></pre></div>
-<p><code>.ts</code>側</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#719e07">export</span> <span style="color:#719e07">class</span> TestComponent <span style="color:#268bd2">implements</span> OnInit {
+&lt;<span style="color:#268bd2">p</span>&gt;{{ newPost }}&lt;/<span style="color:#268bd2">p</span>&gt;</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#586e75">// .ts側
+</span><span style="color:#586e75"></span><span style="color:#719e07">export</span> <span style="color:#719e07">class</span> TestComponent <span style="color:#268bd2">implements</span> OnInit {
   newPost <span style="color:#719e07">=</span> <span style="color:#2aa198">&#39;&#39;</span>;
   constructor() {}
   ngOninit() {}
@@ -811,6 +812,7 @@ Aコンポーネント内の<code>&lt;ng-content&gt;&lt;/ng-content&gt;</code>�
 <li><a href="https://dev.classmethod.jp/cloud/aws-amplify-console-angular-ci-cd/">超簡単にサイト公開できるAWS Amplify Consoleを使ってAngularのCI/CD環境を作ってみる</a></li>
 <li><a href="https://qiita.com/puku0x/items/0143af73c4d7af948fc8">AngularアプリをTravis CIからGitHub Pagesへデプロイする</a></li>
 <li><a href="https://s8a.jp/angular-github-aws-s3-auto-deploy">Angularで作ったWebアプリをGitHubで管理してS3に自動デプロイする</a></li>
+<li><a href="https://zeit.co/guides/deploying-angular-with-now">Create an Angular Application That Builds and Deploys with Now</a></li>
 </ul>
 </article>
 
@@ -819,8 +821,8 @@ Aコンポーネント内の<code>&lt;ng-content&gt;&lt;/ng-content&gt;</code>�
   
   <div>
     
-    <a href="https://github.com/solareenlo/blog-hugo/commit/c41a4c2c3aa04eff18064f4049eb96050cb05b3e" title='Last modified May 26, 2019 by solareenlo' target="_blank" rel="noopener">
-      <img src="/svg/calendar.svg" alt="Changed" /> May 26, 2019
+    <a href="https://github.com/solareenlo/blog-hugo/commit/e2ed61fb354cb9cffdf65b268c13e7bae6096230" title='Last modified May 27, 2019 by solareenlo' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" alt="Changed" /> May 27, 2019
     </a>
   </div>
   
@@ -859,7 +861,7 @@ Aコンポーネント内の<code>&lt;ng-content&gt;&lt;/ng-content&gt;</code>�
 <li><a href="#ファイル選択ボタンをmaterial化">ファイル選択ボタンをMaterial化</a></li>
 </ul></li>
 <li><a href="#基本的な使い方">基本的な使い方</a></li>
-<li><a href="#値を渡す">値を渡す</a>
+<li><a href="#値を渡す-バインド">値を渡す(バインド)</a>
 <ul>
 <li><a href="#ts-から-html-へ値を渡す"><code>.ts</code>から<code>.html</code>へ値を渡す</a></li>
 <li><a href="#ts-から-html-の-の中に値を渡す"><code>.ts</code>から<code>.html</code>の<code>&lt;&gt;</code>の中に値を渡す</a></li>
