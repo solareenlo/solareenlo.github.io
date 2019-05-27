@@ -211,8 +211,6 @@ ssh -i sshkey.pem ec2-user@000.000.000.000</code></pre></div></li>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat /etc/system-release</code></pre></div>
 <h3 id="お名前-comで取得したドメインを割り当てる">お名前.comで取得したドメインを割り当てる</h3>
 
-<h4 id="手順">手順</h4>
-
 <ol>
 <li><code>Route 53</code>で<code>Create Hosted Zone</code>ボタンを押す.</li>
 <li><code>Domain Name</code>に, <code>example.jp</code>など独自ドメインを入れて, <code>Create</code>を押す.</li>
@@ -226,11 +224,24 @@ ssh -i sshkey.pem ec2-user@000.000.000.000</code></pre></div></li>
 </ul></li>
 <li>お名前.comのドメイン設定のネームサーバー変更を選択する.</li>
 <li><code>Elastic Beanstalk</code>に割り当てたいドメインにチェックを入れる.</li>
-<li>他のネームサーバーの利用を選択して, Route 53で控えたネームサーバーのアドレス4つを入れて確認画面へ進むを押して保存する.</li>
+<li><code>他のネームサーバーの利用</code>を選択して, <code>Route 53</code>で控えたネームサーバーのアドレス4つを入れて確認画面へ進むを押して保存する.</li>
 <li>数時間後には独自ドメインでアクセスできる.</li>
 </ol>
 
 <p><strong>Reference:</strong> <a href="https://qiita.com/roba4coding/items/9eaa542caa29d588e4d1">Elastic Beanstalkのサーバーにお名前.comで取得した独自ドメインを割り当てる</a></p>
+
+<h3 id="https化する">https化する</h3>
+
+<ol>
+<li>ドメインを取得する.</li>
+<li>上記の方法でElastic Beanstalkにカスタムドメインを割り当てる.</li>
+<li>Elastic Beanstalkにロードバランサーを割り当てる.
+
+<ul>
+<li>Elastic Beanstalk &gt; インスタンス &gt; 設定 &gt; 容量 &gt; 環境タイプをロードバランサーへ &gt; 1つ戻ってロードバランサー</li>
+</ul></li>
+<li>ロードバランサーに証明書を割り当てる.</li>
+</ol>
 
 <h2 id="iam">IAM</h2>
 
@@ -301,7 +312,7 @@ Amazon Elastic Container Serviceの略.</li>
   
   <div>
     
-    <a href="https://github.com/solareenlo/blog-hugo/commit/eb2ccebb12a469aea666453afd339be669553701" title='Last modified May 26, 2019 by solareenlo' target="_blank" rel="noopener">
+    <a href="https://github.com/solareenlo/blog-hugo/commit/c41a4c2c3aa04eff18064f4049eb96050cb05b3e" title='Last modified May 26, 2019 by solareenlo' target="_blank" rel="noopener">
       <img src="/svg/calendar.svg" alt="Changed" /> May 26, 2019
     </a>
   </div>
@@ -332,10 +343,8 @@ Amazon Elastic Container Serviceの略.</li>
 <ul>
 <li><a href="#ssh接続">SSH接続</a></li>
 <li><a href="#amazon-linuxのバージョン確認">Amazon Linuxのバージョン確認</a></li>
-<li><a href="#お名前-comで取得したドメインを割り当てる">お名前.comで取得したドメインを割り当てる</a>
-<ul>
-<li><a href="#手順">手順</a></li>
-</ul></li>
+<li><a href="#お名前-comで取得したドメインを割り当てる">お名前.comで取得したドメインを割り当てる</a></li>
+<li><a href="#https化する">https化する</a></li>
 </ul></li>
 <li><a href="#iam">IAM</a></li>
 <li><a href="#ecs">ECS</a></li>
