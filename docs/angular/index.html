@@ -378,15 +378,14 @@ ng add @angular/material</code></pre></div>
 <h3 id="簡単な使い方">簡単な使い方</h3>
 
 <p><code>app.module.ts</code>に以下を追加し,</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#719e07">import</span> { MatInputModule, MatCardModule, MatButtonModule } from <span style="color:#2aa198">&#39;@angular/material&#39;</span>;
-@NgModule ({
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#268bd2">import</span> { MatInputModule, MatCardModule, MatButtonModule } from <span style="color:#2aa198">&#39;@angular/material&#39;</span>;
+<span style="color:#268bd2">@NgModule</span> ({
   imports<span style="color:#719e07">:</span> [
     MatInputModule,
     MatCardModule,
     MatButtonModule
   ]
-})
-</code></pre></div>
+})</code></pre></div>
 <p><code>.html</code>で, 以下の様に使用し,</p>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#268bd2">mat-car</span>&gt;
   &lt;<span style="color:#268bd2">mat-form-field</span>&gt;
@@ -425,45 +424,43 @@ ng add @angular/material</code></pre></div>
   &lt;<span style="color:#268bd2">ng-template</span> #fileName&gt;
     &lt;<span style="color:#268bd2">p</span> class<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;file-name&#34;</span>&gt;{{ file?.name }}&lt;/<span style="color:#268bd2">p</span>&gt;
   &lt;/<span style="color:#268bd2">ng-template</span>&gt;
-&lt;/<span style="color:#268bd2">div</span>&gt;</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#586e75">// .tsファイル
-</span><span style="color:#586e75"></span><span style="color:#719e07">import</span> { Component, ViewChild } from <span style="color:#2aa198">&#39;@angular/core&#39;</span>;
+&lt;/<span style="color:#268bd2">div</span>&gt;</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#586e75">// .tsファイル
+</span><span style="color:#586e75"></span><span style="color:#268bd2">import</span> { Component, ViewChild } from <span style="color:#2aa198">&#39;@angular/core&#39;</span>;
 
-@Component({
+<span style="color:#268bd2">@Component</span>({
   selector<span style="color:#719e07">:</span> <span style="color:#2aa198">&#39;my-app&#39;</span>,
   templateUrl<span style="color:#719e07">:</span> <span style="color:#2aa198">&#39;./app.component.html&#39;</span>,
   styleUrls<span style="color:#719e07">:</span> [ <span style="color:#2aa198">&#39;./app.component.css&#39;</span> ]
 })
-<span style="color:#719e07">export</span> <span style="color:#719e07">class</span> AppComponent  {
-  @ViewChild(<span style="color:#2aa198">&#39;fileInput&#39;</span>)
+<span style="color:#268bd2">export</span> <span style="color:#268bd2">class</span> AppComponent  {
+  <span style="color:#268bd2">@ViewChild</span>(<span style="color:#2aa198">&#39;fileInput&#39;</span>)
   fileInput;
 
-  file<span style="color:#719e07">:</span> File <span style="color:#719e07">|</span> <span style="color:#cb4b16">null</span> <span style="color:#719e07">=</span> <span style="color:#cb4b16">null</span>;
+  file: <span style="color:#dc322f">File</span> <span style="color:#719e07">|</span> <span style="color:#cb4b16">null</span> <span style="color:#719e07">=</span> <span style="color:#cb4b16">null</span>;
 
   onClickFileInputButton()<span style="color:#719e07">:</span> <span style="color:#719e07">void</span> {
     <span style="color:#719e07">this</span>.fileInput.nativeElement.click();
   }
 
   onChangeFileInput()<span style="color:#719e07">:</span> <span style="color:#719e07">void</span> {
-    <span style="color:#719e07">const</span> files<span style="color:#719e07">:</span> { [key<span style="color:#719e07">:</span> string]<span style="color:#719e07">:</span> File } <span style="color:#719e07">=</span> <span style="color:#719e07">this</span>.fileInput.nativeElement.files;
+    <span style="color:#268bd2">const</span> files<span style="color:#719e07">:</span> { [key: <span style="color:#dc322f">string</span>]<span style="color:#719e07">:</span> File } <span style="color:#719e07">=</span> <span style="color:#719e07">this</span>.fileInput.nativeElement.files;
     <span style="color:#719e07">this</span>.file <span style="color:#719e07">=</span> files[<span style="color:#2aa198">0</span>];
   }
-  }
-</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#586e75">// app.module.tsファイル
-</span><span style="color:#586e75"></span><span style="color:#719e07">import</span> { NgModule } from <span style="color:#2aa198">&#39;@angular/core&#39;</span>;
-<span style="color:#719e07">import</span> { BrowserModule } from <span style="color:#2aa198">&#39;@angular/platform-browser&#39;</span>;
-<span style="color:#719e07">import</span> { FormsModule } from <span style="color:#2aa198">&#39;@angular/forms&#39;</span>;
-<span style="color:#719e07">import</span> { MatButtonModule, MatIconModule } from <span style="color:#2aa198">&#39;@angular/material&#39;</span>;
+}</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#586e75">// app.module.tsファイル
+</span><span style="color:#586e75"></span><span style="color:#268bd2">import</span> { NgModule } from <span style="color:#2aa198">&#39;@angular/core&#39;</span>;
+<span style="color:#268bd2">import</span> { BrowserModule } from <span style="color:#2aa198">&#39;@angular/platform-browser&#39;</span>;
+<span style="color:#268bd2">import</span> { FormsModule } from <span style="color:#2aa198">&#39;@angular/forms&#39;</span>;
+<span style="color:#268bd2">import</span> { MatButtonModule, MatIconModule } from <span style="color:#2aa198">&#39;@angular/material&#39;</span>;
 
-<span style="color:#719e07">import</span> { AppComponent } from <span style="color:#2aa198">&#39;./app.component&#39;</span>;
-<span style="color:#719e07">import</span> { HelloComponent } from <span style="color:#2aa198">&#39;./hello.component&#39;</span>;
+<span style="color:#268bd2">import</span> { AppComponent } from <span style="color:#2aa198">&#39;./app.component&#39;</span>;
+<span style="color:#268bd2">import</span> { HelloComponent } from <span style="color:#2aa198">&#39;./hello.component&#39;</span>;
 
-@NgModule({
+<span style="color:#268bd2">@NgModule</span>({
   imports<span style="color:#719e07">:</span>      [ BrowserModule, FormsModule, MatButtonModule, MatIconModule ],
   declarations<span style="color:#719e07">:</span> [ AppComponent, HelloComponent ],
   bootstrap<span style="color:#719e07">:</span>    [ AppComponent ]
 })
-<span style="color:#719e07">export</span> <span style="color:#719e07">class</span> AppModule { }
-</code></pre></div>
+<span style="color:#268bd2">export</span> <span style="color:#268bd2">class</span> AppModule { }</code></pre></div>
 <p><strong>Reference:</strong> <a href="https://qiita.com/daikiojm/items/d744d63300915b2d8c4b">Angular Materialでファイル選択ボタン</a></p>
 
 <h2 id="基本的な使い方">基本的な使い方</h2>
@@ -472,7 +469,7 @@ ng add @angular/material</code></pre></div>
 <li>コンポーネント単位で作っていく.</li>
 
 <li><p>以下の様な感じで<code>xxx.component.ts</code>にコンポーネントの名前を<code>selector: 'app-servers'</code>で指定して, <code>xxx.component.html</code>の中で<code>&lt;app-server&gt;&lt;/app-server&gt;</code>と書いてどんどん使っていく.</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#268bd2">@Component</span>({
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#268bd2">@Component</span>({
 selector<span style="color:#719e07">:</span> <span style="color:#2aa198">&#39;app-servers&#39;</span>,
 templateUrl<span style="color:#719e07">:</span> <span style="color:#2aa198">&#39;./servers.component.html&#39;</span>,
 <span style="color:#586e75">// template: &#39;&lt;app-server&gt;&lt;/app-server&gt;&#39;,
@@ -493,22 +490,20 @@ templateUrl<span style="color:#719e07">:</span> <span style="color:#2aa198">&#39
 </ul>
 
 <h3 id="ts-から-html-へ値を渡す"><code>.ts</code>から<code>.html</code>へ値を渡す</h3>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#586e75">// .tx側
-</span><span style="color:#586e75"></span><span style="color:#719e07">export</span> <span style="color:#719e07">class</span> TestComponent <span style="color:#268bd2">implements</span> OnInit {
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#586e75">// .tx側
+</span><span style="color:#586e75"></span><span style="color:#268bd2">export</span> <span style="color:#268bd2">class</span> TestComponent <span style="color:#268bd2">implements</span> OnInit {
   newPost <span style="color:#719e07">=</span> <span style="color:#2aa198">&#39;Yes&#39;</span>;
-  constructor() {}
+  <span style="color:#268bd2">constructor</span>() {}
   ngOnInit() {}
-}
-</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#586e75">&lt;!-- .thml側 --&gt;</span>
+}</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#586e75">&lt;!-- .thml側 --&gt;</span>
 &lt;<span style="color:#268bd2">h1</span>&gt;{{ newPost }}&lt;/<span style="color:#268bd2">h1</span>&gt;</code></pre></div>
 <h3 id="ts-から-html-の-の中に値を渡す"><code>.ts</code>から<code>.html</code>の<code>&lt;&gt;</code>の中に値を渡す</h3>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#586e75">// .ts側
-</span><span style="color:#586e75"></span><span style="color:#719e07">export</span> <span style="color:#719e07">class</span> TestComponent <span style="color:#268bd2">implements</span> OnInit {
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#586e75">// .ts側
+</span><span style="color:#586e75"></span><span style="color:#268bd2">export</span> <span style="color:#268bd2">class</span> TestComponent <span style="color:#268bd2">implements</span> OnInit {
   newPost <span style="color:#719e07">=</span> <span style="color:#2aa198">&#39;Yes&#39;</span>;
-  constructor() {}
+  <span style="color:#268bd2">constructor</span>() {}
   ngOnInit() {}
-}
-</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#586e75">&lt;!-- .thml側 --&gt;</span>
+}</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#586e75">&lt;!-- .thml側 --&gt;</span>
 &lt;<span style="color:#268bd2">textarea</span> [value]=&#34;newPost&#34;&gt;&lt;/<span style="color:#268bd2">textarea</span>&gt;</code></pre></div>
 <h3 id="ユーザーからの-input-を受け付ける">ユーザーからの<code>input</code>を受け付ける.</h3>
 
@@ -543,16 +538,15 @@ templateUrl<span style="color:#719e07">:</span> <span style="color:#2aa198">&#39
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#586e75">&lt;!-- .html側 --&gt;</span>
 &lt;<span style="color:#268bd2">textarea</span> #postInput&gt;&lt;/<span style="color:#268bd2">textarea</span>&gt;
 &lt;<span style="color:#268bd2">button</span> (click)=&#34;onAddPost(postInput)&gt;&lt;/<span style="color:#268bd2">button</span>&gt;
-&lt;<span style="color:#268bd2">p</span>&gt;{{ newPost }}&lt;/<span style="color:#268bd2">p</span>&gt;</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#586e75">// .ts側
-</span><span style="color:#586e75"></span><span style="color:#719e07">export</span> <span style="color:#719e07">class</span> TestComponent <span style="color:#268bd2">implements</span> OnInit {
+&lt;<span style="color:#268bd2">p</span>&gt;{{ newPost }}&lt;/<span style="color:#268bd2">p</span>&gt;</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#586e75">// .ts側
+</span><span style="color:#586e75"></span><span style="color:#268bd2">export</span> <span style="color:#268bd2">class</span> TestComponent <span style="color:#268bd2">implements</span> OnInit {
   newPost <span style="color:#719e07">=</span> <span style="color:#2aa198">&#39;&#39;</span>;
-  constructor() {}
+  <span style="color:#268bd2">constructor</span>() {}
   ngOninit() {}
-  onAddPost(postInput<span style="color:#719e07">:</span> HTMLTextAreaElement) {
+  onAddPost(postInput: <span style="color:#dc322f">HTMLTextAreaElement</span>) {
     <span style="color:#719e07">this</span>.newPost <span style="color:#719e07">=</span> postInput;
   }
-}
-</code></pre></div>
+}</code></pre></div>
 <h3 id="入力された値をコンポーネント内で操作する">入力された値をコンポーネント内で操作する</h3>
 
 <p><code>*.html</code>内において,</p>
@@ -566,38 +560,35 @@ templateUrl<span style="color:#719e07">:</span> <span style="color:#2aa198">&#39
 <li>子A &gt; 親 が<code>@output()</code>で, データを渡す</li>
 <li>親 &gt; 子B が<code>@input()</code>で, データを渡す</li>
 </ul>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#586e75">// 子Aの.tsの中身
-</span><span style="color:#586e75"></span><span style="color:#719e07">import</span> { Component, EventEmitter, Output } from <span style="color:#2aa198">&#39;@angular/core&#39;</span>;
-@Component({
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#586e75">// 子Aの.tsの中身
+</span><span style="color:#586e75"></span><span style="color:#268bd2">import</span> { Component, EventEmitter, Output } from <span style="color:#2aa198">&#39;@angular/core&#39;</span>;
+<span style="color:#268bd2">@Component</span>({
   selector<span style="color:#719e07">:</span> <span style="color:#2aa198">&#39;app-achild&#39;</span>
 })
-<span style="color:#719e07">export</span> <span style="color:#719e07">class</span> AchildComponent {
-  @Output() postCreated <span style="color:#719e07">=</span> <span style="color:#719e07">new</span> EventEmitter();
+<span style="color:#268bd2">export</span> <span style="color:#268bd2">class</span> AchildComponent {
+  <span style="color:#268bd2">@Output</span>() postCreated <span style="color:#719e07">=</span> <span style="color:#719e07">new</span> EventEmitter();
   onAddPost() {
-    <span style="color:#719e07">const</span> post <span style="color:#719e07">=</span> <span style="color:#2aa198">&#39;test&#39;</span>;
+    <span style="color:#268bd2">const</span> post <span style="color:#719e07">=</span> <span style="color:#2aa198">&#39;test&#39;</span>;
     <span style="color:#719e07">this</span>.postCreated.emit(post);
   }
-}
-</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#586e75">&lt;!-- 親の.htmlの中身 --&gt;</span>
+}</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#586e75">&lt;!-- 親の.htmlの中身 --&gt;</span>
 <span style="color:#586e75">&lt;!-- ここ↓は@Outoutなので, 子の要素postCreatedから親の要素onPostAddedに情報が行く --&gt;</span>
 &lt;<span style="color:#268bd2">app-achild</span> (postCreated)=&#34;onPostAdded($event)&#34;&gt;&lt;/<span style="color:#268bd2">app-achild</span>&gt;
 <span style="color:#586e75">&lt;!-- ここ↓は@Input()なので, 子の要素postsに親の要素storedPostsから情報が行く --&gt;</span>
-&lt;<span style="color:#268bd2">app-bchild</span> [posts]=&#34;storedPosts&#34;&gt;&lt;/<span style="color:#268bd2">app-bchild</span>&gt;</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#586e75">// 親の.tsの中身の一部
-</span><span style="color:#586e75"></span><span style="color:#719e07">export</span> <span style="color:#719e07">class</span> AppComponent {
+&lt;<span style="color:#268bd2">app-bchild</span> [posts]=&#34;storedPosts&#34;&gt;&lt;/<span style="color:#268bd2">app-bchild</span>&gt;</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#586e75">// 親の.tsの中身の一部
+</span><span style="color:#586e75"></span><span style="color:#268bd2">export</span> <span style="color:#268bd2">class</span> AppComponent {
   storedPosts <span style="color:#719e07">=</span> [];
   onPostAdded(post) {
     <span style="color:#719e07">this</span>.storedPosts.push(post);
   }
-}
-</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#586e75">// 子Aの.tsの中身
-</span><span style="color:#586e75"></span><span style="color:#719e07">import</span> { Component, Input } from <span style="color:#2aa198">&#39;@angular/core&#39;</span>;
-@Component({
+}</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#586e75">// 子Aの.tsの中身
+</span><span style="color:#586e75"></span><span style="color:#268bd2">import</span> { Component, Input } from <span style="color:#2aa198">&#39;@angular/core&#39;</span>;
+<span style="color:#268bd2">@Component</span>({
   selector<span style="color:#719e07">:</span> <span style="color:#2aa198">&#39;app-bchild&#39;</span>
 })
-<span style="color:#719e07">export</span> <span style="color:#719e07">class</span> AchildComponent {
-  @Input() posts <span style="color:#719e07">=</span> [];
-}
-</code></pre></div>
+<span style="color:#268bd2">export</span> <span style="color:#268bd2">class</span> AchildComponent {
+  <span style="color:#268bd2">@Input</span>() posts <span style="color:#719e07">=</span> [];
+}</code></pre></div>
 <h3 id="eventemitter">EventEmitter</h3>
 
 <ul>
@@ -605,77 +596,164 @@ templateUrl<span style="color:#719e07">:</span> <span style="color:#2aa198">&#39
 </ul>
 
 <p>下位コンポーネントの<code>.ts</code>に以下の様にして使う.</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#719e07">import</span> { EventEmitter, Output } from <span style="color:#2aa198">&#39;@angular/core&#39;</span>;
-<span style="color:#719e07">export</span> <span style="color:#719e07">class</span> TestComponent {
-  @output() postCreated <span style="color:#719e07">=</span> <span style="color:#719e07">new</span> EventEmitter();
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#268bd2">import</span> { EventEmitter, Output } from <span style="color:#2aa198">&#39;@angular/core&#39;</span>;
+<span style="color:#268bd2">export</span> <span style="color:#268bd2">class</span> TestComponent {
+  <span style="color:#268bd2">@output</span>() postCreated <span style="color:#719e07">=</span> <span style="color:#719e07">new</span> EventEmitter();
   onAddPost() {
-    <span style="color:#719e07">const</span> post <span style="color:#719e07">=</span> test;
+    <span style="color:#268bd2">const</span> post <span style="color:#719e07">=</span> test;
     <span style="color:#719e07">this</span>.postCreated.emit(post);
   }
-}
-</code></pre></div>
+}</code></pre></div>
 <h3 id="コンポーネント間で値を渡す">コンポーネント間で値を渡す</h3>
 
 <ul>
-<li><code>xxx.service.ts</code>を使えば良い.</li>
+<li>ここでは<code>xxx.service.ts</code>を使う.</li>
 <li>その際には<code>Injectable</code>コンポーネントを使用する.</li>
 <li><code>xxx.service.ts</code>で, 渡す<code>class</code>を作って,
 それを2つのコンポーネントの<code>constructor</code>でそれぞれ作って,
 渡される方の子コンポーネントの<code>ngOnInit</code>で値を渡してあげる.</li>
 <li><code>RxJS</code>ライブラリを使って, streamで非同期でコンポーネント間でデータを渡せる.</li>
 </ul>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#586e75">// xxx.service.tsの例
-</span><span style="color:#586e75"></span><span style="color:#719e07">import</span> { Injectable } from <span style="color:#2aa198">&#39;@angular/core&#39;</span>;
-<span style="color:#719e07">import</span> { Post } from <span style="color:#2aa198">&#39;./post.model&#39;</span>;
-@Injectable({providedIn<span style="color:#719e07">:</span> <span style="color:#2aa198">&#39;root&#39;</span>})
-<span style="color:#719e07">export</span> <span style="color:#719e07">class</span> PostsService {
-  <span style="color:#268bd2">private</span> posts<span style="color:#719e07">:</span> Post[] <span style="color:#719e07">=</span> [];
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#586e75">// xxx.service.tsの例
+</span><span style="color:#586e75"></span><span style="color:#268bd2">import</span> { Injectable } from <span style="color:#2aa198">&#39;@angular/core&#39;</span>;
+<span style="color:#268bd2">import</span> { Post } from <span style="color:#2aa198">&#39;./post.model&#39;</span>;
+<span style="color:#268bd2">@Injectable</span>({providedIn<span style="color:#719e07">:</span> <span style="color:#2aa198">&#39;root&#39;</span>})
+<span style="color:#268bd2">export</span> <span style="color:#268bd2">class</span> PostsService {
+  <span style="color:#268bd2">private</span> posts: <span style="color:#dc322f">Post</span>[] <span style="color:#719e07">=</span> [];
   getPosts() {
     <span style="color:#719e07">return</span> [...<span style="color:#719e07">this</span>.posts];
   }
-  addPosts(title<span style="color:#719e07">:</span> string, content<span style="color:#719e07">:</span> string) {
-    <span style="color:#719e07">const</span> post<span style="color:#719e07">:</span> Post <span style="color:#719e07">=</span> {title, content};
+  addPosts(title: <span style="color:#dc322f">string</span>, content: <span style="color:#dc322f">string</span>) {
+    <span style="color:#268bd2">const</span> post: <span style="color:#dc322f">Post</span> <span style="color:#719e07">=</span> {title, content};
     <span style="color:#719e07">this</span>.posts.push(post);
   }
-}
-</code></pre></div>
+}</code></pre></div>
+<ol>
+<li><code>component</code>でデータを変更する.</li>
+<li><code>component</code>は変更したデータをメソッドコールによって<code>service</code>に渡す.</li>
+<li><code>service</code>は変更されたデータを受け取り, そのデータをイベント発火することで展開する.</li>
+<li>各<code>component</code>は発火されたイベントを<code>subscribe</code>し, 自身のプロパティを更新する.</li>
+</ol>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#586e75">// csv.service.tsの中身
+</span><span style="color:#586e75"></span><span style="color:#268bd2">import</span> { Injectable } from <span style="color:#2aa198">&#39;@angular/core&#39;</span>;
+<span style="color:#586e75">// イベント発火のためのSubjectをimport
+</span><span style="color:#586e75"></span><span style="color:#268bd2">import</span> { Subject } from <span style="color:#2aa198">&#39;rxjs&#39;</span>;
+
+<span style="color:#268bd2">@Injectable</span>({providedIn<span style="color:#719e07">:</span> <span style="color:#2aa198">&#39;root&#39;</span>})
+
+<span style="color:#268bd2">export</span> <span style="color:#268bd2">class</span> CsvService {
+  <span style="color:#586e75">// データの変更を通知するためのオブジェクト
+</span><span style="color:#586e75"></span>  <span style="color:#586e75">// 以降の｢Subscribeのためのプロパティを宣言｣と｢データの更新イベント｣で使用するプロパティを宣言し,  Subjectのインスタンスを生成する.
+</span><span style="color:#586e75"></span>  <span style="color:#586e75">// このプロパティを用いて共有データの変更通知を行う.
+</span><span style="color:#586e75"></span>  <span style="color:#268bd2">private</span> inputCsv  <span style="color:#719e07">=</span> <span style="color:#719e07">new</span> Subject<span style="color:#719e07">&lt;</span>File<span style="color:#719e07">&gt;</span>();
+  <span style="color:#586e75">// Subscribeするためのプロパティ(componetn間で共有するためのプロパティ)
+</span><span style="color:#586e75"></span>  <span style="color:#586e75">// 先に生成したオブジェクトinputCsvからasObservable()でオブジェクトを生成する.
+</span><span style="color:#586e75"></span>  <span style="color:#586e75">// asObservable()で生成されたオブジェクトは, データ共有を行うコンポーネント側でsubscribe(後述)することでデータ共有の仕組みを実現する.
+</span><span style="color:#586e75"></span>  <span style="color:#268bd2">public</span> inputCsv$ <span style="color:#719e07">=</span> <span style="color:#719e07">this</span>.inputCsv.asObservable();
+  <span style="color:#586e75">// CsvServiceのインスタンスを生成
+</span><span style="color:#586e75"></span>  <span style="color:#268bd2">constructor</span>() {}
+  <span style="color:#586e75">// データの更新イベント
+</span><span style="color:#586e75"></span>  <span style="color:#586e75">// これは先に生成したオブジェクトinputCsvからnext()を実行する.
+</span><span style="color:#586e75"></span>  <span style="color:#586e75">// このメソッドはデータ共有を行うコンポーネントから実行されることを想定したもので, 引数のinputをそのままnext()の引数にセットしている.
+</span><span style="color:#586e75"></span>  <span style="color:#586e75">// このメソッドでthis.inputCsv.next(input);が実行されることで, subscribe(後述)で待ち受けているコンポーネントに引数のデータが展開される.
+</span><span style="color:#586e75"></span>  <span style="color:#268bd2">public</span> onNotifyInputCsv(input: <span style="color:#dc322f">File</span>) {
+    <span style="color:#719e07">this</span>.inputCsv.next(input);
+  }
+}</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#586e75">// 送り手の.tsの中身
+</span><span style="color:#586e75"></span><span style="color:#268bd2">import</span> { Component, OnInit, ViewChild } from <span style="color:#2aa198">&#39;@angular/core&#39;</span>;
+<span style="color:#268bd2">import</span> { CsvService } from <span style="color:#2aa198">&#39;../service/csv.service&#39;</span>;
+
+<span style="color:#268bd2">@Component</span>({
+  selector<span style="color:#719e07">:</span> <span style="color:#2aa198">&#39;app-csv-input&#39;</span>,
+  templateUrl<span style="color:#719e07">:</span> <span style="color:#2aa198">&#39;./csv-input.component.html&#39;</span>,
+  styleUrls<span style="color:#719e07">:</span> [<span style="color:#2aa198">&#39;./csv-input.component.css&#39;</span>]
+})
+<span style="color:#268bd2">export</span> <span style="color:#268bd2">class</span> CsvInputComponent <span style="color:#268bd2">implements</span> OnInit {
+  <span style="color:#268bd2">@ViewChild</span>(<span style="color:#2aa198">&#39;fileInput&#39;</span>)
+  fileInput;
+  file: <span style="color:#dc322f">File</span> <span style="color:#719e07">|</span> <span style="color:#cb4b16">null</span> <span style="color:#719e07">=</span> <span style="color:#cb4b16">null</span>;
+  onClickFileInputButton()<span style="color:#719e07">:</span> <span style="color:#719e07">void</span> {
+    <span style="color:#719e07">this</span>.fileInput.nativeElement.click();
+  }
+  onChangeFileInput()<span style="color:#719e07">:</span> <span style="color:#719e07">void</span> {
+    <span style="color:#268bd2">const</span> files<span style="color:#719e07">:</span> { [key: <span style="color:#dc322f">string</span>]<span style="color:#719e07">:</span> File } <span style="color:#719e07">=</span> <span style="color:#719e07">this</span>.fileInput.nativeElement.files;
+    <span style="color:#719e07">this</span>.file <span style="color:#719e07">=</span> files[<span style="color:#2aa198">0</span>];
+    <span style="color:#586e75">// ここでデータをservice.tsへ送ってる.
+</span><span style="color:#586e75"></span>    <span style="color:#586e75">// ここで引数にセットしたデータがコンポーネント間で共有するデータとして扱われる.
+</span><span style="color:#586e75"></span>    <span style="color:#719e07">this</span>.csvService.onNotifyInputCsv(<span style="color:#719e07">this</span>.file);
+  }
+  <span style="color:#268bd2">constructor</span>(<span style="color:#268bd2">private</span> csvService: <span style="color:#dc322f">CsvService</span>) { }
+  ngOnInit() {
+  }
+}</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#586e75">// 受け手の.tsの中身
+</span><span style="color:#586e75"></span><span style="color:#268bd2">import</span> { Component, OnInit, OnDestroy } from <span style="color:#2aa198">&#39;@angular/core&#39;</span>;
+<span style="color:#268bd2">import</span> { Subscription } from <span style="color:#2aa198">&#39;rxjs&#39;</span>;
+
+<span style="color:#268bd2">import</span> { CsvService } from <span style="color:#2aa198">&#39;../service/csv.service&#39;</span>;
+
+<span style="color:#268bd2">@Component</span>({
+  selector<span style="color:#719e07">:</span> <span style="color:#2aa198">&#39;app-calculate&#39;</span>,
+  templateUrl<span style="color:#719e07">:</span> <span style="color:#2aa198">&#39;./calculate.component.html&#39;</span>,
+  styleUrls<span style="color:#719e07">:</span> [<span style="color:#2aa198">&#39;./calculate.component.css&#39;</span>]
+})
+<span style="color:#268bd2">export</span> <span style="color:#268bd2">class</span> CalculateComponent <span style="color:#268bd2">implements</span> OnInit, OnDestroy {
+  <span style="color:#268bd2">public</span> file: <span style="color:#dc322f">File</span> <span style="color:#719e07">|</span> <span style="color:#cb4b16">null</span> <span style="color:#719e07">=</span> <span style="color:#cb4b16">null</span>;
+  <span style="color:#586e75">// subscribeを保持するためのSubscription
+</span><span style="color:#586e75"></span>  <span style="color:#268bd2">private</span> csvSubscription: <span style="color:#dc322f">Subscription</span>;
+  <span style="color:#268bd2">constructor</span>(<span style="color:#268bd2">private</span> csvService: <span style="color:#dc322f">CsvService</span>) {}
+  ngOnInit() {
+    <span style="color:#586e75">// serviceで共有しているデータが更新されたら発火されるイベントをキャッチする.
+</span><span style="color:#586e75"></span>    <span style="color:#586e75">// inputCsv におけるデータの更新イベントでnext()によって発火されたイベントをsubscribeするイベントハンドラを登録している.
+</span><span style="color:#586e75"></span>    <span style="color:#586e75">// またcsvSubscriptionにsubscribeのオブジェクトをセットしているのは, 後述のngOnDestroyでsubscribeの内容を破棄するため.
+</span><span style="color:#586e75"></span>    <span style="color:#719e07">this</span>.csvSubscription <span style="color:#719e07">=</span> <span style="color:#719e07">this</span>.csvService.inputCsv$.subscribe(csv <span style="color:#719e07">=&gt;</span> {
+      <span style="color:#719e07">this</span>.file <span style="color:#719e07">=</span> csv;
+    });
+  }
+  <span style="color:#586e75">// component破棄時の後処理
+</span><span style="color:#586e75"></span>  <span style="color:#586e75">// subscribeした内容をcomponentが破棄されるタイミングでunsubscribeすることで破棄する.
+</span><span style="color:#586e75"></span>  <span style="color:#586e75">// これを行わないと, 登録したイベントハンドラが延々と生き続けることになる.
+</span><span style="color:#586e75"></span>  ngOnDestroy() {
+    <span style="color:#719e07">this</span>.csvSubscription.unsubscribe();
+  }
+}</code></pre></div>
+<p><strong>Reference:</strong> <a href="https://qiita.com/ksh-fthr/items/e43dd37bff2e51e95a59">Angular サービスを使用してデータをコンポーネント間で共有する</a></p>
+
 <h2 id="ngif-else">ngIf else</h2>
 
 <p>特定の状況下でのみアプリケーションがビューまたはビューの一部を表示する様にする.</p>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#586e75">&lt;!--  *.htmlの中身 --&gt;</span>
-&lt;<span style="color:#268bd2">p</span> *ngIf<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;serverCreated&#34;</span>&gt;Server was created, server name is {{ serverName }}&lt;/<span style="color:#268bd2">p</span>&gt;</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#586e75">// *.tsの中身
-</span><span style="color:#586e75"></span><span style="color:#719e07">import</span> { Component, OnInit } from <span style="color:#2aa198">&#39;@angular/core&#39;</span>;
+&lt;<span style="color:#268bd2">p</span> *ngIf<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;serverCreated&#34;</span>&gt;Server was created, server name is {{ serverName }}&lt;/<span style="color:#268bd2">p</span>&gt;</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#586e75">// *.tsの中身
+</span><span style="color:#586e75"></span><span style="color:#268bd2">import</span> { Component, OnInit } from <span style="color:#2aa198">&#39;@angular/core&#39;</span>;
 
-@Component({
+<span style="color:#268bd2">@Component</span>({
   selector<span style="color:#719e07">:</span> <span style="color:#2aa198">&#39;app-servers&#39;</span>,
   templateUrl<span style="color:#719e07">:</span> <span style="color:#2aa198">&#39;./servers.component.html&#39;</span>,
   styleUrls<span style="color:#719e07">:</span> [<span style="color:#2aa198">&#39;./servers.component.css&#39;</span>]
 })
-<span style="color:#719e07">export</span> <span style="color:#719e07">class</span> ServersComponent <span style="color:#268bd2">implements</span> OnInit {
+<span style="color:#268bd2">export</span> <span style="color:#268bd2">class</span> ServersComponent <span style="color:#268bd2">implements</span> OnInit {
   serverCreated <span style="color:#719e07">=</span> <span style="color:#cb4b16">false</span>;
-  constructor() {}
+  <span style="color:#268bd2">constructor</span>() {}
   ngOnInit() {
   }
   onCreateServer() {
     <span style="color:#719e07">this</span>.serverCreated <span style="color:#719e07">=</span> <span style="color:#cb4b16">true</span>;
     <span style="color:#719e07">this</span>.serverCreationStatus <span style="color:#719e07">=</span> <span style="color:#2aa198">&#39;Server was created!&#39;</span>;
   }
-}
-</code></pre></div>
+}</code></pre></div>
 <h2 id="ngstyle">ngStyle</h2>
 
 <p>コンポーネントのスタイルを操作する.</p>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#586e75">&lt;!--  *.htmlの中身
 </span><span style="color:#586e75">Hello World!が緑になったり赤になったりする.--&gt;</span>
-&lt;<span style="color:#268bd2">p</span> [ngStyle]=&#34;{backgroundColor: getColor()}&#34;&gt;Hello World!&lt;/<span style="color:#268bd2">p</span>&gt;</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#586e75">// *.tsの中身
-</span><span style="color:#586e75"></span><span style="color:#719e07">import</span> { Component } from <span style="color:#2aa198">&#39;@angular/core&#39;</span>;
-@Component({
+&lt;<span style="color:#268bd2">p</span> [ngStyle]=&#34;{backgroundColor: getColor()}&#34;&gt;Hello World!&lt;/<span style="color:#268bd2">p</span>&gt;</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#586e75">// *.tsの中身
+</span><span style="color:#586e75"></span><span style="color:#268bd2">import</span> { Component } from <span style="color:#2aa198">&#39;@angular/core&#39;</span>;
+<span style="color:#268bd2">@Component</span>({
   selector<span style="color:#719e07">:</span> <span style="color:#2aa198">&#39;app-server&#39;</span>,
   templateUrl<span style="color:#719e07">:</span> <span style="color:#2aa198">&#39;./server.component.html&#39;</span>
 })
-<span style="color:#719e07">export</span> <span style="color:#719e07">class</span> ServerComponent {
+<span style="color:#268bd2">export</span> <span style="color:#268bd2">class</span> ServerComponent {
   serverStatus <span style="color:#719e07">=</span> <span style="color:#2aa198">&#39;offline&#39;</span>;
-  constructor() {
+  <span style="color:#268bd2">constructor</span>() {
     <span style="color:#719e07">this</span>.serverStatus <span style="color:#719e07">=</span> <span style="color:#b58900">Math</span>.random() <span style="color:#719e07">&gt;</span> <span style="color:#2aa198">0.5</span> <span style="color:#719e07">?</span> <span style="color:#2aa198">&#39;online&#39;</span> <span style="color:#719e07">:</span> <span style="color:#2aa198">&#39;offline&#39;</span>;
   }
   getServerStatus() {
@@ -684,8 +762,7 @@ templateUrl<span style="color:#719e07">:</span> <span style="color:#2aa198">&#39
   getColor() {
     <span style="color:#719e07">return</span> <span style="color:#719e07">this</span>.serverStatus <span style="color:#719e07">===</span> <span style="color:#2aa198">&#39;online&#39;</span> <span style="color:#719e07">?</span> <span style="color:#2aa198">&#39;green&#39;</span> <span style="color:#719e07">:</span> <span style="color:#2aa198">&#39;red&#39;</span>;
   }
-}
-</code></pre></div>
+}</code></pre></div>
 <h2 id="ngclass">ngClass</h2>
 
 <p>コンポーネントのクラスを扱う.</p>
@@ -697,16 +774,16 @@ templateUrl<span style="color:#719e07">:</span> <span style="color:#2aa198">&#39
   [ngStyle]=&#34;{backgroundColor: getColor()}&#34;
   [ngClass]=&#34;{online: serverStatus <span style="color:#719e07">=</span><span style="color:#2aa198">==</span> &#39;online&#39;}&#34;&gt;
   Hello World!
-&lt;/<span style="color:#268bd2">p</span>&gt;</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#586e75">// *.tsの中身
-</span><span style="color:#586e75"></span><span style="color:#719e07">import</span> { Component } from <span style="color:#2aa198">&#39;@angular/core&#39;</span>;
-@Component({
+&lt;/<span style="color:#268bd2">p</span>&gt;</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#586e75">// *.tsの中身
+</span><span style="color:#586e75"></span><span style="color:#268bd2">import</span> { Component } from <span style="color:#2aa198">&#39;@angular/core&#39;</span>;
+<span style="color:#268bd2">@Component</span>({
   selector<span style="color:#719e07">:</span> <span style="color:#2aa198">&#39;app-server&#39;</span>,
   templateUrl<span style="color:#719e07">:</span> <span style="color:#2aa198">&#39;./server.component.html&#39;</span>,
   styles<span style="color:#719e07">:</span> [<span style="color:#586e75">`.online { color: white; }`</span>]
 })
-<span style="color:#719e07">export</span> <span style="color:#719e07">class</span> ServerComponent {
+<span style="color:#268bd2">export</span> <span style="color:#268bd2">class</span> ServerComponent {
   serverStatus <span style="color:#719e07">=</span> <span style="color:#2aa198">&#39;offline&#39;</span>;
-  constructor() {
+  <span style="color:#268bd2">constructor</span>() {
     <span style="color:#719e07">this</span>.serverStatus <span style="color:#719e07">=</span> <span style="color:#b58900">Math</span>.random() <span style="color:#719e07">&gt;</span> <span style="color:#2aa198">0.5</span> <span style="color:#719e07">?</span> <span style="color:#2aa198">&#39;online&#39;</span> <span style="color:#719e07">:</span> <span style="color:#2aa198">&#39;offline&#39;</span>;
   }
   getServerStatus() {
@@ -715,8 +792,7 @@ templateUrl<span style="color:#719e07">:</span> <span style="color:#2aa198">&#39
   getColor() {
     <span style="color:#719e07">return</span> <span style="color:#719e07">this</span>.serverStatus <span style="color:#719e07">===</span> <span style="color:#2aa198">&#39;online&#39;</span> <span style="color:#719e07">?</span> <span style="color:#2aa198">&#39;green&#39;</span> <span style="color:#719e07">:</span> <span style="color:#2aa198">&#39;red&#39;</span>;
   }
-}
-</code></pre></div>
+}</code></pre></div>
 <h2 id="要素を渡す">要素を渡す</h2>
 
 <p>Aコンポーネントが利用させるときに,
@@ -781,19 +857,18 @@ Aコンポーネント内の<code>&lt;ng-content&gt;&lt;/ng-content&gt;</code>�
 <h2 id="formを使う">formを使う</h2>
 
 <p><code>NgForm</code>モジュールを使えば良い.</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#586e75">// .tsの例
-</span><span style="color:#586e75"></span><span style="color:#719e07">import</span> { NgForm } from <span style="color:#586e75">`@angular/forms`</span>;
-<span style="color:#719e07">export</span> <span style="color:#719e07">class</span> TestComponent {
-  onAddPost(form<span style="color:#719e07">:</span> NgForm) {
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#586e75">// .tsの例
+</span><span style="color:#586e75"></span><span style="color:#268bd2">import</span> { NgForm } from <span style="color:#586e75">`@angular/forms`</span>;
+<span style="color:#268bd2">export</span> <span style="color:#268bd2">class</span> TestComponent {
+  onAddPost(form: <span style="color:#dc322f">NgForm</span>) {
     <span style="color:#719e07">if</span> (form.invalid) {
       <span style="color:#719e07">return</span> ;
     }
-    <span style="color:#719e07">const</span> post <span style="color:#719e07">=</span> {
-      title<span style="color:#719e07">:</span> form.value.title;
+    <span style="color:#268bd2">const</span> post <span style="color:#719e07">=</span> {
+      title: <span style="color:#dc322f">form.value.title</span>;
     }
   }
-}
-</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#586e75">&lt;!-- .htmlの例 --&gt;</span>
+}</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#586e75">&lt;!-- .htmlの例 --&gt;</span>
 &lt;<span style="color:#268bd2">form</span> (submit)=&#34;onAddPost(postForm)&#34; #postForm<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;ngForm&#34;</span>&gt;
   &lt;<span style="color:#268bd2">mat-form-field</span>&gt;
     &lt;<span style="color:#268bd2">input</span>
@@ -821,8 +896,8 @@ Aコンポーネント内の<code>&lt;ng-content&gt;&lt;/ng-content&gt;</code>�
   
   <div>
     
-    <a href="https://github.com/solareenlo/blog-hugo/commit/e2ed61fb354cb9cffdf65b268c13e7bae6096230" title='Last modified May 27, 2019 by solareenlo' target="_blank" rel="noopener">
-      <img src="/svg/calendar.svg" alt="Changed" /> May 27, 2019
+    <a href="https://github.com/solareenlo/blog-hugo/commit/6b8cf01173975638795379ef59dc865df2df8325" title='Last modified May 28, 2019 by solareenlo' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" alt="Changed" /> May 28, 2019
     </a>
   </div>
   
