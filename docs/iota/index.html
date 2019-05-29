@@ -18,7 +18,7 @@
 
 
 
-<link rel="stylesheet" href="/book.min.08e63dff3fd53a41d9a88640b130eadb53d5e830b0c746557b3ba64806c565c1.css">
+<link rel="stylesheet" href="/book.min.491a97ca359255d406e2123319cbd3c31e2003995d7603d2889686c9d14e65ee.css">
 
 
 <link rel="icon" href="/favicon.png" type="image/x-icon">
@@ -37,7 +37,7 @@ https://github.com/alex-shpak/hugo-book
   <main class="flex container">
 
     <aside class="book-menu fixed">
-      <nav role="navigation">
+      <nav>
 <h2 class="book-brand">
   <a href="https://solareenlo.com/">solareenlo</a>
 </h2>
@@ -178,7 +178,10 @@ https://github.com/alex-shpak/hugo-book
 
 <h2 id="目的">目的</h2>
 
-<p>オープンIoTでブロックチェーンの良さ(分散性/耐改ざん性/オープン性)を使えるようにしつつ(スケーリング・マイニングコスト・トランザクションの承認の遅さを解決しつつ)インダストリー4.0を推し進めること.</p>
+<ul>
+<li>オープンIoTでブロックチェーンの良さ(分散性/耐改ざん性/オープン性)を使えるようにしつつ(スケーリング・マイニングコスト・トランザクションの承認の遅さを解決しつつ)インダストリー4.0を推し進めること.</li>
+<li>IOTA財団の目的は, <a href="https://projects.eclipse.org/proposals/eclipse-iota-trinity">オープンソースガバナンス</a>を使用して, IOTAをゴールドスタンダード（<a href="https://blog.iota.org/iota-becomes-a-founding-member-of-new-international-association-of-trusted-blockchain-applications-b0c6417aaded">主要組織</a>や<a href="https://www.omg.org/cgi-bin/doc?omg/2019-03-03">標準化団体</a>と協力して, エンタープライズ対応DLT）にすること.</li>
+</ul>
 
 <h2 id="特徴">特徴</h2>
 
@@ -252,6 +255,98 @@ https://github.com/alex-shpak/hugo-book
 <ul>
 <li><a href="https://patriq.gitbook.io/iota/">https://patriq.gitbook.io/iota/</a></li>
 </ul>
+
+<h2 id="様々なプロジェクト">様々なプロジェクト</h2>
+
+<ul>
+<li><a href="https://coordicide.iota.org">Coodicide</a>: Coodinatorを削除する方法</li>
+<li><a href="https://trinity.iota.org">Trinity</a>: 公式ウォレット</li>
+<li><a href="https://qubic.iota.org">Qubic</a>: IOTA Tangle上のスマコン・オラクル・アウトソーシングなど</li>
+<li><a href="https://data.iota.org/">Data Marketplace</a>: 情報の売買場</li>
+<li><a href="https://tradedemo.iota.org/">International Trade</a>: トレーサビリティ</li>
+<li><a href="https://certification.iota.org">Certification</a>: 証明書発行</li>
+<li><a href="https://ecosystem.iota.org/">Eco System</a>: コミュニティの交流場</li>
+<li><a href="https://eclass.iota.org/">eCl@ss</a>: データの規格</li>
+<li><a href="https://www.cyber-crypt.com/troika/">Troika</a>: 3進数用のハッシュ関数</li>
+<li><a href="https://github.com/iotaledger/iota-area-codes">IOTA Area Codes</a>: タグにエリアコードを埋め込む規格</li>
+<li><a href="https://github.com/iotaledger/poc-ipfs">IOTA IPFS</a>: IOTAでIPFS</li>
+</ul>
+
+<h2 id="coordicide">Coordicide</h2>
+
+<ul>
+<li>Coodinatorを削除する方法のこと.</li>
+<li>Coordicideの機能をモジュール化した.
+
+<ul>
+<li>そうすることで将来のアップデートを容易にした.</li>
+</ul></li>
+<li>コアCoordicideモジュールは, 改良されたコンセンサスメカニズム, つまり分散化とセキュリティを最大限にするためのチップ選択アルゴリズムを補完する投票方式です.</li>
+<li>コンセンサスアルゴリズムには, セルラーコンセンサスと<a href="https://arxiv.org/pdf/1905.10895.pdf">高速確率的コンセンサス</a>がある.</li>
+<li><a href="https://files.iota.org/papers/Coordicide_WP.pdf">Coodicide White Paper</a></li>
+<li><strong>モジュール1: ノードIDとマナ</strong>
+
+<ul>
+<li>ノードにIDを振り分け, マナというノードのレピュテーションシステムを導入する.</li>
+<li>トランザクションはノードがトランザクションを伝搬してくれたら, マナというトークンをノードに上げる.</li>
+<li>マナは, 評判を得るのは難しいが, 失うのは簡単だという考えに依存している.</li>
+<li>レピュテーションシステムの重要な側面は, 以前に与えられたレピュテーションを取り消すことによって悪いノードを罰する側面.</li>
+</ul></li>
+<li><strong>モジュール2: セキュアなオートピアリング</strong>
+
+<ul>
+<li>自動でネイバーを接続させて, 特定のノードに攻撃が起こらないようにする.</li>
+<li>スモールワールドネットワーク(ほとんどのノードが互いに隣接していないタイプの数学的グラフ)を構築する.</li>
+</ul></li>
+<li><strong>モジュール3: スパムプロテクション</strong>
+
+<ul>
+<li>最近発行されたトランザクションの数及びマナのような異なる要因に基づいてノード当たりのPoWの難しさを知的に変化させる適応レート制御メカニズムを設置する.</li>
+<li>マナの量が多いノードは, 評判の悪いノードと同じPoW要件なしに, より多くのトランザクションを発行することができる. ノードのマナに関係なく, PoWの難易度はトランザクションレートとともに増加もする. すなわち, 短い時間間隔でより多くの取引を発行するためには, ノードは暗号パズルの難易度を上げなければならないが, 一方, 低い取引レートでは, はるかに低い難易度で十分となる.</li>
+<li>スパムをさらに防ぐために, ノードあたりの最大トランザクションレートの制御も行う.
+
+<ul>
+<li>対象はIoT.</li>
+</ul></li>
+</ul></li>
+<li><strong>モジュール4: チップ選択アルゴリズム</strong>
+
+<ul>
+<li>累積荷重を廃止して, Tangleの優先部分を識別するための投票層を追加する.</li>
+<li>累積荷重の悪い点
+
+<ul>
+<li>正直なトランザクションでも累積荷重が無いと取り残された.</li>
+<li>攻撃者は累積荷重を悪用して, パラサイトチェーンやTangle分裂を行おうとする.</li>
+<li>トランザクションの累積荷重を計算することは比較的費用がかかり, 特にハイスループットのシナリオではプロトコルのスケーラビリティに問題を引き起こす.</li>
+</ul></li>
+</ul></li>
+<li><strong>モジュール5: 積極的な矛盾解決</strong>
+
+<ul>
+<li>累積荷重を止めるために, ノードが投票によって意見を交換する追加のセキュリティ層を提案する. <strong>投票者モデル</strong>については, 長年にわたりかなりの研究が行われてきた. 確率モデルでは, ノードは複数のラウンドにわたって少数の他のノードの意見を要求し, そしておそらくはそれ自身の意見も変える.</li>
+<li>投票メカニズムを導入するメリット
+
+<ul>
+<li>どんどん発行されるトランザクションから状況を解決するまで待つのではなく, ノードが互いに対話して状況を予防的に解決できるようになる.</li>
+<li>ノードの投票は, それが持つマナの量に応じて重み付けされる. したがって, 優秀な関係者はネットワークに大きな影響を与えることができる.</li>
+<li>正直なノードは, たとえ現在トランザクションを発行していなくても, 投票によってネットワークを保護できる. 提案されたシビル保護メカニズム(マナ)と組み合わされて, これは, PoWに依存することなく, ブロックチェーンにおける一定の正直なハッシング力を置き換える.</li>
+<li>コンセンサスプロセスは, チップ選択やTangleの構造など, 他の側面から切り離されている. これにより, 将来の要件に合わせて簡単に調整できるモジュラDLTが実現できる. また, ホワイトペーパーに記載されているパラサイトチェーン攻撃などの最も危険な攻撃を含め, Tangleの構造を操作して合意メカニズムを破るあらゆる種類の攻撃を防ぐことができる.</li>
+</ul></li>
+<li>新たに<strong>Shimmer</strong>という投票スキームを提案する.</li>
+<li>Shimmer内での投票交換の候補として2つの候補を提示する.
+
+<ul>
+<li>セルオートマトンの振る舞いを模した「Cellular Consensus」</li>
+<li>確率論を使用して強力なセキュリティ保証を提供する「Fast Probabilistic Consensus」</li>
+</ul></li>
+</ul></li>
+<li><strong>モジュール5.1: Shimmer</strong>
+
+<ul>
+<li>いくつかの事前定義された規則に従って行動する個々の自律エージェントは, 蜂, アリ, 魚群などの自然界の多くのシステム, さらには物理学のある分野でさえ見つけることができます. 非常に単純なルールは, やがてシステムの緊急の特性として現れ, 非常に複雑な機能を作成することができます. Shimmer合意メカニズムも同様に機能します. 他のすべてのノードの意見を再構築しようとするのではなく, 非常に小さいノードのサブセットの意見だけに注意を払い, ネットワークの緊急の特性として有機的に合意が形成されるようにします.</li>
+</ul></li>
+</ul>
 </article>
 
       
@@ -279,8 +374,8 @@ https://github.com/alex-shpak/hugo-book
 
     
   
-  
-  <aside class="book-toc fixed">
+
+  <aside class="book-toc level-6 fixed">
     <nav id="TableOfContents">
 <ul>
 <li><a href="#iotaとは">IOTAとは</a>
@@ -293,6 +388,8 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="#dbのある所">DBのある所</a></li>
 <li><a href="#academic-papers">Academic Papers</a></li>
 <li><a href="#c">C#</a></li>
+<li><a href="#様々なプロジェクト">様々なプロジェクト</a></li>
+<li><a href="#coordicide">Coordicide</a></li>
 </ul></li>
 </ul>
 </nav>
