@@ -390,6 +390,11 @@
   </url>
   
   <url>
+    <loc>https://solareenlo.com/docs/react-static/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://solareenlo.com/docs/react/</loc>
     <priority>0</priority>
   </url>

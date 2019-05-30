@@ -12,7 +12,7 @@
 <title>
   
     
-    フルノード
+    React Static
   
  | solareenlo</title>
 
@@ -50,7 +50,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   <style>
-  nav ul a[href$="\2f docs\2f bitcoin-fullnode\2f "] {
+  nav ul a[href$="\2f docs\2freact-static\2f "] {
       color: #004ed0;
   }
   </style>
@@ -165,7 +165,7 @@ https://github.com/alex-shpak/hugo-book
   <strong>
   
     
-    フルノード
+    React Static
   
 </strong>
 </header>
@@ -173,34 +173,25 @@ https://github.com/alex-shpak/hugo-book
       
 <article class="markdown">
 
-<h1 id="フルノードとは">フルノードとは</h1>
+<h1 id="react-staticとは">React Staticとは</h1>
 
 <ul>
-<li>Bitcoinネットワークにおけるすべてのブロックとトランザクションをダウンロードして検証するノードのこと.</li>
+<li>React Staticは, Reactとそのエコシステムをベースにした, 高速, 軽量, そして強力なプログレッシブ静的サイトジェネレータ.</li>
+<li>これは, Create React Appなどのツールで慣れていたシンプルさと開発者の経験に似ており, パフォーマンス, 柔軟性, およびユーザー/開発者の経験のために慎重に設計されている.</li>
+<li><strong>GitHubリポジトリ:</strong> <a href="https://github.com/nozzle/react-static/tree/master/">nozzle/react-static</a></li>
 </ul>
 
-<h2 id="bitcoinフルノードへのアクセス方法">Bitcoinフルノードへのアクセス方法</h2>
+<h2 id="エラー処理">エラー処理</h2>
 
-<h3 id="bitcoin-cliを使ってアクセス">bitcoin-cliを使ってアクセス</h3>
-
-<h3 id="curlを使ってアクセス">cURLを使ってアクセス</h3>
-
-<h3 id="postを使ってアクセス">POSTを使ってアクセス</h3>
-</article>
+<h3 id="error-enospc-system-limit-for-number-of-file-watchers-reached-watch-と出たら"><code>Error: ENOSPC: System limit for number of file watchers reached, watch</code>と出たら</h3>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#b58900">echo</span> fs.inotify.max_user_watches<span style="color:#719e07">=</span><span style="color:#2aa198">524288</span> | sudo tee -a /etc/sysctl.conf <span style="color:#719e07">&amp;&amp;</span> sudo sysctl -p</code></pre></div></article>
 
       
-<div class="book-footer justify-between">
-  
-  <div>
-    
-    <a href="https://github.com/solareenlo/blog-hugo/commit/8080d3ce07296cc293a8f5677529817c66942922" title='Last modified Apr 29, 2019 by solareenlo' target="_blank" rel="noopener">
-      <img src="/svg/calendar.svg" alt="Changed" /> Apr 29, 2019
-    </a>
-  </div>
+<div class="book-footer justify-end">
   
   
   <div>
-    <a href="https://github.com/solareenlo/blog-hugo/edit/master/content/docs/bitcoin-fullnode.md" target="_blank" rel="noopener">
+    <a href="https://github.com/solareenlo/blog-hugo/edit/master/content/docs/react-static.md" target="_blank" rel="noopener">
       <img src="/svg/edit.svg" alt="Edit" /> Edit this page
     </a>
   </div>
@@ -217,13 +208,11 @@ https://github.com/alex-shpak/hugo-book
   <aside class="book-toc level-6 fixed">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#フルノードとは">フルノードとは</a>
+<li><a href="#react-staticとは">React Staticとは</a>
 <ul>
-<li><a href="#bitcoinフルノードへのアクセス方法">Bitcoinフルノードへのアクセス方法</a>
+<li><a href="#エラー処理">エラー処理</a>
 <ul>
-<li><a href="#bitcoin-cliを使ってアクセス">bitcoin-cliを使ってアクセス</a></li>
-<li><a href="#curlを使ってアクセス">cURLを使ってアクセス</a></li>
-<li><a href="#postを使ってアクセス">POSTを使ってアクセス</a></li>
+<li><a href="#error-enospc-system-limit-for-number-of-file-watchers-reached-watch-と出たら"><code>Error: ENOSPC: System limit for number of file watchers reached, watch</code>と出たら</a></li>
 </ul></li>
 </ul></li>
 </ul>

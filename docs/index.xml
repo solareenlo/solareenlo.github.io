@@ -24,7 +24,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://solareenlo.com/docs/angular/</guid>
-      <description>Angularとは  Typescript/JavaScriptやその他の言語を使用してモバイルおよびデスクトップWebアプリケーションを構築するための開発プラットフォーム. GitHubリポジトリ: https://github.com/angular/angular  用語    用語 意味     module アプリを構成するコンポーネントを束ねたもの   root module アプリが起動する時に呼びされるモジュール   component 各要素   Decorators モジュールやクラスなどの要素に対してメタ情報を付与するもの   constructor TS, JSに付随するものでClassの初期化時に発動する    Decoratorsのパラメーター    パラメーター名 意味     imports 現在のモジュールで利用する他のモジュール／コンポーネント   exports 現在のモジュールで外部に公開するコンポーネントなど   declarations モジュール配下のコンポーネント   bootstrap 最初に起動すべき最上位のコンポーネント(＝ルートコンポーネント)   templateUrl 描画するhtml   template 描画する内容   styleUrls どのcssを使うか   styles 直接cssの内容を記述する   selector コンポーネントの適応先を表す(html, css, classなどとして指定できる)    DockerでAngular Dockerfileの中身</description>
+      <description>Angularとは  Typescript/JavaScriptやその他の言語を使用してモバイルおよびデスクトップWebアプリケーションを構築するための開発プラットフォーム. GitHubリポジトリ: https://github.com/angular/angular https://angular.keicode.com  用語    用語 意味     module アプリを構成するコンポーネントを束ねたもの   root module アプリが起動する時に呼びされるモジュール   component 各要素   Decorators モジュールやクラスなどの要素に対してメタ情報を付与するもの   constructor TS, JSに付随するものでClassの初期化時に発動する    Decoratorsのパラメーター    パラメーター名 意味     imports 現在のモジュールで利用する他のモジュール／コンポーネント   exports 現在のモジュールで外部に公開するコンポーネントなど   declarations モジュール配下のコンポーネント   bootstrap 最初に起動すべき最上位のコンポーネント(＝ルートコンポーネント)   templateUrl 描画するhtml   template 描画する内容   styleUrls どのcssを使うか   styles 直接cssの内容を記述する   selector コンポーネントの適応先を表す(html, css, classなどとして指定できる)    DockerでAngular Dockerfileの中身</description>
     </item>
     
     <item>
@@ -338,6 +338,15 @@ if(process.argv.length !== 3) { console.</description>
       <guid>https://solareenlo.com/docs/programming/</guid>
       <description>プログラミングとは コンピュータプログラムを作成することにより, 人間の意図した処理を行うようにコンピュータに指示を与える行為のこと. その為の便利なツールがたくさんある.
 プログラミングをするのに役立つツール  プログラミング言語 (C, Java, JavaScript, Pythonなど)  手続き型, オブジェクト指向型, 関数型, 静的型付け, 動的型付けなどいろんな種類がある. 最終的にバイナリデータになって, コンピュータが処理する.  テキストエディタ (Visual Studio Code, Vimなど)  コードを書くのに役に立つエディタ.  統合開発環境 (Visual Studio, Jet Brainsなど)  コンパイル, テキストエディタ, デバッガなどを1つのソフトで行えるようにしたもの.  バージョン管理システム (gitなど)  ファイルの変更履歴を管理する為のシステム.  ホスティングサービス (GitHub, GitLabなど)  上記gitを使って様々なプログラムをweb上に公開したり, それを通じて交流したりすることができるサービス. 無償・有償がある.  Linter/Formatter  コードのエラー指摘やスタイル調整をしてくれる.   勉強する  repl.it (オンラインIDE) hackr.io (コースやチュートリアルの紹介サイト)  ディベロッパーロードマップ  フロントエンド - https://roadmap.sh/frontend バックエンド - https://roadmap.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://solareenlo.com/docs/react-static/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://solareenlo.com/docs/react-static/</guid>
+      <description> React Staticとは  React Staticは, Reactとそのエコシステムをベースにした, 高速, 軽量, そして強力なプログレッシブ静的サイトジェネレータ. これは, Create React Appなどのツールで慣れていたシンプルさと開発者の経験に似ており, パフォーマンス, 柔軟性, およびユーザー/開発者の経験のために慎重に設計されている. GitHubリポジトリ: nozzle/react-static  エラー処理 Error: ENOSPC: System limit for number of file watchers reached, watchと出たら echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf &amp;amp;&amp;amp; sudo sysctl -p</description>
     </item>
     
     <item>
