@@ -417,7 +417,7 @@ if(process.argv.length !== 3) { console.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://solareenlo.com/docs/npm/</guid>
-      <description></description>
+      <description> NPM  Node.jsのパッケージ管理ツール. 公式サイト: https://npmjs.com  インストール npm自体のインストール  Downloading and installing Node.js and npm  npm自体のupdate npm update -y npm # もしくは npm install npm@latest -g パッケージのインストール npm i &amp;lt;パッケージ名&amp;gt; # 本番環境へインストール npm i -D &amp;lt;パッケージ名&amp;gt; # 開発環境へインストール 脆弱性確認 npm audit パッケージを最新へ npm outdated # 新しいバージョンを確認 npm install -g npm-check-updates # アップデートマネージャーをインストール ncu # 新しいバージョンを確認 ncu -u # package.jsonを更新 npm update # パッケージを更新 便利なパッケージ npm-run-all  複数のnpmを実行するためのコマンドラインツール GitHubリポジトリ: mysticatea/npm-run-all  インストール npm i -D node-run-all 簡単な使い方 run-s &amp;lt;1つ目のタスク&amp;gt; &amp;lt;2つ目の処理&amp;gt; # 順次処理 run-p &amp;lt;1つ目のタスク&amp;gt; &amp;lt;2つ目の処理&amp;gt; # 並列処理 ダウンロード数比較  johnmpotter/npm-trends  </description>
     </item>
     
     <item>
