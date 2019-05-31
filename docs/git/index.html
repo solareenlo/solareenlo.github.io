@@ -63,6 +63,7 @@ https://github.com/alex-shpak/hugo-book
 <ul>
 <li><a href="/docs/terminal/">Terminal</a></li>
 <li><a href="/docs/command/">Command</a></li>
+<li><a href="/docs/sed/">sed</a></li>
 <li><a href="/docs/shell-script/">Shell Script</a></li>
 <li><a href="/docs/vim/">Vim</a></li>
 <li><a href="/docs/git/">Git</a></li>
@@ -235,9 +236,17 @@ git branch -a</code></pre></div>
 git checkout -b master <span style="color:#586e75"># 削除したいbranchとは違うbranchにまずは移動する</span>
 git branch --delete 削除したいbranch名 <span style="color:#586e75"># mergeしたbranchを削除</span>
 git branch -D 削除したいbranch名 <span style="color:#586e75"># mergeしたかどうかは問わずに削除</span></code></pre></div>
-<h2 id="remoteから特定のbranchを指定してcloneする">remoteから特定のbranchを指定してcloneする</h2>
+<h2 id="remote">remote</h2>
+
+<h3 id="remoteから特定のbranchを指定してcloneする">remoteから特定のbranchを指定してcloneする</h3>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone -b japanese git@github.com:solareenlo/documentation.git</code></pre></div>
-<h2 id="一時的に過去のcommitに戻る">一時的に過去のcommitに戻る</h2>
+<h3 id="remote-branch削除">remote branch削除</h3>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git push --delete origin &lt;branch name&gt;
+<span style="color:#586e75"># リモートブランチがローカルに残っている場合は以下も行う</span>
+git fetch --prune</code></pre></div>
+<h2 id="commit">commit</h2>
+
+<h3 id="一時的に過去のcommitに戻る">一時的に過去のcommitに戻る</h3>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># 戻りたいcommitのhash値を探す</span>
 git log --oneline
 <span style="color:#586e75"># 過去に戻る</span>
@@ -271,7 +280,9 @@ git submodule update --init --recursive</code></pre></div>
 <li>取り込む側で<code>git submodule update</code>する.</li>
 </ul>
 
-<h2 id="fork元の更新を取り込む">fork元の更新を取り込む</h2>
+<h2 id="fork">fork</h2>
+
+<h3 id="fork元の更新を取り込む">fork元の更新を取り込む</h3>
 
 <p>対象のリポジトリをforkして, ローカルにcloneしているものとする.</p>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git remote add upstream git@github.com:alex-shpak/hugo-book.git
@@ -294,7 +305,7 @@ git config --global core.editor vim
 git config -l
 <span style="color:#586e75"># gitのhelpを見る</span>
 git config --help</code></pre></div>
-<h2 id="commit">commit</h2>
+<h2 id="commit-1">commit</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># gitの初期化</span>
 git init
 <span style="color:#586e75"># 作業ディレクトリからステージングエリアへ</span>
@@ -520,8 +531,15 @@ git push origin master</code></pre></div>
 <li><a href="#リモートbranchから新branch作成">リモートbranchから新branch作成</a></li>
 <li><a href="#branchの削除">branchの削除</a></li>
 </ul></li>
+<li><a href="#remote">remote</a>
+<ul>
 <li><a href="#remoteから特定のbranchを指定してcloneする">remoteから特定のbranchを指定してcloneする</a></li>
+<li><a href="#remote-branch削除">remote branch削除</a></li>
+</ul></li>
+<li><a href="#commit">commit</a>
+<ul>
 <li><a href="#一時的に過去のcommitに戻る">一時的に過去のcommitに戻る</a></li>
+</ul></li>
 <li><a href="#submodule">submodule</a>
 <ul>
 <li><a href="#submoduleの追加">submoduleの追加</a></li>
@@ -530,12 +548,15 @@ git push origin master</code></pre></div>
 <li><a href="#submoduleのcloneをし忘れたら">submoduleのcloneをし忘れたら</a></li>
 <li><a href="#submoduleの更新">submoduleの更新</a></li>
 </ul></li>
+<li><a href="#fork">fork</a>
+<ul>
 <li><a href="#fork元の更新を取り込む">fork元の更新を取り込む</a></li>
+</ul></li>
 </ul></li>
 <li><a href="#基本操作">基本操作</a>
 <ul>
 <li><a href="#gitの設定">gitの設定</a></li>
-<li><a href="#commit">commit</a></li>
+<li><a href="#commit-1">commit</a></li>
 <li><a href="#log">log</a></li>
 <li><a href="#現在の状態を把握する">現在の状態を把握する</a></li>
 <li><a href="#差分を確認する">差分を確認する</a></li>

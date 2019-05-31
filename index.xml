@@ -311,7 +311,7 @@ git-completion.bashをインストール git-completion.bash: gitコマンドの
 wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -O ~/.git-completion.bash chmod a+x ~/.git-completion.bash echo &amp;#34;source ~/.git-completion.bash&amp;#34; &amp;gt;&amp;gt; ~/.bashrc source ~/.bashrc git-prompt.shのインストール git-prompt.sh: プロンプトに各種追加情報を表示可能にするスクリプト.
 wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -O ~/.git-prompt.sh chmod a+x ~/.git-prompt.sh 下記を一度にコピペしてエンターをして,
 cat &amp;lt;&amp;lt; EOF | tee -a ~/.bashrc &amp;gt; /dev/null source ~/.git-prompt.sh GIT_PS1_SHOWDIRTYSTATE=true GIT_PS1_SHOWSTASHSTATE=true GIT_PS1_SHOWUNTRACKEDFILES=true GIT_PS1_SHOWUPSTREAM=&amp;#34;auto&amp;#34; GIT_PS1_SHOWCOLORHINTS=true EOF 下記を実行する.
-source ~/.bashrc branch local branchから新branch作成 cd ディレクトリ # 作業ディレクトリに移動 git branch -a # branchの一覧を表示 git checkout master # master branchに切り替え git checkout -b 作成するbranch名 # masterを元にして新しいbranchを作成 git branch -a git push -u origin 作成したbranch名 # branchをremoteに登録 リモートbranchから新branch作成 cd ディレクトリ git checkout -b ローカルに作成するbranch名 origin/再生元のリモートbranch名 git branch -a branchの削除 cd 作業ティレクトり git checkout -b master # 削除したいbranchとは違うbranchにまずは移動する git branch --delete 削除したいbranch名 # mergeしたbranchを削除 git branch -D 削除したいbranch名 # mergeしたかどうかは問わずに削除 remoteから特定のbranchを指定してcloneする git clone -b japanese git@github.</description>
+source ~/.bashrc branch local branchから新branch作成 cd ディレクトリ # 作業ディレクトリに移動 git branch -a # branchの一覧を表示 git checkout master # master branchに切り替え git checkout -b 作成するbranch名 # masterを元にして新しいbranchを作成 git branch -a git push -u origin 作成したbranch名 # branchをremoteに登録 リモートbranchから新branch作成 cd ディレクトリ git checkout -b ローカルに作成するbranch名 origin/再生元のリモートbranch名 git branch -a branchの削除 cd 作業ティレクトり git checkout -b master # 削除したいbranchとは違うbranchにまずは移動する git branch --delete 削除したいbranch名 # mergeしたbranchを削除 git branch -D 削除したいbranch名 # mergeしたかどうかは問わずに削除 remote remoteから特定のbranchを指定してcloneする git clone -b japanese git@github.</description>
     </item>
     
     <item>
@@ -475,7 +475,16 @@ if(process.argv.length !== 3) { console.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://solareenlo.com/docs/rust/</guid>
-      <description> Rustとは  Mozillaが支援するオープンソースのシステムプログラミング言語のこと. 速度, 安全性, 平行性の3つのゴールにフォーカスしている. GitHubリポジトリ: https://github.com/rust-lang/rust  Hello World! fn main() { // 世界よ、こんにちは  println!(&amp;#34;Hello, world!&amp;#34;); }  ドキュメントの日本語訳  Rustの日本語ドキュメント/Japanese Docs for Rust The Embedded Rust Book  チートシート  Rust Language Cheat Sheet  RustでOSを書く  Writing an OS in Rust (Second Edition)  リンク  Rustのリンク集  </description>
+      <description> Rustとは  Mozillaが支援するオープンソースのシステムプログラミング言語のこと. 速度, 安全性, 平行性の3つのゴールにフォーカスしている. GitHubリポジトリ: https://github.com/rust-lang/rust  Hello World! fn main() { // 世界よ、こんにちは  println!(&amp;#34;Hello, world!&amp;#34;); }  ドキュメントの日本語訳  Rustの日本語ドキュメント/Japanese Docs for Rust The Embedded Rust Book  rust-lang.orgの日本語化  https://pontoon.rust-lang.org  チートシート  Rust Language Cheat Sheet  RustでOSを書く  Writing an OS in Rust (Second Edition)  リンク  Rustのリンク集  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://solareenlo.com/docs/sed/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://solareenlo.com/docs/sed/</guid>
+      <description> sedとは  入力ストリーム（ファイルまたはパイプラインからの入力）に対してテキスト変換などのデータ処理をおこなうプログラム. 名称「sed」は「ストリームエディタ」を意味する英語「stream editor」から.  .gitignoreの/distを削除 sed -i -e &amp;#34;/\/dist/d&amp;#34; .gitignore # -i: 上書き保存 # -e: 行の削除 # d: 行目を表す(上の例だと\distを含む行)</description>
     </item>
     
     <item>

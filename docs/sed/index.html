@@ -12,7 +12,7 @@
 <title>
   
     
-    Redis
+    Sed
   
  | solareenlo</title>
 
@@ -50,7 +50,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   <style>
-  nav ul a[href$="\2f docs\2fredis\2f "] {
+  nav ul a[href$="\2f docs\2fsed\2f "] {
       color: #004ed0;
   }
   </style>
@@ -167,7 +167,7 @@ https://github.com/alex-shpak/hugo-book
   <strong>
   
     
-    Redis
+    Sed
   
 </strong>
 </header>
@@ -175,29 +175,25 @@ https://github.com/alex-shpak/hugo-book
       
 <article class="markdown">
 
-<h1 id="redisとは">Redisとは</h1>
+<h1 id="sedとは">sedとは</h1>
 
 <ul>
-<li>ネットワーク接続された永続化可能なインメモリデータベースのひとつ.</li>
-<li>インメモリデータベースとは, メモリ上にデータを保存するタイプのデータベースのこと.</li>
-<li>メモリはCPUから直接アクセスできるため, （RDBなどの）ストレージにデータを保存するオンディスクDBに比べ, とても高速に動作することができる.</li>
-<li><strong>GitHubリポジトリ:</strong> <a href="https://github.com/antirez/redis">https://github.com/antirez/redis</a></li>
+<li>入力ストリーム（ファイルまたはパイプラインからの入力）に対してテキスト変換などのデータ処理をおこなうプログラム.</li>
+<li>名称「sed」は「ストリームエディタ」を意味する英語「stream editor」から.</li>
 </ul>
-</article>
+
+<h2 id="gitignoreの-distを削除">.gitignoreの/distを削除</h2>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sed -i -e <span style="color:#2aa198">&#34;/\/dist/d&#34;</span> .gitignore
+<span style="color:#586e75"># -i: 上書き保存</span>
+<span style="color:#586e75"># -e: 行の削除</span>
+<span style="color:#586e75"># d: 行目を表す(上の例だと\distを含む行)</span></code></pre></div></article>
 
       
-<div class="book-footer justify-between">
-  
-  <div>
-    
-    <a href="https://github.com/solareenlo/blog-hugo/commit/13c323aac55856c0c1f7933d5df1b15615bbd048" title='Last modified May 24, 2019 by solareenlo' target="_blank" rel="noopener">
-      <img src="/svg/calendar.svg" alt="Changed" /> May 24, 2019
-    </a>
-  </div>
+<div class="book-footer justify-end">
   
   
   <div>
-    <a href="https://github.com/solareenlo/blog-hugo/edit/master/content/docs/redis.md" target="_blank" rel="noopener">
+    <a href="https://github.com/solareenlo/blog-hugo/edit/master/content/docs/sed.md" target="_blank" rel="noopener">
       <img src="/svg/edit.svg" alt="Edit" /> Edit this page
     </a>
   </div>
@@ -214,7 +210,10 @@ https://github.com/alex-shpak/hugo-book
   <aside class="book-toc level-6 fixed">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#redisとは">Redisとは</a></li>
+<li><a href="#sedとは">sedとは</a>
+<ul>
+<li><a href="#gitignoreの-distを削除">.gitignoreの/distを削除</a></li>
+</ul></li>
 </ul>
 </nav>
   </aside>

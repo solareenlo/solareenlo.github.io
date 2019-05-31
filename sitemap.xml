@@ -410,6 +410,11 @@
   </url>
   
   <url>
+    <loc>https://solareenlo.com/docs/sed/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://solareenlo.com/docs/sendgrid/</loc>
     <priority>0</priority>
   </url>
