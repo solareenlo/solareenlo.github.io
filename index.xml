@@ -25,7 +25,7 @@ solareenlo/angular-cli</description>
       <pubDate>Tue, 30 Apr 2019 10:00:00 +0900</pubDate>
       
       <guid>https://solareenlo.com/posts/app/</guid>
-      <description> 作図  draw.io  マークダウン表示  typora  wikiの新しい形  Scrapbox  ノートアプリ  Notion  サーバーレスアプリのホスティングサービス  Now  JSONの書きミスチェッカー  JOSNLint  全文検索  Elasticsearch  モニタリング  KIBANA Grafana Prometheus  </description>
+      <description> 質疑応答  sli.do  作図  draw.io  マークダウン表示  typora  wikiの新しい形  Scrapbox  ノートアプリ  Notion  サーバーレスアプリのホスティングサービス  Now  JSONの書きミスチェッカー  JOSNLint  全文検索  Elasticsearch  モニタリング  KIBANA Grafana Prometheus  </description>
     </item>
     
     <item>
@@ -417,7 +417,8 @@ if(process.argv.length !== 3) { console.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://solareenlo.com/docs/npm/</guid>
-      <description> NPM  Node.jsのパッケージ管理ツール. 公式サイト: https://npmjs.com  インストール npm自体のインストール  Downloading and installing Node.js and npm  npm自体のupdate npm update -y npm # もしくは npm install npm@latest -g パッケージのインストール npm i &amp;lt;パッケージ名&amp;gt; # 本番環境へインストール npm i -D &amp;lt;パッケージ名&amp;gt; # 開発環境へインストール 脆弱性確認 npm audit パッケージを最新へ npm outdated # 新しいバージョンを確認 npm install -g npm-check-updates # アップデートマネージャーをインストール ncu # 新しいバージョンを確認 ncu -u # package.jsonを更新 npm update # パッケージを更新 便利なパッケージ npm-run-all  複数のnpmを実行するためのコマンドラインツール GitHubリポジトリ: mysticatea/npm-run-all  インストール npm i -D node-run-all 簡単な使い方 run-s &amp;lt;1つ目のタスク&amp;gt; &amp;lt;2つ目の処理&amp;gt; # 順次処理 run-p &amp;lt;1つ目のタスク&amp;gt; &amp;lt;2つ目の処理&amp;gt; # 並列処理 ダウンロード数比較  johnmpotter/npm-trends  </description>
+      <description>NPM  Node.jsのパッケージ管理ツール. 公式サイト: https://npmjs.com  インストール npm自体のインストール  Downloading and installing Node.js and npm  npm自体のupdate npm update -y npm # もしくは npm install npm@latest -g npm自体のバージョン管理 Reference: How to Update Node.js to Latest Version (Linux, Ubuntu, OSX, Others)
+パッケージのインストール npm i &amp;lt;パッケージ名&amp;gt; # 本番環境へインストール npm i -D &amp;lt;パッケージ名&amp;gt; # 開発環境へインストール パッケージの脆弱性確認 npm audit パッケージを最新へ npm outdated # 新しいバージョンを確認 npm install -g npm-check-updates # アップデートマネージャーをインストール ncu # 新しいバージョンを確認 ncu -u # package.</description>
     </item>
     
     <item>
@@ -560,7 +561,7 @@ script: docker run -e CI=true solareenlo/react-test npm run test -- --watchAll=f
       
       <guid>https://solareenlo.com/docs/typescript/</guid>
       <description> TypeScriptとは  マイクロソフトによって開発されているオープンソースのプログラミング言語のこと. JavaScriptに, 静的型付け・クラスベースオブジェクト指向を加えた. GitHubリポジトリ: https://github.com/Microsoft/TypeScript  初めてのTypeScript solareenlo/Typescript-Practice/01_Getting_Started
-インストール npm i --save-dev typescript</description>
+インストール npm i --save-dev typescript TypeScript + Node.js + Docker + Circle CI  TypeScript + Node.js プロジェクトのはじめかた2019 TypeScriptでExpress.js開発するときにやることまとめ (docker/lint/format/tsのまま実行/autoreload) bitjson/typescript-starter microsoft/TypeScript-Node-Starter  </description>
     </item>
     
     <item>
