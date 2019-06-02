@@ -24,7 +24,10 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://solareenlo.com/docs/angular/</guid>
-      <description>Angularとは  Typescript/JavaScriptやその他の言語を使用してモバイルおよびデスクトップWebアプリケーションを構築するための開発プラットフォーム. GitHubリポジトリ: https://github.com/angular/angular https://angular.keicode.com  用語    用語 意味     module アプリを構成するコンポーネントを束ねたもの   root module アプリが起動する時に呼びされるモジュール   component 各要素   Decorators モジュールやクラスなどの要素に対してメタ情報を付与するもの   constructor TS, JSに付随するものでClassの初期化時に発動する    Decoratorsのパラメーター    パラメーター名 意味     imports 現在のモジュールで利用する他のモジュール／コンポーネント   exports 現在のモジュールで外部に公開するコンポーネントなど   declarations モジュール配下のコンポーネント   bootstrap 最初に起動すべき最上位のコンポーネント(＝ルートコンポーネント)   templateUrl 描画するhtml   template 描画する内容   styleUrls どのcssを使うか   styles 直接cssの内容を記述する   selector コンポーネントの適応先を表す(html, css, classなどとして指定できる)    DockerでAngular Dockerfileの中身</description>
+      <description>Angularとは  Typescript/JavaScriptやその他の言語を使用してモバイルおよびデスクトップWebアプリケーションを構築するための開発プラットフォーム. GitHubリポジトリ: https://github.com/angular/angular References:  https://angular.io/docs https://angular.jp/docs https://angular.keicode.com   用語    用語 意味     module アプリを構成するコンポーネントを束ねたもの.   root module アプリが起動する時に呼びされる大元のモジュール.
+Angularアプリには必ずある.   component View(画面の一部)を制御する.   template componentのUIをどのようにHTMLで表現するかを指定するもの.
+.htmlのこと.   Decorators モジュールやクラスなどの要素に対してメタ情報を付与するもの   constructor TS, JSに付随するものでClassの初期化時に発動する   data binding コンポーネントにおいてテンプレートとクラス内の要素を繋ぐ仕組み.
+テンプレートとコンポーネントのコードを繋ぐ方法   template reference variable #testを使って, そのDOM要素をtest変数で参照できるようにする仕組み.    Decoratorsのパラメーター    パラメーター名 意味     imports 現在のモジュールで利用する他のモジュール／コンポーネント   exports 現在のモジュールで外部に公開するコンポーネントなど   declarations モジュール配下のコンポーネント   bootstrap 最初に起動すべき最上位のコンポーネント(＝ルートコンポーネント)   templateUrl 描画するhtml   template 描画する内容   styleUrls どのcssを使うか   styles 直接cssの内容を記述する   selector コンポーネントの適応先を表す(html, css, classなどとして指定できる)    インストール npm i -g @anuglar/cli @angular/core バージョンアップ ng update @angular/cli @angular/core DockerでAngular Dockerfileの中身</description>
     </item>
     
     <item>
@@ -458,8 +461,9 @@ script: docker run -e CI=true solareenlo/react-test npm run test -- --watchAll=f
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://solareenlo.com/docs/typescript/</guid>
-      <description> TypeScriptとは  マイクロソフトによって開発されているオープンソースのプログラミング言語のこと. JavaScriptに, 静的型付け・クラスベースオブジェクト指向を加えた. GitHubリポジトリ: https://github.com/Microsoft/TypeScript  初めてのTypeScript solareenlo/Typescript-Practice/01_Getting_Started
-インストール npm i --save-dev typescript TypeScript + Node.js + Docker + Circle CI  TypeScript + Node.js プロジェクトのはじめかた2019 TypeScriptでExpress.js開発するときにやることまとめ (docker/lint/format/tsのまま実行/autoreload) bitjson/typescript-starter microsoft/TypeScript-Node-Starter  </description>
+      <description>TypeScriptとは  マイクロソフトによって開発されているオープンソースのプログラミング言語のこと. JavaScriptに, 静的型付け・クラスベースオブジェクト指向を加えた. GitHubリポジトリ: https://github.com/Microsoft/TypeScript  初めてのTypeScript solareenlo/Typescript-Practice/01_Getting_Started
+インストール npm i --save-dev typescript TypeScript + Node.js + Docker + Circle CI  TypeScript + Node.js プロジェクトのはじめかた2019 TypeScriptでExpress.js開発するときにやることまとめ (docker/lint/format/tsのまま実行/autoreload) bitjson/typescript-starter microsoft/TypeScript-Node-Starter  objectのkeyにstringを設定したら, object[key]でエラーになった時の対処法  tsconfigに--suppressImplicitAnyIndexErrorsを付け加える. ブラケット記法でプロパティにアクセスした時にany型を許容するのでとっても非推奨. 以下のようにkeyはstring型と明示する. 問題点はkeyが全てstring型になること.
+interface ISomeObject { firstKey: string; secondKey: string; [key: string]: string; // &amp;lt;-この行を追加! } const obj = { firstKey: &amp;#34;a&amp;#34;, secondKey: &amp;#34;b&amp;#34;, } as ISomeObject; const key: string = &amp;#39;secondKey&amp;#39;; const secondValue: string = obj[key]; なのでこうする.</description>
     </item>
     
     <item>

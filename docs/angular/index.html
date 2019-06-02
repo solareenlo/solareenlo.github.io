@@ -180,7 +180,13 @@ https://github.com/alex-shpak/hugo-book
 <ul>
 <li>Typescript/JavaScriptやその他の言語を使用してモバイルおよびデスクトップWebアプリケーションを構築するための開発プラットフォーム.</li>
 <li><strong>GitHubリポジトリ:</strong> <a href="https://github.com/angular/angular">https://github.com/angular/angular</a></li>
+<li><strong>References:</strong>
+
+<ul>
+<li><a href="https://angular.io/docs">https://angular.io/docs</a></li>
+<li><a href="https://angular.jp/docs">https://angular.jp/docs</a></li>
 <li><a href="https://angular.keicode.com">https://angular.keicode.com</a></li>
+</ul></li>
 </ul>
 
 <h2 id="用語">用語</h2>
@@ -196,17 +202,22 @@ https://github.com/alex-shpak/hugo-book
 <tbody>
 <tr>
 <td>module</td>
-<td>アプリを構成するコンポーネントを束ねたもの</td>
+<td>アプリを構成するコンポーネントを束ねたもの.</td>
 </tr>
 
 <tr>
 <td>root module</td>
-<td>アプリが起動する時に呼びされるモジュール</td>
+<td>アプリが起動する時に呼びされる大元のモジュール.<br>Angularアプリには必ずある.</td>
 </tr>
 
 <tr>
 <td>component</td>
-<td>各要素</td>
+<td>View(画面の一部)を制御する.</td>
+</tr>
+
+<tr>
+<td>template</td>
+<td>componentのUIをどのようにHTMLで表現するかを指定するもの.<br>.htmlのこと.</td>
 </tr>
 
 <tr>
@@ -217,6 +228,16 @@ https://github.com/alex-shpak/hugo-book
 <tr>
 <td>constructor</td>
 <td>TS, JSに付随するものでClassの初期化時に発動する</td>
+</tr>
+
+<tr>
+<td>data binding</td>
+<td>コンポーネントにおいてテンプレートとクラス内の要素を繋ぐ仕組み.<br>テンプレートとコンポーネントのコードを繋ぐ方法</td>
+</tr>
+
+<tr>
+<td>template reference variable</td>
+<td><code>#test</code>を使って, そのDOM要素をtest変数で参照できるようにする仕組み.</td>
 </tr>
 </tbody>
 </table>
@@ -279,13 +300,17 @@ https://github.com/alex-shpak/hugo-book
 </tbody>
 </table>
 
+<h2 id="インストール">インストール</h2>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm i -g @anuglar/cli @angular/core</code></pre></div>
+<h2 id="バージョンアップ">バージョンアップ</h2>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ng update @angular/cli @angular/core</code></pre></div>
 <h2 id="dockerでangular">DockerでAngular</h2>
 
 <p><code>Dockerfile</code>の中身</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#719e07">FROM</span><span style="color:#2aa198"> node:10.15.3-alpine</span>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#719e07">FROM</span><span style="color:#2aa198"> node:10.16.0-alpine</span>
 
 <span style="color:#719e07">RUN</span> apk update <span style="color:#cb4b16">\
-</span><span style="color:#cb4b16"></span>  <span style="color:#719e07">&amp;&amp;</span> npm install -g @angular/cli@7.3.8 <span style="color:#cb4b16">\
+</span><span style="color:#cb4b16"></span>  <span style="color:#719e07">&amp;&amp;</span> npm install -g @angular/cli@8.0.0 <span style="color:#cb4b16">\
 </span><span style="color:#cb4b16"></span>  <span style="color:#719e07">&amp;&amp;</span> rm -rf /tmp/* /var/cache/apk/* *.tar.gz ~/.npm <span style="color:#cb4b16">\
 </span><span style="color:#cb4b16"></span>  <span style="color:#719e07">&amp;&amp;</span> npm cache clear --force <span style="color:#cb4b16">\
 </span><span style="color:#cb4b16"></span>  <span style="color:#719e07">&amp;&amp;</span> yarn cache clean <span style="color:#cb4b16">\
@@ -375,10 +400,12 @@ docker-compose rm</code></pre></div>
 <li><strong>公式HP:</strong> <a href="https://material.angular.io">https://material.angular.io</a></li>
 </ul>
 
-<h3 id="インストール">インストール</h3>
+<h3 id="インストール-1">インストール</h3>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm i --save @angular/material
 <span style="color:#586e75"># or</span>
 ng add @angular/material</code></pre></div>
+<h3 id="バージョンアップ-1">バージョンアップ</h3>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ng update @angular/material</code></pre></div>
 <h3 id="簡単な使い方">簡単な使い方</h3>
 
 <p><code>app.module.ts</code>に以下を追加し,</p>
@@ -485,7 +512,7 @@ templateUrl<span style="color:#719e07">:</span> <span style="color:#2aa198">&#39
 <li><p><code>xxx.component.html</code>にhtmlを, <code>xxx.component.cs</code>にcssを, <code>xxx.component.ts</code>にjsをどんどん書いてく.</p></li>
 </ul>
 
-<h2 id="値を渡す-バインド">値を渡す(バインド)</h2>
+<h2 id="値を渡す-データバインド">値を渡す(データバインド)</h2>
 
 <ul>
 <li><code>[]</code>は, TypeScriptからHTMLへのバインドを表す.</li>
@@ -722,6 +749,10 @@ templateUrl<span style="color:#719e07">:</span> <span style="color:#2aa198">&#39
 }</code></pre></div>
 <p><strong>Reference:</strong> <a href="https://qiita.com/ksh-fthr/items/e43dd37bff2e51e95a59">Angular サービスを使用してデータをコンポーネント間で共有する</a></p>
 
+<h2 id="値を渡す-テンプレート参照変数">値を渡す(テンプレート参照変数)</h2>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#268bd2">input</span> #test type<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;text&#34;</span> (key)=&#34;onKey(test.value)&#34;&gt;</code></pre></div>
+<p>これで, inputにテキストで入力された文字が1つずつonKey関数に渡っていく.</p>
+
 <h2 id="ngif-else">ngIf else</h2>
 
 <p>特定の状況下でのみアプリケーションがビューまたはビューの一部を表示する様にする.</p>
@@ -930,17 +961,20 @@ Aコンポーネント内の<code>&lt;ng-content&gt;&lt;/ng-content&gt;</code>�
 <ul>
 <li><a href="#decoratorsのパラメーター">Decoratorsのパラメーター</a></li>
 </ul></li>
+<li><a href="#インストール">インストール</a></li>
+<li><a href="#バージョンアップ">バージョンアップ</a></li>
 <li><a href="#dockerでangular">DockerでAngular</a></li>
 <li><a href="#npmの脆弱性を指摘されたら">npmの脆弱性を指摘されたら</a></li>
 <li><a href="#travisci経由でgithub-pagesに公開">TravisCI経由でGitHub Pagesに公開</a></li>
 <li><a href="#マテリアルデザイン">マテリアルデザイン</a>
 <ul>
-<li><a href="#インストール">インストール</a></li>
+<li><a href="#インストール-1">インストール</a></li>
+<li><a href="#バージョンアップ-1">バージョンアップ</a></li>
 <li><a href="#簡単な使い方">簡単な使い方</a></li>
 <li><a href="#ファイル選択ボタンをmaterial化">ファイル選択ボタンをMaterial化</a></li>
 </ul></li>
 <li><a href="#基本的な使い方">基本的な使い方</a></li>
-<li><a href="#値を渡す-バインド">値を渡す(バインド)</a>
+<li><a href="#値を渡す-データバインド">値を渡す(データバインド)</a>
 <ul>
 <li><a href="#ts-から-html-へ値を渡す"><code>.ts</code>から<code>.html</code>へ値を渡す</a></li>
 <li><a href="#ts-から-html-の-の中に値を渡す"><code>.ts</code>から<code>.html</code>の<code>&lt;&gt;</code>の中に値を渡す</a></li>
@@ -950,6 +984,7 @@ Aコンポーネント内の<code>&lt;ng-content&gt;&lt;/ng-content&gt;</code>�
 <li><a href="#eventemitter">EventEmitter</a></li>
 <li><a href="#コンポーネント間で値を渡す">コンポーネント間で値を渡す</a></li>
 </ul></li>
+<li><a href="#値を渡す-テンプレート参照変数">値を渡す(テンプレート参照変数)</a></li>
 <li><a href="#ngif-else">ngIf else</a></li>
 <li><a href="#ngstyle">ngStyle</a></li>
 <li><a href="#ngclass">ngClass</a></li>
