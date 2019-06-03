@@ -129,7 +129,7 @@ MacにHomebrewをインストールする /usr/bin/ruby -e &amp;#34;$(curl -fsSL
       <description>Angularとは  Typescript/JavaScriptやその他の言語を使用してモバイルおよびデスクトップWebアプリケーションを構築するための開発プラットフォーム. GitHubリポジトリ: https://github.com/angular/angular References:  https://angular.io/docs https://angular.jp/docs https://angular.keicode.com   用語    用語 意味     module アプリを構成するコンポーネントを束ねたもの.   root module アプリが起動する時に呼びされる大元のモジュール.
 Angularアプリには必ずある.   component View(画面の一部)を制御する.   template componentのUIをどのようにHTMLで表現するかを指定するもの.
 .htmlのこと.   Decorators モジュールやクラスなどの要素に対してメタ情報を付与するもの   constructor TS, JSに付随するものでClassの初期化時に発動する   data binding コンポーネントにおいてテンプレートとクラス内の要素を繋ぐ仕組み.
-テンプレートとコンポーネントのコードを繋ぐ方法   template reference variable #testを使って, そのDOM要素をtest変数で参照できるようにする仕組み.    Decoratorsのパラメーター    パラメーター名 意味     imports 現在のモジュールで利用する他のモジュール／コンポーネント   exports 現在のモジュールで外部に公開するコンポーネントなど   declarations モジュール配下のコンポーネント   bootstrap 最初に起動すべき最上位のコンポーネント(＝ルートコンポーネント)   templateUrl 描画するhtml   template 描画する内容   styleUrls どのcssを使うか   styles 直接cssの内容を記述する   selector コンポーネントの適応先を表す(html, css, classなどとして指定できる)    インストール npm i -g @anuglar/cli @angular/core バージョンアップ ng update @angular/cli @angular/core DockerでAngular Dockerfileの中身</description>
+テンプレートとコンポーネントのコードを繋ぐ方法   template reference variable #testを使って, そのDOM要素をtest変数で参照できるようにする仕組み.    Decoratorsのパラメーター    パラメーター名 意味     imports 現在のモジュールで利用する他のモジュール／コンポーネント   exports 現在のモジュールで外部に公開するコンポーネントなど   declarations モジュール配下のコンポーネント   bootstrap 最初に起動すべき最上位のコンポーネント(＝ルートコンポーネント)   templateUrl 描画するhtml   template 描画する内容   styleUrls どのcssを使うか   styles 直接cssの内容を記述する   selector コンポーネントの適応先を表す(html, css, classなどとして指定できる)    インストール npm i -g @angular/cli @angular/core バージョンアップ ng update @angular/cli @angular/core DockerでAngular Dockerfileの中身</description>
     </item>
     
     <item>
@@ -665,7 +665,7 @@ CIとは  Continuous Integrationl（継続的インテグレーション）の�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://solareenlo.com/docs/mongodb/</guid>
-      <description>MongoDBとは  オープンソースで公開されているドキュメント指向データベースの1つ. GitHubリポジトリ: https://github.com/mongodb/mongo  インストール  https://docs.mongodb.com/manual/installation/  mongodb(v4.0.5)のコンソールからの使い方色々 Excel, Oracle, MongoDB, Object の大まかな比較    Excel Oracle MongoDB Object     ブック Schema Database 特になし   シート Table Collection 特になし   行 Row Document Object群   列 Column Field Key   セル Field Value Value    mongodbの起動の仕方は, $ mongod // mongodbが起動する $ CNTL-C // mongodbを停止する // か, $ sudo service mongod start $ sudo service mongod stop mongodbへのコンソールからのアクセスの仕方は, $ mongo // アクセスして, &amp;gt; exit // 終了.</description>
+      <description>MongoDBとは  オープンソースで公開されているドキュメント指向データベースの1つ. GitHubリポジトリ: https://github.com/mongodb/mongo  インストール  https://docs.mongodb.com/manual/installation/  mongodb(v4.0.5)のコンソールからの使い方色々 Excel, Oracle, MongoDB, Object の大まかな比較    Excel Oracle MongoDB Object     ブック Schema Database 特になし   シート Table Collection 特になし   行 Row Document Object群   列 Column Field Key   セル Field Value Value    起動方法 $ mongod // mongodbが起動する $ CNTL-C // mongodbを停止する // か, $ sudo service mongod start $ sudo service mongod stop コンソールからのアクセス方法 $ mongo // アクセスして, &amp;gt; exit // 終了.</description>
     </item>
     
     <item>
