@@ -207,6 +207,55 @@ https://github.com/alex-shpak/hugo-book
 <li>UTXOを採用.</li>
 </ul>
 
+<h2 id="cfbによる技術的特徴">CfBによる技術的特徴</h2>
+
+<ul>
+<li><strong>IoTは, インターネットを介して通信するものではありません.</strong>
+
+<ul>
+<li>この誤解は, インターネット用の既存のソリューションを別の名前で販売しようとしている企業によって生み出されました.</li>
+<li>モノは, インターネットよりもはるかに大きい, 独自のネットワークを形成します.</li>
+<li>そのようなネットワークは, すべてのトラフィックが少数の組織によって制御されている少数のサーバーを通過するアーキテクチャを使用して拡張することはできません.</li>
+</ul></li>
+<li><strong>Tangleは1つだけであり, それだけです.</strong>
+
+<ul>
+<li>いくつかのIOTAフォークを実行しても, それらはすべて単一のTangleで機能し, 理論的には後でマージすることができます.</li>
+<li>IOTAを実行している異なるクラスターは, Tangleに絡み合って異なるサブタングルを形成します.</li>
+<li>これは, モバイルのモノがあるクラスタから別のクラスタに移動するときに便利な機能です.</li>
+</ul></li>
+<li><strong>IOTAを実行しているノードのネットワークは, 1/3未満の要素の障害が重要ではないシステムです.</strong>
+
+<ul>
+<li>もしそうならノードソフトウェアはこの機能を念頭に置いて開発されるべきです.</li>
+<li>特に, グリッチが発生した場合は, ノードを再起動し, 必要に応じてストレージをクリアすることができます.</li>
+<li>IOTA上に構築されたソフトウェアは, そのノードが常に信頼できる状態で動作すると想定してはいけません.</li>
+<li>ソフトウェアは少なくとも3つのノードに接続し, それらのクォーラム(67％+)によって提供される情報に依存します.</li>
+</ul></li>
+<li><strong>IOTAプロトコルは不変なものです.</strong>
+
+<ul>
+<li>バージョニングを必要としません.</li>
+<li>すべての改良はプロトコルの上でされなければなりません.</li>
+<li>さもなければIOTAは物理的にアップグレードすることができないモノの多くによって採用されることができません.</li>
+</ul></li>
+<li><strong>IOTAはデータ保存用ではなく, データ配信用です.</strong>
+
+<ul>
+<li>あるデータがTangleに格納されている場合, そのデータが24時間の間ずっとTangleで見つかることを期待しないでください.</li>
+<li>データ片のハッシュを含むMerkleツリーのルートが常に更新されるようなトリックを使用してください.</li>
+<li>データが欲しい場合は後でデータの所有者または専門のサービス（いわゆるpermanode）へ要求することができます.</li>
+</ul></li>
+<li><strong>IOTAはナノペイメントを可能にするもので, これを最大限に活用する必要があります.</strong>
+
+<ul>
+<li>IOTAのために売られるものは何でも, 小さな塊で売られて, 支払いがネットワークによって受け入れられるといういくらかの保証が得られるのと同じくらい速く配達されるべきです.</li>
+<li>たとえ彼らが「より遅い」売り手に対する競争上の優位性を成功させたとしても, 数セントの二重支払いで悩まされる人はほとんどいないでしょう.</li>
+</ul></li>
+<li>P.S正式にはIOTAは頭字語ではありませんが, 私は常に「黙示録」が「啓示」を意味する「モノのインターネット黙示録(Internet-Of-Things Apocalypse)」の略であると言ってきました.</li>
+<li><strong>Reference:</strong> <a href="https://medium.com/@comefrombeyond/internet-of-things-apocalypse-eaf28002240d">Internet-of-Things Apocalypse</a></li>
+</ul>
+
 <h2 id="trit-tryte">trit, tryte</h2>
 
 <ul>
@@ -287,6 +336,7 @@ https://github.com/alex-shpak/hugo-book
 <h2 id="coordicide">Coordicide</h2>
 
 <ul>
+<li><strong>公式サイト:</strong> <a href="https://coordicide.iota.org">https://coordicide.iota.org</a></li>
 <li>Coodinatorを削除する方法のこと.</li>
 <li>Coordicideの機能をモジュール化した.
 
@@ -402,6 +452,7 @@ https://github.com/alex-shpak/hugo-book
 <ul>
 <li><a href="#目的">目的</a></li>
 <li><a href="#特徴">特徴</a></li>
+<li><a href="#cfbによる技術的特徴">CfBによる技術的特徴</a></li>
 <li><a href="#trit-tryte">trit, tryte</a></li>
 <li><a href="#単位変換">単位変換</a></li>
 <li><a href="#icc-network-visualisation">ICC Network Visualisation</a></li>
