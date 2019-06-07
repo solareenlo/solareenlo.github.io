@@ -3,6 +3,47 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://solareenlo.com/tags/BiiLabs/</loc>
+    <lastmod>2019-06-08T08:24:15+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://solareenlo.com/posts/biilabs-meetup/</loc>
+    <lastmod>2019-06-08T08:24:15+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://solareenlo.com/categories/</loc>
+    <lastmod>2019-06-08T08:24:15+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://solareenlo.com/tags/Meet-up/</loc>
+    <lastmod>2019-06-08T08:24:15+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://solareenlo.com/posts/</loc>
+    <lastmod>2019-06-08T08:24:15+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://solareenlo.com/tags/</loc>
+    <lastmod>2019-06-08T08:24:15+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://solareenlo.com/categories/application/</loc>
+    <lastmod>2019-06-08T08:24:15+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://solareenlo.com/categories/Angular/</loc>
     <lastmod>2019-05-07T20:07:43+09:00</lastmod>
     <priority>0</priority>
@@ -11,12 +52,6 @@
   <url>
     <loc>https://solareenlo.com/tags/Angular/</loc>
     <lastmod>2019-05-07T20:07:43+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://solareenlo.com/categories/</loc>
-    <lastmod>2019-06-02T01:22:49+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -38,25 +73,7 @@
   </url>
   
   <url>
-    <loc>https://solareenlo.com/posts/</loc>
-    <lastmod>2019-06-02T01:22:49+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://solareenlo.com/tags/</loc>
-    <lastmod>2019-06-02T01:22:49+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://solareenlo.com/tags/app/</loc>
-    <lastmod>2019-06-02T01:22:49+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://solareenlo.com/categories/application/</loc>
     <lastmod>2019-06-02T01:22:49+09:00</lastmod>
     <priority>0</priority>
   </url>
@@ -486,13 +503,13 @@
   
   <url>
     <loc>https://solareenlo.com/docs/</loc>
-    <lastmod>2019-06-04T02:21:31+09:00</lastmod>
+    <lastmod>2019-06-04T09:08:01+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://solareenlo.com/docs/iota/</loc>
-    <lastmod>2019-05-31T05:01:46+09:00</lastmod>
+    <lastmod>2019-06-04T09:08:01+09:00</lastmod>
   </url>
   
   <url>

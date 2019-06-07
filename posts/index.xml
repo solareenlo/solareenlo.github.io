@@ -5,10 +5,19 @@
     <link>https://solareenlo.com/posts/</link>
     <description>Recent content in Posts on solareenlo</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 06 May 2019 10:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 06 Jun 2019 18:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://solareenlo.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>BiiLabs Meet up</title>
+      <link>https://solareenlo.com/posts/biilabs-meetup/</link>
+      <pubDate>Thu, 06 Jun 2019 18:00:00 +0900</pubDate>
+      
+      <guid>https://solareenlo.com/posts/biilabs-meetup/</guid>
+      <description> BiiLabsのミートアップ </description>
+    </item>
     
     <item>
       <title>DockerでAngularを動かす</title>
