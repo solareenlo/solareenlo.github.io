@@ -409,28 +409,30 @@ sudo docker container run --rm --net dude centos curl -s search:9200 | jq // dud
 <p>Dockerはユニオンファイルシステム(複数のファイルシステム上のディレクトリやファイルをレイヤとしてスタックし, それらを仮想的に一つのファイルシステムとして扱う技術)を使い, コンテナを軽量化している.
 <strong>Reference:</strong> <a href="https://www.techscore.com/blog/2018/12/10/docker-images-and-layers/">知らないと損する Docker イメージのレイヤ構造とは</a></p>
 
-<h3 id="docker-imageをdocker-hubからpullする">docker imageをDocker Hubからpullする</h3>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo docker pull mysql</code></pre></div>
-<h3 id="一括してイメージを最新へ更新する">一括してイメージを最新へ更新する</h3>
+<h3 id="一括してimageを削除">一括してimageを削除</h3>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker rmi <span style="color:#586e75">`</span>docker images -a -q<span style="color:#586e75">`</span></code></pre></div>
+<h3 id="一括してimageを最新へ更新">一括してimageを最新へ更新</h3>
 
 <p><strong>Reference:</strong> <a href="https://qiita.com/suin/items/5d65320ee9fb9596249f">一括してDockerイメージを最新にアップデートしたい</a></p>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo docker images | cut -d <span style="color:#2aa198">&#39; &#39;</span> -f1 | tail -n +2 | sort | uniq | egrep -v <span style="color:#2aa198">&#39;^(&lt;none&gt;|ubuntu)$&#39;</span> | xargs -P0 -L1 sudo docker pull</code></pre></div>
+<h3 id="imageをdocker-hubからpull">imageをDocker Hubからpull</h3>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo docker pull mysql</code></pre></div>
 <h3 id="タグ付けしてpull">タグ付けしてpull</h3>
 
 <p>タグけせずにpullを行うとデフォルトでタグ名がlatestになる.<br />
 タグ付けするときはイメージ名の後ろに「:」を付けて, その後ろにタグ名を指定する.</p>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo docker image pull nginx:mainline</code></pre></div>
-<h3 id="既にあるイメージに新たにタグ付けする">既にあるイメージに新たにタグ付けする</h3>
+<h3 id="既にあるimageに新たにタグ付けする">既にあるimageに新たにタグ付けする</h3>
 
 <p>タグ付けするとDocker Hubにタグ別にどんどんイメージをpushできる.<br />
 タグを変えるだけだと同じイメージが使われる.</p>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo docker image tag nginx solareenlo/nginx</code></pre></div>
-<h3 id="docker-hubにログインする">Docker Hubにログインする</h3>
+<h3 id="docker-hubにログイン">Docker Hubにログイン</h3>
 
 <p>そのままローカル環境からDocker Hubにログインするとパスワードが平文のまま保存されるのでpassなどを使って暗号化して保存する.
 保存方法は<a href="/posts/docker-pass/">こらら</a>.</p>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo docker login</code></pre></div>
-<h3 id="docker-hubに自分でタグ付けしたイメージをpushする">Docker Hubに自分でタグ付けしたイメージをpushする</h3>
+<h3 id="docker-hubに自分でタグ付けしたimageをpush">Docker Hubに自分でタグ付けしたimageをpush</h3>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo docker push solareenlo/nginx</code></pre></div>
 <h2 id="dockerfile">Dockerfile</h2>
 
@@ -710,12 +712,13 @@ docker run -p <span style="color:#2aa198">80</span>:4000 --mount <span style="co
 </ul></li>
 <li><a href="#image">image</a>
 <ul>
-<li><a href="#docker-imageをdocker-hubからpullする">docker imageをDocker Hubからpullする</a></li>
-<li><a href="#一括してイメージを最新へ更新する">一括してイメージを最新へ更新する</a></li>
+<li><a href="#一括してimageを削除">一括してimageを削除</a></li>
+<li><a href="#一括してimageを最新へ更新">一括してimageを最新へ更新</a></li>
+<li><a href="#imageをdocker-hubからpull">imageをDocker Hubからpull</a></li>
 <li><a href="#タグ付けしてpull">タグ付けしてpull</a></li>
-<li><a href="#既にあるイメージに新たにタグ付けする">既にあるイメージに新たにタグ付けする</a></li>
-<li><a href="#docker-hubにログインする">Docker Hubにログインする</a></li>
-<li><a href="#docker-hubに自分でタグ付けしたイメージをpushする">Docker Hubに自分でタグ付けしたイメージをpushする</a></li>
+<li><a href="#既にあるimageに新たにタグ付けする">既にあるimageに新たにタグ付けする</a></li>
+<li><a href="#docker-hubにログイン">Docker Hubにログイン</a></li>
+<li><a href="#docker-hubに自分でタグ付けしたimageをpush">Docker Hubに自分でタグ付けしたimageをpush</a></li>
 </ul></li>
 <li><a href="#dockerfile">Dockerfile</a>
 <ul>
