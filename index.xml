@@ -177,7 +177,7 @@ Hello World #include &amp;lt;stdio.h&amp;gt; int main(void) { puts(&amp;#34;Hell
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://solareenlo.com/docs/circleci/</guid>
-      <description>CircleCIとは  クラウド上でCI/CDを行なってくれるサービスの1つ. 公式サイト: https://circleci.com  docs  CircleCI Documentation  AWSのS3へデプロイ  Nuxt.js+CircleCIで静的ページをAWSのS3へデプロイする  AWSのElastic Beanstalkへデプロイ  以下でCircleCIでElastic Beanstalk CLIを起動して, デプロイする.
+      <description>CircleCIとは  クラウド上でCI/CDを行なってくれるサービスの1つ. 公式サイト: https://circleci.com  docs  CircleCI Documentation  Angular &amp;gt; CircleCI &amp;gt; GitHub Pages の例  iotajapan/ng-iotajapan  submoduleをpush出来るようにするには  Settings &amp;gt; PERMISSIONS &amp;gt; Checkout SSH keys でuser keyを有効にする.  AWSのS3へデプロイ  Nuxt.js+CircleCIで静的ページをAWSのS3へデプロイする  AWSのElastic Beanstalkへデプロイ  以下でCircleCIでElastic Beanstalk CLIを起動して, デプロイする.
 # .circleci/config.yml version: 2 jobs: deploy: working_directory: ~/app docker: - image: circleci/ruby:2.6.3 steps: - checkout - run: name: Installing deployment dependencies working_directory: / command: | sudo apt-get -y -qq update sudo apt-get install python-pip python-dev build-essential sudo pip install --upgrade setuptools sudo pip install awsebcli --upgrade - run: name: Deploying command: eb deploy master-TaxPlusAws01-env workflows: version: 2 build: jobs: - deploy: filters: branches: only: - master 以下はElastci Beanstalk CLIの設定.</description>
     </item>
     

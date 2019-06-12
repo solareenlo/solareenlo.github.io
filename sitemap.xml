@@ -44,25 +44,25 @@
   </url>
   
   <url>
-    <loc>https://solareenlo.com/tags/Angular/</loc>
-    <lastmod>2019-05-07T20:07:43+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://solareenlo.com/categories/Angular/</loc>
     <lastmod>2019-05-07T20:07:43+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://solareenlo.com/tags/Docker/</loc>
+    <loc>https://solareenlo.com/tags/Angular/</loc>
     <lastmod>2019-05-07T20:07:43+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://solareenlo.com/categories/Docker/</loc>
+    <lastmod>2019-05-07T20:07:43+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://solareenlo.com/tags/Docker/</loc>
     <lastmod>2019-05-07T20:07:43+09:00</lastmod>
     <priority>0</priority>
   </url>
@@ -90,13 +90,13 @@
   </url>
   
   <url>
-    <loc>https://solareenlo.com/tags/Docker-Hub/</loc>
+    <loc>https://solareenlo.com/categories/Docker-Hub/</loc>
     <lastmod>2019-05-07T20:07:43+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://solareenlo.com/categories/Docker-Hub/</loc>
+    <loc>https://solareenlo.com/tags/Docker-Hub/</loc>
     <lastmod>2019-05-07T20:07:43+09:00</lastmod>
     <priority>0</priority>
   </url>
@@ -113,13 +113,13 @@
   </url>
   
   <url>
-    <loc>https://solareenlo.com/tags/Bitcoin/</loc>
+    <loc>https://solareenlo.com/categories/Bitcoin/</loc>
     <lastmod>2019-04-21T06:04:43+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://solareenlo.com/categories/Bitcoin/</loc>
+    <loc>https://solareenlo.com/tags/Bitcoin/</loc>
     <lastmod>2019-04-21T06:04:43+09:00</lastmod>
     <priority>0</priority>
   </url>
@@ -165,13 +165,13 @@
   </url>
   
   <url>
-    <loc>https://solareenlo.com/tags/Plasma/</loc>
+    <loc>https://solareenlo.com/categories/Plasma/</loc>
     <lastmod>2019-04-18T09:04:27+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://solareenlo.com/categories/Plasma/</loc>
+    <loc>https://solareenlo.com/tags/Plasma/</loc>
     <lastmod>2019-04-18T09:04:27+09:00</lastmod>
     <priority>0</priority>
   </url>
@@ -188,13 +188,13 @@
   </url>
   
   <url>
-    <loc>https://solareenlo.com/tags/Substrate/</loc>
+    <loc>https://solareenlo.com/categories/Substrate/</loc>
     <lastmod>2019-04-18T09:04:27+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://solareenlo.com/categories/Substrate/</loc>
+    <loc>https://solareenlo.com/tags/Substrate/</loc>
     <lastmod>2019-04-18T09:04:27+09:00</lastmod>
     <priority>0</priority>
   </url>
@@ -233,13 +233,13 @@
   </url>
   
   <url>
-    <loc>https://solareenlo.com/tags/golang/</loc>
+    <loc>https://solareenlo.com/categories/golang/</loc>
     <lastmod>2019-04-16T08:48:28+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://solareenlo.com/categories/golang/</loc>
+    <loc>https://solareenlo.com/tags/golang/</loc>
     <lastmod>2019-04-16T08:48:28+09:00</lastmod>
     <priority>0</priority>
   </url>
