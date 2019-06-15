@@ -3,6 +3,53 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://solareenlo.com/categories/</loc>
+    <lastmod>2019-06-15T13:00:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://solareenlo.com/categories/Hands-on/</loc>
+    <lastmod>2019-06-15T13:00:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://solareenlo.com/tags/Hands-on/</loc>
+    <lastmod>2019-06-15T13:00:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://solareenlo.com/categories/Meet-up/</loc>
+    <lastmod>2019-06-15T13:00:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://solareenlo.com/posts/</loc>
+    <lastmod>2019-06-15T13:00:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://solareenlo.com/tags/</loc>
+    <lastmod>2019-06-15T13:00:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://solareenlo.com/tags/Tezos/</loc>
+    <lastmod>2019-06-15T13:00:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://solareenlo.com/posts/tezos-hands-on/</loc>
+    <lastmod>2019-06-15T13:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://solareenlo.com/tags/BiiLabs/</loc>
     <lastmod>2019-06-08T08:24:15+09:00</lastmod>
     <priority>0</priority>
@@ -14,25 +61,7 @@
   </url>
   
   <url>
-    <loc>https://solareenlo.com/categories/</loc>
-    <lastmod>2019-06-08T08:24:15+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://solareenlo.com/tags/Meet-up/</loc>
-    <lastmod>2019-06-08T08:24:15+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://solareenlo.com/posts/</loc>
-    <lastmod>2019-06-08T08:24:15+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://solareenlo.com/tags/</loc>
     <lastmod>2019-06-08T08:24:15+09:00</lastmod>
     <priority>0</priority>
   </url>

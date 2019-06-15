@@ -5,10 +5,19 @@
     <link>https://solareenlo.com/posts/</link>
     <description>Recent content in Posts on solareenlo</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 06 Jun 2019 18:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 15 Jun 2019 13:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://solareenlo.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Tezosハンズオン</title>
+      <link>https://solareenlo.com/posts/tezos-hands-on/</link>
+      <pubDate>Sat, 15 Jun 2019 13:00:00 +0900</pubDate>
+      
+      <guid>https://solareenlo.com/posts/tezos-hands-on/</guid>
+      <description>Tezosハンズオン Tezosとは  第3世代のブロックチェーン 2018-09: Mainnet開始 ペーパーで約束されたものをほぼ実装した. 財団がRandDにお金を出してる. PoS  Tezosの特徴  プロトコルはステークホルダーの物というのが第一の信条.  LPos: Liqid Proof of Stake オンチェーン・ガバナンス: 自己修正投票  安全第一  形式検証を用いている   DPoS Proof-of-Stake  トークン所有量に応じたブロック生成権が与えらえる.  ASICが必要ない 手数料が高騰しない 環境に良い  トークンを所有していないマイナーからプロトコルをステークホルダーに解放する.  Delegated PoS (委任PoS)  ステーク投票により選ばれた少数のノードにブロック生成権を与える. 権利を投票に使う. EOSが代表格 利点  PC持ってないステークホルダーも間接的にブロック生成に参加できる. ノード数を減らすことで合意形成効率を上げられる.  欠点  過度にノード数を減らすと分散性・安全性を損なう.   Liquid PoS (Tezos)  選ばれた少数のノードではなく, 誰でもベーキング(ブロック生成)できる. マーケティングにより, マイニングとは言わずにベーキングと言う. ベーカリー(ベーキングの委任を受ける業者のこと), ベーキング権(マイニングする権利), ベーキング(マイニングのこと)という. マイニングを少数ノードに牛耳られることなくステークホルダーに還元するためにLPoSを採用している. 現在450〜500くらいのノードがある. スピードは狙ってない. 現在は30〜40TPSくらい.</description>
+    </item>
     
     <item>
       <title>BiiLabs Meet up</title>
