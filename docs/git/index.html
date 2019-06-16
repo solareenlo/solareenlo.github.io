@@ -294,18 +294,20 @@ git push origin master</code></pre></div>
 <h1 id="基本操作">基本操作</h1>
 
 <h2 id="gitの設定">gitの設定</h2>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># gitへユーザー名を登録</span>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># ユーザー名を登録</span>
 git config --global user.name <span style="color:#2aa198">&#34;solareenlo&#34;</span>
-<span style="color:#586e75"># gitへメールアドレスを登録</span>
+<span style="color:#586e75"># メールアドレスを登録</span>
 git config --global user.email <span style="color:#2aa198">&#34;solareenlo@test.com&#34;</span>
-<span style="color:#586e75"># gitを色づける</span>
+<span style="color:#586e75"># 色づける</span>
 git config --global color.ui <span style="color:#b58900">true</span>
 <span style="color:#586e75"># commitしたときのエディタをvimに設定する</span>
 git config --global core.editor vim
-<span style="color:#586e75"># gitの設定一覧を見る</span>
+<span style="color:#586e75"># 設定一覧を見る</span>
 git config -l
-<span style="color:#586e75"># gitのhelpを見る</span>
-git config --help</code></pre></div>
+<span style="color:#586e75"># helpを見る</span>
+git config --help
+<span style="color:#586e75"># 大文字・小文字を区別する</span>
+git config --global core.ignorecase false</code></pre></div>
 <h2 id="commit-1">commit</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># gitの初期化</span>
 git init
