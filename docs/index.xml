@@ -386,7 +386,7 @@ if(process.argv.length !== 3) { console.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://solareenlo.com/docs/sed/</guid>
-      <description> sedとは  入力ストリーム（ファイルまたはパイプラインからの入力）に対してテキスト変換などのデータ処理をおこなうプログラム. 名称「sed」は「ストリームエディタ」を意味する英語「stream editor」から.  .gitignoreの/distを削除 sed -i -e &amp;#34;/\/dist/d&amp;#34; .gitignore # -i: 上書き保存 # -e: 行の削除 # d: 行目を表す(上の例だと\distを含む行)</description>
+      <description>sedとは  入力ストリーム（ファイルまたはパイプラインからの入力）に対してテキスト変換などのデータ処理をおこなうプログラム. 名称「sed」は「ストリームエディタ」を意味する英語「stream editor」から.  .gitignoreの/distを削除 sed -i -e &amp;#34;/\/dist/d&amp;#34; .gitignore # -i: 上書き保存 # -e: 行の削除 # d: 行目を表す(上の例だと\distを含む行) 初めてのsed cat names.txt &amp;gt; 1 taguchi &amp;gt; 2 koji &amp;gt; 3 taro &amp;gt; 4 hanako &amp;gt; 5 yasuda # 3行目を削除して標準出力する sed -e &amp;#39;3d&amp;#39; names.txt # 3dのところが1つしかない場合は-eを省略できる sed &amp;#39;3d&amp;#39; names.txt &amp;gt; 1 taguchi &amp;gt; 2 koji &amp;gt; 4 hanako &amp;gt; 5 yasuda # sedして上書きしたい場合 sed -i &amp;#39;3d&amp;#39; names.txt # 上記をバックアップを取りながらしたい場合 sed -i.</description>
     </item>
     
     <item>
