@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>documentation on solareenlo</title>
+    <link>https://solareenlo.com/categories/documentation/</link>
+    <description>Recent content in documentation on solareenlo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 17 Jun 2019 06:00:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://solareenlo.com/categories/documentation/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ドキュメント作成ツール</title>
+      <link>https://solareenlo.com/posts/documentation/</link>
+      <pubDate>Mon, 17 Jun 2019 06:00:00 +0900</pubDate>
+      
+      <guid>https://solareenlo.com/posts/documentation/</guid>
+      <description> https://readthedocs.org https://www.sphinx-doc.org/en/master/ https://www.mkdocs.org  https://github.com/squidfunk/mkdocs-material  https://www.gitbook.com  </description>
+    </item>
+    
+  </channel>
+</rss>

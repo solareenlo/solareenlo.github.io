@@ -10,6 +10,15 @@
     
     
     <item>
+      <title>ドキュメント作成ツール</title>
+      <link>https://solareenlo.com/posts/documentation/</link>
+      <pubDate>Mon, 17 Jun 2019 06:00:00 +0900</pubDate>
+      
+      <guid>https://solareenlo.com/posts/documentation/</guid>
+      <description> https://readthedocs.org https://www.sphinx-doc.org/en/master/ https://www.mkdocs.org  https://github.com/squidfunk/mkdocs-material  https://www.gitbook.com  </description>
+    </item>
+    
+    <item>
       <title>Tezosハンズオン</title>
       <link>https://solareenlo.com/posts/tezos-hands-on/</link>
       <pubDate>Sat, 15 Jun 2019 13:00:00 +0900</pubDate>

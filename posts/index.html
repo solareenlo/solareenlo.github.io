@@ -181,6 +181,17 @@ https://github.com/alex-shpak/hugo-book
   
   <article class="markdown">
     <h2>
+      <a href="/posts/documentation/">ドキュメント作成ツール</a>
+    </h2>
+    <h5>
+      <strong>Jun 17, 2019</strong>
+    </h5>
+    <p> https://readthedocs.org https://www.sphinx-doc.org/en/master/ https://www.mkdocs.org  https://github.com/squidfunk/mkdocs-material  https://www.gitbook.com  
+    </p>
+  </article>
+  
+  <article class="markdown">
+    <h2>
       <a href="/posts/tezos-hands-on/">Tezosハンズオン</a>
     </h2>
     <h5>
@@ -297,24 +308,6 @@ bitcoin-cli getblockchaininfo  とか.
 2. cURLを使ってアクセスする. 下記curlを行う要件.
  ネットワーク: mainnet 接続環境: ローカル ポート番号: 8332 ユーザーの名前: user-name パスワード: user-password 投げつけているbitcoin-cliのメソッド: getblockchaininfo  curl --data-binary '{&quot;jsonrpc&quot;:&quot;1.0&quot;,&quot;id&quot;:&quot;curltext&quot;,&quot;method&quot;:&quot;getblockchaininfo&quot;,&quot;params&quot;:[]}' -H 'content-type:text/plain;' http://user-name:user-password@127.0.0.1:8332/ | jq  3. 自作プログラムでPOSTしてアクセスする. bitcoindはHTTPリクエストメソッドのPOSTに対応しているので, JSON-RPCをPOSTで投げつける. 以下のプログラムはNode.jsを使った例.
  https://github.com/solareenlo/bc-json-rpc  
-    </p>
-  </article>
-  
-  <article class="markdown">
-    <h2>
-      <a href="/posts/how-to-make-this-site/">このサイトの作り方</a>
-    </h2>
-    <h5>
-      <strong>Apr 16, 2019</strong>
-    </h5>
-    <p>Macユーザー用
- ものすごい初歩からこのサイトの作り方を説明しています. この手順で作成するとGitHubに全ての内容/更新履歴/更新内容が公開されますので, 適宜読み替えてください.
-Macにgitをインストールする https://git-scm.com/download/mac
-GitHubにアカウントを作成する https://github.com
-MacにHomebrewをインストールする /usr/bin/ruby -e &#34;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&#34;  References:  https://brew.sh/index_ja.html https://github.com/Homebrew/brew   MacにHugo(静的サイトジェネレーター)をインストールする brew install hugo  Reference: Install Hugo  HugoのExtendedバージョンをインストールする 以下内容をhugo_latest.sh名で保存する.
-# hugo_latest.sh # Find the latest Hugo from GitHub echo &#39;🐹 Starting Hugo Install / Update 🐹&#39; echo &#39; Note: Please be sure to have curl and grep installed&#39; echo &#39;&#39; url=$(curl -s &#34;https://api.github.com/repositories/11180687/releases/latest&#34; | grep -o &#39;https://.
-        <a href="/posts/how-to-make-this-site/">...</a>
-      
     </p>
   </article>
   

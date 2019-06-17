@@ -5,10 +5,28 @@
     <link>https://solareenlo.com/categories/</link>
     <description>Recent content in Categories on solareenlo</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 15 Jun 2019 13:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 17 Jun 2019 06:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://solareenlo.com/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>docs</title>
+      <link>https://solareenlo.com/categories/docs/</link>
+      <pubDate>Mon, 17 Jun 2019 06:00:00 +0900</pubDate>
+      
+      <guid>https://solareenlo.com/categories/docs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>documentation</title>
+      <link>https://solareenlo.com/categories/documentation/</link>
+      <pubDate>Mon, 17 Jun 2019 06:00:00 +0900</pubDate>
+      
+      <guid>https://solareenlo.com/categories/documentation/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Hands-on</title>

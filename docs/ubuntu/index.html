@@ -224,7 +224,107 @@ sudo reboot</code></pre></div>
 <p>snapとはLinuxのパッケージ管理システムの1つ.</p>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">snap refresh</code></pre></div>
 <h2 id="バージョン確認">バージョン確認</h2>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat /etc/os-release</code></pre></div></article>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat /etc/os-release</code></pre></div>
+<h2 id="aptチートシート">aptチートシート</h2>
+
+<table>
+<thead>
+<tr>
+<th>コマンド</th>
+<th>内容</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>sudo apt update</td>
+<td>リポジトリ一覧を更新<br>(リポジトリ追加・削除時には必ず実行すること)</td>
+</tr>
+
+<tr>
+<td>sudo apt upgrade</td>
+<td>パッケージを更新<br>(通常のパッケージ更新時はこのコマンドを使用する)</td>
+</tr>
+
+<tr>
+<td>sudo apt full-upgrade</td>
+<td>パッケージを更新<br>(保留されているパッケージを更新するときに使用する)</td>
+</tr>
+
+<tr>
+<td>sudo apt autoremove</td>
+<td>更新に伴い必要なくなったパッケージを削除<br>(apt実行時にこのコマンドを実行するよう表示されたら実行する)</td>
+</tr>
+
+<tr>
+<td>sudo apt install {パッケージ名やdebファイルのパス}</td>
+<td>パッケージやdebファイルをインストール</td>
+</tr>
+
+<tr>
+<td>sudo apt remove {パッケージ名}</td>
+<td>パッケージを削除</td>
+</tr>
+
+<tr>
+<td>sudo apt remove &ndash;purge {パッケージ名}</td>
+<td>パッケージを完全削除</td>
+</tr>
+
+<tr>
+<td>sudo apt show {パッケージ名}</td>
+<td>パッケージの詳細情報を表示</td>
+</tr>
+
+<tr>
+<td>sudo apt list {パッケージ名}</td>
+<td>パッケージを検索(完全一致)</td>
+</tr>
+
+<tr>
+<td>sudo apt search {パッケージ名}</td>
+<td>パッケージを検索(部分一致)</td>
+</tr>
+
+<tr>
+<td>sudo dpkg -l</td>
+<td>インストール済みのパッケージ一覧を表示</td>
+</tr>
+
+<tr>
+<td>sudo dpkg -L {パッケージ名}</td>
+<td>パッケージのインストール先を表示</td>
+</tr>
+
+<tr>
+<td>cat /var/log/apt/history.log</td>
+<td>aptコマンドの使用履歴を表示</td>
+</tr>
+
+<tr>
+<td>sudo apt autoclean</td>
+<td>キャッシュされているが, インストールはされていないdebファイルを削除</td>
+</tr>
+
+<tr>
+<td>sudo apt clean</td>
+<td>キャッシュされている全てのdebファイルを削除</td>
+</tr>
+
+<tr>
+<td>echo &ldquo;{パッケージ名} hold&rdquo;</td>
+<td>dpkg &ndash;set-selections</td>
+</tr>
+
+<tr>
+<td>echo &ldquo;{パッケージ名} install&rdquo;</td>
+<td>dpkg &ndash;set-selections</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Referecne:</strong> <a href="https://qiita.com/SUZUKI_Masaya/items/1fd9489e631c78e5b007">aptコマンドチートシート</a></p>
+</article>
 
       
 <div class="book-footer justify-between">
@@ -263,6 +363,7 @@ sudo reboot</code></pre></div>
 <li><a href="#mountしているssdのlabel名を変更する">mountしているSSDのlabel名を変更する</a></li>
 <li><a href="#snapでのupdate">snapでのupdate</a></li>
 <li><a href="#バージョン確認">バージョン確認</a></li>
+<li><a href="#aptチートシート">aptチートシート</a></li>
 </ul></li>
 </ul>
 </nav>
