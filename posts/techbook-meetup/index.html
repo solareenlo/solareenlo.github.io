@@ -12,7 +12,7 @@
 <title>
   
     
-    Jenkins
+    技術書典ミートアップ
   
  | solareenlo</title>
 
@@ -35,7 +35,6 @@ https://github.com/alex-shpak/hugo-book
 <body>
   <input type="checkbox" style="display: none" id="menu-control" />
   <main class="flex container">
-
     <aside class="book-menu fixed">
       <nav>
 <h2 class="book-brand">
@@ -50,7 +49,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   <style>
-  nav ul a[href$="\2f docs\2fjenkins\2f "] {
+  nav ul a[href$="\2fposts\2ftechbook-meetup\2f "] {
       color: #004ed0;
   }
   </style>
@@ -161,7 +160,7 @@ https://github.com/alex-shpak/hugo-book
 
     </aside>
 
-    <div class="book-page">
+    <div class="book-posts">
       <header class="align-center justify-between book-header">
   <label for="menu-control">
     <img src="/svg/menu.svg" alt="Menu" />
@@ -169,62 +168,161 @@ https://github.com/alex-shpak/hugo-book
   <strong>
   
     
-    Jenkins
+    技術書典ミートアップ
   
 </strong>
 </header>
 
       
+
+<header class="markdown">
+  <h1>技術書典ミートアップ</h1>
+  <h5>
+    <strong>Jun 28, 2019</strong>
+  </h5>
+</header>
 <article class="markdown">
 
-<h1 id="jenkinsとは">Jenkinsとは</h1>
+<h2 id="用語説明">用語説明</h2>
 
 <ul>
-<li>オンプレミスのCI/CDツール.</li>
-<li>Jenkinsが全てのビルドプロセスの自動化を行うものではない.</li>
-<li>テストやデプロイなどの各フェーズはそれぞれ専用のツールで自動化を行い, Jenkinsはどういったタイミングでどのツールを呼び出すのかを指示し, エラーが出たら即座にフィードバックを行う処理をする.</li>
-<li><strong>公式サイト:</strong> <a href="https://jenkins.io">https://jenkins.io</a></li>
+<li>同人誌・・・自家製の本のこと
+
+<ul>
+<li>同人誌とは、同じ思考を持った人たちで作る本の一種である.</li>
+<li>個人や仲間と一緒に作り上げる本のこと.</li>
+<li>えっちなのではないよ.</li>
+</ul></li>
+<li>即売会・・・同人誌を頒布したりすること</li>
+<li>頒布・・・ 同人誌を売って布教すること</li>
+<li>サークル・・・本を頒布する側
+
+<ul>
+<li>利益を上げるのが第一目的ではない.</li>
+<li>普及するのが目的.</li>
+</ul></li>
+<li>お客さん・・・本を購入する側</li>
+</ul>
+
+<h2 id="なぜ作るのか">なぜ作るのか？</h2>
+
+<ul>
+<li>楽しいから
+
+<ul>
+<li>知らないことを気軽に知ることができて楽しい.</li>
+</ul></li>
+<li>同好の士を増やすぞ！</li>
+<li>体験を共有したい！（成功・失敗を問わず, 俺屍）</li>
+</ul>
+
+<h2 id="どうやって作るのか">どうやって作るのか？</h2>
+
+<ul>
+<li>印刷所に頼む
+
+<ul>
+<li>日光企画さんかねこのしっぽさん</li>
+</ul></li>
+<li>コピー機で頑張って作る
+
+<ul>
+<li>sevenelevenさんのコピー機で一応作れる</li>
+</ul></li>
+<li>電子書籍
+
+<ul>
+<li>QRコードで頒布する</li>
+</ul></li>
+<li>紙の本がとても人気があります.
+
+<ul>
+<li>紙の本が売り切れたら電子書籍を売るパターンが多いそうです.</li>
+</ul></li>
+</ul>
+
+<h2 id="使うツールは">使うツールは？</h2>
+
+<ul>
+<li>Re:VIEWがオススメ.</li>
+<li>GitHubで差分を見やすく, mergeしやすい形式がオススメです.</li>
+<li>markdownよりもRe:VIEWを使うのが便利.</li>
+<li>md2review（markdown &gt; Re:VIEW）</li>
+</ul>
+
+<h2 id="本が間に合わなかったら">本が間に合わなかったら？</h2>
+
+<ul>
+<li>本がなくてブースに座るのは辛い思いをします.</li>
+<li>6割でも出しましょう.</li>
+<li>無断欠席は次回以降出禁になります.</li>
+</ul>
+
+<h2 id="必要な経費">必要な経費</h2>
+
+<ul>
+<li>一般(参加費7,000円)とパトロン(参加費20,000円)の抽選確率の違いはない.
+
+<ul>
+<li>パトロンは名誉職.</li>
+</ul></li>
+<li>日光企画さんと猫の尻尾さんが公式の印刷会社さん
+
+<ul>
+<li>当日は印刷物がブースに届きます.</li>
+</ul></li>
+</ul>
+
+<h2 id="税金の処理">税金の処理</h2>
+
+<ul>
+<li>経済活動したら税金を払いましょう.</li>
+<li>雑所得となります.
+
+<ul>
+<li>年間20万円以上の場合は申告義務があります.</li>
+</ul></li>
+</ul>
+
+<h2 id="本を作る技術">本を作る技術</h2>
+
+<ul>
+<li>イベント申し込み, 印刷手配, 広報活動, 小銭</li>
+<li>あの布屋で備品を購入する.
+
+<ul>
+<li>テーブルの上にかける布です.</li>
+</ul></li>
+</ul>
+
+<h2 id="アドバイス">アドバイス</h2>
+
+<ul>
+<li>無理に誰かと組む必要はない.</li>
+<li>1人で店番は無理.
+
+<ul>
+<li>他の人のブースも見たい.</li>
+<li>トイレ, 昼食もしたい.</li>
+</ul></li>
+<li>誰かにレビューを依頼するのは良い考え.
+
+<ul>
+<li>自分1人で書くと分かりづらい.</li>
+<li>対象読者を見つけて読んでもらうの良い.</li>
+<li>自分よりわかっている人に読んでもらうのも良い.</li>
+<li>専門用語を使うかは考えどころ.</li>
+<li>文化圏の違う人にも読んでもらう.</li>
+</ul></li>
+<li>早めに書いて, 早めに入稿.</li>
+<li>紙も電子も用意する.</li>
 </ul>
 </article>
 
       
-<div class="book-footer justify-between">
-  
-  <div>
-    
-    <a href="https://github.com/solareenlo/blog-hugo/commit/17c915348a4fd46a389a40c57ba672d458a76325" title='Last modified May 26, 2019 by solareenlo' target="_blank" rel="noopener">
-      <img src="/svg/calendar.svg" alt="Changed" /> May 26, 2019
-    </a>
-  </div>
-  
-  
-  <div>
-    <a href="https://github.com/solareenlo/blog-hugo/edit/master/content/docs/jenkins.md" target="_blank" rel="noopener">
-      <img src="/svg/edit.svg" alt="Edit" /> Edit this page
-    </a>
-  </div>
-  
-</div>
-
-
-      
     </div>
-
-    
-  
-
-  <aside class="book-toc level-6 fixed">
-    <nav id="TableOfContents">
-<ul>
-<li><a href="#jenkinsとは">Jenkinsとは</a></li>
-</ul>
-</nav>
-  </aside>
-
-
-
   </main>
-  
+
   
   
 </body>

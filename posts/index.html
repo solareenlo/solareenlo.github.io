@@ -19,7 +19,7 @@
 
 
 
-<link rel="stylesheet" href="/book.min.b6815c57c7de721f1d5f123a5d75e5b3ce8572e690f5b52ba1d781ca63774d3f.css">
+<link rel="stylesheet" href="/book.min.d505565205f54138f6ba35d1c0feeec6b9f14446f36d46b2dc6a2a23b0a667f0.css">
 
 
 <link rel="icon" href="/favicon.png" type="image/x-icon">
@@ -182,6 +182,19 @@ https://github.com/alex-shpak/hugo-book
   
   <article class="markdown">
     <h2>
+      <a href="/posts/techbook-meetup/">技術書典ミートアップ</a>
+    </h2>
+    <h5>
+      <strong>Jun 28, 2019</strong>
+    </h5>
+    <p>用語説明  同人誌・・・自家製の本のこと  同人誌とは、同じ思考を持った人たちで作る本の一種である. 個人や仲間と一緒に作り上げる本のこと. えっちなのではないよ.  即売会・・・同人誌を頒布したりすること 頒布・・・ 同人誌を売って布教すること サークル・・・本を頒布する側  利益を上げるのが第一目的ではない. 普及するのが目的.  お客さん・・・本を購入する側  なぜ作るのか？  楽しいから  知らないことを気軽に知ることができて楽しい.  同好の士を増やすぞ！ 体験を共有したい！（成功・失敗を問わず, 俺屍）  どうやって作るのか？  印刷所に頼む  日光企画さんかねこのしっぽさん  コピー機で頑張って作る  sevenelevenさんのコピー機で一応作れる  電子書籍  QRコードで頒布する  紙の本がとても人気があります.  紙の本が売り切れたら電子書籍を売るパターンが多いそうです.   使うツールは？  Re:VIEWがオススメ. GitHubで差分を見やすく, mergeしやすい形式がオススメです. markdownよりもRe:VIEWを使うのが便利. md2review（markdown &gt; Re:VIEW）  本が間に合わなかったら？  本がなくてブースに座るのは辛い思いをします. 6割でも出しましょう. 無断欠席は次回以降出禁になります.  必要な経費  一般(参加費7,000円)とパトロン(参加費20,000円)の抽選確率の違いはない.  パトロンは名誉職.  日光企画さんと猫の尻尾さんが公式の印刷会社さん  当日は印刷物がブースに届きます.
+        <a href="/posts/techbook-meetup/">...</a>
+      
+    </p>
+  </article>
+  
+  <article class="markdown">
+    <h2>
       <a href="/posts/documentation/">ドキュメント作成ツール</a>
     </h2>
     <h5>
@@ -290,25 +303,6 @@ References  「Programming Bitcoin」を読んだ jimmysong/programmingbitcoin �
 特徴  Exit Game Operatorが資金をかっさらう事がある. それに対する対策を行った. Gas Const/Proof Size Reduction Instantaneous Finality Fast Finality Contract に供託しておく. ユーザー, マーチャント, オペレーター, Ethereum オペレーターまではhttpsで通信する. オペレーターまでなら2秒以下でファイナリティが得られる. Ethereumのブロックチェーンまで待つと2.5分から7分かかる. Plasma MVP → Plasma Cash → Plasma Cashflow → ?
         <a href="/posts/plasma-substrate01/">...</a>
       
-    </p>
-  </article>
-  
-  <article class="markdown">
-    <h2>
-      <a href="/posts/bitcoind/">bitcoindへのアクセス方法</a>
-    </h2>
-    <h5>
-      <strong>Apr 17, 2019</strong>
-    </h5>
-    <p> bitcoindへのアクセス方法3選(bitcoin-cli, curl, POST). 3つともJSON-RPCで通信してる.
- bitcoindとは, 名前の通りunixのデーモンとして動作する事を目的とするBitcoinのクライアントで, JSON-RPCで開発者向けのAPIを提供する. したがって, Webサービスとして動作するBitcoinウォレットのバックエンドとしてや, マイニングプールのサーバーとして使われる.
-Reference: Bitcoinウォレットの比較
- 1. bitcoin-cliを使ってアクセスする.  bitcoin-cliとは, bitcoindへJSON-RPCを使ってアクセスするツールのこと.
- bitcoindを使ってBitcoinのフルノードを立ち上げて,
-bitcoin-cli getblockchaininfo  とか.
-2. cURLを使ってアクセスする. 下記curlを行う要件.
- ネットワーク: mainnet 接続環境: ローカル ポート番号: 8332 ユーザーの名前: user-name パスワード: user-password 投げつけているbitcoin-cliのメソッド: getblockchaininfo  curl --data-binary '{&quot;jsonrpc&quot;:&quot;1.0&quot;,&quot;id&quot;:&quot;curltext&quot;,&quot;method&quot;:&quot;getblockchaininfo&quot;,&quot;params&quot;:[]}' -H 'content-type:text/plain;' http://user-name:user-password@127.0.0.1:8332/ | jq  3. 自作プログラムでPOSTしてアクセスする. bitcoindはHTTPリクエストメソッドのPOSTに対応しているので, JSON-RPCをPOSTで投げつける. 以下のプログラムはNode.jsを使った例.
- https://github.com/solareenlo/bc-json-rpc  
     </p>
   </article>
   

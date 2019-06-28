@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>techbook on solareenlo</title>
+    <link>https://solareenlo.com/tags/techbook/</link>
+    <description>Recent content in techbook on solareenlo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 28 Jun 2019 18:00:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://solareenlo.com/tags/techbook/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>技術書典ミートアップ</title>
+      <link>https://solareenlo.com/posts/techbook-meetup/</link>
+      <pubDate>Fri, 28 Jun 2019 18:00:00 +0900</pubDate>
+      
+      <guid>https://solareenlo.com/posts/techbook-meetup/</guid>
+      <description>用語説明  同人誌・・・自家製の本のこと  同人誌とは、同じ思考を持った人たちで作る本の一種である. 個人や仲間と一緒に作り上げる本のこと. えっちなのではないよ.  即売会・・・同人誌を頒布したりすること 頒布・・・ 同人誌を売って布教すること サークル・・・本を頒布する側  利益を上げるのが第一目的ではない. 普及するのが目的.  お客さん・・・本を購入する側  なぜ作るのか？  楽しいから  知らないことを気軽に知ることができて楽しい.  同好の士を増やすぞ！ 体験を共有したい！（成功・失敗を問わず, 俺屍）  どうやって作るのか？  印刷所に頼む  日光企画さんかねこのしっぽさん  コピー機で頑張って作る  sevenelevenさんのコピー機で一応作れる  電子書籍  QRコードで頒布する  紙の本がとても人気があります.  紙の本が売り切れたら電子書籍を売るパターンが多いそうです.   使うツールは？  Re:VIEWがオススメ. GitHubで差分を見やすく, mergeしやすい形式がオススメです. markdownよりもRe:VIEWを使うのが便利. md2review（markdown &amp;gt; Re:VIEW）  本が間に合わなかったら？  本がなくてブースに座るのは辛い思いをします. 6割でも出しましょう. 無断欠席は次回以降出禁になります.  必要な経費  一般(参加費7,000円)とパトロン(参加費20,000円)の抽選確率の違いはない.  パトロンは名誉職.  日光企画さんと猫の尻尾さんが公式の印刷会社さん  当日は印刷物がブースに届きます.</description>
+    </item>
+    
+  </channel>
+</rss>
