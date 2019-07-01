@@ -312,7 +312,7 @@ https://github.com/alex-shpak/hugo-book
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#719e07">FROM</span><span style="color:#2aa198"> node:10.16.0-alpine</span>
 
 <span style="color:#719e07">RUN</span> apk update <span style="color:#cb4b16">\
-</span><span style="color:#cb4b16"></span>  <span style="color:#719e07">&amp;&amp;</span> npm install -g @angular/cli@8.0.0 <span style="color:#cb4b16">\
+</span><span style="color:#cb4b16"></span>  <span style="color:#719e07">&amp;&amp;</span> npm install -g @angular/cli@8.0.6 <span style="color:#cb4b16">\
 </span><span style="color:#cb4b16"></span>  <span style="color:#719e07">&amp;&amp;</span> rm -rf /tmp/* /var/cache/apk/* *.tar.gz ~/.npm <span style="color:#cb4b16">\
 </span><span style="color:#cb4b16"></span>  <span style="color:#719e07">&amp;&amp;</span> npm cache clear --force <span style="color:#cb4b16">\
 </span><span style="color:#cb4b16"></span>  <span style="color:#719e07">&amp;&amp;</span> yarn cache clean <span style="color:#cb4b16">\
