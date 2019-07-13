@@ -231,8 +231,9 @@ source ~/.bashrc branch local branchから新branch作成 cd ディレクトリ 
       
       <guid>https://solareenlo.com/docs/github/</guid>
       <description>GitHubとは  ソフトウェア開発のプラットフォーム兼ソースコードなどのホスティングサービス. https://github.com  GitHubとGitLab同時にpush 先ずは普通にGitHubとGitLabにリポジトリを作成し, リモートリポジトリを追加する.
-# GitLabのリポジトリをリモートに追加 git remote set-url --add origin git@gitlab.com/solareenlo/リポジトリ名.git # 確認 git remote -v &amp;gt; origin git@github.com:solareenlo/リポジトリ名.git (fetch) &amp;gt; origin git@github.com:solareenlo/リポジトリ名.git (push) &amp;gt; origin git@gitlab.com:solareenlo/リポジトリ名.git (push) # 以下を行うとGitHubとGitLabに同時にpushされる. git push -u origin master GitHub Pagesで静的サイトを公開する cd 作業ディレクトリ名 git checkout -b gh-pages vim index.html // index.htmlを作成 git push -u origin gh-pages gh-pagesという名前のブランチにindex.htmlファイルを作っておけば, それが静的サイトとして「https://ユーザー名.github.io/リポジトリ名」として公開される.
-リポジトリに他のリポジトリをリンク付けする git submodule add -b &amp;lt;リンク付けする方のブランチ名&amp;gt; &amp;lt;リンク付けする方のURL&amp;gt; &amp;lt;リンク付けされるディレクトリ名&amp;gt; リポジトリをforkして更新する fork -&amp;gt; clone -&amp;gt; remote -&amp;gt; fetch -&amp;gt; marge -&amp;gt; push</description>
+# GitLabのリポジトリをリモートに追加 git remote set-url --add origin git@gitlab.com/solareenlo/リポジトリ名.git # 確認 git remote -v &amp;gt; origin git@github.com:solareenlo/リポジトリ名.git (fetch) &amp;gt; origin git@github.com:solareenlo/リポジトリ名.git (push) &amp;gt; origin git@gitlab.com:solareenlo/リポジトリ名.git (push) # 以下を行うとGitHubとGitLabに同時にpushされる. git push -u origin master リポジトリに他のリポジトリをリンク付けする git submodule add -b &amp;lt;リンク付けする方のブランチ名&amp;gt; &amp;lt;リンク付けする方のURL&amp;gt; &amp;lt;リンク付けされるディレクトリ名&amp;gt; リポジトリをforkして更新する fork -&amp;gt; clone -&amp;gt; remote -&amp;gt; fetch -&amp;gt; marge -&amp;gt; push
+ssh接続ができなくなったときは ~/.ssh/configの中身を
+Host github github.com Hostname github.com Port 22 User git IdentityFile ~/.</description>
     </item>
     
     <item>
