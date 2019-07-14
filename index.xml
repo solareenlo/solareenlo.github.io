@@ -666,6 +666,17 @@ vim # vimモードに突入 :!ls # lsを表示してくれる 新規にファイ
     </item>
     
     <item>
+      <title></title>
+      <link>https://solareenlo.com/docs/zeit-now/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://solareenlo.com/docs/zeit-now/</guid>
+      <description>ZEIT Nowとは  サーバーレスデプロイのためのクラウドプラットフォームサービスのこと.  サブドメインの割り当て方  まずはメインドメインをNowに登録する.
+now domains add iotajapan.com サブドメインのエイリアスを登録しようとする.
+# 以下を実行すると, now alias https://my-docs.test.now.sh docs.iotajapan.com # 以下のようなエラーが返ってくる. Error! We could not alias since the domain iotajapan.com could not be verified due to the following reasons: a) Nameservers verification failed since we see a different set than the intended set: Intended Nameservers Current Nameservers c.zeit-world.co.uk 01.dnsv.jp ☓ d.zeit-world.org 02.dnsv.jp ☓ e.zeit-world.com 03.dnsv.jp ☓ f.zeit-world.net 04.dnsv.jp ☓ b) DNS TXT verification failed since found no matching records.</description>
+    </item>
+    
+    <item>
       <title>Bitcoin</title>
       <link>https://solareenlo.com/docs/bitcoin/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

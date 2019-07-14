@@ -21,19 +21,19 @@
   
   <url>
     <loc>https://solareenlo.com/categories/</loc>
-    <lastmod>2019-07-09T13:31:16+09:00</lastmod>
+    <lastmod>2019-07-15T03:55:02+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://solareenlo.com/posts/</loc>
-    <lastmod>2019-07-09T13:31:16+09:00</lastmod>
+    <lastmod>2019-07-15T03:55:02+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://solareenlo.com/tags/</loc>
-    <lastmod>2019-07-09T13:31:16+09:00</lastmod>
+    <lastmod>2019-07-15T03:55:02+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -51,31 +51,31 @@
   
   <url>
     <loc>https://solareenlo.com/categories/meetup/</loc>
-    <lastmod>2019-06-28T21:18:20+09:00</lastmod>
+    <lastmod>2019-07-15T03:55:02+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://solareenlo.com/tags/meetup/</loc>
-    <lastmod>2019-06-28T21:18:20+09:00</lastmod>
+    <lastmod>2019-07-15T03:55:02+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://solareenlo.com/categories/techbook/</loc>
-    <lastmod>2019-06-28T21:18:20+09:00</lastmod>
+    <lastmod>2019-07-15T03:55:02+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://solareenlo.com/tags/techbook/</loc>
-    <lastmod>2019-06-28T21:18:20+09:00</lastmod>
+    <lastmod>2019-07-15T03:55:02+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://solareenlo.com/posts/techbook-meetup/</loc>
-    <lastmod>2019-06-28T21:18:20+09:00</lastmod>
+    <lastmod>2019-07-15T03:55:02+09:00</lastmod>
   </url>
   
   <url>
@@ -604,6 +604,11 @@
   
   <url>
     <loc>https://solareenlo.com/docs/white-paper/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://solareenlo.com/docs/zeit-now/</loc>
     <priority>0</priority>
   </url>
   
