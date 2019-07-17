@@ -434,6 +434,236 @@ rustup target add x86_64-unknown-linux-musl <span style="color:#586e75"># クロ
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cargo -h <span style="color:#586e75"># 基本的なコマンドを表示する</span>
 cargo --list <span style="color:#586e75"># すべてのコマンドを表示する</span>
 cargo <span style="color:#b58900">command</span> &lt;コマンド名&gt; <span style="color:#586e75"># コマンドのヘルプドキュメントを表示する</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th>種類</th>
+<th>基本コマンド</th>
+<th>機能</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>パッケージの作成</td>
+<td>new</td>
+<td>テンプレートを元に新しいパッケージを作成する.</td>
+</tr>
+
+<tr>
+<td>〃</td>
+<td>init</td>
+<td>カレントディレクトリをパッケージとして初期化する.<br>(Cargo.tomlの追加とVCSの初期化のみを行う.)</td>
+</tr>
+
+<tr>
+<td>パッケージのビルド, テスト, 実行</td>
+<td>check</td>
+<td>ソースコードのエラーチェックを行う.</td>
+</tr>
+
+<tr>
+<td>〃</td>
+<td>build</td>
+<td>ソースコードのエラーチェックを行い, OKならばバイナリまたはライブラ入りを生成する.</td>
+</tr>
+
+<tr>
+<td>〃</td>
+<td>run</td>
+<td>buildを実行し, OKならば生成されたバイナリを実行する.</td>
+</tr>
+
+<tr>
+<td>〃</td>
+<td>test</td>
+<td>テストを実行する.</td>
+</tr>
+
+<tr>
+<td>〃</td>
+<td>bench</td>
+<td>ベンチマークプログラムを実行する.</td>
+</tr>
+
+<tr>
+<td>〃</td>
+<td>doc</td>
+<td>このパッケージ自体と依存するクレートのドキュメントを生成する.</td>
+</tr>
+
+<tr>
+<td>〃</td>
+<td>clean</td>
+<td>targetディレクトリを削除する.</td>
+</tr>
+
+<tr>
+<td>依存クレートの管理</td>
+<td>update</td>
+<td>Cargo.lockでロックされた依存クレートのバージョンを, レジストリ(crates.io)で公開されている最新のバージョンに更新する.</td>
+</tr>
+
+<tr>
+<td>クレートの検索, 公開</td>
+<td>search</td>
+<td>レジストリに登録されたクレートを検索する.</td>
+</tr>
+
+<tr>
+<td>〃</td>
+<td>publish</td>
+<td>このパッケージ(クレート)をレジストリで公開する.</td>
+</tr>
+
+<tr>
+<td>Rustバイナリの管理</td>
+<td>install</td>
+<td>Rustバイナリをインストールする.</td>
+</tr>
+
+<tr>
+<td>〃</td>
+<td>uninstall</td>
+<td>Rustバイナリをアンインストールする.</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="カスタムサブコマンド">カスタムサブコマンド</h3>
+
+<ul>
+<li>Cargoにはコマンドを追加できる.</li>
+<li><a href="https://github.com/rust-lang/cargo/wiki/Third-party-cargo-subcommands">Cargoのwikiページ</a>にはサードパーティによる代表的なカスタムサブコマンドが掲載されている.</li>
+<li>以下は代表的なカスタムサブコマンドの例.</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>クレート名</th>
+<th>追加されるコマンド</th>
+<th>機能</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>cargo-generate</td>
+<td>gen</td>
+<td>自作テンプレートからパッケージを作成する.</td>
+</tr>
+
+<tr>
+<td>cargo-modules</td>
+<td>modules</td>
+<td>パッケージ内のモジュールのアトリビュートや依存関係を表示する.</td>
+</tr>
+
+<tr>
+<td>cargo-count</td>
+<td>count</td>
+<td>パッケージ内のソースコードの行数やunsafeなコードの割合を集計する.</td>
+</tr>
+
+<tr>
+<td>cargo-expand</td>
+<td>expand</td>
+<td>マクロや#[derive]が展開された後のソースコードを表示する.</td>
+</tr>
+
+<tr>
+<td>cargo-edit</td>
+<td>add, upgrade, rm</td>
+<td>Cargo.tomlに依存クレートのエントリを追加する.</td>
+</tr>
+
+<tr>
+<td>cargo-license</td>
+<td>license</td>
+<td>パッケージが依存しているクレートのオープンソースライセンスを表示する</td>
+</tr>
+
+<tr>
+<td>cargo-tree</td>
+<td>tree</td>
+<td>パッケージが依存してるクレートの情報をツリー形式で表示する.</td>
+</tr>
+
+<tr>
+<td>cargo-outdated</td>
+<td>outdated</td>
+<td>パッケージが依存しているクレートに新しいバージョンがあるかチェックして, その情報を表示する.</td>
+</tr>
+
+<tr>
+<td>cargo-kcov</td>
+<td>kcov</td>
+<td>テストカバレージ情報を収集する(コードカバレージテスターにはkcovを使用).</td>
+</tr>
+
+<tr>
+<td>cargo-tarpaulin</td>
+<td>tarpaulin</td>
+<td>テストカバレージ情報を収集する(Ruby製のコードカバレージテスターを使用).</td>
+</tr>
+
+<tr>
+<td>cargo-readme</td>
+<td>readme</td>
+<td>main.rsやlib.rsのdocコメントからREADME.mdファイルを生成する.</td>
+</tr>
+
+<tr>
+<td>cargo-release</td>
+<td>release</td>
+<td>パッケージのリリース作業を定型化する.</td>
+</tr>
+
+<tr>
+<td>cargo-xbuild</td>
+<td>xbuild</td>
+<td>クロスコンパイル用のターゲットを管理する.</td>
+</tr>
+
+<tr>
+<td>cargo-asm</td>
+<td>asm, llvm-ir</td>
+<td>Rustソースコードをコンパイルして得られたアセンブリコードやLLVM-IRコードを表示する.</td>
+</tr>
+
+<tr>
+<td>cargo-profiler</td>
+<td>profile callgrind, profile cachegrind</td>
+<td>valgrindを使用してバイナリ実行時のプロファイル情報を収集する.</td>
+</tr>
+
+<tr>
+<td>cargo-bloat</td>
+<td>bloat</td>
+<td>生成されるバイナリファイルの中で大きなスペースを占める関数やクレートを表示する.</td>
+</tr>
+
+<tr>
+<td>cargo-local-registry</td>
+<td>local-registry</td>
+<td>ローカルのクレートリポジトリを管理する. オフラインビルドに便利.</td>
+</tr>
+
+<tr>
+<td>cargo-clone</td>
+<td>clone</td>
+<td>クレートのソースコードを<code>git clone</code>で取得する.</td>
+</tr>
+
+<tr>
+<td>cargo-update</td>
+<td>install-update</td>
+<td><code>cargo install</code>でインストールしたRustバイナリに新しいバージョンがあったらアップグレードする.</td>
+</tr>
+</tbody>
+</table>
+
 <h2 id="hello-world">Hello World!</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir rust
 <span style="color:#b58900">cd</span> rust
@@ -505,8 +735,8 @@ rust-lldb ./target/degub/rpn <span style="color:#586e75"># バイナリを対象
   
   <div>
     
-    <a href="https://github.com/solareenlo/blog-hugo/commit/9e8499c3d491bca2edb723586ac1a32383427d7e" title='Last modified Jul 17, 2019 by solareenlo' target="_blank" rel="noopener">
-      <img src="/svg/calendar.svg" alt="Changed" /> Jul 17, 2019
+    <a href="https://github.com/solareenlo/blog-hugo/commit/4ee075df2e9e513fa75b26efc18fb4171926f937" title='Last modified Jul 18, 2019 by solareenlo' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" alt="Changed" /> Jul 18, 2019
     </a>
   </div>
   
@@ -569,6 +799,7 @@ rust-lldb ./target/degub/rpn <span style="color:#586e75"># バイナリを対象
 <ul>
 <li><a href="#cargoとは">Cargoとは</a></li>
 <li><a href="#基本コマンド-1">基本コマンド</a></li>
+<li><a href="#カスタムサブコマンド">カスタムサブコマンド</a></li>
 </ul></li>
 <li><a href="#hello-world">Hello World!</a></li>
 <li><a href="#ターミナルからのデバッグ">ターミナルからのデバッグ</a></li>

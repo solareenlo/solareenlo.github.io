@@ -75,8 +75,7 @@ chmod 600 sshkey.pem ssh -i sshkey.pem ec2-user@000.000.000.000 後は普通のV
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://solareenlo.com/docs/cloud/</guid>
-      <description> クラウドコンピューティングとは クラウドサービスプラットフォームからインターネット経由で処理能力, データベースストレージ, アプリケーション, および他のITリソースをオンデマンドかつ従量制料金で利用するシステムのこと.
-比較  ilyas-it83/CloudComparer  </description>
+      <description> クラウドコンピューティングとは  クラウドサービスプラットフォームからインターネット経由で処理能力, データベースストレージ, アプリケーション, および他のITリソースをオンデマンドかつ従量制料金で利用するシステムのこと.  比較  ilyas-it83/CloudComparer  </description>
     </item>
     
     <item>
@@ -100,9 +99,7 @@ sudo chown solareenlo:solareenlo ファイル名 # 再帰的に変更 sudo chown
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://solareenlo.com/docs/container/</guid>
-      <description>コンテナ技術とは OS上に他のプロセスからは隔離されたアプリケーション実行環境を構築することで, 仮想的な動作環境をより少ないコンピュータリソースで実現する技術のこと.
-Reference: コンテナ技術とは何？
-コンテナとは  コンテンは仮想マシンの一種. コンテナ型仮想化という技術を使っている. 特徴  コンテナの容量が小さい 現実的な速度で, インターネット経由で受け渡しできる. 動作が軽い １つのホストOS上でたくさんのコンテナを動かすことができる.  そしてコンテナが増えすぎたので, 複数のコンテナを管理するコンテナ・オーケストレーションが生み出された.  Reference: Kubernetesってなにそれおいしいの？という人向けの超入門</description>
+      <description>コンテナ技術とは  OS上に他のプロセスからは隔離されたアプリケーション実行環境を構築することで, 仮想的な動作環境をより少ないコンピュータリソースで実現する技術のこと. Reference: コンテナ技術とは何？  コンテナとは  コンテンは仮想マシンの一種. コンテナ型仮想化という技術を使っている. 特徴  コンテナの容量が小さい 現実的な速度で, インターネット経由で受け渡しできる. 動作が軽い １つのホストOS上でたくさんのコンテナを動かすことができる.  そしてコンテナが増えすぎたので, 複数のコンテナを管理するコンテナ・オーケストレーションが生み出された.  Reference: Kubernetesってなにそれおいしいの？という人向けの超入門</description>
     </item>
     
     <item>
@@ -120,7 +117,7 @@ Reference: コンテナ技術とは何？
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://solareenlo.com/docs/crypto/</guid>
-      <description>暗号通貨/暗号資産とは 暗号技術を用いた通貨/資産のこと.</description>
+      <description> 暗号通貨/暗号資産とは  暗号技術を用いた通貨/資産のこと.  </description>
     </item>
     
     <item>
@@ -159,10 +156,14 @@ version: &amp;#39;3&amp;#39; services: angular: image: angular-first-app ports: 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://solareenlo.com/docs/docker1/</guid>
-      <description>Dockerとは コンテナ型の仮想環境を作成, 配布, 実行するためのプラットフォームのこと. プロセスを簡単にコンテナ化(isolate)し, 簡単かつ素早く開発・移動・実行できるプラットフォームのこと.
- Dockerコンテナは実行に必要な全てをパッケージして簡単に動かせる Dockerイメージは複数のイメージ・レイヤとメタ情報の積み重なりからできている. コンテナのプロセスはデフォルトでisolate(隔離・分離)された状態  Dockerについての良い読み物1→2018年なぜ私達はコンテナ/Dockerを使うのか. Dockerについての良い読み物2→標準化が進むコンテナとサーバーレス！ 「提供したい価値」から見極める活用の勘所とは【デブサミ2018 福岡】 Dockerについての良い説明→いまさらDockerに入門したので分かりやすくまとめます Dockerについての良いスライド→Docker Compose 徹底解説  公式サイト: https://www.docker.com  Dockerのメリット/デメリット メリット  ゲストOSはホストのKernelを直接使うためオーバーヘッドが小さくて高速 ゲストOSがそれぞれにKernelを持たないため, Memory消費量やDisk消費量を節約できる 必要とする資源が少ないため, 多くのゲストOSを立ち上げることが可能 Kernelを新しく起動する必要がないため, ゲストOSの起動が速い コンテナのイメージ(雛形)からコンテナ(実体)を作るため, 同一構成のOSを簡単に複数作れる テストが通ったイメージは本番環境でもすぐに使える(開発とデプロイのサイクルが速い)  Reference: Dockerの利点   デメリット  提供できるホストの種類が少ない(ホストOSのKernelにLinux使ってたらゲストOSのKernelにWindows Serverは使えない) 完全仮想化に比べて, 管理者が学ぶべきことが多い  Reference: Dockerの欠点   なぜrootユーザーか Dockerはroot権限で動いているデーモン(dockerd)とunixソケットまたはtcp/ipで通信しているが, dockerdにアクセスするにはdockerグループに所属しているかroot権限が必要. そしてdockerはroot無しでアクセスできる様にすると簡単に権限昇格ができてしまい, いろんなことができる様になってしまうから.
+      <description>Dockerとは  コンテナ型の仮想環境を作成, 配布, 実行するためのプラットフォームのこと. プロセスを簡単にコンテナ化(isolate)し, 簡単かつ素早く開発・移動・実行できるプラットフォームのこと.
+ Dockerコンテナは実行に必要な全てをパッケージして簡単に動かせる
+ Dockerイメージは複数のイメージ・レイヤとメタ情報の積み重なりからできている.
+ コンテナのプロセスはデフォルトでisolate(隔離・分離)された状態
+ Dockerについての良い読み物1→2018年なぜ私達はコンテナ/Dockerを使うのか. Dockerについての良い読み物2→標準化が進むコンテナとサーバーレス！ 「提供したい価値」から見極める活用の勘所とは【デブサミ2018 福岡】 Dockerについての良い説明→いまさらDockerに入門したので分かりやすくまとめます Dockerについての良いスライド→Docker Compose 徹底解説  公式サイト: https://www.docker.com
+  Dockerのメリット/デメリット メリット  ゲストOSはホストのKernelを直接使うためオーバーヘッドが小さくて高速 ゲストOSがそれぞれにKernelを持たないため, Memory消費量やDisk消費量を節約できる 必要とする資源が少ないため, 多くのゲストOSを立ち上げることが可能 Kernelを新しく起動する必要がないため, ゲストOSの起動が速い コンテナのイメージ(雛形)からコンテナ(実体)を作るため, 同一構成のOSを簡単に複数作れる テストが通ったイメージは本番環境でもすぐに使える(開発とデプロイのサイクルが速い)  Reference: Dockerの利点   デメリット  提供できるホストの種類が少ない(ホストOSのKernelにLinux使ってたらゲストOSのKernelにWindows Serverは使えない) 完全仮想化に比べて, 管理者が学ぶべきことが多い  Reference: Dockerの欠点   なぜrootユーザーか Dockerはroot権限で動いているデーモン(dockerd)とunixソケットまたはtcp/ipで通信しているが, dockerdにアクセスするにはdockerグループに所属しているかroot権限が必要. そしてdockerはroot無しでアクセスできる様にすると簡単に権限昇格ができてしまい, いろんなことができる様になってしまうから.
 Reference: Dockerでユーザーをdockerグループに追加することの危険性を理解しよう
-インストール方法 Linux編 curl -fsSL get.docker.com -o get-docker.sh sh get-docker.sh 基本的な使い方(v18.09.5) Reference: Dockerコマンドメモ</description>
+インストール方法 Linux編 curl -fsSL get.docker.com -o get-docker.</description>
     </item>
     
     <item>
@@ -201,12 +202,7 @@ Reference: Dockerでユーザーをdockerグループに追加することの危
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://solareenlo.com/docs/gcp/</guid>
-      <description> Google Cloud Platform(GCP)とは Gogleが提供するパブリッククラウドコンピューティングのこと.
-GKE コンテナ化されたアプリケーションをデプロイするためのマネージド型の本番環境のこと.
-Google Kubernetes Engineの略.
-Cloud Shell ブラウザでShellが扱える.
-右上のメニューに起動するためのボタンがある.
-# 使うプロジェクトの設定 gcloud config set project &amp;lt;プロジェクトID&amp;gt; # 使うゾーンの設定 gcloud config set compute/zone asia-east1-c # 使うコンテナクラスタを設定 gcloud container clusters get-credentials &amp;lt;クラスタ名&amp;gt;</description>
+      <description> Google Cloud Platform(GCP)とは  Gogleが提供するパブリッククラウドコンピューティングのこと.  GKE  コンテナ化されたアプリケーションをデプロイするためのマネージド型の本番環境のこと. Google Kubernetes Engineの略.  Cloud Shell  ブラウザでShellが扱える. 右上のメニューに起動するためのボタンがある.  # 使うプロジェクトの設定 gcloud config set project &amp;lt;プロジェクトID&amp;gt; # 使うゾーンの設定 gcloud config set compute/zone asia-east1-c # 使うコンテナクラスタを設定 gcloud container clusters get-credentials &amp;lt;クラスタ名&amp;gt;</description>
     </item>
     
     <item>
@@ -295,9 +291,7 @@ Docker Composeとの違い Docker Composeは動作させるコンテナを意識
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://solareenlo.com/docs/linter-formatter/</guid>
-      <description> Linterとは コードの間違いを指摘するもの.
-Formatterとは コードのスタイルを統一/調整するもの.
-Prettier  JavaScript(including ES2017), JSX, Angular, Vue, Flow, TypeScrip,t CSS, Less, SCSS, HTML, JSON, GraphQL, Markdown, GFM, MDX, YAMLをフォーマットしてくれる. GitHubリポジトリ: prettier/prettier  vimでの使い方  こちらの.vimrcの様にvim-prettierを設定する. 当該のディレクトリで,
+      <description> Linterとは  コードの間違いを指摘するもの.  Formatterとは  コードのスタイルを統一/調整するもの.  Prettier  JavaScript(including ES2017), JSX, Angular, Vue, Flow, TypeScrip,t CSS, Less, SCSS, HTML, JSON, GraphQL, Markdown, GFM, MDX, YAMLをフォーマットしてくれる. GitHubリポジトリ: prettier/prettier  vimでの使い方  こちらの.vimrcの様にvim-prettierを設定する. 当該のディレクトリで,
 yarn add prettier --dev --exact コードを開いて, コードの一番上に// @formatを記入して,
 :w で, 自動でコードをフォーマットしてくれる.
  Reference: prettier/vim-prettier
@@ -334,8 +328,7 @@ if(process.argv.length !== 3) { console.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://solareenlo.com/docs/programming-language/</guid>
-      <description>プログラミング言語とは コンピュータに解釈できるようにつくられた人工言語. コンピュータへの指令であるプログラムを書くのに使われる. いろんな特徴を持っている.
-いろんな指標によるランキング  TIOBE Index (TOIBEによる検索エンジンによる各種プログラミング言語の話題度ランキング) RedMonk (RedMonkによるランキング) Interactive: The Top Programming Languages 2018 (IEEEによる2018年度のランキング) PYPL PopularitY of Programming Language (PYPLによるGoogleによるチュートリアル検索ランキング)  プログラミング言語の型 代表的なもの3つ
+      <description>プログラミング言語とは  コンピュータに解釈できるようにつくられた人工言語. コンピュータへの指令であるプログラムを書くのに使われる. いろんな特徴を持っている.  いろんな指標によるランキング  TIOBE Index (TOIBEによる検索エンジンによる各種プログラミング言語の話題度ランキング) RedMonk (RedMonkによるランキング) Interactive: The Top Programming Languages 2018 (IEEEによる2018年度のランキング) PYPL PopularitY of Programming Language (PYPLによるGoogleによるチュートリアル検索ランキング)  プログラミング言語の型 代表的なもの3つ
    種類 説明     オブジェクト指向型 「モノ」を組み立てるように表現して, コンピュータに動作をさせる.   続き型 上から下まで単調なルールで文章を読むように動作する.   関数型プログラミング 数学の関数のイメージでデータに何かしらの処理をして答えを取得するように動作する.    オブジェクト指向プログラミング いろんな特徴.
    原則 説明     カプセル化 自由なアクセスからデータを保護する仕組み   継承 再利用性を高めて, 冗長性を避けるための強力なツール   ポリモーフィズム メッセージの送信側とメッセージの受信側が動的に決まる仕組み     オブジェクトは, オブジェクトに含まれるデータを操作する関数を有している.</description>
     </item>
@@ -346,8 +339,7 @@ if(process.argv.length !== 3) { console.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://solareenlo.com/docs/programming/</guid>
-      <description>プログラミングとは コンピュータプログラムを作成することにより, 人間の意図した処理を行うようにコンピュータに指示を与える行為のこと. その為の便利なツールがたくさんある.
-プログラミングをするのに役立つツール  プログラミング言語 (C, Java, JavaScript, Pythonなど)  手続き型, オブジェクト指向型, 関数型, 静的型付け, 動的型付けなどいろんな種類がある. 最終的にバイナリデータになって, コンピュータが処理する.  テキストエディタ (Visual Studio Code, Vimなど)  コードを書くのに役に立つエディタ.  統合開発環境 (Visual Studio, Jet Brainsなど)  コンパイル, テキストエディタ, デバッガなどを1つのソフトで行えるようにしたもの.  バージョン管理システム (gitなど)  ファイルの変更履歴を管理する為のシステム.  ホスティングサービス (GitHub, GitLabなど)  上記gitを使って様々なプログラムをweb上に公開したり, それを通じて交流したりすることができるサービス. 無償・有償がある.  Linter/Formatter  コードのエラー指摘やスタイル調整をしてくれる.   勉強する  repl.it (オンラインIDE) hackr.io (コースやチュートリアルの紹介サイト)  ディベロッパーロードマップ  フロントエンド - https://roadmap.sh/frontend バックエンド - https://roadmap.</description>
+      <description>プログラミングとは  コンピュータプログラムを作成することにより, 人間の意図した処理を行うようにコンピュータに指示を与える行為のこと. その為の便利なツールがたくさんある.  プログラミングをするのに役立つツール  プログラミング言語 (C, Java, JavaScript, Pythonなど)  手続き型, オブジェクト指向型, 関数型, 静的型付け, 動的型付けなどいろんな種類がある. 最終的にバイナリデータになって, コンピュータが処理する.  テキストエディタ (Visual Studio Code, Vimなど)  コードを書くのに役に立つエディタ.  統合開発環境 (Visual Studio, Jet Brainsなど)  コンパイル, テキストエディタ, デバッガなどを1つのソフトで行えるようにしたもの.  バージョン管理システム (gitなど)  ファイルの変更履歴を管理する為のシステム.  ホスティングサービス (GitHub, GitLabなど)  上記gitを使って様々なプログラムをweb上に公開したり, それを通じて交流したりすることができるサービス. 無償・有償がある.  Linter/Formatter  コードのエラー指摘やスタイル調整をしてくれる.   勉強する  repl.it (オンラインIDE) hackr.io (コースやチュートリアルの紹介サイト)  ディベロッパーロードマップ  フロントエンド - https://roadmap.</description>
     </item>
     
     <item>
@@ -431,8 +423,7 @@ sh $ Hello World sh $ echo Hello World Hello World $ シェルスクリプトモ
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://solareenlo.com/docs/terminal/</guid>
-      <description>ターミナルとは GUIの上でCUIの操作をしたいときに使用するアプリケーションのこと.
-コンソール/ターミナル/シェルの違い  コンソールとは入出力をつかさどる端末ハードウェア ターミナルとはGUIでCUI環境を再現するもの シェルとはCUI環境におけるOSとの対話的インターフェイス  Reference: 【初心者向け】シェル・ターミナル・コンソールの違いとは？   下地にシェルがありコンソールやターミナルから命令をOSへ伝達してくれる.
+      <description>ターミナルとは  GUIの上でCUIの操作をしたいときに使用するアプリケーションのこと.  コンソール/ターミナル/シェルの違い  コンソールとは入出力をつかさどる端末ハードウェア ターミナルとはGUIでCUI環境を再現するもの シェルとはCUI環境におけるOSとの対話的インターフェイス  Reference: 【初心者向け】シェル・ターミナル・コンソールの違いとは？   下地にシェルがありコンソールやターミナルから命令をOSへ伝達してくれる.
 コンソールでアクセスしてもターミナルでアクセスしても対話するものはシェルとなる.
 コンソールの場合はハードウェア的に直にアクセスしているがターミナルの場合はGUI環境でソフトウェア的にシェルを呼び出し命令を実行するようになっている.
 ターミナルの色を変える ~/.bashrcの当該部分を以下の様に書き換える.
@@ -446,8 +437,7 @@ if [ &amp;#34;$color_prompt&amp;#34; = yes ]; then PS1=&amp;#39;${debian_chroot:
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://solareenlo.com/docs/test/</guid>
-      <description> テストとは 書いたコードにバグがないか確認する行為.
-テストの種類  単体テスト: 入力をモック化し, 個々の関数やクラスをテストし, 出力結果が予想通りであることを確認するテスト. 統合テスト: いくつかのモジュールを組み合わせて予想通りに動作することを保証するテスト. 機能テスト: 製品自体を使って(例えばブラウザを使って), あるシナリオをテストする. 確実に想定した動作をするかといった内部構造は考慮しない. リグレッションテスト: プログラムに機能を追加したり変更を加えたことによって、今まで普通に動いていた部分が動かなくなっていないかを確認するテスト. 受け入れテスト: システム開発を外注して, 発注者の本来の目的や意図通りに稼働するかのテスト. References:  2017年JavaScriptのテスト概論 テストの種類と技法   </description>
+      <description> テストとは  書いたコードにバグがないか確認する行為.  テストの種類  単体テスト: 入力をモック化し, 個々の関数やクラスをテストし, 出力結果が予想通りであることを確認するテスト. 統合テスト: いくつかのモジュールを組み合わせて予想通りに動作することを保証するテスト. 機能テスト: 製品自体を使って(例えばブラウザを使って), あるシナリオをテストする. 確実に想定した動作をするかといった内部構造は考慮しない. リグレッションテスト: プログラムに機能を追加したり変更を加えたことによって、今まで普通に動いていた部分が動かなくなっていないかを確認するテスト. 受け入れテスト: システム開発を外注して, 発注者の本来の目的や意図通りに稼働するかのテスト. References:  2017年JavaScriptのテスト概論 テストの種類と技法   </description>
     </item>
     
     <item>
@@ -500,8 +490,7 @@ vim # vimモードに突入 :!ls # lsを表示してくれる 新規にファイ
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://solareenlo.com/docs/vps/</guid>
-      <description> VPS(バーチャル・プライベート・サーバ)とは 一台の物理的なサーバコンピュータ上で仮想的なサーバコンピュータを何台も起動する技術によってつくられた仮想的なサーバコンピュータのこと. 暗号通貨のフルノードを立てることができる.
-世界のVPSの値段比較サイト  VPSCOMP  </description>
+      <description> VPS(バーチャル・プライベート・サーバ)とは  一台の物理的なサーバコンピュータ上で仮想的なサーバコンピュータを何台も起動する技術によってつくられた仮想的なサーバコンピュータのこと. 暗号通貨のフルノードを立てることができる.  世界のVPSの値段比較サイト  VPSCOMP  </description>
     </item>
     
     <item>
@@ -510,8 +499,7 @@ vim # vimモードに突入 :!ls # lsを表示してくれる 新規にファイ
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://solareenlo.com/docs/white-paper/</guid>
-      <description> ホワイトペーパーとは 問題に対する解決策を提示した文章のこと. 元々は政府や公的機関による年次報告書(白書)を意味したが現在ではマーケティング用語として使われている. 暗号通貨/暗号資産プロジェクトにおいてもよく使われている.
-ホワイトペーパーの日本語訳一覧  Bitcoin: ビットコイン： P2P 電子通貨システム Ethereum: [Japanese] White Paper  Plasma: Plasma スケーラブルな自律型スマートコントラクト  IOTA: The Tangle Byteball: Byteball:価値の蓄積と移転のための分散型システム Nano: ナノ：手数料不要で分散された仮想通貨ネットワーク NEO: NEO：スマートな経済のための分散型ネットワーク Enigma: Enigma: プライバシーが保証された分散型コンピューティングプラットフォーム IPFS: IPFS POLKADOT: POLKADOT: VISION FOR A HETEROGENEOUS MULTI-CHAIN FRAMEWORK DRAFT 1  </description>
+      <description> ホワイトペーパーとは  問題に対する解決策を提示した文章のこと. 元々は政府や公的機関による年次報告書(白書)を意味したが現在ではマーケティング用語として使われている. 暗号通貨/暗号資産プロジェクトにおいてもよく使われている.  ホワイトペーパーの日本語訳一覧  Bitcoin: ビットコイン： P2P 電子通貨システム Ethereum: [Japanese] White Paper  Plasma: Plasma スケーラブルな自律型スマートコントラクト  IOTA: The Tangle Byteball: Byteball:価値の蓄積と移転のための分散型システム Nano: ナノ：手数料不要で分散された仮想通貨ネットワーク NEO: NEO：スマートな経済のための分散型ネットワーク Enigma: Enigma: プライバシーが保証された分散型コンピューティングプラットフォーム IPFS: IPFS POLKADOT: POLKADOT: VISION FOR A HETEROGENEOUS MULTI-CHAIN FRAMEWORK DRAFT 1  </description>
     </item>
     
     <item>
@@ -542,8 +530,7 @@ now domains add iotajapan.com サブドメインのエイリアスを登録し�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://solareenlo.com/docs/ci-cd/</guid>
-      <description> CI/CDとは ソフトウェアのビルド・テスト・デプロイを自動化することで, 1つ1つの工程が小さくなり, リスクマネージメントを容易にしたり, 変更に対するフィードバックを素早く得られたりする開発手法のこと.
-CIとは  Continuous Integrationl（継続的インテグレーション）の略. ソフトウェア開発におけるビルドやテストを自動化したこと. ホスティングサービスへソースコードがコミットされると, CIによって自動的に「コードにエラーがないか」/「既存の機能を破壊していないか」といったテストが行える.  CDとは  Continuous Delivery（継続的デリバリー）の略. CIによってテストされたコードのマージや, 本番環境向けのビルドの作成を自動化したこと. 運用環境へのデプロイが明示的な承認なしで自動的に行われる「継続的デプロイ」とは異なる.  References  「CI/CD」とは CI/CDのエキスパートが解説：CI/CDとは何か？ なぜ今、必要とされるのか？  </description>
+      <description> CI/CDとは  ソフトウェアのビルド・テスト・デプロイを自動化することで, 1つ1つの工程が小さくなり, リスクマネージメントを容易にしたり, 変更に対するフィードバックを素早く得られたりする開発手法のこと.  CIとは  Continuous Integrationl（継続的インテグレーション）の略. ソフトウェア開発におけるビルドやテストを自動化したこと. ホスティングサービスへソースコードがコミットされると, CIによって自動的に「コードにエラーがないか」/「既存の機能を破壊していないか」といったテストが行える.  CDとは  Continuous Delivery（継続的デリバリー）の略. CIによってテストされたコードのマージや, 本番環境向けのビルドの作成を自動化したこと. 運用環境へのデプロイが明示的な承認なしで自動的に行われる「継続的デプロイ」とは異なる.  References  「CI/CD」とは CI/CDのエキスパートが解説：CI/CDとは何か？ なぜ今、必要とされるのか？  </description>
     </item>
     
     <item>
@@ -609,8 +596,7 @@ SQLの実行順番    順番 操作名 命令文     1 テーブルの指定 fro
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://solareenlo.com/docs/ssh/</guid>
-      <description>SSH(Secure Shell)とは 暗号や認証の技術を利用して, 安全にリモートコンピュータと通信するためのプロトコルのこと. VPSに接続するときは必須.
-SSHの流れ Reference: SSH通信って、結局何してるの？
+      <description>SSH(Secure Shell)とは  暗号や認証の技術を利用して, 安全にリモートコンピュータと通信するためのプロトコルのこと. VPSに接続するときは必須.  SSHの流れ Reference: SSH通信って、結局何してるの？
 [local]1.通信用の秘密鍵・公開鍵の作成する. [local]2.サーバーに公開鍵を渡す. [server]A.サーバーにユーザーを登録する(sudo権限). [server]B.サーバーに登録されているユーザーと, 渡された公開鍵を紐づける. ※この状態で初めて作成したユーザーによるサーバーへのログインが可能となる. [local]3.作成したユーザーでログインする. [server]C.ログイン時に乱数を生成する. [server]D.Cで生成した乱数から, ハッシュ値を生成する. ※このハッシュ値は認証で使うのでサーバー側で保持しておく. [server]E.受け取った公開鍵 + Cで生成した乱数を用いて暗号を生成する. [server]F.Dで作成した暗号をローカルに送る. [local]4.1で作成した秘密鍵を用いて, 送られてきた暗号を解読し乱数を復元する. [local]5.乱数からハッシュ値を計算し, そのハッシュ値をサーバーに送る. [server]G.送られてきたハッシュ値と、Dで生成したハッシュ値を比較する. 一致していれば認証成功. 以後全ての通信は暗号化される. scp scpとはSSHを用いてファイルを秘匿化してコピーする技術のこと.
 # sshのconfigファイルを用いて通信する方法 scp file_name.txt -F ~/.ssh/config iota3:~/github scp &amp;lt;渡したいファイルの名前&amp;gt; -F &amp;lt;コンフィグファイルの名前&amp;gt; &amp;lt;渡し先のマシン名&amp;gt;:&amp;lt;渡し先のディレクトリ&amp;gt; Mac -&amp;gt; Ubuntu を公開鍵暗号方式で接続する UbuntuをSSH接続可にする Ubuntu側で
 sudo apt-get install openssh-server で, Ubuntu側へSSHで接続できるようになる.
