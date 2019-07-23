@@ -628,6 +628,11 @@
   </url>
   
   <url>
+    <loc>https://solareenlo.com/docs/zathura-install/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://solareenlo.com/docs/zeit-now/</loc>
     <priority>0</priority>
   </url>
