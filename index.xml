@@ -231,13 +231,12 @@ chmod 600 sshkey.pem ssh -i sshkey.pem ec2-user@000.000.000.000 後は普通のV
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://solareenlo.com/docs/command/</guid>
-      <description>コマンドとは  コンピュータに特定の機能の実行を指示する命令のこと. たくさんのコマンドがあり, 黒い画面に直接入力する.  Linuxでhtmlを開く xdg-open index.html プロセスの動作状況 (ps) psコマンドはプロセスの動作状況を確認するためのコマンド.
+      <description>コマンドとは  コンピュータに特定の機能の実行を指示する命令のこと. たくさんのコマンドがあり, 黒い画面に直接入力する.  Linuxでhtmlを開く xdg-open index.html UbuntuでChromeを開く google-chrome プロセスの動作状況 (ps) psコマンドはプロセスの動作状況を確認するためのコマンド.
 auxオプション
 auxオプションは、aとuとxというオプションを組み合わせたものです。
  a: 端末操作のプロセスを表示する u: CPUやメモリの使用率などを表示する x: 端末操作以外のプロセスを表示する  ps aux &amp;gt; USER PID %CPU %MEM VSZ RSS TT STAT STARTED TIME COMMAND &amp;gt; solareenlo 96263 4.3 2.0 5500012 168620 ?? S 水07PM 21:03.04 /Applications/Utilities/Terminal.app/Contents/MacOS/Terminal &amp;gt; その他たくさん こんな感じで標準出力される.
 Reference: ps auxの見方がよく判らない・・・
-sha256を出力 # Mac shasum -a 256 &amp;lt;ファイル名&amp;gt; # Linux sha256sum &amp;lt;ファイル名&amp;gt; 所有権を変更 (chown) ファイルのユーザー所有権とグループ所有権をrootからsolareenloへ変更する
-sudo chown solareenlo:solareenlo ファイル名 # 再帰的に変更 sudo chown -R solareenlo:solareenlo ファイル名 基本的なUnixコマンドの使い方 mkdirを使って一気にファイルを複数作成する # app1, app2, .</description>
+sha256を出力 # Mac shasum -a 256 &amp;lt;ファイル名&amp;gt; # Linux sha256sum &amp;lt;ファイル名&amp;gt; 所有権を変更 (chown) ファイルのユーザー所有権とグループ所有権をrootからsolareenloへ変更する</description>
     </item>
     
     <item>
@@ -255,7 +254,7 @@ sudo chown solareenlo:solareenlo ファイル名 # 再帰的に変更 sudo chown
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://solareenlo.com/docs/crypto-docs/</guid>
-      <description> 暗号資産の日本語ドキュメント  Ethereum: https://github.com/a-mitani/mastering-ethereum Solidity: https://solidity-jp.readthedocs.io/ja/latest/ IPFS: https://github.com/a-mitani/ipfs-primer IOTA: https://docs.iotajapan.com NEM: https://nemtech.github.io/ja/ truffle: https://github.com/ZahanWu/truffle-docs-ja/wiki MakerDao: https://github.com/makerdao/community/tree/master/faqs/ja  </description>
+      <description> 暗号資産の日本語訳ドキュメント  Ethereum: https://github.com/a-mitani/mastering-ethereum Solidity: https://solidity-jp.readthedocs.io/ja/latest/ IPFS: https://github.com/a-mitani/ipfs-primer IOTA: https://docs.iotajapan.com NEM: https://nemtech.github.io/ja/ truffle: https://github.com/ZahanWu/truffle-docs-ja/wiki MakerDao: https://github.com/makerdao/community/tree/master/faqs/ja  </description>
     </item>
     
     <item>
@@ -471,6 +470,33 @@ if(process.argv.length !== 3) { console.</description>
     
     <item>
       <title></title>
+      <link>https://solareenlo.com/docs/password-manager/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://solareenlo.com/docs/password-manager/</guid>
+      <description> パスワードマネージャーとは  パスワードを管理するアプリケーションのこと.  オープンソースのパスワードマネージャー  KeePass Bitwarden  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://solareenlo.com/docs/platex-book/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://solareenlo.com/docs/platex-book/</guid>
+      <description>pLaTeXで本を作成する方法  総合開発環境を使う方法とコマンドラインを使う方法の2種類がある.  Mac編  TexShopというlatexの総合開発環境を使うのが簡単.  Ubuntu編  Ubuntuでは総合開発環境を使わずに, TeX Live(TeXのディストリビューション)とzathura(pdfビューア)を使って, コマンドラインで作成していく.  TeX Liveのインストール # ミラーサイトからinstall-tl-unx.tar.gzをダウンロードする # wget を使用する場合 wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz # curl を使用する場合 curl -O http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz # install-tl-unx.tar.gzを展開する tar xvf install-tl-unx.tar.gz # 展開したディレクトリに移動する cd install-tl* # root権限でインストーラを実行する # Iを入力してインストールを開始する sudo ./install-tl -no-gui -repository http://mirror.ctan.org/systems/texlive/tlnet/ # インストールが途中でストップした場合は, 以下のコマンドで再開する sudo ./install-tl -no-gui -profile installation.profile # インストールが終了したら /usr/local/bin ディレクトリ配下にシンボリックリンクを追加する # ????はバージョンを入力する sudo /usr/local/texlive/????/bin/*/tlmgr path add  Reference: https://texwiki.texjp.org/?Linux  Tex Liveのアップデート sudo tlmgr update --self --all pdfビューアのインストール  ここではpwmt/zathuraをインストールします.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://solareenlo.com/docs/programming-language-docs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://solareenlo.com/docs/programming-language-docs/</guid>
+      <description> プログラミング言語の日本語訳ドキュメント  Angular: https://github.com/angular/angular-ja React: https://ja.reactjs.org/ ionic: https://github.com/ionic-jp/ionic-docs  </description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>https://solareenlo.com/docs/programming-language/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -626,9 +652,18 @@ df -Th &amp;gt; Filesystem Type Size Used Avail Use% Mounted on &amp;gt; /dev/nv
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://solareenlo.com/docs/vim/</guid>
-      <description>Vimとは  viから派生したテキストエディタ. プラグインを導入したり, .vimrcの設定を変更したりして, 自分好みにカスタマイズがどんどんできる. GitHubリポジトリ: https://github.com/vim/vim  .vimrcの例  solareenlo/vim-config よく使われているvimrcの設定ランキング  使い方 削除    コマンド 動作     D カーソル以降を削除    置換    コマンド 動作     :%s/old/new/c ファイル上のoldを1つずつ確認しながらnewに置換   :%s/old/new/g ファイル上の全てのoldをnewに置換   :s/old/new/g カーソル行の全てのoldをnewに置換   :10,20s/old/new/g 10~20行目の全てのoldをnewに置換   :&#39;&amp;lt;,&#39;&amp;gt;s/old/new/g ビジュアルモードで選択中の範囲の全てのoldをnewに置換.
+      <description>Vimとは  viから派生したテキストエディタ. プラグインを導入したり, .vimrcの設定を変更したりして, 自分好みにカスタマイズがどんどんできる. GitHubリポジトリ: https://github.com/vim/vim  .vimrcの例  .vimrcとはvimの設定を書いてあるファイル. solareenlo/vim-config よく使われているvimrcの設定ランキング  使い方 削除    コマンド 動作     D カーソル以降を削除    置換    コマンド 動作     :%s/old/new/c ファイル上のoldを1つずつ確認しながらnewに置換   :%s/old/new/g ファイル上の全てのoldをnewに置換   :s/old/new/g カーソル行の全てのoldをnewに置換   :10,20s/old/new/g 10~20行目の全てのoldをnewに置換   :&#39;&amp;lt;,&#39;&amp;gt;s/old/new/g ビジュアルモードで選択中の範囲の全てのoldをnewに置換.
 &#39;&amp;lt;,&#39;&amp;gt;の部分は, 範囲を選択中に:を押すと自動的に出る.    外部コマンド実行 :!を使う.
-vim # vimモードに突入 :!ls # lsを表示してくれる 新規にファイル作成 :eを使う.</description>
+vim # vimモードに突入 :!</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://solareenlo.com/docs/vimium/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://solareenlo.com/docs/vimium/</guid>
+      <description>Vimiumとは  Google Chromeをvimのキーバインドで操作できるChromeの拡張機能. GitHubリポジトリ: philc/vimium  操作方法 現在のページ ? show the help dialog for a list of all available keys h scroll left j scroll down k scroll up l scroll right gg scroll to top of the page G scroll to bottom of the page d scroll down half a page u scroll up half a page f open a link in the current tab F open a link in a new tab r reload gs view source i enter insert mode -- all commands will be ignored until you hit Esc to exit yy copy the current url to the clipboard yf copy a link url to the clipboard gf cycle forward to the next frame gF focus the main/top frame 新しいページ o Open URL, bookmark, or history entry O Open URL, bookmark, history entry in a new tab b Open bookmark B Open bookmark in a new tab 検索 / enter find mode -- type your search query and hit enter to search, or Esc to cancel n cycle forward to the next find match N cycle backward to the previous find match 履歴 H go back in history L go forward in history タブ J, gT go one tab left K, gt go one tab right g0 go to the first tab g$ go to the last tab ^ visit the previously-visited tab t create tab yt duplicate current tab x close current tab X restore closed tab (i.</description>
     </item>
     
     <item>
@@ -705,7 +740,7 @@ now domains add iotajapan.com サブドメインのエイリアスを登録し�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://solareenlo.com/docs/latex/</guid>
-      <description> LaTeXとは  テキストベースの組版処理システムのこと. 学術機関における論文執筆ツールとしてよく使われている. GitHubリポジトリ: https://github.com/latex3/latex3  オンラインジェネレーター  Cloud LaTeX OverLeaf  </description>
+      <description> LaTeXとは  テキストベースの組版処理システムのこと. 単一のアプリケーションではなく, 膨大な数の実行形式ファイル, マクロ, フォントファイル, 周辺ユーティリティの集合体. 学術機関における論文執筆ツールとしてよく使われている. GitHubリポジトリ: https://github.com/latex3/latex3  オンラインジェネレーター  Cloud LaTeX OverLeaf  Tex Live  Tex LiveとはTEXディストリビューション(TEXを一般利用者がインストールしたり, 利用できる形にまとめ上げたもの（頒布形態）)の1つ.  </description>
     </item>
     
     <item>

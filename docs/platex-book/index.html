@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  
+    
+    Platex Book
+  
+ | solareenlo</title>
+
+
+
+<link rel="stylesheet" href="/book.min.3de096a39acf7bbc723413548895b355b1d215f088be625b1dc7c81610b3f1cf.css">
+
+
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+
+
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" style="display: none" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://solareenlo.com/">solareenlo</a>
+</h2>
+
+
+
+    
+  
+  
+  
+
+  <style>
+  nav ul a[href$="\2f docs\2fplatex-book\2f "] {
+      color: #004ed0;
+  }
+  </style>
+
+<ul>
+<li><a href="/"><strong>はじめに</strong></a></li>
+<li><a href="/posts/"><strong>Blog</strong></a></li>
+<li><a href="/docs/programming/"><strong>Programming</strong></a>
+
+<ul>
+<li><a href="/docs/terminal/">Terminal</a></li>
+<li><a href="/docs/command/">Command</a></li>
+<li><a href="/docs/sed/">sed</a></li>
+<li><a href="/docs/shell-script/">Shell Script</a></li>
+<li><a href="/docs/vim/">Vim</a></li>
+<li><a href="/docs/vimium/">Vimium</a></li>
+<li><a href="/docs/git/">Git</a></li>
+<li><a href="/docs/github/">GitHub</a></li>
+<li><a href="/docs/linter-formatter/">Linter/Formatter</a></li>
+<li><a href="/docs/test/">Test</a></li>
+<li><a href="/docs/password-manager/">Password Manager</a></li>
+</ul></li>
+<li><a href="/docs/programming-language/"><strong>Programming Language</strong></a>
+
+<ul>
+<li><a href="/docs/c/">C</a></li>
+<li><a href="/docs/rust/">Rust</a></li>
+<li><a href="/docs/javascript/">JavaScript</a></li>
+<li><a href="/docs/css/">CSS</a></li>
+<li><a href="/docs/nodejs/">Node.js</a></li>
+<li><a href="/docs/npm/">npm</a></li>
+<li><a href="/docs/typescript/">TypeScript</a></li>
+<li><a href="/docs/angular/">Angular</a></li>
+<li><a href="/docs/react/">React</a></li>
+<li><a href="/docs/react-static/">React Static</a></li>
+<li><a href="/docs/haskell/">Haskell</a></li>
+<li><a href="/docs/hugo/">Hugo</a></li>
+<li><a href="/docs/programming-language-docs/">Docs</a></li>
+</ul></li>
+<li><a href="/docs/latex/"><strong>LaTeX</strong></a>
+
+<ul>
+<li><a href="/docs/platex-book/">Book</a></li>
+</ul></li>
+<li><a href="/docs/vps/"><strong>VPS</strong></a>
+
+<ul>
+<li><a href="/docs/ssh/">SSH</a></li>
+<li><a href="/docs/ubuntu/">Ubuntu</a></li>
+<li><a href="/docs/alpine-linux/">Alpine Linux</a></li>
+</ul></li>
+<li><a href="/docs/db/"><strong>DB</strong></a>
+
+<ul>
+<li><a href="/docs/mysql/">MySQL</a></li>
+<li><a href="/docs/mongodb/">MongoDB</a></li>
+<li><a href="/docs/redis/">Redis</a></li>
+</ul></li>
+<li><a href="/docs/cloud/"><strong>Cloud</strong></a>
+
+<ul>
+<li><a href="/docs/aws/">AWS</a></li>
+<li><a href="/docs/gcp/">GCP</a></li>
+<li><a href="/docs/firebase/">Firebase</a></li>
+<li><a href="/docs/zeit-now/">ZEIT Now</a></li>
+</ul></li>
+<li><a href="/docs/ci-cd/"><strong>CI/CD</strong></a>
+
+<ul>
+<li><a href="/docs/jenkins/">Jenkins</a></li>
+<li><a href="/docs/travis-ci/">Travis CI</a></li>
+<li><a href="/docs/circleci/">CircleCI</a></li>
+</ul></li>
+<li><a href="/docs/container/"><strong>Container</strong></a>
+
+<ul>
+<li><a href="/docs/docker1/">Docker1</a></li>
+<li><a href="/docs/docker2/">Docker2</a></li>
+<li><a href="/docs/docker-hub/">Docker Hub</a></li>
+<li><a href="/docs/docker-compose/">Docker Compose</a></li>
+<li><a href="/docs/kubernetes/">Kubernetes</a></li>
+</ul></li>
+<li><a href="/docs/crypto/"><strong>Crypto</strong></a>
+
+<ul>
+<li><a href="/docs/blockchain/">Blockchain</a></li>
+<li><a href="/docs/bitcoin/">Bitcoin</a></li>
+<li><a href="/docs/ethereum/">Ethereum</a></li>
+<li><a href="/docs/iota/">IOTA</a></li>
+<li><a href="/docs/nem/">NEM</a></li>
+<li><a href="/docs/substrate/">Substrate</a></li>
+<li><a href="/docs/white-paper/">White Paper</a></li>
+<li><a href="/docs/crypto-docs/">Docs</a></li>
+</ul></li>
+</ul>
+
+
+
+
+
+</nav>
+
+
+  
+<script>
+(function() {
+  var menu = document.querySelector('aside.book-menu nav')
+  addEventListener('beforeunload', function(event) {
+    localStorage.setItem('menu.scrollTop', menu.scrollTop)
+  });
+  menu.scrollTop = localStorage.getItem('menu.scrollTop')
+})()
+</script>
+
+
+
+    </aside>
+
+    <div class="book-page">
+      <header class="align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>
+  
+    
+    Platex Book
+  
+</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="platexで本を作成する方法">pLaTeXで本を作成する方法</h1>
+
+<ul>
+<li>総合開発環境を使う方法とコマンドラインを使う方法の2種類がある.</li>
+</ul>
+
+<h2 id="mac編">Mac編</h2>
+
+<ul>
+<li><a href="https://pages.uoregon.edu/koch/texshop/">TexShop</a>というlatexの総合開発環境を使うのが簡単.</li>
+</ul>
+
+<h2 id="ubuntu編">Ubuntu編</h2>
+
+<ul>
+<li>Ubuntuでは総合開発環境を使わずに, TeX Live(TeXのディストリビューション)とzathura(pdfビューア)を使って, コマンドラインで作成していく.</li>
+</ul>
+
+<h3 id="tex-liveのインストール">TeX Liveのインストール</h3>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># ミラーサイトからinstall-tl-unx.tar.gzをダウンロードする</span>
+<span style="color:#586e75"># wget を使用する場合</span>
+wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
+<span style="color:#586e75"># curl を使用する場合</span>
+curl -O http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
+
+<span style="color:#586e75"># install-tl-unx.tar.gzを展開する</span>
+tar xvf install-tl-unx.tar.gz
+
+<span style="color:#586e75"># 展開したディレクトリに移動する</span>
+<span style="color:#b58900">cd</span> install-tl*
+
+<span style="color:#586e75"># root権限でインストーラを実行する</span>
+<span style="color:#586e75"># Iを入力してインストールを開始する</span>
+sudo ./install-tl -no-gui -repository http://mirror.ctan.org/systems/texlive/tlnet/
+
+<span style="color:#586e75"># インストールが途中でストップした場合は, 以下のコマンドで再開する</span>
+sudo ./install-tl -no-gui -profile installation.profile
+
+<span style="color:#586e75"># インストールが終了したら /usr/local/bin ディレクトリ配下にシンボリックリンクを追加する</span>
+<span style="color:#586e75"># ????はバージョンを入力する</span>
+sudo /usr/local/texlive/????/bin/*/tlmgr path add</code></pre></div>
+<ul>
+<li><strong>Reference:</strong> <a href="https://texwiki.texjp.org/?Linux">https://texwiki.texjp.org/?Linux</a></li>
+</ul>
+
+<h3 id="tex-liveのアップデート">Tex Liveのアップデート</h3>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo tlmgr update --self --all</code></pre></div>
+<h3 id="pdfビューアのインストール">pdfビューアのインストール</h3>
+
+<ul>
+<li>ここでは<a href="https://github.com/pwmt/zathura">pwmt/zathura</a>をインストールします.</li>
+
+<li><p>zathuraはvimのキーバインドで操作できる軽量なpdfビューアで, 印刷はできません.</p></li>
+
+<li><p>meson(オープンソースビルドシステム)をインストールする</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># python3やもろもろをインストールする</span>
+sudo apt-get install python3 python3-pip python3-setuptools python3-wheel ninja-build
+<span style="color:#586e75"># pipを使ってmersonをインストールする</span>
+pip3 install --user meson
+<span style="color:#586e75"># PATHを通す(bash向け)</span>
+<span style="color:#268bd2">PATH</span><span style="color:#719e07">=</span><span style="color:#2aa198">&#34;</span><span style="color:#2aa198">${</span><span style="color:#268bd2">PATH</span><span style="color:#2aa198">}</span><span style="color:#2aa198">:</span><span style="color:#719e07">$(</span>python -c <span style="color:#2aa198">&#39;import site; print(site.USER_BASE);&#39;</span><span style="color:#719e07">)</span><span style="color:#2aa198">/bin&#34;</span></code></pre></div></li>
+
+<li><p>cmakeをクローン・メイク・インストールする</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt remove cmake
+git clone git@gitlab.kitware.com:cmake/cmake.git
+<span style="color:#b58900">cd</span> cmake
+./bootstrap <span style="color:#719e07">&amp;&amp;</span> make <span style="color:#719e07">&amp;&amp;</span> sudo make install</code></pre></div></li>
+
+<li><p>libmount-devをインストールする</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt update
+sudo apt upgrade -y
+sudo apt install libmount-dev</code></pre></div></li>
+
+<li><p>glibをクローン・ビルド・インストールする</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone https://gitlab.gnome.org/GNOME/glib.git
+<span style="color:#b58900">cd</span> glib
+meson build
+ninja -C build
+sudo ninja -C build install</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># もしくは</span>
+sudo apt update
+sudo apt upgrade -y
+sudo apt install libglib2.0-dev</code></pre></div></li>
+
+<li><p>gtkをクローン・ビルド・インストールする</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone https://gitlab.gnome.org/GNOME/gtk.git
+<span style="color:#586e75"># まだ依存関係を調査中</span></code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># または</span>
+sudo apt update
+sudo apt upgrade -y
+sudo apt install libgtk-3-dev</code></pre></div></li>
+
+<li><p>giraraをクローン・メイク・インストールする</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone git@github.com:pwmt/girara.git
+<span style="color:#b58900">cd</span> girara
+meson build <span style="color:#719e07">&amp;&amp;</span> <span style="color:#b58900">cd</span> build
+ninja
+sudo ninja install</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># または</span>
+sudo apt update
+sudo apt upgrade -y
+sudo apt install libgirara-gtk3-3</code></pre></div></li>
+
+<li><p>zathuraをクローン・ビルド・インストールする</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone git@github.com:pwmt/zathura.git
+<span style="color:#b58900">cd</span> zathura
+meson build <span style="color:#719e07">&amp;&amp;</span> <span style="color:#b58900">cd</span> build
+ninja
+sudo ninja install</code></pre></div></li>
+</ul>
+
+<h3 id="vimプラグイン">vimプラグイン</h3>
+
+<ul>
+<li><a href="https://github.com/lervag/vimtex">lervag/vimtex</a></li>
+<li><a href="https://ymatz.net/journal/20180428/">lervag/vimtexが良い</a></li>
+</ul>
+</article>
+
+      
+<div class="book-footer justify-between">
+  
+  <div>
+    
+    <a href="https://github.com/solareenlo/blog-hugo/commit/30d6f35db60a7e1a1bc582f93d05051fb234fda6" title='Last modified Jul 23, 2019 by solareenlo' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" alt="Changed" /> Jul 23, 2019
+    </a>
+  </div>
+  
+  
+  <div>
+    <a href="https://github.com/solareenlo/blog-hugo/edit/master/content/docs/platex-book.md" target="_blank" rel="noopener">
+      <img src="/svg/edit.svg" alt="Edit" /> Edit this page
+    </a>
+  </div>
+  
+</div>
+
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc level-6 fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#platexで本を作成する方法">pLaTeXで本を作成する方法</a>
+<ul>
+<li><a href="#mac編">Mac編</a></li>
+<li><a href="#ubuntu編">Ubuntu編</a>
+<ul>
+<li><a href="#tex-liveのインストール">TeX Liveのインストール</a></li>
+<li><a href="#tex-liveのアップデート">Tex Liveのアップデート</a></li>
+<li><a href="#pdfビューアのインストール">pdfビューアのインストール</a></li>
+<li><a href="#vimプラグイン">vimプラグイン</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+  
+  
+  
+</body>
+
+</html>

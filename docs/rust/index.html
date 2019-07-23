@@ -66,10 +66,12 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/sed/">sed</a></li>
 <li><a href="/docs/shell-script/">Shell Script</a></li>
 <li><a href="/docs/vim/">Vim</a></li>
+<li><a href="/docs/vimium/">Vimium</a></li>
 <li><a href="/docs/git/">Git</a></li>
 <li><a href="/docs/github/">GitHub</a></li>
 <li><a href="/docs/linter-formatter/">Linter/Formatter</a></li>
 <li><a href="/docs/test/">Test</a></li>
+<li><a href="/docs/password-manager/">Password Manager</a></li>
 </ul></li>
 <li><a href="/docs/programming-language/"><strong>Programming Language</strong></a>
 
@@ -86,8 +88,13 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/react-static/">React Static</a></li>
 <li><a href="/docs/haskell/">Haskell</a></li>
 <li><a href="/docs/hugo/">Hugo</a></li>
+<li><a href="/docs/programming-language-docs/">Docs</a></li>
 </ul></li>
-<li><a href="/docs/latex/"><strong>LaTeX</strong></a></li>
+<li><a href="/docs/latex/"><strong>LaTeX</strong></a>
+
+<ul>
+<li><a href="/docs/platex-book/">Book</a></li>
+</ul></li>
 <li><a href="/docs/vps/"><strong>VPS</strong></a>
 
 <ul>
@@ -664,6 +671,13 @@ cargo <span style="color:#b58900">command</span> &lt;コマンド名&gt; <span s
 </tbody>
 </table>
 
+<h3 id="カスタムサブコマンド追加">カスタムサブコマンド追加</h3>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># cargo-editをインストールしてみる</span>
+sudo apt install pkg-config libssl-dev <span style="color:#586e75"># Ubuntuではこれらが必要</span>
+cargo install cargo-edit <span style="color:#586e75"># cargo-editカスタムサブコマンドをインストールする</span>
+cargo new hello <span style="color:#586e75"># 新しいパッケージhelloを作成する</span>
+<span style="color:#b58900">cd</span> hello <span style="color:#586e75"># helloディレクトリに移動する</span>
+cargo add rand@0.6 <span style="color:#586e75"># バージョン0.6のrandクレートをインストールする</span></code></pre></div>
 <h2 id="hello-world">Hello World!</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir rust
 <span style="color:#b58900">cd</span> rust
@@ -735,7 +749,7 @@ rust-lldb ./target/degub/rpn <span style="color:#586e75"># バイナリを対象
   
   <div>
     
-    <a href="https://github.com/solareenlo/blog-hugo/commit/4ee075df2e9e513fa75b26efc18fb4171926f937" title='Last modified Jul 18, 2019 by solareenlo' target="_blank" rel="noopener">
+    <a href="https://github.com/solareenlo/blog-hugo/commit/e41d0c2ade62db39ac18ea9ce4993de31a6b5c32" title='Last modified Jul 18, 2019 by solareenlo' target="_blank" rel="noopener">
       <img src="/svg/calendar.svg" alt="Changed" /> Jul 18, 2019
     </a>
   </div>
@@ -800,6 +814,7 @@ rust-lldb ./target/degub/rpn <span style="color:#586e75"># バイナリを対象
 <li><a href="#cargoとは">Cargoとは</a></li>
 <li><a href="#基本コマンド-1">基本コマンド</a></li>
 <li><a href="#カスタムサブコマンド">カスタムサブコマンド</a></li>
+<li><a href="#カスタムサブコマンド追加">カスタムサブコマンド追加</a></li>
 </ul></li>
 <li><a href="#hello-world">Hello World!</a></li>
 <li><a href="#ターミナルからのデバッグ">ターミナルからのデバッグ</a></li>
