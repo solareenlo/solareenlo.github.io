@@ -235,8 +235,8 @@ sudo /usr/local/texlive/????/bin/*/tlmgr path add</code></pre></div>
 <h3 id="pdfビューアのインストール">pdfビューアのインストール</h3>
 
 <ul>
-<li>ここでは<a href="https://github.com/pwmt/zathura">pwmt/zathura</a>をインストールします.</li>
-<li>zathuraはvimのキーバインドで操作できる軽量なpdfビューアで, 印刷はできません.</li>
+<li>ここでは<a href="https://github.com/pwmt/zathura">pwmt/zathura</a>をインストールする.</li>
+<li>zathuraはvimのキーバインドで操作できる軽量なpdfビューアで, 印刷はできない.</li>
 <li>zathuraをインストールする</li>
 </ul>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt update
@@ -244,6 +244,33 @@ sudo apt upgrade -y
 sudo apt install zathura</code></pre></div>
 <ul>
 <li><a href="/docs/zathura-install/">zathuraをソースコードからビルドしてインストールする方法</a></li>
+</ul>
+
+<h3 id="tex-liveの使い方">TeX Liveの使い方</h3>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># texからdviを作成する</span>
+latex book.tex
+platex book.tex
+<span style="color:#586e75"># dviからpdfを作成する</span>
+dvipdfmx book.dvi</code></pre></div>
+<h3 id="zathuraの使い方">zathuraの使い方</h3>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># バックグラウンドでpdfを表示する</span>
+zathura bool.pdf
+zathura --frok book.pdf</code></pre></div>
+<ul>
+<li>操作方法はvimのキーバインド.</li>
+</ul>
+
+<h3 id="zathurarcの設定">zathurarcの設定</h3>
+
+<ul>
+<li><p><code>zathurarc</code>にzathuraの設定をすることができる.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># zathurarcのhelpを表示する</span>
+man zathurarc
+<span style="color:#586e75"># zoomとscrollとclipboardを設定する</span>
+cat ~/.config/zathura/zathurarc
+<span style="color:#b58900">set</span> zoom-step <span style="color:#2aa198">30</span>
+<span style="color:#b58900">set</span> scroll-step <span style="color:#2aa198">100</span>
+<span style="color:#b58900">set</span> selection-clipboard clipboard</code></pre></div></li>
 </ul>
 
 <h3 id="vimプラグイン">vimプラグイン</h3>
@@ -259,7 +286,7 @@ sudo apt install zathura</code></pre></div>
   
   <div>
     
-    <a href="https://github.com/solareenlo/blog-hugo/commit/5fe48adc364bdc2578c70c7bb1b86133e3605b2e" title='Last modified Jul 24, 2019 by solareenlo' target="_blank" rel="noopener">
+    <a href="https://github.com/solareenlo/blog-hugo/commit/a24cda4e1200376db6f68b1feaba472dad8021a6" title='Last modified Jul 24, 2019 by solareenlo' target="_blank" rel="noopener">
       <img src="/svg/calendar.svg" alt="Changed" /> Jul 24, 2019
     </a>
   </div>
@@ -291,6 +318,9 @@ sudo apt install zathura</code></pre></div>
 <li><a href="#tex-liveのインストール">TeX Liveのインストール</a></li>
 <li><a href="#tex-liveのアップデート">Tex Liveのアップデート</a></li>
 <li><a href="#pdfビューアのインストール">pdfビューアのインストール</a></li>
+<li><a href="#tex-liveの使い方">TeX Liveの使い方</a></li>
+<li><a href="#zathuraの使い方">zathuraの使い方</a></li>
+<li><a href="#zathurarcの設定">zathurarcの設定</a></li>
 <li><a href="#vimプラグイン">vimプラグイン</a></li>
 </ul></li>
 </ul></li>
