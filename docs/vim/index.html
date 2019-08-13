@@ -193,6 +193,72 @@ https://github.com/alex-shpak/hugo-book
 <li><strong>GitHubリポジトリ:</strong> <a href="https://github.com/vim/vim">https://github.com/vim/vim</a></li>
 </ul>
 
+<h2 id="ソースからインストール">ソースからインストール</h2>
+
+<h3 id="スクラッチからインストール">スクラッチからインストール</h3>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone git@github.com:vim/vim.git
+<span style="color:#b58900">cd</span> vim
+./configure
+make
+sudo make install</code></pre></div>
+<h3 id="インストールし直す">インストールし直す</h3>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#b58900">cd</span> vim
+make distclean
+rm src/auto/config.cache
+./configure
+make
+sudo make install</code></pre></div>
+<h3 id="clipboard機能とclientserver機能を付けてインストール">clipboard機能とclientserver機能を付けてインストール</h3>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#b58900">cd</span> /mnt/md0/github
+git clone git@github.com:vim/vim.git
+<span style="color:#b58900">cd</span> vim
+make distclean
+rm src/auto/config.cache
+<span style="color:#586e75"># 必要なパッケージをインストール</span>
+sudo apt install <span style="color:#cb4b16">\
+</span><span style="color:#cb4b16"></span>  lua5.2 <span style="color:#cb4b16">\
+</span><span style="color:#cb4b16"></span>  liblua5.2-dev <span style="color:#cb4b16">\
+</span><span style="color:#cb4b16"></span>  luajit <span style="color:#cb4b16">\
+</span><span style="color:#cb4b16"></span>  libluajit-5.2 <span style="color:#cb4b16">\
+</span><span style="color:#cb4b16"></span>  ruby-dev <span style="color:#cb4b16">\
+</span><span style="color:#cb4b16"></span>  xorg-dev
+<span style="color:#586e75"># /usr/include/lua5.2/の中身を/usr/include/lua5.2/include/へコピーする</span>
+<span style="color:#b58900">cd</span> /usr/include/lua5.2
+sudo mkdir include
+cp *.h include/
+<span style="color:#586e75"># luaのシンボリックリンクを張る</span>
+sudo ln -s /usr/lib/x86_64-linux-gnu/liblua5.3.so /usr/local/lib/liblua.so
+<span style="color:#b58900">cd</span> /mnt/md0/github/vim
+<span style="color:#586e75"># 必要なオプションを付けて./configureを行う</span>
+./configure <span style="color:#cb4b16">\
+</span><span style="color:#cb4b16"></span>  --with-features<span style="color:#719e07">=</span>huge <span style="color:#cb4b16">\
+</span><span style="color:#cb4b16"></span>  --with-x <span style="color:#cb4b16">\
+</span><span style="color:#cb4b16"></span>  --enable-multibyte <span style="color:#cb4b16">\
+</span><span style="color:#cb4b16"></span>  --enable-luainterp<span style="color:#719e07">=</span>dynamic <span style="color:#cb4b16">\
+</span><span style="color:#cb4b16"></span>  --enable-gpm <span style="color:#cb4b16">\
+</span><span style="color:#cb4b16"></span>  --enable-cscope <span style="color:#cb4b16">\
+</span><span style="color:#cb4b16"></span>  --enable-fontset <span style="color:#cb4b16">\
+</span><span style="color:#cb4b16"></span>  --enable-fail-if-missing <span style="color:#cb4b16">\
+</span><span style="color:#cb4b16"></span>  --prefix<span style="color:#719e07">=</span>/usr/local <span style="color:#cb4b16">\
+</span><span style="color:#cb4b16"></span>  --enable-pythoninterp<span style="color:#719e07">=</span>dynamic <span style="color:#cb4b16">\
+</span><span style="color:#cb4b16"></span>  --enable-python3interp<span style="color:#719e07">=</span>dynamic <span style="color:#cb4b16">\
+</span><span style="color:#cb4b16"></span>  --enable-rubyinterp<span style="color:#719e07">=</span>dynamic <span style="color:#cb4b16">\
+</span><span style="color:#cb4b16"></span>  --enable-gui<span style="color:#719e07">=</span>auto <span style="color:#cb4b16">\
+</span><span style="color:#cb4b16"></span>  --enable-gtk2-check
+<span style="color:#586e75"># makeする</span>
+make
+<span style="color:#586e75"># インストールする</span>
+sudo make install
+vim --version</code></pre></div>
+<h3 id="references">References</h3>
+
+<ul>
+<li><a href="https://qiita.com/tYohei/items/8b047b6566bc0c946abd">vimtex on macOS でハマったときのメモ</a></li>
+<li><a href="https://vim-jp.org/docs/build_linux.html">Linuxでのビルド方法</a></li>
+<li><a href="https://qiita.com/sat0ken/items/82fee34035ce1e6960ae">WSLにVim8を入れてみる</a></li>
+<li><a href="https://qiita.com/Nikkely/items/7bfa4e71a6eb1e3d7bed">vimでclipboardを+にしたいけどならない人向け</a></li>
+</ul>
+
 <h2 id="vimrcの例">.vimrcの例</h2>
 
 <ul>
@@ -269,7 +335,7 @@ https://github.com/alex-shpak/hugo-book
 <p><code>:e</code>を使う.</p>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vim <span style="color:#586e75"># vimモードに突入</span>
 :e test.txt <span style="color:#586e75"># test.txtが作られる</span></code></pre></div>
-<h3 id="references">References</h3>
+<h3 id="references-1">References</h3>
 
 <ul>
 <li><a href="http://wolfbash.hateblo.jp/entry/2017/09/05/234143">さっさと帰りたい怠け者エンジニアは vim をマスターしましょう その2 - 編集</a></li>
@@ -584,8 +650,8 @@ ds<span style="color:#2aa198">&#34;</span></code></pre></div>
   
   <div>
     
-    <a href="https://github.com/solareenlo/blog-hugo/commit/30d6f35db60a7e1a1bc582f93d05051fb234fda6" title='Last modified Jul 23, 2019 by solareenlo' target="_blank" rel="noopener">
-      <img src="/svg/calendar.svg" alt="Changed" /> Jul 23, 2019
+    <a href="https://github.com/solareenlo/blog-hugo/commit/a697d47596de5218385f8ade80ff64743c244853" title='Last modified Aug 13, 2019 by solareenlo' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" alt="Changed" /> Aug 13, 2019
     </a>
   </div>
   
@@ -610,6 +676,13 @@ ds<span style="color:#2aa198">&#34;</span></code></pre></div>
 <ul>
 <li><a href="#vimとは">Vimとは</a>
 <ul>
+<li><a href="#ソースからインストール">ソースからインストール</a>
+<ul>
+<li><a href="#スクラッチからインストール">スクラッチからインストール</a></li>
+<li><a href="#インストールし直す">インストールし直す</a></li>
+<li><a href="#clipboard機能とclientserver機能を付けてインストール">clipboard機能とclientserver機能を付けてインストール</a></li>
+<li><a href="#references">References</a></li>
+</ul></li>
 <li><a href="#vimrcの例">.vimrcの例</a></li>
 <li><a href="#使い方">使い方</a>
 <ul>
@@ -617,7 +690,7 @@ ds<span style="color:#2aa198">&#34;</span></code></pre></div>
 <li><a href="#置換">置換</a></li>
 <li><a href="#外部コマンド実行">外部コマンド実行</a></li>
 <li><a href="#新規にファイル作成">新規にファイル作成</a></li>
-<li><a href="#references">References</a></li>
+<li><a href="#references-1">References</a></li>
 </ul></li>
 <li><a href="#オススメのプラグイン">オススメのプラグイン</a></li>
 <li><a href="#プラグインマネージャー">プラグインマネージャー</a>

@@ -505,9 +505,7 @@ df -Th &amp;gt; Filesystem Type Size Used Avail Use% Mounted on &amp;gt; /dev/nv
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://solareenlo.com/docs/vim/</guid>
-      <description>Vimとは  viから派生したテキストエディタ. プラグインを導入したり, .vimrcの設定を変更したりして, 自分好みにカスタマイズがどんどんできる. GitHubリポジトリ: https://github.com/vim/vim  .vimrcの例  .vimrcとはvimの設定を書いてあるファイル. solareenlo/vim-config よく使われているvimrcの設定ランキング  使い方 削除    コマンド 動作     D カーソル以降を削除    置換    コマンド 動作     :%s/old/new/c ファイル上のoldを1つずつ確認しながらnewに置換   :%s/old/new/g ファイル上の全てのoldをnewに置換   :s/old/new/g カーソル行の全てのoldをnewに置換   :10,20s/old/new/g 10~20行目の全てのoldをnewに置換   :&#39;&amp;lt;,&#39;&amp;gt;s/old/new/g ビジュアルモードで選択中の範囲の全てのoldをnewに置換.
-&#39;&amp;lt;,&#39;&amp;gt;の部分は, 範囲を選択中に:を押すと自動的に出る.    外部コマンド実行 :!を使う.
-vim # vimモードに突入 :!</description>
+      <description>Vimとは  viから派生したテキストエディタ. プラグインを導入したり, .vimrcの設定を変更したりして, 自分好みにカスタマイズがどんどんできる. GitHubリポジトリ: https://github.com/vim/vim  ソースからインストール スクラッチからインストール git clone git@github.com:vim/vim.git cd vim ./configure make sudo make install インストールし直す cd vim make distclean rm src/auto/config.cache ./configure make sudo make install clipboard機能とclientserver機能を付けてインストール cd /mnt/md0/github git clone git@github.com:vim/vim.git cd vim make distclean rm src/auto/config.cache # 必要なパッケージをインストール sudo apt install \  lua5.2 \  liblua5.2-dev \  luajit \  libluajit-5.2 \  ruby-dev \  xorg-dev # /usr/include/lua5.</description>
     </item>
     
     <item>
