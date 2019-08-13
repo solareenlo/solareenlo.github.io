@@ -245,7 +245,9 @@ sudo ln -s /usr/lib/x86_64-linux-gnu/liblua5.3.so /usr/local/lib/liblua.so
 </span><span style="color:#cb4b16"></span>  --enable-rubyinterp<span style="color:#719e07">=</span>dynamic <span style="color:#cb4b16">\
 </span><span style="color:#cb4b16"></span>  --enable-gui<span style="color:#719e07">=</span>auto <span style="color:#cb4b16">\
 </span><span style="color:#cb4b16"></span>  --enable-gtk2-check <span style="color:#cb4b16">\
+</span><span style="color:#cb4b16"></span>  --disable-darwin <span style="color:#cb4b16">\
 </span><span style="color:#cb4b16"></span>  --with-lua-prefix<span style="color:#719e07">=</span>/usr/local
+  <span style="color:#586e75"># --disable-darwin は, macOSでmakeするときに必要.</span>
   <span style="color:#586e75"># macOSの場合, 最後の &#39;--with-lua-prefix&#39; を指定しないとconfigure時に &#39;configure: error: could not configure lua&#39; が出てしまう.</span>
 <span style="color:#586e75"># makeする</span>
 make
@@ -260,6 +262,7 @@ vim --version</code></pre></div>
 <li><a href="https://qiita.com/sat0ken/items/82fee34035ce1e6960ae">WSLにVim8を入れてみる</a></li>
 <li><a href="https://qiita.com/Nikkely/items/7bfa4e71a6eb1e3d7bed">vimでclipboardを+にしたいけどならない人向け</a></li>
 <li><a href="https://liquidz.github.io/2013/12/vim.html">Mac上のVimを最新にした際のメモ(LuaJIT対応)</a></li>
+<li><a href="https://github.com/vim/vim/issues/2444">Vim can&rsquo;t build the athena GUI on macOS High Sierra #2444</a></li>
 </ul>
 
 <h2 id="vimrcの例">.vimrcの例</h2>
@@ -653,8 +656,8 @@ ds<span style="color:#2aa198">&#34;</span></code></pre></div>
   
   <div>
     
-    <a href="https://github.com/solareenlo/blog-hugo/commit/a697d47596de5218385f8ade80ff64743c244853" title='Last modified Aug 13, 2019 by solareenlo' target="_blank" rel="noopener">
-      <img src="/svg/calendar.svg" alt="Changed" /> Aug 13, 2019
+    <a href="https://github.com/solareenlo/blog-hugo/commit/249a415bc61db75245ae3da827033542642f3925" title='Last modified Aug 14, 2019 by solareenlo' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" alt="Changed" /> Aug 14, 2019
     </a>
   </div>
   
