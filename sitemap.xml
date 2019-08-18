@@ -21,13 +21,13 @@
   </url>
   
   <url>
-    <loc>https://solareenlo.com/tags/sleep/</loc>
+    <loc>https://solareenlo.com/categories/sleep/</loc>
     <lastmod>2019-07-30T03:35:34+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://solareenlo.com/categories/sleep/</loc>
+    <loc>https://solareenlo.com/tags/sleep/</loc>
     <lastmod>2019-07-30T03:35:34+09:00</lastmod>
     <priority>0</priority>
   </url>
@@ -38,13 +38,13 @@
   </url>
   
   <url>
-    <loc>https://solareenlo.com/tags/5G/</loc>
+    <loc>https://solareenlo.com/categories/5G/</loc>
     <lastmod>2019-07-09T13:31:16+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://solareenlo.com/categories/5G/</loc>
+    <loc>https://solareenlo.com/tags/5G/</loc>
     <lastmod>2019-07-09T13:31:16+09:00</lastmod>
     <priority>0</priority>
   </url>
@@ -55,20 +55,14 @@
   </url>
   
   <url>
-    <loc>https://solareenlo.com/tags/overview/</loc>
-    <lastmod>2019-07-09T13:31:16+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://solareenlo.com/categories/overview/</loc>
     <lastmod>2019-07-09T13:31:16+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://solareenlo.com/tags/meetup/</loc>
-    <lastmod>2019-07-15T03:55:02+09:00</lastmod>
+    <loc>https://solareenlo.com/tags/overview/</loc>
+    <lastmod>2019-07-09T13:31:16+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -79,7 +73,7 @@
   </url>
   
   <url>
-    <loc>https://solareenlo.com/tags/techbook/</loc>
+    <loc>https://solareenlo.com/tags/meetup/</loc>
     <lastmod>2019-07-15T03:55:02+09:00</lastmod>
     <priority>0</priority>
   </url>
@@ -91,14 +85,14 @@
   </url>
   
   <url>
-    <loc>https://solareenlo.com/posts/techbook-meetup/</loc>
+    <loc>https://solareenlo.com/tags/techbook/</loc>
     <lastmod>2019-07-15T03:55:02+09:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://solareenlo.com/tags/docs/</loc>
-    <lastmod>2019-06-17T03:52:36+09:00</lastmod>
-    <priority>0</priority>
+    <loc>https://solareenlo.com/posts/techbook-meetup/</loc>
+    <lastmod>2019-07-15T03:55:02+09:00</lastmod>
   </url>
   
   <url>
@@ -108,7 +102,7 @@
   </url>
   
   <url>
-    <loc>https://solareenlo.com/tags/documentation/</loc>
+    <loc>https://solareenlo.com/tags/docs/</loc>
     <lastmod>2019-06-17T03:52:36+09:00</lastmod>
     <priority>0</priority>
   </url>
@@ -120,18 +114,24 @@
   </url>
   
   <url>
-    <loc>https://solareenlo.com/posts/documentation/</loc>
-    <lastmod>2019-06-17T03:52:36+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://solareenlo.com/tags/Hands-on/</loc>
+    <loc>https://solareenlo.com/tags/documentation/</loc>
     <lastmod>2019-06-17T03:52:36+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
+    <loc>https://solareenlo.com/posts/documentation/</loc>
+    <lastmod>2019-06-17T03:52:36+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://solareenlo.com/categories/Hands-on/</loc>
+    <lastmod>2019-06-17T03:52:36+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://solareenlo.com/tags/Hands-on/</loc>
     <lastmod>2019-06-17T03:52:36+09:00</lastmod>
     <priority>0</priority>
   </url>
@@ -177,25 +177,25 @@
   </url>
   
   <url>
-    <loc>https://solareenlo.com/tags/Angular/</loc>
-    <lastmod>2019-06-17T03:52:36+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://solareenlo.com/categories/Angular/</loc>
     <lastmod>2019-06-17T03:52:36+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://solareenlo.com/tags/Docker/</loc>
+    <loc>https://solareenlo.com/tags/Angular/</loc>
     <lastmod>2019-06-17T03:52:36+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://solareenlo.com/categories/Docker/</loc>
+    <lastmod>2019-06-17T03:52:36+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://solareenlo.com/tags/Docker/</loc>
     <lastmod>2019-06-17T03:52:36+09:00</lastmod>
     <priority>0</priority>
   </url>
@@ -223,13 +223,13 @@
   </url>
   
   <url>
-    <loc>https://solareenlo.com/tags/Docker-Hub/</loc>
+    <loc>https://solareenlo.com/categories/Docker-Hub/</loc>
     <lastmod>2019-06-17T03:52:36+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://solareenlo.com/categories/Docker-Hub/</loc>
+    <loc>https://solareenlo.com/tags/Docker-Hub/</loc>
     <lastmod>2019-06-17T03:52:36+09:00</lastmod>
     <priority>0</priority>
   </url>
@@ -246,13 +246,13 @@
   </url>
   
   <url>
-    <loc>https://solareenlo.com/tags/Bitcoin/</loc>
+    <loc>https://solareenlo.com/categories/Bitcoin/</loc>
     <lastmod>2019-06-17T03:52:36+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://solareenlo.com/categories/Bitcoin/</loc>
+    <loc>https://solareenlo.com/tags/Bitcoin/</loc>
     <lastmod>2019-06-17T03:52:36+09:00</lastmod>
     <priority>0</priority>
   </url>
@@ -298,13 +298,13 @@
   </url>
   
   <url>
-    <loc>https://solareenlo.com/tags/Plasma/</loc>
+    <loc>https://solareenlo.com/categories/Plasma/</loc>
     <lastmod>2019-06-17T03:52:36+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://solareenlo.com/categories/Plasma/</loc>
+    <loc>https://solareenlo.com/tags/Plasma/</loc>
     <lastmod>2019-06-17T03:52:36+09:00</lastmod>
     <priority>0</priority>
   </url>
@@ -321,13 +321,13 @@
   </url>
   
   <url>
-    <loc>https://solareenlo.com/tags/Substrate/</loc>
+    <loc>https://solareenlo.com/categories/Substrate/</loc>
     <lastmod>2019-06-17T03:52:36+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://solareenlo.com/categories/Substrate/</loc>
+    <loc>https://solareenlo.com/tags/Substrate/</loc>
     <lastmod>2019-06-17T03:52:36+09:00</lastmod>
     <priority>0</priority>
   </url>
@@ -366,13 +366,13 @@
   </url>
   
   <url>
-    <loc>https://solareenlo.com/tags/golang/</loc>
+    <loc>https://solareenlo.com/categories/golang/</loc>
     <lastmod>2019-06-17T03:52:36+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://solareenlo.com/categories/golang/</loc>
+    <loc>https://solareenlo.com/tags/golang/</loc>
     <lastmod>2019-06-17T03:52:36+09:00</lastmod>
     <priority>0</priority>
   </url>
