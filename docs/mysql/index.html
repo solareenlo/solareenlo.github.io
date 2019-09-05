@@ -1,24 +1,17 @@
 <!DOCTYPE html>
-
-
-
-
-
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>
-  
-    
-    MySQL
-  
- | solareenlo</title>
+<title>MySQL | solareenlo</title>
 
 
+<link rel="stylesheet" href="/book.min.bf43b5e4905250b7d867aab1f43ae58ceb96da1951a853aa09a209edf40150f2.css" integrity="sha256-v0O15JBSULfYZ6qx9DrljOuW2hlRqFOqCaIJ7fQBUPI=">
 
-<link rel="stylesheet" href="/book.min.d88de72155fc577d3859e9a9002b88d7dfeef555024b62b20b68428a57e1db93.css">
+
+<script defer src="/search.min.2994972ed23bb355b28ff82d092b4ad451b69a8a6103ee2723663b5d48715b8d.js" integrity="sha256-KZSXLtI7s1Wyj/gtCStK1FG2mophA&#43;4nI2Y7XUhxW40="></script>
+
 
 
 <link rel="icon" href="/favicon.png" type="image/x-icon">
@@ -33,7 +26,7 @@ https://github.com/alex-shpak/hugo-book
 </head>
 
 <body>
-  <input type="checkbox" style="display: none" id="menu-control" />
+  <input type="checkbox" class="hidden" id="menu-control" />
   <main class="flex container">
 
     <aside class="book-menu fixed">
@@ -41,6 +34,15 @@ https://github.com/alex-shpak/hugo-book
 <h2 class="book-brand">
   <a href="https://solareenlo.com/">solareenlo</a>
 </h2>
+
+
+<div class="book-search">
+  <input type="text" placeholder="Search" id="book-search-input" maxlength="64" readonly />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
 
 
 
@@ -151,35 +153,29 @@ https://github.com/alex-shpak/hugo-book
 
 
 
+
+
 </nav>
 
 
-  
 <script>
 (function() {
-  var menu = document.querySelector('aside.book-menu nav')
-  addEventListener('beforeunload', function(event) {
-    localStorage.setItem('menu.scrollTop', menu.scrollTop)
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
   });
-  menu.scrollTop = localStorage.getItem('menu.scrollTop')
-})()
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
 </script>
-
-
 
     </aside>
 
     <div class="book-page">
-      <header class="align-center justify-between book-header">
+      <header class="flex align-center justify-between book-header">
   <label for="menu-control">
     <img src="/svg/menu.svg" alt="Menu" />
   </label>
-  <strong>
-  
-    
-    MySQL
-  
-</strong>
+  <strong>MySQL</strong>
 </header>
 
       
@@ -999,7 +995,7 @@ mysql&gt; quit;</code></pre></div></li>
 
 
   </main>
-  
+
   
   
 </body>
