@@ -3,14 +3,23 @@
 
 <head>
   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><meta property="og:title" content="" />
+<meta property="og:description" content="ターミナルとは  GUIの上でCUIの操作をしたいときに使用するアプリケーションのこと.  コンソール/ターミナル/シェルの違い  コンソールとは入出力をつかさどる端末ハードウェア ターミナルとはGUIでCUI環境を再現するもの シェルとはCUI環境におけるOSとの対話的インターフェイス  Reference: 【初心者向け】シェル・ターミナル・コンソールの違いとは？   下地にシェルがありコンソールやターミナルから命令をOSへ伝達してくれる.
+コンソールでアクセスしてもターミナルでアクセスしても対話するものはシェルとなる.
+コンソールの場合はハードウェア的に直にアクセスしているがターミナルの場合はGUI環境でソフトウェア的にシェルを呼び出し命令を実行するようになっている.
+ターミナルの色を変える ~/.bashrcの当該部分を以下の様に書き換える.
+if [ &#34;$color_prompt&#34; = yes ]; then PS1=&#39;${debian_chroot:&#43;($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\033[01;31m\]$(__git_ps1)\[\033[00m\]\n\[\033[01;35m\]-&gt; \$\[\033[00m\] &#39; else PS1=&#39;${debian_chroot:&#43;($debian_chroot)}\u@\h:\w\$ &#39; fi ターミナルのJSON出力に色付けする jqを使う.
+# こんな感じ echo &#39;{&#34;items&#34;:[{&#34;item_id&#34;:1,&#34;name&#34;:&#34;すてきな雑貨&#34;,&#34;price&#34;:2500},{&#34;item_id&#34;:2,&#34;name&#34;:&#34;格好いい置物&#34;,&#34;price&#34;:4500}]}&#39; | jq . &gt; { &gt; &#34;items&#34;: [ &gt; { &gt; &#34;item_id&#34;: 1, &gt; &#34;name&#34;: &#34;すてきな雑貨&#34;, &gt; &#34;price&#34;: 2500 &gt; }, &gt; { &gt; &#34;item_id&#34;: 2, &gt; &#34;name&#34;: &#34;格好いい置物&#34;, &gt; &#34;price&#34;: 4500 &gt; } &gt; ] &gt; } Reference: jq コマンドを使う日常のご紹介" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://solareenlo.com/docs/terminal/" />
+
 <title>Terminal | solareenlo</title>
 
 
-<link rel="stylesheet" href="/book.min.c8a6597afda2051c0216685440459042d37cbc9134aa0a0d19de74d155f1ff70.css" integrity="sha256-yKZZev2iBRwCFmhUQEWQQtN8vJE0qgoNGd500VXx/3A=">
+<link rel="stylesheet" href="/book.min.da4e14da7d418314b609e23026b1f340c40834fdffbbc862687326d23c0e9b39.css" integrity="sha256-2k4U2n1BgxS2CeIwJrHzQMQINP3/u8hiaHMm0jwOmzk=">
 
 
-<script defer src="/search.min.baf15a592abfdc20690f1ed6d2d7805c659241a0df3d10a526c8c643fa6669f5.js" integrity="sha256-uvFaWSq/3CBpDx7W0teAXGWSQaDfPRClJsjGQ/pmafU="></script>
+<script defer src="/search.min.f20ceb6ebc0ae8c180c11ffe88ebc788eef683f1efa913f8a38830361e101e3e.js" integrity="sha256-8gzrbrwK6MGAwR/&#43;iOvHiO72g/HvqRP4o4gwNh4QHj4="></script>
 
 
 
@@ -21,6 +30,8 @@
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
+
+
 
   
 </head>
@@ -38,7 +49,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 <div class="book-search">
-  <input type="text" placeholder="Search" id="book-search-input" maxlength="64" readonly />
+  <input type="text" placeholder="Search" id="book-search-input" maxlength="64" />
   <div class="book-search-spinner spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
@@ -277,7 +288,6 @@ https://github.com/alex-shpak/hugo-book
 
   </main>
 
-  
   
 </body>
 

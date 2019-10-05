@@ -3,14 +3,20 @@
 
 <head>
   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><meta property="og:title" content="Bitcoin" />
+<meta property="og:description" content="Bitcoinとは GitHubリポジトリ: https://github.com/bitcoin
+目的 匿名性を自分で選択できつつ, 安全に価値の移転と保存に特化したシステムを構築すること.
+特徴  非中央集権 自律分散 トラストレス 耐改ざん性 オープンソース 匿名性を選択できる 二重支払いができない 払い(価値の保存と移転)に特化したとても堅牢なシステム(チューリング不完全/マルチシグ/HDウォレット/ニーモニック/Base58とか)  技術  電子署名 公開鍵暗号  楕円曲線DSA  暗号学的ハッシュ関数  現像計算困難性 (ハッシュ値から元のメッセージを復元できない) 第二現像計算困難性 (同じハッシュ値になる任意のメッセージがない) 衝突安全性 (任意のメッセージのハッシュ値が衝突しない)  ネットワーク  P2P Proof of Work  スタックマシン  ブロック スクリプト オペコード  マークル木 コンセンサスアルゴリズム  プレイヤー  コア開発者 マイナー ユーザー 投資家・投機家 法律  スケーリング方法  コンセンサスアルゴリズムを速くする（分散性のために1ブロック生成にわざと10分かけてる） ブロックに含まれるトランザクションを増やす（Block weightが4MB以下/segwit導入により） オフチェーン（Lightning networkなど） サイドチェーン シャーディング Reference: ブロックチェーンとスケーラビリティ  フルノード フルノードの立て方  ビットコインのフルノードを立てる方法 Bitcoin ClockUpMemo bitcoindのブロック保存先ディレクトリを指定する Bitcoin." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://solareenlo.com/docs/bitcoin/" />
+<meta property="article:modified_time" content="2019-07-14T05:01:56&#43;09:00"/>
 <title>Bitcoin | solareenlo</title>
 
 
-<link rel="stylesheet" href="/book.min.c8a6597afda2051c0216685440459042d37cbc9134aa0a0d19de74d155f1ff70.css" integrity="sha256-yKZZev2iBRwCFmhUQEWQQtN8vJE0qgoNGd500VXx/3A=">
+<link rel="stylesheet" href="/book.min.da4e14da7d418314b609e23026b1f340c40834fdffbbc862687326d23c0e9b39.css" integrity="sha256-2k4U2n1BgxS2CeIwJrHzQMQINP3/u8hiaHMm0jwOmzk=">
 
 
-<script defer src="/search.min.baf15a592abfdc20690f1ed6d2d7805c659241a0df3d10a526c8c643fa6669f5.js" integrity="sha256-uvFaWSq/3CBpDx7W0teAXGWSQaDfPRClJsjGQ/pmafU="></script>
+<script defer src="/search.min.f20ceb6ebc0ae8c180c11ffe88ebc788eef683f1efa913f8a38830361e101e3e.js" integrity="sha256-8gzrbrwK6MGAwR/&#43;iOvHiO72g/HvqRP4o4gwNh4QHj4="></script>
 
 
 
@@ -21,6 +27,8 @@
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
+
+
 
   
 </head>
@@ -38,7 +46,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 <div class="book-search">
-  <input type="text" placeholder="Search" id="book-search-input" maxlength="64" readonly />
+  <input type="text" placeholder="Search" id="book-search-input" maxlength="64" />
   <div class="book-search-spinner spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
@@ -680,7 +688,6 @@ scriptPubKey : <span style="color:#2aa198">0</span> &lt;<span style="color:#2aa1
 
   </main>
 
-  
   
 </body>
 

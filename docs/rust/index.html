@@ -3,14 +3,18 @@
 
 <head>
   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><meta property="og:title" content="" />
+<meta property="og:description" content="Rustとは  Mozillaが支援するオープンソースのシステムプログラミング言語のこと. 速度, 安全性, 平行性の3つのゴールにフォーカスしている. 主にC, C&#43;&#43;に置き換わるものとされている. GitHubリポジトリ: https://github.com/rust-lang/rust  Rustの特徴 概要  C&#43;&#43;に匹敵する実行速度や詳細なメモリ管理が実現できる. 不正なメモリ領域を指すポインタなどを許容しないといったメモリ安全性を保証している. マルチスレッドによる並列実行時のデータ競合をコンパイル時に排除する. 関数型言語由来の便利な機能, 代数的データ型とパターンマッチ, 型クラスによる多相関数, コンパイラによる型推論などを取り入れている. ガーベージコレクタのような複雑なランタイムをもっていない. 多言語関数インターフェースを用いて, 他のプログラミング言語との間で相互に関数を呼び出せる.  速度面  マシンコードへコンパイル  コンパイラがプログラムをマシンコード(プロセッサが理解できる機械語)へ変換する.  静的型付け言語  静的型付け言語は, 変数および関数の引数や戻り値などすべての値について, その型をコンパイル時に決定する. 動的型付け言語は, プログラムの実行時に実際の値を見て型を決定する.  ゼロコスト抽象化  ゼロコスト抽象化とは, プログラム言語が持つ抽象化(対象から注目すべき要素を重点的に抜き出して, 他は無視する手法)の仕組みが実行時のコスト(実行速度やメモリ使用量など)なしに動作すること.  ガーベージコレクションを行わない軽量なランタイム  安全面  Rustはコンパイル時の静的解析により以下の安全性を保証している. 型安全性  型安全性とは, 正しく型付けされたプログラムが不正な動作(未定義動作とも言う)をしないよう言語が定義されていること.  メモリ安全性  RustはCのようにメモリ内容への柔軟なアクセスができるが, Cと違い以下のようなメモリ安全性を保証する. データの転記の際のメモリ領域あふれを防ぐ. ポインタによる誤ったメモリ境域へのアクセスを防ぐ. 初期化前のメモリ領域へのアクセスを防ぐ. 解放後のメモリ領域へのアクセスを防ぐ.  マルチスレッドプログラミングにおけるデータ競合の回避  Rustでは型安全性とメモリ安全性に用いられるコンパイラの静的解析機能を使い, データ競合の可能性を検出できる. 故にコンパイルに成功したら, そのプログラムにはデータ競合が無いことが保証される." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://solareenlo.com/docs/rust/" />
+
 <title>Rust | solareenlo</title>
 
 
-<link rel="stylesheet" href="/book.min.c8a6597afda2051c0216685440459042d37cbc9134aa0a0d19de74d155f1ff70.css" integrity="sha256-yKZZev2iBRwCFmhUQEWQQtN8vJE0qgoNGd500VXx/3A=">
+<link rel="stylesheet" href="/book.min.da4e14da7d418314b609e23026b1f340c40834fdffbbc862687326d23c0e9b39.css" integrity="sha256-2k4U2n1BgxS2CeIwJrHzQMQINP3/u8hiaHMm0jwOmzk=">
 
 
-<script defer src="/search.min.baf15a592abfdc20690f1ed6d2d7805c659241a0df3d10a526c8c643fa6669f5.js" integrity="sha256-uvFaWSq/3CBpDx7W0teAXGWSQaDfPRClJsjGQ/pmafU="></script>
+<script defer src="/search.min.f20ceb6ebc0ae8c180c11ffe88ebc788eef683f1efa913f8a38830361e101e3e.js" integrity="sha256-8gzrbrwK6MGAwR/&#43;iOvHiO72g/HvqRP4o4gwNh4QHj4="></script>
 
 
 
@@ -21,6 +25,8 @@
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
+
+
 
   
 </head>
@@ -38,7 +44,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 <div class="book-search">
-  <input type="text" placeholder="Search" id="book-search-input" maxlength="64" readonly />
+  <input type="text" placeholder="Search" id="book-search-input" maxlength="64" />
   <div class="book-search-spinner spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
@@ -836,7 +842,6 @@ rust-lldb ./target/degub/rpn <span style="color:#586e75"># バイナリを対象
 
   </main>
 
-  
   
 </body>
 

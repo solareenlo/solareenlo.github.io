@@ -3,14 +3,23 @@
 
 <head>
   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><meta property="og:title" content="SSH" />
+<meta property="og:description" content="SSH(Secure Shell)とは  暗号や認証の技術を利用して, 安全にリモートコンピュータと通信するためのプロトコルのこと. VPSに接続するときは必須.  SSHの流れ Reference: SSH通信って、結局何してるの？
+[local]1.通信用の秘密鍵・公開鍵の作成する. [local]2.サーバーに公開鍵を渡す. [server]A.サーバーにユーザーを登録する(sudo権限). [server]B.サーバーに登録されているユーザーと, 渡された公開鍵を紐づける. ※この状態で初めて作成したユーザーによるサーバーへのログインが可能となる. [local]3.作成したユーザーでログインする. [server]C.ログイン時に乱数を生成する. [server]D.Cで生成した乱数から, ハッシュ値を生成する. ※このハッシュ値は認証で使うのでサーバー側で保持しておく. [server]E.受け取った公開鍵 &#43; Cで生成した乱数を用いて暗号を生成する. [server]F.Dで作成した暗号をローカルに送る. [local]4.1で作成した秘密鍵を用いて, 送られてきた暗号を解読し乱数を復元する. [local]5.乱数からハッシュ値を計算し, そのハッシュ値をサーバーに送る. [server]G.送られてきたハッシュ値と、Dで生成したハッシュ値を比較する. 一致していれば認証成功. 以後全ての通信は暗号化される. scp scpとはSSHを用いてファイルを秘匿化してコピーする技術のこと.
+# sshのconfigファイルを用いて通信する方法 scp file_name.txt -F ~/.ssh/config iota3:~/github scp &lt;渡したいファイルの名前&gt; -F &lt;コンフィグファイルの名前&gt; &lt;渡し先のマシン名&gt;:&lt;渡し先のディレクトリ&gt; Mac -&gt; Ubuntu を公開鍵暗号方式で接続する UbuntuをSSH接続可にする Ubuntu側で
+sudo apt-get install openssh-server で, Ubuntu側へSSHで接続できるようになる.
+Macで秘密鍵と公開鍵のペアを作成する まずMacで秘密鍵と公開鍵のペアを作成する.
+ssh-keygen -t rsa &gt; Generating public/private rsa key pair. &gt; Enter file in which to save the key (/Users/solareenlo/." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://solareenlo.com/docs/ssh/" />
+<meta property="article:modified_time" content="2019-07-18T00:48:21&#43;09:00"/>
 <title>SSH | solareenlo</title>
 
 
-<link rel="stylesheet" href="/book.min.c8a6597afda2051c0216685440459042d37cbc9134aa0a0d19de74d155f1ff70.css" integrity="sha256-yKZZev2iBRwCFmhUQEWQQtN8vJE0qgoNGd500VXx/3A=">
+<link rel="stylesheet" href="/book.min.da4e14da7d418314b609e23026b1f340c40834fdffbbc862687326d23c0e9b39.css" integrity="sha256-2k4U2n1BgxS2CeIwJrHzQMQINP3/u8hiaHMm0jwOmzk=">
 
 
-<script defer src="/search.min.baf15a592abfdc20690f1ed6d2d7805c659241a0df3d10a526c8c643fa6669f5.js" integrity="sha256-uvFaWSq/3CBpDx7W0teAXGWSQaDfPRClJsjGQ/pmafU="></script>
+<script defer src="/search.min.f20ceb6ebc0ae8c180c11ffe88ebc788eef683f1efa913f8a38830361e101e3e.js" integrity="sha256-8gzrbrwK6MGAwR/&#43;iOvHiO72g/HvqRP4o4gwNh4QHj4="></script>
 
 
 
@@ -21,6 +30,8 @@
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
+
+
 
   
 </head>
@@ -38,7 +49,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 <div class="book-search">
-  <input type="text" placeholder="Search" id="book-search-input" maxlength="64" readonly />
+  <input type="text" placeholder="Search" id="book-search-input" maxlength="64" />
   <div class="book-search-spinner spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
@@ -357,7 +368,6 @@ ssh -i ~/.ssh/id_rsa solareenlo@111.222.333.444</code></pre></div>
 
   </main>
 
-  
   
 </body>
 

@@ -3,14 +3,20 @@
 
 <head>
   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><meta property="og:title" content="" />
+<meta property="og:description" content="Docker Composeとは  複数のコンテナで構成されるアプリケーションを定義と実行するためのツールのこと. Dockerとは切り離されてる. Composeはアプリケーションのサービスをファイルで定義する. Dockerコマンドと高い親和性があるため, 学習コストが比較的低い. Swarmモードにサービスをデプロイできるオーケストレーション機能もある.  Reference: Docker Compose 徹底解説  GitHubリポジトリ: https://github.com/docker/compose  活用場面  利用者視点  docker-compose.ymlがあれば, すぐに何でも実行できる.  開発者視点  環境の再構築が簡単 バージョン違いの環境を作りやすい 1つのマシン上に, 複数の環境を立ち上げられやすい   適切に書かれたYAMLファイルさえあれば, 誰でも簡単に環境構築もアプリケーション実行もできるのが強み.
+インストール  https://docs.docker.com/compose/install/  docker-compose.ymlの書き方  services:(使うイメージ), networks:(使うネットワーク), volumes:(使うボリューム)を定義する. docker-compose.ymlの書き方 -&gt; Docker Compose - docker-compose.yml リファレンス  公式Reference  Compose file version 3 reference  working directory指定 working_dirを使う.
+version: &#39;3&#39; services: angular: image: angular-first-app ports: - &#34;4200:4200&#34; volumes: - ." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://solareenlo.com/docs/docker-compose/" />
+
 <title>Docker Compose | solareenlo</title>
 
 
-<link rel="stylesheet" href="/book.min.c8a6597afda2051c0216685440459042d37cbc9134aa0a0d19de74d155f1ff70.css" integrity="sha256-yKZZev2iBRwCFmhUQEWQQtN8vJE0qgoNGd500VXx/3A=">
+<link rel="stylesheet" href="/book.min.da4e14da7d418314b609e23026b1f340c40834fdffbbc862687326d23c0e9b39.css" integrity="sha256-2k4U2n1BgxS2CeIwJrHzQMQINP3/u8hiaHMm0jwOmzk=">
 
 
-<script defer src="/search.min.baf15a592abfdc20690f1ed6d2d7805c659241a0df3d10a526c8c643fa6669f5.js" integrity="sha256-uvFaWSq/3CBpDx7W0teAXGWSQaDfPRClJsjGQ/pmafU="></script>
+<script defer src="/search.min.f20ceb6ebc0ae8c180c11ffe88ebc788eef683f1efa913f8a38830361e101e3e.js" integrity="sha256-8gzrbrwK6MGAwR/&#43;iOvHiO72g/HvqRP4o4gwNh4QHj4="></script>
 
 
 
@@ -21,6 +27,8 @@
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
+
+
 
   
 </head>
@@ -38,7 +46,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 <div class="book-search">
-  <input type="text" placeholder="Search" id="book-search-input" maxlength="64" readonly />
+  <input type="text" placeholder="Search" id="book-search-input" maxlength="64" />
   <div class="book-search-spinner spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
@@ -644,7 +652,6 @@ COPY . .
 
   </main>
 
-  
   
 </body>
 

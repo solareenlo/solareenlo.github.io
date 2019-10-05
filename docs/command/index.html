@@ -3,14 +3,23 @@
 
 <head>
   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><meta property="og:title" content="" />
+<meta property="og:description" content="コマンドとは  コンピュータに特定の機能の実行を指示する命令のこと. たくさんのコマンドがあり, 黒い画面に直接入力する.  Linuxでhtmlを開く xdg-open index.html UbuntuでChromeを開く google-chrome プロセスの動作状況 (ps) psコマンドはプロセスの動作状況を確認するためのコマンド.
+auxオプション
+auxオプションは、aとuとxというオプションを組み合わせたものです。
+ a: 端末操作のプロセスを表示する u: CPUやメモリの使用率などを表示する x: 端末操作以外のプロセスを表示する  ps aux &gt; USER PID %CPU %MEM VSZ RSS TT STAT STARTED TIME COMMAND &gt; solareenlo 96263 4.3 2.0 5500012 168620 ?? S 水07PM 21:03.04 /Applications/Utilities/Terminal.app/Contents/MacOS/Terminal &gt; その他たくさん こんな感じで標準出力される.
+Reference: ps auxの見方がよく判らない・・・
+sha256を出力 # Mac shasum -a 256 &lt;ファイル名&gt; # Linux sha256sum &lt;ファイル名&gt; 所有権を変更 (chown) ファイルのユーザー所有権とグループ所有権をrootからsolareenloへ変更する" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://solareenlo.com/docs/command/" />
+
 <title>Command | solareenlo</title>
 
 
-<link rel="stylesheet" href="/book.min.c8a6597afda2051c0216685440459042d37cbc9134aa0a0d19de74d155f1ff70.css" integrity="sha256-yKZZev2iBRwCFmhUQEWQQtN8vJE0qgoNGd500VXx/3A=">
+<link rel="stylesheet" href="/book.min.da4e14da7d418314b609e23026b1f340c40834fdffbbc862687326d23c0e9b39.css" integrity="sha256-2k4U2n1BgxS2CeIwJrHzQMQINP3/u8hiaHMm0jwOmzk=">
 
 
-<script defer src="/search.min.baf15a592abfdc20690f1ed6d2d7805c659241a0df3d10a526c8c643fa6669f5.js" integrity="sha256-uvFaWSq/3CBpDx7W0teAXGWSQaDfPRClJsjGQ/pmafU="></script>
+<script defer src="/search.min.f20ceb6ebc0ae8c180c11ffe88ebc788eef683f1efa913f8a38830361e101e3e.js" integrity="sha256-8gzrbrwK6MGAwR/&#43;iOvHiO72g/HvqRP4o4gwNh4QHj4="></script>
 
 
 
@@ -21,6 +30,8 @@
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
+
+
 
   
 </head>
@@ -38,7 +49,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 <div class="book-search">
-  <input type="text" placeholder="Search" id="book-search-input" maxlength="64" readonly />
+  <input type="text" placeholder="Search" id="book-search-input" maxlength="64" />
   <div class="book-search-spinner spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
@@ -678,7 +689,6 @@ ls app2
 
   </main>
 
-  
   
 </body>
 

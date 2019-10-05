@@ -3,14 +3,19 @@
 
 <head>
   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><meta property="og:title" content="" />
+<meta property="og:description" content="zathuraのインストール方法  以下zathuraインストールに必要なものをどんどんインストールしていきます. まだ未完.  mesonをインストール  mesonはオープンソースビルドシステムのこと.
+# python3やもろもろをインストールする sudo apt-get install python3 python3-pip python3-setuptools python3-wheel ninja-build # pipを使ってmersonをインストールする pip3 install --user meson # PATHを通す(bash向け) PATH=&#34;${PATH}:$(python -c &#39;import site; print(site.USER_BASE);&#39;)/bin&#34;  cmakeをインストール sudo apt remove cmake git clone git@gitlab.kitware.com:cmake/cmake.git cd cmake ./bootstrap &amp;&amp; make &amp;&amp; sudo make install libmount-devをインストール sudo apt update sudo apt upgrade -y sudo apt install libmount-dev glibをインストール git clone https://gitlab.gnome.org/GNOME/glib.git cd glib meson build ninja -C build sudo ninja -C build install# もしくは sudo apt update sudo apt upgrade -y sudo apt install libglib2." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://solareenlo.com/docs/zathura-install/" />
+
 <title>Zathura Install | solareenlo</title>
 
 
-<link rel="stylesheet" href="/book.min.c8a6597afda2051c0216685440459042d37cbc9134aa0a0d19de74d155f1ff70.css" integrity="sha256-yKZZev2iBRwCFmhUQEWQQtN8vJE0qgoNGd500VXx/3A=">
+<link rel="stylesheet" href="/book.min.da4e14da7d418314b609e23026b1f340c40834fdffbbc862687326d23c0e9b39.css" integrity="sha256-2k4U2n1BgxS2CeIwJrHzQMQINP3/u8hiaHMm0jwOmzk=">
 
 
-<script defer src="/search.min.baf15a592abfdc20690f1ed6d2d7805c659241a0df3d10a526c8c643fa6669f5.js" integrity="sha256-uvFaWSq/3CBpDx7W0teAXGWSQaDfPRClJsjGQ/pmafU="></script>
+<script defer src="/search.min.f20ceb6ebc0ae8c180c11ffe88ebc788eef683f1efa913f8a38830361e101e3e.js" integrity="sha256-8gzrbrwK6MGAwR/&#43;iOvHiO72g/HvqRP4o4gwNh4QHj4="></script>
 
 
 
@@ -21,6 +26,8 @@
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
+
+
 
   
 </head>
@@ -38,7 +45,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 <div class="book-search">
-  <input type="text" placeholder="Search" id="book-search-input" maxlength="64" readonly />
+  <input type="text" placeholder="Search" id="book-search-input" maxlength="64" />
   <div class="book-search-spinner spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
@@ -311,7 +318,6 @@ sudo ninja install</code></pre></div></article>
 
   </main>
 
-  
   
 </body>
 

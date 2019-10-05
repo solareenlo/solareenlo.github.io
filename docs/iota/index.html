@@ -3,14 +3,19 @@
 
 <head>
   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><meta property="og:title" content="IOTA" />
+<meta property="og:description" content="IOTAとは Githubリポジトリ: https://github.com/iotaledger
+目的  オープンIoTでブロックチェーンの良さ(分散性/耐改ざん性/オープン性)を使えるようにしつつ(スケーリング・マイニングコスト・トランザクションの承認の遅さを解決しつつ)インダストリー4.0を推し進めること. IOTA財団の目的は, オープンソースガバナンスを使用して, IOTAをゴールドスタンダード（主要組織や標準化団体と協力して, エンタープライズ対応DLT）にすること.  特徴  小さなデータの保存と交換に特化した設計. 平衡三進数を使用. 量子コンピュータ耐性のために電子署名にはWinternitz One Time Signatureを使用.  署名は使い捨てなので送金に使ったアドレスにもう1度入金すると盗まれる可能性特大. というか多額のIOTAを盗まれた実績有. 今はそうならないようにwalletが上手に管理してくれてる.  スケーリングのためにブロックは生成せずに各々のトランザクションがDAG形式で自分より前のトランザションを承認していく.  まだ発展途上なのでチェック機能が存在する. トランザクションはInput/Output/Remainderの3種類が1まとめになったBundleとしてTangle内を流れてる.  UTXOを採用.  CfBによる技術的特徴  IoTは, インターネットを介して通信するものではありません.  この誤解は, インターネット用の既存のソリューションを別の名前で販売しようとしている企業によって生み出されました. モノは, インターネットよりもはるかに大きい, 独自のネットワークを形成します. そのようなネットワークは, すべてのトラフィックが少数の組織によって制御されている少数のサーバーを通過するアーキテクチャを使用して拡張することはできません.  Tangleは1つだけであり, それだけです.  いくつかのIOTAフォークを実行しても, それらはすべて単一のTangleで機能し, 理論的には後でマージすることができます. IOTAを実行している異なるクラスターは, Tangleに絡み合って異なるサブタングルを形成します. これは, モバイルのモノがあるクラスタから別のクラスタに移動するときに便利な機能です.  IOTAを実行しているノードのネットワークは, 1/3未満の要素の障害が重要ではないシステムです.  もしそうならノードソフトウェアはこの機能を念頭に置いて開発されるべきです. 特に, グリッチが発生した場合は, ノードを再起動し, 必要に応じてストレージをクリアすることができます. IOTA上に構築されたソフトウェアは, そのノードが常に信頼できる状態で動作すると想定してはいけません. ソフトウェアは少なくとも3つのノードに接続し, それらのクォーラム(67％&#43;)によって提供される情報に依存します.  IOTAプロトコルは不変なものです.  バージョニングを必要としません." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://solareenlo.com/docs/iota/" />
+<meta property="article:modified_time" content="2019-07-23T11:24:38&#43;09:00"/>
 <title>IOTA | solareenlo</title>
 
 
-<link rel="stylesheet" href="/book.min.c8a6597afda2051c0216685440459042d37cbc9134aa0a0d19de74d155f1ff70.css" integrity="sha256-yKZZev2iBRwCFmhUQEWQQtN8vJE0qgoNGd500VXx/3A=">
+<link rel="stylesheet" href="/book.min.da4e14da7d418314b609e23026b1f340c40834fdffbbc862687326d23c0e9b39.css" integrity="sha256-2k4U2n1BgxS2CeIwJrHzQMQINP3/u8hiaHMm0jwOmzk=">
 
 
-<script defer src="/search.min.baf15a592abfdc20690f1ed6d2d7805c659241a0df3d10a526c8c643fa6669f5.js" integrity="sha256-uvFaWSq/3CBpDx7W0teAXGWSQaDfPRClJsjGQ/pmafU="></script>
+<script defer src="/search.min.f20ceb6ebc0ae8c180c11ffe88ebc788eef683f1efa913f8a38830361e101e3e.js" integrity="sha256-8gzrbrwK6MGAwR/&#43;iOvHiO72g/HvqRP4o4gwNh4QHj4="></script>
 
 
 
@@ -21,6 +26,8 @@
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
+
+
 
   
 </head>
@@ -38,7 +45,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 <div class="book-search">
-  <input type="text" placeholder="Search" id="book-search-input" maxlength="64" readonly />
+  <input type="text" placeholder="Search" id="book-search-input" maxlength="64" />
   <div class="book-search-spinner spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
@@ -492,7 +499,6 @@ https://github.com/alex-shpak/hugo-book
 
   </main>
 
-  
   
 </body>
 

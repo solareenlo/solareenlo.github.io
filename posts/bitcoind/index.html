@@ -3,14 +3,27 @@
 
 <head>
   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><meta property="og:title" content="bitcoindへのアクセス方法" />
+<meta property="og:description" content=" bitcoindへのアクセス方法3選(bitcoin-cli, curl, POST). 3つともJSON-RPCで通信してる.
+ bitcoindとは, 名前の通りunixのデーモンとして動作する事を目的とするBitcoinのクライアントで, JSON-RPCで開発者向けのAPIを提供する. したがって, Webサービスとして動作するBitcoinウォレットのバックエンドとしてや, マイニングプールのサーバーとして使われる.
+Reference: Bitcoinウォレットの比較
+ 1. bitcoin-cliを使ってアクセスする.  bitcoin-cliとは, bitcoindへJSON-RPCを使ってアクセスするツールのこと.
+ bitcoindを使ってBitcoinのフルノードを立ち上げて,
+bitcoin-cli getblockchaininfo  とか.
+2. cURLを使ってアクセスする. 下記curlを行う要件.
+ ネットワーク: mainnet 接続環境: ローカル ポート番号: 8332 ユーザーの名前: user-name パスワード: user-password 投げつけているbitcoin-cliのメソッド: getblockchaininfo  curl --data-binary &#39;{&quot;jsonrpc&quot;:&quot;1.0&quot;,&quot;id&quot;:&quot;curltext&quot;,&quot;method&quot;:&quot;getblockchaininfo&quot;,&quot;params&quot;:[]}&#39; -H &#39;content-type:text/plain;&#39; http://user-name:user-password@127.0.0.1:8332/ | jq  3. 自作プログラムでPOSTしてアクセスする. bitcoindはHTTPリクエストメソッドのPOSTに対応しているので, JSON-RPCをPOSTで投げつける. 以下のプログラムはNode.jsを使った例.
+ https://github.com/solareenlo/bc-json-rpc  " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://solareenlo.com/posts/bitcoind/" />
+<meta property="article:published_time" content="2019-04-17T09:00:00&#43;09:00"/>
+<meta property="article:modified_time" content="2019-04-17T14:54:42&#43;09:00"/>
 <title>bitcoindへのアクセス方法 | solareenlo</title>
 
 
-<link rel="stylesheet" href="/book.min.c8a6597afda2051c0216685440459042d37cbc9134aa0a0d19de74d155f1ff70.css" integrity="sha256-yKZZev2iBRwCFmhUQEWQQtN8vJE0qgoNGd500VXx/3A=">
+<link rel="stylesheet" href="/book.min.da4e14da7d418314b609e23026b1f340c40834fdffbbc862687326d23c0e9b39.css" integrity="sha256-2k4U2n1BgxS2CeIwJrHzQMQINP3/u8hiaHMm0jwOmzk=">
 
 
-<script defer src="/search.min.baf15a592abfdc20690f1ed6d2d7805c659241a0df3d10a526c8c643fa6669f5.js" integrity="sha256-uvFaWSq/3CBpDx7W0teAXGWSQaDfPRClJsjGQ/pmafU="></script>
+<script defer src="/search.min.f20ceb6ebc0ae8c180c11ffe88ebc788eef683f1efa913f8a38830361e101e3e.js" integrity="sha256-8gzrbrwK6MGAwR/&#43;iOvHiO72g/HvqRP4o4gwNh4QHj4="></script>
 
 
 
@@ -21,6 +34,8 @@
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
+
+
 
   
 </head>
@@ -38,7 +53,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 <div class="book-search">
-  <input type="text" placeholder="Search" id="book-search-input" maxlength="64" readonly />
+  <input type="text" placeholder="Search" id="book-search-input" maxlength="64" />
   <div class="book-search-spinner spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
@@ -283,7 +298,6 @@ https://github.com/alex-shpak/hugo-book
 
   </main>
 
-  
   
 </body>
 

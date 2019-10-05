@@ -3,14 +3,21 @@
 
 <head>
   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><meta property="og:title" content="" />
+<meta property="og:description" content="Angularとは  Typescript/JavaScriptやその他の言語を使用してモバイルおよびデスクトップWebアプリケーションを構築するための開発プラットフォーム. GitHubリポジトリ: https://github.com/angular/angular References:  https://angular.io/docs https://angular.jp/docs https://angular.keicode.com   用語    用語 意味     module アプリを構成するコンポーネントを束ねたもの.   root module アプリが起動する時に呼びされる大元のモジュール.
+Angularアプリには必ずある.   component View(画面の一部)を制御する.   template componentのUIをどのようにHTMLで表現するかを指定するもの.
+.htmlのこと.   Decorators モジュールやクラスなどの要素に対してメタ情報を付与するもの   constructor TS, JSに付随するものでClassの初期化時に発動する   data binding コンポーネントにおいてテンプレートとクラス内の要素を繋ぐ仕組み.
+テンプレートとコンポーネントのコードを繋ぐ方法   template reference variable #testを使って, そのDOM要素をtest変数で参照できるようにする仕組み.    Decoratorsのパラメーター    パラメーター名 意味     imports 現在のモジュールで利用する他のモジュール／コンポーネント   exports 現在のモジュールで外部に公開するコンポーネントなど   declarations モジュール配下のコンポーネント   bootstrap 最初に起動すべき最上位のコンポーネント(＝ルートコンポーネント)   templateUrl 描画するhtml   template 描画する内容   styleUrls どのcssを使うか   styles 直接cssの内容を記述する   selector コンポーネントの適応先を表す(html, css, classなどとして指定できる)    インストール npm i -g @angular/cli @angular/core バージョンアップ ng update @angular/cli @angular/core DockerでAngular Dockerfileの中身" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://solareenlo.com/docs/angular/" />
+
 <title>Angular | solareenlo</title>
 
 
-<link rel="stylesheet" href="/book.min.c8a6597afda2051c0216685440459042d37cbc9134aa0a0d19de74d155f1ff70.css" integrity="sha256-yKZZev2iBRwCFmhUQEWQQtN8vJE0qgoNGd500VXx/3A=">
+<link rel="stylesheet" href="/book.min.da4e14da7d418314b609e23026b1f340c40834fdffbbc862687326d23c0e9b39.css" integrity="sha256-2k4U2n1BgxS2CeIwJrHzQMQINP3/u8hiaHMm0jwOmzk=">
 
 
-<script defer src="/search.min.baf15a592abfdc20690f1ed6d2d7805c659241a0df3d10a526c8c643fa6669f5.js" integrity="sha256-uvFaWSq/3CBpDx7W0teAXGWSQaDfPRClJsjGQ/pmafU="></script>
+<script defer src="/search.min.f20ceb6ebc0ae8c180c11ffe88ebc788eef683f1efa913f8a38830361e101e3e.js" integrity="sha256-8gzrbrwK6MGAwR/&#43;iOvHiO72g/HvqRP4o4gwNh4QHj4="></script>
 
 
 
@@ -21,6 +28,8 @@
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
+
+
 
   
 </head>
@@ -38,7 +47,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 <div class="book-search">
-  <input type="text" placeholder="Search" id="book-search-input" maxlength="64" readonly />
+  <input type="text" placeholder="Search" id="book-search-input" maxlength="64" />
   <div class="book-search-spinner spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
@@ -1008,7 +1017,6 @@ Aコンポーネント内の<code>&lt;ng-content&gt;&lt;/ng-content&gt;</code>�
 
   </main>
 
-  
   
 </body>
 
