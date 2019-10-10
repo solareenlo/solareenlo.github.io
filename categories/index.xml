@@ -5,10 +5,28 @@
     <link>https://solareenlo.com/categories/</link>
     <description>Recent content in Categories on solareenlo</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 29 Sep 2019 15:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 10 Oct 2019 18:30:00 +0900</lastBuildDate>
     
 	<atom:link href="https://solareenlo.com/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Blockchain</title>
+      <link>https://solareenlo.com/categories/Blockchain/</link>
+      <pubDate>Thu, 10 Oct 2019 18:30:00 +0900</pubDate>
+      
+      <guid>https://solareenlo.com/categories/Blockchain/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Meetup</title>
+      <link>https://solareenlo.com/categories/Meetup/</link>
+      <pubDate>Thu, 10 Oct 2019 18:30:00 +0900</pubDate>
+      
+      <guid>https://solareenlo.com/categories/Meetup/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>dojin</title>
@@ -151,15 +169,6 @@
       <pubDate>Sun, 21 Apr 2019 08:00:00 +0900</pubDate>
       
       <guid>https://solareenlo.com/categories/Programming/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Meetup</title>
-      <link>https://solareenlo.com/categories/Meetup/</link>
-      <pubDate>Fri, 19 Apr 2019 08:00:00 +0900</pubDate>
-      
-      <guid>https://solareenlo.com/categories/Meetup/</guid>
       <description></description>
     </item>
     

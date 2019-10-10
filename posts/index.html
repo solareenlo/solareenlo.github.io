@@ -8,14 +8,14 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://solareenlo.com/posts/" />
 
-<meta property="og:updated_time" content="2019-09-29T15:00:00&#43;09:00"/>
+<meta property="og:updated_time" content="2019-10-10T18:30:00&#43;09:00"/>
 <title>Posts | solareenlo</title>
 
 
 <link rel="stylesheet" href="/book.min.da4e14da7d418314b609e23026b1f340c40834fdffbbc862687326d23c0e9b39.css" integrity="sha256-2k4U2n1BgxS2CeIwJrHzQMQINP3/u8hiaHMm0jwOmzk=">
 
 
-<script defer src="/search.min.f20ceb6ebc0ae8c180c11ffe88ebc788eef683f1efa913f8a38830361e101e3e.js" integrity="sha256-8gzrbrwK6MGAwR/&#43;iOvHiO72g/HvqRP4o4gwNh4QHj4="></script>
+<script defer src="/search.min.f252a84f64a0571dfaafd28bfb2f3357dadfafa3ff3c9bde4cb6542892adc66b.js" integrity="sha256-8lKoT2SgVx36r9KL&#43;y8zV9rfr6P/PJveTLZUKJKtxms="></script>
 
 
 
@@ -193,6 +193,19 @@ https://github.com/alex-shpak/hugo-book
   
   <article class="markdown">
     <h2>
+      <a href="/posts/blockchaingig005/">Oracle Blockchain GIG#5</a>
+    </h2>
+    <h5>
+      <strong>Oct 10, 2019</strong>
+    </h5>
+    <p>ハッシュタグは#blockchaingig  Oracleさん ユースケース  食品のトレーサビリティ 貿易系 人事情報・学歴情報 サプライチェーンが多い コバルトのトレーサビリティ 医療情報の共有 サプライヤーの共有 GEのインターカンパニーの売掛・買掛をブロックチェーンで管理しよう  インテグレーション・見える化・ データーの連携レイヤーをブロックチェーンで使った 6週間で作れた   ベスプラ  チャネルとはサブネットワークに分けるもの ChannelとPeerの関係 Transient Data  台帳に含まれないようにChaincodeに引き渡せるデータ  Pravate Data Collection  プライベートデータを持つノードを事前に決めておく必要がある  暗号化  鍵交換問題 Transient Dataを使って共通鍵を引き渡す 暗号化アルゴリズムは稀代化する 誰をどの程度信頼するか  デフォルトではPeerにアクセスできれば台帳が読める Peerも結局のところOS上のプロセスの一つなので、ホストマシンをキチンとセキュアにする   アプリケーションとスマコン  スマコンをチェインコードという 台帳に全てを書こうとしない ワークフローはアプリケーションで行う  １企業内でのワークフローはアプリケーションで行う  スマコンは必ず決定論的にする ワールドステートの現在状態と引数のみに依存するようにする PushではなくてPullでスマコンを行うようにする  パフォーマンス  ネットワーク構成  Channelの構成  プライバシーの構成に応じてChannelを分ける  Peerの構成   World Stateへのアクセス  アクセスするデータの最小化  Read/WriteされるKeyを出来る限り最小にする 大規模クエリや分析などはオンチェーンでの処理には向かない  SQL Rich クエリは使えない  Oracle DB 20c  行をハッシュ値で繋いだTableです   富士通さん ミッション  ブロックチェーンをSEが使いやすい状態に仕立てて提供・運用すること PaaS化して自動運用 短期開発のため、システム/アプリケーションの開発に密に関わる  SEが躓くHyperledger Fabricの壁  複数のPeerにリクエストする必要がある スマコン(チェーンコード)の開発  データとストアとしてStateDB(KVS)を持つアプリケーションのようなもの 基本的には案件ごとに開発する必要がある どこまで考慮するば良いかの線引きが難しい   SEが躓かないための解決策  使用性向上機能を設ける  RESTサーバーを設ける ユースケース別チェーンコードを設ける   トラブル事例１(不自然な画面遷移)  スタンプラリーPoCのアプリ開発における事例
+        <a href="/posts/blockchaingig005/">...</a>
+      
+    </p>
+  </article>
+  
+  <article class="markdown">
+    <h2>
       <a href="/posts/shimaya/">しまや出版さんの工場見学に参加してきました．</a>
     </h2>
     <h5>
@@ -294,21 +307,6 @@ solareenlo/angular-cli
       <strong>Apr 30, 2019</strong>
     </h5>
     <p> 本を作成  Re:VIEW pandoc  質疑応答  sli.do  作図  draw.io  マークダウン表示  typora  wikiの新しい形  Scrapbox  ノートアプリ  Notion  サーバーレスアプリのホスティングサービス  Now  JSONの書きミスチェッカー  JOSNLint  全文検索  Elasticsearch  モニタリング  KIBANA Grafana Prometheus  
-    </p>
-  </article>
-  
-  <article class="markdown">
-    <h2>
-      <a href="/posts/docker-pass/">ローカル環境のDocker Hubのパスワードをpassで管理する方法</a>
-    </h2>
-    <h5>
-      <strong>Apr 23, 2019</strong>
-    </h5>
-    <p>Ubuntu用
- なぜDocker Hubのパスワードをpassを使って管理するか? ローカルからDocker Hubにログインすると, その時のパスワードを平文のまま保存されるから.    ここからdocker-credential-passの最新バージョンをダウンロードする. tar -zxvf docker-credential-pass.tar.gz (解凍する.) mv docker-credential-pass /usr/local/bin (PATHが通ってるところにファイルを移動する.) sudo apt-get install gpg pass (gpgとpassをインストール.) gpg --generate-keyで新しい秘密鍵と公開鍵の組を作る. gpg --list-keysで出てきた, pubの16進数の40文字(大文字のA-F, 0-9の文字列)をコピーする. pass init AAAAAAAAAABBBBBBBBBBCCCCCCCCCCDDDDDDDDDでpassを初期化する. pass insert docker-credential-helpers/docker-pass-initialized-checkでとりあえずのディレクトリを作成する. docker-credential-pass listで{}と返ってくる. ~/.docker/config.jsonに{&quot;credsStore&quot;: &quot;pass&quot;}と書き込む. docker loginでDockerにログインする.   うまくいかないときは権限をchmodを使って変更してみる.
- curl -O https://github.com/docker/docker-credential-helpers/releases/download/v0.6.0/docker-credential-pass-v0.6.0-amd64.tar.gz tar -xvf docker-credential-pass.tar.gz mv docker-credential-pass /usr/local/bin apt-get install gpg pass gpg --generate-key gpg --list-keys &gt; pub rsa2048 2019-04-22 [SC] [有効期限: 2021-04-21] &gt; D7D35B60A7FA571541959AF3C4821C32793D5F5A // ここの公開鍵をコピーする &gt; uid [ 究極 ] solareenlo &lt;test@example.
-        <a href="/posts/docker-pass/">...</a>
-      
     </p>
   </article>
   

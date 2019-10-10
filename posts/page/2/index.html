@@ -8,14 +8,14 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://solareenlo.com/posts/" />
 
-<meta property="og:updated_time" content="2019-09-29T15:00:00&#43;09:00"/>
+<meta property="og:updated_time" content="2019-10-10T18:30:00&#43;09:00"/>
 <title>Posts | solareenlo</title>
 
 
 <link rel="stylesheet" href="/book.min.da4e14da7d418314b609e23026b1f340c40834fdffbbc862687326d23c0e9b39.css" integrity="sha256-2k4U2n1BgxS2CeIwJrHzQMQINP3/u8hiaHMm0jwOmzk=">
 
 
-<script defer src="/search.min.f20ceb6ebc0ae8c180c11ffe88ebc788eef683f1efa913f8a38830361e101e3e.js" integrity="sha256-8gzrbrwK6MGAwR/&#43;iOvHiO72g/HvqRP4o4gwNh4QHj4="></script>
+<script defer src="/search.min.f252a84f64a0571dfaafd28bfb2f3357dadfafa3ff3c9bde4cb6542892adc66b.js" integrity="sha256-8lKoT2SgVx36r9KL&#43;y8zV9rfr6P/PJveTLZUKJKtxms="></script>
 
 
 
@@ -190,6 +190,21 @@ https://github.com/alex-shpak/hugo-book
       
   
   
+  
+  <article class="markdown">
+    <h2>
+      <a href="/posts/docker-pass/">ローカル環境のDocker Hubのパスワードをpassで管理する方法</a>
+    </h2>
+    <h5>
+      <strong>Apr 23, 2019</strong>
+    </h5>
+    <p>Ubuntu用
+ なぜDocker Hubのパスワードをpassを使って管理するか? ローカルからDocker Hubにログインすると, その時のパスワードを平文のまま保存されるから.    ここからdocker-credential-passの最新バージョンをダウンロードする. tar -zxvf docker-credential-pass.tar.gz (解凍する.) mv docker-credential-pass /usr/local/bin (PATHが通ってるところにファイルを移動する.) sudo apt-get install gpg pass (gpgとpassをインストール.) gpg --generate-keyで新しい秘密鍵と公開鍵の組を作る. gpg --list-keysで出てきた, pubの16進数の40文字(大文字のA-F, 0-9の文字列)をコピーする. pass init AAAAAAAAAABBBBBBBBBBCCCCCCCCCCDDDDDDDDDでpassを初期化する. pass insert docker-credential-helpers/docker-pass-initialized-checkでとりあえずのディレクトリを作成する. docker-credential-pass listで{}と返ってくる. ~/.docker/config.jsonに{&quot;credsStore&quot;: &quot;pass&quot;}と書き込む. docker loginでDockerにログインする.   うまくいかないときは権限をchmodを使って変更してみる.
+ curl -O https://github.com/docker/docker-credential-helpers/releases/download/v0.6.0/docker-credential-pass-v0.6.0-amd64.tar.gz tar -xvf docker-credential-pass.tar.gz mv docker-credential-pass /usr/local/bin apt-get install gpg pass gpg --generate-key gpg --list-keys &gt; pub rsa2048 2019-04-22 [SC] [有効期限: 2021-04-21] &gt; D7D35B60A7FA571541959AF3C4821C32793D5F5A // ここの公開鍵をコピーする &gt; uid [ 究極 ] solareenlo &lt;test@example.
+        <a href="/posts/docker-pass/">...</a>
+      
+    </p>
+  </article>
   
   <article class="markdown">
     <h2>
