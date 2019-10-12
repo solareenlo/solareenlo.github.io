@@ -3,6 +3,59 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://solareenlo.com/categories/</loc>
+    <lastmod>2019-10-12T09:27:37+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://solareenlo.com/tags/HR/</loc>
+    <lastmod>2019-10-12T09:27:37+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://solareenlo.com/categories/Lapras/</loc>
+    <lastmod>2019-10-12T09:27:37+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://solareenlo.com/tags/Lapras/</loc>
+    <lastmod>2019-10-12T09:27:37+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://solareenlo.com/categories/Meet-up/</loc>
+    <lastmod>2019-10-12T09:27:37+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://solareenlo.com/tags/Meet-up/</loc>
+    <lastmod>2019-10-12T09:27:37+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://solareenlo.com/posts/</loc>
+    <lastmod>2019-10-12T09:27:37+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://solareenlo.com/tags/</loc>
+    <lastmod>2019-10-12T09:27:37+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://solareenlo.com/posts/lapras-meetup001/</loc>
+    <lastmod>2019-10-12T09:27:37+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://solareenlo.com/categories/Blockchain/</loc>
     <lastmod>2019-10-10T20:30:38+09:00</lastmod>
     <priority>0</priority>
@@ -10,12 +63,6 @@
   
   <url>
     <loc>https://solareenlo.com/tags/Blockchain/</loc>
-    <lastmod>2019-10-10T20:30:38+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://solareenlo.com/categories/</loc>
     <lastmod>2019-10-10T20:30:38+09:00</lastmod>
     <priority>0</priority>
   </url>
@@ -38,15 +85,20 @@
   </url>
   
   <url>
-    <loc>https://solareenlo.com/posts/</loc>
-    <lastmod>2019-10-10T20:30:38+09:00</lastmod>
+    <loc>https://solareenlo.com/categories/drive/</loc>
+    <lastmod>2019-10-12T09:27:37+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://solareenlo.com/tags/</loc>
-    <lastmod>2019-10-10T20:30:38+09:00</lastmod>
+    <loc>https://solareenlo.com/tags/drive/</loc>
+    <lastmod>2019-10-12T09:27:37+09:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://solareenlo.com/posts/safe-drive/</loc>
+    <lastmod>2019-10-12T09:27:37+09:00</lastmod>
   </url>
   
   <url>
@@ -183,12 +235,6 @@
   </url>
   
   <url>
-    <loc>https://solareenlo.com/categories/Meet-up/</loc>
-    <lastmod>2019-06-17T03:52:36+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://solareenlo.com/tags/Tezos/</loc>
     <lastmod>2019-06-17T03:52:36+09:00</lastmod>
     <priority>0</priority>
@@ -208,12 +254,6 @@
   <url>
     <loc>https://solareenlo.com/posts/biilabs-meetup/</loc>
     <lastmod>2019-06-17T03:52:36+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://solareenlo.com/tags/Meet-up/</loc>
-    <lastmod>2019-06-17T03:52:36+09:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -747,7 +787,7 @@
   
   <url>
     <loc>https://solareenlo.com/</loc>
-    <lastmod>2019-09-29T17:13:39+09:00</lastmod>
+    <lastmod>2019-10-12T09:27:37+09:00</lastmod>
   </url>
   
   <url>

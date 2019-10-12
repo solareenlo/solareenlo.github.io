@@ -5,10 +5,19 @@
     <link>https://solareenlo.com/posts/</link>
     <description>Recent content in Posts on solareenlo</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 10 Oct 2019 18:30:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 11 Oct 2019 19:30:00 +0900</lastBuildDate>
     
 	<atom:link href="https://solareenlo.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>【2周年記念】LAPRAS HR Meetup 感謝祭</title>
+      <link>https://solareenlo.com/posts/lapras-meetup001/</link>
+      <pubDate>Fri, 11 Oct 2019 19:30:00 +0900</pubDate>
+      
+      <guid>https://solareenlo.com/posts/lapras-meetup001/</guid>
+      <description> イベントは根気強く続けるとスケールする  はじめは人来ません  メートアップは最初に飲み食いすると良い  飲み食いして変える人も少なからずいらっしゃいますが  １つのテーマに絞ってその知見をひたすら押すとそれに興味がある強い人が集まる  サイバーテックさんはスカラーをひたすら押したら良い人材が来てくださった  リファラル資源のネットワークを拡げる トレジャーデータのエンジニアはめっちゃ優秀 スカウトメール送る前にGitHub・Twitterでいいねボタンを押す カジュアル面談では，  最初の合意形成が大切 Hard to getがとても重要  下調べをもう一歩先に進める  その時のカジュアル面談のゴールをきちんと決めておく   </description>
+    </item>
     
     <item>
       <title>Oracle Blockchain GIG#5</title>
@@ -17,6 +26,15 @@
       
       <guid>https://solareenlo.com/posts/blockchaingig005/</guid>
       <description>ハッシュタグは#blockchaingig  Oracleさん ユースケース  食品のトレーサビリティ 貿易系 人事情報・学歴情報 サプライチェーンが多い コバルトのトレーサビリティ 医療情報の共有 サプライヤーの共有 GEのインターカンパニーの売掛・買掛をブロックチェーンで管理しよう  インテグレーション・見える化・ データーの連携レイヤーをブロックチェーンで使った 6週間で作れた   ベスプラ  チャネルとはサブネットワークに分けるもの ChannelとPeerの関係 Transient Data  台帳に含まれないようにChaincodeに引き渡せるデータ  Pravate Data Collection  プライベートデータを持つノードを事前に決めておく必要がある  暗号化  鍵交換問題 Transient Dataを使って共通鍵を引き渡す 暗号化アルゴリズムは稀代化する 誰をどの程度信頼するか  デフォルトではPeerにアクセスできれば台帳が読める Peerも結局のところOS上のプロセスの一つなので、ホストマシンをキチンとセキュアにする   アプリケーションとスマコン  スマコンをチェインコードという 台帳に全てを書こうとしない ワークフローはアプリケーションで行う  １企業内でのワークフローはアプリケーションで行う  スマコンは必ず決定論的にする ワールドステートの現在状態と引数のみに依存するようにする PushではなくてPullでスマコンを行うようにする  パフォーマンス  ネットワーク構成  Channelの構成  プライバシーの構成に応じてChannelを分ける  Peerの構成   World Stateへのアクセス  アクセスするデータの最小化  Read/WriteされるKeyを出来る限り最小にする 大規模クエリや分析などはオンチェーンでの処理には向かない  SQL Rich クエリは使えない  Oracle DB 20c  行をハッシュ値で繋いだTableです   富士通さん ミッション  ブロックチェーンをSEが使いやすい状態に仕立てて提供・運用すること PaaS化して自動運用 短期開発のため、システム/アプリケーションの開発に密に関わる  SEが躓くHyperledger Fabricの壁  複数のPeerにリクエストする必要がある スマコン(チェーンコード)の開発  データとストアとしてStateDB(KVS)を持つアプリケーションのようなもの 基本的には案件ごとに開発する必要がある どこまで考慮するば良いかの線引きが難しい   SEが躓かないための解決策  使用性向上機能を設ける  RESTサーバーを設ける ユースケース別チェーンコードを設ける   トラブル事例１(不自然な画面遷移)  スタンプラリーPoCのアプリ開発における事例</description>
+    </item>
+    
+    <item>
+      <title>自動車安全運転5則</title>
+      <link>https://solareenlo.com/posts/safe-drive/</link>
+      <pubDate>Thu, 10 Oct 2019 15:00:00 +0900</pubDate>
+      
+      <guid>https://solareenlo.com/posts/safe-drive/</guid>
+      <description>  安全速度を必ず守る カーブの手前でスピードを落とす 交差点では必ず安全を確かめる 一時停止で横断歩道の安全を守る 飲酒運転を絶対にしない  自転車安全利用5則  自転車は，車道が原則，歩道は例外． 車道は左側を通行する 歩道は歩行者優先で，車道よりは徐行する． 安全ルールを守る． 子どもはヘルメットを着用する．  </description>
     </item>
     
     <item>

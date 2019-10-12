@@ -5,10 +5,28 @@
     <link>https://solareenlo.com/categories/</link>
     <description>Recent content in Categories on solareenlo</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 10 Oct 2019 18:30:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 11 Oct 2019 19:30:00 +0900</lastBuildDate>
     
 	<atom:link href="https://solareenlo.com/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Lapras</title>
+      <link>https://solareenlo.com/categories/Lapras/</link>
+      <pubDate>Fri, 11 Oct 2019 19:30:00 +0900</pubDate>
+      
+      <guid>https://solareenlo.com/categories/Lapras/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Meet-up</title>
+      <link>https://solareenlo.com/categories/Meet-up/</link>
+      <pubDate>Fri, 11 Oct 2019 19:30:00 +0900</pubDate>
+      
+      <guid>https://solareenlo.com/categories/Meet-up/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Blockchain</title>
@@ -25,6 +43,15 @@
       <pubDate>Thu, 10 Oct 2019 18:30:00 +0900</pubDate>
       
       <guid>https://solareenlo.com/categories/Meetup/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>drive</title>
+      <link>https://solareenlo.com/categories/drive/</link>
+      <pubDate>Thu, 10 Oct 2019 15:00:00 +0900</pubDate>
+      
+      <guid>https://solareenlo.com/categories/drive/</guid>
       <description></description>
     </item>
     
@@ -106,15 +133,6 @@
       <pubDate>Sat, 15 Jun 2019 13:00:00 +0900</pubDate>
       
       <guid>https://solareenlo.com/categories/Hands-on/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Meet-up</title>
-      <link>https://solareenlo.com/categories/Meet-up/</link>
-      <pubDate>Sat, 15 Jun 2019 13:00:00 +0900</pubDate>
-      
-      <guid>https://solareenlo.com/categories/Meet-up/</guid>
       <description></description>
     </item>
     
