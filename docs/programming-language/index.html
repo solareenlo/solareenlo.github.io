@@ -3,7 +3,8 @@
 
 <head>
   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><meta property="og:title" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Programming Language"><meta property="og:title" content="" />
 <meta property="og:description" content="プログラミング言語とは  コンピュータに解釈できるようにつくられた人工言語. コンピュータへの指令であるプログラムを書くのに使われる. いろんな特徴を持っている.  いろんな指標によるランキング  TIOBE Index (TOIBEによる検索エンジンによる各種プログラミング言語の話題度ランキング) RedMonk (RedMonkによるランキング) Interactive: The Top Programming Languages 2018 (IEEEによる2018年度のランキング) PYPL PopularitY of Programming Language (PYPLによるGoogleによるチュートリアル検索ランキング)  プログラミング言語の型 代表的なもの3つ
    種類 説明     オブジェクト指向型 「モノ」を組み立てるように表現して, コンピュータに動作をさせる.   続き型 上から下まで単調なルールで文章を読むように動作する.   関数型プログラミング 数学の関数のイメージでデータに何かしらの処理をして答えを取得するように動作する.    オブジェクト指向プログラミング いろんな特徴.
    原則 説明     カプセル化 自由なアクセスからデータを保護する仕組み   継承 再利用性を高めて, 冗長性を避けるための強力なツール   ポリモーフィズム メッセージの送信側とメッセージの受信側が動的に決まる仕組み     オブジェクトは, オブジェクトに含まれるデータを操作する関数を有している." />
@@ -14,10 +15,10 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 
 
-<link rel="stylesheet" href="/book.min.7cf03b0e46415b9c8bbde01f69a283955eaa7d987607761a9a05cced394503a1.css" integrity="sha256-fPA7DkZBW5yLveAfaaKDlV6qfZh2B3YamgXM7TlFA6E=">
+<link rel="stylesheet" href="/book.min.0d8f55f751a5f22793c02b19a8a0822122d183a7e99645f6b428174dd3eeec94.css" integrity="sha256-DY9V91Gl8ieTwCsZqKCCISLRg6fplkX2tCgXTdPu7JQ=">
 
 
-<script defer src="/search.min.25dacf0d4e6ef2c0b14ef2bc90d4b36af703a3013ebd9efd7d1dbe17a7492b4d.js" integrity="sha256-JdrPDU5u8sCxTvK8kNSzavcDowE&#43;vZ79fR2&#43;F6dJK00="></script>
+<script defer src="/en.search.min.0de8e26fe8b38f83ff163b7738b4abcdbbe90ae41f3d554ee92aed704668dc09.js" integrity="sha256-Dejib&#43;izj4P/Fjt3OLSrzbvpCuQfPVVO6SrtcEZo3Ak="></script>
 
 <!--
 Made with Book Theme
@@ -40,7 +41,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 <div class="book-search">
-  <input type="text" placeholder="Search" id="book-search-input" maxlength="64" />
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
   <div class="book-search-spinner spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
@@ -53,7 +54,6 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/"><strong>はじめに</strong></a></li>
 <li><a href="/posts/"><strong>Blog</strong></a></li>
 <li><a href="/docs/programming/"><strong>Programming</strong></a>
-
 <ul>
 <li><a href="/docs/terminal/">Terminal</a></li>
 <li><a href="/docs/command/">Command</a></li>
@@ -66,9 +66,9 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/linter-formatter/">Linter/Formatter</a></li>
 <li><a href="/docs/test/">Test</a></li>
 <li><a href="/docs/password-manager/">Password Manager</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/programming-language/"class=active><strong>Programming Language</strong></a>
-
 <ul>
 <li><a href="/docs/c/">C</a></li>
 <li><a href="/docs/rust/">Rust</a></li>
@@ -83,52 +83,52 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/haskell/">Haskell</a></li>
 <li><a href="/docs/hugo/">Hugo</a></li>
 <li><a href="/docs/programming-language-docs/">Docs</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/latex/"><strong>LaTeX</strong></a>
-
 <ul>
 <li><a href="/docs/platex-book/">Book</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/vps/"><strong>VPS</strong></a>
-
 <ul>
 <li><a href="/docs/ssh/">SSH</a></li>
 <li><a href="/docs/ubuntu/">Ubuntu</a></li>
 <li><a href="/docs/alpine-linux/">Alpine Linux</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/db/"><strong>DB</strong></a>
-
 <ul>
 <li><a href="/docs/mysql/">MySQL</a></li>
 <li><a href="/docs/mongodb/">MongoDB</a></li>
 <li><a href="/docs/redis/">Redis</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/cloud/"><strong>Cloud</strong></a>
-
 <ul>
 <li><a href="/docs/aws/">AWS</a></li>
 <li><a href="/docs/gcp/">GCP</a></li>
 <li><a href="/docs/firebase/">Firebase</a></li>
 <li><a href="/docs/zeit-now/">ZEIT Now</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/ci-cd/"><strong>CI/CD</strong></a>
-
 <ul>
 <li><a href="/docs/jenkins/">Jenkins</a></li>
 <li><a href="/docs/travis-ci/">Travis CI</a></li>
 <li><a href="/docs/circleci/">CircleCI</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/container/"><strong>Container</strong></a>
-
 <ul>
 <li><a href="/docs/docker1/">Docker1</a></li>
 <li><a href="/docs/docker2/">Docker2</a></li>
 <li><a href="/docs/docker-hub/">Docker Hub</a></li>
 <li><a href="/docs/docker-compose/">Docker Compose</a></li>
 <li><a href="/docs/kubernetes/">Kubernetes</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/crypto/"><strong>Crypto</strong></a>
-
 <ul>
 <li><a href="/docs/blockchain/">Blockchain</a></li>
 <li><a href="/docs/bitcoin/">Bitcoin</a></li>
@@ -138,7 +138,8 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/substrate/">Substrate</a></li>
 <li><a href="/docs/white-paper/">White Paper</a></li>
 <li><a href="/docs/crypto-docs/">Docs</a></li>
-</ul></li>
+</ul>
+</li>
 </ul>
 
 
@@ -169,29 +170,21 @@ https://github.com/alex-shpak/hugo-book
 </header>
 
       
-<article class="markdown">
-
-<h1 id="プログラミング言語とは">プログラミング言語とは</h1>
-
+<article class="markdown"><h1 id="heading">プログラミング言語とは</h1>
 <ul>
 <li>コンピュータに解釈できるようにつくられた人工言語.</li>
 <li>コンピュータへの指令であるプログラムを書くのに使われる.</li>
 <li>いろんな特徴を持っている.</li>
 </ul>
-
-<h2 id="いろんな指標によるランキング">いろんな指標によるランキング</h2>
-
+<h2 id="heading1">いろんな指標によるランキング</h2>
 <ul>
 <li><a href="https://www.tiobe.com/tiobe-index/">TIOBE Index</a> (TOIBEによる検索エンジンによる各種プログラミング言語の話題度ランキング)</li>
 <li><a href="https://redmonk.com/data/">RedMonk</a> (RedMonkによるランキング)</li>
 <li><a href="https://spectrum.ieee.org/static/interactive-the-top-programming-languages-2018">Interactive: The Top Programming Languages 2018</a> (IEEEによる2018年度のランキング)</li>
 <li><a href="http://pypl.github.io/PYPL.html">PYPL PopularitY of Programming Language</a> (PYPLによるGoogleによるチュートリアル検索ランキング)</li>
 </ul>
-
-<h2 id="プログラミング言語の型">プログラミング言語の型</h2>
-
+<h2 id="heading2">プログラミング言語の型</h2>
 <p>代表的なもの3つ</p>
-
 <table>
 <thead>
 <tr>
@@ -199,29 +192,23 @@ https://github.com/alex-shpak/hugo-book
 <th>説明</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>オブジェクト指向型</td>
 <td>「モノ」を組み立てるように表現して, コンピュータに動作をさせる.</td>
 </tr>
-
 <tr>
 <td>続き型</td>
 <td>上から下まで単調なルールで文章を読むように動作する.</td>
 </tr>
-
 <tr>
 <td>関数型プログラミング</td>
 <td>数学の関数のイメージでデータに何かしらの処理をして答えを取得するように動作する.</td>
 </tr>
 </tbody>
 </table>
-
-<h3 id="オブジェクト指向プログラミング">オブジェクト指向プログラミング</h3>
-
+<h3 id="heading3">オブジェクト指向プログラミング</h3>
 <p>いろんな特徴.</p>
-
 <table>
 <thead>
 <tr>
@@ -229,25 +216,21 @@ https://github.com/alex-shpak/hugo-book
 <th>説明</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>カプセル化</td>
 <td>自由なアクセスからデータを保護する仕組み</td>
 </tr>
-
 <tr>
 <td>継承</td>
 <td>再利用性を高めて, 冗長性を避けるための強力なツール</td>
 </tr>
-
 <tr>
 <td>ポリモーフィズム</td>
 <td>メッセージの送信側とメッセージの受信側が動的に決まる仕組み</td>
 </tr>
 </tbody>
 </table>
-
 <ul>
 <li>オブジェクトは, オブジェクトに含まれるデータを操作する関数を有している.</li>
 <li>クラスはオブジェクトのインスタンスを作成するために使用されるテンプレート.</li>
@@ -255,29 +238,31 @@ https://github.com/alex-shpak/hugo-book
 </ul>
 </article>
 
-      
-<div class="book-footer justify-between">
+      <div class="book-footer justify-between">
+  
+
+  
   
   <div>
     
-    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/commit/4ee075df2e9e513fa75b26efc18fb4171926f937" title='Last modified Jul 18, 2019 by solareenlo' target="_blank" rel="noopener">
-      <img src="/svg/calendar.svg" alt="Changed" />
+    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/commit/4ee075df2e9e513fa75b26efc18fb4171926f937" title='Last modified by solareenlo | Jul 18, 2019' target="_blank">
+      <img src="/svg/calendar.svg" alt="Calendar" />
       <span>Jul 18, 2019</span>
     </a>
   </div>
   
   
+
+  
   <div>
-    
-    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/edit/master/content/docs/programming-language.md" target="_blank" rel="noopener">
+    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/edit/master/content/docs/programming-language.md" target="_blank">
       <img src="/svg/edit.svg" alt="Edit" />
       <span>Edit this page</span>
     </a>
-    
   </div>
   
-</div>
 
+</div>
 
       
     </div>
@@ -287,16 +272,14 @@ https://github.com/alex-shpak/hugo-book
 
   <aside class="book-toc levels-3 fixed">
     <nav id="TableOfContents">
-<ul>
-<li><a href="#プログラミング言語とは">プログラミング言語とは</a>
-<ul>
-<li><a href="#いろんな指標によるランキング">いろんな指標によるランキング</a></li>
-<li><a href="#プログラミング言語の型">プログラミング言語の型</a>
-<ul>
-<li><a href="#オブジェクト指向プログラミング">オブジェクト指向プログラミング</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#heading1">いろんな指標によるランキング</a></li>
+    <li><a href="#heading2">プログラミング言語の型</a>
+      <ul>
+        <li><a href="#heading3">オブジェクト指向プログラミング</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
   </aside>
 

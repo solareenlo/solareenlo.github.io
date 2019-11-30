@@ -3,20 +3,21 @@
 
 <head>
   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><meta property="og:title" content="Tezosハンズオン" />
-<meta property="og:description" content="Tezosとは  第3世代のブロックチェーン 2018-09: Mainnet開始 ペーパーで約束されたものをほぼ実装した. 財団がRandDにお金を出してる. PoS  Tezosの特徴  プロトコルはステークホルダーの物というのが第一の信条.  LPos: Liqid Proof of Stake オンチェーン・ガバナンス: 自己修正投票  安全第一  形式検証を用いている   DPoS Proof-of-Stake  トークン所有量に応じたブロック生成権が与えらえる.  ASICが必要ない 手数料が高騰しない 環境に良い  トークンを所有していないマイナーからプロトコルをステークホルダーに解放する.  Delegated PoS (委任PoS)  ステーク投票により選ばれた少数のノードにブロック生成権を与える. 権利を投票に使う. EOSが代表格 利点  PC持ってないステークホルダーも間接的にブロック生成に参加できる. ノード数を減らすことで合意形成効率を上げられる.  欠点  過度にノード数を減らすと分散性・安全性を損なう.   Liquid PoS (Tezos)  選ばれた少数のノードではなく, 誰でもベーキング(ブロック生成)できる. マーケティングにより, マイニングとは言わずにベーキングと言う. ベーカリー(ベーキングの委任を受ける業者のこと), ベーキング権(マイニングする権利), ベーキング(マイニングのこと)という. マイニングを少数ノードに牛耳られることなくステークホルダーに還元するためにLPoSを採用している. 現在450〜500くらいのノードがある. スピードは狙ってない. 現在は30〜40TPSくらい.  Liquid Democracy (PoSとDPoSの間の概念)  直接民主制(PoS)から代表民主制(DPos)へ." />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Tezosハンズオン"><meta property="og:title" content="Tezosハンズオン" />
+<meta property="og:description" content="Tezosとは  第3世代のブロックチェーン 2018-09: Mainnet開始 ペーパーで約束されたものをほぼ実装した. 財団がRandDにお金を出してる. PoS  Tezosの特徴  プロトコルはステークホルダーの物というのが第一の信条.  LPos: Liqid Proof of Stake オンチェーン・ガバナンス: 自己修正投票   安全第一  形式検証を用いている    DPoS Proof-of-Stake  トークン所有量に応じたブロック生成権が与えらえる.  ASICが必要ない 手数料が高騰しない 環境に良い   トークンを所有していないマイナーからプロトコルをステークホルダーに解放する.  Delegated PoS (委任PoS)  ステーク投票により選ばれた少数のノードにブロック生成権を与える. 権利を投票に使う. EOSが代表格 利点  PC持ってないステークホルダーも間接的にブロック生成に参加できる. ノード数を減らすことで合意形成効率を上げられる.   欠点  過度にノード数を減らすと分散性・安全性を損なう.    Liquid PoS (Tezos)  選ばれた少数のノードではなく, 誰でもベーキング(ブロック生成)できる. マーケティングにより, マイニングとは言わずにベーキングと言う. ベーカリー(ベーキングの委任を受ける業者のこと), ベーキング権(マイニングする権利), ベーキング(マイニングのこと)という. マイニングを少数ノードに牛耳られることなくステークホルダーに還元するためにLPoSを採用している." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://solareenlo.com/posts/tezos-hands-on/" />
-<meta property="article:published_time" content="2019-06-15T13:00:00&#43;09:00"/>
-<meta property="article:modified_time" content="2019-06-17T03:52:36&#43;09:00"/>
+<meta property="article:published_time" content="2019-06-15T13:00:00+09:00" />
+<meta property="article:modified_time" content="2019-06-17T03:52:36+09:00" />
 <title>Tezosハンズオン | solareenlo</title>
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 
 
-<link rel="stylesheet" href="/book.min.7cf03b0e46415b9c8bbde01f69a283955eaa7d987607761a9a05cced394503a1.css" integrity="sha256-fPA7DkZBW5yLveAfaaKDlV6qfZh2B3YamgXM7TlFA6E=">
+<link rel="stylesheet" href="/book.min.0d8f55f751a5f22793c02b19a8a0822122d183a7e99645f6b428174dd3eeec94.css" integrity="sha256-DY9V91Gl8ieTwCsZqKCCISLRg6fplkX2tCgXTdPu7JQ=">
 
 
-<script defer src="/search.min.25dacf0d4e6ef2c0b14ef2bc90d4b36af703a3013ebd9efd7d1dbe17a7492b4d.js" integrity="sha256-JdrPDU5u8sCxTvK8kNSzavcDowE&#43;vZ79fR2&#43;F6dJK00="></script>
+<script defer src="/en.search.min.0de8e26fe8b38f83ff163b7738b4abcdbbe90ae41f3d554ee92aed704668dc09.js" integrity="sha256-Dejib&#43;izj4P/Fjt3OLSrzbvpCuQfPVVO6SrtcEZo3Ak="></script>
 
 <!--
 Made with Book Theme
@@ -39,7 +40,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 <div class="book-search">
-  <input type="text" placeholder="Search" id="book-search-input" maxlength="64" />
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
   <div class="book-search-spinner spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
@@ -52,7 +53,6 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/"><strong>はじめに</strong></a></li>
 <li><a href="/posts/"><strong>Blog</strong></a></li>
 <li><a href="/docs/programming/"><strong>Programming</strong></a>
-
 <ul>
 <li><a href="/docs/terminal/">Terminal</a></li>
 <li><a href="/docs/command/">Command</a></li>
@@ -65,9 +65,9 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/linter-formatter/">Linter/Formatter</a></li>
 <li><a href="/docs/test/">Test</a></li>
 <li><a href="/docs/password-manager/">Password Manager</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/programming-language/"><strong>Programming Language</strong></a>
-
 <ul>
 <li><a href="/docs/c/">C</a></li>
 <li><a href="/docs/rust/">Rust</a></li>
@@ -82,52 +82,52 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/haskell/">Haskell</a></li>
 <li><a href="/docs/hugo/">Hugo</a></li>
 <li><a href="/docs/programming-language-docs/">Docs</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/latex/"><strong>LaTeX</strong></a>
-
 <ul>
 <li><a href="/docs/platex-book/">Book</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/vps/"><strong>VPS</strong></a>
-
 <ul>
 <li><a href="/docs/ssh/">SSH</a></li>
 <li><a href="/docs/ubuntu/">Ubuntu</a></li>
 <li><a href="/docs/alpine-linux/">Alpine Linux</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/db/"><strong>DB</strong></a>
-
 <ul>
 <li><a href="/docs/mysql/">MySQL</a></li>
 <li><a href="/docs/mongodb/">MongoDB</a></li>
 <li><a href="/docs/redis/">Redis</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/cloud/"><strong>Cloud</strong></a>
-
 <ul>
 <li><a href="/docs/aws/">AWS</a></li>
 <li><a href="/docs/gcp/">GCP</a></li>
 <li><a href="/docs/firebase/">Firebase</a></li>
 <li><a href="/docs/zeit-now/">ZEIT Now</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/ci-cd/"><strong>CI/CD</strong></a>
-
 <ul>
 <li><a href="/docs/jenkins/">Jenkins</a></li>
 <li><a href="/docs/travis-ci/">Travis CI</a></li>
 <li><a href="/docs/circleci/">CircleCI</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/container/"><strong>Container</strong></a>
-
 <ul>
 <li><a href="/docs/docker1/">Docker1</a></li>
 <li><a href="/docs/docker2/">Docker2</a></li>
 <li><a href="/docs/docker-hub/">Docker Hub</a></li>
 <li><a href="/docs/docker-compose/">Docker Compose</a></li>
 <li><a href="/docs/kubernetes/">Kubernetes</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/crypto/"><strong>Crypto</strong></a>
-
 <ul>
 <li><a href="/docs/blockchain/">Blockchain</a></li>
 <li><a href="/docs/bitcoin/">Bitcoin</a></li>
@@ -137,7 +137,8 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/substrate/">Substrate</a></li>
 <li><a href="/docs/white-paper/">White Paper</a></li>
 <li><a href="/docs/crypto-docs/">Docs</a></li>
-</ul></li>
+</ul>
+</li>
 </ul>
 
 
@@ -175,10 +176,7 @@ https://github.com/alex-shpak/hugo-book
     <strong>Jun 15, 2019</strong>
   </h5>
 </header>
-<article class="markdown">
-
-<h2 id="tezosとは">Tezosとは</h2>
-
+<article class="markdown"><h2 id="tezos">Tezosとは</h2>
 <ul>
 <li>第3世代のブロックチェーン</li>
 <li>2018-09: Mainnet開始</li>
@@ -186,59 +184,50 @@ https://github.com/alex-shpak/hugo-book
 <li>財団がRandDにお金を出してる.</li>
 <li>PoS</li>
 </ul>
-
-<h2 id="tezosの特徴">Tezosの特徴</h2>
-
+<h2 id="tezos1">Tezosの特徴</h2>
 <ul>
 <li>プロトコルはステークホルダーの物というのが第一の信条.
-
 <ul>
 <li>LPos: Liqid Proof of Stake</li>
 <li>オンチェーン・ガバナンス: 自己修正投票</li>
-</ul></li>
+</ul>
+</li>
 <li>安全第一
-
 <ul>
 <li>形式検証を用いている</li>
-</ul></li>
 </ul>
-
+</li>
+</ul>
 <h2 id="dpos">DPoS</h2>
-
-<h3 id="proof-of-stake">Proof-of-Stake</h3>
-
+<h3 id="proofofstake">Proof-of-Stake</h3>
 <ul>
 <li>トークン所有量に応じたブロック生成権が与えらえる.
-
 <ul>
 <li>ASICが必要ない</li>
 <li>手数料が高騰しない</li>
 <li>環境に良い</li>
-</ul></li>
+</ul>
+</li>
 <li>トークンを所有していないマイナーからプロトコルをステークホルダーに解放する.</li>
 </ul>
-
-<h3 id="delegated-pos-委任pos">Delegated PoS (委任PoS)</h3>
-
+<h3 id="delegated-pos-pos">Delegated PoS (委任PoS)</h3>
 <ul>
 <li>ステーク投票により選ばれた少数のノードにブロック生成権を与える.</li>
 <li>権利を投票に使う.</li>
 <li>EOSが代表格</li>
 <li>利点
-
 <ul>
 <li>PC持ってないステークホルダーも間接的にブロック生成に参加できる.</li>
 <li>ノード数を減らすことで合意形成効率を上げられる.</li>
-</ul></li>
+</ul>
+</li>
 <li>欠点
-
 <ul>
 <li>過度にノード数を減らすと分散性・安全性を損なう.</li>
-</ul></li>
 </ul>
-
+</li>
+</ul>
 <h3 id="liquid-pos-tezos">Liquid PoS (Tezos)</h3>
-
 <ul>
 <li>選ばれた少数のノードではなく, 誰でもベーキング(ブロック生成)できる.</li>
 <li>マーケティングにより, マイニングとは言わずにベーキングと言う.</li>
@@ -248,223 +237,191 @@ https://github.com/alex-shpak/hugo-book
 <li>スピードは狙ってない.</li>
 <li>現在は30〜40TPSくらい.</li>
 </ul>
-
-<h3 id="liquid-democracy-posとdposの間の概念">Liquid Democracy (PoSとDPoSの間の概念)</h3>
-
+<h3 id="liquid-democracy-posdpos">Liquid Democracy (PoSとDPoSの間の概念)</h3>
 <ul>
 <li>直接民主制(PoS)から代表民主制(DPos)へ.</li>
 <li>Liquid Democracy(LPoS)は直接民主制と代表民主制の中間の概念.</li>
 <li>Liquid Democracy(LPoS)は議題ごとに代議員を選ぶことができる.</li>
 <li>TezosはLiquid Democracy(LPoS)を採用している.</li>
 </ul>
-
-<h2 id="オンチェーンガバナンス">オンチェーンガバナンス</h2>
-
-<h3 id="ガバナンスとは">ガバナンスとは</h3>
-
+<h2 id="heading">オンチェーンガバナンス</h2>
+<h3 id="heading1">ガバナンスとは</h3>
 <ul>
 <li>どうやって改良(フォーク)していくかの手続きのこと.
-
 <ul>
 <li>ソフトフォーク(後方互換)</li>
 <li>ハードフォーク(後方非互換)</li>
-</ul></li>
 </ul>
-
-<h3 id="ハードフォークのリスク">ハードフォークのリスク</h3>
-
+</li>
+</ul>
+<h3 id="heading2">ハードフォークのリスク</h3>
 <ul>
 <li>プロトコルのハードフォークはコミュニティのハードフォークも生む危険性がある.
-
 <ul>
 <li>DAOによるEthereumとEthereum Classicの分裂</li>
 <li>Bitcoin Cashのハードフォークとハッシュ戦争</li>
-</ul></li>
+</ul>
+</li>
 <li>ガバナンスの目標
-
 <ul>
 <li>どうコミュニティの分裂を避け, プロトコルをスムーズに進化させていくか.</li>
-</ul></li>
 </ul>
-
-<h3 id="オンチェーン-ガバナンス">オンチェーン・ガバナンス</h3>
-
+</li>
+</ul>
+<h3 id="heading3">オンチェーン・ガバナンス</h3>
 <ul>
 <li>プロトコルをスムーズに進化せていくための手法.</li>
 <li>フォーク手続きがプロトコルに実装され, 過程が全てチェーン上に記録される.
-
 <ul>
 <li>プロトコル更新の提案</li>
 <li>更新のテスト</li>
 <li>採用投票</li>
 <li>採用後の自動移行</li>
-</ul></li>
+</ul>
+</li>
 <li>プロトコルの所有権を開発者やカリスマからステークホルダーの物とした.
-
 <ul>
 <li>けれども投票で独裁化することできる.</li>
 <li>プロトコル自体も投票で決めることができるので.</li>
-</ul></li>
+</ul>
+</li>
 <li>危ないっちゃ危ない.</li>
 </ul>
-
-<h3 id="変更できる部分のプロトコルの分離">変更できる部分のプロトコルの分離</h3>
-
+<h3 id="heading4">変更できる部分のプロトコルの分離</h3>
 <ul>
 <li>シェル(ハード寄りの部分)
-
 <ul>
 <li>オンチェーン・ガバナンスの対象外</li>
 <li>ネットワーク通信, ストレージ等の実装</li>
-</ul></li>
+</ul>
+</li>
 <li>プロトコル(脳みその部分)
-
 <ul>
 <li>オンチェーン・ガバナンスの対象</li>
 <li>トランザクションの意味やコンセンサスを定義</li>
-</ul></li>
 </ul>
-
-<h3 id="tezosのオンチェーンガバナンス">Tezosのオンチェーンガバナンス</h3>
-
+</li>
+</ul>
+<h3 id="tezos2">Tezosのオンチェーンガバナンス</h3>
 <ul>
 <li>プロトコル変更をコードとして提案, P2Pで配布する.
-
 <ul>
 <li>第1回投票: 提案の1つを選択</li>
 <li>第2回投票: テストするか投票</li>
 <li>テストが本番と並行して動かされる</li>
 <li>第3回投票:</li>
-</ul></li>
 </ul>
-
-<h3 id="初めての修正">初めての修正</h3>
-
+</li>
+</ul>
+<h3 id="heading5">初めての修正</h3>
 <ul>
 <li>Gas Limitの変更</li>
 <li>ステーキング参加条件の緩和(10000 -&gt; 8000)</li>
 <li>名称はAthenes(アテネ)</li>
 </ul>
-
-<h3 id="初めての修正後の課題">初めての修正後の課題</h3>
-
+<h3 id="heading6">初めての修正後の課題</h3>
 <ul>
 <li>ノードの自動更新は成功したが, サードパーティのウォレットなどの一部が更新を知らなかった.</li>
 <li>最短で3カ月ごとに更新される.
-
 <ul>
 <li>これは割と忙しい.</li>
-</ul></li>
 </ul>
-
-<h2 id="tezosと安全性-形式検証">Tezosと安全性, 形式検証</h2>
-
-<h3 id="形式検証">形式検証</h3>
-
+</li>
+</ul>
+<h2 id="tezos-">Tezosと安全性, 形式検証</h2>
+<h3 id="heading7">形式検証</h3>
 <ul>
 <li>安全性を数理的に完全に証明する.
-
 <ul>
 <li>検証に適した関数型言語OCamlを採用</li>
 <li>型システム, モデル検査, 定理証明を採用</li>
 <li>以上をすべての分野に採用する</li>
 <li>ノード実装, スマートコントラクト</li>
-</ul></li>
 </ul>
-
-<h3 id="tezosのスマートコントラクト">Tezosのスマートコントラクト</h3>
-
+</li>
+</ul>
+<h3 id="tezos3">Tezosのスマートコントラクト</h3>
 <ul>
 <li>安全性を優先したデザイン</li>
 <li>VM: Michelson
-
 <ul>
 <li>静的型付け, 純粋関数型のスタックVM</li>
 <li>人間でも一応読み書きできる</li>
-</ul></li>
+</ul>
+</li>
 <li>高級言語もある
-
 <ul>
 <li>Ligo, fi</li>
-</ul></li>
 </ul>
-
-<h3 id="ユースケース">ユースケース</h3>
-
+</li>
+</ul>
+<h3 id="heading8">ユースケース</h3>
 <ul>
 <li>Elevated Returns: 不動産のトークン化の基盤
-
 <ul>
 <li>不動産の証券化を行う.</li>
-</ul></li>
+</ul>
+</li>
 <li>Tezsure: ブロックチェーンを用いた簡易保険</li>
 <li>Chorus Mobility: 自動運転車間の交通優先権取引</li>
 <li>Viaz: P2P funding platform</li>
 <li>Decet: 農作物先物取引市場</li>
 <li>etc&hellip;</li>
 </ul>
-
-<h3 id="これから">これから</h3>
-
+<h3 id="heading9">これから</h3>
 <ul>
 <li>エコシステム
-
 <ul>
 <li>ディスク使用量の改善</li>
 <li>改良, 検証された高レベル言語, 形式検証ツール</li>
-</ul></li>
+</ul>
+</li>
 <li>プロトコル改訂
-
 <ul>
 <li>BFTコンセンサスの導入, PVSSによる乱数生成</li>
 <li>zk-SNARKSの採用</li>
-</ul></li>
+</ul>
+</li>
 <li>セカンドレイヤー</li>
 <li>Marigold(:=plasma)</li>
 </ul>
-
-<h1 id="ブロックチェーンとは">ブロックチェーンとは</h1>
-
+<h1 id="heading10">ブロックチェーンとは</h1>
 <ul>
 <li>台帳方式</li>
 <li>分散環境</li>
 <li>開かれたネットワーク
-
 <ul>
 <li>Paxosは閉じたネットワークでは合意形成ができる.</li>
 <li>開かれたネットワークではSybil攻撃(成り済まし攻撃)があるのが問題.</li>
 <li>それを解決したのがSatoshi Nakamoto.</li>
 <li>ネットワークとは無関係の資源占有による制限を取り入れた. (PoW, PoS etc)</li>
-</ul></li>
+</ul>
+</li>
 <li>トークン
-
 <ul>
 <li>分散データベースを作りたかったけど, Sybil攻撃を防ぐために資源占有を促すためのインセンティブとして仮想通貨(トークン)が生まれた.</li>
-</ul></li>
+</ul>
+</li>
 <li>スマートコントラクト
-
 <ul>
 <li>安全性が超大事.</li>
-</ul></li>
 </ul>
-
-<h2 id="形式検証-1">形式検証</h2>
-
+</li>
+</ul>
+<h2 id="heading11">形式検証</h2>
 <ul>
 <li>数理的にプログラムが好ましい性質を持っていることを証明する.</li>
 <li>静的型付け</li>
 <li>モデル検査</li>
 <li>定理証明</li>
 <li>産業的には, クリティカルシステムに使われてきた.
-
 <ul>
 <li>航空宇宙産業</li>
 <li>原子力発電</li>
-</ul></li>
 </ul>
-
-<h2 id="tezosの流れ">Tezosの流れ</h2>
-
+</li>
+</ul>
+<h2 id="tezos4">Tezosの流れ</h2>
 <ul>
 <li>やりたいことをアカウント操作にする.</li>
 <li>操作をP2Pネットワークに放流する.</li>
@@ -481,38 +438,39 @@ git pull
 ./tezos-client get balance <span style="color:#719e07">for</span> jun
 ./tezos-client list known addresses
 ./tezos-client transfer <span style="color:#2aa198">111</span> from alice to jun
-./tezos-client list known contracts</code></pre></div>
-<h2 id="tezosのツール">Tezosのツール</h2>
-
+./tezos-client list known contracts
+</code></pre></div><h2 id="tezos5">Tezosのツール</h2>
 <ul>
 <li><a href="http://node1.nyc.tezos.org.sg:8001">http://node1.nyc.tezos.org.sg:8001</a></li>
 <li><a href="https://fi-code.com">https://fi-code.com</a></li>
 </ul>
 </article>
 
-      
-<div class="book-footer justify-between">
+      <div class="book-footer justify-between">
+  
+
+  
   
   <div>
     
-    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/commit/b9429c63d61a694fce8635bc84668f01d4599820" title='Last modified Jun 17, 2019 by solareenlo' target="_blank" rel="noopener">
-      <img src="/svg/calendar.svg" alt="Changed" />
+    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/commit/b9429c63d61a694fce8635bc84668f01d4599820" title='Last modified by solareenlo | Jun 17, 2019' target="_blank">
+      <img src="/svg/calendar.svg" alt="Calendar" />
       <span>Jun 17, 2019</span>
     </a>
   </div>
   
   
+
+  
   <div>
-    
-    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/edit/master/content/posts/tezos-hands-on.md" target="_blank" rel="noopener">
+    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/edit/master/content/posts/tezos-hands-on.md" target="_blank">
       <img src="/svg/edit.svg" alt="Edit" />
       <span>Edit this page</span>
     </a>
-    
   </div>
   
-</div>
 
+</div>
 
       
     </div>
@@ -522,43 +480,43 @@ git pull
 
   <aside class="book-toc levels-3 fixed">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#tezosとは">Tezosとは</a></li>
-<li><a href="#tezosの特徴">Tezosの特徴</a></li>
-<li><a href="#dpos">DPoS</a>
-<ul>
-<li><a href="#proof-of-stake">Proof-of-Stake</a></li>
-<li><a href="#delegated-pos-委任pos">Delegated PoS (委任PoS)</a></li>
-<li><a href="#liquid-pos-tezos">Liquid PoS (Tezos)</a></li>
-<li><a href="#liquid-democracy-posとdposの間の概念">Liquid Democracy (PoSとDPoSの間の概念)</a></li>
-</ul></li>
-<li><a href="#オンチェーンガバナンス">オンチェーンガバナンス</a>
-<ul>
-<li><a href="#ガバナンスとは">ガバナンスとは</a></li>
-<li><a href="#ハードフォークのリスク">ハードフォークのリスク</a></li>
-<li><a href="#オンチェーン-ガバナンス">オンチェーン・ガバナンス</a></li>
-<li><a href="#変更できる部分のプロトコルの分離">変更できる部分のプロトコルの分離</a></li>
-<li><a href="#tezosのオンチェーンガバナンス">Tezosのオンチェーンガバナンス</a></li>
-<li><a href="#初めての修正">初めての修正</a></li>
-<li><a href="#初めての修正後の課題">初めての修正後の課題</a></li>
-</ul></li>
-<li><a href="#tezosと安全性-形式検証">Tezosと安全性, 形式検証</a>
-<ul>
-<li><a href="#形式検証">形式検証</a></li>
-<li><a href="#tezosのスマートコントラクト">Tezosのスマートコントラクト</a></li>
-<li><a href="#ユースケース">ユースケース</a></li>
-<li><a href="#これから">これから</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#ブロックチェーンとは">ブロックチェーンとは</a>
-<ul>
-<li><a href="#形式検証-1">形式検証</a></li>
-<li><a href="#tezosの流れ">Tezosの流れ</a></li>
-<li><a href="#tezosのツール">Tezosのツール</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#tezos">Tezosとは</a></li>
+    <li><a href="#tezos1">Tezosの特徴</a></li>
+    <li><a href="#dpos">DPoS</a>
+      <ul>
+        <li><a href="#proofofstake">Proof-of-Stake</a></li>
+        <li><a href="#delegated-pos-pos">Delegated PoS (委任PoS)</a></li>
+        <li><a href="#liquid-pos-tezos">Liquid PoS (Tezos)</a></li>
+        <li><a href="#liquid-democracy-posdpos">Liquid Democracy (PoSとDPoSの間の概念)</a></li>
+      </ul>
+    </li>
+    <li><a href="#heading">オンチェーンガバナンス</a>
+      <ul>
+        <li><a href="#heading1">ガバナンスとは</a></li>
+        <li><a href="#heading2">ハードフォークのリスク</a></li>
+        <li><a href="#heading3">オンチェーン・ガバナンス</a></li>
+        <li><a href="#heading4">変更できる部分のプロトコルの分離</a></li>
+        <li><a href="#tezos2">Tezosのオンチェーンガバナンス</a></li>
+        <li><a href="#heading5">初めての修正</a></li>
+        <li><a href="#heading6">初めての修正後の課題</a></li>
+      </ul>
+    </li>
+    <li><a href="#tezos-">Tezosと安全性, 形式検証</a>
+      <ul>
+        <li><a href="#heading7">形式検証</a></li>
+        <li><a href="#tezos3">Tezosのスマートコントラクト</a></li>
+        <li><a href="#heading8">ユースケース</a></li>
+        <li><a href="#heading9">これから</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#heading11">形式検証</a></li>
+    <li><a href="#tezos4">Tezosの流れ</a></li>
+    <li><a href="#tezos5">Tezosのツール</a></li>
+  </ul>
 </nav>
   </aside>
 

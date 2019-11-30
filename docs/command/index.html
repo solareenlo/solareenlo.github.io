@@ -3,7 +3,8 @@
 
 <head>
   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><meta property="og:title" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Command"><meta property="og:title" content="" />
 <meta property="og:description" content="コマンドとは  コンピュータに特定の機能の実行を指示する命令のこと. たくさんのコマンドがあり, 黒い画面に直接入力する.  Linuxでhtmlを開く xdg-open index.html UbuntuでChromeを開く google-chrome プロセスの動作状況 (ps) psコマンドはプロセスの動作状況を確認するためのコマンド.
 auxオプション
 auxオプションは、aとuとxというオプションを組み合わせたものです。
@@ -17,10 +18,10 @@ sha256を出力 # Mac shasum -a 256 &lt;ファイル名&gt; # Linux sha256sum &l
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 
 
-<link rel="stylesheet" href="/book.min.7cf03b0e46415b9c8bbde01f69a283955eaa7d987607761a9a05cced394503a1.css" integrity="sha256-fPA7DkZBW5yLveAfaaKDlV6qfZh2B3YamgXM7TlFA6E=">
+<link rel="stylesheet" href="/book.min.0d8f55f751a5f22793c02b19a8a0822122d183a7e99645f6b428174dd3eeec94.css" integrity="sha256-DY9V91Gl8ieTwCsZqKCCISLRg6fplkX2tCgXTdPu7JQ=">
 
 
-<script defer src="/search.min.25dacf0d4e6ef2c0b14ef2bc90d4b36af703a3013ebd9efd7d1dbe17a7492b4d.js" integrity="sha256-JdrPDU5u8sCxTvK8kNSzavcDowE&#43;vZ79fR2&#43;F6dJK00="></script>
+<script defer src="/en.search.min.0de8e26fe8b38f83ff163b7738b4abcdbbe90ae41f3d554ee92aed704668dc09.js" integrity="sha256-Dejib&#43;izj4P/Fjt3OLSrzbvpCuQfPVVO6SrtcEZo3Ak="></script>
 
 <!--
 Made with Book Theme
@@ -43,7 +44,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 <div class="book-search">
-  <input type="text" placeholder="Search" id="book-search-input" maxlength="64" />
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
   <div class="book-search-spinner spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
@@ -56,7 +57,6 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/"><strong>はじめに</strong></a></li>
 <li><a href="/posts/"><strong>Blog</strong></a></li>
 <li><a href="/docs/programming/"><strong>Programming</strong></a>
-
 <ul>
 <li><a href="/docs/terminal/">Terminal</a></li>
 <li><a href="/docs/command/"class=active>Command</a></li>
@@ -69,9 +69,9 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/linter-formatter/">Linter/Formatter</a></li>
 <li><a href="/docs/test/">Test</a></li>
 <li><a href="/docs/password-manager/">Password Manager</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/programming-language/"><strong>Programming Language</strong></a>
-
 <ul>
 <li><a href="/docs/c/">C</a></li>
 <li><a href="/docs/rust/">Rust</a></li>
@@ -86,52 +86,52 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/haskell/">Haskell</a></li>
 <li><a href="/docs/hugo/">Hugo</a></li>
 <li><a href="/docs/programming-language-docs/">Docs</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/latex/"><strong>LaTeX</strong></a>
-
 <ul>
 <li><a href="/docs/platex-book/">Book</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/vps/"><strong>VPS</strong></a>
-
 <ul>
 <li><a href="/docs/ssh/">SSH</a></li>
 <li><a href="/docs/ubuntu/">Ubuntu</a></li>
 <li><a href="/docs/alpine-linux/">Alpine Linux</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/db/"><strong>DB</strong></a>
-
 <ul>
 <li><a href="/docs/mysql/">MySQL</a></li>
 <li><a href="/docs/mongodb/">MongoDB</a></li>
 <li><a href="/docs/redis/">Redis</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/cloud/"><strong>Cloud</strong></a>
-
 <ul>
 <li><a href="/docs/aws/">AWS</a></li>
 <li><a href="/docs/gcp/">GCP</a></li>
 <li><a href="/docs/firebase/">Firebase</a></li>
 <li><a href="/docs/zeit-now/">ZEIT Now</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/ci-cd/"><strong>CI/CD</strong></a>
-
 <ul>
 <li><a href="/docs/jenkins/">Jenkins</a></li>
 <li><a href="/docs/travis-ci/">Travis CI</a></li>
 <li><a href="/docs/circleci/">CircleCI</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/container/"><strong>Container</strong></a>
-
 <ul>
 <li><a href="/docs/docker1/">Docker1</a></li>
 <li><a href="/docs/docker2/">Docker2</a></li>
 <li><a href="/docs/docker-hub/">Docker Hub</a></li>
 <li><a href="/docs/docker-compose/">Docker Compose</a></li>
 <li><a href="/docs/kubernetes/">Kubernetes</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/crypto/"><strong>Crypto</strong></a>
-
 <ul>
 <li><a href="/docs/blockchain/">Blockchain</a></li>
 <li><a href="/docs/bitcoin/">Bitcoin</a></li>
@@ -141,7 +141,8 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/substrate/">Substrate</a></li>
 <li><a href="/docs/white-paper/">White Paper</a></li>
 <li><a href="/docs/crypto-docs/">Docs</a></li>
-</ul></li>
+</ul>
+</li>
 </ul>
 
 
@@ -172,26 +173,19 @@ https://github.com/alex-shpak/hugo-book
 </header>
 
       
-<article class="markdown">
-
-<h1 id="コマンドとは">コマンドとは</h1>
-
+<article class="markdown"><h1 id="heading">コマンドとは</h1>
 <ul>
 <li>コンピュータに特定の機能の実行を指示する命令のこと.</li>
 <li>たくさんのコマンドがあり, 黒い画面に直接入力する.</li>
 </ul>
-
-<h2 id="linuxでhtmlを開く">Linuxでhtmlを開く</h2>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">xdg-open index.html</code></pre></div>
-<h2 id="ubuntuでchromeを開く">UbuntuでChromeを開く</h2>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">google-chrome</code></pre></div>
-<h2 id="プロセスの動作状況-ps">プロセスの動作状況 (ps)</h2>
-
+<h2 id="linuxhtml">Linuxでhtmlを開く</h2>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">xdg-open index.html
+</code></pre></div><h2 id="ubuntuchrome">UbuntuでChromeを開く</h2>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">google-chrome
+</code></pre></div><h2 id="-ps">プロセスの動作状況 (ps)</h2>
 <p>psコマンドはプロセスの動作状況を確認するためのコマンド.</p>
-
-<p><strong>auxオプション</strong><br />
+<p><strong>auxオプション</strong><br>
 auxオプションは、aとuとxというオプションを組み合わせたものです。</p>
-
 <ul>
 <li>a: 端末操作のプロセスを表示する</li>
 <li>u: CPUやメモリの使用率などを表示する</li>
@@ -199,37 +193,32 @@ auxオプションは、aとuとxというオプションを組み合わせた�
 </ul>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ps aux
 &gt; USER               PID  %CPU %MEM      VSZ    RSS   TT  STAT STARTED      TIME COMMAND
-&gt; solareenlo       <span style="color:#2aa198">96263</span>   <span style="color:#2aa198">4</span>.3  <span style="color:#2aa198">2</span>.0  <span style="color:#2aa198">5500012</span> <span style="color:#2aa198">168620</span>   ??  S    水07PM  <span style="color:#2aa198">21</span>:03.04 /Applications/Utilities/Terminal.app/Contents/MacOS/Terminal
-&gt; その他たくさん</code></pre></div>
-<p>こんな感じで標準出力される.</p>
-
+&gt; solareenlo       <span style="color:#2aa198">96263</span>   4.3  2.0  <span style="color:#2aa198">5500012</span> <span style="color:#2aa198">168620</span>   ??  S    水07PM  21:03.04 /Applications/Utilities/Terminal.app/Contents/MacOS/Terminal
+&gt; その他たくさん
+</code></pre></div><p>こんな感じで標準出力される.</p>
 <p><strong>Reference:</strong> <a href="https://usado.jp/spdsk/2018/03/26/post-3479/">ps auxの見方がよく判らない・・・</a></p>
-
-<h2 id="sha256を出力">sha256を出力</h2>
+<h2 id="sha256">sha256を出力</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># Mac</span>
 shasum -a <span style="color:#2aa198">256</span> &lt;ファイル名&gt;
 
 <span style="color:#586e75"># Linux</span>
-sha256sum &lt;ファイル名&gt;</code></pre></div>
-<h2 id="所有権を変更-chown">所有権を変更 (chown)</h2>
-
+sha256sum &lt;ファイル名&gt;
+</code></pre></div><h2 id="-chown">所有権を変更 (chown)</h2>
 <p>ファイルのユーザー所有権とグループ所有権をrootからsolareenloへ変更する</p>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo chown solareenlo:solareenlo ファイル名
 <span style="color:#586e75"># 再帰的に変更</span>
-sudo chown -R solareenlo:solareenlo ファイル名</code></pre></div>
-<h1 id="基本的なunixコマンドの使い方">基本的なUnixコマンドの使い方</h1>
-
-<h2 id="mkdirを使って一気にファイルを複数作成する">mkdirを使って一気にファイルを複数作成する</h2>
+sudo chown -R solareenlo:solareenlo ファイル名
+</code></pre></div><h1 id="unix">基本的なUnixコマンドの使い方</h1>
+<h2 id="mkdir">mkdirを使って一気にファイルを複数作成する</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># app1, app2, ... app39, app40というフォルダを一斉に作成する方法</span>
-mkdir app<span style="color:#719e07">{</span><span style="color:#2aa198">1</span>..40<span style="color:#719e07">}</span></code></pre></div>
-<h2 id="一般ユーザーと管理ユーザー">一般ユーザーと管理ユーザー</h2>
+mkdir app<span style="color:#719e07">{</span>1..40<span style="color:#719e07">}</span>
+</code></pre></div><h2 id="heading1">一般ユーザーと管理ユーザー</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># 一般ユーザーだと</span>
 <span style="color:#719e07">[</span>solareenlo@localhost ~<span style="color:#719e07">]</span>$
 
 <span style="color:#586e75"># 管理ユーザーだと</span>
-<span style="color:#719e07">[</span>solareenlo@localhost ~<span style="color:#719e07">]</span>#</code></pre></div>
-<h2 id="unixシステムのディレクトリの大体の構成">UNIXシステムのディレクトリの大体の構成</h2>
-
+<span style="color:#719e07">[</span>solareenlo@localhost ~<span style="color:#719e07">]</span>#
+</code></pre></div><h2 id="unix1">UNIXシステムのディレクトリの大体の構成</h2>
 <ul>
 <li>binには, バイナリデータが入ってる.</li>
 <li>binには, catやcpといった, システムを動かすための基本コマンドの実行ファイルがある.</li>
@@ -239,8 +228,7 @@ mkdir app<span style="color:#719e07">{</span><span style="color:#2aa198">1</span
 <li>usrには, 一般的なアプリケーションが格納されてる.</li>
 <li>varには, システムのログファイルなどの頻繁に書き換わるようなファイルが入ってる.</li>
 </ul>
-
-<h2 id="ディレクリを移動">ディレクリを移動</h2>
+<h2 id="heading2">ディレクリを移動</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># 現在いるディレクトリを表示</span>
 <span style="color:#b58900">pwd</span>
 
@@ -258,8 +246,8 @@ clear
 <span style="color:#b58900">cd</span> -
 
 <span style="color:#586e75"># ホームディレクトリへ戻る</span>
-cd</code></pre></div>
-<h2 id="ディレクトリを操作">ディレクトリを操作</h2>
+<span style="color:#b58900">cd</span>
+</code></pre></div><h2 id="heading3">ディレクトリを操作</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># ディレクトリを新規作成</span>
 mkdir <span style="color:#b58900">test</span>
 
@@ -279,8 +267,8 @@ mv test3 test2
 rmdir test2/test3/config
 
 <span style="color:#586e75"># 空でないディレクトリを削除する</span>
-rm -r test2</code></pre></div>
-<h2 id="ファイル操作">ファイル操作</h2>
+rm -r test2
+</code></pre></div><h2 id="heading4">ファイル操作</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># file.txtの中身を全部一斉に見る</span>
 cat path/to/file.txt
 
@@ -301,15 +289,15 @@ cp path/to/file.txt .
 mv file.txt file2.txt
 
 <span style="color:#586e75"># ファイルを削除</span>
-rm file2.txt</code></pre></div>
-<h2 id="bashの便利機能">bashの便利機能</h2>
+rm file2.txt
+</code></pre></div><h2 id="bash">bashの便利機能</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># 操作をとりあえずキャンセル</span>
 <span style="color:#586e75"># CTRL + C</span>
 
 <span style="color:#586e75"># コマンドの履歴検索</span>
 <span style="color:#586e75"># CTRL + R</span>
-<span style="color:#586e75"># そこで何かしら前に使ったコマンドを途中まで入力してtabキーを押して補完して, エンターキーを押すと実行される</span></code></pre></div>
-<h2 id="コマンドの履歴">コマンドの履歴</h2>
+<span style="color:#586e75"># そこで何かしら前に使ったコマンドを途中まで入力してtabキーを押して補完して, エンターキーを押すと実行される</span>
+</code></pre></div><h2 id="heading5">コマンドの履歴</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># 今までに使用したコマンドの履歴を表示する</span>
 <span style="color:#b58900">history</span>
 
@@ -334,8 +322,8 @@ ls test/
 !pw:p
 <span style="color:#586e75"># で, 直近に使ったコマンド予測が実行されずに帰ってくる</span>
 
-<span style="color:#586e75"># !を使ってコマンドの履歴にアクセスできる.</span></code></pre></div>
-<h2 id="コマンドについて詳しく調べる">コマンドについて詳しく調べる</h2>
+<span style="color:#586e75"># !を使ってコマンドの履歴にアクセスできる.</span>
+</code></pre></div><h2 id="heading6">コマンドについて詳しく調べる</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># mkdirについて調べる</span>
 mkdir --help
 
@@ -345,16 +333,16 @@ man mkdir
 <span style="color:#586e75"># マニュアル内での検索は</span>
 /all
 <span style="color:#586e75"># のように/を使って行う.</span>
-<span style="color:#586e75"># 後の操作はvimと一緒.</span></code></pre></div>
-<h2 id="シンボリックリンクの使い方">シンボリックリンクの使い方</h2>
+<span style="color:#586e75"># 後の操作はvimと一緒.</span>
+</code></pre></div><h2 id="heading7">シンボリックリンクの使い方</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># シンボリックリンクの付け方</span>
 mkdir -p config/production/database
 ln -s config/production/database/ dbconfig
 ls -l
 
 <span style="color:#586e75"># シンボリックリンクを解消する</span>
-unlink dbconfig</code></pre></div>
-<h2 id="ユーザーとグループを確認">ユーザーとグループを確認</h2>
+unlink dbconfig
+</code></pre></div><h2 id="heading8">ユーザーとグループを確認</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># ユーザーを確認する</span>
 cat /etc/passwd
 &gt; solareenlo:x:1000:1000:solareenlo,,,:/home/solareenlo:/bin/bash
@@ -366,8 +354,8 @@ cat /etc/group
 <span style="color:#586e75"># グループ名:パスワード有り:グループID:所属するユーザー名</span>
 
 <span style="color:#586e75"># 自分が所属しているグループ名を表示</span>
-groups</code></pre></div>
-<h2 id="パーミッションの変更">パーミッションの変更</h2>
+groups
+</code></pre></div><h2 id="heading9">パーミッションの変更</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># 一番はじめの状態が</span>
 ls -l
 &gt; -rwxrw-r--. <span style="color:#2aa198">1</span> solareenlo solareenlo 日付 sample
@@ -384,17 +372,17 @@ chmod go+x sample
 
 <span style="color:#586e75"># user, group, other全員から実行権限を剥奪する</span>
 chmod a-x sample
-&gt; rw- rw- r--</code></pre></div>
-<h2 id="数値によるパーミッションの変更">数値によるパーミッションの変更</h2>
+&gt; rw- rw- r--
+</code></pre></div><h2 id="heading10">数値によるパーミッションの変更</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># rwx = 4+2+1 = 7</span>
 <span style="color:#586e75"># と, 2進数の和で表現される.</span>
 <span style="color:#586e75"># ので,</span>
-rwx rw- r-- <span style="color:#719e07">=</span> <span style="color:#2aa198">4</span>+2+1, <span style="color:#2aa198">4</span>+2+0, <span style="color:#2aa198">4</span>+0+0 <span style="color:#719e07">=</span> <span style="color:#2aa198">764</span>
+rwx rw- r-- <span style="color:#719e07">=</span> 4+2+1, 4+2+0, 4+0+0 <span style="color:#719e07">=</span> <span style="color:#2aa198">764</span>
 <span style="color:#586e75"># ので,</span>
 chmod <span style="color:#2aa198">774</span> <span style="color:#268bd2">sample</span> <span style="color:#719e07">=</span> rwx rwx r--
 chmod <span style="color:#2aa198">664</span> <span style="color:#268bd2">sample</span> <span style="color:#719e07">=</span> rw- rw- r--
-<span style="color:#586e75"># となる</span></code></pre></div>
-<h2 id="独自のコマンドを作成">独自のコマンドを作成</h2>
+<span style="color:#586e75"># となる</span>
+</code></pre></div><h2 id="heading11">独自のコマンドを作成</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># 先ずはコマンドが先に存在しないことを確認する</span>
 <span style="color:#b58900">type</span> hi
 &gt; -bash: type: hi: not found
@@ -402,8 +390,8 @@ chmod <span style="color:#2aa198">664</span> <span style="color:#268bd2">sample<
 
 <span style="color:#586e75"># hi!と出力されるコマンドをvimで作成する</span>
 vim hi
-<span style="color:#719e07">#!/bin/bash
-</span><span style="color:#719e07"></span><span style="color:#b58900">echo</span> <span style="color:#2aa198">&#39;hi!&#39;</span>
+<span style="color:#586e75">#!/bin/bash</span>
+<span style="color:#b58900">echo</span> <span style="color:#2aa198">&#39;hi!&#39;</span>
 :wq
 
 <span style="color:#586e75"># hiコマンドの実行権限を見てみる</span>
@@ -414,8 +402,8 @@ chmod u+x hi
 ls -l
 &gt; -rwx-rw-r-- solareenlo solareenlo 日付 hi
 ./hi
-&gt; hi!</code></pre></div>
-<h2 id="一時的にpathを通す">一時的にpathを通す</h2>
+&gt; hi!
+</code></pre></div><h2 id="path">一時的にpathを通す</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#b58900">pwd</span>
 &gt; /home/現在の/path/test
 <span style="color:#b58900">export</span> <span style="color:#268bd2">PATH</span><span style="color:#719e07">=</span>/home/現在の/path/test:<span style="color:#268bd2">$PATH</span>
@@ -442,8 +430,8 @@ printenv
 <span style="color:#586e75"># こんな感じで出てくる</span>
 <span style="color:#b58900">echo</span> <span style="color:#268bd2">$PATH</span>
 &gt; /anaconda3/bin:/usr/local/git/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/home/現在の/path/test
-<span style="color:#586e75"># 環境変数に$を付けると, その値を意味する</span></code></pre></div>
-<h2 id="管理者ユーザーになる">管理者ユーザーになる</h2>
+<span style="color:#586e75"># 環境変数に$を付けると, その値を意味する</span>
+</code></pre></div><h2 id="heading12">管理者ユーザーになる</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ls -l /var/log/boot.log
 &gt; -rw------- <span style="color:#2aa198">1</span> root root <span style="color:#2aa198">27000</span> 日付 /var/log/boot.log
 cat !$
@@ -473,8 +461,8 @@ cat /var/log/boot.log
 <span style="color:#586e75"># rootユーザーは何でもできるので, うっかりで大変なことになるので,</span>
 <span style="color:#586e75"># 実際はsudoで1つ1つrootユーザー権限でコマンドを実行する.</span>
 sudo cat /var/log/boot.log
-&gt; きちんと中身が見れる</code></pre></div>
-<h2 id="管理者を変更するchown">管理者を変更するchown</h2>
+&gt; きちんと中身が見れる
+</code></pre></div><h2 id="chown">管理者を変更するchown</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cp /var/log/boot.log .
 &gt; cp: <span style="color:#2aa198">&#39;/var/log/boot.log&#39;</span> を読み込み用に開くことができません: 許可がありません
 sudo !!
@@ -487,8 +475,8 @@ cat boot.log
 sudo chown solareenlo:solareenlo boot.log
 &gt; -rw------- <span style="color:#2aa198">1</span> solareenlo solareenlo <span style="color:#2aa198">27000</span> 日付 boot.log
 cat boot.log
-&gt; boot.logの中身が見れる</code></pre></div>
-<h2 id="wc-head-tail-grepを使う">wc, head, tail, grepを使う</h2>
+&gt; boot.logの中身が見れる
+</code></pre></div><h2 id="wc-head-tail-grep">wc, head, tail, grepを使う</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># ファイルの行数, 単語数, 文字数をカウントしてくれるwc</span>
 wc boot.log
 &gt; <span style="color:#2aa198">490</span> <span style="color:#2aa198">3397</span> <span style="color:#2aa198">27077</span> boot.log
@@ -516,8 +504,8 @@ tail -3 boot.log
 <span style="color:#586e75"># 特定の単語を検索する</span>
 <span style="color:#586e75"># 正規表現ももちろんできる</span>
 grep <span style="color:#2aa198">&#39;etc&#39;</span> boot.log
-&gt; 検索結果が返ってくる</code></pre></div>
-<h2 id="リダイレクション-パイプを使う">リダイレクション, パイプを使う</h2>
+&gt; 検索結果が返ってくる
+</code></pre></div><h2 id="-">リダイレクション, パイプを使う</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># コマンドの実行結果をテキストファイルに出力する</span>
 <span style="color:#b58900">echo</span> <span style="color:#2aa198">&#39;date&#39;</span> &gt; cmd.txt
 cat cmd.txt
@@ -547,16 +535,16 @@ ls -l /etc | grep <span style="color:#2aa198">&#39;bash&#39;</span>
 
 <span style="color:#586e75"># さらに, 上記の結果の行数を調べる</span>
 ls -l /etc | grep <span style="color:#2aa198">&#39;bash&#39;</span> | wc -l
-&gt; <span style="color:#2aa198">3</span></code></pre></div>
-<h2 id="ワイルカード">ワイルカード</h2>
+&gt; <span style="color:#2aa198">3</span>
+</code></pre></div><h2 id="heading13">ワイルカード</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># 任意の文字列を扱う*を使って, 拡張子が.confを表示する</span>
 ls /etc/*.conf
 &gt; 拡張子が.confのものだけが表示される
 
 <span style="color:#586e75"># cから始まり, 2文字だけ何でも良くて, 拡張子も何でもいい場合は?と*を使う</span>
 ls /etc/c??.*
-&gt; 当該条件に合致するものが表示される</code></pre></div>
-<h2 id="find-xargs">find, xargs</h2>
+&gt; 当該条件に合致するものが表示される
+</code></pre></div><h2 id="find-xargs">find, xargs</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># ファイルを検索してくれるfind</span>
 <span style="color:#586e75"># find 場所 名前で検索 条件(initのあとは何でも良い)</span>
 find /etc -name <span style="color:#2aa198">&#39;init*&#39;</span>
@@ -567,62 +555,65 @@ find /etc -name <span style="color:#2aa198">&#39;init*&#39;</span> -type f
 
 <span style="color:#586e75"># さらに, 検索したファイルに対して別のコマンドを実行したい場合は, -exec wc -l {} + を使う.</span>
 <span style="color:#586e75"># {}の中に検索結果を入れて実行してくれる.</span>
-find /etc -name <span style="color:#2aa198">&#39;init*&#39;</span> -type f -exec wc -l <span style="color:#719e07">{}</span> +
+find /etc -name <span style="color:#2aa198">&#39;init*&#39;</span> -type f -exec wc -l <span style="color:#719e07">{</span><span style="color:#719e07">}</span> +
 &gt; 当該ファイルの行数がカウントされて表示される
 
 <span style="color:#586e75"># 複数の結果をコマンドに流し込めるxargsもある</span>
 find /etc -name <span style="color:#2aa198">&#39;init*&#39;</span> -type f | xargs wc -l
-&gt; 当該ファイルの行数がカウントされて表示される</code></pre></div>
-<h2 id="ブレース展開">ブレース展開</h2>
+&gt; 当該ファイルの行数がカウントされて表示される
+</code></pre></div><h2 id="heading14">ブレース展開</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># まとめて展開</span>
 <span style="color:#b58900">echo</span> <span style="color:#719e07">{</span>a, b, c<span style="color:#719e07">}</span>
 &gt; a b c
-<span style="color:#b58900">echo</span> <span style="color:#719e07">{</span><span style="color:#2aa198">1</span>..10<span style="color:#719e07">}</span>
+<span style="color:#b58900">echo</span> <span style="color:#719e07">{</span>1..10<span style="color:#719e07">}</span>
 &gt; <span style="color:#2aa198">1</span> <span style="color:#2aa198">2</span> <span style="color:#2aa198">3</span> <span style="color:#2aa198">4</span> <span style="color:#2aa198">5</span> <span style="color:#2aa198">6</span> <span style="color:#2aa198">7</span> <span style="color:#2aa198">8</span> <span style="color:#2aa198">9</span> <span style="color:#2aa198">10</span>
-<span style="color:#b58900">echo</span> <span style="color:#719e07">{</span><span style="color:#2aa198">1</span>..3<span style="color:#719e07">}{</span>a..c<span style="color:#719e07">}</span>
+<span style="color:#b58900">echo</span> <span style="color:#719e07">{</span>1..3<span style="color:#719e07">}</span><span style="color:#719e07">{</span>a..c<span style="color:#719e07">}</span>
 &gt; 1a 1b 1c 2a 2b 2c 3a 3b 3c
 
 <span style="color:#586e75"># 連続してコマンドを実行するには&amp;&amp;を使う</span>
 mkdir <span style="color:#b58900">test</span> <span style="color:#719e07">&amp;&amp;</span> <span style="color:#b58900">cd</span> <span style="color:#b58900">test</span>
 
 <span style="color:#586e75"># ブレース展開を使って一気にディレクトリを作成する</span>
-mkdir app<span style="color:#719e07">{</span><span style="color:#2aa198">1</span>..3<span style="color:#719e07">}</span>
+mkdir app<span style="color:#719e07">{</span>1..3<span style="color:#719e07">}</span>
 ls
 &gt; app1 app2 app3
 
 <span style="color:#586e75"># ブレース展開を使って一気にディレクトリの中にファイルを作成する</span>
-touch app<span style="color:#719e07">{</span><span style="color:#2aa198">1</span>..3<span style="color:#719e07">}</span>/test<span style="color:#719e07">{</span><span style="color:#2aa198">1</span>..3<span style="color:#719e07">}{</span>.txt,.jpeg,.git<span style="color:#719e07">}</span>
+touch app<span style="color:#719e07">{</span>1..3<span style="color:#719e07">}</span>/test<span style="color:#719e07">{</span>1..3<span style="color:#719e07">}</span><span style="color:#719e07">{</span>.txt,.jpeg,.git<span style="color:#719e07">}</span>
 ls app2
 &gt; test1.txt test1.jpeg test1.git test2.txt test2.jpeg test2.git test3.txt test3.jpeg test3.git
 
 <span style="color:#586e75"># 上記の中から特定の拡張子のファイルだけ削除する</span>
-rm app<span style="color:#719e07">{</span><span style="color:#2aa198">1</span>..3<span style="color:#719e07">}</span>/test<span style="color:#719e07">{</span><span style="color:#2aa198">1</span>..3<span style="color:#719e07">}{</span>.jpeg,.git<span style="color:#719e07">}</span>
+rm app<span style="color:#719e07">{</span>1..3<span style="color:#719e07">}</span>/test<span style="color:#719e07">{</span>1..3<span style="color:#719e07">}</span><span style="color:#719e07">{</span>.jpeg,.git<span style="color:#719e07">}</span>
 ls app2
-&gt; test1.txt test2.txt test3.txtt</code></pre></div></article>
+&gt; test1.txt test2.txt test3.txtt
+</code></pre></div></article>
 
-      
-<div class="book-footer justify-between">
+      <div class="book-footer justify-between">
+  
+
+  
   
   <div>
     
-    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/commit/30d6f35db60a7e1a1bc582f93d05051fb234fda6" title='Last modified Jul 23, 2019 by solareenlo' target="_blank" rel="noopener">
-      <img src="/svg/calendar.svg" alt="Changed" />
+    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/commit/30d6f35db60a7e1a1bc582f93d05051fb234fda6" title='Last modified by solareenlo | Jul 23, 2019' target="_blank">
+      <img src="/svg/calendar.svg" alt="Calendar" />
       <span>Jul 23, 2019</span>
     </a>
   </div>
   
   
+
+  
   <div>
-    
-    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/edit/master/content/docs/command.md" target="_blank" rel="noopener">
+    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/edit/master/content/docs/command.md" target="_blank">
       <img src="/svg/edit.svg" alt="Edit" />
       <span>Edit this page</span>
     </a>
-    
   </div>
   
-</div>
 
+</div>
 
       
     </div>
@@ -632,41 +623,38 @@ ls app2
 
   <aside class="book-toc levels-3 fixed">
     <nav id="TableOfContents">
-<ul>
-<li><a href="#コマンドとは">コマンドとは</a>
-<ul>
-<li><a href="#linuxでhtmlを開く">Linuxでhtmlを開く</a></li>
-<li><a href="#ubuntuでchromeを開く">UbuntuでChromeを開く</a></li>
-<li><a href="#プロセスの動作状況-ps">プロセスの動作状況 (ps)</a></li>
-<li><a href="#sha256を出力">sha256を出力</a></li>
-<li><a href="#所有権を変更-chown">所有権を変更 (chown)</a></li>
-</ul></li>
-<li><a href="#基本的なunixコマンドの使い方">基本的なUnixコマンドの使い方</a>
-<ul>
-<li><a href="#mkdirを使って一気にファイルを複数作成する">mkdirを使って一気にファイルを複数作成する</a></li>
-<li><a href="#一般ユーザーと管理ユーザー">一般ユーザーと管理ユーザー</a></li>
-<li><a href="#unixシステムのディレクトリの大体の構成">UNIXシステムのディレクトリの大体の構成</a></li>
-<li><a href="#ディレクリを移動">ディレクリを移動</a></li>
-<li><a href="#ディレクトリを操作">ディレクトリを操作</a></li>
-<li><a href="#ファイル操作">ファイル操作</a></li>
-<li><a href="#bashの便利機能">bashの便利機能</a></li>
-<li><a href="#コマンドの履歴">コマンドの履歴</a></li>
-<li><a href="#コマンドについて詳しく調べる">コマンドについて詳しく調べる</a></li>
-<li><a href="#シンボリックリンクの使い方">シンボリックリンクの使い方</a></li>
-<li><a href="#ユーザーとグループを確認">ユーザーとグループを確認</a></li>
-<li><a href="#パーミッションの変更">パーミッションの変更</a></li>
-<li><a href="#数値によるパーミッションの変更">数値によるパーミッションの変更</a></li>
-<li><a href="#独自のコマンドを作成">独自のコマンドを作成</a></li>
-<li><a href="#一時的にpathを通す">一時的にpathを通す</a></li>
-<li><a href="#管理者ユーザーになる">管理者ユーザーになる</a></li>
-<li><a href="#管理者を変更するchown">管理者を変更するchown</a></li>
-<li><a href="#wc-head-tail-grepを使う">wc, head, tail, grepを使う</a></li>
-<li><a href="#リダイレクション-パイプを使う">リダイレクション, パイプを使う</a></li>
-<li><a href="#ワイルカード">ワイルカード</a></li>
-<li><a href="#find-xargs">find, xargs</a></li>
-<li><a href="#ブレース展開">ブレース展開</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#linuxhtml">Linuxでhtmlを開く</a></li>
+    <li><a href="#ubuntuchrome">UbuntuでChromeを開く</a></li>
+    <li><a href="#-ps">プロセスの動作状況 (ps)</a></li>
+    <li><a href="#sha256">sha256を出力</a></li>
+    <li><a href="#-chown">所有権を変更 (chown)</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#mkdir">mkdirを使って一気にファイルを複数作成する</a></li>
+    <li><a href="#heading1">一般ユーザーと管理ユーザー</a></li>
+    <li><a href="#unix1">UNIXシステムのディレクトリの大体の構成</a></li>
+    <li><a href="#heading2">ディレクリを移動</a></li>
+    <li><a href="#heading3">ディレクトリを操作</a></li>
+    <li><a href="#heading4">ファイル操作</a></li>
+    <li><a href="#bash">bashの便利機能</a></li>
+    <li><a href="#heading5">コマンドの履歴</a></li>
+    <li><a href="#heading6">コマンドについて詳しく調べる</a></li>
+    <li><a href="#heading7">シンボリックリンクの使い方</a></li>
+    <li><a href="#heading8">ユーザーとグループを確認</a></li>
+    <li><a href="#heading9">パーミッションの変更</a></li>
+    <li><a href="#heading10">数値によるパーミッションの変更</a></li>
+    <li><a href="#heading11">独自のコマンドを作成</a></li>
+    <li><a href="#path">一時的にpathを通す</a></li>
+    <li><a href="#heading12">管理者ユーザーになる</a></li>
+    <li><a href="#chown">管理者を変更するchown</a></li>
+    <li><a href="#wc-head-tail-grep">wc, head, tail, grepを使う</a></li>
+    <li><a href="#-">リダイレクション, パイプを使う</a></li>
+    <li><a href="#heading13">ワイルカード</a></li>
+    <li><a href="#find-xargs">find, xargs</a></li>
+    <li><a href="#heading14">ブレース展開</a></li>
+  </ul>
 </nav>
   </aside>
 

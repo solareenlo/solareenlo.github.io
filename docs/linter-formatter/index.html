@@ -3,12 +3,12 @@
 
 <head>
   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><meta property="og:title" content="" />
-<meta property="og:description" content=" Linterとは  コードの間違いを指摘するもの.  Formatterとは  コードのスタイルを統一/調整するもの.  Prettier  JavaScript(including ES2017), JSX, Angular, Vue, Flow, TypeScrip,t CSS, Less, SCSS, HTML, JSON, GraphQL, Markdown, GFM, MDX, YAMLをフォーマットしてくれる. GitHubリポジトリ: prettier/prettier  vimでの使い方  こちらの.vimrcの様にvim-prettierを設定する. 当該のディレクトリで,
-yarn add prettier --dev --exact コードを開いて, コードの一番上に// @formatを記入して,
-:w で, 自動でコードをフォーマットしてくれる.
- Reference: prettier/vim-prettier
-  " />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Linter Formatter"><meta property="og:title" content="" />
+<meta property="og:description" content="Linterとは  コードの間違いを指摘するもの.  Formatterとは  コードのスタイルを統一/調整するもの.  Prettier  JavaScript(including ES2017), JSX, Angular, Vue, Flow, TypeScrip,t CSS, Less, SCSS, HTML, JSON, GraphQL, Markdown, GFM, MDX, YAMLをフォーマットしてくれる. GitHubリポジトリ: prettier/prettier  vimでの使い方   こちらの.vimrcの様にvim-prettierを設定する.
+  当該のディレクトリで,
+yarn add prettier --dev --exact   コードを開いて, コードの一番上に// @formatを記入して,
+:w   で, 自動でコードをフォーマットしてくれる. 4. Reference: prettier/vim-prettier" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://solareenlo.com/docs/linter-formatter/" />
 
@@ -16,10 +16,10 @@ yarn add prettier --dev --exact コードを開いて, コードの一番上に/
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 
 
-<link rel="stylesheet" href="/book.min.7cf03b0e46415b9c8bbde01f69a283955eaa7d987607761a9a05cced394503a1.css" integrity="sha256-fPA7DkZBW5yLveAfaaKDlV6qfZh2B3YamgXM7TlFA6E=">
+<link rel="stylesheet" href="/book.min.0d8f55f751a5f22793c02b19a8a0822122d183a7e99645f6b428174dd3eeec94.css" integrity="sha256-DY9V91Gl8ieTwCsZqKCCISLRg6fplkX2tCgXTdPu7JQ=">
 
 
-<script defer src="/search.min.25dacf0d4e6ef2c0b14ef2bc90d4b36af703a3013ebd9efd7d1dbe17a7492b4d.js" integrity="sha256-JdrPDU5u8sCxTvK8kNSzavcDowE&#43;vZ79fR2&#43;F6dJK00="></script>
+<script defer src="/en.search.min.0de8e26fe8b38f83ff163b7738b4abcdbbe90ae41f3d554ee92aed704668dc09.js" integrity="sha256-Dejib&#43;izj4P/Fjt3OLSrzbvpCuQfPVVO6SrtcEZo3Ak="></script>
 
 <!--
 Made with Book Theme
@@ -42,7 +42,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 <div class="book-search">
-  <input type="text" placeholder="Search" id="book-search-input" maxlength="64" />
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
   <div class="book-search-spinner spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
@@ -55,7 +55,6 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/"><strong>はじめに</strong></a></li>
 <li><a href="/posts/"><strong>Blog</strong></a></li>
 <li><a href="/docs/programming/"><strong>Programming</strong></a>
-
 <ul>
 <li><a href="/docs/terminal/">Terminal</a></li>
 <li><a href="/docs/command/">Command</a></li>
@@ -68,9 +67,9 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/linter-formatter/"class=active>Linter/Formatter</a></li>
 <li><a href="/docs/test/">Test</a></li>
 <li><a href="/docs/password-manager/">Password Manager</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/programming-language/"><strong>Programming Language</strong></a>
-
 <ul>
 <li><a href="/docs/c/">C</a></li>
 <li><a href="/docs/rust/">Rust</a></li>
@@ -85,52 +84,52 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/haskell/">Haskell</a></li>
 <li><a href="/docs/hugo/">Hugo</a></li>
 <li><a href="/docs/programming-language-docs/">Docs</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/latex/"><strong>LaTeX</strong></a>
-
 <ul>
 <li><a href="/docs/platex-book/">Book</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/vps/"><strong>VPS</strong></a>
-
 <ul>
 <li><a href="/docs/ssh/">SSH</a></li>
 <li><a href="/docs/ubuntu/">Ubuntu</a></li>
 <li><a href="/docs/alpine-linux/">Alpine Linux</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/db/"><strong>DB</strong></a>
-
 <ul>
 <li><a href="/docs/mysql/">MySQL</a></li>
 <li><a href="/docs/mongodb/">MongoDB</a></li>
 <li><a href="/docs/redis/">Redis</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/cloud/"><strong>Cloud</strong></a>
-
 <ul>
 <li><a href="/docs/aws/">AWS</a></li>
 <li><a href="/docs/gcp/">GCP</a></li>
 <li><a href="/docs/firebase/">Firebase</a></li>
 <li><a href="/docs/zeit-now/">ZEIT Now</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/ci-cd/"><strong>CI/CD</strong></a>
-
 <ul>
 <li><a href="/docs/jenkins/">Jenkins</a></li>
 <li><a href="/docs/travis-ci/">Travis CI</a></li>
 <li><a href="/docs/circleci/">CircleCI</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/container/"><strong>Container</strong></a>
-
 <ul>
 <li><a href="/docs/docker1/">Docker1</a></li>
 <li><a href="/docs/docker2/">Docker2</a></li>
 <li><a href="/docs/docker-hub/">Docker Hub</a></li>
 <li><a href="/docs/docker-compose/">Docker Compose</a></li>
 <li><a href="/docs/kubernetes/">Kubernetes</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/crypto/"><strong>Crypto</strong></a>
-
 <ul>
 <li><a href="/docs/blockchain/">Blockchain</a></li>
 <li><a href="/docs/bitcoin/">Bitcoin</a></li>
@@ -140,7 +139,8 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/substrate/">Substrate</a></li>
 <li><a href="/docs/white-paper/">White Paper</a></li>
 <li><a href="/docs/crypto-docs/">Docs</a></li>
-</ul></li>
+</ul>
+</li>
 </ul>
 
 
@@ -171,66 +171,62 @@ https://github.com/alex-shpak/hugo-book
 </header>
 
       
-<article class="markdown">
-
-<h1 id="linterとは">Linterとは</h1>
-
+<article class="markdown"><h1 id="linter">Linterとは</h1>
 <ul>
 <li>コードの間違いを指摘するもの.</li>
 </ul>
-
-<h1 id="formatterとは">Formatterとは</h1>
-
+<h1 id="formatter">Formatterとは</h1>
 <ul>
 <li>コードのスタイルを統一/調整するもの.</li>
 </ul>
-
 <h2 id="prettier">Prettier</h2>
-
 <ul>
 <li>JavaScript(including ES2017), JSX, Angular, Vue, Flow, TypeScrip,t CSS, Less, SCSS, HTML, JSON, GraphQL, Markdown,  GFM, MDX, YAMLをフォーマットしてくれる.</li>
 <li><strong>GitHubリポジトリ:</strong> <a href="https://github.com/prettier/prettier">prettier/prettier</a></li>
 </ul>
-
-<h3 id="vimでの使い方">vimでの使い方</h3>
-
+<h3 id="vim">vimでの使い方</h3>
 <ol>
-<li><a href="https://github.com/solareenlo/vim-config/blob/master/.vimrc">こちら</a>の.vimrcの様に<a href="https://github.com/prettier/vim-prettier">vim-prettier</a>を設定する.</li>
-
-<li><p>当該のディレクトリで,</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">yarn add prettier --dev --exact</code></pre></div></li>
-
-<li><p>コードを開いて, コードの一番上に<code>// @format</code>を記入して,</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">:w</code></pre></div>
-<p>で, 自動でコードをフォーマットしてくれる.</p></li>
-
-<li><p><strong>Reference:</strong> <a href="https://github.com/prettier/vim-prettier">prettier/vim-prettier</a></p></li>
+<li>
+<p><a href="https://github.com/solareenlo/vim-config/blob/master/.vimrc">こちら</a>の.vimrcの様に<a href="https://github.com/prettier/vim-prettier">vim-prettier</a>を設定する.</p>
+</li>
+<li>
+<p>当該のディレクトリで,</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">yarn add prettier --dev --exact
+</code></pre></div></li>
+<li>
+<p>コードを開いて, コードの一番上に<code>// @format</code>を記入して,</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">:w
+</code></pre></div></li>
 </ol>
+<p>で, 自動でコードをフォーマットしてくれる.
+4. <strong>Reference:</strong> <a href="https://github.com/prettier/vim-prettier">prettier/vim-prettier</a></p>
 </article>
 
-      
-<div class="book-footer justify-between">
+      <div class="book-footer justify-between">
+  
+
+  
   
   <div>
     
-    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/commit/4ee075df2e9e513fa75b26efc18fb4171926f937" title='Last modified Jul 18, 2019 by solareenlo' target="_blank" rel="noopener">
-      <img src="/svg/calendar.svg" alt="Changed" />
+    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/commit/4ee075df2e9e513fa75b26efc18fb4171926f937" title='Last modified by solareenlo | Jul 18, 2019' target="_blank">
+      <img src="/svg/calendar.svg" alt="Calendar" />
       <span>Jul 18, 2019</span>
     </a>
   </div>
   
   
+
+  
   <div>
-    
-    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/edit/master/content/docs/linter-formatter.md" target="_blank" rel="noopener">
+    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/edit/master/content/docs/linter-formatter.md" target="_blank">
       <img src="/svg/edit.svg" alt="Edit" />
       <span>Edit this page</span>
     </a>
-    
   </div>
   
-</div>
 
+</div>
 
       
     </div>
@@ -240,16 +236,13 @@ https://github.com/alex-shpak/hugo-book
 
   <aside class="book-toc levels-3 fixed">
     <nav id="TableOfContents">
-<ul>
-<li><a href="#linterとは">Linterとは</a></li>
-<li><a href="#formatterとは">Formatterとは</a>
-<ul>
-<li><a href="#prettier">Prettier</a>
-<ul>
-<li><a href="#vimでの使い方">vimでの使い方</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#prettier">Prettier</a>
+      <ul>
+        <li><a href="#vim">vimでの使い方</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
   </aside>
 

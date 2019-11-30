@@ -3,7 +3,8 @@
 
 <head>
   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><meta property="og:title" content="SSH" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="SSH"><meta property="og:title" content="SSH" />
 <meta property="og:description" content="SSH(Secure Shell)とは  暗号や認証の技術を利用して, 安全にリモートコンピュータと通信するためのプロトコルのこと. VPSに接続するときは必須.  SSHの流れ Reference: SSH通信って、結局何してるの？
 [local]1.通信用の秘密鍵・公開鍵の作成する. [local]2.サーバーに公開鍵を渡す. [server]A.サーバーにユーザーを登録する(sudo権限). [server]B.サーバーに登録されているユーザーと, 渡された公開鍵を紐づける. ※この状態で初めて作成したユーザーによるサーバーへのログインが可能となる. [local]3.作成したユーザーでログインする. [server]C.ログイン時に乱数を生成する. [server]D.Cで生成した乱数から, ハッシュ値を生成する. ※このハッシュ値は認証で使うのでサーバー側で保持しておく. [server]E.受け取った公開鍵 &#43; Cで生成した乱数を用いて暗号を生成する. [server]F.Dで作成した暗号をローカルに送る. [local]4.1で作成した秘密鍵を用いて, 送られてきた暗号を解読し乱数を復元する. [local]5.乱数からハッシュ値を計算し, そのハッシュ値をサーバーに送る. [server]G.送られてきたハッシュ値と、Dで生成したハッシュ値を比較する. 一致していれば認証成功. 以後全ての通信は暗号化される. scp scpとはSSHを用いてファイルを秘匿化してコピーする技術のこと.
 # sshのconfigファイルを用いて通信する方法 scp file_name.txt -F ~/.ssh/config iota3:~/github scp &lt;渡したいファイルの名前&gt; -F &lt;コンフィグファイルの名前&gt; &lt;渡し先のマシン名&gt;:&lt;渡し先のディレクトリ&gt; Mac -&gt; Ubuntu を公開鍵暗号方式で接続する UbuntuをSSH接続可にする Ubuntu側で
@@ -12,15 +13,15 @@ Macで秘密鍵と公開鍵のペアを作成する まずMacで秘密鍵と公�
 ssh-keygen -t rsa &gt; Generating public/private rsa key pair. &gt; Enter file in which to save the key (/Users/solareenlo/." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://solareenlo.com/docs/ssh/" />
-<meta property="article:modified_time" content="2019-07-18T00:48:21&#43;09:00"/>
+<meta property="article:modified_time" content="2019-07-18T00:48:21+09:00" />
 <title>SSH | solareenlo</title>
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 
 
-<link rel="stylesheet" href="/book.min.7cf03b0e46415b9c8bbde01f69a283955eaa7d987607761a9a05cced394503a1.css" integrity="sha256-fPA7DkZBW5yLveAfaaKDlV6qfZh2B3YamgXM7TlFA6E=">
+<link rel="stylesheet" href="/book.min.0d8f55f751a5f22793c02b19a8a0822122d183a7e99645f6b428174dd3eeec94.css" integrity="sha256-DY9V91Gl8ieTwCsZqKCCISLRg6fplkX2tCgXTdPu7JQ=">
 
 
-<script defer src="/search.min.25dacf0d4e6ef2c0b14ef2bc90d4b36af703a3013ebd9efd7d1dbe17a7492b4d.js" integrity="sha256-JdrPDU5u8sCxTvK8kNSzavcDowE&#43;vZ79fR2&#43;F6dJK00="></script>
+<script defer src="/en.search.min.0de8e26fe8b38f83ff163b7738b4abcdbbe90ae41f3d554ee92aed704668dc09.js" integrity="sha256-Dejib&#43;izj4P/Fjt3OLSrzbvpCuQfPVVO6SrtcEZo3Ak="></script>
 
 <!--
 Made with Book Theme
@@ -43,7 +44,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 <div class="book-search">
-  <input type="text" placeholder="Search" id="book-search-input" maxlength="64" />
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
   <div class="book-search-spinner spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
@@ -56,7 +57,6 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/"><strong>はじめに</strong></a></li>
 <li><a href="/posts/"><strong>Blog</strong></a></li>
 <li><a href="/docs/programming/"><strong>Programming</strong></a>
-
 <ul>
 <li><a href="/docs/terminal/">Terminal</a></li>
 <li><a href="/docs/command/">Command</a></li>
@@ -69,9 +69,9 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/linter-formatter/">Linter/Formatter</a></li>
 <li><a href="/docs/test/">Test</a></li>
 <li><a href="/docs/password-manager/">Password Manager</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/programming-language/"><strong>Programming Language</strong></a>
-
 <ul>
 <li><a href="/docs/c/">C</a></li>
 <li><a href="/docs/rust/">Rust</a></li>
@@ -86,52 +86,52 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/haskell/">Haskell</a></li>
 <li><a href="/docs/hugo/">Hugo</a></li>
 <li><a href="/docs/programming-language-docs/">Docs</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/latex/"><strong>LaTeX</strong></a>
-
 <ul>
 <li><a href="/docs/platex-book/">Book</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/vps/"><strong>VPS</strong></a>
-
 <ul>
 <li><a href="/docs/ssh/"class=active>SSH</a></li>
 <li><a href="/docs/ubuntu/">Ubuntu</a></li>
 <li><a href="/docs/alpine-linux/">Alpine Linux</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/db/"><strong>DB</strong></a>
-
 <ul>
 <li><a href="/docs/mysql/">MySQL</a></li>
 <li><a href="/docs/mongodb/">MongoDB</a></li>
 <li><a href="/docs/redis/">Redis</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/cloud/"><strong>Cloud</strong></a>
-
 <ul>
 <li><a href="/docs/aws/">AWS</a></li>
 <li><a href="/docs/gcp/">GCP</a></li>
 <li><a href="/docs/firebase/">Firebase</a></li>
 <li><a href="/docs/zeit-now/">ZEIT Now</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/ci-cd/"><strong>CI/CD</strong></a>
-
 <ul>
 <li><a href="/docs/jenkins/">Jenkins</a></li>
 <li><a href="/docs/travis-ci/">Travis CI</a></li>
 <li><a href="/docs/circleci/">CircleCI</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/container/"><strong>Container</strong></a>
-
 <ul>
 <li><a href="/docs/docker1/">Docker1</a></li>
 <li><a href="/docs/docker2/">Docker2</a></li>
 <li><a href="/docs/docker-hub/">Docker Hub</a></li>
 <li><a href="/docs/docker-compose/">Docker Compose</a></li>
 <li><a href="/docs/kubernetes/">Kubernetes</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/crypto/"><strong>Crypto</strong></a>
-
 <ul>
 <li><a href="/docs/blockchain/">Blockchain</a></li>
 <li><a href="/docs/bitcoin/">Bitcoin</a></li>
@@ -141,7 +141,8 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/substrate/">Substrate</a></li>
 <li><a href="/docs/white-paper/">White Paper</a></li>
 <li><a href="/docs/crypto-docs/">Docs</a></li>
-</ul></li>
+</ul>
+</li>
 </ul>
 
 
@@ -172,26 +173,21 @@ https://github.com/alex-shpak/hugo-book
 </header>
 
       
-<article class="markdown">
-
-<h1 id="ssh-secure-shell-とは">SSH(Secure Shell)とは</h1>
-
+<article class="markdown"><h1 id="sshsecure-shell">SSH(Secure Shell)とは</h1>
 <ul>
 <li>暗号や認証の技術を利用して, 安全にリモートコンピュータと通信するためのプロトコルのこと.</li>
 <li>VPSに接続するときは必須.</li>
 </ul>
-
-<h2 id="sshの流れ">SSHの流れ</h2>
-
+<h2 id="ssh">SSHの流れ</h2>
 <p><strong>Reference:</strong> <a href="https://qiita.com/naoki_mochizuki/items/aea14a65a4a513e4816f">SSH通信って、結局何してるの？</a></p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#719e07">[</span>local<span style="color:#719e07">]</span><span style="color:#2aa198">1</span>.通信用の秘密鍵・公開鍵の作成する.
-<span style="color:#719e07">[</span>local<span style="color:#719e07">]</span><span style="color:#2aa198">2</span>.サーバーに公開鍵を渡す.
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#719e07">[</span>local<span style="color:#719e07">]</span>1.通信用の秘密鍵・公開鍵の作成する.
+<span style="color:#719e07">[</span>local<span style="color:#719e07">]</span>2.サーバーに公開鍵を渡す.
 
 <span style="color:#719e07">[</span>server<span style="color:#719e07">]</span>A.サーバーにユーザーを登録する<span style="color:#719e07">(</span>sudo権限<span style="color:#719e07">)</span>.
 <span style="color:#719e07">[</span>server<span style="color:#719e07">]</span>B.サーバーに登録されているユーザーと, 渡された公開鍵を紐づける.
 ※この状態で初めて作成したユーザーによるサーバーへのログインが可能となる.
 
-<span style="color:#719e07">[</span>local<span style="color:#719e07">]</span><span style="color:#2aa198">3</span>.作成したユーザーでログインする.
+<span style="color:#719e07">[</span>local<span style="color:#719e07">]</span>3.作成したユーザーでログインする.
 
 <span style="color:#719e07">[</span>server<span style="color:#719e07">]</span>C.ログイン時に乱数を生成する.
 <span style="color:#719e07">[</span>server<span style="color:#719e07">]</span>D.Cで生成した乱数から, ハッシュ値を生成する.
@@ -199,27 +195,22 @@ https://github.com/alex-shpak/hugo-book
 <span style="color:#719e07">[</span>server<span style="color:#719e07">]</span>E.受け取った公開鍵 + Cで生成した乱数を用いて暗号を生成する.
 <span style="color:#719e07">[</span>server<span style="color:#719e07">]</span>F.Dで作成した暗号をローカルに送る.
 
-<span style="color:#719e07">[</span>local<span style="color:#719e07">]</span><span style="color:#2aa198">4</span>.1で作成した秘密鍵を用いて, 送られてきた暗号を解読し乱数を復元する.
-<span style="color:#719e07">[</span>local<span style="color:#719e07">]</span><span style="color:#2aa198">5</span>.乱数からハッシュ値を計算し, そのハッシュ値をサーバーに送る.
+<span style="color:#719e07">[</span>local<span style="color:#719e07">]</span>4.1で作成した秘密鍵を用いて, 送られてきた暗号を解読し乱数を復元する.
+<span style="color:#719e07">[</span>local<span style="color:#719e07">]</span>5.乱数からハッシュ値を計算し, そのハッシュ値をサーバーに送る.
 
 <span style="color:#719e07">[</span>server<span style="color:#719e07">]</span>G.送られてきたハッシュ値と、Dで生成したハッシュ値を比較する.
-一致していれば認証成功. 以後全ての通信は暗号化される.</code></pre></div>
-<h2 id="scp">scp</h2>
-
+一致していれば認証成功. 以後全ての通信は暗号化される.
+</code></pre></div><h2 id="scp">scp</h2>
 <p><code>scp</code>とはSSHを用いてファイルを秘匿化してコピーする技術のこと.</p>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># sshのconfigファイルを用いて通信する方法</span>
 scp file_name.txt -F ~/.ssh/config iota3:~/github
-scp &lt;渡したいファイルの名前&gt; -F &lt;コンフィグファイルの名前&gt; &lt;渡し先のマシン名&gt;:&lt;渡し先のディレクトリ&gt;</code></pre></div>
-<h2 id="mac-ubuntu-を公開鍵暗号方式で接続する">Mac -&gt; Ubuntu を公開鍵暗号方式で接続する</h2>
-
-<h3 id="ubuntuをssh接続可にする">UbuntuをSSH接続可にする</h3>
-
+scp &lt;渡したいファイルの名前&gt; -F &lt;コンフィグファイルの名前&gt; &lt;渡し先のマシン名&gt;:&lt;渡し先のディレクトリ&gt;
+</code></pre></div><h2 id="mac--ubuntu-">Mac -&gt; Ubuntu を公開鍵暗号方式で接続する</h2>
+<h3 id="ubuntussh">UbuntuをSSH接続可にする</h3>
 <p>Ubuntu側で</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt-get install openssh-server</code></pre></div>
-<p>で, Ubuntu側へSSHで接続できるようになる.</p>
-
-<h3 id="macで秘密鍵と公開鍵のペアを作成する">Macで秘密鍵と公開鍵のペアを作成する</h3>
-
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt-get install openssh-server
+</code></pre></div><p>で, Ubuntu側へSSHで接続できるようになる.</p>
+<h3 id="mac">Macで秘密鍵と公開鍵のペアを作成する</h3>
 <p>まずMacで秘密鍵と公開鍵のペアを作成する.</p>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh-keygen -t rsa
 &gt; Generating public/private rsa key pair.
@@ -234,7 +225,7 @@ scp &lt;渡したいファイルの名前&gt; -F &lt;コンフィグファイル
 &gt; The key fingerprint is:
 &gt; SHA256:a7CbAlk8ns2XVz8roZ8kkN42EFEgXcE+oftgUcFCQ38 solareenlo@solareenlo-mbp13.local
 &gt; The key&#39;s randomart image is:
-&gt; +---<span style="color:#719e07">[</span>RSA <span style="color:#2aa198">2048</span><span style="color:#719e07">]</span>----+
+&gt; +---<span style="color:#719e07">[</span>RSA 2048<span style="color:#719e07">]</span>----+
 &gt; |      .+**<span style="color:#719e07">=</span>o     |
 &gt; |       .o+<span style="color:#719e07">=</span>      |
 &gt; |   .    .<span style="color:#719e07">=</span>..E    |
@@ -244,17 +235,14 @@ scp &lt;渡したいファイルの名前&gt; -F &lt;コンフィグファイル
 &gt; |   .  .o++<span style="color:#719e07">=</span>... o |
 &gt; |    .  + .o+...  |
 &gt; |     .o    .o.   |
-&gt; +----<span style="color:#719e07">[</span>SHA256<span style="color:#719e07">]</span>-----+</code></pre></div>
-<p>これで秘密鍵は<code>id_rsa</code>に, 公開鍵は<code>id_rsa.pub</code>に作成された.</p>
-
-<h3 id="macの公開鍵をubuntuへ渡す">Macの公開鍵をUbuntuへ渡す</h3>
-
+&gt; +----<span style="color:#719e07">[</span>SHA256<span style="color:#719e07">]</span>-----+
+</code></pre></div><p>これで秘密鍵は<code>id_rsa</code>に, 公開鍵は<code>id_rsa.pub</code>に作成された.</p>
+<h3 id="macubuntu">Macの公開鍵をUbuntuへ渡す</h3>
 <p><code>scp</code>を使って公開鍵をUbuntuへ持っていく.</p>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#b58900">cd</span> ~/.ssh
-scp id_rsa.pub solareenlo@111.222.333.444:~/.</code></pre></div>
-<p>これでユーザー名<code>solareenlo</code>, IPアドレスが<code>111.222.333.444</code>のUbuntuのホームディレクトリに先ほど作った公開鍵が渡った.</p>
-
-<h3 id="ubuntuでmacの公開鍵を設置する">UbuntuでMacの公開鍵を設置する</h3>
+scp id_rsa.pub solareenlo@111.222.333.444:~/.
+</code></pre></div><p>これでユーザー名<code>solareenlo</code>, IPアドレスが<code>111.222.333.444</code>のUbuntuのホームディレクトリに先ほど作った公開鍵が渡った.</p>
+<h3 id="ubuntumac">UbuntuでMacの公開鍵を設置する</h3>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir .ssh
 mv id_rsa.pub .ssh
 <span style="color:#b58900">cd</span> ~/.ssh
@@ -262,8 +250,8 @@ touch authorized_keys
 cat id_rsa.pub &gt;&gt; authorized_keys
 rm id_rsa.pub
 sudo chmod <span style="color:#2aa198">700</span> ~/.ssh
-sudo chmod <span style="color:#2aa198">600</span> ~/.ssh/authorized_keys</code></pre></div>
-<h3 id="ubuntuでssh接続での公開鍵認証を有効にする">UbuntuでSSH接続での公開鍵認証を有効にする</h3>
+sudo chmod <span style="color:#2aa198">600</span> ~/.ssh/authorized_keys
+</code></pre></div><h3 id="ubuntussh1">UbuntuでSSH接続での公開鍵認証を有効にする</h3>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo <span style="color:#b58900">cd</span> /etc/ssh
 sudo cp -p sshd_config sshd_config.org
 sudo vi sshd_config
@@ -273,52 +261,53 @@ AuthorizedKeysFile .ssh/authorized_keys <span style="color:#586e75">#公開鍵�
 PasswordAuthentication no <span style="color:#586e75"># パスワード認証禁止</span>
 */
 
-sudo service sshd restart <span style="color:#586e75"># sshdを再起動</span></code></pre></div>
-<h3 id="configファイルを作成する">Configファイルを作成する</h3>
+sudo service sshd restart <span style="color:#586e75"># sshdを再起動</span>
+</code></pre></div><h3 id="config">Configファイルを作成する</h3>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#b58900">cd</span> ~/.ssh
 vi config
 ~~~ viで以下をconfigに書き込む ~~~
 Host ubuntu
-  HostName <span style="color:#2aa198">111</span>.222.333.444
+  HostName 111.222.333.444
   Port <span style="color:#2aa198">22</span>
   User solareenlo
   IdentityFile ~/.ssh/id_rsa
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</code></pre></div>
-<h3 id="macからubuntuへssh接続する">MacからUbuntuへSSH接続する</h3>
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+</code></pre></div><h3 id="macubuntussh">MacからUbuntuへSSH接続する</h3>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh ubuntu
 <span style="color:#586e75"># もしくは</span>
-ssh -i ~/.ssh/id_rsa solareenlo@111.222.333.444</code></pre></div>
-<h3 id="references">References</h3>
-
+ssh -i ~/.ssh/id_rsa solareenlo@111.222.333.444
+</code></pre></div><h3 id="references">References</h3>
 <ul>
 <li><a href="https://qiita.com/m1220/items/9dc3856bbcf985577023">RSA公開鍵認証によるssh接続設定について（Macbook -&gt; VPS）</a></li>
 <li><a href="https://qiita.com/tag1216/items/5d06bad7468f731f590e">インフラエンジニアじゃなくても押さえておきたいSSHの基礎知識</a></li>
 </ul>
 </article>
 
-      
-<div class="book-footer justify-between">
+      <div class="book-footer justify-between">
+  
+
+  
   
   <div>
     
-    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/commit/4ee075df2e9e513fa75b26efc18fb4171926f937" title='Last modified Jul 18, 2019 by solareenlo' target="_blank" rel="noopener">
-      <img src="/svg/calendar.svg" alt="Changed" />
+    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/commit/4ee075df2e9e513fa75b26efc18fb4171926f937" title='Last modified by solareenlo | Jul 18, 2019' target="_blank">
+      <img src="/svg/calendar.svg" alt="Calendar" />
       <span>Jul 18, 2019</span>
     </a>
   </div>
   
   
+
+  
   <div>
-    
-    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/edit/master/content/docs/ssh.md" target="_blank" rel="noopener">
+    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/edit/master/content/docs/ssh.md" target="_blank">
       <img src="/svg/edit.svg" alt="Edit" />
       <span>Edit this page</span>
     </a>
-    
   </div>
   
-</div>
 
+</div>
 
       
     </div>
@@ -328,24 +317,22 @@ ssh -i ~/.ssh/id_rsa solareenlo@111.222.333.444</code></pre></div>
 
   <aside class="book-toc levels-3 fixed">
     <nav id="TableOfContents">
-<ul>
-<li><a href="#ssh-secure-shell-とは">SSH(Secure Shell)とは</a>
-<ul>
-<li><a href="#sshの流れ">SSHの流れ</a></li>
-<li><a href="#scp">scp</a></li>
-<li><a href="#mac-ubuntu-を公開鍵暗号方式で接続する">Mac -&gt; Ubuntu を公開鍵暗号方式で接続する</a>
-<ul>
-<li><a href="#ubuntuをssh接続可にする">UbuntuをSSH接続可にする</a></li>
-<li><a href="#macで秘密鍵と公開鍵のペアを作成する">Macで秘密鍵と公開鍵のペアを作成する</a></li>
-<li><a href="#macの公開鍵をubuntuへ渡す">Macの公開鍵をUbuntuへ渡す</a></li>
-<li><a href="#ubuntuでmacの公開鍵を設置する">UbuntuでMacの公開鍵を設置する</a></li>
-<li><a href="#ubuntuでssh接続での公開鍵認証を有効にする">UbuntuでSSH接続での公開鍵認証を有効にする</a></li>
-<li><a href="#configファイルを作成する">Configファイルを作成する</a></li>
-<li><a href="#macからubuntuへssh接続する">MacからUbuntuへSSH接続する</a></li>
-<li><a href="#references">References</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#ssh">SSHの流れ</a></li>
+    <li><a href="#scp">scp</a></li>
+    <li><a href="#mac--ubuntu-">Mac -> Ubuntu を公開鍵暗号方式で接続する</a>
+      <ul>
+        <li><a href="#ubuntussh">UbuntuをSSH接続可にする</a></li>
+        <li><a href="#mac">Macで秘密鍵と公開鍵のペアを作成する</a></li>
+        <li><a href="#macubuntu">Macの公開鍵をUbuntuへ渡す</a></li>
+        <li><a href="#ubuntumac">UbuntuでMacの公開鍵を設置する</a></li>
+        <li><a href="#ubuntussh1">UbuntuでSSH接続での公開鍵認証を有効にする</a></li>
+        <li><a href="#config">Configファイルを作成する</a></li>
+        <li><a href="#macubuntussh">MacからUbuntuへSSH接続する</a></li>
+        <li><a href="#references">References</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
   </aside>
 

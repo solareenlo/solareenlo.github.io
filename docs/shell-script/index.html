@@ -3,9 +3,10 @@
 
 <head>
   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><meta property="og:title" content="" />
-<meta property="og:description" content="シェルスクリプトとは  シェルとはOSと対話するためのインターフェースであり, それのスクリプトがシェルスクリプト.
- シェルスクリプトモードで実行するのとfilename.shを作って, bash bash filename.sh  で実行する2パターンあります.  チェック  ShellCheck  シェルスクリプトモードに突入 /bin/sh $ または
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Shell Script"><meta property="og:title" content="" />
+<meta property="og:description" content="シェルスクリプトとは  シェルとはOSと対話するためのインターフェースであり, それのスクリプトがシェルスクリプト. シェルスクリプトモードで実行するのとfilename.shを作って,  bash filename.sh で実行する2パターンあります.
+チェック  ShellCheck  シェルスクリプトモードに突入 /bin/sh $ または
 sh $ Hello World sh $ echo Hello World Hello World $ シェルスクリプトモードから脱出 CTLとdを押す.
 初めてのシェルスクリプト # まず, bashがどこにあるか調べる which bash &gt; /bin/bash  #!のことを「シェバン」もしくは「シバン」という. shell scriptファイルの頭に#! /bin/bashと書いてあげる.  vim hello i #i /bin/bash echo hello Esc :wq ls -l &gt; -rw-rw-r--. 1 solareenlo solareenlo 24 日付 hello chmod &#43;x hello ls -l &gt; -rwxrwxr-x." />
 <meta property="og:type" content="article" />
@@ -15,10 +16,10 @@ sh $ Hello World sh $ echo Hello World Hello World $ シェルスクリプトモ
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 
 
-<link rel="stylesheet" href="/book.min.7cf03b0e46415b9c8bbde01f69a283955eaa7d987607761a9a05cced394503a1.css" integrity="sha256-fPA7DkZBW5yLveAfaaKDlV6qfZh2B3YamgXM7TlFA6E=">
+<link rel="stylesheet" href="/book.min.0d8f55f751a5f22793c02b19a8a0822122d183a7e99645f6b428174dd3eeec94.css" integrity="sha256-DY9V91Gl8ieTwCsZqKCCISLRg6fplkX2tCgXTdPu7JQ=">
 
 
-<script defer src="/search.min.25dacf0d4e6ef2c0b14ef2bc90d4b36af703a3013ebd9efd7d1dbe17a7492b4d.js" integrity="sha256-JdrPDU5u8sCxTvK8kNSzavcDowE&#43;vZ79fR2&#43;F6dJK00="></script>
+<script defer src="/en.search.min.0de8e26fe8b38f83ff163b7738b4abcdbbe90ae41f3d554ee92aed704668dc09.js" integrity="sha256-Dejib&#43;izj4P/Fjt3OLSrzbvpCuQfPVVO6SrtcEZo3Ak="></script>
 
 <!--
 Made with Book Theme
@@ -41,7 +42,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 <div class="book-search">
-  <input type="text" placeholder="Search" id="book-search-input" maxlength="64" />
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
   <div class="book-search-spinner spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
@@ -54,7 +55,6 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/"><strong>はじめに</strong></a></li>
 <li><a href="/posts/"><strong>Blog</strong></a></li>
 <li><a href="/docs/programming/"><strong>Programming</strong></a>
-
 <ul>
 <li><a href="/docs/terminal/">Terminal</a></li>
 <li><a href="/docs/command/">Command</a></li>
@@ -67,9 +67,9 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/linter-formatter/">Linter/Formatter</a></li>
 <li><a href="/docs/test/">Test</a></li>
 <li><a href="/docs/password-manager/">Password Manager</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/programming-language/"><strong>Programming Language</strong></a>
-
 <ul>
 <li><a href="/docs/c/">C</a></li>
 <li><a href="/docs/rust/">Rust</a></li>
@@ -84,52 +84,52 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/haskell/">Haskell</a></li>
 <li><a href="/docs/hugo/">Hugo</a></li>
 <li><a href="/docs/programming-language-docs/">Docs</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/latex/"><strong>LaTeX</strong></a>
-
 <ul>
 <li><a href="/docs/platex-book/">Book</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/vps/"><strong>VPS</strong></a>
-
 <ul>
 <li><a href="/docs/ssh/">SSH</a></li>
 <li><a href="/docs/ubuntu/">Ubuntu</a></li>
 <li><a href="/docs/alpine-linux/">Alpine Linux</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/db/"><strong>DB</strong></a>
-
 <ul>
 <li><a href="/docs/mysql/">MySQL</a></li>
 <li><a href="/docs/mongodb/">MongoDB</a></li>
 <li><a href="/docs/redis/">Redis</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/cloud/"><strong>Cloud</strong></a>
-
 <ul>
 <li><a href="/docs/aws/">AWS</a></li>
 <li><a href="/docs/gcp/">GCP</a></li>
 <li><a href="/docs/firebase/">Firebase</a></li>
 <li><a href="/docs/zeit-now/">ZEIT Now</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/ci-cd/"><strong>CI/CD</strong></a>
-
 <ul>
 <li><a href="/docs/jenkins/">Jenkins</a></li>
 <li><a href="/docs/travis-ci/">Travis CI</a></li>
 <li><a href="/docs/circleci/">CircleCI</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/container/"><strong>Container</strong></a>
-
 <ul>
 <li><a href="/docs/docker1/">Docker1</a></li>
 <li><a href="/docs/docker2/">Docker2</a></li>
 <li><a href="/docs/docker-hub/">Docker Hub</a></li>
 <li><a href="/docs/docker-compose/">Docker Compose</a></li>
 <li><a href="/docs/kubernetes/">Kubernetes</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/crypto/"><strong>Crypto</strong></a>
-
 <ul>
 <li><a href="/docs/blockchain/">Blockchain</a></li>
 <li><a href="/docs/bitcoin/">Bitcoin</a></li>
@@ -139,7 +139,8 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/substrate/">Substrate</a></li>
 <li><a href="/docs/white-paper/">White Paper</a></li>
 <li><a href="/docs/crypto-docs/">Docs</a></li>
-</ul></li>
+</ul>
+</li>
 </ul>
 
 
@@ -170,45 +171,35 @@ https://github.com/alex-shpak/hugo-book
 </header>
 
       
-<article class="markdown">
-
-<h1 id="シェルスクリプトとは">シェルスクリプトとは</h1>
-
+<article class="markdown"><h1 id="heading">シェルスクリプトとは</h1>
 <ul>
-<li>シェルとはOSと対話するためのインターフェースであり, それのスクリプトがシェルスクリプト.<br /></li>
-<li>シェルスクリプトモードで実行するのと<code>filename.sh</code>を作って,
-<code>bash
-bash filename.sh
-</code>
-で実行する2パターンあります.</li>
+<li>シェルとはOSと対話するためのインターフェースであり, それのスクリプトがシェルスクリプト.</li>
+<li>シェルスクリプトモードで実行するのと<code>filename.sh</code>を作って,</li>
 </ul>
-
-<h2 id="チェック">チェック</h2>
-
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bash filename.sh
+</code></pre></div><p>で実行する2パターンあります.</p>
+<h2 id="heading1">チェック</h2>
 <ul>
 <li><a href="https://www.shellcheck.net">ShellCheck</a></li>
 </ul>
-
-<h2 id="シェルスクリプトモードに突入">シェルスクリプトモードに突入</h2>
+<h2 id="heading2">シェルスクリプトモードに突入</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/bin/sh
-$</code></pre></div>
-<p>または</p>
+$
+</code></pre></div><p>または</p>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sh
-$</code></pre></div>
-<h2 id="hello-world">Hello World</h2>
+$
+</code></pre></div><h2 id="hello-world">Hello World</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sh
 $ <span style="color:#b58900">echo</span> Hello World
 Hello World
-$</code></pre></div>
-<h2 id="シェルスクリプトモードから脱出">シェルスクリプトモードから脱出</h2>
-
+$
+</code></pre></div><h2 id="heading3">シェルスクリプトモードから脱出</h2>
 <p><code>CTL</code>と<code>d</code>を押す.</p>
-
-<h2 id="初めてのシェルスクリプト">初めてのシェルスクリプト</h2>
+<h2 id="heading4">初めてのシェルスクリプト</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># まず, bashがどこにあるか調べる</span>
 which bash
-&gt; /bin/bash</code></pre></div>
-<ul>
+&gt; /bin/bash
+</code></pre></div><ul>
 <li>#!のことを「シェバン」もしくは「シバン」という.</li>
 <li>shell scriptファイルの頭に<code>#! /bin/bash</code>と書いてあげる.</li>
 </ul>
@@ -225,78 +216,79 @@ chmod +x hello
 ls -l
 &gt; -rwxrwxr-x. <span style="color:#2aa198">1</span> solareenlo solareenlo <span style="color:#2aa198">24</span> 日付 hello
 bash hello
-&gt; hello</code></pre></div>
-<h2 id="文字列を表示">文字列を表示</h2>
+&gt; hello
+</code></pre></div><h2 id="heading5">文字列を表示</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># helloの中身</span>
-<span style="color:#719e07">#!/bin/bash
-</span><span style="color:#719e07"></span><span style="color:#586e75"># コメントは#を使うと文末までコメントアウトしてくれる</span>
+<span style="color:#586e75">#!/bin/bash</span>
+<span style="color:#586e75"># コメントは#を使うと文末までコメントアウトしてくれる</span>
 <span style="color:#b58900">echo</span> <span style="color:#2aa198">&#34;hello world&#34;</span>
 <span style="color:#b58900">echo</span> <span style="color:#2aa198">&#39;hello world&#39;</span>
-<span style="color:#b58900">echo</span> <span style="color:#2aa198">&#34;foo&#34;</span>; <span style="color:#b58900">echo</span> <span style="color:#2aa198">&#34;bar&#34;</span>;</code></pre></div>
-<p>上記を実行すると</p>
+<span style="color:#b58900">echo</span> <span style="color:#2aa198">&#34;foo&#34;</span>; <span style="color:#b58900">echo</span> <span style="color:#2aa198">&#34;bar&#34;</span>;
+</code></pre></div><p>上記を実行すると</p>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bash hello
 &gt; hello world
 &gt; hello world
 &gt; foo
-&gt; bar</code></pre></div>
-<h2 id="変数">変数</h2>
+&gt; bar
+</code></pre></div><h2 id="heading6">変数</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># 02_variabelの中身</span>
-<span style="color:#719e07">#!/bin/bash
-</span><span style="color:#719e07"></span><span style="color:#586e75"># 変数を使う</span>
+<span style="color:#586e75">#!/bin/bash</span>
+<span style="color:#586e75"># 変数を使う</span>
 
 <span style="color:#586e75"># name = &#34;taguchi&#34; はエラーになる. =の両脇にスペースを入れるとエラーになる.</span>
 <span style="color:#268bd2">name</span><span style="color:#719e07">=</span><span style="color:#2aa198">&#34;taguchi&#34;</span>
 <span style="color:#b58900">readonly</span> <span style="color:#268bd2">name2</span><span style="color:#719e07">=</span><span style="color:#2aa198">&#34;taro&#34;</span> <span style="color:#586e75"># 読み取り専用になる</span>
 <span style="color:#586e75"># name2=&#34;hanako&#34; エラーになる</span>
 
-<span style="color:#b58900">echo</span> <span style="color:#2aa198">&#34;morning </span><span style="color:#268bd2">$name</span><span style="color:#2aa198">&#34;</span>
-<span style="color:#b58900">echo</span> <span style="color:#2aa198">&#34;hello </span><span style="color:#268bd2">$name</span><span style="color:#2aa198">&#34;</span>
-<span style="color:#b58900">echo</span> <span style="color:#2aa198">&#34;by </span><span style="color:#2aa198">${</span><span style="color:#268bd2">name</span><span style="color:#2aa198">}</span><span style="color:#2aa198">san&#34;</span>
+<span style="color:#b58900">echo</span> <span style="color:#2aa198">&#34;</span><span style="color:#2aa198">morning </span><span style="color:#268bd2">$name</span><span style="color:#2aa198">&#34;</span>
+<span style="color:#b58900">echo</span> <span style="color:#2aa198">&#34;</span><span style="color:#2aa198">hello </span><span style="color:#268bd2">$name</span><span style="color:#2aa198">&#34;</span>
+<span style="color:#b58900">echo</span> <span style="color:#2aa198">&#34;</span><span style="color:#2aa198">by </span><span style="color:#2aa198">${</span><span style="color:#268bd2">name</span><span style="color:#2aa198">}</span><span style="color:#2aa198">san</span><span style="color:#2aa198">&#34;</span>
 <span style="color:#b58900">echo</span> <span style="color:#2aa198">&#39;by ${name}san&#39;</span> <span style="color:#586e75"># シングルクォーテーションだと${name}がそのまま表示される</span>
-<span style="color:#b58900">echo</span> <span style="color:#2aa198">&#34;hello </span><span style="color:#268bd2">$name2</span><span style="color:#2aa198">&#34;</span></code></pre></div>
-<p>上記を実行すると</p>
+<span style="color:#b58900">echo</span> <span style="color:#2aa198">&#34;</span><span style="color:#2aa198">hello </span><span style="color:#268bd2">$name2</span><span style="color:#2aa198">&#34;</span>
+</code></pre></div><p>上記を実行すると</p>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bash 02_variable
 &gt; morning taguchi
 &gt; hello taguchi
 &gt; by taguchisan
 &gt; by <span style="color:#2aa198">${</span><span style="color:#268bd2">name</span><span style="color:#2aa198">}</span>san
-&gt; hello taro</code></pre></div>
-<h2 id="特殊変数">特殊変数</h2>
+&gt; hello taro
+</code></pre></div><h2 id="heading7">特殊変数</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># シェルスクリプトにおける特殊変数の定義.</span>
 <span style="color:#268bd2">$1</span> <span style="color:#719e07">=</span> 第1引数
 <span style="color:#268bd2">$2</span> <span style="color:#719e07">=</span> 第2引数
 <span style="color:#268bd2">$0</span> <span style="color:#719e07">=</span> コマンド名
 <span style="color:#268bd2">$#</span> <span style="color:#719e07">=</span> 引数の個数
-<span style="color:#268bd2">$@</span> <span style="color:#719e07">=</span> 全部の引数</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># 03_variableの中身</span>
-<span style="color:#719e07">#!/bin/bash
-</span><span style="color:#719e07"></span>
+<span style="color:#268bd2">$@</span> <span style="color:#719e07">=</span> 全部の引数
+</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># 03_variableの中身</span>
+<span style="color:#586e75">#!/bin/bash</span>
+
 <span style="color:#586e75"># 第１引数 = $1, 第2引数 = $2, ...</span>
-<span style="color:#b58900">echo</span> <span style="color:#2aa198">&#34;hello </span><span style="color:#268bd2">$1</span><span style="color:#2aa198">&#34;</span>
+<span style="color:#b58900">echo</span> <span style="color:#2aa198">&#34;</span><span style="color:#2aa198">hello </span><span style="color:#268bd2">$1</span><span style="color:#2aa198">&#34;</span>
 
 <span style="color:#586e75"># ./03_variable a aa aaa</span>
 <span style="color:#b58900">echo</span> <span style="color:#268bd2">$0</span> <span style="color:#586e75"># ./03_variable</span>
 <span style="color:#b58900">echo</span> <span style="color:#268bd2">$#</span> <span style="color:#586e75"># 3 # = 引数の個数</span>
-<span style="color:#b58900">echo</span> <span style="color:#268bd2">$@</span> <span style="color:#586e75"># a aa aaa @ = 引数全部</span></code></pre></div>
-<p>上記を実行すると</p>
+<span style="color:#b58900">echo</span> <span style="color:#268bd2">$@</span> <span style="color:#586e75"># a aa aaa @ = 引数全部</span>
+</code></pre></div><p>上記を実行すると</p>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bash 03_variable a aa aaa
 &gt; hello a
 &gt; bash 03_variable
 &gt; <span style="color:#2aa198">3</span>
-&gt; a aa aaa</code></pre></div>
-<h2 id="ユーザーに入力してもらう">ユーザーに入力してもらう</h2>
+&gt; a aa aaa
+</code></pre></div><h2 id="heading8">ユーザーに入力してもらう</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># 1.</span>
-<span style="color:#719e07">#!/bin/bash
-</span><span style="color:#719e07"></span><span style="color:#b58900">read</span> name
-<span style="color:#b58900">echo</span> <span style="color:#2aa198">&#34;hello </span><span style="color:#268bd2">$name</span><span style="color:#2aa198">&#34;</span>
+<span style="color:#586e75">#!/bin/bash</span>
+<span style="color:#b58900">read</span> name
+<span style="color:#b58900">echo</span> <span style="color:#2aa198">&#34;</span><span style="color:#2aa198">hello </span><span style="color:#268bd2">$name</span><span style="color:#2aa198">&#34;</span>
 
 <span style="color:#586e75"># 上記を実行すると</span>
 bash 04_read taro
 &gt; hello taro
 
 <span style="color:#586e75"># 2.</span>
-<span style="color:#719e07">#!/bin/bash
-</span><span style="color:#719e07"></span><span style="color:#b58900">read</span> -p <span style="color:#2aa198">&#34;Name: &#34;</span> name
-<span style="color:#b58900">echo</span> <span style="color:#2aa198">&#34;hello </span><span style="color:#268bd2">$name</span><span style="color:#2aa198">&#34;</span>
+<span style="color:#586e75">#!/bin/bash</span>
+<span style="color:#b58900">read</span> -p <span style="color:#2aa198">&#34;Name: &#34;</span> name
+<span style="color:#b58900">echo</span> <span style="color:#2aa198">&#34;</span><span style="color:#2aa198">hello </span><span style="color:#268bd2">$name</span><span style="color:#2aa198">&#34;</span>
 
 <span style="color:#586e75"># 上記を実行すると</span>
 bash 04_read
@@ -305,8 +297,8 @@ taro
 &gt; hello taro
 
 <span style="color:#586e75"># 3.</span>
-<span style="color:#719e07">#!/bin/bash
-</span><span style="color:#719e07"></span><span style="color:#b58900">read</span> -p <span style="color:#2aa198">&#34;Pick 3 colors: &#34;</span> c1 c2 c3
+<span style="color:#586e75">#!/bin/bash</span>
+<span style="color:#b58900">read</span> -p <span style="color:#2aa198">&#34;Pick 3 colors: &#34;</span> c1 c2 c3
 <span style="color:#b58900">echo</span> <span style="color:#268bd2">$c1</span>
 <span style="color:#b58900">echo</span> <span style="color:#268bd2">$c2</span>
 <span style="color:#b58900">echo</span> <span style="color:#268bd2">$c3</span>
@@ -321,13 +313,13 @@ red green blue
 
 <span style="color:#586e75"># 色を多く入力したり, 少なく入力すると</span>
 <span style="color:#586e75"># 多い場合はc3に複数個の文字列が代入され,</span>
-<span style="color:#586e75"># 少ない場合はc3が表示されない.</span></code></pre></div>
-<h2 id="配列">配列</h2>
+<span style="color:#586e75"># 少ない場合はc3が表示されない.</span>
+</code></pre></div><h2 id="heading9">配列</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># 05_arrayの中身</span>
-<span style="color:#719e07">#!/bin/bash
-</span><span style="color:#719e07"></span><span style="color:#586e75"># 配列</span>
+<span style="color:#586e75">#!/bin/bash</span>
+<span style="color:#586e75"># 配列</span>
 
-<span style="color:#268bd2">colors</span><span style="color:#719e07">=(</span>red green blue<span style="color:#719e07">)</span>
+<span style="color:#268bd2">colors</span><span style="color:#719e07">=</span><span style="color:#719e07">(</span>red green blue<span style="color:#719e07">)</span>
 <span style="color:#b58900">echo</span> <span style="color:#2aa198">${</span><span style="color:#268bd2">colors</span>[0]<span style="color:#2aa198">}</span> <span style="color:#586e75"># red</span>
 <span style="color:#b58900">echo</span> <span style="color:#2aa198">${</span><span style="color:#268bd2">colors</span>[1]<span style="color:#2aa198">}</span> <span style="color:#586e75"># green</span>
 <span style="color:#b58900">echo</span> <span style="color:#2aa198">${</span><span style="color:#268bd2">colors</span>[2]<span style="color:#2aa198">}</span> <span style="color:#586e75"># blue</span>
@@ -335,12 +327,12 @@ red green blue
 <span style="color:#b58900">echo</span> <span style="color:#2aa198">${#</span><span style="color:#268bd2">colors</span>[@]<span style="color:#2aa198">}</span> <span style="color:#586e75"># 3</span>
 
 <span style="color:#586e75"># 配列の要素に代入</span>
-colors<span style="color:#719e07">[</span><span style="color:#2aa198">1</span><span style="color:#719e07">]=</span>silver
+colors<span style="color:#719e07">[</span>1<span style="color:#719e07">]</span><span style="color:#719e07">=</span>silver
 <span style="color:#586e75"># 配列の末尾に代入</span>
-<span style="color:#268bd2">colors</span><span style="color:#719e07">+=(</span>white black<span style="color:#719e07">)</span>
+<span style="color:#268bd2">colors</span><span style="color:#719e07">+=</span><span style="color:#719e07">(</span>white black<span style="color:#719e07">)</span>
 <span style="color:#b58900">echo</span> <span style="color:#2aa198">${</span><span style="color:#268bd2">colors</span>[@]<span style="color:#2aa198">}</span> <span style="color:#586e75"># red silver blue white black</span>
-<span style="color:#b58900">echo</span> <span style="color:#2aa198">${#</span><span style="color:#268bd2">colors</span>[@]<span style="color:#2aa198">}</span> <span style="color:#586e75"># 5</span></code></pre></div>
-<p>上記を実行すると</p>
+<span style="color:#b58900">echo</span> <span style="color:#2aa198">${#</span><span style="color:#268bd2">colors</span>[@]<span style="color:#2aa198">}</span> <span style="color:#586e75"># 5</span>
+</code></pre></div><p>上記を実行すると</p>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bash 05_array
 &gt; red
 &gt; green
@@ -348,14 +340,14 @@ colors<span style="color:#719e07">[</span><span style="color:#2aa198">1</span><s
 &gt; red green blue
 &gt; <span style="color:#2aa198">3</span>
 &gt; red silver blue white black
-&gt; <span style="color:#2aa198">5</span></code></pre></div>
-<h2 id="数値演算">数値演算</h2>
+&gt; <span style="color:#2aa198">5</span>
+</code></pre></div><h2 id="heading10">数値演算</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#719e07">#!/bin/bash
 </span><span style="color:#719e07"></span>
-<span style="color:#b58900">echo</span> <span style="color:#2aa198">5</span>+2
+<span style="color:#b58900">echo</span> 5+2
 <span style="color:#586e75"># &gt; 5+2</span>
 
-<span style="color:#b58900">echo</span> <span style="color:#586e75">`</span>expr <span style="color:#2aa198">5</span> + <span style="color:#2aa198">2</span><span style="color:#586e75">`</span>
+<span style="color:#b58900">echo</span> <span style="color:#586e75">`</span>expr <span style="color:#2aa198">5</span> + 2<span style="color:#586e75">`</span>
 <span style="color:#586e75"># &gt; 7</span>
 
 <span style="color:#b58900">echo</span> <span style="color:#719e07">$((</span><span style="color:#2aa198">5</span> <span style="color:#719e07">+</span> <span style="color:#2aa198">2</span><span style="color:#719e07">))</span>
@@ -374,8 +366,8 @@ colors<span style="color:#719e07">[</span><span style="color:#2aa198">1</span><s
 
 <span style="color:#586e75"># bashでは実数の計算はできない.</span>
 <span style="color:#b58900">echo</span> <span style="color:#719e07">$((</span><span style="color:#2aa198">10</span><span style="color:#719e07">/</span><span style="color:#2aa198">3</span><span style="color:#719e07">))</span>
-<span style="color:#586e75"># &gt; 3</span></code></pre></div>
-<h2 id="if分">if分</h2>
+<span style="color:#586e75"># &gt; 3</span>
+</code></pre></div><h2 id="if">if分</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#719e07">#!/bin/bash
 </span><span style="color:#719e07"></span>
 <span style="color:#b58900">read</span> -p <span style="color:#2aa198">&#34;Name? &#34;</span> name
@@ -397,24 +389,23 @@ colors<span style="color:#719e07">[</span><span style="color:#2aa198">1</span><s
   <span style="color:#b58900">echo</span> <span style="color:#2aa198">&#34;welcome too&#34;</span>
 <span style="color:#719e07">else</span>
   <span style="color:#b58900">echo</span> <span style="color:#2aa198">&#34;you are not allowed&#34;</span>
-<span style="color:#719e07">fi</span></code></pre></div>
-<p>上記を実行すると</p>
+<span style="color:#719e07">fi</span>
+</code></pre></div><p>上記を実行すると</p>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bash 07_if
 &gt; Name?
 taro
-&gt; welcom</code></pre></div>
-<p>または</p>
+&gt; welcom
+</code></pre></div><p>または</p>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bash 07_if
 &gt; Name?
 hanako
-&gt; welcome too</code></pre></div>
-<p>または</p>
+&gt; welcome too
+</code></pre></div><p>または</p>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bash 07_if
 &gt; Name?
 <span style="color:#b58900">test</span>
-&gt; you are net allowed</code></pre></div>
-<h2 id="文字列の比較">文字列の比較</h2>
-
+&gt; you are net allowed
+</code></pre></div><h2 id="heading11">文字列の比較</h2>
 <p><a href="https://github.com/solareenlo/shellscript-practice/blob/master/08_compare_strings">08_compare_strings</a>の中身をご覧ください.</p>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#719e07">#!/bin/bash
 </span><span style="color:#719e07"></span><span style="color:#586e75"># 文字列の比較には[]も使われますが,</span>
@@ -426,7 +417,7 @@ hanako
 <span style="color:#719e07">fi</span>
 
 <span style="color:#586e75"># と書くところを,</span>
-<span style="color:#719e07">if</span> <span style="color:#719e07">[[</span> <span style="color:#268bd2">$name</span> <span style="color:#719e07">=</span> <span style="color:#2aa198">&#34;taro&#34;</span> <span style="color:#719e07">]]</span>; <span style="color:#719e07">then</span>
+<span style="color:#719e07">if</span> <span style="color:#719e07">[</span><span style="color:#719e07">[</span> <span style="color:#268bd2">$name</span> <span style="color:#719e07">=</span> <span style="color:#2aa198">&#34;taro&#34;</span> <span style="color:#719e07">]</span><span style="color:#719e07">]</span>; <span style="color:#719e07">then</span>
   <span style="color:#b58900">echo</span> <span style="color:#2aa198">&#34;welcome&#34;</span>
 <span style="color:#719e07">fi</span>
 <span style="color:#586e75"># と書く.</span>
@@ -436,7 +427,7 @@ hanako
 <span style="color:#586e75"># -z が文字列が0かどうかを調べる</span>
 <span style="color:#586e75"># =~ が正規表現を使う</span>
 
-<span style="color:#719e07">if</span> <span style="color:#719e07">[[</span> -z <span style="color:#268bd2">$name</span> <span style="color:#719e07">]]</span>; <span style="color:#719e07">then</span>
+<span style="color:#719e07">if</span> <span style="color:#719e07">[</span><span style="color:#719e07">[</span> -z <span style="color:#268bd2">$name</span> <span style="color:#719e07">]</span><span style="color:#719e07">]</span>; <span style="color:#719e07">then</span>
   <span style="color:#b58900">echo</span> <span style="color:#2aa198">&#34;Name is empty ...&#34;</span>
 <span style="color:#719e07">fi</span>
 <span style="color:#586e75"># 上記を実行すると,</span>
@@ -446,7 +437,7 @@ hanako
 <span style="color:#586e75"># &gt; Name is empty ...</span>
 <span style="color:#586e75"># となる.</span>
 
-<span style="color:#719e07">if</span> <span style="color:#719e07">[[</span> <span style="color:#268bd2">$name</span> <span style="color:#719e07">=</span>~ ^t <span style="color:#719e07">]]</span>; <span style="color:#719e07">then</span>
+<span style="color:#719e07">if</span> <span style="color:#719e07">[</span><span style="color:#719e07">[</span> <span style="color:#268bd2">$name</span> <span style="color:#719e07">=</span>~ ^t <span style="color:#719e07">]</span><span style="color:#719e07">]</span>; <span style="color:#719e07">then</span>
   <span style="color:#b58900">echo</span> <span style="color:#2aa198">&#34;Name is starting with t...&#34;</span>
 <span style="color:#719e07">fi</span>
 <span style="color:#586e75"># 上記を実行すると,</span>
@@ -454,8 +445,8 @@ hanako
 <span style="color:#586e75"># &gt; Name?</span>
 <span style="color:#586e75"># taro</span>
 <span style="color:#586e75"># &gt; Name is starting with t...</span>
-<span style="color:#586e75"># となる.</span></code></pre></div>
-<h2 id="ファイルや数値の比較">ファイルや数値の比較</h2>
+<span style="color:#586e75"># となる.</span>
+</code></pre></div><h2 id="heading12">ファイルや数値の比較</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#719e07">#!/bin/bash
 </span><span style="color:#719e07"></span><span style="color:#586e75"># ifを使うよ</span>
 
@@ -464,13 +455,13 @@ hanako
 <span style="color:#586e75"># -d : ディレクトリが存在しているかどうかを判定</span>
 
 <span style="color:#586e75"># このファイルが存在するのかどうかの判定</span>
-<span style="color:#719e07">if</span> <span style="color:#719e07">[[</span> -f <span style="color:#268bd2">$0</span> <span style="color:#719e07">]]</span>; <span style="color:#719e07">then</span>
+<span style="color:#719e07">if</span> <span style="color:#719e07">[</span><span style="color:#719e07">[</span> -f <span style="color:#268bd2">$0</span> <span style="color:#719e07">]</span><span style="color:#719e07">]</span>; <span style="color:#719e07">then</span>
   <span style="color:#b58900">echo</span> <span style="color:#2aa198">&#34;file exists ...&#34;</span>
 <span style="color:#719e07">fi</span>
 <span style="color:#586e75"># 出力は</span>
 <span style="color:#586e75"># file exists ...</span>
 
-<span style="color:#719e07">if</span> <span style="color:#719e07">[[</span> -d <span style="color:#268bd2">$0</span> <span style="color:#719e07">]]</span>; <span style="color:#719e07">then</span>
+<span style="color:#719e07">if</span> <span style="color:#719e07">[</span><span style="color:#719e07">[</span> -d <span style="color:#268bd2">$0</span> <span style="color:#719e07">]</span><span style="color:#719e07">]</span>; <span style="color:#719e07">then</span>
   <span style="color:#b58900">echo</span> <span style="color:#2aa198">&#34;dir exists ...&#34;</span>
 <span style="color:#719e07">fi</span>
 <span style="color:#586e75"># 出力は何もされない.</span>
@@ -478,7 +469,7 @@ hanako
 
 <span style="color:#586e75"># 数値の比較は</span>
 <span style="color:#b58900">read</span> -p <span style="color:#2aa198">&#34;Number? &#34;</span> n
-<span style="color:#719e07">if</span> <span style="color:#719e07">((</span>n &gt; <span style="color:#2aa198">10</span><span style="color:#719e07">))</span>; <span style="color:#719e07">then</span>
+<span style="color:#719e07">if</span> <span style="color:#719e07">(</span><span style="color:#719e07">(</span>n &gt; 10<span style="color:#719e07">)</span><span style="color:#719e07">)</span>; <span style="color:#719e07">then</span>
   <span style="color:#b58900">echo</span> <span style="color:#2aa198">&#34;bigger than 10&#34;</span>
 <span style="color:#719e07">fi</span>
 <span style="color:#586e75"># 比較演算子は</span>
@@ -493,9 +484,8 @@ hanako
 <span style="color:#586e75"># 条件を組み合わせることもできる.</span>
 <span style="color:#586e75"># &amp;&amp; : 積集合</span>
 <span style="color:#586e75"># || : 和集合</span>
-<span style="color:#586e75"># ! : not</span></code></pre></div>
-<h2 id="for文">for文</h2>
-
+<span style="color:#586e75"># ! : not</span>
+</code></pre></div><h2 id="for">for文</h2>
 <p><a href="https://github.com/solareenlo/shellscript-practice/blob/master/10_for">10_for</a>をご覧ください.</p>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#719e07">#!/bin/bash
 </span><span style="color:#719e07"></span>
@@ -506,23 +496,23 @@ hanako
 <span style="color:#719e07">done</span>
 
 <span style="color:#586e75"># 1 2 3 4 5 と縦に表示</span>
-<span style="color:#719e07">for</span> i in <span style="color:#719e07">{</span><span style="color:#2aa198">1</span>..5<span style="color:#719e07">}</span>
+<span style="color:#719e07">for</span> i in <span style="color:#719e07">{</span>1..5<span style="color:#719e07">}</span>
 <span style="color:#719e07">do</span>
   <span style="color:#b58900">echo</span> <span style="color:#268bd2">$i</span>
 <span style="color:#719e07">done</span>
 
 <span style="color:#586e75"># 1 2 3 4 5 と縦に表示</span>
-<span style="color:#719e07">for</span> i in <span style="color:#719e07">{</span><span style="color:#2aa198">1</span>..5<span style="color:#719e07">}</span>; <span style="color:#719e07">do</span>
+<span style="color:#719e07">for</span> i in <span style="color:#719e07">{</span>1..5<span style="color:#719e07">}</span>; <span style="color:#719e07">do</span>
   <span style="color:#b58900">echo</span> <span style="color:#268bd2">$i</span>
 <span style="color:#719e07">done</span>
 
 <span style="color:#586e75"># 1 2 3 4 5 と縦に表示</span>
-<span style="color:#719e07">for</span> <span style="color:#719e07">((</span><span style="color:#268bd2">i</span><span style="color:#719e07">=</span><span style="color:#2aa198">1</span>; i&lt;<span style="color:#719e07">=</span><span style="color:#2aa198">5</span>; i++<span style="color:#719e07">))</span>; <span style="color:#719e07">do</span>
+<span style="color:#719e07">for</span> <span style="color:#719e07">(</span><span style="color:#719e07">(</span><span style="color:#268bd2">i</span><span style="color:#719e07">=</span>1; i&lt;<span style="color:#719e07">=</span>5; i++<span style="color:#719e07">)</span><span style="color:#719e07">)</span>; <span style="color:#719e07">do</span>
   <span style="color:#b58900">echo</span> <span style="color:#268bd2">$i</span>
 <span style="color:#719e07">done</span>
 
 <span style="color:#586e75"># red green blue と縦に表示</span>
-<span style="color:#268bd2">colors</span><span style="color:#719e07">=(</span>red green blue<span style="color:#719e07">)</span>
+<span style="color:#268bd2">colors</span><span style="color:#719e07">=</span><span style="color:#719e07">(</span>red green blue<span style="color:#719e07">)</span>
 <span style="color:#719e07">for</span> color in <span style="color:#2aa198">${</span><span style="color:#268bd2">colors</span>[@]<span style="color:#2aa198">}</span>; <span style="color:#719e07">do</span>
   <span style="color:#b58900">echo</span> <span style="color:#268bd2">$color</span>
 <span style="color:#719e07">done</span>
@@ -531,14 +521,14 @@ hanako
 <span style="color:#586e75"># for item in `date`; do</span>
 <span style="color:#719e07">for</span> item in <span style="color:#719e07">$(</span>date<span style="color:#719e07">)</span>; <span style="color:#719e07">do</span>
   <span style="color:#b58900">echo</span> <span style="color:#268bd2">$item</span>
-<span style="color:#719e07">done</span></code></pre></div>
-<h2 id="while文">while文</h2>
+<span style="color:#719e07">done</span>
+</code></pre></div><h2 id="while">while文</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#719e07">#!/bin/bash
 </span><span style="color:#719e07"></span>
 <span style="color:#268bd2">i</span><span style="color:#719e07">=</span><span style="color:#2aa198">0</span>
 <span style="color:#2aa198">1</span> <span style="color:#2aa198">2</span> <span style="color:#2aa198">3</span> と縦に表示される
-<span style="color:#719e07">while</span> <span style="color:#719e07">((</span>i &lt; <span style="color:#2aa198">3</span><span style="color:#719e07">))</span>; <span style="color:#719e07">do</span>
-  <span style="color:#719e07">((</span>i++<span style="color:#719e07">))</span>
+<span style="color:#719e07">while</span> <span style="color:#719e07">(</span><span style="color:#719e07">(</span>i &lt; 3<span style="color:#719e07">)</span><span style="color:#719e07">)</span>; <span style="color:#719e07">do</span>
+  <span style="color:#719e07">(</span><span style="color:#719e07">(</span>i++<span style="color:#719e07">)</span><span style="color:#719e07">)</span>
   <span style="color:#b58900">echo</span> <span style="color:#268bd2">$i</span>
 <span style="color:#719e07">done</span>
 
@@ -546,12 +536,12 @@ hanako
 <span style="color:#586e75"># break でwhile処理を強制終了</span>
 
 <span style="color:#586e75"># 1 2 3 5 6 7 と縦に表示される</span>
-<span style="color:#719e07">while</span><span style="color:#719e07">((</span>i &lt; <span style="color:#2aa198">10</span><span style="color:#719e07">))</span>;<span style="color:#719e07">do</span>
-  <span style="color:#719e07">((</span>i++<span style="color:#719e07">))</span>
-  <span style="color:#719e07">if</span> <span style="color:#719e07">((</span><span style="color:#268bd2">i</span> <span style="color:#719e07">==</span> <span style="color:#2aa198">4</span><span style="color:#719e07">))</span>; <span style="color:#719e07">then</span>
+<span style="color:#719e07">while</span><span style="color:#719e07">(</span><span style="color:#719e07">(</span>i &lt; 10<span style="color:#719e07">)</span><span style="color:#719e07">)</span>;<span style="color:#719e07">do</span>
+  <span style="color:#719e07">(</span><span style="color:#719e07">(</span>i++<span style="color:#719e07">)</span><span style="color:#719e07">)</span>
+  <span style="color:#719e07">if</span> <span style="color:#719e07">(</span><span style="color:#719e07">(</span><span style="color:#268bd2">i</span> <span style="color:#719e07">=</span><span style="color:#719e07">=</span> 4<span style="color:#719e07">)</span><span style="color:#719e07">)</span>; <span style="color:#719e07">then</span>
     <span style="color:#719e07">continue</span>
   <span style="color:#719e07">fi</span>
-  <span style="color:#719e07">if</span><span style="color:#719e07">((</span><span style="color:#268bd2">i</span> <span style="color:#719e07">==</span> <span style="color:#2aa198">8</span><span style="color:#719e07">))</span>; <span style="color:#719e07">then</span>
+  <span style="color:#719e07">if</span><span style="color:#719e07">(</span><span style="color:#719e07">(</span><span style="color:#268bd2">i</span> <span style="color:#719e07">=</span><span style="color:#719e07">=</span> 8<span style="color:#719e07">)</span><span style="color:#719e07">)</span>; <span style="color:#719e07">then</span>
     <span style="color:#b58900">break</span>
   <span style="color:#719e07">fi</span>
   <span style="color:#b58900">echo</span> <span style="color:#268bd2">$i</span>
@@ -563,46 +553,46 @@ hanako
 <span style="color:#719e07">while</span> :
 <span style="color:#719e07">do</span>
   <span style="color:#b58900">read</span> -p <span style="color:#2aa198">&#34;Command? &#34;</span> cmd
-  <span style="color:#719e07">if</span> <span style="color:#719e07">[[</span> <span style="color:#268bd2">$cmd</span> <span style="color:#719e07">==</span> <span style="color:#2aa198">&#34;quit&#34;</span> <span style="color:#719e07">]]</span>; <span style="color:#719e07">then</span>
+  <span style="color:#719e07">if</span> <span style="color:#719e07">[</span><span style="color:#719e07">[</span> <span style="color:#268bd2">$cmd</span> <span style="color:#719e07">=</span><span style="color:#719e07">=</span> <span style="color:#2aa198">&#34;quit&#34;</span> <span style="color:#719e07">]</span><span style="color:#719e07">]</span>; <span style="color:#719e07">then</span>
     <span style="color:#b58900">break</span>
   <span style="color:#719e07">else</span>
     <span style="color:#b58900">echo</span> <span style="color:#2aa198">&#34;</span><span style="color:#268bd2">$cmd</span><span style="color:#2aa198">&#34;</span>
   <span style="color:#719e07">fi</span>
-<span style="color:#719e07">done</span></code></pre></div>
-<h2 id="catでテキストファイルの中身に文字を保存する">catでテキストファイルの中身に文字を保存する</h2>
+<span style="color:#719e07">done</span>
+</code></pre></div><h2 id="cat">catでテキストファイルの中身に文字を保存する</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat &gt; colors.txt
 red
 green
 blue
 <span style="color:#586e75"># CTL + d</span>
-<span style="color:#586e75"># で保存</span></code></pre></div>
-<h2 id="whileを使って-テキストファイルの中身を1行ずつ読み込む">whileを使って, テキストファイルの中身を1行ずつ読み込む</h2>
+<span style="color:#586e75"># で保存</span>
+</code></pre></div><h2 id="while-1">whileを使って, テキストファイルの中身を1行ずつ読み込む</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#719e07">#!/bin/bash
 </span><span style="color:#719e07"></span>
 <span style="color:#268bd2">i</span><span style="color:#719e07">=</span><span style="color:#2aa198">1</span>
 <span style="color:#586e75"># colors.txtの中身が1行ずつ読み込まれて標準出力に表示される</span>
 <span style="color:#719e07">while</span> <span style="color:#b58900">read</span> line; <span style="color:#719e07">do</span>
   <span style="color:#b58900">echo</span> <span style="color:#268bd2">$i</span> <span style="color:#2aa198">&#34;</span><span style="color:#268bd2">$line</span><span style="color:#2aa198">&#34;</span>
-  <span style="color:#719e07">((</span>i++<span style="color:#719e07">))</span>
-<span style="color:#719e07">done</span> &lt; colors.txt</code></pre></div>
-<h2 id="catとwhileを使って-catで表示するものに行番号を付ける">catとwhileを使って, catで表示するものに行番号を付ける</h2>
+  <span style="color:#719e07">(</span><span style="color:#719e07">(</span>i++<span style="color:#719e07">)</span><span style="color:#719e07">)</span>
+<span style="color:#719e07">done</span> &lt; colors.txt
+</code></pre></div><h2 id="catwhile-cat">catとwhileを使って, catで表示するものに行番号を付ける</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># 13_add_numberの中身</span>
-<span style="color:#719e07">#!/bin/bash
-</span><span style="color:#719e07"></span>
+<span style="color:#586e75">#!/bin/bash</span>
+
 <span style="color:#268bd2">i</span><span style="color:#719e07">=</span><span style="color:#2aa198">1</span>
 <span style="color:#719e07">while</span> <span style="color:#b58900">read</span> line; <span style="color:#719e07">do</span>
   <span style="color:#b58900">echo</span> <span style="color:#268bd2">$i</span> <span style="color:#2aa198">&#34;</span><span style="color:#268bd2">$line</span><span style="color:#2aa198">&#34;</span>
-  <span style="color:#719e07">((</span>i++<span style="color:#719e07">))</span>
-<span style="color:#719e07">done</span></code></pre></div>
-<p>上記を実行すると</p>
+  <span style="color:#719e07">(</span><span style="color:#719e07">(</span>i++<span style="color:#719e07">)</span><span style="color:#719e07">)</span>
+<span style="color:#719e07">done</span>
+</code></pre></div><p>上記を実行すると</p>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat colors.txt | bash 13_add_number
 &gt; <span style="color:#2aa198">1</span> red
 &gt; <span style="color:#2aa198">2</span> green
-&gt; <span style="color:#2aa198">3</span> blue</code></pre></div>
-<h2 id="caseを使って条件分岐">caseを使って条件分岐</h2>
+&gt; <span style="color:#2aa198">3</span> blue
+</code></pre></div><h2 id="case">caseを使って条件分岐</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># 14_caseの中身</span>
-<span style="color:#719e07">#!/bin/bash
-</span><span style="color:#719e07"></span>
+<span style="color:#586e75">#!/bin/bash</span>
+
 <span style="color:#b58900">read</span> -p <span style="color:#2aa198">&#34;Signal color? &#34;</span> color
 <span style="color:#719e07">case</span> <span style="color:#2aa198">&#34;</span><span style="color:#268bd2">$color</span><span style="color:#2aa198">&#34;</span> in
   red<span style="color:#719e07">)</span>
@@ -617,26 +607,26 @@ blue
   *<span style="color:#719e07">)</span>
     <span style="color:#b58900">echo</span> <span style="color:#2aa198">&#34;wrong signal&#34;</span>
     ;;
-<span style="color:#719e07">esac</span></code></pre></div>
-<p>上記を実行すると</p>
+<span style="color:#719e07">esac</span>
+</code></pre></div><p>上記を実行すると</p>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bash 14_case
 &gt; Signal color?
 blue
-&gt; go</code></pre></div>
-<p>または</p>
+&gt; go
+</code></pre></div><p>または</p>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bash 14_case
 &gt; Signal color?
 yellow
-&gt; caution</code></pre></div>
-<p>または</p>
+&gt; caution
+</code></pre></div><p>または</p>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bash 14_case
 &gt; Signal color?
 red
-&gt; stop</code></pre></div>
-<h2 id="selectを使ってメニューを作る">selectを使ってメニューを作る</h2>
+&gt; stop
+</code></pre></div><h2 id="select">selectを使ってメニューを作る</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># 15_selectの中身</span>
-<span style="color:#719e07">#!/bin/bash
-</span><span style="color:#719e07"></span>
+<span style="color:#586e75">#!/bin/bash</span>
+
 <span style="color:#586e75"># select の中身はループになってるのでbreakで終わらせてあげる</span>
 <span style="color:#719e07">select</span> color in red blue green yellow; <span style="color:#719e07">do</span>
   <span style="color:#719e07">case</span> <span style="color:#2aa198">&#34;</span><span style="color:#268bd2">$color</span><span style="color:#2aa198">&#34;</span> in
@@ -653,13 +643,13 @@ red
       <span style="color:#b58900">echo</span> <span style="color:#2aa198">&#34;wrong signal&#34;</span>
       <span style="color:#b58900">break</span>
   <span style="color:#719e07">esac</span>
-<span style="color:#719e07">done</span></code></pre></div>
-<p>上記を実行すると</p>
+<span style="color:#719e07">done</span>
+</code></pre></div><p>上記を実行すると</p>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bash 15_select
-&gt; <span style="color:#2aa198">1</span><span style="color:#719e07">)</span> red
-&gt; <span style="color:#2aa198">2</span><span style="color:#719e07">)</span> blue
-&gt; <span style="color:#2aa198">3</span><span style="color:#719e07">)</span> green
-&gt; <span style="color:#2aa198">4</span><span style="color:#719e07">)</span>yello
+&gt; 1<span style="color:#719e07">)</span> red
+&gt; 2<span style="color:#719e07">)</span> blue
+&gt; 3<span style="color:#719e07">)</span> green
+&gt; 4<span style="color:#719e07">)</span>yello
 &gt; <span style="color:#586e75">#?</span>
 <span style="color:#2aa198">1</span>
 &gt; stop
@@ -670,15 +660,15 @@ red
 <span style="color:#2aa198">4</span>
 &gt; caution
 <span style="color:#2aa198">5</span>
-&gt; wrong signal</code></pre></div>
-<h2 id="関数を使う">関数を使う</h2>
+&gt; wrong signal
+</code></pre></div><h2 id="heading13">関数を使う</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#719e07">#!/bin/bash
 </span><span style="color:#719e07"></span>
 <span style="color:#586e75"># function hello() {</span>
 <span style="color:#586e75">#   echo &#34;hello ...&#34;</span>
 <span style="color:#586e75"># }</span>
 <span style="color:#586e75"># function は省略することもでき</span>
-hello<span style="color:#719e07">()</span> <span style="color:#719e07">{</span>
+hello<span style="color:#719e07">(</span><span style="color:#719e07">)</span> <span style="color:#719e07">{</span>
   <span style="color:#b58900">echo</span> <span style="color:#2aa198">&#34;hello ...&#34;</span>
 <span style="color:#719e07">}</span>
 
@@ -686,15 +676,15 @@ hello
 <span style="color:#586e75"># &gt; hello ...</span>
 
 <span style="color:#586e75"># function へは引数を渡すことももちろんでき</span>
-hello2<span style="color:#719e07">()</span> <span style="color:#719e07">{</span>
-  <span style="color:#b58900">echo</span> <span style="color:#2aa198">&#34;hello </span><span style="color:#268bd2">$1</span><span style="color:#2aa198">&#34;</span>
+hello2<span style="color:#719e07">(</span><span style="color:#719e07">)</span> <span style="color:#719e07">{</span>
+  <span style="color:#b58900">echo</span> <span style="color:#2aa198">&#34;</span><span style="color:#2aa198">hello </span><span style="color:#268bd2">$1</span><span style="color:#2aa198">&#34;</span>
 <span style="color:#719e07">}</span>
 hello2 taro
 <span style="color:#586e75"># &gt; hello taro</span>
 
 <span style="color:#586e75"># 関数の中でifももちろん使える</span>
-hello3<span style="color:#719e07">()</span> <span style="color:#719e07">{</span>
-  <span style="color:#719e07">if</span> <span style="color:#719e07">[[</span> <span style="color:#268bd2">$1</span> <span style="color:#719e07">==</span> <span style="color:#2aa198">&#34;taro&#34;</span> <span style="color:#719e07">]]</span>; <span style="color:#719e07">then</span>
+hello3<span style="color:#719e07">(</span><span style="color:#719e07">)</span> <span style="color:#719e07">{</span>
+  <span style="color:#719e07">if</span> <span style="color:#719e07">[</span><span style="color:#719e07">[</span> <span style="color:#268bd2">$1</span> <span style="color:#719e07">=</span><span style="color:#719e07">=</span> <span style="color:#2aa198">&#34;taro&#34;</span> <span style="color:#719e07">]</span><span style="color:#719e07">]</span>; <span style="color:#719e07">then</span>
     <span style="color:#719e07">return</span> <span style="color:#2aa198">0</span> <span style="color:#586e75"># 0 がtrue</span>
   <span style="color:#719e07">else</span>
     <span style="color:#719e07">return</span> <span style="color:#2aa198">1</span> <span style="color:#586e75"># 1 がfalse</span>
@@ -705,11 +695,11 @@ hello3<span style="color:#719e07">()</span> <span style="color:#719e07">{</span>
 hello3 taro; <span style="color:#b58900">echo</span> <span style="color:#268bd2">$?</span>
 <span style="color:#586e75"># &gt; 0</span>
 hello3 sola; <span style="color:#b58900">echo</span> <span style="color:#268bd2">$?</span>
-<span style="color:#586e75"># &gt; 1</span></code></pre></div>
-<h2 id="変数スコープ">変数スコープ</h2>
+<span style="color:#586e75"># &gt; 1</span>
+</code></pre></div><h2 id="heading14">変数スコープ</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#719e07">#!/bin/bash
 </span><span style="color:#719e07"></span>
-hello<span style="color:#719e07">()</span> <span style="color:#719e07">{</span>
+hello<span style="color:#719e07">(</span><span style="color:#719e07">)</span> <span style="color:#719e07">{</span>
   <span style="color:#268bd2">name</span><span style="color:#719e07">=</span><span style="color:#2aa198">&#34;taro&#34;</span>
   <span style="color:#b58900">echo</span> <span style="color:#2aa198">&#34;hello ...&#34;</span>
 <span style="color:#719e07">}</span>
@@ -721,7 +711,7 @@ hello
 <span style="color:#586e75"># 関数の中の変数にアクセスできる</span>
 <span style="color:#586e75"># それをさせないようにするには</span>
 
-hello2<span style="color:#719e07">()</span> <span style="color:#719e07">{</span>
+hello2<span style="color:#719e07">(</span><span style="color:#719e07">)</span> <span style="color:#719e07">{</span>
   <span style="color:#b58900">local</span> <span style="color:#268bd2">name2</span><span style="color:#719e07">=</span><span style="color:#2aa198">&#34;sola&#34;</span>
   <span style="color:#b58900">echo</span> <span style="color:#2aa198">&#34;hello world&#34;</span>
 <span style="color:#719e07">}</span>
@@ -731,31 +721,34 @@ hello2
 <span style="color:#b58900">echo</span> <span style="color:#268bd2">$name2</span>
 <span style="color:#586e75"># 何も表示されない</span>
 <span style="color:#586e75"># name2はlocalが付いているので,</span>
-<span style="color:#586e75"># hello2の関数内だけで使える</span></code></pre></div></article>
+<span style="color:#586e75"># hello2の関数内だけで使える</span>
+</code></pre></div></article>
 
-      
-<div class="book-footer justify-between">
+      <div class="book-footer justify-between">
+  
+
+  
   
   <div>
     
-    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/commit/8ea50a9f42da8abccc67bab3b46922371e373cf0" title='Last modified May 25, 2019 by solareenlo' target="_blank" rel="noopener">
-      <img src="/svg/calendar.svg" alt="Changed" />
+    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/commit/8ea50a9f42da8abccc67bab3b46922371e373cf0" title='Last modified by solareenlo | May 25, 2019' target="_blank">
+      <img src="/svg/calendar.svg" alt="Calendar" />
       <span>May 25, 2019</span>
     </a>
   </div>
   
   
+
+  
   <div>
-    
-    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/edit/master/content/docs/shell-script.md" target="_blank" rel="noopener">
+    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/edit/master/content/docs/shell-script.md" target="_blank">
       <img src="/svg/edit.svg" alt="Edit" />
       <span>Edit this page</span>
     </a>
-    
   </div>
   
-</div>
 
+</div>
 
       
     </div>
@@ -765,34 +758,31 @@ hello2
 
   <aside class="book-toc levels-3 fixed">
     <nav id="TableOfContents">
-<ul>
-<li><a href="#シェルスクリプトとは">シェルスクリプトとは</a>
-<ul>
-<li><a href="#チェック">チェック</a></li>
-<li><a href="#シェルスクリプトモードに突入">シェルスクリプトモードに突入</a></li>
-<li><a href="#hello-world">Hello World</a></li>
-<li><a href="#シェルスクリプトモードから脱出">シェルスクリプトモードから脱出</a></li>
-<li><a href="#初めてのシェルスクリプト">初めてのシェルスクリプト</a></li>
-<li><a href="#文字列を表示">文字列を表示</a></li>
-<li><a href="#変数">変数</a></li>
-<li><a href="#特殊変数">特殊変数</a></li>
-<li><a href="#ユーザーに入力してもらう">ユーザーに入力してもらう</a></li>
-<li><a href="#配列">配列</a></li>
-<li><a href="#数値演算">数値演算</a></li>
-<li><a href="#if分">if分</a></li>
-<li><a href="#文字列の比較">文字列の比較</a></li>
-<li><a href="#ファイルや数値の比較">ファイルや数値の比較</a></li>
-<li><a href="#for文">for文</a></li>
-<li><a href="#while文">while文</a></li>
-<li><a href="#catでテキストファイルの中身に文字を保存する">catでテキストファイルの中身に文字を保存する</a></li>
-<li><a href="#whileを使って-テキストファイルの中身を1行ずつ読み込む">whileを使って, テキストファイルの中身を1行ずつ読み込む</a></li>
-<li><a href="#catとwhileを使って-catで表示するものに行番号を付ける">catとwhileを使って, catで表示するものに行番号を付ける</a></li>
-<li><a href="#caseを使って条件分岐">caseを使って条件分岐</a></li>
-<li><a href="#selectを使ってメニューを作る">selectを使ってメニューを作る</a></li>
-<li><a href="#関数を使う">関数を使う</a></li>
-<li><a href="#変数スコープ">変数スコープ</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#heading1">チェック</a></li>
+    <li><a href="#heading2">シェルスクリプトモードに突入</a></li>
+    <li><a href="#hello-world">Hello World</a></li>
+    <li><a href="#heading3">シェルスクリプトモードから脱出</a></li>
+    <li><a href="#heading4">初めてのシェルスクリプト</a></li>
+    <li><a href="#heading5">文字列を表示</a></li>
+    <li><a href="#heading6">変数</a></li>
+    <li><a href="#heading7">特殊変数</a></li>
+    <li><a href="#heading8">ユーザーに入力してもらう</a></li>
+    <li><a href="#heading9">配列</a></li>
+    <li><a href="#heading10">数値演算</a></li>
+    <li><a href="#if">if分</a></li>
+    <li><a href="#heading11">文字列の比較</a></li>
+    <li><a href="#heading12">ファイルや数値の比較</a></li>
+    <li><a href="#for">for文</a></li>
+    <li><a href="#while">while文</a></li>
+    <li><a href="#cat">catでテキストファイルの中身に文字を保存する</a></li>
+    <li><a href="#while-1">whileを使って, テキストファイルの中身を1行ずつ読み込む</a></li>
+    <li><a href="#catwhile-cat">catとwhileを使って, catで表示するものに行番号を付ける</a></li>
+    <li><a href="#case">caseを使って条件分岐</a></li>
+    <li><a href="#select">selectを使ってメニューを作る</a></li>
+    <li><a href="#heading13">関数を使う</a></li>
+    <li><a href="#heading14">変数スコープ</a></li>
+  </ul>
 </nav>
   </aside>
 

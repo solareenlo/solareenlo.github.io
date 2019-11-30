@@ -3,7 +3,8 @@
 
 <head>
   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><meta property="og:title" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Npm"><meta property="og:title" content="" />
 <meta property="og:description" content="NPM  Node.jsのパッケージ管理ツール. 公式サイト: https://npmjs.com  インストール npm自体のインストール  Downloading and installing Node.js and npm  npm自体のupdate npm update -y npm # もしくは npm install npm@latest -g npm自体のバージョン管理 Reference: How to Update Node.js to Latest Version (Linux, Ubuntu, OSX, Others)
 パッケージのインストール npm i &lt;パッケージ名&gt; # 本番環境へインストール npm i -D &lt;パッケージ名&gt; # 開発環境へインストール パッケージの脆弱性確認 npm audit パッケージを最新へ npm outdated # 新しいバージョンを確認 npm install -g npm-check-updates # アップデートマネージャーをインストール ncu # 新しいバージョンを確認 ncu -u # package." />
 <meta property="og:type" content="article" />
@@ -13,10 +14,10 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 
 
-<link rel="stylesheet" href="/book.min.7cf03b0e46415b9c8bbde01f69a283955eaa7d987607761a9a05cced394503a1.css" integrity="sha256-fPA7DkZBW5yLveAfaaKDlV6qfZh2B3YamgXM7TlFA6E=">
+<link rel="stylesheet" href="/book.min.0d8f55f751a5f22793c02b19a8a0822122d183a7e99645f6b428174dd3eeec94.css" integrity="sha256-DY9V91Gl8ieTwCsZqKCCISLRg6fplkX2tCgXTdPu7JQ=">
 
 
-<script defer src="/search.min.25dacf0d4e6ef2c0b14ef2bc90d4b36af703a3013ebd9efd7d1dbe17a7492b4d.js" integrity="sha256-JdrPDU5u8sCxTvK8kNSzavcDowE&#43;vZ79fR2&#43;F6dJK00="></script>
+<script defer src="/en.search.min.0de8e26fe8b38f83ff163b7738b4abcdbbe90ae41f3d554ee92aed704668dc09.js" integrity="sha256-Dejib&#43;izj4P/Fjt3OLSrzbvpCuQfPVVO6SrtcEZo3Ak="></script>
 
 <!--
 Made with Book Theme
@@ -39,7 +40,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 <div class="book-search">
-  <input type="text" placeholder="Search" id="book-search-input" maxlength="64" />
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
   <div class="book-search-spinner spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
@@ -52,7 +53,6 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/"><strong>はじめに</strong></a></li>
 <li><a href="/posts/"><strong>Blog</strong></a></li>
 <li><a href="/docs/programming/"><strong>Programming</strong></a>
-
 <ul>
 <li><a href="/docs/terminal/">Terminal</a></li>
 <li><a href="/docs/command/">Command</a></li>
@@ -65,9 +65,9 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/linter-formatter/">Linter/Formatter</a></li>
 <li><a href="/docs/test/">Test</a></li>
 <li><a href="/docs/password-manager/">Password Manager</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/programming-language/"><strong>Programming Language</strong></a>
-
 <ul>
 <li><a href="/docs/c/">C</a></li>
 <li><a href="/docs/rust/">Rust</a></li>
@@ -82,52 +82,52 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/haskell/">Haskell</a></li>
 <li><a href="/docs/hugo/">Hugo</a></li>
 <li><a href="/docs/programming-language-docs/">Docs</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/latex/"><strong>LaTeX</strong></a>
-
 <ul>
 <li><a href="/docs/platex-book/">Book</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/vps/"><strong>VPS</strong></a>
-
 <ul>
 <li><a href="/docs/ssh/">SSH</a></li>
 <li><a href="/docs/ubuntu/">Ubuntu</a></li>
 <li><a href="/docs/alpine-linux/">Alpine Linux</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/db/"><strong>DB</strong></a>
-
 <ul>
 <li><a href="/docs/mysql/">MySQL</a></li>
 <li><a href="/docs/mongodb/">MongoDB</a></li>
 <li><a href="/docs/redis/">Redis</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/cloud/"><strong>Cloud</strong></a>
-
 <ul>
 <li><a href="/docs/aws/">AWS</a></li>
 <li><a href="/docs/gcp/">GCP</a></li>
 <li><a href="/docs/firebase/">Firebase</a></li>
 <li><a href="/docs/zeit-now/">ZEIT Now</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/ci-cd/"><strong>CI/CD</strong></a>
-
 <ul>
 <li><a href="/docs/jenkins/">Jenkins</a></li>
 <li><a href="/docs/travis-ci/">Travis CI</a></li>
 <li><a href="/docs/circleci/">CircleCI</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/container/"><strong>Container</strong></a>
-
 <ul>
 <li><a href="/docs/docker1/">Docker1</a></li>
 <li><a href="/docs/docker2/">Docker2</a></li>
 <li><a href="/docs/docker-hub/">Docker Hub</a></li>
 <li><a href="/docs/docker-compose/">Docker Compose</a></li>
 <li><a href="/docs/kubernetes/">Kubernetes</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/crypto/"><strong>Crypto</strong></a>
-
 <ul>
 <li><a href="/docs/blockchain/">Blockchain</a></li>
 <li><a href="/docs/bitcoin/">Bitcoin</a></li>
@@ -137,7 +137,8 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/substrate/">Substrate</a></li>
 <li><a href="/docs/white-paper/">White Paper</a></li>
 <li><a href="/docs/crypto-docs/">Docs</a></li>
-</ul></li>
+</ul>
+</li>
 </ul>
 
 
@@ -168,86 +169,75 @@ https://github.com/alex-shpak/hugo-book
 </header>
 
       
-<article class="markdown">
-
-<h1 id="npm">NPM</h1>
-
+<article class="markdown"><h1 id="npm">NPM</h1>
 <ul>
 <li>Node.jsのパッケージ管理ツール.</li>
 <li><strong>公式サイト:</strong> <a href="https://npmjs.com">https://npmjs.com</a></li>
 </ul>
-
-<h2 id="インストール">インストール</h2>
-
-<h3 id="npm自体のインストール">npm自体のインストール</h3>
-
+<h2 id="heading">インストール</h2>
+<h3 id="npm1">npm自体のインストール</h3>
 <ul>
 <li><a href="https://docs.npmjs.com/downloading-and-installing-node-js-and-npm">Downloading and installing Node.js and npm</a></li>
 </ul>
-
-<h3 id="npm自体のupdate">npm自体のupdate</h3>
+<h3 id="npmupdate">npm自体のupdate</h3>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm update -y npm
 <span style="color:#586e75"># もしくは</span>
-npm install npm@latest -g</code></pre></div>
-<h3 id="npm自体のバージョン管理">npm自体のバージョン管理</h3>
-
+npm install npm@latest -g
+</code></pre></div><h3 id="npm2">npm自体のバージョン管理</h3>
 <p><strong>Reference:</strong> <a href="https://www.hostingadvice.com/how-to/update-node-js-latest-version/">How to Update Node.js to Latest Version (Linux, Ubuntu, OSX, Others)</a></p>
-
-<h3 id="パッケージのインストール">パッケージのインストール</h3>
+<h3 id="heading1">パッケージのインストール</h3>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm i &lt;パッケージ名&gt; <span style="color:#586e75"># 本番環境へインストール</span>
-npm i -D &lt;パッケージ名&gt; <span style="color:#586e75"># 開発環境へインストール</span></code></pre></div>
-<h3 id="パッケージの脆弱性確認">パッケージの脆弱性確認</h3>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm audit</code></pre></div>
-<h3 id="パッケージを最新へ">パッケージを最新へ</h3>
+npm i -D &lt;パッケージ名&gt; <span style="color:#586e75"># 開発環境へインストール</span>
+</code></pre></div><h3 id="heading2">パッケージの脆弱性確認</h3>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm audit
+</code></pre></div><h3 id="heading3">パッケージを最新へ</h3>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm outdated <span style="color:#586e75"># 新しいバージョンを確認</span>
 npm install -g npm-check-updates <span style="color:#586e75"># アップデートマネージャーをインストール</span>
 ncu <span style="color:#586e75"># 新しいバージョンを確認</span>
 ncu -u <span style="color:#586e75"># package.jsonを更新</span>
-npm update <span style="color:#586e75"># パッケージを更新</span></code></pre></div>
-<h1 id="便利なパッケージ">便利なパッケージ</h1>
-
-<h2 id="npm-run-all">npm-run-all</h2>
-
+npm update <span style="color:#586e75"># パッケージを更新</span>
+</code></pre></div><h1 id="heading4">便利なパッケージ</h1>
+<h2 id="npmrunall">npm-run-all</h2>
 <ul>
 <li>複数のnpmを実行するためのコマンドラインツール</li>
 <li><strong>GitHubリポジトリ:</strong> <a href="https://github.com/mysticatea/npm-run-all">mysticatea/npm-run-all</a></li>
 </ul>
-
-<h3 id="インストール-1">インストール</h3>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm i -D node-run-all</code></pre></div>
-<h3 id="簡単な使い方">簡単な使い方</h3>
+<h3 id="heading5">インストール</h3>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm i -D node-run-all
+</code></pre></div><h3 id="heading6">簡単な使い方</h3>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">run-s &lt;1つ目のタスク&gt; &lt;2つ目の処理&gt; <span style="color:#586e75"># 順次処理</span>
-run-p &lt;1つ目のタスク&gt; &lt;2つ目の処理&gt; <span style="color:#586e75"># 並列処理</span></code></pre></div>
-<h2 id="ダウンロード数比較">ダウンロード数比較</h2>
-
+run-p &lt;1つ目のタスク&gt; &lt;2つ目の処理&gt; <span style="color:#586e75"># 並列処理</span>
+</code></pre></div><h2 id="heading7">ダウンロード数比較</h2>
 <ul>
 <li><a href="https://github.com/johnmpotter/npm-trends">johnmpotter/npm-trends</a></li>
 </ul>
 </article>
 
-      
-<div class="book-footer justify-between">
+      <div class="book-footer justify-between">
+  
+
+  
   
   <div>
     
-    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/commit/99f667a8a6962173a2a0d21674136f11d772f242" title='Last modified Jun 2, 2019 by solareenlo' target="_blank" rel="noopener">
-      <img src="/svg/calendar.svg" alt="Changed" />
+    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/commit/99f667a8a6962173a2a0d21674136f11d772f242" title='Last modified by solareenlo | Jun 2, 2019' target="_blank">
+      <img src="/svg/calendar.svg" alt="Calendar" />
       <span>Jun 2, 2019</span>
     </a>
   </div>
   
   
+
+  
   <div>
-    
-    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/edit/master/content/docs/npm.md" target="_blank" rel="noopener">
+    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/edit/master/content/docs/npm.md" target="_blank">
       <img src="/svg/edit.svg" alt="Edit" />
       <span>Edit this page</span>
     </a>
-    
   </div>
   
-</div>
 
+</div>
 
       
     </div>
@@ -257,29 +247,28 @@ run-p &lt;1つ目のタスク&gt; &lt;2つ目の処理&gt; <span style="color:#5
 
   <aside class="book-toc levels-3 fixed">
     <nav id="TableOfContents">
-<ul>
-<li><a href="#npm">NPM</a>
-<ul>
-<li><a href="#インストール">インストール</a>
-<ul>
-<li><a href="#npm自体のインストール">npm自体のインストール</a></li>
-<li><a href="#npm自体のupdate">npm自体のupdate</a></li>
-<li><a href="#npm自体のバージョン管理">npm自体のバージョン管理</a></li>
-<li><a href="#パッケージのインストール">パッケージのインストール</a></li>
-<li><a href="#パッケージの脆弱性確認">パッケージの脆弱性確認</a></li>
-<li><a href="#パッケージを最新へ">パッケージを最新へ</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#便利なパッケージ">便利なパッケージ</a>
-<ul>
-<li><a href="#npm-run-all">npm-run-all</a>
-<ul>
-<li><a href="#インストール-1">インストール</a></li>
-<li><a href="#簡単な使い方">簡単な使い方</a></li>
-</ul></li>
-<li><a href="#ダウンロード数比較">ダウンロード数比較</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#heading">インストール</a>
+      <ul>
+        <li><a href="#npm1">npm自体のインストール</a></li>
+        <li><a href="#npmupdate">npm自体のupdate</a></li>
+        <li><a href="#npm2">npm自体のバージョン管理</a></li>
+        <li><a href="#heading1">パッケージのインストール</a></li>
+        <li><a href="#heading2">パッケージの脆弱性確認</a></li>
+        <li><a href="#heading3">パッケージを最新へ</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#npmrunall">npm-run-all</a>
+      <ul>
+        <li><a href="#heading5">インストール</a></li>
+        <li><a href="#heading6">簡単な使い方</a></li>
+      </ul>
+    </li>
+    <li><a href="#heading7">ダウンロード数比較</a></li>
+  </ul>
 </nav>
   </aside>
 

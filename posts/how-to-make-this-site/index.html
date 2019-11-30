@@ -3,25 +3,26 @@
 
 <head>
   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><meta property="og:title" content="このサイトの作り方" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="このサイトの作り方"><meta property="og:title" content="このサイトの作り方" />
 <meta property="og:description" content="Macユーザー用
  ものすごい初歩からこのサイトの作り方を説明しています. この手順で作成するとGitHubに全ての内容/更新履歴/更新内容が公開されますので, 適宜読み替えてください.
 Macにgitをインストールする https://git-scm.com/download/mac
 GitHubにアカウントを作成する https://github.com
-MacにHomebrewをインストールする /usr/bin/ruby -e &#34;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&#34;  References:  https://brew.sh/index_ja.html https://github.com/Homebrew/brew   MacにHugo(静的サイトジェネレーター)をインストールする brew install hugo  Reference: Install Hugo  HugoのExtendedバージョンをインストールする 以下内容をhugo_latest.sh名で保存する.
+MacにHomebrewをインストールする /usr/bin/ruby -e &#34;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&#34;  References: https://brew.sh/index_ja.html https://github.com/Homebrew/brew  MacにHugo(静的サイトジェネレーター)をインストールする brew install hugo  Reference: Install Hugo  HugoのExtendedバージョンをインストールする 以下内容をhugo_latest.sh名で保存する.
 # hugo_latest.sh # Find the latest Hugo from GitHub echo &#39;🐹 Starting Hugo Install / Update 🐹&#39; echo &#39; Note: Please be sure to have curl and grep installed&#39; echo &#39;&#39; url=$(curl -s &#34;https://api.github.com/repositories/11180687/releases/latest&#34; | grep -o &#39;https://." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://solareenlo.com/posts/how-to-make-this-site/" />
-<meta property="article:published_time" content="2019-04-16T06:49:32&#43;09:00"/>
-<meta property="article:modified_time" content="2019-05-12T20:16:21&#43;09:00"/>
+<meta property="article:published_time" content="2019-04-16T06:49:32+09:00" />
+<meta property="article:modified_time" content="2019-05-12T20:16:21+09:00" />
 <title>このサイトの作り方 | solareenlo</title>
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 
 
-<link rel="stylesheet" href="/book.min.7cf03b0e46415b9c8bbde01f69a283955eaa7d987607761a9a05cced394503a1.css" integrity="sha256-fPA7DkZBW5yLveAfaaKDlV6qfZh2B3YamgXM7TlFA6E=">
+<link rel="stylesheet" href="/book.min.0d8f55f751a5f22793c02b19a8a0822122d183a7e99645f6b428174dd3eeec94.css" integrity="sha256-DY9V91Gl8ieTwCsZqKCCISLRg6fplkX2tCgXTdPu7JQ=">
 
 
-<script defer src="/search.min.25dacf0d4e6ef2c0b14ef2bc90d4b36af703a3013ebd9efd7d1dbe17a7492b4d.js" integrity="sha256-JdrPDU5u8sCxTvK8kNSzavcDowE&#43;vZ79fR2&#43;F6dJK00="></script>
+<script defer src="/en.search.min.0de8e26fe8b38f83ff163b7738b4abcdbbe90ae41f3d554ee92aed704668dc09.js" integrity="sha256-Dejib&#43;izj4P/Fjt3OLSrzbvpCuQfPVVO6SrtcEZo3Ak="></script>
 
 <!--
 Made with Book Theme
@@ -44,7 +45,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 <div class="book-search">
-  <input type="text" placeholder="Search" id="book-search-input" maxlength="64" />
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
   <div class="book-search-spinner spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
@@ -57,7 +58,6 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/"><strong>はじめに</strong></a></li>
 <li><a href="/posts/"><strong>Blog</strong></a></li>
 <li><a href="/docs/programming/"><strong>Programming</strong></a>
-
 <ul>
 <li><a href="/docs/terminal/">Terminal</a></li>
 <li><a href="/docs/command/">Command</a></li>
@@ -70,9 +70,9 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/linter-formatter/">Linter/Formatter</a></li>
 <li><a href="/docs/test/">Test</a></li>
 <li><a href="/docs/password-manager/">Password Manager</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/programming-language/"><strong>Programming Language</strong></a>
-
 <ul>
 <li><a href="/docs/c/">C</a></li>
 <li><a href="/docs/rust/">Rust</a></li>
@@ -87,52 +87,52 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/haskell/">Haskell</a></li>
 <li><a href="/docs/hugo/">Hugo</a></li>
 <li><a href="/docs/programming-language-docs/">Docs</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/latex/"><strong>LaTeX</strong></a>
-
 <ul>
 <li><a href="/docs/platex-book/">Book</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/vps/"><strong>VPS</strong></a>
-
 <ul>
 <li><a href="/docs/ssh/">SSH</a></li>
 <li><a href="/docs/ubuntu/">Ubuntu</a></li>
 <li><a href="/docs/alpine-linux/">Alpine Linux</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/db/"><strong>DB</strong></a>
-
 <ul>
 <li><a href="/docs/mysql/">MySQL</a></li>
 <li><a href="/docs/mongodb/">MongoDB</a></li>
 <li><a href="/docs/redis/">Redis</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/cloud/"><strong>Cloud</strong></a>
-
 <ul>
 <li><a href="/docs/aws/">AWS</a></li>
 <li><a href="/docs/gcp/">GCP</a></li>
 <li><a href="/docs/firebase/">Firebase</a></li>
 <li><a href="/docs/zeit-now/">ZEIT Now</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/ci-cd/"><strong>CI/CD</strong></a>
-
 <ul>
 <li><a href="/docs/jenkins/">Jenkins</a></li>
 <li><a href="/docs/travis-ci/">Travis CI</a></li>
 <li><a href="/docs/circleci/">CircleCI</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/container/"><strong>Container</strong></a>
-
 <ul>
 <li><a href="/docs/docker1/">Docker1</a></li>
 <li><a href="/docs/docker2/">Docker2</a></li>
 <li><a href="/docs/docker-hub/">Docker Hub</a></li>
 <li><a href="/docs/docker-compose/">Docker Compose</a></li>
 <li><a href="/docs/kubernetes/">Kubernetes</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/crypto/"><strong>Crypto</strong></a>
-
 <ul>
 <li><a href="/docs/blockchain/">Blockchain</a></li>
 <li><a href="/docs/bitcoin/">Bitcoin</a></li>
@@ -142,7 +142,8 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/substrate/">Substrate</a></li>
 <li><a href="/docs/white-paper/">White Paper</a></li>
 <li><a href="/docs/crypto-docs/">Docs</a></li>
-</ul></li>
+</ul>
+</li>
 </ul>
 
 
@@ -180,44 +181,29 @@ https://github.com/alex-shpak/hugo-book
     <strong>Apr 16, 2019</strong>
   </h5>
 </header>
-<article class="markdown">
-
-<hr />
-
+<article class="markdown"><hr>
 <blockquote>
 <p>Macユーザー用</p>
 </blockquote>
-
 <p>ものすごい初歩からこのサイトの作り方を説明しています.
 この手順で作成するとGitHubに全ての内容/更新履歴/更新内容が公開されますので, 適宜読み替えてください.</p>
-
-<h2 id="macにgitをインストールする">Macにgitをインストールする</h2>
-
+<h2 id="macgit">Macにgitをインストールする</h2>
 <p><a href="https://git-scm.com/download/mac">https://git-scm.com/download/mac</a></p>
-
-<h2 id="githubにアカウントを作成する">GitHubにアカウントを作成する</h2>
-
+<h2 id="github">GitHubにアカウントを作成する</h2>
 <p><a href="https://github.com">https://github.com</a></p>
-
-<h2 id="macにhomebrewをインストールする">MacにHomebrewをインストールする</h2>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/usr/bin/ruby -e <span style="color:#2aa198">&#34;</span><span style="color:#719e07">$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install<span style="color:#719e07">)</span><span style="color:#2aa198">&#34;</span></code></pre></div>
-<ul>
-<li><strong>References:</strong>
-
-<ul>
+<h2 id="machomebrew">MacにHomebrewをインストールする</h2>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/usr/bin/ruby -e <span style="color:#2aa198">&#34;</span><span style="color:#719e07">$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install<span style="color:#719e07">)</span><span style="color:#2aa198">&#34;</span>
+</code></pre></div><ul>
+<li><strong>References:</strong></li>
 <li><a href="https://brew.sh/index_ja.html">https://brew.sh/index_ja.html</a></li>
 <li><a href="https://github.com/Homebrew/brew">https://github.com/Homebrew/brew</a></li>
-</ul></li>
 </ul>
-
-<h2 id="macにhugo-静的サイトジェネレーター-をインストールする">MacにHugo(静的サイトジェネレーター)をインストールする</h2>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew install hugo</code></pre></div>
-<ul>
+<h2 id="machugo">MacにHugo(静的サイトジェネレーター)をインストールする</h2>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew install hugo
+</code></pre></div><ul>
 <li>Reference: <a href="https://gohugo.io/getting-started/installing/#homebrew-macos">Install Hugo</a></li>
 </ul>
-
-<h3 id="hugoのextendedバージョンをインストールする">HugoのExtendedバージョンをインストールする</h3>
-
+<h3 id="hugoextended">HugoのExtendedバージョンをインストールする</h3>
 <p>以下内容を<code>hugo_latest.sh</code>名で保存する.</p>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># hugo_latest.sh</span>
 <span style="color:#586e75"># Find the latest Hugo from GitHub</span>
@@ -243,73 +229,64 @@ rm hugo_latest.tar.gz
 <span style="color:#b58900">echo</span> <span style="color:#2aa198">&#39;👉 Current Version&#39;</span> <span style="color:#719e07">$(</span>hugo version<span style="color:#719e07">)</span>
 
 <span style="color:#b58900">echo</span> <span style="color:#2aa198">&#39;&#39;</span>
-<span style="color:#b58900">echo</span> <span style="color:#2aa198">&#39;🎉🎉🎉 Happy Hugo-ing! 🎉🎉🎉&#39;</span></code></pre></div>
-<p>そして, コンソールで以下を実行する.</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bash hugo_latest.sh</code></pre></div>
-<ul>
+<span style="color:#b58900">echo</span> <span style="color:#2aa198">&#39;🎉🎉🎉 Happy Hugo-ing! 🎉🎉🎉&#39;</span>
+</code></pre></div><p>そして, コンソールで以下を実行する.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bash hugo_latest.sh
+</code></pre></div><ul>
 <li>Reference: <a href="https://rimdev.io/hugo-extended-latest-install-script-for-macos/">Install Hugo (Extended) Latest With Shell Script For macOS</a></li>
 </ul>
-
-<h2 id="hugoのテンプレートテーマであるbookをインストールする">Hugoのテンプレートテーマであるbookをインストールする</h2>
+<h2 id="hugobook">Hugoのテンプレートテーマであるbookをインストールする</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#b58900">cd</span>
 hugo new site my-site
 <span style="color:#b58900">cd</span> my-site
 git init
-git submodule add https://github.com/alex-shpak/hugo-book themes/book</code></pre></div>
-<h3 id="試しにサイトをローカルで動かしてみる">試しにサイトをローカルで動かしてみる.</h3>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hugo server --theme book</code></pre></div>
-<ul>
-<li>References:
-
-<ul>
+git submodule add https://github.com/alex-shpak/hugo-book themes/book
+</code></pre></div><h3 id="heading">試しにサイトをローカルで動かしてみる.</h3>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hugo server --theme book
+</code></pre></div><ul>
+<li>References:</li>
 <li><a href="https://themes.gohugo.io/hugo-book/">https://themes.gohugo.io/hugo-book/</a></li>
 <li><a href="https://github.com/alex-shpak/hugo-book">https://github.com/alex-shpak/hugo-book</a></li>
-</ul></li>
 </ul>
-
-<h2 id="githubにファイルを上げてみる">GitHubにファイルを上げてみる</h2>
-
-<h2 id="記事を更新する">記事を更新する</h2>
-
+<h2 id="github1">GitHubにファイルを上げてみる</h2>
+<h2 id="heading1">記事を更新する</h2>
 <h2 id="references">References</h2>
-
 <p>色の参考文献</p>
-
 <ul>
 <li><a href="https://github.com/aubm/hugo-code-editor-theme">aubm/hugo-code-editor-theme</a></li>
 <li><a href="https://github.com/altercation/vim-colors-solarized">altercation/vim-colors-solarized</a></li>
 </ul>
-
 <p>形状の参考文献</p>
-
 <ul>
 <li><a href="https://github.com/alex-shpak/hugo-book">alex-shpak/hugo-book</a></li>
 </ul>
 </article>
 
-      
-<div class="book-footer justify-between">
+      <div class="book-footer justify-between">
+  
+
+  
   
   <div>
     
-    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/commit/d9668e71aeb7726fe61c67cb4dcf4f875de42080" title='Last modified May 12, 2019 by solareenlo' target="_blank" rel="noopener">
-      <img src="/svg/calendar.svg" alt="Changed" />
+    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/commit/d9668e71aeb7726fe61c67cb4dcf4f875de42080" title='Last modified by solareenlo | May 12, 2019' target="_blank">
+      <img src="/svg/calendar.svg" alt="Calendar" />
       <span>May 12, 2019</span>
     </a>
   </div>
   
   
+
+  
   <div>
-    
-    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/edit/master/content/posts/how-to-make-this-site.md" target="_blank" rel="noopener">
+    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/edit/master/content/posts/how-to-make-this-site.md" target="_blank">
       <img src="/svg/edit.svg" alt="Edit" />
       <span>Edit this page</span>
     </a>
-    
   </div>
   
-</div>
 
+</div>
 
       
     </div>
@@ -319,25 +296,24 @@ git submodule add https://github.com/alex-shpak/hugo-book themes/book</code></pr
 
   <aside class="book-toc levels-3 fixed">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#macにgitをインストールする">Macにgitをインストールする</a></li>
-<li><a href="#githubにアカウントを作成する">GitHubにアカウントを作成する</a></li>
-<li><a href="#macにhomebrewをインストールする">MacにHomebrewをインストールする</a></li>
-<li><a href="#macにhugo-静的サイトジェネレーター-をインストールする">MacにHugo(静的サイトジェネレーター)をインストールする</a>
-<ul>
-<li><a href="#hugoのextendedバージョンをインストールする">HugoのExtendedバージョンをインストールする</a></li>
-</ul></li>
-<li><a href="#hugoのテンプレートテーマであるbookをインストールする">Hugoのテンプレートテーマであるbookをインストールする</a>
-<ul>
-<li><a href="#試しにサイトをローカルで動かしてみる">試しにサイトをローカルで動かしてみる.</a></li>
-</ul></li>
-<li><a href="#githubにファイルを上げてみる">GitHubにファイルを上げてみる</a></li>
-<li><a href="#記事を更新する">記事を更新する</a></li>
-<li><a href="#references">References</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#macgit">Macにgitをインストールする</a></li>
+    <li><a href="#github">GitHubにアカウントを作成する</a></li>
+    <li><a href="#machomebrew">MacにHomebrewをインストールする</a></li>
+    <li><a href="#machugo">MacにHugo(静的サイトジェネレーター)をインストールする</a>
+      <ul>
+        <li><a href="#hugoextended">HugoのExtendedバージョンをインストールする</a></li>
+      </ul>
+    </li>
+    <li><a href="#hugobook">Hugoのテンプレートテーマであるbookをインストールする</a>
+      <ul>
+        <li><a href="#heading">試しにサイトをローカルで動かしてみる.</a></li>
+      </ul>
+    </li>
+    <li><a href="#github1">GitHubにファイルを上げてみる</a></li>
+    <li><a href="#heading1">記事を更新する</a></li>
+    <li><a href="#references">References</a></li>
+  </ul>
 </nav>
   </aside>
 

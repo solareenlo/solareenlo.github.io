@@ -3,22 +3,23 @@
 
 <head>
   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><meta property="og:title" content="Plasma × Substrate 勉強会 #1" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Plasma × Substrate 勉強会 #1"><meta property="og:title" content="Plasma × Substrate 勉強会 #1" />
 <meta property="og:description" content="Plasma × Substrate 勉強会 #1の自分なりのメモ
- Introducing Plasma Chamber プラズマとは  セキュアにトランザクションをさばく. マークル木を使ってデータを圧縮する. 1分ごとに行う. エンドユーザーが出金したいときはルートチェーンに問い合わせる. 他の人にチャレンジされなければ許可されて出金される仕組み. スケーラブル・セキュリティ・ユーザビリの高いDappasが作れるぞ.  プラズマの悪い点  受取手はトランザクションの履歴を確認しないといけない. ファイナリティは待たないといけない. Exit期間があるのでUIが悪い  Plasma Chamberは上記の3つの悪い点を改善するぞ What I mean by &lsquo;usable&rsquo; High TPS, Less Gas, Work on Mobile, Instant Finality, ERC20使える
+ Introducing Plasma Chamber  プラズマとは  セキュアにトランザクションをさばく. マークル木を使ってデータを圧縮する. 1分ごとに行う. エンドユーザーが出金したいときはルートチェーンに問い合わせる. 他の人にチャレンジされなければ許可されて出金される仕組み. スケーラブル・セキュリティ・ユーザビリの高いDappasが作れるぞ.  プラズマの悪い点  受取手はトランザクションの履歴を確認しないといけない. ファイナリティは待たないといけない. Exit期間があるのでUIが悪い  Plasma Chamberは上記の3つの悪い点を改善するぞ What I mean by &lsquo;usable&rsquo; High TPS, Less Gas, Work on Mobile, Instant Finality, ERC20使える
 特徴  Exit Game Operatorが資金をかっさらう事がある. それに対する対策を行った. Gas Const/Proof Size Reduction Instantaneous Finality Fast Finality Contract に供託しておく. ユーザー, マーチャント, オペレーター, Ethereum オペレーターまではhttpsで通信する. オペレーターまでなら2秒以下でファイナリティが得られる. Ethereumのブロックチェーンまで待つと2.5分から7分かかる. Plasma MVP → Plasma Cash → Plasma Cashflow → ?" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://solareenlo.com/posts/plasma-substrate01/" />
-<meta property="article:published_time" content="2019-04-18T08:00:00&#43;09:00"/>
-<meta property="article:modified_time" content="2019-06-17T03:52:36&#43;09:00"/>
+<meta property="article:published_time" content="2019-04-18T08:00:00+09:00" />
+<meta property="article:modified_time" content="2019-06-17T03:52:36+09:00" />
 <title>Plasma × Substrate 勉強会 #1 | solareenlo</title>
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 
 
-<link rel="stylesheet" href="/book.min.7cf03b0e46415b9c8bbde01f69a283955eaa7d987607761a9a05cced394503a1.css" integrity="sha256-fPA7DkZBW5yLveAfaaKDlV6qfZh2B3YamgXM7TlFA6E=">
+<link rel="stylesheet" href="/book.min.0d8f55f751a5f22793c02b19a8a0822122d183a7e99645f6b428174dd3eeec94.css" integrity="sha256-DY9V91Gl8ieTwCsZqKCCISLRg6fplkX2tCgXTdPu7JQ=">
 
 
-<script defer src="/search.min.25dacf0d4e6ef2c0b14ef2bc90d4b36af703a3013ebd9efd7d1dbe17a7492b4d.js" integrity="sha256-JdrPDU5u8sCxTvK8kNSzavcDowE&#43;vZ79fR2&#43;F6dJK00="></script>
+<script defer src="/en.search.min.0de8e26fe8b38f83ff163b7738b4abcdbbe90ae41f3d554ee92aed704668dc09.js" integrity="sha256-Dejib&#43;izj4P/Fjt3OLSrzbvpCuQfPVVO6SrtcEZo3Ak="></script>
 
 <!--
 Made with Book Theme
@@ -41,7 +42,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 <div class="book-search">
-  <input type="text" placeholder="Search" id="book-search-input" maxlength="64" />
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
   <div class="book-search-spinner spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
@@ -54,7 +55,6 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/"><strong>はじめに</strong></a></li>
 <li><a href="/posts/"><strong>Blog</strong></a></li>
 <li><a href="/docs/programming/"><strong>Programming</strong></a>
-
 <ul>
 <li><a href="/docs/terminal/">Terminal</a></li>
 <li><a href="/docs/command/">Command</a></li>
@@ -67,9 +67,9 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/linter-formatter/">Linter/Formatter</a></li>
 <li><a href="/docs/test/">Test</a></li>
 <li><a href="/docs/password-manager/">Password Manager</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/programming-language/"><strong>Programming Language</strong></a>
-
 <ul>
 <li><a href="/docs/c/">C</a></li>
 <li><a href="/docs/rust/">Rust</a></li>
@@ -84,52 +84,52 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/haskell/">Haskell</a></li>
 <li><a href="/docs/hugo/">Hugo</a></li>
 <li><a href="/docs/programming-language-docs/">Docs</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/latex/"><strong>LaTeX</strong></a>
-
 <ul>
 <li><a href="/docs/platex-book/">Book</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/vps/"><strong>VPS</strong></a>
-
 <ul>
 <li><a href="/docs/ssh/">SSH</a></li>
 <li><a href="/docs/ubuntu/">Ubuntu</a></li>
 <li><a href="/docs/alpine-linux/">Alpine Linux</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/db/"><strong>DB</strong></a>
-
 <ul>
 <li><a href="/docs/mysql/">MySQL</a></li>
 <li><a href="/docs/mongodb/">MongoDB</a></li>
 <li><a href="/docs/redis/">Redis</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/cloud/"><strong>Cloud</strong></a>
-
 <ul>
 <li><a href="/docs/aws/">AWS</a></li>
 <li><a href="/docs/gcp/">GCP</a></li>
 <li><a href="/docs/firebase/">Firebase</a></li>
 <li><a href="/docs/zeit-now/">ZEIT Now</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/ci-cd/"><strong>CI/CD</strong></a>
-
 <ul>
 <li><a href="/docs/jenkins/">Jenkins</a></li>
 <li><a href="/docs/travis-ci/">Travis CI</a></li>
 <li><a href="/docs/circleci/">CircleCI</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/container/"><strong>Container</strong></a>
-
 <ul>
 <li><a href="/docs/docker1/">Docker1</a></li>
 <li><a href="/docs/docker2/">Docker2</a></li>
 <li><a href="/docs/docker-hub/">Docker Hub</a></li>
 <li><a href="/docs/docker-compose/">Docker Compose</a></li>
 <li><a href="/docs/kubernetes/">Kubernetes</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/crypto/"><strong>Crypto</strong></a>
-
 <ul>
 <li><a href="/docs/blockchain/">Blockchain</a></li>
 <li><a href="/docs/bitcoin/">Bitcoin</a></li>
@@ -139,7 +139,8 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/substrate/">Substrate</a></li>
 <li><a href="/docs/white-paper/">White Paper</a></li>
 <li><a href="/docs/crypto-docs/">Docs</a></li>
-</ul></li>
+</ul>
+</li>
 </ul>
 
 
@@ -177,18 +178,12 @@ https://github.com/alex-shpak/hugo-book
     <strong>Apr 18, 2019</strong>
   </h5>
 </header>
-<article class="markdown">
-
-<blockquote>
+<article class="markdown"><blockquote>
 <p><a href="https://neutrino.connpass.com/event/127035/">Plasma × Substrate 勉強会 #1</a>の自分なりのメモ</p>
 </blockquote>
-
 <h1 id="introducing-plasma-chamber">Introducing Plasma Chamber</h1>
-
-<hr />
-
-<h2 id="プラズマとは">プラズマとは</h2>
-
+<hr>
+<h2 id="heading">プラズマとは</h2>
 <ul>
 <li>セキュアにトランザクションをさばく.</li>
 <li>マークル木を使ってデータを圧縮する.</li>
@@ -197,23 +192,16 @@ https://github.com/alex-shpak/hugo-book
 <li>他の人にチャレンジされなければ許可されて出金される仕組み.</li>
 <li>スケーラブル・セキュリティ・ユーザビリの高いDappasが作れるぞ.</li>
 </ul>
-
-<h2 id="プラズマの悪い点">プラズマの悪い点</h2>
-
+<h2 id="heading1">プラズマの悪い点</h2>
 <ul>
 <li>受取手はトランザクションの履歴を確認しないといけない.</li>
 <li>ファイナリティは待たないといけない.</li>
 <li>Exit期間があるのでUIが悪い</li>
 </ul>
-
-<h2 id="plasma-chamberは上記の3つの悪い点を改善するぞ">Plasma Chamberは上記の3つの悪い点を改善するぞ</h2>
-
+<h2 id="plasma-chamber3">Plasma Chamberは上記の3つの悪い点を改善するぞ</h2>
 <h3 id="what-i-mean-by-usable">What I mean by &lsquo;usable&rsquo;</h3>
-
 <p>High TPS, Less Gas, Work on Mobile, Instant Finality, ERC20使える</p>
-
-<h3 id="特徴">特徴</h3>
-
+<h3 id="heading2">特徴</h3>
 <ul>
 <li>Exit Game</li>
 <li>Operatorが資金をかっさらう事がある. それに対する対策を行った.</li>
@@ -227,61 +215,56 @@ https://github.com/alex-shpak/hugo-book
 <li>Plasma MVP → Plasma Cash → Plasma Cashflow → ???</li>
 <li>Plapp 出金したい人と入金したい人を合わせるPlapp.</li>
 </ul>
-
 <h1 id="plasma-substrate-runtime-module-library">Plasma Substrate Runtime Module Library</h1>
-
-<hr />
-
+<hr>
 <p>PlasmaをSubstrateの上で行おう!</p>
-
 <blockquote>
-<p>発表資料: <a href="https://docs.google.com/presentation/d/1DAgE7AJHSAP-t2pwAKygD8DITCJkkKBcqHtuV_OqbY4/mobilepresent?slide=id.p">Plasm: Plasma Substrate Runtime Module Library</a><br />
-発表資料: <a href="https://speakerdeck.com/staked/0318substratehuresenzi-liao">Staked Substrate</a><br />
-Substrateとはブロックチェーン開発のフレームワークのこと.<br />
+<p>発表資料: <a href="https://docs.google.com/presentation/d/1DAgE7AJHSAP-t2pwAKygD8DITCJkkKBcqHtuV_OqbY4/mobilepresent?slide=id.p">Plasm: Plasma Substrate Runtime Module Library</a><br>
+発表資料: <a href="https://speakerdeck.com/staked/0318substratehuresenzi-liao">Staked Substrate</a><br>
+Substrateとはブロックチェーン開発のフレームワークのこと.<br>
 Reference: <a href="https://coinchoice.net/overview-polkadot-and-substrate/">Polkadotとブロックチェーン開発フレームワークSubstrateを俯瞰する</a></p>
 </blockquote>
-
 <p>Plasmaには種類が沢山ある.
 Substrate Chainの上に全てのPlasmaを作れるようにしよう.</p>
-
 <p>親で且つ子でもあるPlasma Chainを作ろう.
 そうする事で無限のスケーラビリティがある.</p>
-
 <h2 id="plasma-dreams">Plasma Dreams</h2>
-
-<p>大きく3つのライブラリがある
-- plasma-utxo
-- plasma-parent
-- plasma-child</p>
-
+<p>大きく3つのライブラリがある</p>
+<ul>
+<li>plasma-utxo</li>
+<li>plasma-parent</li>
+<li>plasma-child</li>
+</ul>
 <p>UTXOを使って, 自分の残高がけを保存する.
 トランザクションは自分で定義できる.
 マークル木に対応したものと対応していないもの両方に対応したい.</p>
 </article>
 
-      
-<div class="book-footer justify-between">
+      <div class="book-footer justify-between">
+  
+
+  
   
   <div>
     
-    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/commit/b9429c63d61a694fce8635bc84668f01d4599820" title='Last modified Jun 17, 2019 by solareenlo' target="_blank" rel="noopener">
-      <img src="/svg/calendar.svg" alt="Changed" />
+    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/commit/b9429c63d61a694fce8635bc84668f01d4599820" title='Last modified by solareenlo | Jun 17, 2019' target="_blank">
+      <img src="/svg/calendar.svg" alt="Calendar" />
       <span>Jun 17, 2019</span>
     </a>
   </div>
   
   
+
+  
   <div>
-    
-    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/edit/master/content/posts/plasma-substrate01.md" target="_blank" rel="noopener">
+    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/edit/master/content/posts/plasma-substrate01.md" target="_blank">
       <img src="/svg/edit.svg" alt="Edit" />
       <span>Edit this page</span>
     </a>
-    
   </div>
   
-</div>
 
+</div>
 
       
     </div>
@@ -291,22 +274,20 @@ Substrate Chainの上に全てのPlasmaを作れるようにしよう.</p>
 
   <aside class="book-toc levels-3 fixed">
     <nav id="TableOfContents">
-<ul>
-<li><a href="#introducing-plasma-chamber">Introducing Plasma Chamber</a>
-<ul>
-<li><a href="#プラズマとは">プラズマとは</a></li>
-<li><a href="#プラズマの悪い点">プラズマの悪い点</a></li>
-<li><a href="#plasma-chamberは上記の3つの悪い点を改善するぞ">Plasma Chamberは上記の3つの悪い点を改善するぞ</a>
-<ul>
-<li><a href="#what-i-mean-by-usable">What I mean by &lsquo;usable&rsquo;</a></li>
-<li><a href="#特徴">特徴</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#plasma-substrate-runtime-module-library">Plasma Substrate Runtime Module Library</a>
-<ul>
-<li><a href="#plasma-dreams">Plasma Dreams</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#heading">プラズマとは</a></li>
+    <li><a href="#heading1">プラズマの悪い点</a></li>
+    <li><a href="#plasma-chamber3">Plasma Chamberは上記の3つの悪い点を改善するぞ</a>
+      <ul>
+        <li><a href="#what-i-mean-by-usable">What I mean by usable</a></li>
+        <li><a href="#heading2">特徴</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#plasma-dreams">Plasma Dreams</a></li>
+  </ul>
 </nav>
   </aside>
 

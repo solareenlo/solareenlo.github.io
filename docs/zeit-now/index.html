@@ -3,10 +3,9 @@
 
 <head>
   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><meta property="og:title" content="" />
-<meta property="og:description" content="ZEIT Nowとは  サーバーレスデプロイのためのクラウドプラットフォームサービスのこと.  サブドメインの割り当て方  まずはメインドメインをNowに登録する.
-now domains add iotajapan.com サブドメインのエイリアスを登録しようとする.
-# 以下を実行すると, now alias https://my-docs.test.now.sh docs.iotajapan.com # 以下のようなエラーが返ってくる. Error! We could not alias since the domain iotajapan.com could not be verified due to the following reasons: a) Nameservers verification failed since we see a different set than the intended set: Intended Nameservers Current Nameservers c.zeit-world.co.uk 01.dnsv.jp ☓ d.zeit-world.org 02.dnsv.jp ☓ e.zeit-world.com 03.dnsv.jp ☓ f.zeit-world.net 04.dnsv.jp ☓ b) DNS TXT verification failed since found no matching records." />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Zeit Now"><meta property="og:title" content="" />
+<meta property="og:description" content="ZEIT Nowとは  サーバーレスデプロイのためのクラウドプラットフォームサービスのこと.  サブドメインの割り当て方  まずはメインドメインをNowに登録する.  now domains add iotajapan.com サブドメインのエイリアスを登録しようとする.  # 以下を実行すると, now alias https://my-docs.test.now.sh docs.iotajapan.com # 以下のようなエラーが返ってくる. Error! We could not alias since the domain iotajapan.com could not be verified due to the following reasons: a) Nameservers verification failed since we see a different set than the intended set: Intended Nameservers Current Nameservers c.zeit-world.co.uk 01.dnsv.jp ☓ d.zeit-world.org 02.dnsv.jp ☓ e.zeit-world.com 03.dnsv.jp ☓ f.zeit-world.net 04.dnsv.jp ☓ b) DNS TXT verification failed since found no matching records." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://solareenlo.com/docs/zeit-now/" />
 
@@ -14,10 +13,10 @@ now domains add iotajapan.com サブドメインのエイリアスを登録し�
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 
 
-<link rel="stylesheet" href="/book.min.7cf03b0e46415b9c8bbde01f69a283955eaa7d987607761a9a05cced394503a1.css" integrity="sha256-fPA7DkZBW5yLveAfaaKDlV6qfZh2B3YamgXM7TlFA6E=">
+<link rel="stylesheet" href="/book.min.0d8f55f751a5f22793c02b19a8a0822122d183a7e99645f6b428174dd3eeec94.css" integrity="sha256-DY9V91Gl8ieTwCsZqKCCISLRg6fplkX2tCgXTdPu7JQ=">
 
 
-<script defer src="/search.min.25dacf0d4e6ef2c0b14ef2bc90d4b36af703a3013ebd9efd7d1dbe17a7492b4d.js" integrity="sha256-JdrPDU5u8sCxTvK8kNSzavcDowE&#43;vZ79fR2&#43;F6dJK00="></script>
+<script defer src="/en.search.min.0de8e26fe8b38f83ff163b7738b4abcdbbe90ae41f3d554ee92aed704668dc09.js" integrity="sha256-Dejib&#43;izj4P/Fjt3OLSrzbvpCuQfPVVO6SrtcEZo3Ak="></script>
 
 <!--
 Made with Book Theme
@@ -40,7 +39,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 <div class="book-search">
-  <input type="text" placeholder="Search" id="book-search-input" maxlength="64" />
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
   <div class="book-search-spinner spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
@@ -53,7 +52,6 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/"><strong>はじめに</strong></a></li>
 <li><a href="/posts/"><strong>Blog</strong></a></li>
 <li><a href="/docs/programming/"><strong>Programming</strong></a>
-
 <ul>
 <li><a href="/docs/terminal/">Terminal</a></li>
 <li><a href="/docs/command/">Command</a></li>
@@ -66,9 +64,9 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/linter-formatter/">Linter/Formatter</a></li>
 <li><a href="/docs/test/">Test</a></li>
 <li><a href="/docs/password-manager/">Password Manager</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/programming-language/"><strong>Programming Language</strong></a>
-
 <ul>
 <li><a href="/docs/c/">C</a></li>
 <li><a href="/docs/rust/">Rust</a></li>
@@ -83,52 +81,52 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/haskell/">Haskell</a></li>
 <li><a href="/docs/hugo/">Hugo</a></li>
 <li><a href="/docs/programming-language-docs/">Docs</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/latex/"><strong>LaTeX</strong></a>
-
 <ul>
 <li><a href="/docs/platex-book/">Book</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/vps/"><strong>VPS</strong></a>
-
 <ul>
 <li><a href="/docs/ssh/">SSH</a></li>
 <li><a href="/docs/ubuntu/">Ubuntu</a></li>
 <li><a href="/docs/alpine-linux/">Alpine Linux</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/db/"><strong>DB</strong></a>
-
 <ul>
 <li><a href="/docs/mysql/">MySQL</a></li>
 <li><a href="/docs/mongodb/">MongoDB</a></li>
 <li><a href="/docs/redis/">Redis</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/cloud/"><strong>Cloud</strong></a>
-
 <ul>
 <li><a href="/docs/aws/">AWS</a></li>
 <li><a href="/docs/gcp/">GCP</a></li>
 <li><a href="/docs/firebase/">Firebase</a></li>
 <li><a href="/docs/zeit-now/"class=active>ZEIT Now</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/ci-cd/"><strong>CI/CD</strong></a>
-
 <ul>
 <li><a href="/docs/jenkins/">Jenkins</a></li>
 <li><a href="/docs/travis-ci/">Travis CI</a></li>
 <li><a href="/docs/circleci/">CircleCI</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/container/"><strong>Container</strong></a>
-
 <ul>
 <li><a href="/docs/docker1/">Docker1</a></li>
 <li><a href="/docs/docker2/">Docker2</a></li>
 <li><a href="/docs/docker-hub/">Docker Hub</a></li>
 <li><a href="/docs/docker-compose/">Docker Compose</a></li>
 <li><a href="/docs/kubernetes/">Kubernetes</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/crypto/"><strong>Crypto</strong></a>
-
 <ul>
 <li><a href="/docs/blockchain/">Blockchain</a></li>
 <li><a href="/docs/bitcoin/">Bitcoin</a></li>
@@ -138,7 +136,8 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/substrate/">Substrate</a></li>
 <li><a href="/docs/white-paper/">White Paper</a></li>
 <li><a href="/docs/crypto-docs/">Docs</a></li>
-</ul></li>
+</ul>
+</li>
 </ul>
 
 
@@ -169,40 +168,37 @@ https://github.com/alex-shpak/hugo-book
 </header>
 
       
-<article class="markdown">
-
-<h1 id="zeit-nowとは">ZEIT Nowとは</h1>
-
+<article class="markdown"><h1 id="zeit-now">ZEIT Nowとは</h1>
 <ul>
 <li>サーバーレスデプロイのためのクラウドプラットフォームサービスのこと.</li>
 </ul>
-
-<h2 id="サブドメインの割り当て方">サブドメインの割り当て方</h2>
-
+<h2 id="heading">サブドメインの割り当て方</h2>
 <ol>
-<li><p>まずはメインドメインをNowに登録する.</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">now domains add iotajapan.com</code></pre></div></li>
-
-<li><p>サブドメインのエイリアスを登録しようとする.</p>
+<li>まずはメインドメインをNowに登録する.</li>
+</ol>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">now domains add iotajapan.com
+</code></pre></div><ol start="2">
+<li>サブドメインのエイリアスを登録しようとする.</li>
+</ol>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># 以下を実行すると,</span>
 now <span style="color:#b58900">alias</span> https://my-docs.test.now.sh docs.iotajapan.com
 <span style="color:#586e75"># 以下のようなエラーが返ってくる.</span>
 Error! We could not <span style="color:#b58900">alias</span> since the domain iotajapan.com could not be verified due to the following reasons:
 a<span style="color:#719e07">)</span> Nameservers verification failed since we see a different <span style="color:#b58900">set</span> than the intended set:
-  Intended Nameservers    Current Nameservers
-  c.zeit-world.co.uk      <span style="color:#2aa198">01</span>.dnsv.jp             ☓
-  d.zeit-world.org        <span style="color:#2aa198">02</span>.dnsv.jp             ☓
-  e.zeit-world.com        <span style="color:#2aa198">03</span>.dnsv.jp             ☓
-  f.zeit-world.net        <span style="color:#2aa198">04</span>.dnsv.jp             ☓
+    Intended Nameservers    Current Nameservers
+    c.zeit-world.co.uk      01.dnsv.jp             ☓
+    d.zeit-world.org        02.dnsv.jp             ☓
+    e.zeit-world.com        03.dnsv.jp             ☓
+    f.zeit-world.net        04.dnsv.jp             ☓
 b<span style="color:#719e07">)</span> DNS TXT verification failed since found no matching records.
-  name        <span style="color:#b58900">type</span>        value
-  _now        TXT         abc...xyz
+    name        <span style="color:#b58900">type</span>        value
+    _now        TXT         abc...xyz
 Once your domain uses either the nameservers or the TXT DNS record from above, run again <span style="color:#586e75">`</span>now domains verify &lt;domain&gt;<span style="color:#586e75">`</span>.
-We will also periodically run a verification check <span style="color:#719e07">for</span> you and you will receive an email once your domain is verified.
-Read more: https://err.sh/now-cli/domain-verification</code></pre></div></li>
-
-<li><p>お名前.comのNameserverを使用するとして, 返ってきたエラーの内容でDNS TXTレコードを登録する.</p>
-
+ We will also periodically run a verification check <span style="color:#719e07">for</span> you and you will receive an email once your domain is verified.
+ Read more: https://err.sh/now-cli/domain-verification
+</code></pre></div><ol start="3">
+<li>
+<p>お名前.comのNameserverを使用するとして, 返ってきたエラーの内容でDNS TXTレコードを登録する.</p>
 <table>
 <thead>
 <tr>
@@ -212,7 +208,6 @@ Read more: https://err.sh/now-cli/domain-verification</code></pre></div></li>
 <th>VALUE</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>_now.iotajapan.com</td>
@@ -221,17 +216,20 @@ Read more: https://err.sh/now-cli/domain-verification</code></pre></div></li>
 <td>abc&hellip;xyz</td>
 </tr>
 </tbody>
-</table></li>
-
-<li><p>ドメインの所有者認証を確かめる.</p>
+</table>
+</li>
+<li>
+<p>ドメインの所有者認証を確かめる.</p>
+</li>
+</ol>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># 以下を実行し,</span>
 now domains veryfy iotajapan.com
 <span style="color:#586e75"># 以下のように返ってきたら認証されてる.</span>
 Success! Domain iotajapan.com was verified using DNS TXT record. <span style="color:#719e07">[</span>500ms<span style="color:#719e07">]</span>
-You can verify with nameservers too. Run <span style="color:#586e75">`</span>now domains inspect iotajapan.com<span style="color:#586e75">`</span> to find out the intended set.</code></pre></div></li>
-
-<li><p>DNS CNAMEレコードを登録する.</p>
-
+You can verify with nameservers too. Run <span style="color:#586e75">`</span>now domains inspect iotajapan.com<span style="color:#586e75">`</span> to find out the intended set.
+</code></pre></div><ol start="5">
+<li>
+<p>DNS CNAMEレコードを登録する.</p>
 <table>
 <thead>
 <tr>
@@ -241,7 +239,6 @@ You can verify with nameservers too. Run <span style="color:#586e75">`</span>now
 <th>VALUE</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>docs.iotajapan.com</td>
@@ -250,49 +247,54 @@ You can verify with nameservers too. Run <span style="color:#586e75">`</span>now
 <td>alias.zeit.co</td>
 </tr>
 </tbody>
-</table></li>
-
-<li><p><code>now.json</code>を以下のように設定する.</p>
+</table>
+</li>
+<li>
+<p><code>now.json</code>を以下のように設定する.</p>
+</li>
+</ol>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-<span style="color:#268bd2">&#34;version&#34;</span>: <span style="color:#2aa198">2</span>,
-<span style="color:#268bd2">&#34;alias&#34;</span>: <span style="color:#2aa198">&#34;docs.iotajapan.com&#34;</span>
-}</code></pre></div></li>
-
-<li><p>nowにデプロイする.</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">now --target production</code></pre></div></li>
-
-<li><p>References</p>
-
+  <span style="color:#268bd2">&#34;version&#34;</span>: <span style="color:#2aa198">2</span>,
+  <span style="color:#268bd2">&#34;alias&#34;</span>: <span style="color:#2aa198">&#34;docs.iotajapan.com&#34;</span>
+}
+</code></pre></div><ol start="7">
+<li>nowにデプロイする.</li>
+</ol>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">now --target production
+</code></pre></div><ol start="8">
+<li>References</li>
+</ol>
 <ul>
 <li><a href="https://blog.mktia.com/how-to-add-a-custom-domain-to-now/">Now インスタンスに独自ドメインを設定する</a></li>
 <li><a href="https://tech-1natsu.hatenablog.com/entry/2019/04/24/121251?utm_source=feed">ZEITのnow(v2)でデプロイしたらドメインaliasを最新のデプロイに追従させる</a></li>
-</ul></li>
-</ol>
+</ul>
 </article>
 
-      
-<div class="book-footer justify-between">
+      <div class="book-footer justify-between">
+  
+
+  
   
   <div>
     
-    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/commit/83951af47e83edfabf1d6fa74f91ca89e3d5c6fd" title='Last modified Jul 15, 2019 by solareenlo' target="_blank" rel="noopener">
-      <img src="/svg/calendar.svg" alt="Changed" />
+    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/commit/83951af47e83edfabf1d6fa74f91ca89e3d5c6fd" title='Last modified by solareenlo | Jul 15, 2019' target="_blank">
+      <img src="/svg/calendar.svg" alt="Calendar" />
       <span>Jul 15, 2019</span>
     </a>
   </div>
   
   
+
+  
   <div>
-    
-    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/edit/master/content/docs/zeit-now.md" target="_blank" rel="noopener">
+    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/edit/master/content/docs/zeit-now.md" target="_blank">
       <img src="/svg/edit.svg" alt="Edit" />
       <span>Edit this page</span>
     </a>
-    
   </div>
   
-</div>
 
+</div>
 
       
     </div>
@@ -302,12 +304,9 @@ You can verify with nameservers too. Run <span style="color:#586e75">`</span>now
 
   <aside class="book-toc levels-3 fixed">
     <nav id="TableOfContents">
-<ul>
-<li><a href="#zeit-nowとは">ZEIT Nowとは</a>
-<ul>
-<li><a href="#サブドメインの割り当て方">サブドメインの割り当て方</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#heading">サブドメインの割り当て方</a></li>
+  </ul>
 </nav>
   </aside>
 

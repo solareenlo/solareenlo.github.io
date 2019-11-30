@@ -3,7 +3,8 @@
 
 <head>
   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><meta property="og:title" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Platex Book"><meta property="og:title" content="" />
 <meta property="og:description" content="pLaTeXで本を作成する方法  総合開発環境を使う方法とコマンドラインを使う方法の2種類がある.  Mac編  TexShopというlatexの総合開発環境を使うのが簡単.  Ubuntu編  Ubuntuでは総合開発環境を使わずに, TeX Live(TeXのディストリビューション)とzathura(pdfビューア)を使って, コマンドラインで作成していく.  TeX Liveのインストール # ミラーサイトからinstall-tl-unx.tar.gzをダウンロードする # wget を使用する場合 wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz # curl を使用する場合 curl -O http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz # install-tl-unx.tar.gzを展開する tar xvf install-tl-unx.tar.gz # 展開したディレクトリに移動する cd install-tl* # root権限でインストーラを実行する # Iを入力してインストールを開始する sudo ./install-tl -no-gui -repository http://mirror.ctan.org/systems/texlive/tlnet/ # インストールが途中でストップした場合は, 以下のコマンドで再開する sudo ./install-tl -no-gui -profile installation.profile # インストールが終了したら /usr/local/bin ディレクトリ配下にシンボリックリンクを追加する # ????はバージョンを入力する sudo /usr/local/texlive/????/bin/*/tlmgr path add  Reference: https://texwiki.texjp.org/?Linux  Tex Liveのアップデート sudo tlmgr update --self --all pdfビューアのインストール  ここではpwmt/zathuraをインストールする." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://solareenlo.com/docs/platex-book/" />
@@ -12,10 +13,10 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 
 
-<link rel="stylesheet" href="/book.min.7cf03b0e46415b9c8bbde01f69a283955eaa7d987607761a9a05cced394503a1.css" integrity="sha256-fPA7DkZBW5yLveAfaaKDlV6qfZh2B3YamgXM7TlFA6E=">
+<link rel="stylesheet" href="/book.min.0d8f55f751a5f22793c02b19a8a0822122d183a7e99645f6b428174dd3eeec94.css" integrity="sha256-DY9V91Gl8ieTwCsZqKCCISLRg6fplkX2tCgXTdPu7JQ=">
 
 
-<script defer src="/search.min.25dacf0d4e6ef2c0b14ef2bc90d4b36af703a3013ebd9efd7d1dbe17a7492b4d.js" integrity="sha256-JdrPDU5u8sCxTvK8kNSzavcDowE&#43;vZ79fR2&#43;F6dJK00="></script>
+<script defer src="/en.search.min.0de8e26fe8b38f83ff163b7738b4abcdbbe90ae41f3d554ee92aed704668dc09.js" integrity="sha256-Dejib&#43;izj4P/Fjt3OLSrzbvpCuQfPVVO6SrtcEZo3Ak="></script>
 
 <!--
 Made with Book Theme
@@ -38,7 +39,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 <div class="book-search">
-  <input type="text" placeholder="Search" id="book-search-input" maxlength="64" />
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
   <div class="book-search-spinner spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
@@ -51,7 +52,6 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/"><strong>はじめに</strong></a></li>
 <li><a href="/posts/"><strong>Blog</strong></a></li>
 <li><a href="/docs/programming/"><strong>Programming</strong></a>
-
 <ul>
 <li><a href="/docs/terminal/">Terminal</a></li>
 <li><a href="/docs/command/">Command</a></li>
@@ -64,9 +64,9 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/linter-formatter/">Linter/Formatter</a></li>
 <li><a href="/docs/test/">Test</a></li>
 <li><a href="/docs/password-manager/">Password Manager</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/programming-language/"><strong>Programming Language</strong></a>
-
 <ul>
 <li><a href="/docs/c/">C</a></li>
 <li><a href="/docs/rust/">Rust</a></li>
@@ -81,52 +81,52 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/haskell/">Haskell</a></li>
 <li><a href="/docs/hugo/">Hugo</a></li>
 <li><a href="/docs/programming-language-docs/">Docs</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/latex/"><strong>LaTeX</strong></a>
-
 <ul>
 <li><a href="/docs/platex-book/"class=active>Book</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/vps/"><strong>VPS</strong></a>
-
 <ul>
 <li><a href="/docs/ssh/">SSH</a></li>
 <li><a href="/docs/ubuntu/">Ubuntu</a></li>
 <li><a href="/docs/alpine-linux/">Alpine Linux</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/db/"><strong>DB</strong></a>
-
 <ul>
 <li><a href="/docs/mysql/">MySQL</a></li>
 <li><a href="/docs/mongodb/">MongoDB</a></li>
 <li><a href="/docs/redis/">Redis</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/cloud/"><strong>Cloud</strong></a>
-
 <ul>
 <li><a href="/docs/aws/">AWS</a></li>
 <li><a href="/docs/gcp/">GCP</a></li>
 <li><a href="/docs/firebase/">Firebase</a></li>
 <li><a href="/docs/zeit-now/">ZEIT Now</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/ci-cd/"><strong>CI/CD</strong></a>
-
 <ul>
 <li><a href="/docs/jenkins/">Jenkins</a></li>
 <li><a href="/docs/travis-ci/">Travis CI</a></li>
 <li><a href="/docs/circleci/">CircleCI</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/container/"><strong>Container</strong></a>
-
 <ul>
 <li><a href="/docs/docker1/">Docker1</a></li>
 <li><a href="/docs/docker2/">Docker2</a></li>
 <li><a href="/docs/docker-hub/">Docker Hub</a></li>
 <li><a href="/docs/docker-compose/">Docker Compose</a></li>
 <li><a href="/docs/kubernetes/">Kubernetes</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/crypto/"><strong>Crypto</strong></a>
-
 <ul>
 <li><a href="/docs/blockchain/">Blockchain</a></li>
 <li><a href="/docs/bitcoin/">Bitcoin</a></li>
@@ -136,7 +136,8 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/substrate/">Substrate</a></li>
 <li><a href="/docs/white-paper/">White Paper</a></li>
 <li><a href="/docs/crypto-docs/">Docs</a></li>
-</ul></li>
+</ul>
+</li>
 </ul>
 
 
@@ -167,27 +168,19 @@ https://github.com/alex-shpak/hugo-book
 </header>
 
       
-<article class="markdown">
-
-<h1 id="platexで本を作成する方法">pLaTeXで本を作成する方法</h1>
-
+<article class="markdown"><h1 id="platex">pLaTeXで本を作成する方法</h1>
 <ul>
 <li>総合開発環境を使う方法とコマンドラインを使う方法の2種類がある.</li>
 </ul>
-
-<h2 id="mac編">Mac編</h2>
-
+<h2 id="mac">Mac編</h2>
 <ul>
 <li><a href="https://pages.uoregon.edu/koch/texshop/">TexShop</a>というlatexの総合開発環境を使うのが簡単.</li>
 </ul>
-
-<h2 id="ubuntu編">Ubuntu編</h2>
-
+<h2 id="ubuntu">Ubuntu編</h2>
 <ul>
 <li>Ubuntuでは総合開発環境を使わずに, TeX Live(TeXのディストリビューション)とzathura(pdfビューア)を使って, コマンドラインで作成していく.</li>
 </ul>
-
-<h3 id="tex-liveのインストール">TeX Liveのインストール</h3>
+<h3 id="tex-live">TeX Liveのインストール</h3>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># ミラーサイトからinstall-tl-unx.tar.gzをダウンロードする</span>
 <span style="color:#586e75"># wget を使用する場合</span>
 wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
@@ -209,15 +202,13 @@ sudo ./install-tl -no-gui -profile installation.profile
 
 <span style="color:#586e75"># インストールが終了したら /usr/local/bin ディレクトリ配下にシンボリックリンクを追加する</span>
 <span style="color:#586e75"># ????はバージョンを入力する</span>
-sudo /usr/local/texlive/????/bin/*/tlmgr path add</code></pre></div>
-<ul>
+sudo /usr/local/texlive/????/bin/*/tlmgr path add
+</code></pre></div><ul>
 <li><strong>Reference:</strong> <a href="https://texwiki.texjp.org/?Linux">https://texwiki.texjp.org/?Linux</a></li>
 </ul>
-
-<h3 id="tex-liveのアップデート">Tex Liveのアップデート</h3>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo tlmgr update --self --all</code></pre></div>
-<h3 id="pdfビューアのインストール">pdfビューアのインストール</h3>
-
+<h3 id="tex-live1">Tex Liveのアップデート</h3>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo tlmgr update --self --all
+</code></pre></div><h3 id="pdf">pdfビューアのインストール</h3>
 <ul>
 <li>ここでは<a href="https://github.com/pwmt/zathura">pwmt/zathura</a>をインストールする.</li>
 <li>zathuraはvimのキーバインドで操作できる軽量なpdfビューアで, 印刷はできない.</li>
@@ -225,69 +216,66 @@ sudo /usr/local/texlive/????/bin/*/tlmgr path add</code></pre></div>
 </ul>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt update
 sudo apt upgrade -y
-sudo apt install zathura</code></pre></div>
-<ul>
+sudo apt install zathura
+</code></pre></div><ul>
 <li><a href="/docs/zathura-install/">zathuraをソースコードからビルドしてインストールする方法</a></li>
 </ul>
-
-<h3 id="tex-liveの使い方">TeX Liveの使い方</h3>
+<h3 id="tex-live2">TeX Liveの使い方</h3>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># texからdviを作成する</span>
 latex book.tex
 platex book.tex
 <span style="color:#586e75"># dviからpdfを作成する</span>
-dvipdfmx book.dvi</code></pre></div>
-<h3 id="zathuraの使い方">zathuraの使い方</h3>
+dvipdfmx book.dvi
+</code></pre></div><h3 id="zathura">zathuraの使い方</h3>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">zathura bool.pdf
 <span style="color:#586e75"># バックグラウンドでpdfを表示する</span>
-zathura --frok book.pdf</code></pre></div>
-<ul>
+zathura --frok book.pdf
+</code></pre></div><ul>
 <li>操作方法はvimのキーバインド.</li>
 </ul>
-
-<h3 id="zathurarcの設定">zathurarcの設定</h3>
-
+<h3 id="zathurarc">zathurarcの設定</h3>
 <ul>
-<li><p><code>zathurarc</code>にzathuraの設定をすることができる.</p>
+<li><code>zathurarc</code>にzathuraの設定をすることができる.</li>
+</ul>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># zathurarcのhelpを表示する</span>
 man zathurarc
 <span style="color:#586e75"># zoomとscrollとclipboardを設定する</span>
 cat ~/.config/zathura/zathurarc
 <span style="color:#b58900">set</span> zoom-step <span style="color:#2aa198">30</span>
 <span style="color:#b58900">set</span> scroll-step <span style="color:#2aa198">100</span>
-<span style="color:#b58900">set</span> selection-clipboard clipboard</code></pre></div></li>
-</ul>
-
-<h3 id="vimプラグイン">vimプラグイン</h3>
-
+<span style="color:#b58900">set</span> selection-clipboard clipboard
+</code></pre></div><h3 id="vim">vimプラグイン</h3>
 <ul>
 <li><a href="https://github.com/lervag/vimtex">lervag/vimtex</a></li>
 <li><a href="https://ymatz.net/journal/20180428/">lervag/vimtexが良い</a></li>
 </ul>
 </article>
 
-      
-<div class="book-footer justify-between">
+      <div class="book-footer justify-between">
+  
+
+  
   
   <div>
     
-    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/commit/951538f95a8083c0915397efbef69c44b97575cd" title='Last modified Aug 5, 2019 by solareenlo' target="_blank" rel="noopener">
-      <img src="/svg/calendar.svg" alt="Changed" />
+    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/commit/951538f95a8083c0915397efbef69c44b97575cd" title='Last modified by solareenlo | Aug 5, 2019' target="_blank">
+      <img src="/svg/calendar.svg" alt="Calendar" />
       <span>Aug 5, 2019</span>
     </a>
   </div>
   
   
+
+  
   <div>
-    
-    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/edit/master/content/docs/platex-book.md" target="_blank" rel="noopener">
+    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/edit/master/content/docs/platex-book.md" target="_blank">
       <img src="/svg/edit.svg" alt="Edit" />
       <span>Edit this page</span>
     </a>
-    
   </div>
   
-</div>
 
+</div>
 
       
     </div>
@@ -297,22 +285,20 @@ cat ~/.config/zathura/zathurarc
 
   <aside class="book-toc levels-3 fixed">
     <nav id="TableOfContents">
-<ul>
-<li><a href="#platexで本を作成する方法">pLaTeXで本を作成する方法</a>
-<ul>
-<li><a href="#mac編">Mac編</a></li>
-<li><a href="#ubuntu編">Ubuntu編</a>
-<ul>
-<li><a href="#tex-liveのインストール">TeX Liveのインストール</a></li>
-<li><a href="#tex-liveのアップデート">Tex Liveのアップデート</a></li>
-<li><a href="#pdfビューアのインストール">pdfビューアのインストール</a></li>
-<li><a href="#tex-liveの使い方">TeX Liveの使い方</a></li>
-<li><a href="#zathuraの使い方">zathuraの使い方</a></li>
-<li><a href="#zathurarcの設定">zathurarcの設定</a></li>
-<li><a href="#vimプラグイン">vimプラグイン</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#mac">Mac編</a></li>
+    <li><a href="#ubuntu">Ubuntu編</a>
+      <ul>
+        <li><a href="#tex-live">TeX Liveのインストール</a></li>
+        <li><a href="#tex-live1">Tex Liveのアップデート</a></li>
+        <li><a href="#pdf">pdfビューアのインストール</a></li>
+        <li><a href="#tex-live2">TeX Liveの使い方</a></li>
+        <li><a href="#zathura">zathuraの使い方</a></li>
+        <li><a href="#zathurarc">zathurarcの設定</a></li>
+        <li><a href="#vim">vimプラグイン</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
   </aside>
 

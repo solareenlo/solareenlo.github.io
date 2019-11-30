@@ -3,7 +3,8 @@
 
 <head>
   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><meta property="og:title" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="React"><meta property="og:title" content="" />
 <meta property="og:description" content="Reactとは  Facebookとコミュニティによって開発されているUIに特化したJavaScriptライブラリ. Facebookはコアの部分だけを作成して, コミュニティがその周りをどんどん作っている. Virtual DOM(仮想DOM)と呼ばれるレンダリング機構を採用している. Virtual DOMを採用しているので, ページに表示されている広いエリアの情報をJavaScriptで管理しておき、なにか変更があった場合に変更箇所のみを再描画するUIなどに向いている. GitHubリポジトリ: https://github.com/facebook/react/ Reference: Reactとは? – React入門  用語    名前 意味     Virtual DOM DOMを作るために必要な情報を持っているオブジェクト.Virtual DOMの内容を元にHTMLを作成してブラウザに描画する.   JSX Virtual DOMの元となる構文.Babelがscript要素の内容をブラウザが解釈できるように変換を行う.JSV -&gt; JavaScriptと変換される.基本的にはHTMLと同じ記法.   コンポーネント 個々の部品HTMLのパーツをコンポーネント単位で管理し組み合わせてUIの作成を行う.   props 親コンポーネントから渡されたプロパティ不変のデータ   state そのコンポーネントが持っている状態可変のデータ    Reduxとは  Reactが扱うUIのstateを管理するためのフレームワーク. ReactはFluxを採用しているが, ReduxはFluxの概念を拡張してより扱いやすくしたもの. Reduxはstateを管理するフレームワークなのでReact以外にもAngularやjQueryとも併用できるがReactが一番相性が良い.  3大原則  Single source of truth (信頼できる唯一の情報源) State in read-only (stateは常に読み取り専用にする) Changes are made with pure functions (actionがstateを変更する際にreducerを通して行う)  要素    名前 機能     Action 入力内容を元にデータを作成する   ActionCreator    Store データを貯める   State    Reducer 前の状態から新しい状態への純粋な関数    図解 Flux" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://solareenlo.com/docs/react/" />
@@ -12,10 +13,10 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 
 
-<link rel="stylesheet" href="/book.min.7cf03b0e46415b9c8bbde01f69a283955eaa7d987607761a9a05cced394503a1.css" integrity="sha256-fPA7DkZBW5yLveAfaaKDlV6qfZh2B3YamgXM7TlFA6E=">
+<link rel="stylesheet" href="/book.min.0d8f55f751a5f22793c02b19a8a0822122d183a7e99645f6b428174dd3eeec94.css" integrity="sha256-DY9V91Gl8ieTwCsZqKCCISLRg6fplkX2tCgXTdPu7JQ=">
 
 
-<script defer src="/search.min.25dacf0d4e6ef2c0b14ef2bc90d4b36af703a3013ebd9efd7d1dbe17a7492b4d.js" integrity="sha256-JdrPDU5u8sCxTvK8kNSzavcDowE&#43;vZ79fR2&#43;F6dJK00="></script>
+<script defer src="/en.search.min.0de8e26fe8b38f83ff163b7738b4abcdbbe90ae41f3d554ee92aed704668dc09.js" integrity="sha256-Dejib&#43;izj4P/Fjt3OLSrzbvpCuQfPVVO6SrtcEZo3Ak="></script>
 
 <!--
 Made with Book Theme
@@ -38,7 +39,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 <div class="book-search">
-  <input type="text" placeholder="Search" id="book-search-input" maxlength="64" />
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
   <div class="book-search-spinner spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
@@ -51,7 +52,6 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/"><strong>はじめに</strong></a></li>
 <li><a href="/posts/"><strong>Blog</strong></a></li>
 <li><a href="/docs/programming/"><strong>Programming</strong></a>
-
 <ul>
 <li><a href="/docs/terminal/">Terminal</a></li>
 <li><a href="/docs/command/">Command</a></li>
@@ -64,9 +64,9 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/linter-formatter/">Linter/Formatter</a></li>
 <li><a href="/docs/test/">Test</a></li>
 <li><a href="/docs/password-manager/">Password Manager</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/programming-language/"><strong>Programming Language</strong></a>
-
 <ul>
 <li><a href="/docs/c/">C</a></li>
 <li><a href="/docs/rust/">Rust</a></li>
@@ -81,52 +81,52 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/haskell/">Haskell</a></li>
 <li><a href="/docs/hugo/">Hugo</a></li>
 <li><a href="/docs/programming-language-docs/">Docs</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/latex/"><strong>LaTeX</strong></a>
-
 <ul>
 <li><a href="/docs/platex-book/">Book</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/vps/"><strong>VPS</strong></a>
-
 <ul>
 <li><a href="/docs/ssh/">SSH</a></li>
 <li><a href="/docs/ubuntu/">Ubuntu</a></li>
 <li><a href="/docs/alpine-linux/">Alpine Linux</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/db/"><strong>DB</strong></a>
-
 <ul>
 <li><a href="/docs/mysql/">MySQL</a></li>
 <li><a href="/docs/mongodb/">MongoDB</a></li>
 <li><a href="/docs/redis/">Redis</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/cloud/"><strong>Cloud</strong></a>
-
 <ul>
 <li><a href="/docs/aws/">AWS</a></li>
 <li><a href="/docs/gcp/">GCP</a></li>
 <li><a href="/docs/firebase/">Firebase</a></li>
 <li><a href="/docs/zeit-now/">ZEIT Now</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/ci-cd/"><strong>CI/CD</strong></a>
-
 <ul>
 <li><a href="/docs/jenkins/">Jenkins</a></li>
 <li><a href="/docs/travis-ci/">Travis CI</a></li>
 <li><a href="/docs/circleci/">CircleCI</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/container/"><strong>Container</strong></a>
-
 <ul>
 <li><a href="/docs/docker1/">Docker1</a></li>
 <li><a href="/docs/docker2/">Docker2</a></li>
 <li><a href="/docs/docker-hub/">Docker Hub</a></li>
 <li><a href="/docs/docker-compose/">Docker Compose</a></li>
 <li><a href="/docs/kubernetes/">Kubernetes</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/crypto/"><strong>Crypto</strong></a>
-
 <ul>
 <li><a href="/docs/blockchain/">Blockchain</a></li>
 <li><a href="/docs/bitcoin/">Bitcoin</a></li>
@@ -136,7 +136,8 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/substrate/">Substrate</a></li>
 <li><a href="/docs/white-paper/">White Paper</a></li>
 <li><a href="/docs/crypto-docs/">Docs</a></li>
-</ul></li>
+</ul>
+</li>
 </ul>
 
 
@@ -167,10 +168,7 @@ https://github.com/alex-shpak/hugo-book
 </header>
 
       
-<article class="markdown">
-
-<h1 id="reactとは">Reactとは</h1>
-
+<article class="markdown"><h1 id="react">Reactとは</h1>
 <ul>
 <li>Facebookとコミュニティによって開発されているUIに特化したJavaScriptライブラリ.</li>
 <li>Facebookはコアの部分だけを作成して, コミュニティがその周りをどんどん作っている.</li>
@@ -179,9 +177,7 @@ https://github.com/alex-shpak/hugo-book
 <li><strong>GitHubリポジトリ:</strong> <a href="https://github.com/facebook/react/">https://github.com/facebook/react/</a></li>
 <li><strong>Reference:</strong> <a href="https://www.to-r.net/media/react-tutorial01/">Reactとは? – React入門</a></li>
 </ul>
-
-<h2 id="用語">用語</h2>
-
+<h2 id="heading">用語</h2>
 <table>
 <thead>
 <tr>
@@ -189,53 +185,42 @@ https://github.com/alex-shpak/hugo-book
 <th>意味</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>Virtual DOM</td>
-<td><li>DOMを作るために必要な情報を持っているオブジェクト.<li>Virtual DOMの内容を元にHTMLを作成してブラウザに描画する.</td>
+<td><!-- raw HTML omitted -->DOMを作るために必要な情報を持っているオブジェクト.<!-- raw HTML omitted -->Virtual DOMの内容を元にHTMLを作成してブラウザに描画する.</td>
 </tr>
-
 <tr>
 <td>JSX</td>
-<td><li>Virtual DOMの元となる構文.<li>Babelがscript要素の内容をブラウザが解釈できるように変換を行う.<li>JSV -&gt; JavaScriptと変換される.<li>基本的にはHTMLと同じ記法.</td>
+<td><!-- raw HTML omitted -->Virtual DOMの元となる構文.<!-- raw HTML omitted -->Babelがscript要素の内容をブラウザが解釈できるように変換を行う.<!-- raw HTML omitted -->JSV -&gt; JavaScriptと変換される.<!-- raw HTML omitted -->基本的にはHTMLと同じ記法.</td>
 </tr>
-
 <tr>
 <td>コンポーネント</td>
-<td><li>個々の部品<li>HTMLのパーツをコンポーネント単位で管理し組み合わせてUIの作成を行う.</td>
+<td><!-- raw HTML omitted -->個々の部品<!-- raw HTML omitted -->HTMLのパーツをコンポーネント単位で管理し組み合わせてUIの作成を行う.</td>
 </tr>
-
 <tr>
 <td>props</td>
-<td><li>親コンポーネントから渡されたプロパティ<li>不変のデータ</td>
+<td><!-- raw HTML omitted -->親コンポーネントから渡されたプロパティ<!-- raw HTML omitted -->不変のデータ</td>
 </tr>
-
 <tr>
 <td>state</td>
-<td><li>そのコンポーネントが持っている状態<li>可変のデータ</td>
+<td><!-- raw HTML omitted -->そのコンポーネントが持っている状態<!-- raw HTML omitted -->可変のデータ</td>
 </tr>
 </tbody>
 </table>
-
-<h1 id="reduxとは">Reduxとは</h1>
-
+<h1 id="redux">Reduxとは</h1>
 <ul>
 <li>Reactが扱うUIのstateを管理するためのフレームワーク.</li>
 <li>ReactはFluxを採用しているが, ReduxはFluxの概念を拡張してより扱いやすくしたもの.</li>
 <li>Reduxはstateを管理するフレームワークなのでReact以外にもAngularやjQueryとも併用できるがReactが一番相性が良い.</li>
 </ul>
-
-<h2 id="3大原則">3大原則</h2>
-
+<h2 id="3">3大原則</h2>
 <ul>
 <li>Single source of truth (信頼できる唯一の情報源)</li>
 <li>State in read-only (stateは常に読み取り専用にする)</li>
 <li>Changes are made with pure functions (actionがstateを変更する際にreducerを通して行う)</li>
 </ul>
-
-<h2 id="要素">要素</h2>
-
+<h2 id="heading1">要素</h2>
 <table>
 <thead>
 <tr>
@@ -243,79 +228,66 @@ https://github.com/alex-shpak/hugo-book
 <th>機能</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>Action</td>
 <td>入力内容を元にデータを作成する</td>
 </tr>
-
 <tr>
 <td>ActionCreator</td>
 <td></td>
 </tr>
-
 <tr>
 <td>Store</td>
 <td>データを貯める</td>
 </tr>
-
 <tr>
 <td>State</td>
 <td></td>
 </tr>
-
 <tr>
 <td>Reducer</td>
 <td>前の状態から新しい状態への純粋な関数</td>
 </tr>
 </tbody>
 </table>
-
-<h2 id="図解">図解</h2>
-
+<h2 id="heading2">図解</h2>
 <p>Flux</p>
-
-<p><img src="/images/redux/flux.jpg" width="60%" height="60%"></p>
-
+<!-- raw HTML omitted -->
 <p>Redux</p>
-
-<p><img src="/images/redux/flow1.jpg" width="60%" height="60%">
-<img src="/images/redux/flow2.png" width="60%" height="60%"></p>
-
+<!-- raw HTML omitted -->
 <ul>
-<li><strong>References:</strong>
-
-<ul>
+<li><strong>References:</strong></li>
 <li><a href="https://staltz.com/unidirectional-user-interface-architectures.html">UNIDIRECTIONAL USER INTERFACE ARCHITECTURES</a></li>
 <li><a href="https://qiita.com/mpyw/items/a816c6380219b1d5a3bf">たぶんこれが一番分かりやすいと思います React + Redux のフロー図解</a></li>
-</ul></li>
 </ul>
 </article>
 
-      
-<div class="book-footer justify-between">
+      <div class="book-footer justify-between">
+  
+
+  
   
   <div>
     
-    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/commit/48f513bccd8a81bbf7e1f2247d77dc45087732ce" title='Last modified May 23, 2019 by solareenlo' target="_blank" rel="noopener">
-      <img src="/svg/calendar.svg" alt="Changed" />
+    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/commit/48f513bccd8a81bbf7e1f2247d77dc45087732ce" title='Last modified by solareenlo | May 23, 2019' target="_blank">
+      <img src="/svg/calendar.svg" alt="Calendar" />
       <span>May 23, 2019</span>
     </a>
   </div>
   
   
+
+  
   <div>
-    
-    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/edit/master/content/docs/react.md" target="_blank" rel="noopener">
+    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/edit/master/content/docs/react.md" target="_blank">
       <img src="/svg/edit.svg" alt="Edit" />
       <span>Edit this page</span>
     </a>
-    
   </div>
   
-</div>
 
+</div>
 
       
     </div>
@@ -325,18 +297,15 @@ https://github.com/alex-shpak/hugo-book
 
   <aside class="book-toc levels-3 fixed">
     <nav id="TableOfContents">
-<ul>
-<li><a href="#reactとは">Reactとは</a>
-<ul>
-<li><a href="#用語">用語</a></li>
-</ul></li>
-<li><a href="#reduxとは">Reduxとは</a>
-<ul>
-<li><a href="#3大原則">3大原則</a></li>
-<li><a href="#要素">要素</a></li>
-<li><a href="#図解">図解</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#heading">用語</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#3">3大原則</a></li>
+    <li><a href="#heading1">要素</a></li>
+    <li><a href="#heading2">図解</a></li>
+  </ul>
 </nav>
   </aside>
 

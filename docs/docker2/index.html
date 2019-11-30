@@ -3,7 +3,8 @@
 
 <head>
   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><meta property="og:title" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Docker2"><meta property="og:title" content="" />
 <meta property="og:description" content="Docker その2 コンテナの基本的な動かし方 # run = create &#43; start docker run busybox echo hi there &gt; hi there # コンテナ作ってスタートさせる docker create --name my-busybox busybox echo hi there docker start -a my-busybox &gt; hi there # 一定期間後に終了 docker stop CONTAINER_NAME # 直ぐに終了 docker kill CONTAINER_NAME # Image,Container,Volumeの数や容量を表示 docker system df # 止まってるContainer, 使われてないVolume, 使われてないNetwork, 使われてないImageを削除 docker system prune # 現在動いているredisコンテナにアクセスする docker run --name myredis -d redis docker exec -it myredis redis-cli 127." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://solareenlo.com/docs/docker2/" />
@@ -12,10 +13,10 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 
 
-<link rel="stylesheet" href="/book.min.7cf03b0e46415b9c8bbde01f69a283955eaa7d987607761a9a05cced394503a1.css" integrity="sha256-fPA7DkZBW5yLveAfaaKDlV6qfZh2B3YamgXM7TlFA6E=">
+<link rel="stylesheet" href="/book.min.0d8f55f751a5f22793c02b19a8a0822122d183a7e99645f6b428174dd3eeec94.css" integrity="sha256-DY9V91Gl8ieTwCsZqKCCISLRg6fplkX2tCgXTdPu7JQ=">
 
 
-<script defer src="/search.min.25dacf0d4e6ef2c0b14ef2bc90d4b36af703a3013ebd9efd7d1dbe17a7492b4d.js" integrity="sha256-JdrPDU5u8sCxTvK8kNSzavcDowE&#43;vZ79fR2&#43;F6dJK00="></script>
+<script defer src="/en.search.min.0de8e26fe8b38f83ff163b7738b4abcdbbe90ae41f3d554ee92aed704668dc09.js" integrity="sha256-Dejib&#43;izj4P/Fjt3OLSrzbvpCuQfPVVO6SrtcEZo3Ak="></script>
 
 <!--
 Made with Book Theme
@@ -38,7 +39,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 <div class="book-search">
-  <input type="text" placeholder="Search" id="book-search-input" maxlength="64" />
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
   <div class="book-search-spinner spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
@@ -51,7 +52,6 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/"><strong>はじめに</strong></a></li>
 <li><a href="/posts/"><strong>Blog</strong></a></li>
 <li><a href="/docs/programming/"><strong>Programming</strong></a>
-
 <ul>
 <li><a href="/docs/terminal/">Terminal</a></li>
 <li><a href="/docs/command/">Command</a></li>
@@ -64,9 +64,9 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/linter-formatter/">Linter/Formatter</a></li>
 <li><a href="/docs/test/">Test</a></li>
 <li><a href="/docs/password-manager/">Password Manager</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/programming-language/"><strong>Programming Language</strong></a>
-
 <ul>
 <li><a href="/docs/c/">C</a></li>
 <li><a href="/docs/rust/">Rust</a></li>
@@ -81,52 +81,52 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/haskell/">Haskell</a></li>
 <li><a href="/docs/hugo/">Hugo</a></li>
 <li><a href="/docs/programming-language-docs/">Docs</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/latex/"><strong>LaTeX</strong></a>
-
 <ul>
 <li><a href="/docs/platex-book/">Book</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/vps/"><strong>VPS</strong></a>
-
 <ul>
 <li><a href="/docs/ssh/">SSH</a></li>
 <li><a href="/docs/ubuntu/">Ubuntu</a></li>
 <li><a href="/docs/alpine-linux/">Alpine Linux</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/db/"><strong>DB</strong></a>
-
 <ul>
 <li><a href="/docs/mysql/">MySQL</a></li>
 <li><a href="/docs/mongodb/">MongoDB</a></li>
 <li><a href="/docs/redis/">Redis</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/cloud/"><strong>Cloud</strong></a>
-
 <ul>
 <li><a href="/docs/aws/">AWS</a></li>
 <li><a href="/docs/gcp/">GCP</a></li>
 <li><a href="/docs/firebase/">Firebase</a></li>
 <li><a href="/docs/zeit-now/">ZEIT Now</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/ci-cd/"><strong>CI/CD</strong></a>
-
 <ul>
 <li><a href="/docs/jenkins/">Jenkins</a></li>
 <li><a href="/docs/travis-ci/">Travis CI</a></li>
 <li><a href="/docs/circleci/">CircleCI</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/container/"><strong>Container</strong></a>
-
 <ul>
 <li><a href="/docs/docker1/">Docker1</a></li>
 <li><a href="/docs/docker2/"class=active>Docker2</a></li>
 <li><a href="/docs/docker-hub/">Docker Hub</a></li>
 <li><a href="/docs/docker-compose/">Docker Compose</a></li>
 <li><a href="/docs/kubernetes/">Kubernetes</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/crypto/"><strong>Crypto</strong></a>
-
 <ul>
 <li><a href="/docs/blockchain/">Blockchain</a></li>
 <li><a href="/docs/bitcoin/">Bitcoin</a></li>
@@ -136,7 +136,8 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/substrate/">Substrate</a></li>
 <li><a href="/docs/white-paper/">White Paper</a></li>
 <li><a href="/docs/crypto-docs/">Docs</a></li>
-</ul></li>
+</ul>
+</li>
 </ul>
 
 
@@ -167,11 +168,8 @@ https://github.com/alex-shpak/hugo-book
 </header>
 
       
-<article class="markdown">
-
-<h1 id="docker-その2">Docker その2</h1>
-
-<h2 id="コンテナの基本的な動かし方">コンテナの基本的な動かし方</h2>
+<article class="markdown"><h1 id="docker-2">Docker その2</h1>
+<h2 id="heading">コンテナの基本的な動かし方</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># run = create + start</span>
 docker run busybox <span style="color:#b58900">echo</span> hi there
 &gt; hi there
@@ -194,51 +192,45 @@ docker system prune
 <span style="color:#586e75"># 現在動いているredisコンテナにアクセスする</span>
 docker run --name myredis -d redis
 docker <span style="color:#b58900">exec</span> -it myredis redis-cli
-<span style="color:#2aa198">127</span>.0.0.1:6379&gt; <span style="color:#b58900">set</span> my-number <span style="color:#2aa198">5</span>
+127.0.0.1:6379&gt; <span style="color:#b58900">set</span> my-number <span style="color:#2aa198">5</span>
 &gt; OK
-<span style="color:#2aa198">127</span>.0.0.1:6379&gt; get my-number
+127.0.0.1:6379&gt; get my-number
 &gt; <span style="color:#2aa198">&#34;5&#34;</span>
 <span style="color:#586e75"># CTL-Cで終了</span>
 
 <span style="color:#586e75"># Shell Scriptモードで起動</span>
 docker run -it busybox sh
 / <span style="color:#586e75"># ping google.com</span>
-&gt; <span style="color:#2aa198">64</span> bytes from <span style="color:#2aa198">172</span>.217.31.174: <span style="color:#268bd2">seq</span><span style="color:#719e07">=</span><span style="color:#2aa198">0</span> <span style="color:#268bd2">ttl</span><span style="color:#719e07">=</span><span style="color:#2aa198">51</span> <span style="color:#268bd2">time</span><span style="color:#719e07">=</span><span style="color:#2aa198">3</span>.399 ms
-&gt; <span style="color:#2aa198">64</span> bytes from <span style="color:#2aa198">172</span>.217.31.174: <span style="color:#268bd2">seq</span><span style="color:#719e07">=</span><span style="color:#2aa198">1</span> <span style="color:#268bd2">ttl</span><span style="color:#719e07">=</span><span style="color:#2aa198">51</span> <span style="color:#268bd2">time</span><span style="color:#719e07">=</span><span style="color:#2aa198">3</span>.672 ms
+&gt; <span style="color:#2aa198">64</span> bytes from 172.217.31.174: <span style="color:#268bd2">seq</span><span style="color:#719e07">=</span><span style="color:#2aa198">0</span> <span style="color:#268bd2">ttl</span><span style="color:#719e07">=</span><span style="color:#2aa198">51</span> <span style="color:#268bd2">time</span><span style="color:#719e07">=</span>3.399 ms
+&gt; <span style="color:#2aa198">64</span> bytes from 172.217.31.174: <span style="color:#268bd2">seq</span><span style="color:#719e07">=</span><span style="color:#2aa198">1</span> <span style="color:#268bd2">ttl</span><span style="color:#719e07">=</span><span style="color:#2aa198">51</span> <span style="color:#268bd2">time</span><span style="color:#719e07">=</span>3.672 ms
 ^C
 / <span style="color:#586e75"># echo hello</span>
 hello
 / #
-<span style="color:#586e75"># こんな感じでbusyboxはシェルスクリプトが使える</span></code></pre></div>
-<h2 id="dockerfile">Dockerfile</h2>
-
-<h3 id="公式reference">公式Reference</h3>
-
+<span style="color:#586e75"># こんな感じでbusyboxはシェルスクリプトが使える</span>
+</code></pre></div><h2 id="dockerfile">Dockerfile</h2>
+<h3 id="reference">公式Reference</h3>
 <ul>
 <li><a href="https://docs.docker.com/engine/reference/builder/">Dockerfile reference</a></li>
 </ul>
-
-<h3 id="書き方">書き方</h3>
-
+<h3 id="heading1">書き方</h3>
 <ul>
 <li><code>Dockerfile</code> -&gt; <code>Docker Client</code> -&gt; <code>Docker Server</code> -&gt; <code>Image</code>の流れでイメージが作られる.</li>
 <li><code>Dockerfile</code>に書かれてあること1行ずつに対して履歴を取っている.</li>
 </ul>
-
 <p>以下を<code>Dockerfile</code>として保存して,</p>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#719e07">FROM</span><span style="color:#2aa198"> alpine</span>
 <span style="color:#719e07">RUN</span> apk add --update redis
-<span style="color:#719e07">CMD</span><span style="color:#2aa198"> [&#34;redis-server&#34;]</span></code></pre></div>
-<p>以下でイメージをし,</p>
+<span style="color:#719e07">CMD</span> [<span style="color:#2aa198">&#34;redis-server&#34;</span>]
+</code></pre></div><p>以下でイメージをし,</p>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># 最後の「.」はDockerfileがある場所を指定している.</span>
 docker build .
 &gt; 色々出てくる
-&gt; Successfully built 8fcebe7331d6</code></pre></div>
-<p>以下でコンテナを走らせる.</p>
+&gt; Successfully built 8fcebe7331d6
+</code></pre></div><p>以下でコンテナを走らせる.</p>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run 8fcebe7331d6
-&gt; 色々出てくる</code></pre></div>
-<h3 id="best-practices">Best Practices</h3>
-
+&gt; 色々出てくる
+</code></pre></div><h3 id="best-practices">Best Practices</h3>
 <ul>
 <li>ビルド時間</li>
 <li>イメージサイズ</li>
@@ -247,26 +239,25 @@ docker build .
 <li>持続性/再現性</li>
 <li><strong>Reference:</strong> <a href="https://www.slideshare.net/Docker/dcsf19-dockerfile-best-practices">DCSF19 Dockerfile Best Practices</a></li>
 </ul>
-
-<h2 id="タグ付け">タグ付け</h2>
-
+<h2 id="heading2">タグ付け</h2>
 <p>以下のようにしてタグ付けを行う.</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker build -t solareenlo/redis:latest .</code></pre></div>
-<h2 id="1つずつイメージを作っていく">1つずつイメージを作っていく</h2>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker build -t solareenlo/redis:latest .
+</code></pre></div><h2 id="1">1つずつイメージを作っていく</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run -it alpine sh
 / <span style="color:#586e75"># apk add --update redis</span>
-&gt; インストールされる</code></pre></div>
-<p>別のターミナルを開いて, 以下のように<code>commit</code>で新たにイメージを作成する.</p>
+&gt; インストールされる
+</code></pre></div><p>別のターミナルを開いて, 以下のように<code>commit</code>で新たにイメージを作成する.</p>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker ps
 &gt; コンテナの情報
 docker commit -c <span style="color:#2aa198">&#39;CMD [&#34;redis-server&#34;]&#39;</span> &lt;コンテナのhash値か名前&gt;
 &gt; sha256: イメージのハッシュ値
 docker run イメージのハッシュ値
-&gt; 新たに作ったイメージからコンテナが走る</code></pre></div>
-<h2 id="dockerfileの効率的な作り方">Dockerfileの効率的な作り方</h2>
-
+&gt; 新たに作ったイメージからコンテナが走る
+</code></pre></div><h2 id="dockerfile1">Dockerfileの効率的な作り方</h2>
 <ol>
 <li>ベースにするDockerイメージを決める.</li>
+</ol>
+<ul>
 <li><code>docker run -it --name custom-container &lt;元となるdocker image&gt; sh</code>でコンテナに入る.</li>
 <li>コンテナ内で色々インストールしたり, 設定したりする.</li>
 <li>うまくいったらその内容を1行ずつメモする.</li>
@@ -275,14 +266,10 @@ docker run イメージのハッシュ値
 <li>そして, <code>docker attach custom-image</code>で再度コンテナに入る.</li>
 <li>失敗したら<code>exit</code>して, 再度<code>docker run -it solareenlo/custom-image:latest sh</code>して, コンテナに入る.</li>
 <li>ファイルの取り込みやポートの外部公開が必要ならオプション付きで<code>docker run</code>を行う.</li>
-<li>最後に作業内容を<code>Dockerfile</code>に書き込む.
-
-<ul>
+<li>最後に作業内容を<code>Dockerfile</code>に書き込む.</li>
 <li><strong>Reference:</strong> <a href="https://qiita.com/pottava/items/452bf80e334bc1fee69a">効率的に安全な Dockerfile を作るには</a></li>
-</ul></li>
-</ol>
-
-<h2 id="node-jsを動かした例">Node.jsを動かした例</h2>
+</ul>
+<h2 id="nodejs">Node.jsを動かした例</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#586e75"># ベースとなるイメージ</span>
 <span style="color:#719e07">FROM</span><span style="color:#2aa198"> node:alpine</span>
 
@@ -292,22 +279,21 @@ docker run イメージのハッシュ値
 <span style="color:#586e75"># package.jsonとpackage-lock.jsonを先にコピーする.</span>
 <span style="color:#586e75"># package*.jsonだけを先に個別コピーすることで, パッケージ変更時は`RUN npm install`が走るが</span>
 <span style="color:#586e75"># それ以外のファイル変更時は同コマンドにはキャッシュ利用で飛ばされるため, ビルド時間を短縮できる.</span>
-COPY ./package.json ./
+<span style="color:#719e07">COPY</span> ./package.json ./
 <span style="color:#719e07">RUN</span> npm install
 
-COPY ./ ./
+<span style="color:#719e07">COPY</span> ./ ./
 
 <span style="color:#586e75"># デフォルトのコマンド</span>
-<span style="color:#719e07">CMD</span><span style="color:#2aa198"> [&#34;npm&#34;, &#34;start&#34;]</span></code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># イメージをビルドする</span>
+<span style="color:#719e07">CMD</span> [<span style="color:#2aa198">&#34;npm&#34;</span>, <span style="color:#2aa198">&#34;start&#34;</span>]
+</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># イメージをビルドする</span>
 docker build -t solareenlo/simple-docker-nodejs .
 <span style="color:#586e75"># コンテナを走らせる</span>
 docker run -d --name simple-docker-nodejs solareenlo/simple-docker-nodejs
 <span style="color:#586e75"># コンテナの中に入る</span>
-docker <span style="color:#b58900">exec</span> -it simple-docker-nodejs sh</code></pre></div>
-<p><strong>コード例:</strong> <a href="https://github.com/solareenlo/simple-docker-nodejs">solareenlo/simple-docker-nodejs</a></p>
-
-<h2 id="再起動">再起動</h2>
-
+docker <span style="color:#b58900">exec</span> -it simple-docker-nodejs sh
+</code></pre></div><p><strong>コード例:</strong> <a href="https://github.com/solareenlo/simple-docker-nodejs">solareenlo/simple-docker-nodejs</a></p>
+<h2 id="heading3">再起動</h2>
 <table>
 <thead>
 <tr>
@@ -315,56 +301,47 @@ docker <span style="color:#b58900">exec</span> -it simple-docker-nodejs sh</code
 <th>意味</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>no</td>
 <td>再起動しない (デフォルト)</td>
 </tr>
-
 <tr>
 <td>on-failure[:max-retries]</td>
 <td>プロセスが0以外のステータスで終了した場合,  最大:max_retriesの分だけ再起動を行う.</td>
 </tr>
-
 <tr>
 <td>always</td>
 <td>明示的にstopがされない限り, 終了ステータスに関係なく常に再起動を行う.</td>
 </tr>
-
 <tr>
 <td>unless-stopped</td>
 <td>最後にdocker daemonが起動していた際にステータスが終了状態だった場合は再起動しない. それ以外はalwaysと同じ.</td>
 </tr>
 </tbody>
 </table>
-
-<h2 id="テストを行う">テストを行う</h2>
+<h2 id="heading4">テストを行う</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker build -f Dockerfile.dev -t frontend .
-docker run -d -p <span style="color:#2aa198">3000</span>:3000 --name frontend frontend</code></pre></div>
-<p><strong>コード例:</strong> <a href="https://github.com/solareenlo/frontend-docker-react">solareenlo/frontend-docker-react</a></p>
-
-<h2 id="react-nginx-と繋げるのをdockerfileだけで行う">React &gt; Nginx と繋げるのをDockerfileだけで行う</h2>
-
+docker run -d -p 3000:3000 --name frontend frontend
+</code></pre></div><p><strong>コード例:</strong> <a href="https://github.com/solareenlo/frontend-docker-react">solareenlo/frontend-docker-react</a></p>
+<h2 id="react--nginx-dockerfile">React &gt; Nginx と繋げるのをDockerfileだけで行う</h2>
 <p><code>Dokcerfile</code>に以下のように書き込む.</p>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#719e07">FROM</span><span style="color:#2aa198"> node:alpine as builder</span>
 <span style="color:#719e07">WORKDIR</span><span style="color:#2aa198"> &#39;/app&#39;</span>
-COPY package.json .
+<span style="color:#719e07">COPY</span> package.json .
 <span style="color:#719e07">RUN</span> npm install
-COPY . .
+<span style="color:#719e07">COPY</span> . .
 <span style="color:#719e07">RUN</span> npm run build
 
 <span style="color:#719e07">FROM</span><span style="color:#2aa198"> nginx</span>
-COPY --from<span style="color:#719e07">=</span>builder /app/build /usr/share/nginx/html</code></pre></div>
-<p>そして,</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker build -t nginx-react .</code></pre></div>
-<p>1つ目の<code>FROM</code>でReactのイメージができ, 2つ目の<code>FROM</code>でReactの結果を引き継いだNginxのイメージができる.
+<span style="color:#719e07">COPY</span> --from<span style="color:#719e07">=</span>builder /app/build /usr/share/nginx/html
+</code></pre></div><p>そして,</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker build -t nginx-react .
+</code></pre></div><p>1つ目の<code>FROM</code>でReactのイメージができ, 2つ目の<code>FROM</code>でReactの結果を引き継いだNginxのイメージができる.
 そして, 以下でコンテナを走らせる.</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run -p <span style="color:#2aa198">3001</span>:80 nginx-react</code></pre></div>
-<p><strong>コード例:</strong> <a href="https://github.com/solareenlo/frontend-docker-react">frontend-docker-react</a></p>
-
-<h2 id="travis-ciに繋げてテストを実行">Travis CIに繋げてテストを実行</h2>
-
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run -p 3001:80 nginx-react
+</code></pre></div><p><strong>コード例:</strong> <a href="https://github.com/solareenlo/frontend-docker-react">frontend-docker-react</a></p>
+<h2 id="travis-ci">Travis CIに繋げてテストを実行</h2>
 <p>Travisにアカウントを作成して, GitHubと連携して, リポジトリを登録して, 登録したリポジトリの<code>.travis.yml</code>に以下を書き込む.</p>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">sudo: required
 services:
@@ -374,96 +351,109 @@ before_install:
   - docker build -t solareenlo/frontend-docker-react -f Dockerfile.dev .
 
 script:
-  - docker run -e CI=<span style="color:#cb4b16">true</span> solareenlo/frontend-docker-react npm run test -- --watchAll=<span style="color:#cb4b16">false</span></code></pre></div>
-<p>そして, GitHubにpushすると自動的にtestが行われる.<br />
+  - docker run -e CI=<span style="color:#cb4b16">true</span> solareenlo/frontend-docker-react npm run test -- --watchAll=<span style="color:#cb4b16">false</span>
+</code></pre></div><p>そして, GitHubにpushすると自動的にtestが行われる.<br>
 <strong>コード例:</strong> <a href="https://github.com/solareenlo/frontend-docker-react">solareenlo/frontend-docker-react</a></p>
-
-<h2 id="dockerfile-react-nginx-github-travis-ci-aws-elastic-beanstalkとデプロイする">Dockerfile(React, Nginx) &gt; GitHub &gt; Travis CI &gt; AWS Elastic Beanstalkとデプロイする</h2>
-
+<h2 id="dockerfilereact-nginx--github--travis-ci--aws-elastic-beanstalk">Dockerfile(React, Nginx) &gt; GitHub &gt; Travis CI &gt; AWS Elastic Beanstalkとデプロイする</h2>
 <p>大まかな流れ</p>
-
 <ol>
 <li><code>npm install -g create-react-app</code>で<code>create-react-app</code>をインストールして簡単なページを作成する.</li>
-
-<li><p>上記のDokerfileを作成する.
+</ol>
+<ul>
+<li>
+<p>上記のDokerfileを作成する.
 こんな感じ.</p>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#719e07">FROM</span><span style="color:#2aa198"> node:alpine as builder</span>
 <span style="color:#719e07">WORKDIR</span><span style="color:#2aa198"> &#39;/app&#39;</span>
-COPY package.json .
+<span style="color:#719e07">COPY</span> package.json .
 <span style="color:#719e07">RUN</span> npm install
-COPY . .
+<span style="color:#719e07">COPY</span> . .
 
 <span style="color:#719e07">RUN</span> npm run build
 <span style="color:#719e07">FROM</span><span style="color:#2aa198"> nginx</span>
 <span style="color:#719e07">EXPOSE</span><span style="color:#2aa198"> 80</span>
-COPY --from<span style="color:#719e07">=</span>builder /app/build /usr/share/nginx/html</code></pre></div></li>
-
-<li><p>GitHub, Travis CI, AWSでそれぞれアカウントを作成する.</p></li>
-
-<li><p>GitHubにコードを1度<code>push</code>する.</p></li>
-
-<li><p>AWS<code>Elastic Beanstalk</code>でDocker(React, Nginx)用のwebアプリケーションの基盤を作成する.</p></li>
-
-<li><p><code>Elastic Beanstalk</code>で作ったwebアプリケーションのファイルを保存しておくためのストレージをAWSの<code>S3</code>を使って作成する.</p></li>
-
-<li><p><code>Elastic Beanstalk</code>にアクセスするためのアクセスキーとシークレットキーをAWSの<code>IAM</code>を使って作成・保存する.</p></li>
-
-<li><p>Travis CIでAWSのアクセスキーとシークレットキーを設定をする.</p></li>
-
-<li><p><code>.travis.yml</code>を作成する.
+<span style="color:#719e07">COPY</span> --from<span style="color:#719e07">=</span>builder /app/build /usr/share/nginx/html
+</code></pre></div></li>
+<li>
+<p>GitHub, Travis CI, AWSでそれぞれアカウントを作成する.</p>
+</li>
+<li>
+<p>GitHubにコードを1度<code>push</code>する.</p>
+</li>
+<li>
+<p>AWS<code>Elastic Beanstalk</code>でDocker(React, Nginx)用のwebアプリケーションの基盤を作成する.</p>
+</li>
+<li>
+<p><code>Elastic Beanstalk</code>で作ったwebアプリケーションのファイルを保存しておくためのストレージをAWSの<code>S3</code>を使って作成する.</p>
+</li>
+<li>
+<p><code>Elastic Beanstalk</code>にアクセスするためのアクセスキーとシークレットキーをAWSの<code>IAM</code>を使って作成・保存する.</p>
+</li>
+<li>
+<p>Travis CIでAWSのアクセスキーとシークレットキーを設定をする.</p>
+</li>
+<li>
+<p><code>.travis.yml</code>を作成する.
 こんな感じ.</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">  sudo: required
-  services:
-    - docker
-  before_install:
-    - docker build -t solareenlo/frontend-docker-react -f Dockerfile.dev .
-  script:
-    - docker run -e CI=<span style="color:#cb4b16">true</span> solareenlo/frontend-docker-react npm run test -- --watchAll=<span style="color:#cb4b16">false</span>
-  deploy:
-    provider: elasticbeanstalk
-    region: <span style="color:#2aa198">&#34;us-east-1&#34;</span>
-    app: <span style="color:#2aa198">&#34;frontend-docker-react&#34;</span>
-    env: <span style="color:#2aa198">&#34;FrontendDockerReact-env&#34;</span>
-    bucket_name: <span style="color:#2aa198">&#34;elasticbeanstalk-us-east-1-998768475306&#34;</span>
-    bucket_path: <span style="color:#2aa198">&#34;frontend-docker-react&#34;</span>
-    on:
-      branch: master
-    access_key_id: $AWS_ACCESS_KEY
-    secret_access_key:
-      secure: <span style="color:#2aa198">&#34;$AWS_SECRET_KEY&#34;</span></code></pre></div></li>
-
-<li><p>ローカルのソースコードをGitHubに<code>push</code>する.
-全ての連携が上手くできていれば, GitHubのpushを感知して, Travis CIでビルドとテストが行われ, テストがOKならAWSの<code>Elastic Beanstalk</code>に自動でデプロイされ, 規定のURLにReactのサイトが表示される.</p></li>
-
-<li><p>出来たサイト: <a href="http://frontenddockerreact-env.fbdmefkujd.us-east-1.elasticbeanstalk.com">http://frontenddockerreact-env.fbdmefkujd.us-east-1.elasticbeanstalk.com</a></p></li>
-</ol>
-
+<pre><code>```yaml
+sudo: required
+services:
+  - docker
+before_install:
+  - docker build -t solareenlo/frontend-docker-react -f Dockerfile.dev .
+script:
+  - docker run -e CI=true solareenlo/frontend-docker-react npm run test -- --watchAll=false
+deploy:
+  provider: elasticbeanstalk
+  region: &quot;us-east-1&quot;
+  app: &quot;frontend-docker-react&quot;
+  env: &quot;FrontendDockerReact-env&quot;
+  bucket_name: &quot;elasticbeanstalk-us-east-1-998768475306&quot;
+  bucket_path: &quot;frontend-docker-react&quot;
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: &quot;$AWS_SECRET_KEY&quot;
+```
+</code></pre>
+</li>
+<li>
+<p>ローカルのソースコードをGitHubに<code>push</code>する.
+全ての連携が上手くできていれば, GitHubのpushを感知して, Travis CIでビルドとテストが行われ, テストがOKならAWSの<code>Elastic Beanstalk</code>に自動でデプロイされ, 規定のURLにReactのサイトが表示される.</p>
+</li>
+<li>
+<p>出来たサイト: <a href="http://frontenddockerreact-env.fbdmefkujd.us-east-1.elasticbeanstalk.com">http://frontenddockerreact-env.fbdmefkujd.us-east-1.elasticbeanstalk.com</a></p>
+</li>
+</ul>
 <p><strong>コード例:</strong> <a href="https://github.com/solareenlo/frontend-docker-react">solareenlo/frontend-docker-react</a></p>
 </article>
 
-      
-<div class="book-footer justify-between">
+      <div class="book-footer justify-between">
+  
+
+  
   
   <div>
     
-    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/commit/3851451673f49dba785ea142804e991a64ba6eb5" title='Last modified May 14, 2019 by solareenlo' target="_blank" rel="noopener">
-      <img src="/svg/calendar.svg" alt="Changed" />
+    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/commit/3851451673f49dba785ea142804e991a64ba6eb5" title='Last modified by solareenlo | May 14, 2019' target="_blank">
+      <img src="/svg/calendar.svg" alt="Calendar" />
       <span>May 14, 2019</span>
     </a>
   </div>
   
   
+
+  
   <div>
-    
-    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/edit/master/content/docs/docker2.md" target="_blank" rel="noopener">
+    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/edit/master/content/docs/docker2.md" target="_blank">
       <img src="/svg/edit.svg" alt="Edit" />
       <span>Edit this page</span>
     </a>
-    
   </div>
   
-</div>
 
+</div>
 
       
     </div>
@@ -473,27 +463,25 @@ COPY --from<span style="color:#719e07">=</span>builder /app/build /usr/share/ngi
 
   <aside class="book-toc levels-3 fixed">
     <nav id="TableOfContents">
-<ul>
-<li><a href="#docker-その2">Docker その2</a>
-<ul>
-<li><a href="#コンテナの基本的な動かし方">コンテナの基本的な動かし方</a></li>
-<li><a href="#dockerfile">Dockerfile</a>
-<ul>
-<li><a href="#公式reference">公式Reference</a></li>
-<li><a href="#書き方">書き方</a></li>
-<li><a href="#best-practices">Best Practices</a></li>
-</ul></li>
-<li><a href="#タグ付け">タグ付け</a></li>
-<li><a href="#1つずつイメージを作っていく">1つずつイメージを作っていく</a></li>
-<li><a href="#dockerfileの効率的な作り方">Dockerfileの効率的な作り方</a></li>
-<li><a href="#node-jsを動かした例">Node.jsを動かした例</a></li>
-<li><a href="#再起動">再起動</a></li>
-<li><a href="#テストを行う">テストを行う</a></li>
-<li><a href="#react-nginx-と繋げるのをdockerfileだけで行う">React &gt; Nginx と繋げるのをDockerfileだけで行う</a></li>
-<li><a href="#travis-ciに繋げてテストを実行">Travis CIに繋げてテストを実行</a></li>
-<li><a href="#dockerfile-react-nginx-github-travis-ci-aws-elastic-beanstalkとデプロイする">Dockerfile(React, Nginx) &gt; GitHub &gt; Travis CI &gt; AWS Elastic Beanstalkとデプロイする</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#heading">コンテナの基本的な動かし方</a></li>
+    <li><a href="#dockerfile">Dockerfile</a>
+      <ul>
+        <li><a href="#reference">公式Reference</a></li>
+        <li><a href="#heading1">書き方</a></li>
+        <li><a href="#best-practices">Best Practices</a></li>
+      </ul>
+    </li>
+    <li><a href="#heading2">タグ付け</a></li>
+    <li><a href="#1">1つずつイメージを作っていく</a></li>
+    <li><a href="#dockerfile1">Dockerfileの効率的な作り方</a></li>
+    <li><a href="#nodejs">Node.jsを動かした例</a></li>
+    <li><a href="#heading3">再起動</a></li>
+    <li><a href="#heading4">テストを行う</a></li>
+    <li><a href="#react--nginx-dockerfile">React > Nginx と繋げるのをDockerfileだけで行う</a></li>
+    <li><a href="#travis-ci">Travis CIに繋げてテストを実行</a></li>
+    <li><a href="#dockerfilereact-nginx--github--travis-ci--aws-elastic-beanstalk">Dockerfile(React, Nginx) > GitHub > Travis CI > AWS Elastic Beanstalkとデプロイする</a></li>
+  </ul>
 </nav>
   </aside>
 

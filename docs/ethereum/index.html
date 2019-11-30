@@ -3,11 +3,14 @@
 
 <head>
   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><meta property="og:title" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Ethereum"><meta property="og:title" content="" />
 <meta property="og:description" content="Ethereumとは GitHubリポジトリ: https://github.com/ethereum
 目的 ブロックチェーン上でアプリを動かして, スマートコントラクトを実行できるようにし, 経済をさらに発展させる.
 アプリの特徴: 分散型, 管理者不在, 一度デプロイすると修正不可
-特徴  分散型アプリケーション(スマートコントラクト)のプラットフォーム 各ノードにバーチャルマシーン(通称: EVM)を積んでいるのでチューリング完全なスクリプトがEthereum上で書ける. アカウントベース ブロックチェーン2.0の代表格  スケーリング方法  サイドチェーン  Plasma: Ethereumのメインチェーンとは別のプラズマチェーンと呼ばれるサイドチェーンをマークル木状にどんどん連ねることで, メインチェーンに格納される情報量を減少させる仕組み. エンドユーザーが出金したいときはルートチェーンに問い合わせる. 初心者向けプラズマ勉強法まとめノートー 0から3週間で学んだこと lightningとplasmaってなにが違うんですか？ Plasma スケーラブルな自律型スマートコントラクト  オフチェーン  Raiden Network: ブロックチェーン内の処理をブロックチェーンの外側に持っていくことで, メインチェーンの負担を軽減する仕組み. 最終的な取引結果のみをブロックチェーンで処理する.  シャーディング  トランザクション処理を各ノードで分割して行うことで, 処理速度の向上を図る仕組み. Ethereum2.0のCasperで導入されるPoSと相性が良い. Ethereumのシャーディング概論   スマートコントラクトとは  何人かが合意した内容（契約）を、ヒトがいなくても自動的に実行する仕組み  例は自動販売機   Ethereum dapps開発七つ道具  Solidity MetaMask Truffle, Ganache web3.js OpenZepplien Remix Google翻訳  と, 上記の内容を広く浅く説明してくれてるサイト" />
+特徴  分散型アプリケーション(スマートコントラクト)のプラットフォーム 各ノードにバーチャルマシーン(通称: EVM)を積んでいるのでチューリング完全なスクリプトがEthereum上で書ける. アカウントベース ブロックチェーン2.0の代表格  スケーリング方法  サイドチェーン Plasma: Ethereumのメインチェーンとは別のプラズマチェーンと呼ばれるサイドチェーンをマークル木状にどんどん連ねることで, メインチェーンに格納される情報量を減少させる仕組み. エンドユーザーが出金したいときはルートチェーンに問い合わせる. 初心者向けプラズマ勉強法まとめノートー 0から3週間で学んだこと lightningとplasmaってなにが違うんですか？ Plasma スケーラブルな自律型スマートコントラクト オフチェーン Raiden Network: ブロックチェーン内の処理をブロックチェーンの外側に持っていくことで, メインチェーンの負担を軽減する仕組み. 最終的な取引結果のみをブロックチェーンで処理する. シャーディング トランザクション処理を各ノードで分割して行うことで, 処理速度の向上を図る仕組み. Ethereum2.0のCasperで導入されるPoSと相性が良い. Ethereumのシャーディング概論  スマートコントラクトとは  何人かが合意した内容（契約）を、ヒトがいなくても自動的に実行する仕組み 例は自動販売機  Ethereum dapps開発七つ道具  Solidity MetaMask Truffle, Ganache web3.js OpenZepplien Remix Google翻訳  と, 上記の内容を広く浅く説明してくれてるサイト
+ EthereumとContracts開発を取り巻くエコシステムの概要  gethの使い方 gethとはGoで実装された完全なethereumノードを実行するためのコマンドラインインターフェースのこと.
+# gethのインストール # for Mac brew tap ethereum/ethereum brew install ethereum # ジェネシスブロックの生成の様式を作成 cd mkdir ethereum cd ethereum mkdir privnet cd privnet touch genesis." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://solareenlo.com/docs/ethereum/" />
 
@@ -15,10 +18,10 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 
 
-<link rel="stylesheet" href="/book.min.7cf03b0e46415b9c8bbde01f69a283955eaa7d987607761a9a05cced394503a1.css" integrity="sha256-fPA7DkZBW5yLveAfaaKDlV6qfZh2B3YamgXM7TlFA6E=">
+<link rel="stylesheet" href="/book.min.0d8f55f751a5f22793c02b19a8a0822122d183a7e99645f6b428174dd3eeec94.css" integrity="sha256-DY9V91Gl8ieTwCsZqKCCISLRg6fplkX2tCgXTdPu7JQ=">
 
 
-<script defer src="/search.min.25dacf0d4e6ef2c0b14ef2bc90d4b36af703a3013ebd9efd7d1dbe17a7492b4d.js" integrity="sha256-JdrPDU5u8sCxTvK8kNSzavcDowE&#43;vZ79fR2&#43;F6dJK00="></script>
+<script defer src="/en.search.min.0de8e26fe8b38f83ff163b7738b4abcdbbe90ae41f3d554ee92aed704668dc09.js" integrity="sha256-Dejib&#43;izj4P/Fjt3OLSrzbvpCuQfPVVO6SrtcEZo3Ak="></script>
 
 <!--
 Made with Book Theme
@@ -41,7 +44,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 <div class="book-search">
-  <input type="text" placeholder="Search" id="book-search-input" maxlength="64" />
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
   <div class="book-search-spinner spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
@@ -54,7 +57,6 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/"><strong>はじめに</strong></a></li>
 <li><a href="/posts/"><strong>Blog</strong></a></li>
 <li><a href="/docs/programming/"><strong>Programming</strong></a>
-
 <ul>
 <li><a href="/docs/terminal/">Terminal</a></li>
 <li><a href="/docs/command/">Command</a></li>
@@ -67,9 +69,9 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/linter-formatter/">Linter/Formatter</a></li>
 <li><a href="/docs/test/">Test</a></li>
 <li><a href="/docs/password-manager/">Password Manager</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/programming-language/"><strong>Programming Language</strong></a>
-
 <ul>
 <li><a href="/docs/c/">C</a></li>
 <li><a href="/docs/rust/">Rust</a></li>
@@ -84,52 +86,52 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/haskell/">Haskell</a></li>
 <li><a href="/docs/hugo/">Hugo</a></li>
 <li><a href="/docs/programming-language-docs/">Docs</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/latex/"><strong>LaTeX</strong></a>
-
 <ul>
 <li><a href="/docs/platex-book/">Book</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/vps/"><strong>VPS</strong></a>
-
 <ul>
 <li><a href="/docs/ssh/">SSH</a></li>
 <li><a href="/docs/ubuntu/">Ubuntu</a></li>
 <li><a href="/docs/alpine-linux/">Alpine Linux</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/db/"><strong>DB</strong></a>
-
 <ul>
 <li><a href="/docs/mysql/">MySQL</a></li>
 <li><a href="/docs/mongodb/">MongoDB</a></li>
 <li><a href="/docs/redis/">Redis</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/cloud/"><strong>Cloud</strong></a>
-
 <ul>
 <li><a href="/docs/aws/">AWS</a></li>
 <li><a href="/docs/gcp/">GCP</a></li>
 <li><a href="/docs/firebase/">Firebase</a></li>
 <li><a href="/docs/zeit-now/">ZEIT Now</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/ci-cd/"><strong>CI/CD</strong></a>
-
 <ul>
 <li><a href="/docs/jenkins/">Jenkins</a></li>
 <li><a href="/docs/travis-ci/">Travis CI</a></li>
 <li><a href="/docs/circleci/">CircleCI</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/container/"><strong>Container</strong></a>
-
 <ul>
 <li><a href="/docs/docker1/">Docker1</a></li>
 <li><a href="/docs/docker2/">Docker2</a></li>
 <li><a href="/docs/docker-hub/">Docker Hub</a></li>
 <li><a href="/docs/docker-compose/">Docker Compose</a></li>
 <li><a href="/docs/kubernetes/">Kubernetes</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/crypto/"><strong>Crypto</strong></a>
-
 <ul>
 <li><a href="/docs/blockchain/">Blockchain</a></li>
 <li><a href="/docs/bitcoin/">Bitcoin</a></li>
@@ -139,7 +141,8 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/substrate/">Substrate</a></li>
 <li><a href="/docs/white-paper/">White Paper</a></li>
 <li><a href="/docs/crypto-docs/">Docs</a></li>
-</ul></li>
+</ul>
+</li>
 </ul>
 
 
@@ -170,62 +173,37 @@ https://github.com/alex-shpak/hugo-book
 </header>
 
       
-<article class="markdown">
-
-<h1 id="ethereumとは">Ethereumとは</h1>
-
+<article class="markdown"><h1 id="ethereum">Ethereumとは</h1>
 <p><strong>GitHubリポジトリ:</strong> <a href="https://github.com/ethereum">https://github.com/ethereum</a></p>
-
-<h2 id="目的">目的</h2>
-
-<p>ブロックチェーン上でアプリを動かして, スマートコントラクトを実行できるようにし, 経済をさらに発展させる.<br />
+<h2 id="heading">目的</h2>
+<p>ブロックチェーン上でアプリを動かして, スマートコントラクトを実行できるようにし, 経済をさらに発展させる.<br>
 アプリの特徴: 分散型, 管理者不在, 一度デプロイすると修正不可</p>
-
-<h2 id="特徴">特徴</h2>
-
+<h2 id="heading1">特徴</h2>
 <ul>
 <li>分散型アプリケーション(スマートコントラクト)のプラットフォーム</li>
 <li>各ノードにバーチャルマシーン(通称: EVM)を積んでいるのでチューリング完全なスクリプトがEthereum上で書ける.</li>
 <li>アカウントベース</li>
 <li>ブロックチェーン2.0の代表格</li>
 </ul>
-
-<h2 id="スケーリング方法">スケーリング方法</h2>
-
+<h2 id="heading2">スケーリング方法</h2>
 <ul>
-<li>サイドチェーン
-
-<ul>
+<li>サイドチェーン</li>
 <li>Plasma: Ethereumのメインチェーンとは別のプラズマチェーンと呼ばれるサイドチェーンをマークル木状にどんどん連ねることで, メインチェーンに格納される情報量を減少させる仕組み. エンドユーザーが出金したいときはルートチェーンに問い合わせる.</li>
-<li><a href="https://medium.com/cryptoeconomics-lab/初心者向けプラズマ勉強法まとめノートー-0から3週間で学んだこと-f9d68a4d617f">初心者向けプラズマ勉強法まとめノートー 0から3週間で学んだこと</a></li>
+<li><a href="https://medium.com/cryptoeconomics-lab/%E5%88%9D%E5%BF%83%E8%80%85%E5%90%91%E3%81%91%E3%83%97%E3%83%A9%E3%82%BA%E3%83%9E%E5%8B%89%E5%BC%B7%E6%B3%95%E3%81%BE%E3%81%A8%E3%82%81%E3%83%8E%E3%83%BC%E3%83%88%E3%83%BC-0%E3%81%8B%E3%82%893%E9%80%B1%E9%96%93%E3%81%A7%E5%AD%A6%E3%82%93%E3%81%A0%E3%81%93%E3%81%A8-f9d68a4d617f">初心者向けプラズマ勉強法まとめノートー 0から3週間で学んだこと</a></li>
 <li><a href="https://delegatecall.com/ja/questions/lightningplasma-d3294ff2-b7f8-4118-a556-a6124ef94097">lightningとplasmaってなにが違うんですか？</a></li>
 <li><a href="https://github.com/shogochiai/plasma-whitepaper-jp/blob/master/whitepaper.pdf">Plasma スケーラブルな自律型スマートコントラクト</a></li>
-</ul></li>
-<li>オフチェーン
-
-<ul>
+<li>オフチェーン</li>
 <li>Raiden Network: ブロックチェーン内の処理をブロックチェーンの外側に持っていくことで, メインチェーンの負担を軽減する仕組み. 最終的な取引結果のみをブロックチェーンで処理する.</li>
-</ul></li>
-<li>シャーディング
-
-<ul>
+<li>シャーディング</li>
 <li>トランザクション処理を各ノードで分割して行うことで, 処理速度の向上を図る仕組み. Ethereum2.0のCasperで導入されるPoSと相性が良い.</li>
 <li><a href="https://www.slideshare.net/bitbankink/ethereum-132664122">Ethereumのシャーディング概論</a></li>
-</ul></li>
 </ul>
-
-<h2 id="スマートコントラクトとは">スマートコントラクトとは</h2>
-
+<h2 id="heading3">スマートコントラクトとは</h2>
 <ul>
-<li>何人かが合意した内容（契約）を、ヒトがいなくても自動的に実行する仕組み
-
-<ul>
+<li>何人かが合意した内容（契約）を、ヒトがいなくても自動的に実行する仕組み</li>
 <li>例は自動販売機</li>
-</ul></li>
 </ul>
-
-<h2 id="ethereum-dapps開発七つ道具">Ethereum dapps開発七つ道具</h2>
-
+<h2 id="ethereum-dapps">Ethereum dapps開発七つ道具</h2>
 <ol>
 <li><a href="https://github.com/ethereum/solidity">Solidity</a></li>
 <li><a href="https://github.com/MetaMask/metamask-extension">MetaMask</a></li>
@@ -235,20 +213,17 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="https://github.com/ethereum/remix">Remix</a></li>
 <li><a href="https://translate.google.com/?hl=ja">Google翻訳</a></li>
 </ol>
-
 <p>と, 上記の内容を広く浅く説明してくれてるサイト</p>
-
 <ul>
 <li><a href="https://blockchain.gunosy.io/entry/ethereum-contracts-system">EthereumとContracts開発を取り巻くエコシステムの概要</a></li>
 </ul>
-
-<h2 id="gethの使い方">gethの使い方</h2>
-
+<h2 id="geth">gethの使い方</h2>
 <p>gethとはGoで実装された完全なethereumノードを実行するためのコマンドラインインターフェースのこと.</p>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># gethのインストール</span>
 <span style="color:#586e75"># for Mac</span>
 brew tap ethereum/ethereum
-brew install ethereum</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># ジェネシスブロックの生成の様式を作成</span>
+brew install ethereum
+</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># ジェネシスブロックの生成の様式を作成</span>
 <span style="color:#b58900">cd</span>
 mkdir ethereum
 <span style="color:#b58900">cd</span> ethereum
@@ -266,23 +241,25 @@ touch genesis.json
   <span style="color:#2aa198">&#34;difficulty&#34;</span>: <span style="color:#2aa198">&#34;0x4000&#34;</span>,
   <span style="color:#2aa198">&#34;mixhash&#34;</span>: <span style="color:#2aa198">&#34;0x0000000000000000000000000000000000000000000000000000000000000000&#34;</span>,
   <span style="color:#2aa198">&#34;coinbase&#34;</span>: <span style="color:#2aa198">&#34;0x3333333333333333333333333333333333333333&#34;</span>,
-  <span style="color:#2aa198">&#34;alloc&#34;</span>: <span style="color:#719e07">{}</span>
-<span style="color:#719e07">}</span></code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># ジェネシスブロックを生成</span>
-geth --datadir ~/ethereum/privnet init ~/ethereum/privnet/genesis.json</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># ログを書き込むファイルを作成</span>
+  <span style="color:#2aa198">&#34;alloc&#34;</span>: <span style="color:#719e07">{</span><span style="color:#719e07">}</span>
+<span style="color:#719e07">}</span>
+</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># ジェネシスブロックを生成</span>
+geth --datadir ~/ethereum/privnet init ~/ethereum/privnet/genesis.json
+</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># ログを書き込むファイルを作成</span>
 <span style="color:#b58900">cd</span>
 <span style="color:#b58900">cd</span> ethereum/privnet
-touch geth.log</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># gethの起動の仕方</span>
-geth --networkid <span style="color:#2aa198">4649</span> --nodiscover --datadir ~/ethereum/privnet --rpc --rpccorsdomain <span style="color:#2aa198">&#34;*&#34;</span> console <span style="color:#2aa198">2</span>&gt;&gt; ~/ethereum/privnet/geth.log</code></pre></div>
-<p>で,
+touch geth.log
+</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># gethの起動の仕方</span>
+geth --networkid <span style="color:#2aa198">4649</span> --nodiscover --datadir ~/ethereum/privnet --rpc --rpccorsdomain <span style="color:#2aa198">&#34;*&#34;</span> console 2&gt;&gt; ~/ethereum/privnet/geth.log
+</code></pre></div><p>で,
 gethを起動しつつ,
 <code>--rpc</code>と<code>--rpccorsdomain</code>で, <code>localhost</code>に繋ぐ許可を出しつつ,
 <code>console</code>で対話型にしつつ,
 <code>&gt;&gt; geth.log</code>でlogをgeth.logファイルに出力している.</p>
-
 <p>そして, 別ターミナルを開いて,</p>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># logの見方</span>
-tail -f geth.log</code></pre></div>
-<p>で, そのターミナルでlogを表示する.</p>
+tail -f geth.log
+</code></pre></div><p>で, そのターミナルでlogを表示する.</p>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># アカウント作成する</span>
 personal.newAccount<span style="color:#719e07">(</span><span style="color:#2aa198">&#34;passwd&#34;</span><span style="color:#719e07">)</span>
 <span style="color:#586e75"># アカウントを確認する</span>
@@ -290,9 +267,9 @@ eth.accounts
 <span style="color:#586e75"># マイニングするノードを確認</span>
 eth.coinbase
 <span style="color:#586e75"># etherの採掘スタート</span>
-miner.start<span style="color:#719e07">()</span>
+miner.start<span style="color:#719e07">(</span><span style="color:#719e07">)</span>
 <span style="color:#586e75"># etherの採掘ストップ</span>
-miner.stop<span style="color:#719e07">()</span>
+miner.stop<span style="color:#719e07">(</span><span style="color:#719e07">)</span>
 <span style="color:#586e75"># ブロック高確認</span>
 eth.blockNumber
 <span style="color:#586e75"># ブロックしてるか確認</span>
@@ -300,44 +277,35 @@ eth.mining
 <span style="color:#586e75"># ハッシュレート確認</span>
 eth.hashrate
 <span style="color:#586e75"># ブロック内容確認</span>
-eth.getBlock<span style="color:#719e07">(</span><span style="color:#2aa198">0</span><span style="color:#719e07">)</span>
+eth.getBlock<span style="color:#719e07">(</span>0<span style="color:#719e07">)</span>
 <span style="color:#586e75"># 残高確認</span>
-eth.getBalance<span style="color:#719e07">(</span>eth.accounts<span style="color:#719e07">[</span><span style="color:#2aa198">0</span><span style="color:#719e07">])</span>
+eth.getBalance<span style="color:#719e07">(</span>eth.accounts<span style="color:#719e07">[</span>0<span style="color:#719e07">]</span><span style="color:#719e07">)</span>
 <span style="color:#586e75"># ロック解除</span>
-personal.unlockAccount<span style="color:#719e07">(</span>eth.accounts<span style="color:#719e07">[</span><span style="color:#2aa198">0</span><span style="color:#719e07">])</span>
+personal.unlockAccount<span style="color:#719e07">(</span>eth.accounts<span style="color:#719e07">[</span>0<span style="color:#719e07">]</span><span style="color:#719e07">)</span>
 <span style="color:#586e75"># 送金</span>
-eth.sendTransaction<span style="color:#719e07">({</span>from: eth.accounts<span style="color:#719e07">[</span><span style="color:#2aa198">0</span><span style="color:#719e07">]</span>, to: eth.accounts<span style="color:#719e07">[</span><span style="color:#2aa198">1</span><span style="color:#719e07">]</span>, value: web3.toWei<span style="color:#719e07">(</span><span style="color:#2aa198">3</span>, <span style="color:#2aa198">&#34;ether&#34;</span><span style="color:#719e07">)})</span></code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># solidityコードをコンパイル</span>
+eth.sendTransaction<span style="color:#719e07">(</span><span style="color:#719e07">{</span>from: eth.accounts<span style="color:#719e07">[</span>0<span style="color:#719e07">]</span>, to: eth.accounts<span style="color:#719e07">[</span>1<span style="color:#719e07">]</span>, value: web3.toWei<span style="color:#719e07">(</span>3, <span style="color:#2aa198">&#34;ether&#34;</span><span style="color:#719e07">)</span><span style="color:#719e07">}</span><span style="color:#719e07">)</span>
+</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># solidityコードをコンパイル</span>
 solc --bin --abi hello_world.sol
 <span style="color:#586e75"># --bin でバイトコード生成.</span>
-<span style="color:#586e75"># --abi でabi(コントラクトとトランザクションで通信する際に必要な情報を全て格納したもの)を生成.</span></code></pre></div>
-<h2 id="remixの使い方">Remixの使い方</h2>
-
+<span style="color:#586e75"># --abi でabi(コントラクトとトランザクションで通信する際に必要な情報を全て格納したもの)を生成.</span>
+</code></pre></div><h2 id="remix">Remixの使い方</h2>
 <p>Remixとはブラウザ上で動作するSolidityの統合開発環境（IDE）のこと.</p>
-
 <ul>
 <li><a href="https://remix.ethereum.org">https://remix.ethereum.org</a></li>
 </ul>
-
-<h2 id="truffleの使い方">truffleの使い方</h2>
-
+<h2 id="truffle">truffleの使い方</h2>
 <ul>
 <li>truffleで使うsolidityのバージョンを変えるには<code>truffle-config.js</code>の中の<code>compilers</code>の<code>solc</code>の<code>version</code>を変更すれば良い.</li>
 </ul>
-
-<h2 id="batch-over-flow-を体験してみる">Batch Over Flow を体験してみる</h2>
-
+<h2 id="batch-over-flow-">Batch Over Flow を体験してみる</h2>
 <ul>
 <li><a href="https://y-nakajo.hatenablog.com/entry/2018/05/01/005938">ERC20のバグと誤報されたBatchOverFlowを体験してみる</a></li>
 </ul>
-
-<h2 id="ethereumのハッキングの練習">Ethereumのハッキングの練習</h2>
-
+<h2 id="ethereum1">Ethereumのハッキングの練習</h2>
 <ul>
 <li><a href="https://ethernaut.zeppelin.solutions">The Ethernaut byZeppelin</a></li>
 </ul>
-
-<h2 id="オンラインでsolidityを学ぶ">オンラインでsolidityを学ぶ</h2>
-
+<h2 id="solidity">オンラインでsolidityを学ぶ</h2>
 <ul>
 <li><a href="https://cryptozombies.io/jp/">CryptoZombies</a></li>
 <li><a href="https://www.zastrin.com/">Zastrin</a></li>
@@ -348,29 +316,31 @@ solc --bin --abi hello_world.sol
 </ul>
 </article>
 
-      
-<div class="book-footer justify-between">
+      <div class="book-footer justify-between">
+  
+
+  
   
   <div>
     
-    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/commit/17c915348a4fd46a389a40c57ba672d458a76325" title='Last modified May 26, 2019 by solareenlo' target="_blank" rel="noopener">
-      <img src="/svg/calendar.svg" alt="Changed" />
+    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/commit/17c915348a4fd46a389a40c57ba672d458a76325" title='Last modified by solareenlo | May 26, 2019' target="_blank">
+      <img src="/svg/calendar.svg" alt="Calendar" />
       <span>May 26, 2019</span>
     </a>
   </div>
   
   
+
+  
   <div>
-    
-    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/edit/master/content/docs/ethereum.md" target="_blank" rel="noopener">
+    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/edit/master/content/docs/ethereum.md" target="_blank">
       <img src="/svg/edit.svg" alt="Edit" />
       <span>Edit this page</span>
     </a>
-    
   </div>
   
-</div>
 
+</div>
 
       
     </div>
@@ -380,22 +350,19 @@ solc --bin --abi hello_world.sol
 
   <aside class="book-toc levels-3 fixed">
     <nav id="TableOfContents">
-<ul>
-<li><a href="#ethereumとは">Ethereumとは</a>
-<ul>
-<li><a href="#目的">目的</a></li>
-<li><a href="#特徴">特徴</a></li>
-<li><a href="#スケーリング方法">スケーリング方法</a></li>
-<li><a href="#スマートコントラクトとは">スマートコントラクトとは</a></li>
-<li><a href="#ethereum-dapps開発七つ道具">Ethereum dapps開発七つ道具</a></li>
-<li><a href="#gethの使い方">gethの使い方</a></li>
-<li><a href="#remixの使い方">Remixの使い方</a></li>
-<li><a href="#truffleの使い方">truffleの使い方</a></li>
-<li><a href="#batch-over-flow-を体験してみる">Batch Over Flow を体験してみる</a></li>
-<li><a href="#ethereumのハッキングの練習">Ethereumのハッキングの練習</a></li>
-<li><a href="#オンラインでsolidityを学ぶ">オンラインでsolidityを学ぶ</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#heading">目的</a></li>
+    <li><a href="#heading1">特徴</a></li>
+    <li><a href="#heading2">スケーリング方法</a></li>
+    <li><a href="#heading3">スマートコントラクトとは</a></li>
+    <li><a href="#ethereum-dapps">Ethereum dapps開発七つ道具</a></li>
+    <li><a href="#geth">gethの使い方</a></li>
+    <li><a href="#remix">Remixの使い方</a></li>
+    <li><a href="#truffle">truffleの使い方</a></li>
+    <li><a href="#batch-over-flow-">Batch Over Flow を体験してみる</a></li>
+    <li><a href="#ethereum1">Ethereumのハッキングの練習</a></li>
+    <li><a href="#solidity">オンラインでsolidityを学ぶ</a></li>
+  </ul>
 </nav>
   </aside>
 

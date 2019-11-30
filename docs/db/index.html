@@ -3,19 +3,20 @@
 
 <head>
   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><meta property="og:title" content="DB" />
-<meta property="og:description" content=" データベースとは  大量のデータを集めて, コンピューターでデータの追加, 削除, 検索をしやすい形に整理したもの. 有料/無料, オープンソース/非オープンソース, SQL型, NoSQL型, オブジェクト型, ドキュメント型, キー・バリュー型, グラフ型などいろんな種類がある.  NoSQLとSQLの違い    項目 NoSQL SQL     代表的なもの MongoDB, CouchDB MySQL, MS SQL   データ構造 データ構造を強制しない 厳密なデータ構造を適応   関係性 関係性にはフォーカスしていない 関係性がコアの機能   要素の在り方 独立したドキュメント レコードを関連付ける   用途 ログ, 注文, メッセージ ショッピングカート, コンタクト, ネットワーク    DBの使用率ランキング  DB-Engines Ranking  " />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="DB"><meta property="og:title" content="DB" />
+<meta property="og:description" content="データベースとは  大量のデータを集めて, コンピューターでデータの追加, 削除, 検索をしやすい形に整理したもの. 有料/無料, オープンソース/非オープンソース, SQL型, NoSQL型, オブジェクト型, ドキュメント型, キー・バリュー型, グラフ型などいろんな種類がある.  NoSQLとSQLの違い    項目 NoSQL SQL     代表的なもの MongoDB, CouchDB MySQL, MS SQL   データ構造 データ構造を強制しない 厳密なデータ構造を適応   関係性 関係性にはフォーカスしていない 関係性がコアの機能   要素の在り方 独立したドキュメント レコードを関連付ける   用途 ログ, 注文, メッセージ ショッピングカート, コンタクト, ネットワーク    DBの使用率ランキング  DB-Engines Ranking  " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://solareenlo.com/docs/db/" />
-<meta property="article:modified_time" content="2019-05-24T14:41:02&#43;09:00"/>
+<meta property="article:modified_time" content="2019-05-24T14:41:02+09:00" />
 <title>DB | solareenlo</title>
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 
 
-<link rel="stylesheet" href="/book.min.7cf03b0e46415b9c8bbde01f69a283955eaa7d987607761a9a05cced394503a1.css" integrity="sha256-fPA7DkZBW5yLveAfaaKDlV6qfZh2B3YamgXM7TlFA6E=">
+<link rel="stylesheet" href="/book.min.0d8f55f751a5f22793c02b19a8a0822122d183a7e99645f6b428174dd3eeec94.css" integrity="sha256-DY9V91Gl8ieTwCsZqKCCISLRg6fplkX2tCgXTdPu7JQ=">
 
 
-<script defer src="/search.min.25dacf0d4e6ef2c0b14ef2bc90d4b36af703a3013ebd9efd7d1dbe17a7492b4d.js" integrity="sha256-JdrPDU5u8sCxTvK8kNSzavcDowE&#43;vZ79fR2&#43;F6dJK00="></script>
+<script defer src="/en.search.min.0de8e26fe8b38f83ff163b7738b4abcdbbe90ae41f3d554ee92aed704668dc09.js" integrity="sha256-Dejib&#43;izj4P/Fjt3OLSrzbvpCuQfPVVO6SrtcEZo3Ak="></script>
 
 <!--
 Made with Book Theme
@@ -38,7 +39,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 <div class="book-search">
-  <input type="text" placeholder="Search" id="book-search-input" maxlength="64" />
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
   <div class="book-search-spinner spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
@@ -51,7 +52,6 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/"><strong>はじめに</strong></a></li>
 <li><a href="/posts/"><strong>Blog</strong></a></li>
 <li><a href="/docs/programming/"><strong>Programming</strong></a>
-
 <ul>
 <li><a href="/docs/terminal/">Terminal</a></li>
 <li><a href="/docs/command/">Command</a></li>
@@ -64,9 +64,9 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/linter-formatter/">Linter/Formatter</a></li>
 <li><a href="/docs/test/">Test</a></li>
 <li><a href="/docs/password-manager/">Password Manager</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/programming-language/"><strong>Programming Language</strong></a>
-
 <ul>
 <li><a href="/docs/c/">C</a></li>
 <li><a href="/docs/rust/">Rust</a></li>
@@ -81,52 +81,52 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/haskell/">Haskell</a></li>
 <li><a href="/docs/hugo/">Hugo</a></li>
 <li><a href="/docs/programming-language-docs/">Docs</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/latex/"><strong>LaTeX</strong></a>
-
 <ul>
 <li><a href="/docs/platex-book/">Book</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/vps/"><strong>VPS</strong></a>
-
 <ul>
 <li><a href="/docs/ssh/">SSH</a></li>
 <li><a href="/docs/ubuntu/">Ubuntu</a></li>
 <li><a href="/docs/alpine-linux/">Alpine Linux</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/db/"class=active><strong>DB</strong></a>
-
 <ul>
 <li><a href="/docs/mysql/">MySQL</a></li>
 <li><a href="/docs/mongodb/">MongoDB</a></li>
 <li><a href="/docs/redis/">Redis</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/cloud/"><strong>Cloud</strong></a>
-
 <ul>
 <li><a href="/docs/aws/">AWS</a></li>
 <li><a href="/docs/gcp/">GCP</a></li>
 <li><a href="/docs/firebase/">Firebase</a></li>
 <li><a href="/docs/zeit-now/">ZEIT Now</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/ci-cd/"><strong>CI/CD</strong></a>
-
 <ul>
 <li><a href="/docs/jenkins/">Jenkins</a></li>
 <li><a href="/docs/travis-ci/">Travis CI</a></li>
 <li><a href="/docs/circleci/">CircleCI</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/container/"><strong>Container</strong></a>
-
 <ul>
 <li><a href="/docs/docker1/">Docker1</a></li>
 <li><a href="/docs/docker2/">Docker2</a></li>
 <li><a href="/docs/docker-hub/">Docker Hub</a></li>
 <li><a href="/docs/docker-compose/">Docker Compose</a></li>
 <li><a href="/docs/kubernetes/">Kubernetes</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/crypto/"><strong>Crypto</strong></a>
-
 <ul>
 <li><a href="/docs/blockchain/">Blockchain</a></li>
 <li><a href="/docs/bitcoin/">Bitcoin</a></li>
@@ -136,7 +136,8 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/substrate/">Substrate</a></li>
 <li><a href="/docs/white-paper/">White Paper</a></li>
 <li><a href="/docs/crypto-docs/">Docs</a></li>
-</ul></li>
+</ul>
+</li>
 </ul>
 
 
@@ -167,17 +168,12 @@ https://github.com/alex-shpak/hugo-book
 </header>
 
       
-<article class="markdown">
-
-<h1 id="データベースとは">データベースとは</h1>
-
+<article class="markdown"><h1 id="heading">データベースとは</h1>
 <ul>
 <li>大量のデータを集めて, コンピューターでデータの追加, 削除, 検索をしやすい形に整理したもの.</li>
 <li>有料/無料, オープンソース/非オープンソース, SQL型, NoSQL型, オブジェクト型, ドキュメント型, キー・バリュー型, グラフ型などいろんな種類がある.</li>
 </ul>
-
-<h2 id="nosqlとsqlの違い">NoSQLとSQLの違い</h2>
-
+<h2 id="nosqlsql">NoSQLとSQLの違い</h2>
 <table>
 <thead>
 <tr>
@@ -186,32 +182,27 @@ https://github.com/alex-shpak/hugo-book
 <th>SQL</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>代表的なもの</td>
 <td>MongoDB, CouchDB</td>
 <td>MySQL, MS SQL</td>
 </tr>
-
 <tr>
 <td>データ構造</td>
 <td>データ構造を強制しない</td>
 <td>厳密なデータ構造を適応</td>
 </tr>
-
 <tr>
 <td>関係性</td>
 <td>関係性にはフォーカスしていない</td>
 <td>関係性がコアの機能</td>
 </tr>
-
 <tr>
 <td>要素の在り方</td>
 <td>独立したドキュメント</td>
 <td>レコードを関連付ける</td>
 </tr>
-
 <tr>
 <td>用途</td>
 <td>ログ, 注文, メッセージ</td>
@@ -219,37 +210,37 @@ https://github.com/alex-shpak/hugo-book
 </tr>
 </tbody>
 </table>
-
-<h2 id="dbの使用率ランキング">DBの使用率ランキング</h2>
-
+<h2 id="db">DBの使用率ランキング</h2>
 <ul>
 <li><a href="https://db-engines.com/en/ranking">DB-Engines Ranking</a></li>
 </ul>
 </article>
 
-      
-<div class="book-footer justify-between">
+      <div class="book-footer justify-between">
+  
+
+  
   
   <div>
     
-    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/commit/13c323aac55856c0c1f7933d5df1b15615bbd048" title='Last modified May 24, 2019 by solareenlo' target="_blank" rel="noopener">
-      <img src="/svg/calendar.svg" alt="Changed" />
+    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/commit/13c323aac55856c0c1f7933d5df1b15615bbd048" title='Last modified by solareenlo | May 24, 2019' target="_blank">
+      <img src="/svg/calendar.svg" alt="Calendar" />
       <span>May 24, 2019</span>
     </a>
   </div>
   
   
+
+  
   <div>
-    
-    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/edit/master/content/docs/db.md" target="_blank" rel="noopener">
+    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/edit/master/content/docs/db.md" target="_blank">
       <img src="/svg/edit.svg" alt="Edit" />
       <span>Edit this page</span>
     </a>
-    
   </div>
   
-</div>
 
+</div>
 
       
     </div>
@@ -259,13 +250,10 @@ https://github.com/alex-shpak/hugo-book
 
   <aside class="book-toc levels-3 fixed">
     <nav id="TableOfContents">
-<ul>
-<li><a href="#データベースとは">データベースとは</a>
-<ul>
-<li><a href="#nosqlとsqlの違い">NoSQLとSQLの違い</a></li>
-<li><a href="#dbの使用率ランキング">DBの使用率ランキング</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#nosqlsql">NoSQLとSQLの違い</a></li>
+    <li><a href="#db">DBの使用率ランキング</a></li>
+  </ul>
 </nav>
   </aside>
 

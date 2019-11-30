@@ -3,8 +3,9 @@
 
 <head>
   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><meta property="og:title" content="" />
-<meta property="og:description" content="ターミナルとは  GUIの上でCUIの操作をしたいときに使用するアプリケーションのこと.  コンソール/ターミナル/シェルの違い  コンソールとは入出力をつかさどる端末ハードウェア ターミナルとはGUIでCUI環境を再現するもの シェルとはCUI環境におけるOSとの対話的インターフェイス  Reference: 【初心者向け】シェル・ターミナル・コンソールの違いとは？   下地にシェルがありコンソールやターミナルから命令をOSへ伝達してくれる.
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Terminal"><meta property="og:title" content="" />
+<meta property="og:description" content="ターミナルとは  GUIの上でCUIの操作をしたいときに使用するアプリケーションのこと.  コンソール/ターミナル/シェルの違い  コンソールとは入出力をつかさどる端末ハードウェア ターミナルとはGUIでCUI環境を再現するもの シェルとはCUI環境におけるOSとの対話的インターフェイス Reference: 【初心者向け】シェル・ターミナル・コンソールの違いとは？  下地にシェルがありコンソールやターミナルから命令をOSへ伝達してくれる.
 コンソールでアクセスしてもターミナルでアクセスしても対話するものはシェルとなる.
 コンソールの場合はハードウェア的に直にアクセスしているがターミナルの場合はGUI環境でソフトウェア的にシェルを呼び出し命令を実行するようになっている.
 ターミナルの色を変える ~/.bashrcの当該部分を以下の様に書き換える.
@@ -17,10 +18,10 @@ if [ &#34;$color_prompt&#34; = yes ]; then PS1=&#39;${debian_chroot:&#43;($debia
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 
 
-<link rel="stylesheet" href="/book.min.7cf03b0e46415b9c8bbde01f69a283955eaa7d987607761a9a05cced394503a1.css" integrity="sha256-fPA7DkZBW5yLveAfaaKDlV6qfZh2B3YamgXM7TlFA6E=">
+<link rel="stylesheet" href="/book.min.0d8f55f751a5f22793c02b19a8a0822122d183a7e99645f6b428174dd3eeec94.css" integrity="sha256-DY9V91Gl8ieTwCsZqKCCISLRg6fplkX2tCgXTdPu7JQ=">
 
 
-<script defer src="/search.min.25dacf0d4e6ef2c0b14ef2bc90d4b36af703a3013ebd9efd7d1dbe17a7492b4d.js" integrity="sha256-JdrPDU5u8sCxTvK8kNSzavcDowE&#43;vZ79fR2&#43;F6dJK00="></script>
+<script defer src="/en.search.min.0de8e26fe8b38f83ff163b7738b4abcdbbe90ae41f3d554ee92aed704668dc09.js" integrity="sha256-Dejib&#43;izj4P/Fjt3OLSrzbvpCuQfPVVO6SrtcEZo3Ak="></script>
 
 <!--
 Made with Book Theme
@@ -43,7 +44,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 <div class="book-search">
-  <input type="text" placeholder="Search" id="book-search-input" maxlength="64" />
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
   <div class="book-search-spinner spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
@@ -56,7 +57,6 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/"><strong>はじめに</strong></a></li>
 <li><a href="/posts/"><strong>Blog</strong></a></li>
 <li><a href="/docs/programming/"><strong>Programming</strong></a>
-
 <ul>
 <li><a href="/docs/terminal/"class=active>Terminal</a></li>
 <li><a href="/docs/command/">Command</a></li>
@@ -69,9 +69,9 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/linter-formatter/">Linter/Formatter</a></li>
 <li><a href="/docs/test/">Test</a></li>
 <li><a href="/docs/password-manager/">Password Manager</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/programming-language/"><strong>Programming Language</strong></a>
-
 <ul>
 <li><a href="/docs/c/">C</a></li>
 <li><a href="/docs/rust/">Rust</a></li>
@@ -86,52 +86,52 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/haskell/">Haskell</a></li>
 <li><a href="/docs/hugo/">Hugo</a></li>
 <li><a href="/docs/programming-language-docs/">Docs</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/latex/"><strong>LaTeX</strong></a>
-
 <ul>
 <li><a href="/docs/platex-book/">Book</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/vps/"><strong>VPS</strong></a>
-
 <ul>
 <li><a href="/docs/ssh/">SSH</a></li>
 <li><a href="/docs/ubuntu/">Ubuntu</a></li>
 <li><a href="/docs/alpine-linux/">Alpine Linux</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/db/"><strong>DB</strong></a>
-
 <ul>
 <li><a href="/docs/mysql/">MySQL</a></li>
 <li><a href="/docs/mongodb/">MongoDB</a></li>
 <li><a href="/docs/redis/">Redis</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/cloud/"><strong>Cloud</strong></a>
-
 <ul>
 <li><a href="/docs/aws/">AWS</a></li>
 <li><a href="/docs/gcp/">GCP</a></li>
 <li><a href="/docs/firebase/">Firebase</a></li>
 <li><a href="/docs/zeit-now/">ZEIT Now</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/ci-cd/"><strong>CI/CD</strong></a>
-
 <ul>
 <li><a href="/docs/jenkins/">Jenkins</a></li>
 <li><a href="/docs/travis-ci/">Travis CI</a></li>
 <li><a href="/docs/circleci/">CircleCI</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/container/"><strong>Container</strong></a>
-
 <ul>
 <li><a href="/docs/docker1/">Docker1</a></li>
 <li><a href="/docs/docker2/">Docker2</a></li>
 <li><a href="/docs/docker-hub/">Docker Hub</a></li>
 <li><a href="/docs/docker-compose/">Docker Compose</a></li>
 <li><a href="/docs/kubernetes/">Kubernetes</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/crypto/"><strong>Crypto</strong></a>
-
 <ul>
 <li><a href="/docs/blockchain/">Blockchain</a></li>
 <li><a href="/docs/bitcoin/">Bitcoin</a></li>
@@ -141,7 +141,8 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/substrate/">Substrate</a></li>
 <li><a href="/docs/white-paper/">White Paper</a></li>
 <li><a href="/docs/crypto-docs/">Docs</a></li>
-</ul></li>
+</ul>
+</li>
 </ul>
 
 
@@ -172,83 +173,73 @@ https://github.com/alex-shpak/hugo-book
 </header>
 
       
-<article class="markdown">
-
-<h1 id="ターミナルとは">ターミナルとは</h1>
-
+<article class="markdown"><h1 id="heading">ターミナルとは</h1>
 <ul>
 <li>GUIの上でCUIの操作をしたいときに使用するアプリケーションのこと.</li>
 </ul>
-
-<h2 id="コンソール-ターミナル-シェルの違い">コンソール/ターミナル/シェルの違い</h2>
-
+<h2 id="heading1">コンソール/ターミナル/シェルの違い</h2>
 <ul>
 <li>コンソールとは入出力をつかさどる端末ハードウェア</li>
 <li>ターミナルとはGUIでCUI環境を再現するもの</li>
-<li>シェルとはCUI環境におけるOSとの対話的インターフェイス
-
-<ul>
+<li>シェルとはCUI環境におけるOSとの対話的インターフェイス</li>
 <li><strong>Reference:</strong> <a href="https://eng-entrance.com/linux-basic-shell-terminal-console">【初心者向け】シェル・ターミナル・コンソールの違いとは？</a></li>
-</ul></li>
 </ul>
-
-<p>下地にシェルがありコンソールやターミナルから命令をOSへ伝達してくれる.<br />
-コンソールでアクセスしてもターミナルでアクセスしても対話するものはシェルとなる.<br />
+<p>下地にシェルがありコンソールやターミナルから命令をOSへ伝達してくれる.<br>
+コンソールでアクセスしてもターミナルでアクセスしても対話するものはシェルとなる.<br>
 コンソールの場合はハードウェア的に直にアクセスしているがターミナルの場合はGUI環境でソフトウェア的にシェルを呼び出し命令を実行するようになっている.</p>
-
-<h2 id="ターミナルの色を変える">ターミナルの色を変える</h2>
-
+<h2 id="heading2">ターミナルの色を変える</h2>
 <p><code>~/.bashrc</code>の当該部分を以下の様に書き換える.</p>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#719e07">if</span> <span style="color:#719e07">[</span> <span style="color:#2aa198">&#34;</span><span style="color:#268bd2">$color_prompt</span><span style="color:#2aa198">&#34;</span> <span style="color:#719e07">=</span> yes <span style="color:#719e07">]</span>; <span style="color:#719e07">then</span>
     <span style="color:#268bd2">PS1</span><span style="color:#719e07">=</span><span style="color:#2aa198">&#39;${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\033[01;31m\]$(__git_ps1)\[\033[00m\]\n\[\033[01;35m\]-&gt; \$\[\033[00m\] &#39;</span>
 <span style="color:#719e07">else</span>
     <span style="color:#268bd2">PS1</span><span style="color:#719e07">=</span><span style="color:#2aa198">&#39;${debian_chroot:+($debian_chroot)}\u@\h:\w\$ &#39;</span>
-<span style="color:#719e07">fi</span></code></pre></div>
-<h2 id="ターミナルのjson出力に色付けする">ターミナルのJSON出力に色付けする</h2>
-
+<span style="color:#719e07">fi</span>
+</code></pre></div><h2 id="json">ターミナルのJSON出力に色付けする</h2>
 <p><a href="https://github.com/stedolan/jq">jq</a>を使う.</p>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># こんな感じ</span>
 <span style="color:#b58900">echo</span> <span style="color:#2aa198">&#39;{&#34;items&#34;:[{&#34;item_id&#34;:1,&#34;name&#34;:&#34;すてきな雑貨&#34;,&#34;price&#34;:2500},{&#34;item_id&#34;:2,&#34;name&#34;:&#34;格好いい置物&#34;,&#34;price&#34;:4500}]}&#39;</span> | jq .
 &gt; <span style="color:#719e07">{</span>
 &gt;   <span style="color:#2aa198">&#34;items&#34;</span>: <span style="color:#719e07">[</span>
 &gt;     <span style="color:#719e07">{</span>
-&gt;       <span style="color:#2aa198">&#34;item_id&#34;</span>: <span style="color:#2aa198">1</span>,
+&gt;       <span style="color:#2aa198">&#34;item_id&#34;</span>: 1,
 &gt;       <span style="color:#2aa198">&#34;name&#34;</span>: <span style="color:#2aa198">&#34;すてきな雑貨&#34;</span>,
 &gt;       <span style="color:#2aa198">&#34;price&#34;</span>: <span style="color:#2aa198">2500</span>
 &gt;     <span style="color:#719e07">}</span>,
 &gt;     <span style="color:#719e07">{</span>
-&gt;       <span style="color:#2aa198">&#34;item_id&#34;</span>: <span style="color:#2aa198">2</span>,
+&gt;       <span style="color:#2aa198">&#34;item_id&#34;</span>: 2,
 &gt;       <span style="color:#2aa198">&#34;name&#34;</span>: <span style="color:#2aa198">&#34;格好いい置物&#34;</span>,
 &gt;       <span style="color:#2aa198">&#34;price&#34;</span>: <span style="color:#2aa198">4500</span>
 &gt;     <span style="color:#719e07">}</span>
 &gt;   <span style="color:#719e07">]</span>
-&gt; <span style="color:#719e07">}</span></code></pre></div>
-<p><strong>Reference:</strong> <a href="https://qiita.com/takeshinoda@github/items/2dec7a72930ec1f658af">jq コマンドを使う日常のご紹介</a></p>
+&gt; <span style="color:#719e07">}</span>
+</code></pre></div><p><strong>Reference:</strong> <a href="https://qiita.com/takeshinoda@github/items/2dec7a72930ec1f658af">jq コマンドを使う日常のご紹介</a></p>
 </article>
 
-      
-<div class="book-footer justify-between">
+      <div class="book-footer justify-between">
+  
+
+  
   
   <div>
     
-    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/commit/4ee075df2e9e513fa75b26efc18fb4171926f937" title='Last modified Jul 18, 2019 by solareenlo' target="_blank" rel="noopener">
-      <img src="/svg/calendar.svg" alt="Changed" />
+    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/commit/4ee075df2e9e513fa75b26efc18fb4171926f937" title='Last modified by solareenlo | Jul 18, 2019' target="_blank">
+      <img src="/svg/calendar.svg" alt="Calendar" />
       <span>Jul 18, 2019</span>
     </a>
   </div>
   
   
+
+  
   <div>
-    
-    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/edit/master/content/docs/terminal.md" target="_blank" rel="noopener">
+    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/edit/master/content/docs/terminal.md" target="_blank">
       <img src="/svg/edit.svg" alt="Edit" />
       <span>Edit this page</span>
     </a>
-    
   </div>
   
-</div>
 
+</div>
 
       
     </div>
@@ -258,14 +249,11 @@ https://github.com/alex-shpak/hugo-book
 
   <aside class="book-toc levels-3 fixed">
     <nav id="TableOfContents">
-<ul>
-<li><a href="#ターミナルとは">ターミナルとは</a>
-<ul>
-<li><a href="#コンソール-ターミナル-シェルの違い">コンソール/ターミナル/シェルの違い</a></li>
-<li><a href="#ターミナルの色を変える">ターミナルの色を変える</a></li>
-<li><a href="#ターミナルのjson出力に色付けする">ターミナルのJSON出力に色付けする</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#heading1">コンソール/ターミナル/シェルの違い</a></li>
+    <li><a href="#heading2">ターミナルの色を変える</a></li>
+    <li><a href="#json">ターミナルのJSON出力に色付けする</a></li>
+  </ul>
 </nav>
   </aside>
 

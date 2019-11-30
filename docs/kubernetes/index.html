@@ -3,12 +3,15 @@
 
 <head>
   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><meta property="og:title" content="" />
-<meta property="og:description" content="Kubernetesとは  Dockerコンテナのクラスタ管理を始めとしたオーケストレーションを行うサービスのこと. ホスト間の連携やデプロイについても総括的に管理できる(ここがDocker Composeと違うところ). Kubernetesの大きな特徴の1つに宣言的設定がある.  宣言的設定とは, イミュータブルなインフラを作るための基本的な考え方で, 「システムのあるべき姿」を設定ファイルに宣言する！という考え方.  Kubernetesは設定ファイルに書いたとおりのインフラを維持するように設計されている.  ので, 設定ファイル(yamlファイル)をたくさん書く事になる.  Reference: Docker Compose利用者から見た Kubernetes 開発環境構築入門 GitHubリポジトリ: https://github.com/kubernetes  他のオーケストレーションと違うところ ① 様々なOSSと組み合わせることにより, 柔軟に機能拡張なところ.
- コンテナ運用を更に効率化 / 高速化  詳細なメトリック監視と可視化・・・Prometheus &#43; Grafana コンテナのログの転送収集・・・Fluentd / Fluent Bit ネットワークトラフィックの制御・・・ Istio &#43; Envoy  Kubernetesの適応領域の拡大  機械学習プラットフォーム・・・Kubeflow 分散ストレージ・・・Rook 分散型データベース・・・Vitess   ② 本格的な宣言的オペレーションとInfrastructure as Codeを実現可能
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Kubernetes"><meta property="og:title" content="" />
+<meta property="og:description" content="Kubernetesとは  Dockerコンテナのクラスタ管理を始めとしたオーケストレーションを行うサービスのこと. ホスト間の連携やデプロイについても総括的に管理できる(ここがDocker Composeと違うところ). Kubernetesの大きな特徴の1つに宣言的設定がある. 宣言的設定とは, イミュータブルなインフラを作るための基本的な考え方で, 「システムのあるべき姿」を設定ファイルに宣言する！という考え方. Kubernetesは設定ファイルに書いたとおりのインフラを維持するように設計されている. ので, 設定ファイル(yamlファイル)をたくさん書く事になる. Reference: Docker Compose利用者から見た Kubernetes 開発環境構築入門 GitHubリポジトリ: https://github.com/kubernetes  他のオーケストレーションと違うところ ① 様々なOSSと組み合わせることにより, 柔軟に機能拡張なところ.
+ コンテナ運用を更に効率化 / 高速化 詳細なメトリック監視と可視化・・・Prometheus &#43; Grafana コンテナのログの転送収集・・・Fluentd / Fluent Bit ネットワークトラフィックの制御・・・ Istio &#43; Envoy Kubernetesの適応領域の拡大 機械学習プラットフォーム・・・Kubeflow 分散ストレージ・・・Rook 分散型データベース・・・Vitess  ② 本格的な宣言的オペレーションとInfrastructure as Codeを実現可能
 ③ クラスター上にデプロイするシステムの構成をコード(マニフェストファイル)によって定義できる
  運用オペレーションはコードの変更によって実施し, 作業を簡素化する. 複数Kubernetesクラスターでの相互運用を実現する  Reference: Kubernetesの基礎
-Docker Composeとの違い Docker Composeは動作させるコンテナを意識するだけでほとんど良かったが, Kubernetesではそれに加えて動作させるホスト(Node)やコンテナのグループ化(Pod), その複製(ReplicaSet)と公開(Service, Ingress)といったインフラレベルで意識していたことも全て設定ファイルの1つとして管理できる." />
+Docker Composeとの違い Docker Composeは動作させるコンテナを意識するだけでほとんど良かったが, Kubernetesではそれに加えて動作させるホスト(Node)やコンテナのグループ化(Pod), その複製(ReplicaSet)と公開(Service, Ingress)といったインフラレベルで意識していたことも全て設定ファイルの1つとして管理できる.
+Reference: Docker Compose利用者から見た Kubernetes 開発環境構築入門
+   項目 Docker Compose → Kubernetes     Image 各エントリーは, イメージを構築するためにオプションでdocker-composeを取得できる." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://solareenlo.com/docs/kubernetes/" />
 
@@ -16,10 +19,10 @@ Docker Composeとの違い Docker Composeは動作させるコンテナを意識
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 
 
-<link rel="stylesheet" href="/book.min.7cf03b0e46415b9c8bbde01f69a283955eaa7d987607761a9a05cced394503a1.css" integrity="sha256-fPA7DkZBW5yLveAfaaKDlV6qfZh2B3YamgXM7TlFA6E=">
+<link rel="stylesheet" href="/book.min.0d8f55f751a5f22793c02b19a8a0822122d183a7e99645f6b428174dd3eeec94.css" integrity="sha256-DY9V91Gl8ieTwCsZqKCCISLRg6fplkX2tCgXTdPu7JQ=">
 
 
-<script defer src="/search.min.25dacf0d4e6ef2c0b14ef2bc90d4b36af703a3013ebd9efd7d1dbe17a7492b4d.js" integrity="sha256-JdrPDU5u8sCxTvK8kNSzavcDowE&#43;vZ79fR2&#43;F6dJK00="></script>
+<script defer src="/en.search.min.0de8e26fe8b38f83ff163b7738b4abcdbbe90ae41f3d554ee92aed704668dc09.js" integrity="sha256-Dejib&#43;izj4P/Fjt3OLSrzbvpCuQfPVVO6SrtcEZo3Ak="></script>
 
 <!--
 Made with Book Theme
@@ -42,7 +45,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 <div class="book-search">
-  <input type="text" placeholder="Search" id="book-search-input" maxlength="64" />
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
   <div class="book-search-spinner spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
@@ -55,7 +58,6 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/"><strong>はじめに</strong></a></li>
 <li><a href="/posts/"><strong>Blog</strong></a></li>
 <li><a href="/docs/programming/"><strong>Programming</strong></a>
-
 <ul>
 <li><a href="/docs/terminal/">Terminal</a></li>
 <li><a href="/docs/command/">Command</a></li>
@@ -68,9 +70,9 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/linter-formatter/">Linter/Formatter</a></li>
 <li><a href="/docs/test/">Test</a></li>
 <li><a href="/docs/password-manager/">Password Manager</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/programming-language/"><strong>Programming Language</strong></a>
-
 <ul>
 <li><a href="/docs/c/">C</a></li>
 <li><a href="/docs/rust/">Rust</a></li>
@@ -85,52 +87,52 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/haskell/">Haskell</a></li>
 <li><a href="/docs/hugo/">Hugo</a></li>
 <li><a href="/docs/programming-language-docs/">Docs</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/latex/"><strong>LaTeX</strong></a>
-
 <ul>
 <li><a href="/docs/platex-book/">Book</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/vps/"><strong>VPS</strong></a>
-
 <ul>
 <li><a href="/docs/ssh/">SSH</a></li>
 <li><a href="/docs/ubuntu/">Ubuntu</a></li>
 <li><a href="/docs/alpine-linux/">Alpine Linux</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/db/"><strong>DB</strong></a>
-
 <ul>
 <li><a href="/docs/mysql/">MySQL</a></li>
 <li><a href="/docs/mongodb/">MongoDB</a></li>
 <li><a href="/docs/redis/">Redis</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/cloud/"><strong>Cloud</strong></a>
-
 <ul>
 <li><a href="/docs/aws/">AWS</a></li>
 <li><a href="/docs/gcp/">GCP</a></li>
 <li><a href="/docs/firebase/">Firebase</a></li>
 <li><a href="/docs/zeit-now/">ZEIT Now</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/ci-cd/"><strong>CI/CD</strong></a>
-
 <ul>
 <li><a href="/docs/jenkins/">Jenkins</a></li>
 <li><a href="/docs/travis-ci/">Travis CI</a></li>
 <li><a href="/docs/circleci/">CircleCI</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/container/"><strong>Container</strong></a>
-
 <ul>
 <li><a href="/docs/docker1/">Docker1</a></li>
 <li><a href="/docs/docker2/">Docker2</a></li>
 <li><a href="/docs/docker-hub/">Docker Hub</a></li>
 <li><a href="/docs/docker-compose/">Docker Compose</a></li>
 <li><a href="/docs/kubernetes/"class=active>Kubernetes</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/crypto/"><strong>Crypto</strong></a>
-
 <ul>
 <li><a href="/docs/blockchain/">Blockchain</a></li>
 <li><a href="/docs/bitcoin/">Bitcoin</a></li>
@@ -140,7 +142,8 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/substrate/">Substrate</a></li>
 <li><a href="/docs/white-paper/">White Paper</a></li>
 <li><a href="/docs/crypto-docs/">Docs</a></li>
-</ul></li>
+</ul>
+</li>
 </ul>
 
 
@@ -171,64 +174,39 @@ https://github.com/alex-shpak/hugo-book
 </header>
 
       
-<article class="markdown">
-
-<h1 id="kubernetesとは">Kubernetesとは</h1>
-
+<article class="markdown"><h1 id="kubernetes">Kubernetesとは</h1>
 <ul>
 <li>Dockerコンテナのクラスタ管理を始めとしたオーケストレーションを行うサービスのこと.</li>
 <li>ホスト間の連携やデプロイについても総括的に管理できる(ここがDocker Composeと違うところ).</li>
-<li>Kubernetesの大きな特徴の1つに宣言的設定がある.
-
-<ul>
+<li>Kubernetesの大きな特徴の1つに宣言的設定がある.</li>
 <li>宣言的設定とは, イミュータブルなインフラを作るための基本的な考え方で, 「システムのあるべき姿」を設定ファイルに宣言する！という考え方.</li>
-</ul></li>
-<li>Kubernetesは設定ファイルに書いたとおりのインフラを維持するように設計されている.
-
-<ul>
+<li>Kubernetesは設定ファイルに書いたとおりのインフラを維持するように設計されている.</li>
 <li>ので, 設定ファイル(yamlファイル)をたくさん書く事になる.</li>
-</ul></li>
 <li><strong>Reference:</strong> <a href="https://speakerdeck.com/kkoudev/introduction-to-kubernetes-for-docker-compose-user">Docker Compose利用者から見た Kubernetes 開発環境構築入門</a></li>
 <li><strong>GitHubリポジトリ:</strong> <a href="https://github.com/kubernetes">https://github.com/kubernetes</a></li>
 </ul>
-
-<h2 id="他のオーケストレーションと違うところ">他のオーケストレーションと違うところ</h2>
-
+<h2 id="heading">他のオーケストレーションと違うところ</h2>
 <p>① 様々なOSSと組み合わせることにより, 柔軟に機能拡張なところ.</p>
-
 <ul>
-<li>コンテナ運用を更に効率化 / 高速化
-
-<ul>
+<li>コンテナ運用を更に効率化 / 高速化</li>
 <li>詳細なメトリック監視と可視化・・・Prometheus + Grafana</li>
 <li>コンテナのログの転送収集・・・Fluentd / Fluent Bit</li>
 <li>ネットワークトラフィックの制御・・・ Istio + Envoy</li>
-</ul></li>
-<li>Kubernetesの適応領域の拡大
-
-<ul>
+<li>Kubernetesの適応領域の拡大</li>
 <li>機械学習プラットフォーム・・・Kubeflow</li>
 <li>分散ストレージ・・・Rook</li>
 <li>分散型データベース・・・Vitess</li>
-</ul></li>
 </ul>
-
 <p>② 本格的な宣言的オペレーションとInfrastructure as Codeを実現可能</p>
-
 <p>③ クラスター上にデプロイするシステムの構成をコード(マニフェストファイル)によって定義できる</p>
-
 <ul>
 <li>運用オペレーションはコードの変更によって実施し, 作業を簡素化する.</li>
 <li>複数Kubernetesクラスターでの相互運用を実現する</li>
 </ul>
-
 <p><strong>Reference:</strong> <a href="https://crash.academy/ng/video/731/2060">Kubernetesの基礎</a></p>
-
-<h2 id="docker-composeとの違い">Docker Composeとの違い</h2>
-
-<p>Docker Composeは動作させるコンテナを意識するだけでほとんど良かったが, Kubernetesではそれに加えて動作させるホスト(Node)やコンテナのグループ化(Pod), その複製(ReplicaSet)と公開(Service, Ingress)といったインフラレベルで意識していたことも全て設定ファイルの1つとして管理できる.<br />
+<h2 id="docker-compose">Docker Composeとの違い</h2>
+<p>Docker Composeは動作させるコンテナを意識するだけでほとんど良かったが, Kubernetesではそれに加えて動作させるホスト(Node)やコンテナのグループ化(Pod), その複製(ReplicaSet)と公開(Service, Ingress)といったインフラレベルで意識していたことも全て設定ファイルの1つとして管理できる.<br>
 <strong>Reference:</strong> <a href="https://speakerdeck.com/kkoudev/introduction-to-kubernetes-for-docker-compose-user">Docker Compose利用者から見た Kubernetes 開発環境構築入門</a></p>
-
 <table>
 <thead>
 <tr>
@@ -238,7 +216,6 @@ https://github.com/alex-shpak/hugo-book
 <th>Kubernetes</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>Image</td>
@@ -246,14 +223,12 @@ https://github.com/alex-shpak/hugo-book
 <td>→</td>
 <td>すべてのイメージがすでに構築されているとする.</td>
 </tr>
-
 <tr>
 <td>Container</td>
 <td>各エントリーが作成したいコンテナを表す.</td>
 <td>→</td>
 <td>作成したいオブジェクト(Kubernetesクラスタ上で機能する構成要素のこと. Pod, Service, Volume, Namespace, Controllerのこと.)ごとに1つの設定ファイル</td>
 </tr>
-
 <tr>
 <td>Network</td>
 <td>各エントリーがネットワーク要件を定義する.</td>
@@ -262,9 +237,7 @@ https://github.com/alex-shpak/hugo-book
 </tr>
 </tbody>
 </table>
-
-<h2 id="用語集">用語集</h2>
-
+<h2 id="heading1">用語集</h2>
 <table>
 <thead>
 <tr>
@@ -272,76 +245,59 @@ https://github.com/alex-shpak/hugo-book
 <th>説明</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>Node</td>
-<td>コンテナが動作するサーバのこと.<br><li>Master(Master Node): 全Nodeを管理する.<li>Node(Woker Node): 各リソースを動かす.</td>
+<td>コンテナが動作するサーバのこと.<!-- raw HTML omitted --><!-- raw HTML omitted -->Master(Master Node): 全Nodeを管理する.<!-- raw HTML omitted -->Node(Woker Node): 各リソースを動かす.</td>
 </tr>
-
 <tr>
 <td>Pod</td>
 <td>関連したコンテナの集まりを1つにしたもの.</td>
 </tr>
-
 <tr>
 <td>ReplicaSet</td>
-<td>対象Podのクラスタ全体における生成・管理を行う.<br>PodTemplateと呼ばれるPodのテンプレートをもとに、Podを指定された数(レプリカ数)に調整・管理を行う仕組み.<br>そうすることで, Podのセルフヒーリングを行う.</td>
+<td>対象Podのクラスタ全体における生成・管理を行う.<!-- raw HTML omitted -->PodTemplateと呼ばれるPodのテンプレートをもとに、Podを指定された数(レプリカ数)に調整・管理を行う仕組み.<!-- raw HTML omitted -->そうすることで, Podのセルフヒーリングを行う.</td>
 </tr>
-
 <tr>
 <td>Deployment</td>
-<td>ReplicaSetの生成・管理を行う.<br>ローリングアップデートやロールバックといったデプロイ管理の仕組みを提供する.</td>
+<td>ReplicaSetの生成・管理を行う.<!-- raw HTML omitted -->ローリングアップデートやロールバックといったデプロイ管理の仕組みを提供する.</td>
 </tr>
-
 <tr>
 <td>Service</td>
-<td>Podへのアクセス経路を提供する.<br>OSI参照モデルのL4層まで扱える.<br>- クラスタ内部のみで利用できるService(ClusterIP)や,<br>- クラスタ外部からアクセス可能なService(NodePort)などを作成することができる.</td>
+<td>Podへのアクセス経路を提供する.<!-- raw HTML omitted -->OSI参照モデルのL4層まで扱える.<!-- raw HTML omitted -->- クラスタ内部のみで利用できるService(ClusterIP)や,<!-- raw HTML omitted -->- クラスタ外部からアクセス可能なService(NodePort)などを作成することができる.</td>
 </tr>
-
 <tr>
 <td>Ingress</td>
-<td>Serviceの上位リソース.<br>OSI参照モデルのL7層レベルまで扱える.</td>
+<td>Serviceの上位リソース.<!-- raw HTML omitted -->OSI参照モデルのL7層レベルまで扱える.</td>
 </tr>
-
 <tr>
 <td>ConfigMap</td>
-<td>環境変数のような設定値, また設定ファイル情報そのものを管理する.<br>Key-Value形式.</td>
+<td>環境変数のような設定値, また設定ファイル情報そのものを管理する.<!-- raw HTML omitted -->Key-Value形式.</td>
 </tr>
-
 <tr>
 <td>Secret</td>
 <td>パスワードのような秘匿情報を扱う際に利用する.</td>
 </tr>
-
 <tr>
 <td>PersistentVolume</td>
-<td>ボリューム領域を定義する.<br>EBSやNFSのような外部ストレージも定義できる.</td>
+<td>ボリューム領域を定義する.<!-- raw HTML omitted -->EBSやNFSのような外部ストレージも定義できる.</td>
 </tr>
-
 <tr>
 <td>PersistentVolumeClaim</td>
-<td>利用するボリューム領域の要求を定義する.<br>PersistentVolumeとPodを紐付けるために利用する.</td>
+<td>利用するボリューム領域の要求を定義する.<!-- raw HTML omitted -->PersistentVolumeとPodを紐付けるために利用する.</td>
 </tr>
-
 <tr>
 <td>Namespace</td>
-<td>仮想的なKubernetesクラスタの分離機能.<br><li><strong>default</strong>: デフォルトのNamespace<li><strong>kube-system</strong>: Kubernetesクラスタのコンポーネントやaddonが展開されるNamespace<li><strong>kube-public</strong>: 全ユーザが利用できるConfigMapなどを配置するNamespace</td>
+<td>仮想的なKubernetesクラスタの分離機能.<!-- raw HTML omitted --><!-- raw HTML omitted --><strong>default</strong>: デフォルトのNamespace<!-- raw HTML omitted --><strong>kube-system</strong>: Kubernetesクラスタのコンポーネントやaddonが展開されるNamespace<!-- raw HTML omitted --><strong>kube-public</strong>: 全ユーザが利用できるConfigMapなどを配置するNamespace</td>
 </tr>
 </tbody>
 </table>
-
 <ul>
-<li><strong>References:</strong>
-
-<ul>
+<li><strong>References:</strong></li>
 <li><a href="https://qiita.com/tkusumi/items/01cd18c59b742eebdc6a">Kubernetes: Deployment の仕組み</a></li>
 <li><a href="https://speakerdeck.com/kkoudev/introduction-to-kubernetes-for-docker-compose-user">Docker Compose利用者から見た Kubernetes 開発環境構築入門</a></li>
-</ul></li>
 </ul>
-
-<h2 id="yaml内の用語集">yaml内の用語集</h2>
-
+<h2 id="yaml">yaml内の用語集</h2>
 <table>
 <thead>
 <tr>
@@ -349,49 +305,41 @@ https://github.com/alex-shpak/hugo-book
 <th>意味</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>apiVersion</td>
 <td>リソースで利用するAPIのバージョンを指定.</td>
 </tr>
-
 <tr>
 <td>kind</td>
-<td>リソースの種別を指定.<br>(Deployment, Serviceとか)</td>
+<td>リソースの種別を指定.<!-- raw HTML omitted -->(Deployment, Serviceとか)</td>
 </tr>
-
 <tr>
 <td>metadata</td>
-<td>リソースへ付与可能なメタデータ.<br>主に名称やラベルを付与する.</td>
+<td>リソースへ付与可能なメタデータ.<!-- raw HTML omitted -->主に名称やラベルを付与する.</td>
 </tr>
-
 <tr>
 <td>spec</td>
 <td>リソース固定の設定を指定.</td>
 </tr>
-
 <tr>
 <td>data</td>
 <td>ConfigMapやSecretなどの設定データを記述するリソースで使用される.</td>
 </tr>
-
 <tr>
 <td>label</td>
 <td>Kubernetes上のオブジェクト(Podなど)に付けることができるKey/Valueペアの文字列で, オブジェクトに任意のメタ情報のようなものを持たせることができる.</td>
 </tr>
-
 <tr>
 <td>selector</td>
 <td>Labelの集合をもとにKubernetesオブジェクトをフィルタリングすることができる.</td>
 </tr>
 </tbody>
 </table>
-
-<h3 id="apiversionの調べ方">apiVersionの調べ方</h3>
+<h3 id="apiversion">apiVersionの調べ方</h3>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl api-resources <span style="color:#586e75"># リソースとAPIGROUPの対応を調べる</span>
-kubectl api-versions <span style="color:#586e75"># APIGROUPで利用可能なversionを調べる</span></code></pre></div>
-<table>
+kubectl api-versions <span style="color:#586e75"># APIGROUPで利用可能なversionを調べる</span>
+</code></pre></div><table>
 <thead>
 <tr>
 <th>APIGROUPあるなし</th>
@@ -399,148 +347,130 @@ kubectl api-versions <span style="color:#586e75"># APIGROUPで利用可能なver
 <th>書き方</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>APIGROUPがあるとき</td>
 <td>→</td>
 <td>apiVersion: (APIGROUP)/(APIVERSION)</td>
 </tr>
-
 <tr>
 <td>APIGROUPがないとき(= Core groupに属する)</td>
 <td>→</td>
 <td>apiVersion: v1</td>
 </tr>
+<tr>
+<td><strong>Reference:</strong> <a href="https://qiita.com/soymsk/items/69aeaa7945fe1f875822">Kubernetesの apiVersion に何を書けばいいか</a></td>
+<td></td>
+<td></td>
+</tr>
 </tbody>
 </table>
-
-<p><strong>Reference:</strong> <a href="https://qiita.com/soymsk/items/69aeaa7945fe1f875822">Kubernetesの apiVersion に何を書けばいいか</a></p>
-
-<h3 id="serviceのtype4種類">ServiceのType4種類</h3>
-
+<h3 id="servicetype4">ServiceのType4種類</h3>
 <ul>
-<li><strong>ClusterIp</strong>
-
-<ul>
+<li><strong>ClusterIp</strong></li>
 <li>クラスタ内のIPにServiceを公開する.</li>
 <li>この値ではServiceはクラスタ内からのみアクセス可能.</li>
 <li>デフォルトはこれ.</li>
-</ul></li>
-<li><strong>NodePort</strong>
-
-<ul>
+<li><strong>NodePort</strong></li>
 <li>各ノードのIP上のServiceを静的ポート(NordPort)に公開する.</li>
 <li>NodePort ServiceがルーティングするClusterIP Serviceが自動的に作成される.</li>
 <li><code>NodeIp: NordPort</code>を要求することで, クラスタ外からNordPort Serviceにアクセスできる.</li>
-</ul></li>
-<li><strong>LoadBalancer</strong>
-
-<ul>
+<li><strong>LoadBalancer</strong></li>
 <li>クラウドプロバイダのロードバランサを使用して外部にServiceを公開する.</li>
 <li>外部ロードバランサがルーティングするNordPort ServiceとClusterIP Serviceが自動的に作成される.</li>
-</ul></li>
-<li><strong>ExternalName</strong>
-
-<ul>
+<li><strong>ExternalName</strong></li>
 <li>値を含むCNAMEレコードを返すことにより, ServiceをexternalNameフィールドのコンテンツ(たとえば, foo.bar.example.com)にマッピングする.</li>
 <li>この場合, どのような種類のプロキシも設定されない.</li>
 <li>この型を使うには, バージョン1.7以上のkube-dnsが必要.</li>
-</ul></li>
 </ul>
-
 <p><strong>Reference:</strong> <a href="https://qiita.com/kouares/items/94a073baed9dffe86ea0">Kubernetesの Service についてまとめてみた</a></p>
-
-<h3 id="persistentvolumeclaimのaccessmodes3種類">PersistentVolumeClaimのaccessModes3種類</h3>
-
+<h3 id="persistentvolumeclaimaccessmodes3">PersistentVolumeClaimのaccessModes3種類</h3>
 <ul>
-<li><strong>PeadWriteOnce</strong>
-
-<ul>
+<li><strong>PeadWriteOnce</strong></li>
 <li>1つのノードが読み書き可能</li>
-</ul></li>
-<li><strong>ReadOnlyMany</strong>
-
-<ul>
+<li><strong>ReadOnlyMany</strong></li>
 <li>複数のノードが読み込みだけ可能</li>
-</ul></li>
-<li><strong>ReadWriteMany</strong>
-
-<ul>
+<li><strong>ReadWriteMany</strong></li>
 <li>複数のノードから読み書き可能</li>
-</ul></li>
 </ul>
-
-<h3 id="storageclassの一覧">StorageClassの一覧</h3>
-
+<h3 id="storageclass">StorageClassの一覧</h3>
 <ul>
 <li><a href="https://kubernetes.io/docs/concepts/storage/storage-classes/#the-storageclass-resource">The StorageClass Resource</a></li>
 </ul>
-
-<h3 id="volumemountsのsubpath">volumeMountsのsubPath</h3>
-
+<h3 id="volumemountssubpath">volumeMountsのsubPath</h3>
 <p><code>subPath</code>を指定してあげると<code>volume</code>をルートディレクトリからマウントしないで, サブディレクトリからマウントする.
 <code>volume</code>をそんなに使わない時にオススメ.</p>
-
 <p><strong>Reference:</strong> <a href="https://qiita.com/MahoTakara/items/fbe5ffb9fd9b9d35ddbe">永続ストレージのサブディレクトリにマウントする方法</a></p>
-
-<h2 id="macのローカル環境で動かす">Macのローカル環境で動かす</h2>
-
+<h2 id="mac">Macのローカル環境で動かす</h2>
 <ol>
 <li><a href="https://brew.sh">https://brew.sh</a> からbrewをインストールする.</li>
-<li><code>brew install kubernetes-cli</code>をターミナルで実行する.
-
+</ol>
+<ul>
+<li>
+<p><code>brew install kubernetes-cli</code>をターミナルで実行する.</p>
 <ul>
 <li><code>kubectl</code>はKubernetesのmasterを動かすもの.</li>
-</ul></li>
-<li><a href="https://www.virtualbox.org">https://www.virtualbox.org</a> からMac用のVirtualBoxをインストールする.
-
+</ul>
+</li>
+<li>
+<p><a href="https://www.virtualbox.org">https://www.virtualbox.org</a> からMac用のVirtualBoxをインストールする.</p>
 <ul>
 <li>VirtualBoxはコンテナ群を動かす環境.</li>
-</ul></li>
-<li><code>brew cask install minikube</code>をターミナルで実行する.
-
+</ul>
+</li>
+<li>
+<p><code>brew cask install minikube</code>をターミナルで実行する.</p>
 <ul>
 <li><code>minikube</code>はコンテナをVM上で動かすもの.</li>
-</ul></li>
-<li><code>minikube start</code>をターミナルで実行する.</li>
-</ol>
-
-<ul>
-<li><strong>References:</strong>
-
-<ul>
-<li><a href="https://kubernetes.io/docs/tasks/tools/install-kubectl/">https://kubernetes.io/docs/tasks/tools/install-kubectl/</a></li>
-<li><a href="https://www.virtualbox.org/wiki/Downloads">https://www.virtualbox.org/wiki/Downloads</a></li>
-<li><a href="https://kubernetes.io/docs/tasks/tools/install-minikube/">https://kubernetes.io/docs/tasks/tools/install-minikube/</a></li>
-</ul></li>
 </ul>
-
-<h2 id="ubuntuのローカル環境で動かす">Ubuntuのローカル環境で動かす</h2>
-
+</li>
+<li>
+<p><code>minikube start</code>をターミナルで実行する.</p>
+</li>
+<li>
+<p><strong>References:</strong></p>
+</li>
+<li>
+<p><a href="https://kubernetes.io/docs/tasks/tools/install-kubectl/">https://kubernetes.io/docs/tasks/tools/install-kubectl/</a></p>
+</li>
+<li>
+<p><a href="https://www.virtualbox.org/wiki/Downloads">https://www.virtualbox.org/wiki/Downloads</a></p>
+</li>
+<li>
+<p><a href="https://kubernetes.io/docs/tasks/tools/install-minikube/">https://kubernetes.io/docs/tasks/tools/install-minikube/</a></p>
+</li>
+</ul>
+<h2 id="ubuntu">Ubuntuのローカル環境で動かす</h2>
 <ol>
 <li><code>kubectl</code>をインストールする.</li>
-<li>VirtualBoxをインストールする.</li>
-<li><code>minikube</code>をインストールする.</li>
 </ol>
-
 <ul>
-<li><strong>References:</strong>
-
-<ul>
-<li><a href="https://kubernetes.io/docs/tasks/tools/install-kubectl/">https://kubernetes.io/docs/tasks/tools/install-kubectl/</a></li>
-<li><a href="https://www.virtualbox.org/wiki/Downloads">https://www.virtualbox.org/wiki/Downloads</a></li>
-<li><a href="https://kubernetes.io/docs/tasks/tools/install-minikube/">https://kubernetes.io/docs/tasks/tools/install-minikube/</a></li>
-</ul></li>
+<li>
+<p>VirtualBoxをインストールする.</p>
+</li>
+<li>
+<p><code>minikube</code>をインストールする.</p>
+</li>
+<li>
+<p><strong>References:</strong></p>
+</li>
+<li>
+<p><a href="https://kubernetes.io/docs/tasks/tools/install-kubectl/">https://kubernetes.io/docs/tasks/tools/install-kubectl/</a></p>
+</li>
+<li>
+<p><a href="https://www.virtualbox.org/wiki/Downloads">https://www.virtualbox.org/wiki/Downloads</a></p>
+</li>
+<li>
+<p><a href="https://kubernetes.io/docs/tasks/tools/install-minikube/">https://kubernetes.io/docs/tasks/tools/install-minikube/</a></p>
+</li>
 </ul>
-
-<h3 id="minikube-の使い方"><code>minikube</code>の使い方</h3>
+<h3 id="minikube"><code>minikube</code>の使い方</h3>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">minikube status <span style="color:#586e75"># 動いているか確認</span>
 minikube start <span style="color:#586e75"># minikubeをスタート</span>
 minikube ip <span style="color:#586e75"># ipを確認</span>
 minikube dashboard <span style="color:#586e75"># ダッシュボード出現</span>
-minikube docker-env <span style="color:#586e75"># 環境変数を出力</span></code></pre></div>
-<h3 id="kubectl-の使い方"><code>kubectl</code>の使い方</h3>
+minikube docker-env <span style="color:#586e75"># 環境変数を出力</span>
+</code></pre></div><h3 id="kubectl"><code>kubectl</code>の使い方</h3>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl apply -f client-pod.yaml <span style="color:#586e75"># オブジェクトの新規作成・差分反映</span>
 kubectl get pods <span style="color:#586e75"># 動いているpodを確認</span>
 kubectl get deployments <span style="color:#586e75"># 動いているdeploymentを確認</span>
@@ -560,30 +490,27 @@ kubectl get secret <span style="color:#586e75"># secret一覧を表示</span>
 <span style="color:#586e75"># 以下2つはGKEでユーザーの権限を与える時に使用</span>
 kubectl create serviceaccount --namespace kube-system tiller <span style="color:#586e75"># tillerというサービスアカウントを作成</span>
 kubectl create clusterrolebinding tiller-cluster-rule --clusterrole<span style="color:#719e07">=</span>cluster-ad
-min --serviceaccount<span style="color:#719e07">=</span>kube-system:tiller</code></pre></div>
-<h3 id="自分のpcからvmにアクセスしてdockerコンテナを見る方法">自分のPCからVMにアクセスしてDockerコンテナを見る方法</h3>
+min --serviceaccount<span style="color:#719e07">=</span>kube-system:tiller
+</code></pre></div><h3 id="pcvmdocker">自分のPCからVMにアクセスしてDockerコンテナを見る方法</h3>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#b58900">eval</span> <span style="color:#719e07">$(</span>minikube docker-env<span style="color:#719e07">)</span>
-docker ps</code></pre></div>
-<h2 id="1度デプロイしたイメージのバージョンアップ方法">1度デプロイしたイメージのバージョンアップ方法</h2>
-
-<p>Kubernetesでは<code>latest</code>タグイメージの運用は適切なロールバックを行うことが難しいので推奨されていない.<br />
+docker ps
+</code></pre></div><h2 id="1">1度デプロイしたイメージのバージョンアップ方法</h2>
+<p>Kubernetesでは<code>latest</code>タグイメージの運用は適切なロールバックを行うことが難しいので推奨されていない.<br>
 ので, できる限り<code>Vsersion</code>, もしくは<code>digest</code>でイメージ指定を行うようにする.</p>
-
 <p>以下のようにDocker Hubにバージョンを指定してpushし,</p>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker build -t solareenlo/multi-client:v5
-docker push solareenlo/multi-client:v5</code></pre></div>
-<p>以下のようにコマンドラインからイメージのバージョンアップを行う.</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl <span style="color:#b58900">set</span> image deployment/client-deployment <span style="color:#268bd2">client</span><span style="color:#719e07">=</span>solareenlo/multi-client:v5</code></pre></div>
-<h2 id="イメージのバージョンにgitのshaを使う">イメージのバージョンにgitのshaを使う</h2>
-
+docker push solareenlo/multi-client:v5
+</code></pre></div><p>以下のようにコマンドラインからイメージのバージョンアップを行う.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl <span style="color:#b58900">set</span> image deployment/client-deployment <span style="color:#268bd2">client</span><span style="color:#719e07">=</span>solareenlo/multi-client:v5
+</code></pre></div><h2 id="gitsha">イメージのバージョンにgitのshaを使う</h2>
 <p>以下の様に<code>.travis.yml</code>に<code>$SHA</code>を設定して,</p>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">sudo: required
 services:
   - docker
 env:
   global:
-    - SHA=$(git rev-parse HEAD)</code></pre></div>
-<p>以下の様に<code>build</code>, <code>push</code>, <code>set</code>を行うと良い.</p>
+    - SHA=$(git rev-parse HEAD)
+</code></pre></div><p>以下の様に<code>build</code>, <code>push</code>, <code>set</code>を行うと良い.</p>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker build -t solareenlo/multi-client:latest -t solareenlo/multi-client:<span style="color:#268bd2">$SHA</span> -f ./client/Dockerfile ./client
 docker build -t solareenlo/multi-server:latest -t solareenlo/multi-server:<span style="color:#268bd2">$SHA</span> -f ./server/Dockerfile ./server
 docker build -t solareenlo/multi-worker:latest -t solareenlo/multi-worker:<span style="color:#268bd2">$SHA</span> -f ./worker/Dockerfile ./worker
@@ -599,41 +526,31 @@ docker push solareenlo/multi-worker:<span style="color:#268bd2">$SHA</span>
 kubectl apply -f k8s
 kubectl <span style="color:#b58900">set</span> image solareenlo/server-deployment <span style="color:#268bd2">server</span><span style="color:#719e07">=</span>solareenlo/multi-server:<span style="color:#268bd2">$SHA</span>
 kubectl <span style="color:#b58900">set</span> image solareenlo/client-deployment <span style="color:#268bd2">client</span><span style="color:#719e07">=</span>solareenlo/multi-client:<span style="color:#268bd2">$SHA</span>
-kubectl <span style="color:#b58900">set</span> image solareenlo/worker-deployment <span style="color:#268bd2">worker</span><span style="color:#719e07">=</span>solareenlo/multi-worker:<span style="color:#268bd2">$SHA</span></code></pre></div>
-<h2 id="ローカルで動かした例">ローカルで動かした例</h2>
-
+kubectl <span style="color:#b58900">set</span> image solareenlo/worker-deployment <span style="color:#268bd2">worker</span><span style="color:#719e07">=</span>solareenlo/multi-worker:<span style="color:#268bd2">$SHA</span>
+</code></pre></div><h2 id="heading2">ローカルで動かした例</h2>
 <ul>
 <li><a href="https://github.com/solareenlo/complex-k8s-local">solareenlo/complex-k8s-local</a></li>
 </ul>
-
-<h2 id="gkeで動かした例">GKEで動かした例</h2>
-
+<h2 id="gke">GKEで動かした例</h2>
 <ul>
 <li><a href="https://github.com/solareenlo/multi-k8s-gke">solareenlo/multi-k8s-gke</a></li>
 </ul>
-
 <h2 id="tls">TLS</h2>
-
 <ul>
 <li><a href="https://github.com/jetstack/cert-manager">jetstack/cert-manager</a></li>
 </ul>
-
-<h2 id="良書">良書</h2>
-
+<h2 id="heading3">良書</h2>
 <ul>
 <li><a href="https://pages.cloud.vmware.com/cloud-native-infrastructure-ebook">Cloud Native Infrastructure</a></li>
 <li><a href="https://pages.cloud.vmware.com/kubernetes-up-and-running-ebook">Kubernetes Up &amp; Running</a></li>
 <li><a href="https://pages.cloud.vmware.com/managing-kubernetes-ebook">Managing Kubernetes</a></li>
 </ul>
-
 <h1 id="helm">Helm</h1>
-
 <ul>
 <li>Kubernetesのパッケージ管理ツール.</li>
 <li>デフォルトで使用可能なChartは<code>kubernetes/charts</code>の<code>stable</code>ディレクトリで確認可能.</li>
 <li><strong>GitHubリポジトリ:</strong> <a href="https://github.com/helm/helm">https://github.com/helm/helm</a></li>
 </ul>
-
 <table>
 <thead>
 <tr>
@@ -642,38 +559,32 @@ kubectl <span style="color:#b58900">set</span> image solareenlo/worker-deploymen
 <th>役割</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>helm</td>
 <td>船のかじ</td>
 <td>Kubernetesのパッケージマネージャー.</td>
 </tr>
-
 <tr>
 <td>chart</td>
 <td>海図</td>
 <td>Kubernetesのマニフェストのテンプレートをまとめたもの.</td>
 </tr>
-
 <tr>
 <td>tiller</td>
 <td>舵柄</td>
 <td>デプロイを担うサーバーコンポーネント.</td>
 </tr>
-
 <tr>
 <td>package</td>
 <td>-</td>
-<td>1つのアプリケーションとして成り立つchartの単位.<br>この単位でデプロイを行う.</td>
+<td>1つのアプリケーションとして成り立つchartの単位.<!-- raw HTML omitted -->この単位でデプロイを行う.</td>
 </tr>
-
 <tr>
 <td>release</td>
 <td>-</td>
 <td>packageがデプロイされて, k8s上でpodとして実際に動作しているもの.</td>
 </tr>
-
 <tr>
 <td>repository</td>
 <td>-</td>
@@ -681,42 +592,40 @@ kubectl <span style="color:#b58900">set</span> image solareenlo/worker-deploymen
 </tr>
 </tbody>
 </table>
-
 <ul>
-<li><strong>Reference:</strong>
-
-<ul>
+<li><strong>Reference:</strong></li>
 <li><a href="https://qiita.com/tkusumi/items/12857780d8c8463f9b9c">Kubernetes: パッケージマネージャHelm</a></li>
 <li><a href="https://y-ohgi.hatenablog.com/entry/2018/05/21/010839">helm覚書</a></li>
-<li><a href="https://qiita.com/Ladicle/items/63cad824e27aa8aac7e1#構成と通信方法">helmの過去、現在、未来</a></li>
+<li><a href="https://qiita.com/Ladicle/items/63cad824e27aa8aac7e1#%E6%A7%8B%E6%88%90%E3%81%A8%E9%80%9A%E4%BF%A1%E6%96%B9%E6%B3%95">helmの過去、現在、未来</a></li>
 <li><a href="https://qiita.com/thinksphere/items/5f3e918015cf4e63a0bc">Helmの概要とChart(チャート)の作り方</a></li>
-</ul></li>
 </ul>
 </article>
 
-      
-<div class="book-footer justify-between">
+      <div class="book-footer justify-between">
+  
+
+  
   
   <div>
     
-    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/commit/9c605da8d0120eb15f31ca43607e47f2a9b3bed8" title='Last modified May 18, 2019 by solareenlo' target="_blank" rel="noopener">
-      <img src="/svg/calendar.svg" alt="Changed" />
+    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/commit/9c605da8d0120eb15f31ca43607e47f2a9b3bed8" title='Last modified by solareenlo | May 18, 2019' target="_blank">
+      <img src="/svg/calendar.svg" alt="Calendar" />
       <span>May 18, 2019</span>
     </a>
   </div>
   
   
+
+  
   <div>
-    
-    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/edit/master/content/docs/kubernetes.md" target="_blank" rel="noopener">
+    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/edit/master/content/docs/kubernetes.md" target="_blank">
       <img src="/svg/edit.svg" alt="Edit" />
       <span>Edit this page</span>
     </a>
-    
   </div>
   
-</div>
 
+</div>
 
       
     </div>
@@ -726,36 +635,34 @@ kubectl <span style="color:#b58900">set</span> image solareenlo/worker-deploymen
 
   <aside class="book-toc levels-3 fixed">
     <nav id="TableOfContents">
-<ul>
-<li><a href="#kubernetesとは">Kubernetesとは</a>
-<ul>
-<li><a href="#他のオーケストレーションと違うところ">他のオーケストレーションと違うところ</a></li>
-<li><a href="#docker-composeとの違い">Docker Composeとの違い</a></li>
-<li><a href="#用語集">用語集</a></li>
-<li><a href="#yaml内の用語集">yaml内の用語集</a>
-<ul>
-<li><a href="#apiversionの調べ方">apiVersionの調べ方</a></li>
-<li><a href="#serviceのtype4種類">ServiceのType4種類</a></li>
-<li><a href="#persistentvolumeclaimのaccessmodes3種類">PersistentVolumeClaimのaccessModes3種類</a></li>
-<li><a href="#storageclassの一覧">StorageClassの一覧</a></li>
-<li><a href="#volumemountsのsubpath">volumeMountsのsubPath</a></li>
-</ul></li>
-<li><a href="#macのローカル環境で動かす">Macのローカル環境で動かす</a></li>
-<li><a href="#ubuntuのローカル環境で動かす">Ubuntuのローカル環境で動かす</a>
-<ul>
-<li><a href="#minikube-の使い方"><code>minikube</code>の使い方</a></li>
-<li><a href="#kubectl-の使い方"><code>kubectl</code>の使い方</a></li>
-<li><a href="#自分のpcからvmにアクセスしてdockerコンテナを見る方法">自分のPCからVMにアクセスしてDockerコンテナを見る方法</a></li>
-</ul></li>
-<li><a href="#1度デプロイしたイメージのバージョンアップ方法">1度デプロイしたイメージのバージョンアップ方法</a></li>
-<li><a href="#イメージのバージョンにgitのshaを使う">イメージのバージョンにgitのshaを使う</a></li>
-<li><a href="#ローカルで動かした例">ローカルで動かした例</a></li>
-<li><a href="#gkeで動かした例">GKEで動かした例</a></li>
-<li><a href="#tls">TLS</a></li>
-<li><a href="#良書">良書</a></li>
-</ul></li>
-<li><a href="#helm">Helm</a></li>
-</ul>
+  <ul>
+    <li><a href="#heading">他のオーケストレーションと違うところ</a></li>
+    <li><a href="#docker-compose">Docker Composeとの違い</a></li>
+    <li><a href="#heading1">用語集</a></li>
+    <li><a href="#yaml">yaml内の用語集</a>
+      <ul>
+        <li><a href="#apiversion">apiVersionの調べ方</a></li>
+        <li><a href="#servicetype4">ServiceのType4種類</a></li>
+        <li><a href="#persistentvolumeclaimaccessmodes3">PersistentVolumeClaimのaccessModes3種類</a></li>
+        <li><a href="#storageclass">StorageClassの一覧</a></li>
+        <li><a href="#volumemountssubpath">volumeMountsのsubPath</a></li>
+      </ul>
+    </li>
+    <li><a href="#mac">Macのローカル環境で動かす</a></li>
+    <li><a href="#ubuntu">Ubuntuのローカル環境で動かす</a>
+      <ul>
+        <li><a href="#minikube">minikubeの使い方</a></li>
+        <li><a href="#kubectl">kubectlの使い方</a></li>
+        <li><a href="#pcvmdocker">自分のPCからVMにアクセスしてDockerコンテナを見る方法</a></li>
+      </ul>
+    </li>
+    <li><a href="#1">1度デプロイしたイメージのバージョンアップ方法</a></li>
+    <li><a href="#gitsha">イメージのバージョンにgitのshaを使う</a></li>
+    <li><a href="#heading2">ローカルで動かした例</a></li>
+    <li><a href="#gke">GKEで動かした例</a></li>
+    <li><a href="#tls">TLS</a></li>
+    <li><a href="#heading3">良書</a></li>
+  </ul>
 </nav>
   </aside>
 

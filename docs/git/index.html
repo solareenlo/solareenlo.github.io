@@ -3,7 +3,8 @@
 
 <head>
   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><meta property="og:title" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Git"><meta property="og:title" content="" />
 <meta property="og:description" content="Gitとは  プログラムのソースコードなどの変更履歴を記録・追跡するための分散型バージョン管理システムのこと. 公式サイト: https://git-scm.com  gitの構成  作業ディレクトリ ステージングエリア（インデックス） リポジトリ（ローカル, リモート）  git補完 Reference: 「Git補完をしらない」「git statusを1日100回は使う」そんなあなたに朗報【git-completionとgit-prompt】
 git-completion.bashをインストール git-completion.bash: gitコマンドの補完スクリプト. Tabで保管できる.
 wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -O ~/.git-completion.bash chmod a&#43;x ~/.git-completion.bash echo &#34;source ~/.git-completion.bash&#34; &gt;&gt; ~/.bashrc source ~/.bashrc git-prompt.shのインストール git-prompt.sh: プロンプトに各種追加情報を表示可能にするスクリプト.
@@ -17,10 +18,10 @@ source ~/.bashrc branch local branchから新branch作成 cd ディレクトリ 
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 
 
-<link rel="stylesheet" href="/book.min.7cf03b0e46415b9c8bbde01f69a283955eaa7d987607761a9a05cced394503a1.css" integrity="sha256-fPA7DkZBW5yLveAfaaKDlV6qfZh2B3YamgXM7TlFA6E=">
+<link rel="stylesheet" href="/book.min.0d8f55f751a5f22793c02b19a8a0822122d183a7e99645f6b428174dd3eeec94.css" integrity="sha256-DY9V91Gl8ieTwCsZqKCCISLRg6fplkX2tCgXTdPu7JQ=">
 
 
-<script defer src="/search.min.25dacf0d4e6ef2c0b14ef2bc90d4b36af703a3013ebd9efd7d1dbe17a7492b4d.js" integrity="sha256-JdrPDU5u8sCxTvK8kNSzavcDowE&#43;vZ79fR2&#43;F6dJK00="></script>
+<script defer src="/en.search.min.0de8e26fe8b38f83ff163b7738b4abcdbbe90ae41f3d554ee92aed704668dc09.js" integrity="sha256-Dejib&#43;izj4P/Fjt3OLSrzbvpCuQfPVVO6SrtcEZo3Ak="></script>
 
 <!--
 Made with Book Theme
@@ -43,7 +44,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 <div class="book-search">
-  <input type="text" placeholder="Search" id="book-search-input" maxlength="64" />
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
   <div class="book-search-spinner spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
@@ -56,7 +57,6 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/"><strong>はじめに</strong></a></li>
 <li><a href="/posts/"><strong>Blog</strong></a></li>
 <li><a href="/docs/programming/"><strong>Programming</strong></a>
-
 <ul>
 <li><a href="/docs/terminal/">Terminal</a></li>
 <li><a href="/docs/command/">Command</a></li>
@@ -69,9 +69,9 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/linter-formatter/">Linter/Formatter</a></li>
 <li><a href="/docs/test/">Test</a></li>
 <li><a href="/docs/password-manager/">Password Manager</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/programming-language/"><strong>Programming Language</strong></a>
-
 <ul>
 <li><a href="/docs/c/">C</a></li>
 <li><a href="/docs/rust/">Rust</a></li>
@@ -86,52 +86,52 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/haskell/">Haskell</a></li>
 <li><a href="/docs/hugo/">Hugo</a></li>
 <li><a href="/docs/programming-language-docs/">Docs</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/latex/"><strong>LaTeX</strong></a>
-
 <ul>
 <li><a href="/docs/platex-book/">Book</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/vps/"><strong>VPS</strong></a>
-
 <ul>
 <li><a href="/docs/ssh/">SSH</a></li>
 <li><a href="/docs/ubuntu/">Ubuntu</a></li>
 <li><a href="/docs/alpine-linux/">Alpine Linux</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/db/"><strong>DB</strong></a>
-
 <ul>
 <li><a href="/docs/mysql/">MySQL</a></li>
 <li><a href="/docs/mongodb/">MongoDB</a></li>
 <li><a href="/docs/redis/">Redis</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/cloud/"><strong>Cloud</strong></a>
-
 <ul>
 <li><a href="/docs/aws/">AWS</a></li>
 <li><a href="/docs/gcp/">GCP</a></li>
 <li><a href="/docs/firebase/">Firebase</a></li>
 <li><a href="/docs/zeit-now/">ZEIT Now</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/ci-cd/"><strong>CI/CD</strong></a>
-
 <ul>
 <li><a href="/docs/jenkins/">Jenkins</a></li>
 <li><a href="/docs/travis-ci/">Travis CI</a></li>
 <li><a href="/docs/circleci/">CircleCI</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/container/"><strong>Container</strong></a>
-
 <ul>
 <li><a href="/docs/docker1/">Docker1</a></li>
 <li><a href="/docs/docker2/">Docker2</a></li>
 <li><a href="/docs/docker-hub/">Docker Hub</a></li>
 <li><a href="/docs/docker-compose/">Docker Compose</a></li>
 <li><a href="/docs/kubernetes/">Kubernetes</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/crypto/"><strong>Crypto</strong></a>
-
 <ul>
 <li><a href="/docs/blockchain/">Blockchain</a></li>
 <li><a href="/docs/bitcoin/">Bitcoin</a></li>
@@ -141,7 +141,8 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/substrate/">Substrate</a></li>
 <li><a href="/docs/white-paper/">White Paper</a></li>
 <li><a href="/docs/crypto-docs/">Docs</a></li>
-</ul></li>
+</ul>
+</li>
 </ul>
 
 
@@ -172,41 +173,31 @@ https://github.com/alex-shpak/hugo-book
 </header>
 
       
-<article class="markdown">
-
-<h1 id="gitとは">Gitとは</h1>
-
+<article class="markdown"><h1 id="git">Gitとは</h1>
 <ul>
 <li>プログラムのソースコードなどの変更履歴を記録・追跡するための分散型バージョン管理システムのこと.</li>
 <li><strong>公式サイト:</strong> <a href="https://git-scm.com">https://git-scm.com</a></li>
 </ul>
-
-<h2 id="gitの構成">gitの構成</h2>
-
+<h2 id="git1">gitの構成</h2>
 <ul>
 <li>作業ディレクトリ</li>
 <li>ステージングエリア（インデックス）</li>
 <li>リポジトリ（ローカル, リモート）</li>
 </ul>
-
-<h2 id="git補完">git補完</h2>
-
+<h2 id="git2">git補完</h2>
 <p><strong>Reference:</strong> <a href="https://qiita.com/varmil/items/9b0aeafa85975474e9b6">「Git補完をしらない」「git statusを1日100回は使う」そんなあなたに朗報【git-completionとgit-prompt】</a></p>
-
-<h3 id="git-completion-bash-をインストール"><code>git-completion.bash</code>をインストール</h3>
-
+<h3 id="gitcompletionbash"><code>git-completion.bash</code>をインストール</h3>
 <p><code>git-completion.bash</code>: gitコマンドの補完スクリプト.
 Tabで保管できる.</p>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -O ~/.git-completion.bash
 chmod a+x ~/.git-completion.bash
 <span style="color:#b58900">echo</span> <span style="color:#2aa198">&#34;source ~/.git-completion.bash&#34;</span> &gt;&gt; ~/.bashrc
-<span style="color:#b58900">source</span> ~/.bashrc</code></pre></div>
-<h3 id="git-prompt-sh-のインストール"><code>git-prompt.sh</code>のインストール</h3>
-
+<span style="color:#b58900">source</span> ~/.bashrc
+</code></pre></div><h3 id="gitpromptsh"><code>git-prompt.sh</code>のインストール</h3>
 <p><code>git-prompt.sh</code>: プロンプトに各種追加情報を表示可能にするスクリプト.</p>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -O ~/.git-prompt.sh
-chmod a+x ~/.git-prompt.sh</code></pre></div>
-<p>下記を一度にコピペしてエンターをして,</p>
+chmod a+x ~/.git-prompt.sh
+</code></pre></div><p>下記を一度にコピペしてエンターをして,</p>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat <span style="color:#2aa198">&lt;&lt; EOF | tee -a ~/.bashrc &gt; /dev/null
 </span><span style="color:#2aa198">source ~/.git-prompt.sh
 </span><span style="color:#2aa198">GIT_PS1_SHOWDIRTYSTATE=true
@@ -214,84 +205,74 @@ chmod a+x ~/.git-prompt.sh</code></pre></div>
 </span><span style="color:#2aa198">GIT_PS1_SHOWUNTRACKEDFILES=true
 </span><span style="color:#2aa198">GIT_PS1_SHOWUPSTREAM=&#34;auto&#34;
 </span><span style="color:#2aa198">GIT_PS1_SHOWCOLORHINTS=true
-</span><span style="color:#2aa198">EOF</span></code></pre></div>
-<p>下記を実行する.</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#b58900">source</span> ~/.bashrc</code></pre></div>
-<h2 id="branch">branch</h2>
-
-<h3 id="local-branchから新branch作成">local branchから新branch作成</h3>
+</span><span style="color:#2aa198">EOF</span>
+</code></pre></div><p>下記を実行する.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#b58900">source</span> ~/.bashrc
+</code></pre></div><h2 id="branch">branch</h2>
+<h3 id="local-branchbranch">local branchから新branch作成</h3>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#b58900">cd</span> ディレクトリ <span style="color:#586e75"># 作業ディレクトリに移動</span>
 git branch -a <span style="color:#586e75"># branchの一覧を表示</span>
 git checkout master <span style="color:#586e75"># master branchに切り替え</span>
 git checkout -b 作成するbranch名 <span style="color:#586e75"># masterを元にして新しいbranchを作成</span>
 git branch -a
-git push -u origin 作成したbranch名 <span style="color:#586e75"># branchをremoteに登録</span></code></pre></div>
-<h3 id="リモートbranchから新branch作成">リモートbranchから新branch作成</h3>
+git push -u origin 作成したbranch名 <span style="color:#586e75"># branchをremoteに登録</span>
+</code></pre></div><h3 id="branchbranch">リモートbranchから新branch作成</h3>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#b58900">cd</span> ディレクトリ
 git checkout -b ローカルに作成するbranch名 origin/再生元のリモートbranch名
-git branch -a</code></pre></div>
-<h3 id="branchの削除">branchの削除</h3>
+git branch -a
+</code></pre></div><h3 id="branch1">branchの削除</h3>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#b58900">cd</span> 作業ティレクトり
 git checkout -b master <span style="color:#586e75"># 削除したいbranchとは違うbranchにまずは移動する</span>
 git branch --delete 削除したいbranch名 <span style="color:#586e75"># mergeしたbranchを削除</span>
-git branch -D 削除したいbranch名 <span style="color:#586e75"># mergeしたかどうかは問わずに削除</span></code></pre></div>
-<h2 id="remote">remote</h2>
-
-<h3 id="remoteから特定のbranchを指定してcloneする">remoteから特定のbranchを指定してcloneする</h3>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone -b japanese git@github.com:solareenlo/documentation.git</code></pre></div>
-<h3 id="remote-branch削除">remote branch削除</h3>
+git branch -D 削除したいbranch名 <span style="color:#586e75"># mergeしたかどうかは問わずに削除</span>
+</code></pre></div><h2 id="remote">remote</h2>
+<h3 id="remotebranchclone">remoteから特定のbranchを指定してcloneする</h3>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone -b japanese git@github.com:solareenlo/documentation.git
+</code></pre></div><h3 id="remote-branch">remote branch削除</h3>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git push --delete origin &lt;branch name&gt;
 <span style="color:#586e75"># リモートブランチがローカルに残っている場合は以下も行う</span>
-git fetch --prune</code></pre></div>
-<h2 id="commit">commit</h2>
-
-<h3 id="一時的に過去のcommitに戻る">一時的に過去のcommitに戻る</h3>
+git fetch --prune
+</code></pre></div><h2 id="commit">commit</h2>
+<h3 id="commit1">一時的に過去のcommitに戻る</h3>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># 戻りたいcommitのhash値を探す</span>
 git log --oneline
 <span style="color:#586e75"># 過去に戻る</span>
 git checkout &lt;commit hash&gt;
 <span style="color:#586e75"># 元に戻す</span>
-git checkout -f master</code></pre></div>
-<p><strong>Reference:</strong> <a href="https://tmytokai.github.io/open-ed/activity/git/text02/page09.html">9. 一時的に過去のコミットに戻る</a></p>
-
+git checkout -f master
+</code></pre></div><p><strong>Reference:</strong> <a href="https://tmytokai.github.io/open-ed/activity/git/text02/page09.html">9. 一時的に過去のコミットに戻る</a></p>
 <h2 id="submodule">submodule</h2>
-
-<h3 id="submoduleの追加">submoduleの追加</h3>
+<h3 id="submodule1">submoduleの追加</h3>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git submodule add -b &lt;リンク付けする方のbranch名&gt; &lt;リンク付けする方のURL&gt; &lt;リンク付けされるディレクトリ名&gt;
 <span style="color:#586e75"># 例</span>
-git submodule add -b master git@github.com:solareenlo/hugo-book.git themes/book</code></pre></div>
-<h3 id="submoduleの削除">submoduleの削除</h3>
+git submodule add -b master git@github.com:solareenlo/hugo-book.git themes/book
+</code></pre></div><h3 id="submodule2">submoduleの削除</h3>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># コミットの参照を削除</span>
 git submodule deinit themes/book
 <span style="color:#586e75"># .gitmodulesから削除</span>
-git rm themes/book</code></pre></div>
-<h3 id="submoduleも一緒にclone">submoduleも一緒にclone</h3>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone --recurse-submodules &lt;アドレス&gt;</code></pre></div>
-<h3 id="submoduleのcloneをし忘れたら">submoduleのcloneをし忘れたら</h3>
+git rm themes/book
+</code></pre></div><h3 id="submoduleclone">submoduleも一緒にclone</h3>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone --recurse-submodules &lt;アドレス&gt;
+</code></pre></div><h3 id="submoduleclone1">submoduleのcloneをし忘れたら</h3>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone &lt;アドレス&gt;
 <span style="color:#b58900">cd</span> &lt;ディレクトリ名&gt;
-git submodule update --init --recursive</code></pre></div>
-<h3 id="submoduleの更新">submoduleの更新</h3>
-
+git submodule update --init --recursive
+</code></pre></div><h3 id="submodule3">submoduleの更新</h3>
 <ul>
 <li>submodule側で更新して, pushする.</li>
 <li>取り込む側でpullする.</li>
 <li>取り込む側で<code>git submodule update</code>する.</li>
 </ul>
-
 <h2 id="fork">fork</h2>
-
-<h3 id="fork元の更新を取り込む">fork元の更新を取り込む</h3>
-
+<h3 id="fork1">fork元の更新を取り込む</h3>
 <p>対象のリポジトリをforkして, ローカルにcloneしているものとする.</p>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git remote add upstream git@github.com:alex-shpak/hugo-book.git
 git fetch upstream
 git checkout master
 git merge --ff upstream/master
-git push origin master</code></pre></div>
-<h1 id="基本操作">基本操作</h1>
-
-<h2 id="gitの設定">gitの設定</h2>
+git push origin master
+</code></pre></div><h1 id="heading">基本操作</h1>
+<h2 id="git3">gitの設定</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># ユーザー名を登録</span>
 git config --global user.name <span style="color:#2aa198">&#34;solareenlo&#34;</span>
 <span style="color:#586e75"># メールアドレスを登録</span>
@@ -306,8 +287,8 @@ git config -l
 git config --help
 <span style="color:#586e75"># 大文字・小文字を区別する</span>
 git config --global core.ignorecase <span style="color:#b58900">false</span>
-git config --system core.ignorecase false</code></pre></div>
-<h2 id="commit-1">commit</h2>
+git config --system core.ignorecase <span style="color:#b58900">false</span>
+</code></pre></div><h2 id="commit2">commit</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># gitの初期化</span>
 git init
 <span style="color:#586e75"># 作業ディレクトリからステージングエリアへ</span>
@@ -315,57 +296,57 @@ git add index.html
 <span style="color:#586e75"># ステージングエリアからリポジトリへ</span>
 git commit
 <span style="color:#586e75"># 変更のlogを見る</span>
-git log</code></pre></div>
-<h2 id="log">log</h2>
+git log
+</code></pre></div><h2 id="log">log</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># logをコンパクトに見る</span>
 git log --oneline
 <span style="color:#586e75"># logと共に変更内容も見る</span>
 git log -p
 <span style="color:#586e75"># どのファイルが変更なったかを見る</span>
-git log --stat</code></pre></div>
-<h2 id="現在の状態を把握する">現在の状態を把握する</h2>
+git log --stat
+</code></pre></div><h2 id="heading1">現在の状態を把握する</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># 現在の状態を見る</span>
 git status
 <span style="color:#586e75"># ファイルの変更を無かったことにする</span>
-git checkout -- index.html</code></pre></div>
-<h2 id="差分を確認する">差分を確認する</h2>
+git checkout -- index.html
+</code></pre></div><h2 id="heading2">差分を確認する</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># ファイルの差分を見る</span>
 git diff
 <span style="color:#586e75"># ステージングされたファイルの差分を見る</span>
-git diff --cached</code></pre></div>
-<h2 id="gitでのファイル操作">gitでのファイル操作</h2>
+git diff --cached
+</code></pre></div><h2 id="git4">gitでのファイル操作</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># 現在のディレクトリ以下全部のファイルをaddする</span>
 git add .
 <span style="color:#586e75"># gitでのファイル削除</span>
 git rm index.html
 <span style="color:#586e75"># gitでのファイル移動</span>
-git mv index.html</code></pre></div>
-<h2 id="gitの管理に含めない方法">gitの管理に含めない方法</h2>
+git mv index.html
+</code></pre></div><h2 id="git5">gitの管理に含めない方法</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># .gitignoreファイルを作り, その中にgitに含めないファイルを記述する</span>
 vim .gitignore
 *.log
 
 <span style="color:#586e75"># .gitignoreがある場所から遡ってはignoreされない.</span>
-<span style="color:#586e75"># ので, サブディレクトリだけ.gitignoreしたい場合は, サブディレクトリ内に.gitignoreを入れておく.</span></code></pre></div>
-<h2 id="直前のcommitを変更">直前のcommitを変更</h2>
+<span style="color:#586e75"># ので, サブディレクトリだけ.gitignoreしたい場合は, サブディレクトリ内に.gitignoreを入れておく.</span>
+</code></pre></div><h2 id="commit3">直前のcommitを変更</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># 1つcommitする</span>
 git commit -m <span style="color:#2aa198">&#39;コミットを1つ追加&#39;</span>
 <span style="color:#586e75"># 直前のcommitを上書きする</span>
 vim index.html
 git add .
-git commit --amend</code></pre></div>
-<h2 id="過去のバージョンに戻る-１">過去のバージョンに戻る（１）</h2>
+git commit --amend
+</code></pre></div><h2 id="heading3">過去のバージョンに戻る（１）</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># 作業ディレクトリもステージングエリアも直前のcommitへ戻す</span>
 git reset --hard HEAD
 <span style="color:#586e75"># 2つ前のcommitに戻る</span>
 git reset --hard HEAD^
 <span style="color:#586e75"># 指定したidにcommitを戻す</span>
-git reset --hard hash値<span style="color:#719e07">(</span>最低7桁<span style="color:#719e07">)</span></code></pre></div>
-<h2 id="過去のバージョンに戻る-２">過去のバージョンに戻る（２）</h2>
+git reset --hard hash値<span style="color:#719e07">(</span>最低7桁<span style="color:#719e07">)</span>
+</code></pre></div><h2 id="heading4">過去のバージョンに戻る（２）</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># commit変更したけど, やっぱり変更前のcommitに戻りたいときは</span>
 git reset --hard ORIG_HEAD
-<span style="color:#586e75"># ORIG_HEADには前回取り消されたHEADの情報が1つだけ入っている.</span></code></pre></div>
-<h2 id="branch-1">branch</h2>
+<span style="color:#586e75"># ORIG_HEADには前回取り消されたHEADの情報が1つだけ入っている.</span>
+</code></pre></div><h2 id="branch2">branch</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># 現在のbranchを確認する</span>
 git branch
 <span style="color:#586e75"># 新しいbranch hogeを作成する</span>
@@ -375,8 +356,8 @@ git checkout hoge
 git branch
 <span style="color:#586e75"># master branchに戻る</span>
 git checkout master
-git branch</code></pre></div>
-<h2 id="branchをmerge">branchをmerge</h2>
+git branch
+</code></pre></div><h2 id="branchmerge">branchをmerge</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># master branchにhoge branchをmergeさせたい</span>
 git checkout master
 git merge hoge
@@ -396,8 +377,8 @@ git stash list
 <span style="color:#586e75"># 退避させるたびに, この一覧の上に退避データが積み上がっていく.</span>
 <span style="color:#586e75"># 対比した内容を取り出すには</span>
 git stash pop
-<span style="color:#586e75"># 引数をつけない場合, listで表示された一番上の内容が取り出される.</span></code></pre></div>
-<h2 id="mergeの衝突を解消">mergeの衝突を解消</h2>
+<span style="color:#586e75"># 引数をつけない場合, listで表示された一番上の内容が取り出される.</span>
+</code></pre></div><h2 id="merge">mergeの衝突を解消</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># branch切って, すぐにhogeに移動する</span>
 git checkout -b hoge
 vim index.html
@@ -413,8 +394,8 @@ vim index.html
 <span style="color:#586e75"># index.htmlのいらないところを削除するだけ</span>
 <span style="color:#586e75"># hogeかmasterのどちらかの変更を残すということ.</span>
 git add .
-git comit -m <span style="color:#2aa198">&#39;conflictを解消したよ&#39;</span></code></pre></div>
-<h2 id="tag">tag</h2>
+git comit -m <span style="color:#2aa198">&#39;conflictを解消したよ&#39;</span>
+</code></pre></div><h2 id="tag">tag</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># 直前のcommitにidに代わるわかりやすいv1.0というtagを付ける</span>
 git tag v1.0
 <span style="color:#586e75"># tagを確認する</span>
@@ -424,8 +405,8 @@ git show v1.0
 <span style="color:#586e75"># 特定のcommitにtagを付ける</span>
 git tag v0.9 id<span style="color:#719e07">(</span>hash値<span style="color:#719e07">)</span>
 <span style="color:#586e75"># tagの削除</span>
-git -d v0.9</code></pre></div>
-<h2 id="エイリアス">エイリアス</h2>
+git -d v0.9
+</code></pre></div><h2 id="heading5">エイリアス</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git config --global alias.co checkout
 git config --global alias.st status
 git config --global alias.br branch
@@ -435,8 +416,8 @@ git config --global alias.a <span style="color:#2aa198">&#39;add .&#39;</span>
 <span style="color:#586e75"># エイリアスの確認</span>
 git config --global --list | grep ^alias<span style="color:#cb4b16">\.</span>
 <span style="color:#586e75"># 設定一覧</span>
-git config -l</code></pre></div>
-<h2 id="初めての共同作業">初めての共同作業</h2>
+git config -l
+</code></pre></div><h2 id="heading6">初めての共同作業</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># 共有リポジトリを作成</span>
 <span style="color:#586e75"># 共有リポジトリには.gitを付けるのが通例</span>
 mkdir ourweb.git
@@ -468,8 +449,8 @@ git push origin master
 
 <span style="color:#586e75"># 別のユーザーが上記の変更をpullする</span>
 git pull origin master
-git log</code></pre></div>
-<h2 id="共同作業でコンフリクトが起こったら">共同作業でコンフリクトが起こったら</h2>
+git log
+</code></pre></div><h2 id="heading7">共同作業でコンフリクトが起こったら</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># Aさんが先に変更を加えた</span>
 vim index.html
 git commit -am <span style="color:#2aa198">&#39;line 3 added&#39;</span>
@@ -484,35 +465,37 @@ git push origin master
 git pull origin master
 vim index.html
 git commit -am <span style="color:#2aa198">&#39;conflict fixed&#39;</span>
-git push origin master</code></pre></div>
-<h2 id="git-rev-parse">git rev-parse</h2>
-
+git push origin master
+</code></pre></div><h2 id="git-revparse">git rev-parse</h2>
 <p>機能がたくさんあるが, ここではHEADのダイジェスト返してくれる方法.</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git rev-parse HEAD</code></pre></div></article>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git rev-parse HEAD
+</code></pre></div></article>
 
-      
-<div class="book-footer justify-between">
+      <div class="book-footer justify-between">
+  
+
+  
   
   <div>
     
-    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/commit/b5b33065cda4a559357a0f6d084f1fb45d616f4d" title='Last modified Aug 5, 2019 by solareenlo' target="_blank" rel="noopener">
-      <img src="/svg/calendar.svg" alt="Changed" />
+    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/commit/b5b33065cda4a559357a0f6d084f1fb45d616f4d" title='Last modified by solareenlo | Aug 5, 2019' target="_blank">
+      <img src="/svg/calendar.svg" alt="Calendar" />
       <span>Aug 5, 2019</span>
     </a>
   </div>
   
   
+
+  
   <div>
-    
-    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/edit/master/content/docs/git.md" target="_blank" rel="noopener">
+    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/edit/master/content/docs/git.md" target="_blank">
       <img src="/svg/edit.svg" alt="Edit" />
       <span>Edit this page</span>
     </a>
-    
   </div>
   
-</div>
 
+</div>
 
       
     </div>
@@ -522,65 +505,68 @@ git push origin master</code></pre></div>
 
   <aside class="book-toc levels-3 fixed">
     <nav id="TableOfContents">
-<ul>
-<li><a href="#gitとは">Gitとは</a>
-<ul>
-<li><a href="#gitの構成">gitの構成</a></li>
-<li><a href="#git補完">git補完</a>
-<ul>
-<li><a href="#git-completion-bash-をインストール"><code>git-completion.bash</code>をインストール</a></li>
-<li><a href="#git-prompt-sh-のインストール"><code>git-prompt.sh</code>のインストール</a></li>
-</ul></li>
-<li><a href="#branch">branch</a>
-<ul>
-<li><a href="#local-branchから新branch作成">local branchから新branch作成</a></li>
-<li><a href="#リモートbranchから新branch作成">リモートbranchから新branch作成</a></li>
-<li><a href="#branchの削除">branchの削除</a></li>
-</ul></li>
-<li><a href="#remote">remote</a>
-<ul>
-<li><a href="#remoteから特定のbranchを指定してcloneする">remoteから特定のbranchを指定してcloneする</a></li>
-<li><a href="#remote-branch削除">remote branch削除</a></li>
-</ul></li>
-<li><a href="#commit">commit</a>
-<ul>
-<li><a href="#一時的に過去のcommitに戻る">一時的に過去のcommitに戻る</a></li>
-</ul></li>
-<li><a href="#submodule">submodule</a>
-<ul>
-<li><a href="#submoduleの追加">submoduleの追加</a></li>
-<li><a href="#submoduleの削除">submoduleの削除</a></li>
-<li><a href="#submoduleも一緒にclone">submoduleも一緒にclone</a></li>
-<li><a href="#submoduleのcloneをし忘れたら">submoduleのcloneをし忘れたら</a></li>
-<li><a href="#submoduleの更新">submoduleの更新</a></li>
-</ul></li>
-<li><a href="#fork">fork</a>
-<ul>
-<li><a href="#fork元の更新を取り込む">fork元の更新を取り込む</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#基本操作">基本操作</a>
-<ul>
-<li><a href="#gitの設定">gitの設定</a></li>
-<li><a href="#commit-1">commit</a></li>
-<li><a href="#log">log</a></li>
-<li><a href="#現在の状態を把握する">現在の状態を把握する</a></li>
-<li><a href="#差分を確認する">差分を確認する</a></li>
-<li><a href="#gitでのファイル操作">gitでのファイル操作</a></li>
-<li><a href="#gitの管理に含めない方法">gitの管理に含めない方法</a></li>
-<li><a href="#直前のcommitを変更">直前のcommitを変更</a></li>
-<li><a href="#過去のバージョンに戻る-１">過去のバージョンに戻る（１）</a></li>
-<li><a href="#過去のバージョンに戻る-２">過去のバージョンに戻る（２）</a></li>
-<li><a href="#branch-1">branch</a></li>
-<li><a href="#branchをmerge">branchをmerge</a></li>
-<li><a href="#mergeの衝突を解消">mergeの衝突を解消</a></li>
-<li><a href="#tag">tag</a></li>
-<li><a href="#エイリアス">エイリアス</a></li>
-<li><a href="#初めての共同作業">初めての共同作業</a></li>
-<li><a href="#共同作業でコンフリクトが起こったら">共同作業でコンフリクトが起こったら</a></li>
-<li><a href="#git-rev-parse">git rev-parse</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#git1">gitの構成</a></li>
+    <li><a href="#git2">git補完</a>
+      <ul>
+        <li><a href="#gitcompletionbash">git-completion.bashをインストール</a></li>
+        <li><a href="#gitpromptsh">git-prompt.shのインストール</a></li>
+      </ul>
+    </li>
+    <li><a href="#branch">branch</a>
+      <ul>
+        <li><a href="#local-branchbranch">local branchから新branch作成</a></li>
+        <li><a href="#branchbranch">リモートbranchから新branch作成</a></li>
+        <li><a href="#branch1">branchの削除</a></li>
+      </ul>
+    </li>
+    <li><a href="#remote">remote</a>
+      <ul>
+        <li><a href="#remotebranchclone">remoteから特定のbranchを指定してcloneする</a></li>
+        <li><a href="#remote-branch">remote branch削除</a></li>
+      </ul>
+    </li>
+    <li><a href="#commit">commit</a>
+      <ul>
+        <li><a href="#commit1">一時的に過去のcommitに戻る</a></li>
+      </ul>
+    </li>
+    <li><a href="#submodule">submodule</a>
+      <ul>
+        <li><a href="#submodule1">submoduleの追加</a></li>
+        <li><a href="#submodule2">submoduleの削除</a></li>
+        <li><a href="#submoduleclone">submoduleも一緒にclone</a></li>
+        <li><a href="#submoduleclone1">submoduleのcloneをし忘れたら</a></li>
+        <li><a href="#submodule3">submoduleの更新</a></li>
+      </ul>
+    </li>
+    <li><a href="#fork">fork</a>
+      <ul>
+        <li><a href="#fork1">fork元の更新を取り込む</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#git3">gitの設定</a></li>
+    <li><a href="#commit2">commit</a></li>
+    <li><a href="#log">log</a></li>
+    <li><a href="#heading1">現在の状態を把握する</a></li>
+    <li><a href="#heading2">差分を確認する</a></li>
+    <li><a href="#git4">gitでのファイル操作</a></li>
+    <li><a href="#git5">gitの管理に含めない方法</a></li>
+    <li><a href="#commit3">直前のcommitを変更</a></li>
+    <li><a href="#heading3">過去のバージョンに戻る（１）</a></li>
+    <li><a href="#heading4">過去のバージョンに戻る（２）</a></li>
+    <li><a href="#branch2">branch</a></li>
+    <li><a href="#branchmerge">branchをmerge</a></li>
+    <li><a href="#merge">mergeの衝突を解消</a></li>
+    <li><a href="#tag">tag</a></li>
+    <li><a href="#heading5">エイリアス</a></li>
+    <li><a href="#heading6">初めての共同作業</a></li>
+    <li><a href="#heading7">共同作業でコンフリクトが起こったら</a></li>
+    <li><a href="#git-revparse">git rev-parse</a></li>
+  </ul>
 </nav>
   </aside>
 

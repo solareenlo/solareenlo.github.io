@@ -3,10 +3,12 @@
 
 <head>
   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><meta property="og:title" content="" />
-<meta property="og:description" content="アマゾンウェブサービス（AWS）とは  Amazonが提供するパブリッククラウドコンピューティングのこと. 従量課金制. コンピューティング, ストレージ, データベース, 分析, ネットワーキング, モバイル, 開発者用ツール, 管理ツール, IoT, セキュリティ, エンタープライズアプリケーションなど, グローバルなクラウドベース製品を幅広く利用できる.  S3  インターネット用のオブジェクトストレージサービスのこと. Amazon Simple Storage Serviceの略.  Elastic Beanstalk  Java, .NET, PHP, Node.js, Python, Ruby, GoおよびDockerを使用して開発されたウェブアプリケーションやサービスを, Apache, Nginx, Passenger, IISなどのサーバーでデプロイおよびスケーリングするためのサービスのこと. 平たく言うとアマゾン版VPS.  SSH接続  インスタンスを立ち上げる. インスタンスにキーペア(秘密鍵/公開鍵のペア)を設定する. 秘密鍵をダウンロードして(ファイル名sshkey.pem), インスタンスのIPアドレスを確認して, 以下を実行.
-chmod 600 sshkey.pem ssh -i sshkey.pem ec2-user@000.000.000.000 後は普通のVPSと同じ.
-  Amazon Linuxのバージョン確認 cat /etc/system-release お名前.comで取得したドメインを割り当てる  Route 53でCreate Hosted Zoneボタンを押す. Domain Nameに, example." />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Aws"><meta property="og:title" content="" />
+<meta property="og:description" content="アマゾンウェブサービス（AWS）とは  Amazonが提供するパブリッククラウドコンピューティングのこと. 従量課金制. コンピューティング, ストレージ, データベース, 分析, ネットワーキング, モバイル, 開発者用ツール, 管理ツール, IoT, セキュリティ, エンタープライズアプリケーションなど, グローバルなクラウドベース製品を幅広く利用できる.  S3  インターネット用のオブジェクトストレージサービスのこと. Amazon Simple Storage Serviceの略.  Elastic Beanstalk  Java, .NET, PHP, Node.js, Python, Ruby, GoおよびDockerを使用して開発されたウェブアプリケーションやサービスを, Apache, Nginx, Passenger, IISなどのサーバーでデプロイおよびスケーリングするためのサービスのこと. 平たく言うとアマゾン版VPS.  SSH接続  インスタンスを立ち上げる.    インスタンスにキーペア(秘密鍵/公開鍵のペア)を設定する.
+  秘密鍵をダウンロードして(ファイル名sshkey.pem), インスタンスのIPアドレスを確認して, 以下を実行.
+chmod 600 sshkey.pem ssh -i sshkey.pem ec2-user@000.000.000.000   後は普通のVPSと同じ.
+  Amazon Linuxのバージョン確認 cat /etc/system-release お名前.comで取得したドメインを割り当てる  Route 53でCreate Hosted Zoneボタンを押す." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://solareenlo.com/docs/aws/" />
 
@@ -14,10 +16,10 @@ chmod 600 sshkey.pem ssh -i sshkey.pem ec2-user@000.000.000.000 後は普通のV
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 
 
-<link rel="stylesheet" href="/book.min.7cf03b0e46415b9c8bbde01f69a283955eaa7d987607761a9a05cced394503a1.css" integrity="sha256-fPA7DkZBW5yLveAfaaKDlV6qfZh2B3YamgXM7TlFA6E=">
+<link rel="stylesheet" href="/book.min.0d8f55f751a5f22793c02b19a8a0822122d183a7e99645f6b428174dd3eeec94.css" integrity="sha256-DY9V91Gl8ieTwCsZqKCCISLRg6fplkX2tCgXTdPu7JQ=">
 
 
-<script defer src="/search.min.25dacf0d4e6ef2c0b14ef2bc90d4b36af703a3013ebd9efd7d1dbe17a7492b4d.js" integrity="sha256-JdrPDU5u8sCxTvK8kNSzavcDowE&#43;vZ79fR2&#43;F6dJK00="></script>
+<script defer src="/en.search.min.0de8e26fe8b38f83ff163b7738b4abcdbbe90ae41f3d554ee92aed704668dc09.js" integrity="sha256-Dejib&#43;izj4P/Fjt3OLSrzbvpCuQfPVVO6SrtcEZo3Ak="></script>
 
 <!--
 Made with Book Theme
@@ -40,7 +42,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 <div class="book-search">
-  <input type="text" placeholder="Search" id="book-search-input" maxlength="64" />
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
   <div class="book-search-spinner spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
@@ -53,7 +55,6 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/"><strong>はじめに</strong></a></li>
 <li><a href="/posts/"><strong>Blog</strong></a></li>
 <li><a href="/docs/programming/"><strong>Programming</strong></a>
-
 <ul>
 <li><a href="/docs/terminal/">Terminal</a></li>
 <li><a href="/docs/command/">Command</a></li>
@@ -66,9 +67,9 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/linter-formatter/">Linter/Formatter</a></li>
 <li><a href="/docs/test/">Test</a></li>
 <li><a href="/docs/password-manager/">Password Manager</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/programming-language/"><strong>Programming Language</strong></a>
-
 <ul>
 <li><a href="/docs/c/">C</a></li>
 <li><a href="/docs/rust/">Rust</a></li>
@@ -83,52 +84,52 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/haskell/">Haskell</a></li>
 <li><a href="/docs/hugo/">Hugo</a></li>
 <li><a href="/docs/programming-language-docs/">Docs</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/latex/"><strong>LaTeX</strong></a>
-
 <ul>
 <li><a href="/docs/platex-book/">Book</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/vps/"><strong>VPS</strong></a>
-
 <ul>
 <li><a href="/docs/ssh/">SSH</a></li>
 <li><a href="/docs/ubuntu/">Ubuntu</a></li>
 <li><a href="/docs/alpine-linux/">Alpine Linux</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/db/"><strong>DB</strong></a>
-
 <ul>
 <li><a href="/docs/mysql/">MySQL</a></li>
 <li><a href="/docs/mongodb/">MongoDB</a></li>
 <li><a href="/docs/redis/">Redis</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/cloud/"><strong>Cloud</strong></a>
-
 <ul>
 <li><a href="/docs/aws/"class=active>AWS</a></li>
 <li><a href="/docs/gcp/">GCP</a></li>
 <li><a href="/docs/firebase/">Firebase</a></li>
 <li><a href="/docs/zeit-now/">ZEIT Now</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/ci-cd/"><strong>CI/CD</strong></a>
-
 <ul>
 <li><a href="/docs/jenkins/">Jenkins</a></li>
 <li><a href="/docs/travis-ci/">Travis CI</a></li>
 <li><a href="/docs/circleci/">CircleCI</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/container/"><strong>Container</strong></a>
-
 <ul>
 <li><a href="/docs/docker1/">Docker1</a></li>
 <li><a href="/docs/docker2/">Docker2</a></li>
 <li><a href="/docs/docker-hub/">Docker Hub</a></li>
 <li><a href="/docs/docker-compose/">Docker Compose</a></li>
 <li><a href="/docs/kubernetes/">Kubernetes</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/crypto/"><strong>Crypto</strong></a>
-
 <ul>
 <li><a href="/docs/blockchain/">Blockchain</a></li>
 <li><a href="/docs/bitcoin/">Bitcoin</a></li>
@@ -138,7 +139,8 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/substrate/">Substrate</a></li>
 <li><a href="/docs/white-paper/">White Paper</a></li>
 <li><a href="/docs/crypto-docs/">Docs</a></li>
-</ul></li>
+</ul>
+</li>
 </ul>
 
 
@@ -169,169 +171,146 @@ https://github.com/alex-shpak/hugo-book
 </header>
 
       
-<article class="markdown">
-
-<h1 id="アマゾンウェブサービス-aws-とは">アマゾンウェブサービス（AWS）とは</h1>
-
+<article class="markdown"><h1 id="aws">アマゾンウェブサービス（AWS）とは</h1>
 <ul>
 <li>Amazonが提供するパブリッククラウドコンピューティングのこと.</li>
 <li>従量課金制.</li>
 <li>コンピューティング, ストレージ, データベース, 分析, ネットワーキング, モバイル, 開発者用ツール, 管理ツール, IoT, セキュリティ, エンタープライズアプリケーションなど, グローバルなクラウドベース製品を幅広く利用できる.</li>
 </ul>
-
 <h2 id="s3">S3</h2>
-
 <ul>
 <li>インターネット用のオブジェクトストレージサービスのこと.</li>
 <li>Amazon Simple Storage Serviceの略.</li>
 </ul>
-
 <h2 id="elastic-beanstalk">Elastic Beanstalk</h2>
-
 <ul>
 <li>Java, .NET, PHP, Node.js, Python, Ruby, GoおよびDockerを使用して開発されたウェブアプリケーションやサービスを, Apache, Nginx, Passenger, IISなどのサーバーでデプロイおよびスケーリングするためのサービスのこと.</li>
 <li>平たく言うとアマゾン版VPS.</li>
 </ul>
-
-<h3 id="ssh接続">SSH接続</h3>
-
+<h3 id="ssh">SSH接続</h3>
 <ol>
 <li>インスタンスを立ち上げる.</li>
-<li>インスタンスにキーペア(秘密鍵/公開鍵のペア)を設定する.</li>
-
-<li><p>秘密鍵をダウンロードして(ファイル名<code>sshkey.pem</code>), インスタンスのIPアドレスを確認して, 以下を実行.</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">chmod <span style="color:#2aa198">600</span> sshkey.pem
-ssh -i sshkey.pem ec2-user@000.000.000.000</code></pre></div></li>
-
-<li><p>後は普通のVPSと同じ.</p></li>
 </ol>
-
-<h3 id="amazon-linuxのバージョン確認">Amazon Linuxのバージョン確認</h3>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat /etc/system-release</code></pre></div>
-<h3 id="お名前-comで取得したドメインを割り当てる">お名前.comで取得したドメインを割り当てる</h3>
-
+<ul>
+<li>
+<p>インスタンスにキーペア(秘密鍵/公開鍵のペア)を設定する.</p>
+</li>
+<li>
+<p>秘密鍵をダウンロードして(ファイル名<code>sshkey.pem</code>), インスタンスのIPアドレスを確認して, 以下を実行.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">chmod <span style="color:#2aa198">600</span> sshkey.pem
+ssh -i sshkey.pem ec2-user@000.000.000.000
+</code></pre></div></li>
+<li>
+<p>後は普通のVPSと同じ.</p>
+</li>
+</ul>
+<h3 id="amazon-linux">Amazon Linuxのバージョン確認</h3>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat /etc/system-release
+</code></pre></div><h3 id="com">お名前.comで取得したドメインを割り当てる</h3>
 <ol>
 <li><code>Route 53</code>で<code>Create Hosted Zone</code>ボタンを押す.</li>
+</ol>
+<ul>
 <li><code>Domain Name</code>に, <code>example.jp</code>など独自ドメインを入れて, <code>Create</code>を押す.</li>
 <li>NS（ネームサーバー）のアドレス4つをコピペしておく.</li>
 <li><code>Create Record Set</code>ボタンを押す.
-
 <ul>
 <li>Type: A - IPv4 address もしくは iPV6 address</li>
 <li>Alias: Yes</li>
 <li>Alias Hostedを選択するとプルダウン表示されるので, そこからElastic Beanstalkのデフォルトのホスト名を選択</li>
-</ul></li>
+</ul>
+</li>
 <li>お名前.comのドメイン設定のネームサーバー変更を選択する.</li>
 <li><code>Elastic Beanstalk</code>に割り当てたいドメインにチェックを入れる.</li>
 <li><code>他のネームサーバーの利用</code>を選択して, <code>Route 53</code>で控えたネームサーバーのアドレス4つを入れて確認画面へ進むを押して保存する.</li>
 <li>数時間後には独自ドメインでアクセスできる.</li>
-</ol>
-
+</ul>
 <p><strong>Reference:</strong> <a href="https://qiita.com/roba4coding/items/9eaa542caa29d588e4d1">Elastic Beanstalkのサーバーにお名前.comで取得した独自ドメインを割り当てる</a></p>
-
-<h3 id="https化する">https化する</h3>
-
+<h3 id="https">https化する</h3>
 <ol>
 <li>ドメインを取得する.</li>
-<li>上記の方法でElastic Beanstalkにカスタムドメインを割り当てる.</li>
-<li>Elastic Beanstalkにロードバランサーを割り当てる.
-
-<ul>
-<li>Elastic Beanstalk &gt; インスタンス &gt; 設定 &gt; 容量 &gt; 環境タイプをロードバランサーへ &gt; 1つ戻ってロードバランサー</li>
-</ul></li>
-<li>ロードバランサーに証明書を割り当てる.</li>
 </ol>
-
+<ul>
+<li>上記の方法でElastic Beanstalkにカスタムドメインを割り当てる.</li>
+<li>Elastic Beanstalkにロードバランサーを割り当てる.</li>
+<li>Elastic Beanstalk &gt; インスタンス &gt; 設定 &gt; 容量 &gt; 環境タイプをロードバランサーへ &gt; 1つ戻ってロードバランサー</li>
+<li>ロードバランサーに証明書を割り当てる.</li>
+</ul>
 <h2 id="iam">IAM</h2>
-
 <ul>
 <li>ユーザーに対してAWSへのアクセスを安全に制御するための仕組みのこと.</li>
 <li>AWS Identity and Access Managementの略.</li>
 </ul>
-
 <h2 id="ecs">ECS</h2>
-
 <ul>
 <li>Dockerアプリケーションをスケーラブルなクラスターで実行するために使用するサービスのこと.
 Amazon Elastic Container Serviceの略.</li>
 </ul>
-
 <h2 id="rds">RDS</h2>
-
 <ul>
 <li>クラウド上でリレーショナルデータベースをセットアップ, 運用, スケーリングできるサービスのこと.</li>
 <li>RDBで作ったコンテナの代わりに使える.</li>
 <li>Amazon Relational Database Serviceの略.</li>
 </ul>
-
 <h2 id="memcached">Memcached</h2>
-
 <ul>
 <li>高パフォーマンスキャッシュやセッションストアとして使用できる, 分散型インメモリkey-valueストアのこと.</li>
 <li>Redisで作ったコンテナの代わりに使える.</li>
 </ul>
-
 <h2 id="vpc">VPC</h2>
-
 <ul>
 <li>AWSアカウント専用の仮想ネットワークのこと.</li>
 <li>定義した仮想ネットワーク内でAWSリソースを起動することができる.</li>
 <li>Amazon Virtual Private Cloudの略.</li>
 </ul>
-
-<h2 id="vpcセキュリティグループ">VPCセキュリティグループ</h2>
-
+<h2 id="vpc1">VPCセキュリティグループ</h2>
 <ul>
 <li>同一グループ外のインスタンスと通信を行う際のトラフィックを制御する仮想ファイアウォールのこと.</li>
 </ul>
-
 <h2 id="amplify-console">Amplify Console</h2>
-
 <ul>
 <li>フルスタックのサーバーレスウェブアプリケーションのデプロイおよびホストするための, Gitベースのワークフローを提供する.</li>
 <li>フルスタックのサーバーレスアプリケーションは, GraphQLやREST APIなどのクラウドリソース, ファイルおよびデータストレージで構成されたバックエンドと, React, Angular, Vue, Gatsbyなどの単一ページのアプリケーションフレームワークで構築されたフロントエンドから構成される.</li>
 </ul>
-
 <h2 id="certificate-manager">Certificate Manager</h2>
-
 <ul>
 <li>AWSでのウェブアプリのhttps化の設定の時に使用する.</li>
 </ul>
-
-<h2 id="ざっくり料金計算">ざっくり料金計算</h2>
-
+<h2 id="heading">ざっくり料金計算</h2>
 <ul>
 <li><a href="https://aws.noplan.cc">ざっくりAWS</a>
-
 <ul>
 <li><strong>GitHubリポジトリ:</strong> <a href="https://github.com/noplan1989/aws-rough">noplan1989/aws-rough</a></li>
-</ul></li>
+</ul>
+</li>
 </ul>
 </article>
 
-      
-<div class="book-footer justify-between">
+      <div class="book-footer justify-between">
+  
+
+  
   
   <div>
     
-    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/commit/b49350eae8bd3ae0b7420e63ba28ab3b766d2600" title='Last modified Jun 1, 2019 by solareenlo' target="_blank" rel="noopener">
-      <img src="/svg/calendar.svg" alt="Changed" />
+    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/commit/b49350eae8bd3ae0b7420e63ba28ab3b766d2600" title='Last modified by solareenlo | Jun 1, 2019' target="_blank">
+      <img src="/svg/calendar.svg" alt="Calendar" />
       <span>Jun 1, 2019</span>
     </a>
   </div>
   
   
+
+  
   <div>
-    
-    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/edit/master/content/docs/aws.md" target="_blank" rel="noopener">
+    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/edit/master/content/docs/aws.md" target="_blank">
       <img src="/svg/edit.svg" alt="Edit" />
       <span>Edit this page</span>
     </a>
-    
   </div>
   
-</div>
 
+</div>
 
       
     </div>
@@ -341,28 +320,26 @@ Amazon Elastic Container Serviceの略.</li>
 
   <aside class="book-toc levels-3 fixed">
     <nav id="TableOfContents">
-<ul>
-<li><a href="#アマゾンウェブサービス-aws-とは">アマゾンウェブサービス（AWS）とは</a>
-<ul>
-<li><a href="#s3">S3</a></li>
-<li><a href="#elastic-beanstalk">Elastic Beanstalk</a>
-<ul>
-<li><a href="#ssh接続">SSH接続</a></li>
-<li><a href="#amazon-linuxのバージョン確認">Amazon Linuxのバージョン確認</a></li>
-<li><a href="#お名前-comで取得したドメインを割り当てる">お名前.comで取得したドメインを割り当てる</a></li>
-<li><a href="#https化する">https化する</a></li>
-</ul></li>
-<li><a href="#iam">IAM</a></li>
-<li><a href="#ecs">ECS</a></li>
-<li><a href="#rds">RDS</a></li>
-<li><a href="#memcached">Memcached</a></li>
-<li><a href="#vpc">VPC</a></li>
-<li><a href="#vpcセキュリティグループ">VPCセキュリティグループ</a></li>
-<li><a href="#amplify-console">Amplify Console</a></li>
-<li><a href="#certificate-manager">Certificate Manager</a></li>
-<li><a href="#ざっくり料金計算">ざっくり料金計算</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#s3">S3</a></li>
+    <li><a href="#elastic-beanstalk">Elastic Beanstalk</a>
+      <ul>
+        <li><a href="#ssh">SSH接続</a></li>
+        <li><a href="#amazon-linux">Amazon Linuxのバージョン確認</a></li>
+        <li><a href="#com">お名前.comで取得したドメインを割り当てる</a></li>
+        <li><a href="#https">https化する</a></li>
+      </ul>
+    </li>
+    <li><a href="#iam">IAM</a></li>
+    <li><a href="#ecs">ECS</a></li>
+    <li><a href="#rds">RDS</a></li>
+    <li><a href="#memcached">Memcached</a></li>
+    <li><a href="#vpc">VPC</a></li>
+    <li><a href="#vpc1">VPCセキュリティグループ</a></li>
+    <li><a href="#amplify-console">Amplify Console</a></li>
+    <li><a href="#certificate-manager">Certificate Manager</a></li>
+    <li><a href="#heading">ざっくり料金計算</a></li>
+  </ul>
 </nav>
   </aside>
 

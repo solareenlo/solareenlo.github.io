@@ -3,10 +3,12 @@
 
 <head>
   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><meta property="og:title" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Ubuntu"><meta property="og:title" content="" />
 <meta property="og:description" content="Ubuntuとは  コミュニティにより開発されているオペレーティングシステムのこと. 無料で提供されている. Linuxディストリビューションの1つ. 公式サイト: https://www.ubuntu.com  Raid0作成  Reference: How To Create RAID Arrays with mdadm on Ubuntu 18.04  ターミナルの色を変える ~/.bashrcの当該部分を以下の様に書き換える.
 if [ &#34;$color_prompt&#34; = yes ]; then PS1=&#39;${debian_chroot:&#43;($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\033[01;31m\]$(__git_ps1)\[\033[00m\]\n\[\033[01;35m\]-&gt; \$\[\033[00m\] &#39; else PS1=&#39;${debian_chroot:&#43;($debian_chroot)}\u@\h:\w\$ &#39; fi 再起動 sudo shutdown -r now // or sudo reboot mountしているSSDのlabel名を変更する Ubuntuのディスクプリで当該のSSDをmountする.
-df -Th &gt; Filesystem Type Size Used Avail Use% Mounted on &gt; /dev/nvme2n1p1 ext4 234G 61M 222G 1% /media/solareenlo/ssd021 でSSDのFilesystem名(この場合は/dev/nvme2n1p1)を確認する." />
+df -Th &gt; Filesystem Type Size Used Avail Use% Mounted on &gt; /dev/nvme2n1p1 ext4 234G 61M 222G 1% /media/solareenlo/ssd021 でSSDのFilesystem名(この場合は/dev/nvme2n1p1)を確認する.
+sudo umount /dev/nvme2n1p1 で一度SSDをunmountする." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://solareenlo.com/docs/ubuntu/" />
 
@@ -14,10 +16,10 @@ df -Th &gt; Filesystem Type Size Used Avail Use% Mounted on &gt; /dev/nvme2n1p1 
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 
 
-<link rel="stylesheet" href="/book.min.7cf03b0e46415b9c8bbde01f69a283955eaa7d987607761a9a05cced394503a1.css" integrity="sha256-fPA7DkZBW5yLveAfaaKDlV6qfZh2B3YamgXM7TlFA6E=">
+<link rel="stylesheet" href="/book.min.0d8f55f751a5f22793c02b19a8a0822122d183a7e99645f6b428174dd3eeec94.css" integrity="sha256-DY9V91Gl8ieTwCsZqKCCISLRg6fplkX2tCgXTdPu7JQ=">
 
 
-<script defer src="/search.min.25dacf0d4e6ef2c0b14ef2bc90d4b36af703a3013ebd9efd7d1dbe17a7492b4d.js" integrity="sha256-JdrPDU5u8sCxTvK8kNSzavcDowE&#43;vZ79fR2&#43;F6dJK00="></script>
+<script defer src="/en.search.min.0de8e26fe8b38f83ff163b7738b4abcdbbe90ae41f3d554ee92aed704668dc09.js" integrity="sha256-Dejib&#43;izj4P/Fjt3OLSrzbvpCuQfPVVO6SrtcEZo3Ak="></script>
 
 <!--
 Made with Book Theme
@@ -40,7 +42,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 <div class="book-search">
-  <input type="text" placeholder="Search" id="book-search-input" maxlength="64" />
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
   <div class="book-search-spinner spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
@@ -53,7 +55,6 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/"><strong>はじめに</strong></a></li>
 <li><a href="/posts/"><strong>Blog</strong></a></li>
 <li><a href="/docs/programming/"><strong>Programming</strong></a>
-
 <ul>
 <li><a href="/docs/terminal/">Terminal</a></li>
 <li><a href="/docs/command/">Command</a></li>
@@ -66,9 +67,9 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/linter-formatter/">Linter/Formatter</a></li>
 <li><a href="/docs/test/">Test</a></li>
 <li><a href="/docs/password-manager/">Password Manager</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/programming-language/"><strong>Programming Language</strong></a>
-
 <ul>
 <li><a href="/docs/c/">C</a></li>
 <li><a href="/docs/rust/">Rust</a></li>
@@ -83,52 +84,52 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/haskell/">Haskell</a></li>
 <li><a href="/docs/hugo/">Hugo</a></li>
 <li><a href="/docs/programming-language-docs/">Docs</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/latex/"><strong>LaTeX</strong></a>
-
 <ul>
 <li><a href="/docs/platex-book/">Book</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/vps/"><strong>VPS</strong></a>
-
 <ul>
 <li><a href="/docs/ssh/">SSH</a></li>
 <li><a href="/docs/ubuntu/"class=active>Ubuntu</a></li>
 <li><a href="/docs/alpine-linux/">Alpine Linux</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/db/"><strong>DB</strong></a>
-
 <ul>
 <li><a href="/docs/mysql/">MySQL</a></li>
 <li><a href="/docs/mongodb/">MongoDB</a></li>
 <li><a href="/docs/redis/">Redis</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/cloud/"><strong>Cloud</strong></a>
-
 <ul>
 <li><a href="/docs/aws/">AWS</a></li>
 <li><a href="/docs/gcp/">GCP</a></li>
 <li><a href="/docs/firebase/">Firebase</a></li>
 <li><a href="/docs/zeit-now/">ZEIT Now</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/ci-cd/"><strong>CI/CD</strong></a>
-
 <ul>
 <li><a href="/docs/jenkins/">Jenkins</a></li>
 <li><a href="/docs/travis-ci/">Travis CI</a></li>
 <li><a href="/docs/circleci/">CircleCI</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/container/"><strong>Container</strong></a>
-
 <ul>
 <li><a href="/docs/docker1/">Docker1</a></li>
 <li><a href="/docs/docker2/">Docker2</a></li>
 <li><a href="/docs/docker-hub/">Docker Hub</a></li>
 <li><a href="/docs/docker-compose/">Docker Compose</a></li>
 <li><a href="/docs/kubernetes/">Kubernetes</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="/docs/crypto/"><strong>Crypto</strong></a>
-
 <ul>
 <li><a href="/docs/blockchain/">Blockchain</a></li>
 <li><a href="/docs/bitcoin/">Bitcoin</a></li>
@@ -138,7 +139,8 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/substrate/">Substrate</a></li>
 <li><a href="/docs/white-paper/">White Paper</a></li>
 <li><a href="/docs/crypto-docs/">Docs</a></li>
-</ul></li>
+</ul>
+</li>
 </ul>
 
 
@@ -169,59 +171,46 @@ https://github.com/alex-shpak/hugo-book
 </header>
 
       
-<article class="markdown">
-
-<h1 id="ubuntuとは">Ubuntuとは</h1>
-
+<article class="markdown"><h1 id="ubuntu">Ubuntuとは</h1>
 <ul>
 <li>コミュニティにより開発されているオペレーティングシステムのこと.</li>
 <li>無料で提供されている.</li>
 <li>Linuxディストリビューションの1つ.</li>
 <li><strong>公式サイト:</strong> <a href="https://www.ubuntu.com">https://www.ubuntu.com</a></li>
 </ul>
-
-<h2 id="raid0作成">Raid0作成</h2>
-
+<h2 id="raid0">Raid0作成</h2>
 <ul>
 <li><strong>Reference:</strong> <a href="https://www.digitalocean.com/community/tutorials/how-to-create-raid-arrays-with-mdadm-on-ubuntu-18-04">How To Create RAID Arrays with mdadm on Ubuntu 18.04</a></li>
 </ul>
-
-<h2 id="ターミナルの色を変える">ターミナルの色を変える</h2>
-
+<h2 id="heading">ターミナルの色を変える</h2>
 <p><code>~/.bashrc</code>の当該部分を以下の様に書き換える.</p>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#719e07">if</span> <span style="color:#719e07">[</span> <span style="color:#2aa198">&#34;</span><span style="color:#268bd2">$color_prompt</span><span style="color:#2aa198">&#34;</span> <span style="color:#719e07">=</span> yes <span style="color:#719e07">]</span>; <span style="color:#719e07">then</span>
     <span style="color:#268bd2">PS1</span><span style="color:#719e07">=</span><span style="color:#2aa198">&#39;${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\033[01;31m\]$(__git_ps1)\[\033[00m\]\n\[\033[01;35m\]-&gt; \$\[\033[00m\] &#39;</span>
 <span style="color:#719e07">else</span>
     <span style="color:#268bd2">PS1</span><span style="color:#719e07">=</span><span style="color:#2aa198">&#39;${debian_chroot:+($debian_chroot)}\u@\h:\w\$ &#39;</span>
-<span style="color:#719e07">fi</span></code></pre></div>
-<h2 id="再起動">再起動</h2>
+<span style="color:#719e07">fi</span>
+</code></pre></div><h2 id="heading1">再起動</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo shutdown -r now
 // or
-sudo reboot</code></pre></div>
-<h2 id="mountしているssdのlabel名を変更する">mountしているSSDのlabel名を変更する</h2>
-
+sudo reboot
+</code></pre></div><h2 id="mountssdlabel">mountしているSSDのlabel名を変更する</h2>
 <p>Ubuntuのディスクプリで当該のSSDをmountする.</p>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">df -Th
 &gt; Filesystem     Type      Size  Used Avail Use% Mounted on
-&gt; /dev/nvme2n1p1 ext4      234G   61M  222G   <span style="color:#2aa198">1</span>% /media/solareenlo/ssd021</code></pre></div>
-<p>でSSDのFilesystem名(この場合は<code>/dev/nvme2n1p1</code>)を確認する.</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo umount /dev/nvme2n1p1</code></pre></div>
-<p>で一度SSDをunmountする.</p>
-
+&gt; /dev/nvme2n1p1 ext4      234G   61M  222G   1% /media/solareenlo/ssd021
+</code></pre></div><p>でSSDのFilesystem名(この場合は<code>/dev/nvme2n1p1</code>)を確認する.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo umount /dev/nvme2n1p1
+</code></pre></div><p>で一度SSDをunmountする.</p>
 <p>SSDのTypeがext2/ext3/ext4の場合は,</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo e2label /dev/nvme2n1p1 ssd02</code></pre></div>
-<p>とし, label名を<code>ssd021</code>から<code>ssd02</code>に変更する.</p>
-
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo e2label /dev/nvme2n1p1 ssd02
+</code></pre></div><p>とし, label名を<code>ssd021</code>から<code>ssd02</code>に変更する.</p>
 <p>そして, Ubuntuのディスクアプリで当該のSSDをmountする.</p>
-
-<h2 id="snapでのupdate">snapでのupdate</h2>
-
+<h2 id="snapupdate">snapでのupdate</h2>
 <p>snapとはLinuxのパッケージ管理システムの1つ.</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">snap refresh</code></pre></div>
-<h2 id="バージョン確認">バージョン確認</h2>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat /etc/os-release</code></pre></div>
-<h2 id="aptチートシート">aptチートシート</h2>
-
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">snap refresh
+</code></pre></div><h2 id="heading2">バージョン確認</h2>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat /etc/os-release
+</code></pre></div><h2 id="apt">aptチートシート</h2>
 <table>
 <thead>
 <tr>
@@ -229,130 +218,115 @@ sudo reboot</code></pre></div>
 <th>内容</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>sudo apt update</td>
-<td>リポジトリ一覧を更新<br>(リポジトリ追加・削除時には必ず実行すること)</td>
+<td>リポジトリ一覧を更新<!-- raw HTML omitted -->(リポジトリ追加・削除時には必ず実行すること)</td>
 </tr>
-
 <tr>
 <td>sudo apt upgrade</td>
-<td>パッケージを更新<br>(通常のパッケージ更新時はこのコマンドを使用する)</td>
+<td>パッケージを更新<!-- raw HTML omitted -->(通常のパッケージ更新時はこのコマンドを使用する)</td>
 </tr>
-
 <tr>
 <td>sudo apt full-upgrade</td>
-<td>パッケージを更新<br>(保留されているパッケージを更新するときに使用する)</td>
+<td>パッケージを更新<!-- raw HTML omitted -->(保留されているパッケージを更新するときに使用する)</td>
 </tr>
-
 <tr>
 <td>sudo apt autoremove</td>
-<td>更新に伴い必要なくなったパッケージを削除<br>(apt実行時にこのコマンドを実行するよう表示されたら実行する)</td>
+<td>更新に伴い必要なくなったパッケージを削除<!-- raw HTML omitted -->(apt実行時にこのコマンドを実行するよう表示されたら実行する)</td>
 </tr>
-
 <tr>
 <td>sudo apt install {パッケージ名やdebファイルのパス}</td>
 <td>パッケージやdebファイルをインストール</td>
 </tr>
-
 <tr>
 <td>sudo apt remove {パッケージ名}</td>
 <td>パッケージを削除</td>
 </tr>
-
 <tr>
 <td>sudo apt remove &ndash;purge {パッケージ名}</td>
 <td>パッケージを完全削除</td>
 </tr>
-
 <tr>
 <td>sudo apt show {パッケージ名}</td>
 <td>パッケージの詳細情報を表示</td>
 </tr>
-
 <tr>
 <td>sudo apt list {パッケージ名}</td>
 <td>パッケージを検索(完全一致)</td>
 </tr>
-
 <tr>
 <td>sudo apt search {パッケージ名}</td>
 <td>パッケージを検索(部分一致)</td>
 </tr>
-
 <tr>
 <td>sudo dpkg -l</td>
 <td>インストール済みのパッケージ一覧を表示</td>
 </tr>
-
 <tr>
 <td>sudo dpkg -L {パッケージ名}</td>
 <td>パッケージのインストール先を表示</td>
 </tr>
-
 <tr>
 <td>cat /var/log/apt/history.log</td>
 <td>aptコマンドの使用履歴を表示</td>
 </tr>
-
 <tr>
 <td>sudo apt autoclean</td>
 <td>キャッシュされているが, インストールはされていないdebファイルを削除</td>
 </tr>
-
 <tr>
 <td>sudo apt clean</td>
 <td>キャッシュされている全てのdebファイルを削除</td>
 </tr>
-
 <tr>
 <td>echo &ldquo;{パッケージ名} hold&rdquo;</td>
 <td>dpkg &ndash;set-selections</td>
 </tr>
-
 <tr>
 <td>echo &ldquo;{パッケージ名} install&rdquo;</td>
 <td>dpkg &ndash;set-selections</td>
 </tr>
+<tr>
+<td><strong>Referecne:</strong> <a href="https://qiita.com/SUZUKI_Masaya/items/1fd9489e631c78e5b007">aptコマンドチートシート</a></td>
+<td></td>
+</tr>
 </tbody>
 </table>
-
-<p><strong>Referecne:</strong> <a href="https://qiita.com/SUZUKI_Masaya/items/1fd9489e631c78e5b007">aptコマンドチートシート</a></p>
-
-<h2 id="アプリがインストールされてる場所">アプリがインストールされてる場所</h2>
-
+<h2 id="heading3">アプリがインストールされてる場所</h2>
 <ul>
 <li>Ubuntuソフトウェアおよびターミナルからインストールした場合は<code>/usr/lib</code>にインストールされてる.</li>
 <li>webからアプリをインストールした場合は<code>/opt</code>にインストールする.</li>
 </ul>
+<h2 id="path">PATHの確認</h2>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#b58900">echo</span> <span style="color:#268bd2">$PATH</span> | tr -s <span style="color:#2aa198">&#34;:&#34;</span> <span style="color:#2aa198">&#34;\n&#34;</span>
+</code></pre></div></article>
 
-<h2 id="pathの確認">PATHの確認</h2>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#b58900">echo</span> <span style="color:#268bd2">$PATH</span> | tr -s <span style="color:#2aa198">&#34;:&#34;</span> <span style="color:#2aa198">&#34;\n&#34;</span></code></pre></div></article>
+      <div class="book-footer justify-between">
+  
 
-      
-<div class="book-footer justify-between">
+  
   
   <div>
     
-    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/commit/f298be9aec4686bcf7c6b7a965d02f63a481dfde" title='Last modified Aug 2, 2019 by solareenlo' target="_blank" rel="noopener">
-      <img src="/svg/calendar.svg" alt="Changed" />
+    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/commit/f298be9aec4686bcf7c6b7a965d02f63a481dfde" title='Last modified by solareenlo | Aug 2, 2019' target="_blank">
+      <img src="/svg/calendar.svg" alt="Calendar" />
       <span>Aug 2, 2019</span>
     </a>
   </div>
   
   
+
+  
   <div>
-    
-    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/edit/master/content/docs/ubuntu.md" target="_blank" rel="noopener">
+    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/edit/master/content/docs/ubuntu.md" target="_blank">
       <img src="/svg/edit.svg" alt="Edit" />
       <span>Edit this page</span>
     </a>
-    
   </div>
   
-</div>
 
+</div>
 
       
     </div>
@@ -362,20 +336,17 @@ sudo reboot</code></pre></div>
 
   <aside class="book-toc levels-3 fixed">
     <nav id="TableOfContents">
-<ul>
-<li><a href="#ubuntuとは">Ubuntuとは</a>
-<ul>
-<li><a href="#raid0作成">Raid0作成</a></li>
-<li><a href="#ターミナルの色を変える">ターミナルの色を変える</a></li>
-<li><a href="#再起動">再起動</a></li>
-<li><a href="#mountしているssdのlabel名を変更する">mountしているSSDのlabel名を変更する</a></li>
-<li><a href="#snapでのupdate">snapでのupdate</a></li>
-<li><a href="#バージョン確認">バージョン確認</a></li>
-<li><a href="#aptチートシート">aptチートシート</a></li>
-<li><a href="#アプリがインストールされてる場所">アプリがインストールされてる場所</a></li>
-<li><a href="#pathの確認">PATHの確認</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#raid0">Raid0作成</a></li>
+    <li><a href="#heading">ターミナルの色を変える</a></li>
+    <li><a href="#heading1">再起動</a></li>
+    <li><a href="#mountssdlabel">mountしているSSDのlabel名を変更する</a></li>
+    <li><a href="#snapupdate">snapでのupdate</a></li>
+    <li><a href="#heading2">バージョン確認</a></li>
+    <li><a href="#apt">aptチートシート</a></li>
+    <li><a href="#heading3">アプリがインストールされてる場所</a></li>
+    <li><a href="#path">PATHの確認</a></li>
+  </ul>
 </nav>
   </aside>
 
