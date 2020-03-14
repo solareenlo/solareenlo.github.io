@@ -4,19 +4,19 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Rust"><meta property="og:title" content="" />
+<meta name="description" content="Rustとは  Mozillaが支援するオープンソースのシステムプログラミング言語のこと. 速度, 安全性, 平行性の3つのゴールにフォーカスしている. 主にC, C&#43;&#43;に置き換わるものとされている. GitHubリポジトリ: https://github.com/rust-lang/rust  Rustの特徴 概要  C&#43;&#43;に匹敵する実行速度や詳細なメモリ管理が実現できる. 不正なメモリ領域を指すポインタなどを許容しないといったメモリ安全性を保証している. マルチスレッドによる並列実行時のデータ競合をコンパイル時に排除する. 関数型言語由来の便利な機能, 代数的データ型とパターンマッチ, 型クラスによる多相関数, コンパイラによる型推論などを取り入れている. ガーベージコレクタのような複雑なランタイムをもっていない. 多言語関数インターフェースを用いて, 他のプログラミング言語との間で相互に関数を呼び出せる.  速度面  マシンコードへコンパイル  コンパイラがプログラムをマシンコード(プロセッサが理解できる機械語)へ変換する.   静的型付け言語  静的型付け言語は, 変数および関数の引数や戻り値などすべての値について, その型をコンパイル時に決定する. 動的型付け言語は, プログラムの実行時に実際の値を見て型を決定する.   ゼロコスト抽象化  ゼロコスト抽象化とは, プログラム言語が持つ抽象化(対象から注目すべき要素を重点的に抜き出して, 他は無視する手法)の仕組みが実行時のコスト(実行速度やメモリ使用量など)なしに動作すること.   ガーベージコレクションを行わない軽量なランタイム  安全面  Rustはコンパイル時の静的解析により以下の安全性を保証している. 型安全性  型安全性とは, 正しく型付けされたプログラムが不正な動作(未定義動作とも言う)をしないよう言語が定義されていること.   メモリ安全性  RustはCのようにメモリ内容への柔軟なアクセスができるが, Cと違い以下のようなメモリ安全性を保証する. データの転記の際のメモリ領域あふれを防ぐ. ポインタによる誤ったメモリ境域へのアクセスを防ぐ. 初期化前のメモリ領域へのアクセスを防ぐ. 解放後のメモリ領域へのアクセスを防ぐ.   マルチスレッドプログラミングにおけるデータ競合の回避  Rustでは型安全性とメモリ安全性に用いられるコンパイラの静的解析機能を使い, データ競合の可能性を検出できる."><meta property="og:title" content="" />
 <meta property="og:description" content="Rustとは  Mozillaが支援するオープンソースのシステムプログラミング言語のこと. 速度, 安全性, 平行性の3つのゴールにフォーカスしている. 主にC, C&#43;&#43;に置き換わるものとされている. GitHubリポジトリ: https://github.com/rust-lang/rust  Rustの特徴 概要  C&#43;&#43;に匹敵する実行速度や詳細なメモリ管理が実現できる. 不正なメモリ領域を指すポインタなどを許容しないといったメモリ安全性を保証している. マルチスレッドによる並列実行時のデータ競合をコンパイル時に排除する. 関数型言語由来の便利な機能, 代数的データ型とパターンマッチ, 型クラスによる多相関数, コンパイラによる型推論などを取り入れている. ガーベージコレクタのような複雑なランタイムをもっていない. 多言語関数インターフェースを用いて, 他のプログラミング言語との間で相互に関数を呼び出せる.  速度面  マシンコードへコンパイル  コンパイラがプログラムをマシンコード(プロセッサが理解できる機械語)へ変換する.   静的型付け言語  静的型付け言語は, 変数および関数の引数や戻り値などすべての値について, その型をコンパイル時に決定する. 動的型付け言語は, プログラムの実行時に実際の値を見て型を決定する.   ゼロコスト抽象化  ゼロコスト抽象化とは, プログラム言語が持つ抽象化(対象から注目すべき要素を重点的に抜き出して, 他は無視する手法)の仕組みが実行時のコスト(実行速度やメモリ使用量など)なしに動作すること.   ガーベージコレクションを行わない軽量なランタイム  安全面  Rustはコンパイル時の静的解析により以下の安全性を保証している. 型安全性  型安全性とは, 正しく型付けされたプログラムが不正な動作(未定義動作とも言う)をしないよう言語が定義されていること.   メモリ安全性  RustはCのようにメモリ内容への柔軟なアクセスができるが, Cと違い以下のようなメモリ安全性を保証する. データの転記の際のメモリ領域あふれを防ぐ. ポインタによる誤ったメモリ境域へのアクセスを防ぐ. 初期化前のメモリ領域へのアクセスを防ぐ. 解放後のメモリ領域へのアクセスを防ぐ.   マルチスレッドプログラミングにおけるデータ競合の回避  Rustでは型安全性とメモリ安全性に用いられるコンパイラの静的解析機能を使い, データ競合の可能性を検出できる." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://solareenlo.com/docs/rust/" />
-
+<meta property="article:modified_time" content="2019-08-18T10:44:49+09:00" />
 <title>Rust | solareenlo</title>
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 
 
-<link rel="stylesheet" href="/book.min.0d8f55f751a5f22793c02b19a8a0822122d183a7e99645f6b428174dd3eeec94.css" integrity="sha256-DY9V91Gl8ieTwCsZqKCCISLRg6fplkX2tCgXTdPu7JQ=">
+<link rel="stylesheet" href="/book.min.58981925ddc33520ebc4b651e423503306a3203982a9b8426a20913f11092a1f.css" integrity="sha256-WJgZJd3DNSDrxLZR5CNQMwajIDmCqbhCaiCRPxEJKh8=">
 
 
-<script defer src="/en.search.min.0de8e26fe8b38f83ff163b7738b4abcdbbe90ae41f3d554ee92aed704668dc09.js" integrity="sha256-Dejib&#43;izj4P/Fjt3OLSrzbvpCuQfPVVO6SrtcEZo3Ak="></script>
+<script defer src="/en.search.min.cd69dcbc57adb833562b43f1f38bae1ac2260c98f1c7775cd3eeaef066265c87.js" integrity="sha256-zWncvFetuDNWK0Px84uuGsImDJjxx3dc0&#43;6u8GYmXIc="></script>
 
 <!--
 Made with Book Theme
@@ -28,18 +28,18 @@ https://github.com/alex-shpak/hugo-book
 
 <body>
   <input type="checkbox" class="hidden" id="menu-control" />
-  <main class="flex container">
-
-    <aside class="book-menu fixed">
-      <nav>
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
 <h2 class="book-brand">
-  <a href="https://solareenlo.com/"><span>solareenlo</span>
+  <a href="/"><span>solareenlo</span>
   </a>
 </h2>
 
 
 <div class="book-search">
-  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
   <div class="book-search-spinner spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
@@ -48,97 +48,232 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-    <ul>
-<li><a href="/"><strong>はじめに</strong></a></li>
-<li><a href="/posts/"><strong>Blog</strong></a></li>
-<li><a href="/docs/programming/"><strong>Programming</strong></a>
-<ul>
-<li><a href="/docs/terminal/">Terminal</a></li>
-<li><a href="/docs/command/">Command</a></li>
-<li><a href="/docs/sed/">sed</a></li>
-<li><a href="/docs/shell-script/">Shell Script</a></li>
-<li><a href="/docs/vim/">Vim</a></li>
-<li><a href="/docs/vimium/">Vimium</a></li>
-<li><a href="/docs/git/">Git</a></li>
-<li><a href="/docs/github/">GitHub</a></li>
-<li><a href="/docs/linter-formatter/">Linter/Formatter</a></li>
-<li><a href="/docs/test/">Test</a></li>
-<li><a href="/docs/password-manager/">Password Manager</a></li>
-</ul>
+
+
+
+
+
+
+  <ul>
+<li>
+  <a href="/"><strong>はじめに</strong></a>
 </li>
-<li><a href="/docs/programming-language/"><strong>Programming Language</strong></a>
-<ul>
-<li><a href="/docs/c/">C</a></li>
-<li><a href="/docs/rust/"class=active>Rust</a></li>
-<li><a href="/docs/javascript/">JavaScript</a></li>
-<li><a href="/docs/css/">CSS</a></li>
-<li><a href="/docs/nodejs/">Node.js</a></li>
-<li><a href="/docs/npm/">npm</a></li>
-<li><a href="/docs/typescript/">TypeScript</a></li>
-<li><a href="/docs/angular/">Angular</a></li>
-<li><a href="/docs/react/">React</a></li>
-<li><a href="/docs/react-static/">React Static</a></li>
-<li><a href="/docs/haskell/">Haskell</a></li>
-<li><a href="/docs/hugo/">Hugo</a></li>
-<li><a href="/docs/programming-language-docs/">Docs</a></li>
-</ul>
+<li>
+  <a href="/posts/"><strong>Blog</strong></a>
 </li>
-<li><a href="/docs/latex/"><strong>LaTeX</strong></a>
+<li>
+  <a href="/docs/programming/"><strong>Programming</strong></a>
+
 <ul>
-<li><a href="/docs/platex-book/">Book</a></li>
-</ul>
+<li>
+  <a href="/docs/terminal/">Terminal</a>
 </li>
-<li><a href="/docs/vps/"><strong>VPS</strong></a>
-<ul>
-<li><a href="/docs/ssh/">SSH</a></li>
-<li><a href="/docs/ubuntu/">Ubuntu</a></li>
-<li><a href="/docs/alpine-linux/">Alpine Linux</a></li>
-</ul>
+<li>
+  <a href="/docs/command/">Command</a>
 </li>
-<li><a href="/docs/db/"><strong>DB</strong></a>
-<ul>
-<li><a href="/docs/mysql/">MySQL</a></li>
-<li><a href="/docs/mongodb/">MongoDB</a></li>
-<li><a href="/docs/redis/">Redis</a></li>
-</ul>
+<li>
+  <a href="/docs/sed/">sed</a>
 </li>
-<li><a href="/docs/cloud/"><strong>Cloud</strong></a>
-<ul>
-<li><a href="/docs/aws/">AWS</a></li>
-<li><a href="/docs/gcp/">GCP</a></li>
-<li><a href="/docs/firebase/">Firebase</a></li>
-<li><a href="/docs/zeit-now/">ZEIT Now</a></li>
-</ul>
+<li>
+  <a href="/docs/shell-script/">Shell Script</a>
 </li>
-<li><a href="/docs/ci-cd/"><strong>CI/CD</strong></a>
-<ul>
-<li><a href="/docs/jenkins/">Jenkins</a></li>
-<li><a href="/docs/travis-ci/">Travis CI</a></li>
-<li><a href="/docs/circleci/">CircleCI</a></li>
-</ul>
+<li>
+  <a href="/docs/vim/">Vim</a>
 </li>
-<li><a href="/docs/container/"><strong>Container</strong></a>
-<ul>
-<li><a href="/docs/docker1/">Docker1</a></li>
-<li><a href="/docs/docker2/">Docker2</a></li>
-<li><a href="/docs/docker-hub/">Docker Hub</a></li>
-<li><a href="/docs/docker-compose/">Docker Compose</a></li>
-<li><a href="/docs/kubernetes/">Kubernetes</a></li>
-</ul>
+<li>
+  <a href="/docs/vimium/">Vimium</a>
 </li>
-<li><a href="/docs/crypto/"><strong>Crypto</strong></a>
-<ul>
-<li><a href="/docs/blockchain/">Blockchain</a></li>
-<li><a href="/docs/bitcoin/">Bitcoin</a></li>
-<li><a href="/docs/ethereum/">Ethereum</a></li>
-<li><a href="/docs/iota/">IOTA</a></li>
-<li><a href="/docs/nem/">NEM</a></li>
-<li><a href="/docs/substrate/">Substrate</a></li>
-<li><a href="/docs/white-paper/">White Paper</a></li>
-<li><a href="/docs/crypto-docs/">Docs</a></li>
-</ul>
+<li>
+  <a href="/docs/git/">Git</a>
+</li>
+<li>
+  <a href="/docs/github/">GitHub</a>
+</li>
+<li>
+  <a href="/docs/linter-formatter/">Linter/Formatter</a>
+</li>
+<li>
+  <a href="/docs/test/">Test</a>
+</li>
+<li>
+  <a href="/docs/password-manager/">Password Manager</a>
 </li>
 </ul>
+</li>
+<li>
+  <a href="/docs/programming-language/"><strong>Programming Language</strong></a>
+
+<ul>
+<li>
+  <a href="/docs/c/">C</a>
+</li>
+<li>
+  <a href="/docs/rust/"class=active>Rust</a>
+</li>
+<li>
+  <a href="/docs/javascript/">JavaScript</a>
+</li>
+<li>
+  <a href="/docs/css/">CSS</a>
+</li>
+<li>
+  <a href="/docs/nodejs/">Node.js</a>
+</li>
+<li>
+  <a href="/docs/npm/">npm</a>
+</li>
+<li>
+  <a href="/docs/typescript/">TypeScript</a>
+</li>
+<li>
+  <a href="/docs/angular/">Angular</a>
+</li>
+<li>
+  <a href="/docs/react/">React</a>
+</li>
+<li>
+  <a href="/docs/react-static/">React Static</a>
+</li>
+<li>
+  <a href="/docs/haskell/">Haskell</a>
+</li>
+<li>
+  <a href="/docs/hugo/">Hugo</a>
+</li>
+<li>
+  <a href="/docs/programming-language-docs/">Docs</a>
+</li>
+</ul>
+</li>
+<li>
+  <a href="/docs/latex/"><strong>LaTeX</strong></a>
+
+<ul>
+<li>
+  <a href="/docs/platex-book/">Book</a>
+</li>
+</ul>
+</li>
+<li>
+  <a href="/docs/vps/"><strong>VPS</strong></a>
+
+<ul>
+<li>
+  <a href="/docs/ssh/">SSH</a>
+</li>
+<li>
+  <a href="/docs/ubuntu/">Ubuntu</a>
+</li>
+<li>
+  <a href="/docs/alpine-linux/">Alpine Linux</a>
+</li>
+</ul>
+</li>
+<li>
+  <a href="/docs/db/"><strong>DB</strong></a>
+
+<ul>
+<li>
+  <a href="/docs/mysql/">MySQL</a>
+</li>
+<li>
+  <a href="/docs/mongodb/">MongoDB</a>
+</li>
+<li>
+  <a href="/docs/redis/">Redis</a>
+</li>
+</ul>
+</li>
+<li>
+  <a href="/docs/cloud/"><strong>Cloud</strong></a>
+
+<ul>
+<li>
+  <a href="/docs/aws/">AWS</a>
+</li>
+<li>
+  <a href="/docs/gcp/">GCP</a>
+</li>
+<li>
+  <a href="/docs/firebase/">Firebase</a>
+</li>
+<li>
+  <a href="/docs/zeit-now/">ZEIT Now</a>
+</li>
+</ul>
+</li>
+<li>
+  <a href="/docs/ci-cd/"><strong>CI/CD</strong></a>
+
+<ul>
+<li>
+  <a href="/docs/jenkins/">Jenkins</a>
+</li>
+<li>
+  <a href="/docs/travis-ci/">Travis CI</a>
+</li>
+<li>
+  <a href="/docs/circleci/">CircleCI</a>
+</li>
+</ul>
+</li>
+<li>
+  <a href="/docs/container/"><strong>Container</strong></a>
+
+<ul>
+<li>
+  <a href="/docs/docker1/">Docker1</a>
+</li>
+<li>
+  <a href="/docs/docker2/">Docker2</a>
+</li>
+<li>
+  <a href="/docs/docker-hub/">Docker Hub</a>
+</li>
+<li>
+  <a href="/docs/docker-compose/">Docker Compose</a>
+</li>
+<li>
+  <a href="/docs/kubernetes/">Kubernetes</a>
+</li>
+</ul>
+</li>
+<li>
+  <a href="/docs/crypto/"><strong>Crypto</strong></a>
+
+<ul>
+<li>
+  <a href="/docs/blockchain/">Blockchain</a>
+</li>
+<li>
+  <a href="/docs/bitcoin/">Bitcoin</a>
+</li>
+<li>
+  <a href="/docs/ethereum/">Ethereum</a>
+</li>
+<li>
+  <a href="/docs/iota/">IOTA</a>
+</li>
+<li>
+  <a href="/docs/nem/">NEM</a>
+</li>
+<li>
+  <a href="/docs/substrate/">Substrate</a>
+</li>
+<li>
+  <a href="/docs/white-paper/">White Paper</a>
+</li>
+<li>
+  <a href="/docs/crypto-docs/">Docs</a>
+</li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
 
 
 
@@ -147,36 +282,112 @@ https://github.com/alex-shpak/hugo-book
 </nav>
 
 
-<script>
-(function() {
-  var menu = document.querySelector("aside.book-menu nav");
-  addEventListener("beforeunload", function(event) {
-    localStorage.setItem("menu.scrollTop", menu.scrollTop);
-  });
-  menu.scrollTop = localStorage.getItem("menu.scrollTop");
-})();
-</script>
 
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
     </aside>
 
     <div class="book-page">
-      <header class="flex align-center justify-between book-header">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
   <label for="menu-control">
-    <img src="/svg/menu.svg" alt="Menu" />
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
+
   <strong>Rust</strong>
-</header>
+
+  <label for="toc-control">
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+  </label>
+</div>
+
+
+  
+    <input type="checkbox" class="hidden" id="toc-control" />
+    <aside class="hidden clearfix">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#rustの特徴">Rustの特徴</a>
+      <ul>
+        <li><a href="#概要">概要</a></li>
+        <li><a href="#速度面">速度面</a></li>
+        <li><a href="#安全面">安全面</a></li>
+        <li><a href="#生産性を高めるモダンな機能">生産性を高めるモダンな機能</a></li>
+        <li><a href="#シングルバイナリクロスバイナリ">シングルバイナリ・クロスバイナリ</a></li>
+        <li><a href="#他言語との連携が用意">他言語との連携が用意</a></li>
+      </ul>
+    </li>
+    <li><a href="#インストール">インストール</a>
+      <ul>
+        <li><a href="#ツールチェーンのインストール">ツールチェーンのインストール</a></li>
+        <li><a href="#リンカのインストール">リンカのインストール</a></li>
+        <li><a href="#デバッガのインストール">デバッガのインストール</a></li>
+      </ul>
+    </li>
+    <li><a href="#ツールチェーン">ツールチェーン</a>
+      <ul>
+        <li><a href="#ツールチェーンとは">ツールチェーンとは</a></li>
+        <li><a href="#構成要素">構成要素</a></li>
+      </ul>
+    </li>
+    <li><a href="#リンカ">リンカ</a>
+      <ul>
+        <li><a href="#リンカとは">リンカとは</a></li>
+      </ul>
+    </li>
+    <li><a href="#トレイト境界">トレイト境界</a>
+      <ul>
+        <li><a href="#トレイト境界とは">トレイト境界とは</a></li>
+      </ul>
+    </li>
+    <li><a href="#rustup">rustup</a>
+      <ul>
+        <li><a href="#rustupとは">rustupとは</a></li>
+        <li><a href="#機能">機能</a></li>
+        <li><a href="#基本コマンド">基本コマンド</a></li>
+      </ul>
+    </li>
+    <li><a href="#cargo">Cargo</a>
+      <ul>
+        <li><a href="#cargoとは">Cargoとは</a></li>
+        <li><a href="#基本コマンド-1">基本コマンド</a></li>
+        <li><a href="#カスタムサブコマンド">カスタムサブコマンド</a></li>
+        <li><a href="#カスタムサブコマンド追加">カスタムサブコマンド追加</a></li>
+      </ul>
+    </li>
+    <li><a href="#hello-world">Hello World!</a></li>
+    <li><a href="#ターミナルからのデバッグ">ターミナルからのデバッグ</a></li>
+    <li><a href="#所有権の解説">所有権の解説</a></li>
+    <li><a href="#ドキュメントの日本語訳">ドキュメントの日本語訳</a></li>
+    <li><a href="#rust-langorgの日本語化">rust-lang.orgの日本語化</a></li>
+    <li><a href="#チートシート">チートシート</a></li>
+    <li><a href="#rustでosを書く">RustでOSを書く</a></li>
+    <li><a href="#リンク">リンク</a></li>
+  </ul>
+</nav>
+
+
+    </aside>
+  
+ 
+      </header>
 
       
-<article class="markdown"><h1 id="rust">Rustとは</h1>
+      
+  <article class="markdown"><h1 id="rustとは">Rustとは</h1>
 <ul>
 <li>Mozillaが支援するオープンソースのシステムプログラミング言語のこと.</li>
 <li>速度, 安全性, 平行性の3つのゴールにフォーカスしている.</li>
 <li>主にC, C++に置き換わるものとされている.</li>
 <li><strong>GitHubリポジトリ:</strong> <a href="https://github.com/rust-lang/rust">https://github.com/rust-lang/rust</a></li>
 </ul>
-<h2 id="rust1">Rustの特徴</h2>
-<h3 id="heading">概要</h3>
+<h2 id="rustの特徴">Rustの特徴</h2>
+<h3 id="概要">概要</h3>
 <ul>
 <li>C++に匹敵する実行速度や詳細なメモリ管理が実現できる.</li>
 <li>不正なメモリ領域を指すポインタなどを許容しないといったメモリ安全性を保証している.</li>
@@ -185,7 +396,7 @@ https://github.com/alex-shpak/hugo-book
 <li>ガーベージコレクタのような複雑なランタイムをもっていない.</li>
 <li>多言語関数インターフェースを用いて, 他のプログラミング言語との間で相互に関数を呼び出せる.</li>
 </ul>
-<h3 id="heading1">速度面</h3>
+<h3 id="速度面">速度面</h3>
 <ul>
 <li><strong>マシンコードへコンパイル</strong>
 <ul>
@@ -205,7 +416,7 @@ https://github.com/alex-shpak/hugo-book
 </li>
 <li><strong>ガーベージコレクションを行わない軽量なランタイム</strong></li>
 </ul>
-<h3 id="heading2">安全面</h3>
+<h3 id="安全面">安全面</h3>
 <ul>
 <li>Rustはコンパイル時の静的解析により以下の安全性を保証している.</li>
 <li><strong>型安全性</strong>
@@ -237,7 +448,7 @@ https://github.com/alex-shpak/hugo-book
 </ul>
 </li>
 </ul>
-<h3 id="heading3">生産性を高めるモダンな機能</h3>
+<h3 id="生産性を高めるモダンな機能">生産性を高めるモダンな機能</h3>
 <ul>
 <li>以下はRustのモダンな機能の一部</li>
 </ul>
@@ -267,7 +478,7 @@ https://github.com/alex-shpak/hugo-book
 </tr>
 </tbody>
 </table>
-<h3 id="heading4">シングルバイナリ・クロスバイナリ</h3>
+<h3 id="シングルバイナリクロスバイナリ">シングルバイナリ・クロスバイナリ</h3>
 <ul>
 <li>アプリケーションをビルドするとシングルバイナリ(単一の実行可能ファイル)が生成される.</li>
 <li>Rustはクロスコンパイルをして幅広いプラットフォームに向けたバイナリも生成できる.</li>
@@ -311,55 +522,55 @@ https://github.com/alex-shpak/hugo-book
 </tr>
 </tbody>
 </table>
-<h3 id="heading5">他言語との連携が用意</h3>
+<h3 id="他言語との連携が用意">他言語との連携が用意</h3>
 <ul>
 <li>FFI(他言語関数インターフェース)が用意されている.</li>
 <li>GCなどの複雑なランタイムを持っていないので, Python, Ruby, Node.jsなどのランタイムからでもRustの関数を簡単に呼び出せる.</li>
 </ul>
-<h2 id="heading6">インストール</h2>
-<h3 id="heading7">ツールチェーンのインストール</h3>
+<h2 id="インストール">インストール</h2>
+<h3 id="ツールチェーンのインストール">ツールチェーンのインストール</h3>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># 以下でstable版のrustがインストールされる</span>
 curl https://sh.rustup.rs -sSf | sh
-</code></pre></div><h3 id="heading8">リンカのインストール</h3>
+</code></pre></div><h3 id="リンカのインストール">リンカのインストール</h3>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt install gcc <span style="color:#586e75"># Ubuntu</span>
-</code></pre></div><h3 id="heading9">デバッガのインストール</h3>
+</code></pre></div><h3 id="デバッガのインストール">デバッガのインストール</h3>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt install lldb <span style="color:#586e75"># Ubuntu</span>
 <span style="color:#586e75"># Macのデバッガはディベロッパーツールにインストールされてる</span>
-</code></pre></div><h2 id="heading10">ツールチェーン</h2>
-<h3 id="heading11">ツールチェーンとは</h3>
+</code></pre></div><h2 id="ツールチェーン">ツールチェーン</h2>
+<h3 id="ツールチェーンとは">ツールチェーンとは</h3>
 <ul>
 <li>Rustで書かれたソースコードをコンパイルするのに使われるプログラミングツール群のこと.</li>
 </ul>
-<h3 id="heading12">構成要素</h3>
+<h3 id="構成要素">構成要素</h3>
 <ul>
 <li>rustcコマンド(Rustのコンパイラ)</li>
 <li>cargoコマンド(Rustのビルドマネージャ兼パッケージマネージャ)</li>
 <li>std(Rustの標準ライブラリ)</li>
 </ul>
-<h2 id="heading13">リンカ</h2>
-<h3 id="heading14">リンカとは</h3>
+<h2 id="リンカ">リンカ</h2>
+<h3 id="リンカとは">リンカとは</h3>
 <ul>
 <li>正式にはリンケージエディタ.</li>
 <li>rustcや他の言語のコンパイラが出力したオブジェクトファイルやライブラリを結合して, ターゲット環境のABI(Application Binary Interface)に準拠した実行可能ファイルを生成するもの.</li>
 </ul>
-<h2 id="heading15">トレイト境界</h2>
-<h3 id="heading16">トレイト境界とは</h3>
+<h2 id="トレイト境界">トレイト境界</h2>
+<h3 id="トレイト境界とは">トレイト境界とは</h3>
 <ul>
 <li>トレイト境界(trait bound)の役割は, ジェネリクスの型パラメータとして受け取れる型の範囲に境界を定めること.</li>
 <li>ある型がトレイト境界の範囲を超えていなければ型パラメータの実引数として受け取れ, 超えているなら受け取らない.</li>
 </ul>
 <h2 id="rustup">rustup</h2>
-<h3 id="rustup1">rustupとは</h3>
+<h3 id="rustupとは">rustupとは</h3>
 <ul>
 <li>rustupとはRustプロジェクトが公式にサポートしているコマンドラインツールのこと.</li>
 </ul>
-<h3 id="heading17">機能</h3>
+<h3 id="機能">機能</h3>
 <ul>
 <li>複数バージョンのRustツールチェーンのインストールと管理</li>
 <li>クロスコンパイル用のターゲットのインストール</li>
 <li>RLSなどの開発支援ツールのインストール</li>
 </ul>
-<h3 id="heading18">基本コマンド</h3>
+<h3 id="基本コマンド">基本コマンド</h3>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rustup --version <span style="color:#586e75"># rustupのバージョンを表示する</span>
 rustup show <span style="color:#586e75"># インストール済みのツールチェーンを表示する</span>
 rustup install nightly <span style="color:#586e75"># 最新のnightly版をインストールする</span>
@@ -368,11 +579,11 @@ rustup default &lt;ツールチェーン名&gt; <span style="color:#586e75"># �
 rustup run nightly rustc -V <span style="color:#586e75"># nightly版のrustcを実行してバージョンを表示する</span>
 rustup target add x86_64-unknown-linux-musl <span style="color:#586e75"># クロスコンパイル用のターゲットを追加する</span>
 </code></pre></div><h2 id="cargo">Cargo</h2>
-<h3 id="cargo1">Cargoとは</h3>
+<h3 id="cargoとは">Cargoとは</h3>
 <ul>
 <li>Rustのビルドマネージャ兼パッケージマネージャのこと.</li>
 </ul>
-<h3 id="heading19">基本コマンド</h3>
+<h3 id="基本コマンド-1">基本コマンド</h3>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cargo -h <span style="color:#586e75"># 基本的なコマンドを表示する</span>
 cargo --list <span style="color:#586e75"># すべてのコマンドを表示する</span>
 cargo <span style="color:#b58900">command</span> &lt;コマンド名&gt; <span style="color:#586e75"># コマンドのヘルプドキュメントを表示する</span>
@@ -457,10 +668,12 @@ cargo <span style="color:#b58900">command</span> &lt;コマンド名&gt; <span s
 </tr>
 </tbody>
 </table>
-<h3 id="heading20">カスタムサブコマンド</h3>
+<h3 id="カスタムサブコマンド">カスタムサブコマンド</h3>
 <ul>
 <li>Cargoにはコマンドを追加できる.</li>
-<li><a href="https://github.com/rust-lang/cargo/wiki/Third-party-cargo-subcommands">Cargoのwikiページ</a>にはサードパーティによる代表的なカスタムサブコマンドが掲載されている.</li>
+<li>
+  <a href="https://github.com/rust-lang/cargo/wiki/Third-party-cargo-subcommands">Cargoのwikiページ</a>
+にはサードパーティによる代表的なカスタムサブコマンドが掲載されている.</li>
 <li>以下は代表的なカスタムサブコマンドの例.</li>
 </ul>
 <table>
@@ -569,7 +782,7 @@ cargo <span style="color:#b58900">command</span> &lt;コマンド名&gt; <span s
 </tr>
 </tbody>
 </table>
-<h3 id="heading21">カスタムサブコマンド追加</h3>
+<h3 id="カスタムサブコマンド追加">カスタムサブコマンド追加</h3>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># cargo-editをインストールしてみる</span>
 sudo apt install pkg-config libssl-dev <span style="color:#586e75"># Ubuntuではこれらが必要</span>
 cargo install cargo-edit <span style="color:#586e75"># cargo-editカスタムサブコマンドをインストールする</span>
@@ -593,7 +806,7 @@ cargo clean
 </span><span style="color:#586e75"></span><span style="color:#719e07">fn</span> <span style="color:#268bd2">main</span>() {
   println<span style="color:#719e07">!</span>(<span style="color:#2aa198">&#34;Hello, world!&#34;</span>);
 }
-</code></pre></div><h2 id="heading22">ターミナルからのデバッグ</h2>
+</code></pre></div><h2 id="ターミナルからのデバッグ">ターミナルからのデバッグ</h2>
 <ul>
 <li>デバッグにはLLVMのLDBとGNUのGDBが使える.</li>
 <li>Rust特有のデータ構造がきれいに表示されないことがあるため, Rustツールチェーンに含まれている<code>rust-lldb</code>と<code>rust-gdb</code>コマンドを使用すると良い.</li>
@@ -609,133 +822,169 @@ rust-lldb ./target/degub/rpn <span style="color:#586e75"># バイナリを対象
 <span style="color:#719e07">(</span>lldb<span style="color:#719e07">)</span> po 変数名 <span style="color:#586e75"># ブレークポイント時点の変数が束縛されている値を見る</span>
 <span style="color:#719e07">(</span>lldb<span style="color:#719e07">)</span> c <span style="color:#586e75"># プログラムの続きを実行する</span>
 <span style="color:#719e07">(</span>lldb<span style="color:#719e07">)</span> q <span style="color:#586e75"># lldbを終了する</span>
-</code></pre></div><h2 id="heading23">所有権の解説</h2>
+</code></pre></div><h2 id="所有権の解説">所有権の解説</h2>
 <ul>
-<li><a href="https://igaguri.hatenablog.com/">Rustの所有権（ownership）を語義から理解する</a></li>
+<li>
+  <a href="https://igaguri.hatenablog.com/">Rustの所有権（ownership）を語義から理解する</a>
+</li>
 </ul>
-<h2 id="heading24">ドキュメントの日本語訳</h2>
+<h2 id="ドキュメントの日本語訳">ドキュメントの日本語訳</h2>
 <ul>
-<li><a href="https://doc.rust-jp.rs">Rustの日本語ドキュメント/Japanese Docs for Rust</a></li>
-<li><a href="https://tomoyuki-nakabayashi.github.io/book/intro/index.html">The Embedded Rust Book</a></li>
+<li>
+  <a href="https://doc.rust-jp.rs">Rustの日本語ドキュメント/Japanese Docs for Rust</a>
+</li>
+<li>
+  <a href="https://tomoyuki-nakabayashi.github.io/book/intro/index.html">The Embedded Rust Book</a>
+</li>
 </ul>
-<h2 id="rustlangorg">rust-lang.orgの日本語化</h2>
+<h2 id="rust-langorgの日本語化">rust-lang.orgの日本語化</h2>
 <ul>
 <li><a href="https://pontoon.rust-lang.org">https://pontoon.rust-lang.org</a></li>
 </ul>
-<h2 id="heading25">チートシート</h2>
+<h2 id="チートシート">チートシート</h2>
 <ul>
-<li><a href="https://cheats.rs">Rust Language Cheat Sheet</a></li>
+<li>
+  <a href="https://cheats.rs">Rust Language Cheat Sheet</a>
+</li>
 </ul>
-<h2 id="rustos">RustでOSを書く</h2>
+<h2 id="rustでosを書く">RustでOSを書く</h2>
 <ul>
-<li><a href="https://os.phil-opp.com">Writing an OS in Rust (Second Edition)</a></li>
+<li>
+  <a href="https://os.phil-opp.com">Writing an OS in Rust (Second Edition)</a>
+</li>
 </ul>
-<h2 id="heading26">リンク</h2>
+<h2 id="リンク">リンク</h2>
 <ul>
-<li><a href="https://qiita.com/mosh/items/7e327dafbe53b72ad99d">Rustのリンク集</a></li>
+<li>
+  <a href="https://qiita.com/mosh/items/7e327dafbe53b72ad99d">Rustのリンク集</a>
+</li>
 </ul>
 </article>
+ 
+      
 
-      <div class="book-footer justify-between">
-  
+      <footer class="book-footer">
+        
+  <div class="flex justify-between">
 
-  
-  
+
+
   <div>
     
-    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/commit/4b9ddf286c32b01a0a70dd0027eb462b184a52f2" title='Last modified by solareenlo | Aug 18, 2019' target="_blank">
-      <img src="/svg/calendar.svg" alt="Calendar" />
+    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/commit/4b9ddf286c32b01a0a70dd0027eb462b184a52f2" title='Last modified by solareenlo | Aug 18, 2019' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
       <span>Aug 18, 2019</span>
     </a>
   </div>
-  
-  
 
-  
+
+
   <div>
-    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/edit/master/content/docs/rust.md" target="_blank">
-      <img src="/svg/edit.svg" alt="Edit" />
+    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/edit/master/content/docs/rust.md" target="_blank" rel="noopener">
+      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
       <span>Edit this page</span>
     </a>
   </div>
-  
 
 </div>
 
+ 
+        
+      </footer>
+
       
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
     </div>
 
     
-  
-
-  <aside class="book-toc levels-3 fixed">
-    <nav id="TableOfContents">
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
   <ul>
-    <li><a href="#rust1">Rustの特徴</a>
+    <li><a href="#rustの特徴">Rustの特徴</a>
       <ul>
-        <li><a href="#heading">概要</a></li>
-        <li><a href="#heading1">速度面</a></li>
-        <li><a href="#heading2">安全面</a></li>
-        <li><a href="#heading3">生産性を高めるモダンな機能</a></li>
-        <li><a href="#heading4">シングルバイナリ・クロスバイナリ</a></li>
-        <li><a href="#heading5">他言語との連携が用意</a></li>
+        <li><a href="#概要">概要</a></li>
+        <li><a href="#速度面">速度面</a></li>
+        <li><a href="#安全面">安全面</a></li>
+        <li><a href="#生産性を高めるモダンな機能">生産性を高めるモダンな機能</a></li>
+        <li><a href="#シングルバイナリクロスバイナリ">シングルバイナリ・クロスバイナリ</a></li>
+        <li><a href="#他言語との連携が用意">他言語との連携が用意</a></li>
       </ul>
     </li>
-    <li><a href="#heading6">インストール</a>
+    <li><a href="#インストール">インストール</a>
       <ul>
-        <li><a href="#heading7">ツールチェーンのインストール</a></li>
-        <li><a href="#heading8">リンカのインストール</a></li>
-        <li><a href="#heading9">デバッガのインストール</a></li>
+        <li><a href="#ツールチェーンのインストール">ツールチェーンのインストール</a></li>
+        <li><a href="#リンカのインストール">リンカのインストール</a></li>
+        <li><a href="#デバッガのインストール">デバッガのインストール</a></li>
       </ul>
     </li>
-    <li><a href="#heading10">ツールチェーン</a>
+    <li><a href="#ツールチェーン">ツールチェーン</a>
       <ul>
-        <li><a href="#heading11">ツールチェーンとは</a></li>
-        <li><a href="#heading12">構成要素</a></li>
+        <li><a href="#ツールチェーンとは">ツールチェーンとは</a></li>
+        <li><a href="#構成要素">構成要素</a></li>
       </ul>
     </li>
-    <li><a href="#heading13">リンカ</a>
+    <li><a href="#リンカ">リンカ</a>
       <ul>
-        <li><a href="#heading14">リンカとは</a></li>
+        <li><a href="#リンカとは">リンカとは</a></li>
       </ul>
     </li>
-    <li><a href="#heading15">トレイト境界</a>
+    <li><a href="#トレイト境界">トレイト境界</a>
       <ul>
-        <li><a href="#heading16">トレイト境界とは</a></li>
+        <li><a href="#トレイト境界とは">トレイト境界とは</a></li>
       </ul>
     </li>
     <li><a href="#rustup">rustup</a>
       <ul>
-        <li><a href="#rustup1">rustupとは</a></li>
-        <li><a href="#heading17">機能</a></li>
-        <li><a href="#heading18">基本コマンド</a></li>
+        <li><a href="#rustupとは">rustupとは</a></li>
+        <li><a href="#機能">機能</a></li>
+        <li><a href="#基本コマンド">基本コマンド</a></li>
       </ul>
     </li>
     <li><a href="#cargo">Cargo</a>
       <ul>
-        <li><a href="#cargo1">Cargoとは</a></li>
-        <li><a href="#heading19">基本コマンド</a></li>
-        <li><a href="#heading20">カスタムサブコマンド</a></li>
-        <li><a href="#heading21">カスタムサブコマンド追加</a></li>
+        <li><a href="#cargoとは">Cargoとは</a></li>
+        <li><a href="#基本コマンド-1">基本コマンド</a></li>
+        <li><a href="#カスタムサブコマンド">カスタムサブコマンド</a></li>
+        <li><a href="#カスタムサブコマンド追加">カスタムサブコマンド追加</a></li>
       </ul>
     </li>
     <li><a href="#hello-world">Hello World!</a></li>
-    <li><a href="#heading22">ターミナルからのデバッグ</a></li>
-    <li><a href="#heading23">所有権の解説</a></li>
-    <li><a href="#heading24">ドキュメントの日本語訳</a></li>
-    <li><a href="#rustlangorg">rust-lang.orgの日本語化</a></li>
-    <li><a href="#heading25">チートシート</a></li>
-    <li><a href="#rustos">RustでOSを書く</a></li>
-    <li><a href="#heading26">リンク</a></li>
+    <li><a href="#ターミナルからのデバッグ">ターミナルからのデバッグ</a></li>
+    <li><a href="#所有権の解説">所有権の解説</a></li>
+    <li><a href="#ドキュメントの日本語訳">ドキュメントの日本語訳</a></li>
+    <li><a href="#rust-langorgの日本語化">rust-lang.orgの日本語化</a></li>
+    <li><a href="#チートシート">チートシート</a></li>
+    <li><a href="#rustでosを書く">RustでOSを書く</a></li>
+    <li><a href="#リンク">リンク</a></li>
   </ul>
 </nav>
-  </aside>
 
-
-
+ 
+    </aside>
+    
   </main>
 
   
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+

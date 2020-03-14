@@ -5,10 +5,19 @@
     <link>https://solareenlo.com/posts/</link>
     <description>Recent content in Posts on solareenlo</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 17 Oct 2019 19:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 15 Mar 2020 02:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://solareenlo.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>42Tokyo の Piscine を受けてきました．</title>
+      <link>https://solareenlo.com/posts/42tokyo/</link>
+      <pubDate>Sun, 15 Mar 2020 02:00:00 +0900</pubDate>
+      
+      <guid>https://solareenlo.com/posts/42tokyo/</guid>
+      <description>感想 とても楽しかったです．</description>
+    </item>
     
     <item>
       <title>フィンテックエンジニア養成勉強会#2</title>
@@ -16,8 +25,7 @@
       <pubDate>Thu, 17 Oct 2019 19:00:00 +0900</pubDate>
       
       <guid>https://solareenlo.com/posts/fintech001/</guid>
-      <description>フィンテックエンジニア養成勉強会#2（共催:Fintech協会）
-キャッシュフリー経済で社会は再編成できるのか？  スマホ決済の次は触れない生体認証 コアアプリに集約される フィンテックでは型付けが絶対必要 サービス間のデータの受け渡しもスキームを固定する  フィンテックスタートアップ起業家としての心構え  ユーザー体験を提供する アメリカではフィンテック＝ブロックチェーンの活用 テクノロジーで新しい市場を生み出さなければ，巨大な事業に成長させられない 2019年現在はブロックチェーンはインフラになっていない テクノロジーファーストだけでは市場に受け入れられない テクノロジーだけがソリューションではない お客様と社会が求めているのを提供する Web系は自由、金融系はお硬い 規則自体を変える手もある  20代30代のキャリアに働きかける   ピボットでずらす軸とずらさない軸は何をしたいかで決める  前の技術と同じ部分と変えた部分    </description>
+      <description> フィンテックエンジニア養成勉強会#2（共催:Fintech協会） キャッシュフリー経済で社会は再編成できるのか？  スマホ決済の次は触れない生体認証 コアアプリに集約される フィンテックでは型付けが絶対必要 サービス間のデータの受け渡しもスキームを固定する  フィンテックスタートアップ起業家としての心構え  ユーザー体験を提供する アメリカではフィンテック＝ブロックチェーンの活用 テクノロジーで新しい市場を生み出さなければ，巨大な事業に成長させられない 2019年現在はブロックチェーンはインフラになっていない テクノロジーファーストだけでは市場に受け入れられない テクノロジーだけがソリューションではない お客様と社会が求めているのを提供する Web系は自由、金融系はお硬い 規則自体を変える手もある  20代30代のキャリアに働きかける   ピボットでずらす軸とずらさない軸は何をしたいかで決める  前の技術と同じ部分と変えた部分    </description>
     </item>
     
     <item>
@@ -26,8 +34,7 @@
       <pubDate>Wed, 16 Oct 2019 19:00:00 +0900</pubDate>
       
       <guid>https://solareenlo.com/posts/think-about-2020-blockchain-industry/</guid>
-      <description>2020年のブロックチェーン業界を考える
- ビットコインは地道なスケーリングを行っている スクリプトレススクリプトはスクリプトで行っていることを署名に入れる マルチレイヤーで開発していく ビットコインはとても強固 JPモルガン，Libra，中国政府発行のコインはそれぞれ目的が違う  JPモルガンは為替ネットワーク Libraはバスケット通貨 中国政府は金融政策    </description>
+      <description> 2020年のブロックチェーン業界を考える  ビットコインは地道なスケーリングを行っている スクリプトレススクリプトはスクリプトで行っていることを署名に入れる マルチレイヤーで開発していく ビットコインはとても強固 JPモルガン，Libra，中国政府発行のコインはそれぞれ目的が違う  JPモルガンは為替ネットワーク Libraはバスケット通貨 中国政府は金融政策    </description>
     </item>
     
     <item>
@@ -36,8 +43,7 @@
       <pubDate>Fri, 11 Oct 2019 19:30:00 +0900</pubDate>
       
       <guid>https://solareenlo.com/posts/lapras-meetup001/</guid>
-      <description>【2周年記念】LAPRAS HR Meetup 感謝祭
- イベントは根気強く続けるとスケールする  はじめは人来ません   メートアップは最初に飲み食いすると良い  飲み食いして変える人も少なからずいらっしゃいますが   １つのテーマに絞ってその知見をひたすら押すとそれに興味がある強い人が集まる  サイバーテックさんはスカラーをひたすら押したら良い人材が来てくださった   リファラル資源のネットワークを拡げる トレジャーデータのエンジニアはめっちゃ優秀 スカウトメール送る前にGitHub・Twitterでいいねボタンを押す カジュアル面談では，  最初の合意形成が大切 Hard to getがとても重要  下調べをもう一歩先に進める   その時のカジュアル面談のゴールをきちんと決めておく    </description>
+      <description> 【2周年記念】LAPRAS HR Meetup 感謝祭  イベントは根気強く続けるとスケールする  はじめは人来ません   メートアップは最初に飲み食いすると良い  飲み食いして変える人も少なからずいらっしゃいますが   １つのテーマに絞ってその知見をひたすら押すとそれに興味がある強い人が集まる  サイバーテックさんはスカラーをひたすら押したら良い人材が来てくださった   リファラル資源のネットワークを拡げる トレジャーデータのエンジニアはめっちゃ優秀 スカウトメール送る前にGitHub・Twitterでいいねボタンを押す カジュアル面談では，  最初の合意形成が大切 Hard to getがとても重要  下調べをもう一歩先に進める   その時のカジュアル面談のゴールをきちんと決めておく    </description>
     </item>
     
     <item>
@@ -46,8 +52,7 @@
       <pubDate>Thu, 10 Oct 2019 18:30:00 +0900</pubDate>
       
       <guid>https://solareenlo.com/posts/blockchaingig005/</guid>
-      <description>Blockchain GIG #5
- ハッシュタグは#blockchaingig  Oracleさん ユースケース  食品のトレーサビリティ 貿易系 人事情報・学歴情報 サプライチェーンが多い コバルトのトレーサビリティ 医療情報の共有 サプライヤーの共有 GEのインターカンパニーの売掛・買掛をブロックチェーンで管理しよう  インテグレーション・見える化・ データーの連携レイヤーをブロックチェーンで使った 6週間で作れた    ベスプラ  チャネルとはサブネットワークに分けるもの ChannelとPeerの関係 Transient Data  台帳に含まれないようにChaincodeに引き渡せるデータ   Pravate Data Collection  プライベートデータを持つノードを事前に決めておく必要がある   暗号化  鍵交換問題 Transient Dataを使って共通鍵を引き渡す 暗号化アルゴリズムは稀代化する 誰をどの程度信頼するか  デフォルトではPeerにアクセスできれば台帳が読める Peerも結局のところOS上のプロセスの一つなので、ホストマシンをキチンとセキュアにする     アプリケーションとスマコン  スマコンをチェインコードという 台帳に全てを書こうとしない ワークフローはアプリケーションで行う  １企業内でのワークフローはアプリケーションで行う   スマコンは必ず決定論的にする ワールドステートの現在状態と引数のみに依存するようにする PushではなくてPullでスマコンを行うようにする   パフォーマンス  ネットワーク構成  Channelの構成  プライバシーの構成に応じてChannelを分ける   Peerの構成     World Stateへのアクセス  アクセスするデータの最小化  Read/WriteされるKeyを出来る限り最小にする 大規模クエリや分析などはオンチェーンでの処理には向かない   SQL Rich クエリは使えない   Oracle DB 20c  行をハッシュ値で繋いだTableです    富士通さん ミッション  ブロックチェーンをSEが使いやすい状態に仕立てて提供・運用すること PaaS化して自動運用 短期開発のため、システム/アプリケーションの開発に密に関わる  SEが躓くHyperledger Fabricの壁  複数のPeerにリクエストする必要がある スマコン(チェーンコード)の開発  データとストアとしてStateDB(KVS)を持つアプリケーションのようなもの 基本的には案件ごとに開発する必要がある どこまで考慮するば良いかの線引きが難しい    SEが躓かないための解決策  使用性向上機能を設ける  RESTサーバーを設ける ユースケース別チェーンコードを設ける    トラブル事例１(不自然な画面遷移)  スタンプラリーPoCのアプリ開発における事例  アプリからトランザクションが複数投げられてた    原因  クーポン・スタンプに対する認識の違い  来店前に用意するもの・来店後に用意するもの    対策  １度のコールでメソッドを複数実行できるメソッドを追加した(バルク実行)  一度にバルク実行するメソッド群に依存会計が無いことが前提   アプリ側で吸収する  処理をまとめる発想を捨てて、違和感のない箇所に分散させる 違和感を消すために、同期・非同期で処理させる    テスト工程でエラーが発生する  遅いPeerでエラーが発生する  ノードの配置はAnti-Affinityポリジーを守ってた Anti-Affinityポリシーとは可用性のためにノードを物理的に分散化させること    原因  遅いPeerのトランザクションより先に速いPeerのトランザクションが処理さえる  解決策  遅いPeerのために待ってあげる  RFTの時にお客様から  トランザクション・チェーンコード・ステート・ブロックを事前に説明する  開発リードタイム短縮も大事ですが  構想通りのブロックチェーンシステムが出来たか評価する No Block, No Life  LayerXさん DApps開発特有のハマりポイントご紹介  アプリ開発の1つのコンポーネントとして使う  アジェンダ  DAppsのアーキテクチャ全体像 Indexer イベント駆動のトランザクション実行 コントラクトデプロイのフロー UX  DAppsのアーキテクチャ全体像  サーバーが必要  MetaMask   Indexerが必要  コントラクト上にあるデータをDBなどにキャッシュする  二重実行されてないことを確認する indexing済みの次のブロックからログを取得する 取得したイベントのログの数だけループする   Quorum-indexer-DBの流れにする DB-APIにする   Quorum, indexer, API, DB, App  イベント駆動のトランザクション実行(ignitor)  トランザクションのイベント発火を起点として別のトランザクションを実行する トリガー専用のイベントを用意する 失敗専用のイベントを発火する。失敗をrevertとするのではなくて。  ignitorとindexerとの協調  ignitorとindexerを完全に独立させることはできない indexerは1ブロックに含まれるイベントをatomicにDBに保存しているので、  コントラクのデプロイフロー トランザクション実行中の状態をどうするか？  途中のAPIで表示処理する  ディスカッション 現実での紐付け問題はどうするか？ ブロックチェーンがはまるところは  需要と供給が公開される市場  </description>
+      <description> Blockchain GIG #5  ハッシュタグは#blockchaingig  Oracleさん ユースケース  食品のトレーサビリティ 貿易系 人事情報・学歴情報 サプライチェーンが多い コバルトのトレーサビリティ 医療情報の共有 サプライヤーの共有 GEのインターカンパニーの売掛・買掛をブロックチェーンで管理しよう  インテグレーション・見える化・ データーの連携レイヤーをブロックチェーンで使った 6週間で作れた    ベスプラ  チャネルとはサブネットワークに分けるもの ChannelとPeerの関係 Transient Data  台帳に含まれないようにChaincodeに引き渡せるデータ   Pravate Data Collection  プライベートデータを持つノードを事前に決めておく必要がある   暗号化  鍵交換問題 Transient Dataを使って共通鍵を引き渡す 暗号化アルゴリズムは稀代化する 誰をどの程度信頼するか  デフォルトではPeerにアクセスできれば台帳が読める Peerも結局のところOS上のプロセスの一つなので、ホストマシンをキチンとセキュアにする     アプリケーションとスマコン  スマコンをチェインコードという 台帳に全てを書こうとしない ワークフローはアプリケーションで行う  １企業内でのワークフローはアプリケーションで行う   スマコンは必ず決定論的にする ワールドステートの現在状態と引数のみに依存するようにする PushではなくてPullでスマコンを行うようにする   パフォーマンス  ネットワーク構成  Channelの構成  プライバシーの構成に応じてChannelを分ける   Peerの構成     World Stateへのアクセス  アクセスするデータの最小化  Read/WriteされるKeyを出来る限り最小にする 大規模クエリや分析などはオンチェーンでの処理には向かない   SQL Rich クエリは使えない   Oracle DB 20c  行をハッシュ値で繋いだTableです    富士通さん ミッション  ブロックチェーンをSEが使いやすい状態に仕立てて提供・運用すること PaaS化して自動運用 短期開発のため、システム/アプリケーションの開発に密に関わる  SEが躓くHyperledger Fabricの壁  複数のPeerにリクエストする必要がある スマコン(チェーンコード)の開発  データとストアとしてStateDB(KVS)を持つアプリケーションのようなもの 基本的には案件ごとに開発する必要がある どこまで考慮するば良いかの線引きが難しい    SEが躓かないための解決策  使用性向上機能を設ける  RESTサーバーを設ける ユースケース別チェーンコードを設ける    トラブル事例１(不自然な画面遷移)  スタンプラリーPoCのアプリ開発における事例  アプリからトランザクションが複数投げられてた    原因  クーポン・スタンプに対する認識の違い  来店前に用意するもの・来店後に用意するもの    対策  １度のコールでメソッドを複数実行できるメソッドを追加した(バルク実行)  一度にバルク実行するメソッド群に依存会計が無いことが前提   アプリ側で吸収する  処理をまとめる発想を捨てて、違和感のない箇所に分散させる 違和感を消すために、同期・非同期で処理させる    テスト工程でエラーが発生する  遅いPeerでエラーが発生する  ノードの配置はAnti-Affinityポリジーを守ってた Anti-Affinityポリシーとは可用性のためにノードを物理的に分散化させること    原因  遅いPeerのトランザクションより先に速いPeerのトランザクションが処理さえる  解決策  遅いPeerのために待ってあげる  RFTの時にお客様から  トランザクション・チェーンコード・ステート・ブロックを事前に説明する  開発リードタイム短縮も大事ですが  構想通りのブロックチェーンシステムが出来たか評価する No Block, No Life  LayerXさん DApps開発特有のハマりポイントご紹介  アプリ開発の1つのコンポーネントとして使う  アジェンダ  DAppsのアーキテクチャ全体像 Indexer イベント駆動のトランザクション実行 コントラクトデプロイのフロー UX  DAppsのアーキテクチャ全体像  サーバーが必要  MetaMask   Indexerが必要  コントラクト上にあるデータをDBなどにキャッシュする  二重実行されてないことを確認する indexing済みの次のブロックからログを取得する 取得したイベントのログの数だけループする   Quorum-indexer-DBの流れにする DB-APIにする   Quorum, indexer, API, DB, App  イベント駆動のトランザクション実行(ignitor)  トランザクションのイベント発火を起点として別のトランザクションを実行する トリガー専用のイベントを用意する 失敗専用のイベントを発火する。失敗をrevertとするのではなくて。  ignitorとindexerとの協調  ignitorとindexerを完全に独立させることはできない indexerは1ブロックに含まれるイベントをatomicにDBに保存しているので、  コントラクのデプロイフロー トランザクション実行中の状態をどうするか？  途中のAPIで表示処理する  ディスカッション 現実での紐付け問題はどうするか？ ブロックチェーンがはまるところは  需要と供給が公開される市場  </description>
     </item>
     
     <item>
@@ -65,10 +70,10 @@
       <pubDate>Sun, 29 Sep 2019 15:00:00 +0900</pubDate>
       
       <guid>https://solareenlo.com/posts/shimaya/</guid>
-      <description>はじめに 私は技術書典7に初めて本を出す側として参加させて頂いた同人誌初心者です．
+      <description>はじめに 私は 技術書典7 に初めて本を出す側として参加させて頂いた同人誌初心者です．
 そんな中，本の中身を充実させることに集中し過ぎて，本の外側には全く注意を向けることなく終わってしまいました．
-そこで，製本・印刷についても勉強してみようと思い，技術書同人誌博覧会さん主催の，株式会社しまや出版さんの印刷所見学ツアー（午前の部）に参加させて頂きました．
-しまや出版さんとは？  東京都足立区にある同人誌を専門とする出版屋さん． 東京でベスト3に入る歴史を持つ自費出版印刷所(昭和43年印刷業を開始)． 行政から優れた技術力を持つと認められた唯一の同人誌出版社(足立ブランド)．  しまや出版さんの良いところ 技術  オンデマンド印刷の機械が最上級品．  故にオフセット印刷と遜色が無いくらいオンデマンド印刷の本もきれい． 素人が見るとほとんどわからない．   新しい印刷技術に積極的に取り組んでいる．  様々なデザインパターンが可能．  紙・インク・トナー・型抜き・リング・PPなどの種類豊富．   人の手が随所に加わっているので，いろいろとカスタマイズが可能．   人  皆さん職人気質．  無理なカスタマイズも「一度試してみます！」と一度試してからキチンと回答して下さる．   カスタマイズの相談に真摯に対応して下さる．  受付のお姉さんとても親切．   従業員の方々を大切にしているホワイト企業．  従業員の方々きちんと挨拶して下さる．    環境保護  環境に優しい印刷・製本を行っている．  環境保護印刷マークのゴールドを取得． 環境負荷の大きいインク洗浄剤を使わないようにしている(その分人が頑張っている)．    その他  こういった見学会を一般で受けて下さるほど技術力に自信があるし，書き手を大切にしている． 社員猫さんかわいい．   しまや出版さんの欠点  締切が早い．  日曜日に即売会があるなら火曜日が締切日． ホワイトな仕事環境とのトレードオフ．    おわりに しまや出版さんの工場見学に参加できて本当に勉強になりました． 想像の30倍位製本・印刷にこだわることが出来てびっくりしました． 次は，箔押し・マットPP・表紙・帯・表紙のデザインに凝ってみようと思います． 技術書同人誌博覧会さん・株式会社しまや出版さん，今回はこのような貴重な機会を設けて下さり，本当にありがとうございました．</description>
+そこで，製本・印刷についても勉強してみようと思い， 技術書同人誌博覧会 さん主催の，株式会社しまや出版さんの 印刷所見学ツアー（午前の部） に参加させて頂きました．
+ しまや出版さんとは？  東京都足立区にある同人誌を専門とする出版屋さん． 東京でベスト3に入る歴史を持つ自費出版印刷所(昭和43年印刷業を開始)． 行政から優れた技術力を持つと認められた唯一の同人誌出版社(足立ブランド)．  しまや出版さんの良いところ 技術  オンデマンド印刷の機械が最上級品．  故にオフセット印刷と遜色が無いくらいオンデマンド印刷の本もきれい． 素人が見るとほとんどわからない．   新しい印刷技術に積極的に取り組んでいる．  様々なデザインパターンが可能．  紙・インク・トナー・型抜き・リング・PPなどの種類豊富．   人の手が随所に加わっているので，いろいろとカスタマイズが可能．   人  皆さん職人気質．  無理なカスタマイズも「一度試してみます！」と一度試してからキチンと回答して下さる．   カスタマイズの相談に真摯に対応して下さる．  受付のお姉さんとても親切．   従業員の方々を大切にしているホワイト企業．  従業員の方々きちんと挨拶して下さる．    環境保護  環境に優しい印刷・製本を行っている．  環境保護印刷マークのゴールドを取得． 環境負荷の大きいインク洗浄剤を使わないようにしている(その分人が頑張っている)．    その他  こういった見学会を一般で受けて下さるほど技術力に自信があるし，書き手を大切にしている． 社員猫さんかわいい．   しまや出版さんの欠点  締切が早い．  日曜日に即売会があるなら火曜日が締切日． ホワイトな仕事環境とのトレードオフ．    おわりに しまや出版さんの工場見学に参加できて本当に勉強になりました． 想像の30倍位製本・印刷にこだわることが出来てびっくりしました． 次は，箔押し・マットPP・表紙・帯・表紙のデザインに凝ってみようと思います． 技術書同人誌博覧会さん・株式会社しまや出版さん，今回はこのような貴重な機会を設けて下さり，本当にありがとうございました．</description>
     </item>
     
     <item>
@@ -132,7 +137,7 @@
       
       <guid>https://solareenlo.com/posts/angular-docker/</guid>
       <description>以下を参照のこと.
-solareenlo/angular-cli</description>
+ solareenlo/angular-cli </description>
     </item>
     
     <item>
@@ -141,7 +146,7 @@ solareenlo/angular-cli</description>
       <pubDate>Tue, 30 Apr 2019 10:00:00 +0900</pubDate>
       
       <guid>https://solareenlo.com/posts/app/</guid>
-      <description>本を作成  Re:VIEW pandoc  質疑応答  sli.do  作図  draw.io  マークダウン表示  typora  wikiの新しい形  Scrapbox  ノートアプリ  Notion  サーバーレスアプリのホスティングサービス  Now  JSONの書きミスチェッカー  JOSNLint  全文検索  Elasticsearch  モニタリング  KIBANA Grafana Prometheus  </description>
+      <description>本を作成   Re:VIEW   pandoc   質疑応答   sli.do   作図   draw.io   マークダウン表示   typora   wikiの新しい形   Scrapbox   ノートアプリ   Notion   サーバーレスアプリのホスティングサービス   Now   JSONの書きミスチェッカー   JOSNLint   全文検索   Elasticsearch   モニタリング   KIBANA   Grafana   Prometheus   </description>
     </item>
     
     <item>
@@ -151,7 +156,7 @@ solareenlo/angular-cli</description>
       
       <guid>https://solareenlo.com/posts/docker-pass/</guid>
       <description>Ubuntu用
- なぜDocker Hubのパスワードをpassを使って管理するか? ローカルからDocker Hubにログインすると, その時のパスワードを平文のまま保存されるから.    ここからdocker-credential-passの最新バージョンをダウンロードする. tar -zxvf docker-credential-pass.tar.gz (解凍する.) mv docker-credential-pass /usr/local/bin (PATHが通ってるところにファイルを移動する.) sudo apt-get install gpg pass (gpgとpassをインストール.) gpg --generate-keyで新しい秘密鍵と公開鍵の組を作る. gpg --list-keysで出てきた, pubの16進数の40文字(大文字のA-F, 0-9の文字列)をコピーする. pass init AAAAAAAAAABBBBBBBBBBCCCCCCCCCCDDDDDDDDDでpassを初期化する. pass insert docker-credential-helpers/docker-pass-initialized-checkでとりあえずのディレクトリを作成する. docker-credential-pass listで{}と返ってくる. ~/.docker/config.jsonに{&amp;quot;credsStore&amp;quot;: &amp;quot;pass&amp;quot;}と書き込む. docker loginでDockerにログインする.   うまくいかないときは権限をchmodを使って変更してみる.
+ なぜDocker Hubのパスワードをpassを使って管理するか? ローカルからDocker Hubにログインすると, その時のパスワードを平文のまま保存されるから.     ここ からdocker-credential-passの最新バージョンをダウンロードする. tar -zxvf docker-credential-pass.tar.gz (解凍する.) mv docker-credential-pass /usr/local/bin (PATHが通ってるところにファイルを移動する.) sudo apt-get install gpg pass ( gpg と pass をインストール.) gpg --generate-keyで新しい秘密鍵と公開鍵の組を作る. gpg --list-keysで出てきた, pubの16進数の40文字(大文字のA-F, 0-9の文字列)をコピーする. pass init AAAAAAAAAABBBBBBBBBBCCCCCCCCCCDDDDDDDDDでpassを初期化する. pass insert docker-credential-helpers/docker-pass-initialized-checkでとりあえずのディレクトリを作成する. docker-credential-pass listで{}と返ってくる. ~/.docker/config.jsonに{&amp;quot;credsStore&amp;quot;: &amp;quot;pass&amp;quot;}と書き込む. docker loginでDockerにログインする.   うまくいかないときは権限をchmodを使って変更してみる.
  curl -O https://github.com/docker/docker-credential-helpers/releases/download/v0.6.0/docker-credential-pass-v0.6.0-amd64.tar.gz tar -xvf docker-credential-pass.tar.gz mv docker-credential-pass /usr/local/bin apt-get install gpg pass gpg --generate-key gpg --list-keys &amp;gt; pub rsa2048 2019-04-22 [SC] [有効期限: 2021-04-21] &amp;gt; D7D35B60A7FA571541959AF3C4821C32793D5F5A // ここの公開鍵をコピーする &amp;gt; uid [ 究極 ] solareenlo &amp;lt;test@example.</description>
     </item>
     
@@ -162,7 +167,7 @@ solareenlo/angular-cli</description>
       
       <guid>https://solareenlo.com/posts/programming-bitcoin/</guid>
       <description>前提条件  RubyがPCにインストールされている. RubyのパッケージマネージャーのgemがPCにインストールされている.  HTML作成 git clone git@github.com:jimmysong/programmingbitcoin.git cd programmingbitcoin gem install asciidoctor find . -name \*.asciidoc -print0 | xargs -0 -n1 asciidoctor これで.asciidocが.htmlに変換されて出力されるので, 任意のブラウザで開いて読む.
-References  「Programming Bitcoin」を読んだ jimmysong/programmingbitcoin 脱Word、脱Markdown、asciidocでドキュメント作成する際のアレコレ  </description>
+References   「Programming Bitcoin」を読んだ   jimmysong/programmingbitcoin   脱Word、脱Markdown、asciidocでドキュメント作成する際のアレコレ   </description>
     </item>
     
     <item>
@@ -171,9 +176,9 @@ References  「Programming Bitcoin」を読んだ jimmysong/programmingbitcoin �
       <pubDate>Fri, 19 Apr 2019 08:00:00 +0900</pubDate>
       
       <guid>https://solareenlo.com/posts/bitbank01/</guid>
-      <description> bitbank Drink Meetup #1 〜エンジニア〜の自分なりのメモ
+      <description>  bitbank Drink Meetup #1 〜エンジニア〜 の自分なりのメモ
  秘密鍵の安全な生成法 用意するもの
- 電磁波を通さない物質で囲まれたシェルター 電波が通じてない山奥 完全にランダムで賽の目が出るサイコロ 上記のセットを複数個  とってもセキュアに暗号資産を管理してくれるところ  xapo  </description>
+ 電磁波を通さない物質で囲まれたシェルター 電波が通じてない山奥 完全にランダムで賽の目が出るサイコロ 上記のセットを複数個  とってもセキュアに暗号資産を管理してくれるところ   xapo   </description>
     </item>
     
     <item>
@@ -182,7 +187,7 @@ References  「Programming Bitcoin」を読んだ jimmysong/programmingbitcoin �
       <pubDate>Thu, 18 Apr 2019 08:00:00 +0900</pubDate>
       
       <guid>https://solareenlo.com/posts/plasma-substrate01/</guid>
-      <description>Plasma × Substrate 勉強会 #1の自分なりのメモ
+      <description>Plasma × Substrate 勉強会 #1 の自分なりのメモ
  Introducing Plasma Chamber  プラズマとは  セキュアにトランザクションをさばく. マークル木を使ってデータを圧縮する. 1分ごとに行う. エンドユーザーが出金したいときはルートチェーンに問い合わせる. 他の人にチャレンジされなければ許可されて出金される仕組み. スケーラブル・セキュリティ・ユーザビリの高いDappasが作れるぞ.  プラズマの悪い点  受取手はトランザクションの履歴を確認しないといけない. ファイナリティは待たないといけない. Exit期間があるのでUIが悪い  Plasma Chamberは上記の3つの悪い点を改善するぞ What I mean by &amp;lsquo;usable&amp;rsquo; High TPS, Less Gas, Work on Mobile, Instant Finality, ERC20使える
 特徴  Exit Game Operatorが資金をかっさらう事がある. それに対する対策を行った. Gas Const/Proof Size Reduction Instantaneous Finality Fast Finality Contract に供託しておく. ユーザー, マーチャント, オペレーター, Ethereum オペレーターまではhttpsで通信する. オペレーターまでなら2秒以下でファイナリティが得られる. Ethereumのブロックチェーンまで待つと2.5分から7分かかる. Plasma MVP → Plasma Cash → Plasma Cashflow → ?</description>
     </item>
@@ -193,13 +198,12 @@ References  「Programming Bitcoin」を読んだ jimmysong/programmingbitcoin �
       <pubDate>Wed, 17 Apr 2019 09:00:00 +0900</pubDate>
       
       <guid>https://solareenlo.com/posts/bitcoind/</guid>
-      <description> bitcoindへのアクセス方法3選(bitcoin-cli, curl, POST). 3つともJSON-RPCで通信してる.
+      <description> bitcoindへのアクセス方法3選(bitcoin-cli, curl, POST). 3つとも JSON-RPC で通信してる.
  bitcoindとは, 名前の通りunixのデーモンとして動作する事を目的とするBitcoinのクライアントで, JSON-RPCで開発者向けのAPIを提供する. したがって, Webサービスとして動作するBitcoinウォレットのバックエンドとしてや, マイニングプールのサーバーとして使われる.
-Reference: Bitcoinウォレットの比較
- 1. bitcoin-cliを使ってアクセスする.  bitcoin-cliとは, bitcoindへJSON-RPCを使ってアクセスするツールのこと.
+Reference: Bitcoinウォレットの比較  1. bitcoin-cliを使ってアクセスする.  bitcoin-cliとは, bitcoindへJSON-RPCを使ってアクセスするツールのこと.
  bitcoindを使ってBitcoinのフルノードを立ち上げて,
 bitcoin-cli getblockchaininfo とか.
-2. cURLを使ってアクセスする. 下記curlを行う要件.
+2. cURL を使ってアクセスする. 下記curlを行う要件.
  ネットワーク: mainnet 接続環境: ローカル ポート番号: 8332 ユーザーの名前: user-name パスワード: user-password 投げつけているbitcoin-cliのメソッド: getblockchaininfo  curl --data-binary &#39;{&amp;quot;jsonrpc&amp;quot;:&amp;quot;1.0&amp;quot;,&amp;quot;id&amp;quot;:&amp;quot;curltext&amp;quot;,&amp;quot;method&amp;quot;:&amp;quot;getblockchaininfo&amp;quot;,&amp;quot;params&amp;quot;:[]}&#39; -H &#39;content-type:text/plain;&#39; http://user-name:user-password@127.0.0.1:8332/ | jq 3. 自作プログラムでPOSTしてアクセスする. bitcoindはHTTPリクエストメソッドのPOSTに対応しているので, JSON-RPCをPOSTで投げつける. 以下のプログラムはNode.jsを使った例.
  https://github.com/solareenlo/bc-json-rpc  </description>
     </item>
@@ -214,7 +218,7 @@ bitcoin-cli getblockchaininfo とか.
  ものすごい初歩からこのサイトの作り方を説明しています. この手順で作成するとGitHubに全ての内容/更新履歴/更新内容が公開されますので, 適宜読み替えてください.
 Macにgitをインストールする https://git-scm.com/download/mac
 GitHubにアカウントを作成する https://github.com
-MacにHomebrewをインストールする /usr/bin/ruby -e &amp;#34;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;#34;  References: https://brew.sh/index_ja.html https://github.com/Homebrew/brew  MacにHugo(静的サイトジェネレーター)をインストールする brew install hugo  Reference: Install Hugo  HugoのExtendedバージョンをインストールする 以下内容をhugo_latest.sh名で保存する.
+MacにHomebrewをインストールする /usr/bin/ruby -e &amp;#34;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;#34;  References: https://brew.sh/index_ja.html https://github.com/Homebrew/brew  MacにHugo(静的サイトジェネレーター)をインストールする brew install hugo  Reference: Install Hugo   HugoのExtendedバージョンをインストールする 以下内容をhugo_latest.sh名で保存する.
 # hugo_latest.sh # Find the latest Hugo from GitHub echo &amp;#39;🐹 Starting Hugo Install / Update 🐹&amp;#39; echo &amp;#39; Note: Please be sure to have curl and grep installed&amp;#39; echo &amp;#39;&amp;#39; url=$(curl -s &amp;#34;https://api.github.com/repositories/11180687/releases/latest&amp;#34; | grep -o &amp;#39;https://.</description>
     </item>
     

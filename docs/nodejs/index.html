@@ -4,23 +4,21 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Nodejs"><meta property="og:title" content="" />
+<meta name="description" content="Node.jsとは  サーバーサイドJavaScript環境のこと. サーバーサイドもJavaScripで記述できるようにした. シングルスレッドでノンブロッキングI/Oを行う. GitHubリポジトリ: https://github.com/nodejs  インストール Mac: https://nodejs.org/en/
+Ubuntu: Official Node.js binary distributions テストツールの種類  テストの環境を提供する（ Mocha , Jasmine , Jest , Karma ）   テストの構造を提供する（ Mocha , Jasmine , Jest , Cucumber） アサーション機能を提供する（ Chai , Jasmine , Jest , Unexpected） 生成, 表示, テスト結果をウォッチする（ Mocha , Jasmine , Jest , Karma ）以前の実行時からの変更が意図されたものであることを確認するために, コンポーネントやデータ構造を生成し, スナップショットを比較する（ Jest , Ava ） モック, スパイ, スタブを提供する（ Sinon , Jasmine , enzyme , Jest , testdouble) コードカバレッジのレポートを生成する（Istanbul, Jest ) シナリオ実行の管理ができるブラウザ, または疑似ブラウザの環境を提供する（ Protractor , Nightwatch , Phantom, Casper）  Reference: 2017年JavaScriptのテスト概論 日付を扱う   moment/moment   iamkun/dayjs   date-fns/date-fns   引数で判定 引数1つでok."><meta property="og:title" content="" />
 <meta property="og:description" content="Node.jsとは  サーバーサイドJavaScript環境のこと. サーバーサイドもJavaScripで記述できるようにした. シングルスレッドでノンブロッキングI/Oを行う. GitHubリポジトリ: https://github.com/nodejs  インストール Mac: https://nodejs.org/en/
-Ubuntu: Official Node.js binary distributions
-テストツールの種類  テストの環境を提供する（Mocha, Jasmine, Jest, Karma）   テストの構造を提供する（Mocha, Jasmine, Jest, Cucumber） アサーション機能を提供する（Chai, Jasmine, Jest, Unexpected） 生成, 表示, テスト結果をウォッチする（Mocha, Jasmine, Jest, Karma）以前の実行時からの変更が意図されたものであることを確認するために, コンポーネントやデータ構造を生成し, スナップショットを比較する（Jest, Ava） モック, スパイ, スタブを提供する（Sinon, Jasmine, enzyme, Jest, testdouble) コードカバレッジのレポートを生成する（Istanbul, Jest) シナリオ実行の管理ができるブラウザ, または疑似ブラウザの環境を提供する（Protractor, Nightwatch, Phantom, Casper）  Reference: 2017年JavaScriptのテスト概論
-日付を扱う  moment/moment iamkun/dayjs date-fns/date-fns  引数で判定 引数1つでok. それ以外は強制終了する.
-if(process.argv.length !== 3) { console." />
+Ubuntu: Official Node.js binary distributions テストツールの種類  テストの環境を提供する（ Mocha , Jasmine , Jest , Karma ）   テストの構造を提供する（ Mocha , Jasmine , Jest , Cucumber） アサーション機能を提供する（ Chai , Jasmine , Jest , Unexpected） 生成, 表示, テスト結果をウォッチする（ Mocha , Jasmine , Jest , Karma ）以前の実行時からの変更が意図されたものであることを確認するために, コンポーネントやデータ構造を生成し, スナップショットを比較する（ Jest , Ava ） モック, スパイ, スタブを提供する（ Sinon , Jasmine , enzyme , Jest , testdouble) コードカバレッジのレポートを生成する（Istanbul, Jest ) シナリオ実行の管理ができるブラウザ, または疑似ブラウザの環境を提供する（ Protractor , Nightwatch , Phantom, Casper）  Reference: 2017年JavaScriptのテスト概論 日付を扱う   moment/moment   iamkun/dayjs   date-fns/date-fns   引数で判定 引数1つでok." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://solareenlo.com/docs/nodejs/" />
-
+<meta property="article:modified_time" content="2019-05-31T14:11:05+09:00" />
 <title>Nodejs | solareenlo</title>
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 
 
-<link rel="stylesheet" href="/book.min.0d8f55f751a5f22793c02b19a8a0822122d183a7e99645f6b428174dd3eeec94.css" integrity="sha256-DY9V91Gl8ieTwCsZqKCCISLRg6fplkX2tCgXTdPu7JQ=">
+<link rel="stylesheet" href="/book.min.58981925ddc33520ebc4b651e423503306a3203982a9b8426a20913f11092a1f.css" integrity="sha256-WJgZJd3DNSDrxLZR5CNQMwajIDmCqbhCaiCRPxEJKh8=">
 
 
-<script defer src="/en.search.min.0de8e26fe8b38f83ff163b7738b4abcdbbe90ae41f3d554ee92aed704668dc09.js" integrity="sha256-Dejib&#43;izj4P/Fjt3OLSrzbvpCuQfPVVO6SrtcEZo3Ak="></script>
+<script defer src="/en.search.min.cd69dcbc57adb833562b43f1f38bae1ac2260c98f1c7775cd3eeaef066265c87.js" integrity="sha256-zWncvFetuDNWK0Px84uuGsImDJjxx3dc0&#43;6u8GYmXIc="></script>
 
 <!--
 Made with Book Theme
@@ -32,18 +30,18 @@ https://github.com/alex-shpak/hugo-book
 
 <body>
   <input type="checkbox" class="hidden" id="menu-control" />
-  <main class="flex container">
-
-    <aside class="book-menu fixed">
-      <nav>
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
 <h2 class="book-brand">
-  <a href="https://solareenlo.com/"><span>solareenlo</span>
+  <a href="/"><span>solareenlo</span>
   </a>
 </h2>
 
 
 <div class="book-search">
-  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
   <div class="book-search-spinner spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
@@ -52,97 +50,232 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-    <ul>
-<li><a href="/"><strong>はじめに</strong></a></li>
-<li><a href="/posts/"><strong>Blog</strong></a></li>
-<li><a href="/docs/programming/"><strong>Programming</strong></a>
-<ul>
-<li><a href="/docs/terminal/">Terminal</a></li>
-<li><a href="/docs/command/">Command</a></li>
-<li><a href="/docs/sed/">sed</a></li>
-<li><a href="/docs/shell-script/">Shell Script</a></li>
-<li><a href="/docs/vim/">Vim</a></li>
-<li><a href="/docs/vimium/">Vimium</a></li>
-<li><a href="/docs/git/">Git</a></li>
-<li><a href="/docs/github/">GitHub</a></li>
-<li><a href="/docs/linter-formatter/">Linter/Formatter</a></li>
-<li><a href="/docs/test/">Test</a></li>
-<li><a href="/docs/password-manager/">Password Manager</a></li>
-</ul>
+
+
+
+
+
+
+  <ul>
+<li>
+  <a href="/"><strong>はじめに</strong></a>
 </li>
-<li><a href="/docs/programming-language/"><strong>Programming Language</strong></a>
-<ul>
-<li><a href="/docs/c/">C</a></li>
-<li><a href="/docs/rust/">Rust</a></li>
-<li><a href="/docs/javascript/">JavaScript</a></li>
-<li><a href="/docs/css/">CSS</a></li>
-<li><a href="/docs/nodejs/"class=active>Node.js</a></li>
-<li><a href="/docs/npm/">npm</a></li>
-<li><a href="/docs/typescript/">TypeScript</a></li>
-<li><a href="/docs/angular/">Angular</a></li>
-<li><a href="/docs/react/">React</a></li>
-<li><a href="/docs/react-static/">React Static</a></li>
-<li><a href="/docs/haskell/">Haskell</a></li>
-<li><a href="/docs/hugo/">Hugo</a></li>
-<li><a href="/docs/programming-language-docs/">Docs</a></li>
-</ul>
+<li>
+  <a href="/posts/"><strong>Blog</strong></a>
 </li>
-<li><a href="/docs/latex/"><strong>LaTeX</strong></a>
+<li>
+  <a href="/docs/programming/"><strong>Programming</strong></a>
+
 <ul>
-<li><a href="/docs/platex-book/">Book</a></li>
-</ul>
+<li>
+  <a href="/docs/terminal/">Terminal</a>
 </li>
-<li><a href="/docs/vps/"><strong>VPS</strong></a>
-<ul>
-<li><a href="/docs/ssh/">SSH</a></li>
-<li><a href="/docs/ubuntu/">Ubuntu</a></li>
-<li><a href="/docs/alpine-linux/">Alpine Linux</a></li>
-</ul>
+<li>
+  <a href="/docs/command/">Command</a>
 </li>
-<li><a href="/docs/db/"><strong>DB</strong></a>
-<ul>
-<li><a href="/docs/mysql/">MySQL</a></li>
-<li><a href="/docs/mongodb/">MongoDB</a></li>
-<li><a href="/docs/redis/">Redis</a></li>
-</ul>
+<li>
+  <a href="/docs/sed/">sed</a>
 </li>
-<li><a href="/docs/cloud/"><strong>Cloud</strong></a>
-<ul>
-<li><a href="/docs/aws/">AWS</a></li>
-<li><a href="/docs/gcp/">GCP</a></li>
-<li><a href="/docs/firebase/">Firebase</a></li>
-<li><a href="/docs/zeit-now/">ZEIT Now</a></li>
-</ul>
+<li>
+  <a href="/docs/shell-script/">Shell Script</a>
 </li>
-<li><a href="/docs/ci-cd/"><strong>CI/CD</strong></a>
-<ul>
-<li><a href="/docs/jenkins/">Jenkins</a></li>
-<li><a href="/docs/travis-ci/">Travis CI</a></li>
-<li><a href="/docs/circleci/">CircleCI</a></li>
-</ul>
+<li>
+  <a href="/docs/vim/">Vim</a>
 </li>
-<li><a href="/docs/container/"><strong>Container</strong></a>
-<ul>
-<li><a href="/docs/docker1/">Docker1</a></li>
-<li><a href="/docs/docker2/">Docker2</a></li>
-<li><a href="/docs/docker-hub/">Docker Hub</a></li>
-<li><a href="/docs/docker-compose/">Docker Compose</a></li>
-<li><a href="/docs/kubernetes/">Kubernetes</a></li>
-</ul>
+<li>
+  <a href="/docs/vimium/">Vimium</a>
 </li>
-<li><a href="/docs/crypto/"><strong>Crypto</strong></a>
-<ul>
-<li><a href="/docs/blockchain/">Blockchain</a></li>
-<li><a href="/docs/bitcoin/">Bitcoin</a></li>
-<li><a href="/docs/ethereum/">Ethereum</a></li>
-<li><a href="/docs/iota/">IOTA</a></li>
-<li><a href="/docs/nem/">NEM</a></li>
-<li><a href="/docs/substrate/">Substrate</a></li>
-<li><a href="/docs/white-paper/">White Paper</a></li>
-<li><a href="/docs/crypto-docs/">Docs</a></li>
-</ul>
+<li>
+  <a href="/docs/git/">Git</a>
+</li>
+<li>
+  <a href="/docs/github/">GitHub</a>
+</li>
+<li>
+  <a href="/docs/linter-formatter/">Linter/Formatter</a>
+</li>
+<li>
+  <a href="/docs/test/">Test</a>
+</li>
+<li>
+  <a href="/docs/password-manager/">Password Manager</a>
 </li>
 </ul>
+</li>
+<li>
+  <a href="/docs/programming-language/"><strong>Programming Language</strong></a>
+
+<ul>
+<li>
+  <a href="/docs/c/">C</a>
+</li>
+<li>
+  <a href="/docs/rust/">Rust</a>
+</li>
+<li>
+  <a href="/docs/javascript/">JavaScript</a>
+</li>
+<li>
+  <a href="/docs/css/">CSS</a>
+</li>
+<li>
+  <a href="/docs/nodejs/"class=active>Node.js</a>
+</li>
+<li>
+  <a href="/docs/npm/">npm</a>
+</li>
+<li>
+  <a href="/docs/typescript/">TypeScript</a>
+</li>
+<li>
+  <a href="/docs/angular/">Angular</a>
+</li>
+<li>
+  <a href="/docs/react/">React</a>
+</li>
+<li>
+  <a href="/docs/react-static/">React Static</a>
+</li>
+<li>
+  <a href="/docs/haskell/">Haskell</a>
+</li>
+<li>
+  <a href="/docs/hugo/">Hugo</a>
+</li>
+<li>
+  <a href="/docs/programming-language-docs/">Docs</a>
+</li>
+</ul>
+</li>
+<li>
+  <a href="/docs/latex/"><strong>LaTeX</strong></a>
+
+<ul>
+<li>
+  <a href="/docs/platex-book/">Book</a>
+</li>
+</ul>
+</li>
+<li>
+  <a href="/docs/vps/"><strong>VPS</strong></a>
+
+<ul>
+<li>
+  <a href="/docs/ssh/">SSH</a>
+</li>
+<li>
+  <a href="/docs/ubuntu/">Ubuntu</a>
+</li>
+<li>
+  <a href="/docs/alpine-linux/">Alpine Linux</a>
+</li>
+</ul>
+</li>
+<li>
+  <a href="/docs/db/"><strong>DB</strong></a>
+
+<ul>
+<li>
+  <a href="/docs/mysql/">MySQL</a>
+</li>
+<li>
+  <a href="/docs/mongodb/">MongoDB</a>
+</li>
+<li>
+  <a href="/docs/redis/">Redis</a>
+</li>
+</ul>
+</li>
+<li>
+  <a href="/docs/cloud/"><strong>Cloud</strong></a>
+
+<ul>
+<li>
+  <a href="/docs/aws/">AWS</a>
+</li>
+<li>
+  <a href="/docs/gcp/">GCP</a>
+</li>
+<li>
+  <a href="/docs/firebase/">Firebase</a>
+</li>
+<li>
+  <a href="/docs/zeit-now/">ZEIT Now</a>
+</li>
+</ul>
+</li>
+<li>
+  <a href="/docs/ci-cd/"><strong>CI/CD</strong></a>
+
+<ul>
+<li>
+  <a href="/docs/jenkins/">Jenkins</a>
+</li>
+<li>
+  <a href="/docs/travis-ci/">Travis CI</a>
+</li>
+<li>
+  <a href="/docs/circleci/">CircleCI</a>
+</li>
+</ul>
+</li>
+<li>
+  <a href="/docs/container/"><strong>Container</strong></a>
+
+<ul>
+<li>
+  <a href="/docs/docker1/">Docker1</a>
+</li>
+<li>
+  <a href="/docs/docker2/">Docker2</a>
+</li>
+<li>
+  <a href="/docs/docker-hub/">Docker Hub</a>
+</li>
+<li>
+  <a href="/docs/docker-compose/">Docker Compose</a>
+</li>
+<li>
+  <a href="/docs/kubernetes/">Kubernetes</a>
+</li>
+</ul>
+</li>
+<li>
+  <a href="/docs/crypto/"><strong>Crypto</strong></a>
+
+<ul>
+<li>
+  <a href="/docs/blockchain/">Blockchain</a>
+</li>
+<li>
+  <a href="/docs/bitcoin/">Bitcoin</a>
+</li>
+<li>
+  <a href="/docs/ethereum/">Ethereum</a>
+</li>
+<li>
+  <a href="/docs/iota/">IOTA</a>
+</li>
+<li>
+  <a href="/docs/nem/">NEM</a>
+</li>
+<li>
+  <a href="/docs/substrate/">Substrate</a>
+</li>
+<li>
+  <a href="/docs/white-paper/">White Paper</a>
+</li>
+<li>
+  <a href="/docs/crypto-docs/">Docs</a>
+</li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
 
 
 
@@ -151,73 +284,180 @@ https://github.com/alex-shpak/hugo-book
 </nav>
 
 
-<script>
-(function() {
-  var menu = document.querySelector("aside.book-menu nav");
-  addEventListener("beforeunload", function(event) {
-    localStorage.setItem("menu.scrollTop", menu.scrollTop);
-  });
-  menu.scrollTop = localStorage.getItem("menu.scrollTop");
-})();
-</script>
 
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
     </aside>
 
     <div class="book-page">
-      <header class="flex align-center justify-between book-header">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
   <label for="menu-control">
-    <img src="/svg/menu.svg" alt="Menu" />
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
+
   <strong>Nodejs</strong>
-</header>
+
+  <label for="toc-control">
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+  </label>
+</div>
+
+
+  
+    <input type="checkbox" class="hidden" id="toc-control" />
+    <aside class="hidden clearfix">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#インストール">インストール</a></li>
+    <li><a href="#テストツールの種類">テストツールの種類</a></li>
+    <li><a href="#日付を扱う">日付を扱う</a></li>
+    <li><a href="#引数で判定">引数で判定</a></li>
+    <li><a href="#mapの中で非同期処理">mapの中で非同期処理</a></li>
+    <li><a href="#csvを扱う">CSVを扱う</a>
+      <ul>
+        <li><a href="#stream">stream</a></li>
+        <li><a href="#pipeでstream">pipeでstream</a></li>
+        <li><a href="#コールバック">コールバック</a></li>
+        <li><a href="#同期処理">同期処理</a></li>
+      </ul>
+    </li>
+    <li><a href="#streamとは">Streamとは</a>
+      <ul>
+        <li><a href="#streamの種類">Streamの種類</a></li>
+        <li><a href="#公式reference">公式Reference</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#パッケージを最新バージョンへ">パッケージを最新バージョンへ</a></li>
+  </ul>
+</nav>
+
+
+    </aside>
+  
+ 
+      </header>
 
       
-<article class="markdown"><h1 id="nodejs">Node.jsとは</h1>
+      
+  <article class="markdown"><h1 id="nodejsとは">Node.jsとは</h1>
 <ul>
 <li>サーバーサイドJavaScript環境のこと.</li>
 <li>サーバーサイドもJavaScripで記述できるようにした.</li>
 <li>シングルスレッドでノンブロッキングI/Oを行う.</li>
 <li><strong>GitHubリポジトリ:</strong> <a href="https://github.com/nodejs">https://github.com/nodejs</a></li>
 </ul>
-<h2 id="heading">インストール</h2>
+<h2 id="インストール">インストール</h2>
 <p><strong>Mac:</strong> <a href="https://nodejs.org/en/">https://nodejs.org/en/</a></p>
-<p><strong>Ubuntu:</strong> <a href="https://github.com/nodesource/distributions/blob/master/README.md">Official Node.js binary distributions</a></p>
-<h2 id="heading1">テストツールの種類</h2>
+<p><strong>Ubuntu:</strong> 
+  <a href="https://github.com/nodesource/distributions/blob/master/README.md">Official Node.js binary distributions</a>
+</p>
+<h2 id="テストツールの種類">テストツールの種類</h2>
 <ol>
-<li>テストの環境を提供する（<a href="https://github.com/mochajs/mocha">Mocha</a>, <a href="https://github.com/jasmine/jasmine">Jasmine</a>, <a href="https://github.com/facebook/jest">Jest</a>, <a href="https://github.com/karma-runner/karma">Karma</a>）</li>
+<li>テストの環境を提供する（
+  <a href="https://github.com/mochajs/mocha">Mocha</a>
+, 
+  <a href="https://github.com/jasmine/jasmine">Jasmine</a>
+, 
+  <a href="https://github.com/facebook/jest">Jest</a>
+, 
+  <a href="https://github.com/karma-runner/karma">Karma</a>
+）</li>
 </ol>
 <ul>
-<li>テストの構造を提供する（<a href="https://github.com/mochajs/mocha">Mocha</a>, <a href="https://github.com/jasmine/jasmine">Jasmine</a>, <a href="https://github.com/facebook/jest">Jest</a>, Cucumber）</li>
-<li>アサーション機能を提供する（<a href="https://github.com/chaijs/chai">Chai</a>, <a href="https://github.com/jasmine/jasmine">Jasmine</a>, <a href="https://github.com/facebook/jest">Jest</a>, Unexpected）</li>
-<li>生成, 表示, テスト結果をウォッチする（<a href="https://github.com/mochajs/mocha">Mocha</a>, <a href="https://github.com/jasmine/jasmine">Jasmine</a>, <a href="https://github.com/facebook/jest">Jest</a>, <a href="https://github.com/karma-runner/karma">Karma</a>）<!-- raw HTML omitted -->
+<li>テストの構造を提供する（
+  <a href="https://github.com/mochajs/mocha">Mocha</a>
+, 
+  <a href="https://github.com/jasmine/jasmine">Jasmine</a>
+, 
+  <a href="https://github.com/facebook/jest">Jest</a>
+, Cucumber）</li>
+<li>アサーション機能を提供する（
+  <a href="https://github.com/chaijs/chai">Chai</a>
+, 
+  <a href="https://github.com/jasmine/jasmine">Jasmine</a>
+, 
+  <a href="https://github.com/facebook/jest">Jest</a>
+, Unexpected）</li>
+<li>生成, 表示, テスト結果をウォッチする（
+  <a href="https://github.com/mochajs/mocha">Mocha</a>
+, 
+  <a href="https://github.com/jasmine/jasmine">Jasmine</a>
+, 
+  <a href="https://github.com/facebook/jest">Jest</a>
+, 
+  <a href="https://github.com/karma-runner/karma">Karma</a>
+）<!-- raw HTML omitted -->
 以前の実行時からの変更が意図されたものであることを確認するために,</li>
-<li>コンポーネントやデータ構造を生成し, スナップショットを比較する（<a href="https://github.com/facebook/jest">Jest</a>, <a href="https://github.com/avajs/ava">Ava</a>）</li>
-<li>モック, スパイ, スタブを提供する（<a href="https://github.com/sinonjs/sinon">Sinon</a>, <a href="https://github.com/jasmine/jasmine">Jasmine</a>, <a href="https://github.com/airbnb/enzyme">enzyme</a>, <a href="https://github.com/facebook/jest">Jest</a>, testdouble)</li>
-<li>コードカバレッジのレポートを生成する（Istanbul, <a href="https://github.com/facebook/jest">Jest</a>)</li>
-<li>シナリオ実行の管理ができるブラウザ, または疑似ブラウザの環境を提供する（<a href="https://github.com/angular/protractor">Protractor</a>, <a href="https://github.com/nightwatchjs/nightwatch">Nightwatch</a>, Phantom, Casper）</li>
+<li>コンポーネントやデータ構造を生成し, スナップショットを比較する（
+  <a href="https://github.com/facebook/jest">Jest</a>
+, 
+  <a href="https://github.com/avajs/ava">Ava</a>
+）</li>
+<li>モック, スパイ, スタブを提供する（
+  <a href="https://github.com/sinonjs/sinon">Sinon</a>
+, 
+  <a href="https://github.com/jasmine/jasmine">Jasmine</a>
+, 
+  <a href="https://github.com/airbnb/enzyme">enzyme</a>
+, 
+  <a href="https://github.com/facebook/jest">Jest</a>
+, testdouble)</li>
+<li>コードカバレッジのレポートを生成する（Istanbul, 
+  <a href="https://github.com/facebook/jest">Jest</a>
+)</li>
+<li>シナリオ実行の管理ができるブラウザ, または疑似ブラウザの環境を提供する（
+  <a href="https://github.com/angular/protractor">Protractor</a>
+, 
+  <a href="https://github.com/nightwatchjs/nightwatch">Nightwatch</a>
+, Phantom, Casper）</li>
 </ul>
-<p><strong>Reference:</strong> <a href="https://postd.cc/a-complete-guide-to-testing-javascript-in-2017/">2017年JavaScriptのテスト概論</a></p>
-<h2 id="heading2">日付を扱う</h2>
+<p><strong>Reference:</strong> 
+  <a href="https://postd.cc/a-complete-guide-to-testing-javascript-in-2017/">2017年JavaScriptのテスト概論</a>
+</p>
+<h2 id="日付を扱う">日付を扱う</h2>
 <ul>
-<li><a href="https://github.com/moment/moment">moment/moment</a></li>
-<li><a href="https://github.com/iamkun/dayjs">iamkun/dayjs</a></li>
-<li><a href="https://github.com/date-fns/date-fns">date-fns/date-fns</a></li>
+<li>
+  <a href="https://github.com/moment/moment">moment/moment</a>
+</li>
+<li>
+  <a href="https://github.com/iamkun/dayjs">iamkun/dayjs</a>
+</li>
+<li>
+  <a href="https://github.com/date-fns/date-fns">date-fns/date-fns</a>
+</li>
 </ul>
-<h2 id="heading3">引数で判定</h2>
+<h2 id="引数で判定">引数で判定</h2>
 <p>引数1つでok. それ以外は強制終了する.</p>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#719e07">if</span>(process.argv.length <span style="color:#719e07">!==</span> <span style="color:#2aa198">3</span>) {
-  console.log(<span style="color:#586e75">`</span><span style="color:#586e75">csvファイル名を入力してください.</span><span style="color:#586e75">`</span>);
+  console.log(<span style="color:#586e75">`csvファイル名を入力してください.`</span>);
   process.exit(<span style="color:#2aa198">1</span>); <span style="color:#586e75">// 正常に強制終了する
 </span><span style="color:#586e75"></span>}
-</code></pre></div><h2 id="map">mapの中で非同期処理</h2>
+</code></pre></div><h2 id="mapの中で非同期処理">mapの中で非同期処理</h2>
 <ul>
-<li><a href="https://t-kojima.github.io/2018/07/18/0028-async-await-in-loop/">Node 高階関数内での非同期処理（async/await）をどう書くか</a></li>
-<li><a href="https://qiita.com/toniov/items/127267fb64a960e8166e">async/awaitやPromiseで簡単に配列のイテレーションできるようにする</a></li>
-<li><a href="https://github.com/toniov/p-iteration">toniov/p-iteration</a></li>
+<li>
+  <a href="https://t-kojima.github.io/2018/07/18/0028-async-await-in-loop/">Node 高階関数内での非同期処理（async/await）をどう書くか</a>
+</li>
+<li>
+  <a href="https://qiita.com/toniov/items/127267fb64a960e8166e">async/awaitやPromiseで簡単に配列のイテレーションできるようにする</a>
+</li>
+<li>
+  <a href="https://github.com/toniov/p-iteration">toniov/p-iteration</a>
+</li>
 </ul>
-<h2 id="csv">CSVを扱う</h2>
+<h2 id="csvを扱う">CSVを扱う</h2>
 <ul>
-<li><a href="https://csv.js.org">csv.js</a>を使えば簡単.</li>
+<li>
+  <a href="https://csv.js.org">csv.js</a>
+を使えば簡単.</li>
 <li>CSVの生成/読み取り/変換/書き出しができる.</li>
 <li>stream/コールバック/同期的にデータを処理ができる.</li>
 </ul>
@@ -262,7 +502,7 @@ touch index.js
 });
 </code></pre></div><p>以下を実行する.</p>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">node index.js
-</code></pre></div><h3 id="pipestream">pipeでstream</h3>
+</code></pre></div><h3 id="pipeでstream">pipeでstream</h3>
 <p>以下を行ってから</p>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm init -y
 npm i --save csv
@@ -285,7 +525,7 @@ touch index.js
 </span><span style="color:#586e75"></span>process.stdout);
 </code></pre></div><p>以下を実行する.</p>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">node index.js
-</code></pre></div><h3 id="heading4">コールバック</h3>
+</code></pre></div><h3 id="コールバック">コールバック</h3>
 <p>以下を行ってから</p>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm init -y
 npm i --save csv
@@ -311,7 +551,7 @@ touch index.js
 });
 </code></pre></div><p>以下を実行する.</p>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">node index.js
-</code></pre></div><h3 id="heading5">同期処理</h3>
+</code></pre></div><h3 id="同期処理">同期処理</h3>
 <p>以下を行ってから</p>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm init -y
 npm i --save csv-generate csv-parse stream-transform csv-stringify
@@ -346,27 +586,31 @@ touch index.js
 });
 </code></pre></div><p>以下を実行する.</p>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">node index.js
-</code></pre></div><h2 id="stream1">Streamとは</h2>
+</code></pre></div><h2 id="streamとは">Streamとは</h2>
 <ul>
 <li>データストリーム(データの転送単位がブロックより細かいバイト単位で行う方式)を扱うオブジェクト.</li>
 <li>Streamオブジェクトはデータをストリームとして(データを流れる様にして)扱いたい時に使う.</li>
 <li><strong>References:</strong></li>
-<li><a href="https://qiita.com/masakura/items/5683e8e3e655bfda6756">Node.js Stream を使いこなす</a></li>
-<li><a href="https://qiita.com/Mizunashi_Mana/items/872354cd7bf25090932f">Stream API入門</a></li>
+<li>
+  <a href="https://qiita.com/masakura/items/5683e8e3e655bfda6756">Node.js Stream を使いこなす</a>
+</li>
+<li>
+  <a href="https://qiita.com/Mizunashi_Mana/items/872354cd7bf25090932f">Stream API入門</a>
+</li>
 </ul>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#586e75">// ブロッキングでファイルを読み書きする.
-</span><span style="color:#586e75"></span><span style="color:#586e75">// データを読み込んでる間は全ての処理がストップする.
+</span><span style="color:#586e75">// データを読み込んでる間は全ての処理がストップする.
 </span><span style="color:#586e75"></span><span style="color:#268bd2">const</span> text <span style="color:#719e07">=</span> fs.readFileSync(<span style="color:#2aa198">&#39;src.txt&#39;</span>, <span style="color:#2aa198">&#39;utf8&#39;</span>);
 fs.writeFileSync(<span style="color:#2aa198">&#39;dest.txt&#39;</span>, text);
 
 <span style="color:#586e75">// 非ブロッキングI/Oでファイルを読み書きする.
-</span><span style="color:#586e75"></span><span style="color:#586e75">// データを読み込んでる間も他の処理はできるが, 書き込みは読み込みが終わってから.
+</span><span style="color:#586e75">// データを読み込んでる間も他の処理はできるが, 書き込みは読み込みが終わってから.
 </span><span style="color:#586e75"></span>fs.readFile(<span style="color:#2aa198">&#39;src.txt&#39;</span>, <span style="color:#2aa198">&#39;utf8&#39;</span>, (err, data) =&gt; {
   fs.writeFile(<span style="color:#2aa198">&#39;dest.txt&#39;</span>, data);
 });
 
 <span style="color:#586e75">// 一定量だけデータを読み込んで書き込みを行う.
-</span><span style="color:#586e75"></span><span style="color:#586e75">// 大きなファイルだと大活躍.
+</span><span style="color:#586e75">// 大きなファイルだと大活躍.
 </span><span style="color:#586e75"></span><span style="color:#268bd2">const</span> src <span style="color:#719e07">=</span> fs.createReadStream(<span style="color:#2aa198">&#39;src.txt&#39;</span>, <span style="color:#2aa198">&#39;utf8&#39;</span>);
 <span style="color:#268bd2">const</span> dest <span style="color:#719e07">=</span> fs.createWriteStream(<span style="color:#2aa198">&#39;dest.txt&#39;</span>, <span style="color:#2aa198">&#39;utf8&#39;</span>);
 src.on(<span style="color:#2aa198">&#39;data&#39;</span>, chunk =&gt; dest.write(chunk));
@@ -376,7 +620,7 @@ src.on(<span style="color:#2aa198">&#39;end&#39;</span>, () =&gt; dest.end());
 </span><span style="color:#586e75"></span><span style="color:#268bd2">const</span> src <span style="color:#719e07">=</span> fs.createReadStream(<span style="color:#2aa198">&#39;src.txt&#39;</span>, <span style="color:#2aa198">&#39;utf8&#39;</span>);
 <span style="color:#268bd2">const</span> dest <span style="color:#719e07">=</span> fs.createWriteStream(<span style="color:#2aa198">&#39;dest.txt&#39;</span>, <span style="color:#2aa198">&#39;utf8&#39;</span>);
 src.pipe(dest);
-</code></pre></div><h3 id="stream2">Streamの種類</h3>
+</code></pre></div><h3 id="streamの種類">Streamの種類</h3>
 <table>
 <thead>
 <tr>
@@ -403,88 +647,114 @@ src.pipe(dest);
 </tr>
 </tbody>
 </table>
-<h3 id="reference">公式Reference</h3>
+<h3 id="公式reference">公式Reference</h3>
 <ul>
-<li><a href="https://nodejs.org/api/stream.html">Stream</a></li>
+<li>
+  <a href="https://nodejs.org/api/stream.html">Stream</a>
+</li>
 </ul>
 <h1 id="yarn">yarn</h1>
 <ul>
 <li>こちらもNode.jsのパッケージ管理ツール.</li>
 <li><strong>GitHubリポジトリ:</strong> <a href="https://github.com/yarnpkg/yarn">https://github.com/yarnpkg/yarn</a></li>
 </ul>
-<h2 id="heading6">パッケージを最新バージョンへ</h2>
+<h2 id="パッケージを最新バージョンへ">パッケージを最新バージョンへ</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">yarn outdated <span style="color:#586e75"># 新しいバージョンを確認</span>
 yarn upgrade <span style="color:#586e75"># パッケージのアップグレード</span>
 yarn upgrade-interactive <span style="color:#586e75"># 上記2つを一緒に行う</span>
 </code></pre></div></article>
+ 
+      
 
-      <div class="book-footer justify-between">
-  
+      <footer class="book-footer">
+        
+  <div class="flex justify-between">
 
-  
-  
+
+
   <div>
     
-    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/commit/f4b401d8222da9c512d383ac21bd4e330d496f2a" title='Last modified by solareenlo | May 31, 2019' target="_blank">
-      <img src="/svg/calendar.svg" alt="Calendar" />
+    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/commit/f4b401d8222da9c512d383ac21bd4e330d496f2a" title='Last modified by solareenlo | May 31, 2019' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
       <span>May 31, 2019</span>
     </a>
   </div>
-  
-  
 
-  
+
+
   <div>
-    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/edit/master/content/docs/nodejs.md" target="_blank">
-      <img src="/svg/edit.svg" alt="Edit" />
+    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/edit/master/content/docs/nodejs.md" target="_blank" rel="noopener">
+      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
       <span>Edit this page</span>
     </a>
   </div>
-  
 
 </div>
 
+ 
+        
+      </footer>
+
       
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
     </div>
 
     
-  
-
-  <aside class="book-toc levels-3 fixed">
-    <nav id="TableOfContents">
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
   <ul>
-    <li><a href="#heading">インストール</a></li>
-    <li><a href="#heading1">テストツールの種類</a></li>
-    <li><a href="#heading2">日付を扱う</a></li>
-    <li><a href="#heading3">引数で判定</a></li>
-    <li><a href="#map">mapの中で非同期処理</a></li>
-    <li><a href="#csv">CSVを扱う</a>
+    <li><a href="#インストール">インストール</a></li>
+    <li><a href="#テストツールの種類">テストツールの種類</a></li>
+    <li><a href="#日付を扱う">日付を扱う</a></li>
+    <li><a href="#引数で判定">引数で判定</a></li>
+    <li><a href="#mapの中で非同期処理">mapの中で非同期処理</a></li>
+    <li><a href="#csvを扱う">CSVを扱う</a>
       <ul>
         <li><a href="#stream">stream</a></li>
-        <li><a href="#pipestream">pipeでstream</a></li>
-        <li><a href="#heading4">コールバック</a></li>
-        <li><a href="#heading5">同期処理</a></li>
+        <li><a href="#pipeでstream">pipeでstream</a></li>
+        <li><a href="#コールバック">コールバック</a></li>
+        <li><a href="#同期処理">同期処理</a></li>
       </ul>
     </li>
-    <li><a href="#stream1">Streamとは</a>
+    <li><a href="#streamとは">Streamとは</a>
       <ul>
-        <li><a href="#stream2">Streamの種類</a></li>
-        <li><a href="#reference">公式Reference</a></li>
+        <li><a href="#streamの種類">Streamの種類</a></li>
+        <li><a href="#公式reference">公式Reference</a></li>
       </ul>
     </li>
   </ul>
 
   <ul>
-    <li><a href="#heading6">パッケージを最新バージョンへ</a></li>
+    <li><a href="#パッケージを最新バージョンへ">パッケージを最新バージョンへ</a></li>
   </ul>
 </nav>
-  </aside>
 
-
-
+ 
+    </aside>
+    
   </main>
 
   
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+

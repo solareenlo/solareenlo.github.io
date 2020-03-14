@@ -4,19 +4,19 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Zathura Install"><meta property="og:title" content="" />
+<meta name="description" content="zathuraのインストール方法  以下zathuraインストールに必要なものをどんどんインストールしていきます. まだ未完.  mesonをインストール  mesonはオープンソースビルドシステムのこと.  # python3やもろもろをインストールする sudo apt-get install python3 python3-pip python3-setuptools python3-wheel ninja-build # pipを使ってmersonをインストールする pip3 install --user meson # PATHを通す(bash向け) PATH=&#34;${PATH}:$(python -c &#39;import site; print(site.USER_BASE);&#39;)/bin&#34; cmakeをインストール sudo apt remove cmake git clone git@gitlab.kitware.com:cmake/cmake.git cd cmake ./bootstrap &amp;&amp; make &amp;&amp; sudo make install libmount-devをインストール sudo apt update sudo apt upgrade -y sudo apt install libmount-dev glibをインストール git clone https://gitlab.gnome.org/GNOME/glib.git cd glib meson build ninja -C build sudo ninja -C build install # もしくは sudo apt update sudo apt upgrade -y sudo apt install libglib2."><meta property="og:title" content="" />
 <meta property="og:description" content="zathuraのインストール方法  以下zathuraインストールに必要なものをどんどんインストールしていきます. まだ未完.  mesonをインストール  mesonはオープンソースビルドシステムのこと.  # python3やもろもろをインストールする sudo apt-get install python3 python3-pip python3-setuptools python3-wheel ninja-build # pipを使ってmersonをインストールする pip3 install --user meson # PATHを通す(bash向け) PATH=&#34;${PATH}:$(python -c &#39;import site; print(site.USER_BASE);&#39;)/bin&#34; cmakeをインストール sudo apt remove cmake git clone git@gitlab.kitware.com:cmake/cmake.git cd cmake ./bootstrap &amp;&amp; make &amp;&amp; sudo make install libmount-devをインストール sudo apt update sudo apt upgrade -y sudo apt install libmount-dev glibをインストール git clone https://gitlab.gnome.org/GNOME/glib.git cd glib meson build ninja -C build sudo ninja -C build install # もしくは sudo apt update sudo apt upgrade -y sudo apt install libglib2." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://solareenlo.com/docs/zathura-install/" />
-
+<meta property="article:modified_time" content="2019-07-24T08:26:40+09:00" />
 <title>Zathura Install | solareenlo</title>
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 
 
-<link rel="stylesheet" href="/book.min.0d8f55f751a5f22793c02b19a8a0822122d183a7e99645f6b428174dd3eeec94.css" integrity="sha256-DY9V91Gl8ieTwCsZqKCCISLRg6fplkX2tCgXTdPu7JQ=">
+<link rel="stylesheet" href="/book.min.58981925ddc33520ebc4b651e423503306a3203982a9b8426a20913f11092a1f.css" integrity="sha256-WJgZJd3DNSDrxLZR5CNQMwajIDmCqbhCaiCRPxEJKh8=">
 
 
-<script defer src="/en.search.min.0de8e26fe8b38f83ff163b7738b4abcdbbe90ae41f3d554ee92aed704668dc09.js" integrity="sha256-Dejib&#43;izj4P/Fjt3OLSrzbvpCuQfPVVO6SrtcEZo3Ak="></script>
+<script defer src="/en.search.min.cd69dcbc57adb833562b43f1f38bae1ac2260c98f1c7775cd3eeaef066265c87.js" integrity="sha256-zWncvFetuDNWK0Px84uuGsImDJjxx3dc0&#43;6u8GYmXIc="></script>
 
 <!--
 Made with Book Theme
@@ -28,18 +28,18 @@ https://github.com/alex-shpak/hugo-book
 
 <body>
   <input type="checkbox" class="hidden" id="menu-control" />
-  <main class="flex container">
-
-    <aside class="book-menu fixed">
-      <nav>
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
 <h2 class="book-brand">
-  <a href="https://solareenlo.com/"><span>solareenlo</span>
+  <a href="/"><span>solareenlo</span>
   </a>
 </h2>
 
 
 <div class="book-search">
-  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
   <div class="book-search-spinner spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
@@ -48,97 +48,232 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-    <ul>
-<li><a href="/"><strong>はじめに</strong></a></li>
-<li><a href="/posts/"><strong>Blog</strong></a></li>
-<li><a href="/docs/programming/"><strong>Programming</strong></a>
-<ul>
-<li><a href="/docs/terminal/">Terminal</a></li>
-<li><a href="/docs/command/">Command</a></li>
-<li><a href="/docs/sed/">sed</a></li>
-<li><a href="/docs/shell-script/">Shell Script</a></li>
-<li><a href="/docs/vim/">Vim</a></li>
-<li><a href="/docs/vimium/">Vimium</a></li>
-<li><a href="/docs/git/">Git</a></li>
-<li><a href="/docs/github/">GitHub</a></li>
-<li><a href="/docs/linter-formatter/">Linter/Formatter</a></li>
-<li><a href="/docs/test/">Test</a></li>
-<li><a href="/docs/password-manager/">Password Manager</a></li>
-</ul>
+
+
+
+
+
+
+  <ul>
+<li>
+  <a href="/"><strong>はじめに</strong></a>
 </li>
-<li><a href="/docs/programming-language/"><strong>Programming Language</strong></a>
-<ul>
-<li><a href="/docs/c/">C</a></li>
-<li><a href="/docs/rust/">Rust</a></li>
-<li><a href="/docs/javascript/">JavaScript</a></li>
-<li><a href="/docs/css/">CSS</a></li>
-<li><a href="/docs/nodejs/">Node.js</a></li>
-<li><a href="/docs/npm/">npm</a></li>
-<li><a href="/docs/typescript/">TypeScript</a></li>
-<li><a href="/docs/angular/">Angular</a></li>
-<li><a href="/docs/react/">React</a></li>
-<li><a href="/docs/react-static/">React Static</a></li>
-<li><a href="/docs/haskell/">Haskell</a></li>
-<li><a href="/docs/hugo/">Hugo</a></li>
-<li><a href="/docs/programming-language-docs/">Docs</a></li>
-</ul>
+<li>
+  <a href="/posts/"><strong>Blog</strong></a>
 </li>
-<li><a href="/docs/latex/"><strong>LaTeX</strong></a>
+<li>
+  <a href="/docs/programming/"><strong>Programming</strong></a>
+
 <ul>
-<li><a href="/docs/platex-book/">Book</a></li>
-</ul>
+<li>
+  <a href="/docs/terminal/">Terminal</a>
 </li>
-<li><a href="/docs/vps/"><strong>VPS</strong></a>
-<ul>
-<li><a href="/docs/ssh/">SSH</a></li>
-<li><a href="/docs/ubuntu/">Ubuntu</a></li>
-<li><a href="/docs/alpine-linux/">Alpine Linux</a></li>
-</ul>
+<li>
+  <a href="/docs/command/">Command</a>
 </li>
-<li><a href="/docs/db/"><strong>DB</strong></a>
-<ul>
-<li><a href="/docs/mysql/">MySQL</a></li>
-<li><a href="/docs/mongodb/">MongoDB</a></li>
-<li><a href="/docs/redis/">Redis</a></li>
-</ul>
+<li>
+  <a href="/docs/sed/">sed</a>
 </li>
-<li><a href="/docs/cloud/"><strong>Cloud</strong></a>
-<ul>
-<li><a href="/docs/aws/">AWS</a></li>
-<li><a href="/docs/gcp/">GCP</a></li>
-<li><a href="/docs/firebase/">Firebase</a></li>
-<li><a href="/docs/zeit-now/">ZEIT Now</a></li>
-</ul>
+<li>
+  <a href="/docs/shell-script/">Shell Script</a>
 </li>
-<li><a href="/docs/ci-cd/"><strong>CI/CD</strong></a>
-<ul>
-<li><a href="/docs/jenkins/">Jenkins</a></li>
-<li><a href="/docs/travis-ci/">Travis CI</a></li>
-<li><a href="/docs/circleci/">CircleCI</a></li>
-</ul>
+<li>
+  <a href="/docs/vim/">Vim</a>
 </li>
-<li><a href="/docs/container/"><strong>Container</strong></a>
-<ul>
-<li><a href="/docs/docker1/">Docker1</a></li>
-<li><a href="/docs/docker2/">Docker2</a></li>
-<li><a href="/docs/docker-hub/">Docker Hub</a></li>
-<li><a href="/docs/docker-compose/">Docker Compose</a></li>
-<li><a href="/docs/kubernetes/">Kubernetes</a></li>
-</ul>
+<li>
+  <a href="/docs/vimium/">Vimium</a>
 </li>
-<li><a href="/docs/crypto/"><strong>Crypto</strong></a>
-<ul>
-<li><a href="/docs/blockchain/">Blockchain</a></li>
-<li><a href="/docs/bitcoin/">Bitcoin</a></li>
-<li><a href="/docs/ethereum/">Ethereum</a></li>
-<li><a href="/docs/iota/">IOTA</a></li>
-<li><a href="/docs/nem/">NEM</a></li>
-<li><a href="/docs/substrate/">Substrate</a></li>
-<li><a href="/docs/white-paper/">White Paper</a></li>
-<li><a href="/docs/crypto-docs/">Docs</a></li>
-</ul>
+<li>
+  <a href="/docs/git/">Git</a>
+</li>
+<li>
+  <a href="/docs/github/">GitHub</a>
+</li>
+<li>
+  <a href="/docs/linter-formatter/">Linter/Formatter</a>
+</li>
+<li>
+  <a href="/docs/test/">Test</a>
+</li>
+<li>
+  <a href="/docs/password-manager/">Password Manager</a>
 </li>
 </ul>
+</li>
+<li>
+  <a href="/docs/programming-language/"><strong>Programming Language</strong></a>
+
+<ul>
+<li>
+  <a href="/docs/c/">C</a>
+</li>
+<li>
+  <a href="/docs/rust/">Rust</a>
+</li>
+<li>
+  <a href="/docs/javascript/">JavaScript</a>
+</li>
+<li>
+  <a href="/docs/css/">CSS</a>
+</li>
+<li>
+  <a href="/docs/nodejs/">Node.js</a>
+</li>
+<li>
+  <a href="/docs/npm/">npm</a>
+</li>
+<li>
+  <a href="/docs/typescript/">TypeScript</a>
+</li>
+<li>
+  <a href="/docs/angular/">Angular</a>
+</li>
+<li>
+  <a href="/docs/react/">React</a>
+</li>
+<li>
+  <a href="/docs/react-static/">React Static</a>
+</li>
+<li>
+  <a href="/docs/haskell/">Haskell</a>
+</li>
+<li>
+  <a href="/docs/hugo/">Hugo</a>
+</li>
+<li>
+  <a href="/docs/programming-language-docs/">Docs</a>
+</li>
+</ul>
+</li>
+<li>
+  <a href="/docs/latex/"><strong>LaTeX</strong></a>
+
+<ul>
+<li>
+  <a href="/docs/platex-book/">Book</a>
+</li>
+</ul>
+</li>
+<li>
+  <a href="/docs/vps/"><strong>VPS</strong></a>
+
+<ul>
+<li>
+  <a href="/docs/ssh/">SSH</a>
+</li>
+<li>
+  <a href="/docs/ubuntu/">Ubuntu</a>
+</li>
+<li>
+  <a href="/docs/alpine-linux/">Alpine Linux</a>
+</li>
+</ul>
+</li>
+<li>
+  <a href="/docs/db/"><strong>DB</strong></a>
+
+<ul>
+<li>
+  <a href="/docs/mysql/">MySQL</a>
+</li>
+<li>
+  <a href="/docs/mongodb/">MongoDB</a>
+</li>
+<li>
+  <a href="/docs/redis/">Redis</a>
+</li>
+</ul>
+</li>
+<li>
+  <a href="/docs/cloud/"><strong>Cloud</strong></a>
+
+<ul>
+<li>
+  <a href="/docs/aws/">AWS</a>
+</li>
+<li>
+  <a href="/docs/gcp/">GCP</a>
+</li>
+<li>
+  <a href="/docs/firebase/">Firebase</a>
+</li>
+<li>
+  <a href="/docs/zeit-now/">ZEIT Now</a>
+</li>
+</ul>
+</li>
+<li>
+  <a href="/docs/ci-cd/"><strong>CI/CD</strong></a>
+
+<ul>
+<li>
+  <a href="/docs/jenkins/">Jenkins</a>
+</li>
+<li>
+  <a href="/docs/travis-ci/">Travis CI</a>
+</li>
+<li>
+  <a href="/docs/circleci/">CircleCI</a>
+</li>
+</ul>
+</li>
+<li>
+  <a href="/docs/container/"><strong>Container</strong></a>
+
+<ul>
+<li>
+  <a href="/docs/docker1/">Docker1</a>
+</li>
+<li>
+  <a href="/docs/docker2/">Docker2</a>
+</li>
+<li>
+  <a href="/docs/docker-hub/">Docker Hub</a>
+</li>
+<li>
+  <a href="/docs/docker-compose/">Docker Compose</a>
+</li>
+<li>
+  <a href="/docs/kubernetes/">Kubernetes</a>
+</li>
+</ul>
+</li>
+<li>
+  <a href="/docs/crypto/"><strong>Crypto</strong></a>
+
+<ul>
+<li>
+  <a href="/docs/blockchain/">Blockchain</a>
+</li>
+<li>
+  <a href="/docs/bitcoin/">Bitcoin</a>
+</li>
+<li>
+  <a href="/docs/ethereum/">Ethereum</a>
+</li>
+<li>
+  <a href="/docs/iota/">IOTA</a>
+</li>
+<li>
+  <a href="/docs/nem/">NEM</a>
+</li>
+<li>
+  <a href="/docs/substrate/">Substrate</a>
+</li>
+<li>
+  <a href="/docs/white-paper/">White Paper</a>
+</li>
+<li>
+  <a href="/docs/crypto-docs/">Docs</a>
+</li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
 
 
 
@@ -147,33 +282,63 @@ https://github.com/alex-shpak/hugo-book
 </nav>
 
 
-<script>
-(function() {
-  var menu = document.querySelector("aside.book-menu nav");
-  addEventListener("beforeunload", function(event) {
-    localStorage.setItem("menu.scrollTop", menu.scrollTop);
-  });
-  menu.scrollTop = localStorage.getItem("menu.scrollTop");
-})();
-</script>
 
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
     </aside>
 
     <div class="book-page">
-      <header class="flex align-center justify-between book-header">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
   <label for="menu-control">
-    <img src="/svg/menu.svg" alt="Menu" />
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
+
   <strong>Zathura Install</strong>
-</header>
+
+  <label for="toc-control">
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+  </label>
+</div>
+
+
+  
+    <input type="checkbox" class="hidden" id="toc-control" />
+    <aside class="hidden clearfix">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#mesonをインストール">mesonをインストール</a></li>
+    <li><a href="#cmakeをインストール">cmakeをインストール</a></li>
+    <li><a href="#libmount-devをインストール">libmount-devをインストール</a></li>
+    <li><a href="#glibをインストール">glibをインストール</a></li>
+    <li><a href="#gtkをインストール">gtkをインストール</a></li>
+    <li><a href="#giraraをインストール">giraraをインストール</a></li>
+    <li><a href="#mupdfをインストール">mupdfをインストール</a></li>
+    <li><a href="#zathuraをインストール">zathuraをインストール</a></li>
+    <li><a href="#zathura-pdf-mupdfをインストール">zathura-pdf-mupdfをインストール</a></li>
+    <li><a href="#zathura-pdf-popplerをインストール">zathura-pdf-popplerをインストール</a></li>
+  </ul>
+</nav>
+
+
+    </aside>
+  
+ 
+      </header>
 
       
-<article class="markdown"><h1 id="zathura">zathuraのインストール方法</h1>
+      
+  <article class="markdown"><h1 id="zathuraのインストール方法">zathuraのインストール方法</h1>
 <ul>
 <li>以下zathuraインストールに必要なものをどんどんインストールしていきます.</li>
 <li>まだ未完.</li>
 </ul>
-<h2 id="meson">mesonをインストール</h2>
+<h2 id="mesonをインストール">mesonをインストール</h2>
 <ul>
 <li>mesonはオープンソースビルドシステムのこと.</li>
 </ul>
@@ -182,17 +347,17 @@ sudo apt-get install python3 python3-pip python3-setuptools python3-wheel ninja-
 <span style="color:#586e75"># pipを使ってmersonをインストールする</span>
 pip3 install --user meson
 <span style="color:#586e75"># PATHを通す(bash向け)</span>
-<span style="color:#268bd2">PATH</span><span style="color:#719e07">=</span><span style="color:#2aa198">&#34;</span><span style="color:#2aa198">${</span><span style="color:#268bd2">PATH</span><span style="color:#2aa198">}</span><span style="color:#2aa198">:</span><span style="color:#719e07">$(</span>python -c <span style="color:#2aa198">&#39;import site; print(site.USER_BASE);&#39;</span><span style="color:#719e07">)</span><span style="color:#2aa198">/bin</span><span style="color:#2aa198">&#34;</span>
-</code></pre></div><h2 id="cmake">cmakeをインストール</h2>
+<span style="color:#268bd2">PATH</span><span style="color:#719e07">=</span><span style="color:#2aa198">&#34;</span><span style="color:#2aa198">${</span><span style="color:#268bd2">PATH</span><span style="color:#2aa198">}</span><span style="color:#2aa198">:</span><span style="color:#719e07">$(</span>python -c <span style="color:#2aa198">&#39;import site; print(site.USER_BASE);&#39;</span><span style="color:#719e07">)</span><span style="color:#2aa198">/bin&#34;</span>
+</code></pre></div><h2 id="cmakeをインストール">cmakeをインストール</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt remove cmake
 git clone git@gitlab.kitware.com:cmake/cmake.git
 <span style="color:#b58900">cd</span> cmake
 ./bootstrap <span style="color:#719e07">&amp;&amp;</span> make <span style="color:#719e07">&amp;&amp;</span> sudo make install
-</code></pre></div><h2 id="libmountdev">libmount-devをインストール</h2>
+</code></pre></div><h2 id="libmount-devをインストール">libmount-devをインストール</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt update
 sudo apt upgrade -y
 sudo apt install libmount-dev
-</code></pre></div><h2 id="glib">glibをインストール</h2>
+</code></pre></div><h2 id="glibをインストール">glibをインストール</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone https://gitlab.gnome.org/GNOME/glib.git
 <span style="color:#b58900">cd</span> glib
 meson build
@@ -202,14 +367,14 @@ sudo ninja -C build install
 sudo apt update
 sudo apt upgrade -y
 sudo apt install libglib2.0-dev
-</code></pre></div><h2 id="gtk">gtkをインストール</h2>
+</code></pre></div><h2 id="gtkをインストール">gtkをインストール</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone https://gitlab.gnome.org/GNOME/gtk.git
 <span style="color:#586e75"># まだ依存関係を調査中</span>
 </code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># または</span>
 sudo apt update
 sudo apt upgrade -y
 sudo apt install libgtk-3-dev
-</code></pre></div><h2 id="girara">giraraをインストール</h2>
+</code></pre></div><h2 id="giraraをインストール">giraraをインストール</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone git@github.com:pwmt/girara.git
 <span style="color:#b58900">cd</span> girara
 meson build <span style="color:#719e07">&amp;&amp;</span> <span style="color:#b58900">cd</span> build
@@ -219,7 +384,7 @@ sudo ninja install
 sudo apt update
 sudo apt upgrade -y
 sudo apt install libgirara-gtk3-3
-</code></pre></div><h2 id="mupdf">mupdfをインストール</h2>
+</code></pre></div><h2 id="mupdfをインストール">mupdfをインストール</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone --recursive git://git.ghostscript.com/mupdf.git
 <span style="color:#b58900">cd</span> mupdf
 git submodule update --init
@@ -228,80 +393,104 @@ make <span style="color:#268bd2">prefix</span><span style="color:#719e07">=</spa
 sudo apt update
 sudo apt upgrade -y
 sudo apt install libmupdf-dev mupdf mupdf-tools
-</code></pre></div><h2 id="zathura1">zathuraをインストール</h2>
+</code></pre></div><h2 id="zathuraをインストール">zathuraをインストール</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone git@github.com:pwmt/zathura.git
 <span style="color:#b58900">cd</span> zathura
 meson build <span style="color:#719e07">&amp;&amp;</span> <span style="color:#b58900">cd</span> build
 ninja
 sudo ninja install
-</code></pre></div><h2 id="zathurapdfmupdf">zathura-pdf-mupdfをインストール</h2>
+</code></pre></div><h2 id="zathura-pdf-mupdfをインストール">zathura-pdf-mupdfをインストール</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone git@github.com:pwmt/zathura-pdf-mupdf.git
 <span style="color:#b58900">cd</span> zathura-pdf-mupdf
 meson build <span style="color:#719e07">&amp;&amp;</span> <span style="color:#b58900">cd</span> build
 ninja
 sudo ninja install
-</code></pre></div><h2 id="zathurapdfpoppler">zathura-pdf-popplerをインストール</h2>
+</code></pre></div><h2 id="zathura-pdf-popplerをインストール">zathura-pdf-popplerをインストール</h2>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone git@github.com:pwmt/zathura-pdf-poppler.git
 <span style="color:#b58900">cd</span> zathura-pdf-poppler
 meson build <span style="color:#719e07">&amp;&amp;</span> <span style="color:#b58900">cd</span> build
 ninja
 sudo ninja install
 </code></pre></div></article>
+ 
+      
 
-      <div class="book-footer justify-between">
-  
+      <footer class="book-footer">
+        
+  <div class="flex justify-between">
 
-  
-  
+
+
   <div>
     
-    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/commit/5fe48adc364bdc2578c70c7bb1b86133e3605b2e" title='Last modified by solareenlo | Jul 24, 2019' target="_blank">
-      <img src="/svg/calendar.svg" alt="Calendar" />
+    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/commit/5fe48adc364bdc2578c70c7bb1b86133e3605b2e" title='Last modified by solareenlo | Jul 24, 2019' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
       <span>Jul 24, 2019</span>
     </a>
   </div>
-  
-  
 
-  
+
+
   <div>
-    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/edit/master/content/docs/zathura-install.md" target="_blank">
-      <img src="/svg/edit.svg" alt="Edit" />
+    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/edit/master/content/docs/zathura-install.md" target="_blank" rel="noopener">
+      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
       <span>Edit this page</span>
     </a>
   </div>
-  
 
 </div>
 
+ 
+        
+      </footer>
+
       
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
     </div>
 
     
-  
-
-  <aside class="book-toc levels-3 fixed">
-    <nav id="TableOfContents">
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
   <ul>
-    <li><a href="#meson">mesonをインストール</a></li>
-    <li><a href="#cmake">cmakeをインストール</a></li>
-    <li><a href="#libmountdev">libmount-devをインストール</a></li>
-    <li><a href="#glib">glibをインストール</a></li>
-    <li><a href="#gtk">gtkをインストール</a></li>
-    <li><a href="#girara">giraraをインストール</a></li>
-    <li><a href="#mupdf">mupdfをインストール</a></li>
-    <li><a href="#zathura1">zathuraをインストール</a></li>
-    <li><a href="#zathurapdfmupdf">zathura-pdf-mupdfをインストール</a></li>
-    <li><a href="#zathurapdfpoppler">zathura-pdf-popplerをインストール</a></li>
+    <li><a href="#mesonをインストール">mesonをインストール</a></li>
+    <li><a href="#cmakeをインストール">cmakeをインストール</a></li>
+    <li><a href="#libmount-devをインストール">libmount-devをインストール</a></li>
+    <li><a href="#glibをインストール">glibをインストール</a></li>
+    <li><a href="#gtkをインストール">gtkをインストール</a></li>
+    <li><a href="#giraraをインストール">giraraをインストール</a></li>
+    <li><a href="#mupdfをインストール">mupdfをインストール</a></li>
+    <li><a href="#zathuraをインストール">zathuraをインストール</a></li>
+    <li><a href="#zathura-pdf-mupdfをインストール">zathura-pdf-mupdfをインストール</a></li>
+    <li><a href="#zathura-pdf-popplerをインストール">zathura-pdf-popplerをインストール</a></li>
   </ul>
 </nav>
-  </aside>
 
-
-
+ 
+    </aside>
+    
   </main>
 
   
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -4,10 +4,12 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Bitcoin"><meta property="og:title" content="Bitcoin" />
+<meta name="description" content="Bitcoinとは GitHubリポジトリ: https://github.com/bitcoin
+目的 匿名性を自分で選択できつつ, 安全に価値の移転と保存に特化したシステムを構築すること.
+特徴  非中央集権 自律分散 トラストレス 耐改ざん性 オープンソース 匿名性を選択できる 二重支払いができない 払い(価値の保存と移転)に特化したとても堅牢なシステム(チューリング不完全/マルチシグ/HDウォレット/ニーモニック/Base58とか)  技術  電子署名 公開鍵暗号   楕円曲線DSA    暗号学的ハッシュ関数  現像計算困難性 (ハッシュ値から元のメッセージを復元できない) 第二現像計算困難性 (同じハッシュ値になる任意のメッセージがない) 衝突安全性 (任意のメッセージのハッシュ値が衝突しない)   ネットワーク  P2P Proof of Work   スタックマシン  ブロック スクリプト オペコード   マークル木 コンセンサスアルゴリズム  プレイヤー   コア開発者  マイナー ユーザー 投資家・投機家 法律  スケーリング方法  コンセンサスアルゴリズムを速くする（分散性のために1ブロック生成にわざと10分かけてる） ブロックに含まれるトランザクションを増やす（Block weightが4MB以下/segwit導入により） オフチェーン（Lightning networkなど） サイドチェーン シャーディング Reference: ブロックチェーンとスケーラビリティ   フルノード フルノードの立て方   ビットコインのフルノードを立てる方法   Bitcoin ClockUpMemo   bitcoindのブロック保存先ディレクトリを指定する   Bitcoin."><meta property="og:title" content="Bitcoin" />
 <meta property="og:description" content="Bitcoinとは GitHubリポジトリ: https://github.com/bitcoin
 目的 匿名性を自分で選択できつつ, 安全に価値の移転と保存に特化したシステムを構築すること.
-特徴  非中央集権 自律分散 トラストレス 耐改ざん性 オープンソース 匿名性を選択できる 二重支払いができない 払い(価値の保存と移転)に特化したとても堅牢なシステム(チューリング不完全/マルチシグ/HDウォレット/ニーモニック/Base58とか)  技術  電子署名 公開鍵暗号  楕円曲線DSA   暗号学的ハッシュ関数  現像計算困難性 (ハッシュ値から元のメッセージを復元できない) 第二現像計算困難性 (同じハッシュ値になる任意のメッセージがない) 衝突安全性 (任意のメッセージのハッシュ値が衝突しない)   ネットワーク  P2P Proof of Work   スタックマシン  ブロック スクリプト オペコード   マークル木 コンセンサスアルゴリズム  プレイヤー  コア開発者 マイナー ユーザー 投資家・投機家 法律  スケーリング方法  コンセンサスアルゴリズムを速くする（分散性のために1ブロック生成にわざと10分かけてる） ブロックに含まれるトランザクションを増やす（Block weightが4MB以下/segwit導入により） オフチェーン（Lightning networkなど） サイドチェーン シャーディング Reference: ブロックチェーンとスケーラビリティ  フルノード フルノードの立て方  ビットコインのフルノードを立てる方法 Bitcoin ClockUpMemo bitcoindのブロック保存先ディレクトリを指定する Bitcoin." />
+特徴  非中央集権 自律分散 トラストレス 耐改ざん性 オープンソース 匿名性を選択できる 二重支払いができない 払い(価値の保存と移転)に特化したとても堅牢なシステム(チューリング不完全/マルチシグ/HDウォレット/ニーモニック/Base58とか)  技術  電子署名 公開鍵暗号   楕円曲線DSA    暗号学的ハッシュ関数  現像計算困難性 (ハッシュ値から元のメッセージを復元できない) 第二現像計算困難性 (同じハッシュ値になる任意のメッセージがない) 衝突安全性 (任意のメッセージのハッシュ値が衝突しない)   ネットワーク  P2P Proof of Work   スタックマシン  ブロック スクリプト オペコード   マークル木 コンセンサスアルゴリズム  プレイヤー   コア開発者  マイナー ユーザー 投資家・投機家 法律  スケーリング方法  コンセンサスアルゴリズムを速くする（分散性のために1ブロック生成にわざと10分かけてる） ブロックに含まれるトランザクションを増やす（Block weightが4MB以下/segwit導入により） オフチェーン（Lightning networkなど） サイドチェーン シャーディング Reference: ブロックチェーンとスケーラビリティ   フルノード フルノードの立て方   ビットコインのフルノードを立てる方法   Bitcoin ClockUpMemo   bitcoindのブロック保存先ディレクトリを指定する   Bitcoin." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://solareenlo.com/docs/bitcoin/" />
 <meta property="article:modified_time" content="2019-07-14T05:01:56+09:00" />
@@ -15,10 +17,10 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 
 
-<link rel="stylesheet" href="/book.min.0d8f55f751a5f22793c02b19a8a0822122d183a7e99645f6b428174dd3eeec94.css" integrity="sha256-DY9V91Gl8ieTwCsZqKCCISLRg6fplkX2tCgXTdPu7JQ=">
+<link rel="stylesheet" href="/book.min.58981925ddc33520ebc4b651e423503306a3203982a9b8426a20913f11092a1f.css" integrity="sha256-WJgZJd3DNSDrxLZR5CNQMwajIDmCqbhCaiCRPxEJKh8=">
 
 
-<script defer src="/en.search.min.0de8e26fe8b38f83ff163b7738b4abcdbbe90ae41f3d554ee92aed704668dc09.js" integrity="sha256-Dejib&#43;izj4P/Fjt3OLSrzbvpCuQfPVVO6SrtcEZo3Ak="></script>
+<script defer src="/en.search.min.cd69dcbc57adb833562b43f1f38bae1ac2260c98f1c7775cd3eeaef066265c87.js" integrity="sha256-zWncvFetuDNWK0Px84uuGsImDJjxx3dc0&#43;6u8GYmXIc="></script>
 
 <!--
 Made with Book Theme
@@ -30,18 +32,18 @@ https://github.com/alex-shpak/hugo-book
 
 <body>
   <input type="checkbox" class="hidden" id="menu-control" />
-  <main class="flex container">
-
-    <aside class="book-menu fixed">
-      <nav>
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
 <h2 class="book-brand">
-  <a href="https://solareenlo.com/"><span>solareenlo</span>
+  <a href="/"><span>solareenlo</span>
   </a>
 </h2>
 
 
 <div class="book-search">
-  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
   <div class="book-search-spinner spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
@@ -50,97 +52,232 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-    <ul>
-<li><a href="/"><strong>はじめに</strong></a></li>
-<li><a href="/posts/"><strong>Blog</strong></a></li>
-<li><a href="/docs/programming/"><strong>Programming</strong></a>
-<ul>
-<li><a href="/docs/terminal/">Terminal</a></li>
-<li><a href="/docs/command/">Command</a></li>
-<li><a href="/docs/sed/">sed</a></li>
-<li><a href="/docs/shell-script/">Shell Script</a></li>
-<li><a href="/docs/vim/">Vim</a></li>
-<li><a href="/docs/vimium/">Vimium</a></li>
-<li><a href="/docs/git/">Git</a></li>
-<li><a href="/docs/github/">GitHub</a></li>
-<li><a href="/docs/linter-formatter/">Linter/Formatter</a></li>
-<li><a href="/docs/test/">Test</a></li>
-<li><a href="/docs/password-manager/">Password Manager</a></li>
-</ul>
+
+
+
+
+
+
+  <ul>
+<li>
+  <a href="/"><strong>はじめに</strong></a>
 </li>
-<li><a href="/docs/programming-language/"><strong>Programming Language</strong></a>
-<ul>
-<li><a href="/docs/c/">C</a></li>
-<li><a href="/docs/rust/">Rust</a></li>
-<li><a href="/docs/javascript/">JavaScript</a></li>
-<li><a href="/docs/css/">CSS</a></li>
-<li><a href="/docs/nodejs/">Node.js</a></li>
-<li><a href="/docs/npm/">npm</a></li>
-<li><a href="/docs/typescript/">TypeScript</a></li>
-<li><a href="/docs/angular/">Angular</a></li>
-<li><a href="/docs/react/">React</a></li>
-<li><a href="/docs/react-static/">React Static</a></li>
-<li><a href="/docs/haskell/">Haskell</a></li>
-<li><a href="/docs/hugo/">Hugo</a></li>
-<li><a href="/docs/programming-language-docs/">Docs</a></li>
-</ul>
+<li>
+  <a href="/posts/"><strong>Blog</strong></a>
 </li>
-<li><a href="/docs/latex/"><strong>LaTeX</strong></a>
+<li>
+  <a href="/docs/programming/"><strong>Programming</strong></a>
+
 <ul>
-<li><a href="/docs/platex-book/">Book</a></li>
-</ul>
+<li>
+  <a href="/docs/terminal/">Terminal</a>
 </li>
-<li><a href="/docs/vps/"><strong>VPS</strong></a>
-<ul>
-<li><a href="/docs/ssh/">SSH</a></li>
-<li><a href="/docs/ubuntu/">Ubuntu</a></li>
-<li><a href="/docs/alpine-linux/">Alpine Linux</a></li>
-</ul>
+<li>
+  <a href="/docs/command/">Command</a>
 </li>
-<li><a href="/docs/db/"><strong>DB</strong></a>
-<ul>
-<li><a href="/docs/mysql/">MySQL</a></li>
-<li><a href="/docs/mongodb/">MongoDB</a></li>
-<li><a href="/docs/redis/">Redis</a></li>
-</ul>
+<li>
+  <a href="/docs/sed/">sed</a>
 </li>
-<li><a href="/docs/cloud/"><strong>Cloud</strong></a>
-<ul>
-<li><a href="/docs/aws/">AWS</a></li>
-<li><a href="/docs/gcp/">GCP</a></li>
-<li><a href="/docs/firebase/">Firebase</a></li>
-<li><a href="/docs/zeit-now/">ZEIT Now</a></li>
-</ul>
+<li>
+  <a href="/docs/shell-script/">Shell Script</a>
 </li>
-<li><a href="/docs/ci-cd/"><strong>CI/CD</strong></a>
-<ul>
-<li><a href="/docs/jenkins/">Jenkins</a></li>
-<li><a href="/docs/travis-ci/">Travis CI</a></li>
-<li><a href="/docs/circleci/">CircleCI</a></li>
-</ul>
+<li>
+  <a href="/docs/vim/">Vim</a>
 </li>
-<li><a href="/docs/container/"><strong>Container</strong></a>
-<ul>
-<li><a href="/docs/docker1/">Docker1</a></li>
-<li><a href="/docs/docker2/">Docker2</a></li>
-<li><a href="/docs/docker-hub/">Docker Hub</a></li>
-<li><a href="/docs/docker-compose/">Docker Compose</a></li>
-<li><a href="/docs/kubernetes/">Kubernetes</a></li>
-</ul>
+<li>
+  <a href="/docs/vimium/">Vimium</a>
 </li>
-<li><a href="/docs/crypto/"><strong>Crypto</strong></a>
-<ul>
-<li><a href="/docs/blockchain/">Blockchain</a></li>
-<li><a href="/docs/bitcoin/"class=active>Bitcoin</a></li>
-<li><a href="/docs/ethereum/">Ethereum</a></li>
-<li><a href="/docs/iota/">IOTA</a></li>
-<li><a href="/docs/nem/">NEM</a></li>
-<li><a href="/docs/substrate/">Substrate</a></li>
-<li><a href="/docs/white-paper/">White Paper</a></li>
-<li><a href="/docs/crypto-docs/">Docs</a></li>
-</ul>
+<li>
+  <a href="/docs/git/">Git</a>
+</li>
+<li>
+  <a href="/docs/github/">GitHub</a>
+</li>
+<li>
+  <a href="/docs/linter-formatter/">Linter/Formatter</a>
+</li>
+<li>
+  <a href="/docs/test/">Test</a>
+</li>
+<li>
+  <a href="/docs/password-manager/">Password Manager</a>
 </li>
 </ul>
+</li>
+<li>
+  <a href="/docs/programming-language/"><strong>Programming Language</strong></a>
+
+<ul>
+<li>
+  <a href="/docs/c/">C</a>
+</li>
+<li>
+  <a href="/docs/rust/">Rust</a>
+</li>
+<li>
+  <a href="/docs/javascript/">JavaScript</a>
+</li>
+<li>
+  <a href="/docs/css/">CSS</a>
+</li>
+<li>
+  <a href="/docs/nodejs/">Node.js</a>
+</li>
+<li>
+  <a href="/docs/npm/">npm</a>
+</li>
+<li>
+  <a href="/docs/typescript/">TypeScript</a>
+</li>
+<li>
+  <a href="/docs/angular/">Angular</a>
+</li>
+<li>
+  <a href="/docs/react/">React</a>
+</li>
+<li>
+  <a href="/docs/react-static/">React Static</a>
+</li>
+<li>
+  <a href="/docs/haskell/">Haskell</a>
+</li>
+<li>
+  <a href="/docs/hugo/">Hugo</a>
+</li>
+<li>
+  <a href="/docs/programming-language-docs/">Docs</a>
+</li>
+</ul>
+</li>
+<li>
+  <a href="/docs/latex/"><strong>LaTeX</strong></a>
+
+<ul>
+<li>
+  <a href="/docs/platex-book/">Book</a>
+</li>
+</ul>
+</li>
+<li>
+  <a href="/docs/vps/"><strong>VPS</strong></a>
+
+<ul>
+<li>
+  <a href="/docs/ssh/">SSH</a>
+</li>
+<li>
+  <a href="/docs/ubuntu/">Ubuntu</a>
+</li>
+<li>
+  <a href="/docs/alpine-linux/">Alpine Linux</a>
+</li>
+</ul>
+</li>
+<li>
+  <a href="/docs/db/"><strong>DB</strong></a>
+
+<ul>
+<li>
+  <a href="/docs/mysql/">MySQL</a>
+</li>
+<li>
+  <a href="/docs/mongodb/">MongoDB</a>
+</li>
+<li>
+  <a href="/docs/redis/">Redis</a>
+</li>
+</ul>
+</li>
+<li>
+  <a href="/docs/cloud/"><strong>Cloud</strong></a>
+
+<ul>
+<li>
+  <a href="/docs/aws/">AWS</a>
+</li>
+<li>
+  <a href="/docs/gcp/">GCP</a>
+</li>
+<li>
+  <a href="/docs/firebase/">Firebase</a>
+</li>
+<li>
+  <a href="/docs/zeit-now/">ZEIT Now</a>
+</li>
+</ul>
+</li>
+<li>
+  <a href="/docs/ci-cd/"><strong>CI/CD</strong></a>
+
+<ul>
+<li>
+  <a href="/docs/jenkins/">Jenkins</a>
+</li>
+<li>
+  <a href="/docs/travis-ci/">Travis CI</a>
+</li>
+<li>
+  <a href="/docs/circleci/">CircleCI</a>
+</li>
+</ul>
+</li>
+<li>
+  <a href="/docs/container/"><strong>Container</strong></a>
+
+<ul>
+<li>
+  <a href="/docs/docker1/">Docker1</a>
+</li>
+<li>
+  <a href="/docs/docker2/">Docker2</a>
+</li>
+<li>
+  <a href="/docs/docker-hub/">Docker Hub</a>
+</li>
+<li>
+  <a href="/docs/docker-compose/">Docker Compose</a>
+</li>
+<li>
+  <a href="/docs/kubernetes/">Kubernetes</a>
+</li>
+</ul>
+</li>
+<li>
+  <a href="/docs/crypto/"><strong>Crypto</strong></a>
+
+<ul>
+<li>
+  <a href="/docs/blockchain/">Blockchain</a>
+</li>
+<li>
+  <a href="/docs/bitcoin/"class=active>Bitcoin</a>
+</li>
+<li>
+  <a href="/docs/ethereum/">Ethereum</a>
+</li>
+<li>
+  <a href="/docs/iota/">IOTA</a>
+</li>
+<li>
+  <a href="/docs/nem/">NEM</a>
+</li>
+<li>
+  <a href="/docs/substrate/">Substrate</a>
+</li>
+<li>
+  <a href="/docs/white-paper/">White Paper</a>
+</li>
+<li>
+  <a href="/docs/crypto-docs/">Docs</a>
+</li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
 
 
 
@@ -149,32 +286,102 @@ https://github.com/alex-shpak/hugo-book
 </nav>
 
 
-<script>
-(function() {
-  var menu = document.querySelector("aside.book-menu nav");
-  addEventListener("beforeunload", function(event) {
-    localStorage.setItem("menu.scrollTop", menu.scrollTop);
-  });
-  menu.scrollTop = localStorage.getItem("menu.scrollTop");
-})();
-</script>
 
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
     </aside>
 
     <div class="book-page">
-      <header class="flex align-center justify-between book-header">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
   <label for="menu-control">
-    <img src="/svg/menu.svg" alt="Menu" />
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
+
   <strong>Bitcoin</strong>
-</header>
+
+  <label for="toc-control">
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+  </label>
+</div>
+
+
+  
+    <input type="checkbox" class="hidden" id="toc-control" />
+    <aside class="hidden clearfix">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#目的">目的</a></li>
+    <li><a href="#特徴">特徴</a></li>
+    <li><a href="#技術">技術</a></li>
+    <li><a href="#プレイヤー">プレイヤー</a></li>
+    <li><a href="#スケーリング方法">スケーリング方法</a></li>
+    <li><a href="#フルノード">フルノード</a>
+      <ul>
+        <li><a href="#フルノードの立て方">フルノードの立て方</a></li>
+        <li><a href="#フルノードの分布図">フルノードの分布図</a></li>
+        <li><a href="#マイナーとノードの違い">マイナーとノードの違い</a></li>
+      </ul>
+    </li>
+    <li><a href="#bitcoindとbitcoin-cliの違い">bitcoindとbitcoin-cliの違い</a>
+      <ul>
+        <li><a href="#bitcoindにcurlでアクセス">bitcoindにcurlでアクセス</a></li>
+        <li><a href="#bitcoin-cliとxargsの使用例">bitcoin-cliとxargsの使用例</a></li>
+        <li><a href="#bitcoin-cliを使ってutxoを集める">bitcoin-cliを使ってUTXOを集める</a></li>
+      </ul>
+    </li>
+    <li><a href="#blockchainの中身の見方">Blockchainの中身の見方</a></li>
+    <li><a href="#アドレス">アドレス</a>
+      <ul>
+        <li><a href="#一般的なアドレス生成の流れ">一般的なアドレス生成の流れ</a></li>
+        <li><a href="#一般的なアドレス生成の図">一般的なアドレス生成の図</a></li>
+        <li><a href="#秘密鍵公開鍵アドレスの関係">秘密鍵/公開鍵/アドレスの関係</a></li>
+        <li><a href="#秘密鍵wif公開鍵アドレスの関係">秘密鍵/WIF/公開鍵/アドレスの関係</a></li>
+        <li><a href="#hdウォレットにおけるアドレス生成の手順">HDウォレットにおけるアドレス生成の手順</a></li>
+        <li><a href="#entropyのターミナルでの作成方法">Entropyのターミナルでの作成方法</a></li>
+        <li><a href="#アドレスの種類">アドレスの種類</a></li>
+      </ul>
+    </li>
+    <li><a href="#プレフィックス">プレフィックス</a></li>
+    <li><a href="#単位">単位</a></li>
+    <li><a href="#script">Script</a>
+      <ul>
+        <li><a href="#scriptsig">ScriptSig</a></li>
+        <li><a href="#scriptpubkey">ScriptPubKey</a></li>
+        <li><a href="#p2shのscriptpubkey">P2SHのScriptPubKey</a></li>
+        <li><a href="#オンラインでbitcoin-scriptの挙動を確認できるサイト">オンラインでBitcoin Scriptの挙動を確認できるサイト</a></li>
+      </ul>
+    </li>
+    <li><a href="#トランザクション">トランザクション</a></li>
+    <li><a href="#segwit">Segwit</a>
+      <ul>
+        <li><a href="#スクリプト構造">スクリプト構造</a></li>
+        <li><a href="#base32">Base32</a></li>
+      </ul>
+    </li>
+    <li><a href="#transaction-fee">Transaction Fee</a></li>
+    <li><a href="#references">References</a></li>
+  </ul>
+</nav>
+
+
+    </aside>
+  
+ 
+      </header>
 
       
-<article class="markdown"><h1 id="bitcoin">Bitcoinとは</h1>
+      
+  <article class="markdown"><h1 id="bitcoinとは">Bitcoinとは</h1>
 <p><strong>GitHubリポジトリ:</strong> <a href="https://github.com/bitcoin">https://github.com/bitcoin</a></p>
-<h2 id="heading">目的</h2>
+<h2 id="目的">目的</h2>
 <p>匿名性を自分で選択できつつ, 安全に価値の移転と保存に特化したシステムを構築すること.</p>
-<h2 id="heading1">特徴</h2>
+<h2 id="特徴">特徴</h2>
 <ul>
 <li>非中央集権</li>
 <li>自律分散</li>
@@ -185,12 +392,14 @@ https://github.com/alex-shpak/hugo-book
 <li>二重支払いができない</li>
 <li>払い(価値の保存と移転)に特化したとても堅牢なシステム(チューリング不完全/マルチシグ/HDウォレット/ニーモニック/Base58とか)</li>
 </ul>
-<h2 id="heading2">技術</h2>
+<h2 id="技術">技術</h2>
 <ul>
 <li>電子署名</li>
 <li>公開鍵暗号
 <ul>
-<li><a href="https://ja.wikipedia.org/wiki/%E6%A5%95%E5%86%86%E6%9B%B2%E7%B7%9ADSA">楕円曲線DSA</a></li>
+<li>
+  <a href="https://ja.wikipedia.org/wiki/%e6%a5%95%e5%86%86%e6%9b%b2%e7%b7%9aDSA">楕円曲線DSA</a>
+</li>
 </ul>
 </li>
 <li>暗号学的ハッシュ関数
@@ -216,44 +425,60 @@ https://github.com/alex-shpak/hugo-book
 <li>マークル木</li>
 <li>コンセンサスアルゴリズム</li>
 </ul>
-<h2 id="heading3">プレイヤー</h2>
+<h2 id="プレイヤー">プレイヤー</h2>
 <ul>
-<li><a href="https://github.com/bitcoin">コア開発者</a></li>
+<li>
+  <a href="https://github.com/bitcoin">コア開発者</a>
+</li>
 <li>マイナー</li>
 <li>ユーザー</li>
 <li>投資家・投機家</li>
 <li>法律</li>
 </ul>
-<h2 id="heading4">スケーリング方法</h2>
+<h2 id="スケーリング方法">スケーリング方法</h2>
 <ul>
 <li>コンセンサスアルゴリズムを速くする（分散性のために1ブロック生成にわざと10分かけてる）</li>
 <li>ブロックに含まれるトランザクションを増やす（Block weightが4MB以下/segwit導入により）</li>
 <li>オフチェーン（Lightning networkなど）</li>
 <li>サイドチェーン</li>
 <li>シャーディング</li>
-<li><strong>Reference:</strong> <a href="https://medium.com/uniqys/blockchain-scalability-d95ee27c5092">ブロックチェーンとスケーラビリティ</a></li>
+<li><strong>Reference:</strong> 
+  <a href="https://medium.com/uniqys/blockchain-scalability-d95ee27c5092">ブロックチェーンとスケーラビリティ</a>
+</li>
 </ul>
-<h2 id="heading5">フルノード</h2>
-<h3 id="heading6">フルノードの立て方</h3>
+<h2 id="フルノード">フルノード</h2>
+<h3 id="フルノードの立て方">フルノードの立て方</h3>
 <ul>
-<li><a href="https://bitcoin-node.info/">ビットコインのフルノードを立てる方法</a></li>
-<li><a href="https://bitcoin.clock-up.jp/">Bitcoin ClockUpMemo</a></li>
-<li><a href="https://blog.logicky.com/2017/05/14/bitcoind%E3%81%AE%E3%83%96%E3%83%AD%E3%83%83%E3%82%AF%E4%BF%9D%E5%AD%98%E5%85%88%E3%83%87%E3%82%A3%E3%83%AC%E3%82%AF%E3%83%88%E3%83%AA%E3%82%92%E6%8C%87%E5%AE%9A%E3%81%99%E3%82%8B/">bitcoindのブロック保存先ディレクトリを指定する</a></li>
-<li><a href="https://en.bitcoin.it/wiki/Running_Bitcoin#Bitcoin.conf_Configuration_File">Bitcoin.conf Configuration File</a></li>
+<li>
+  <a href="https://bitcoin-node.info/">ビットコインのフルノードを立てる方法</a>
+</li>
+<li>
+  <a href="https://bitcoin.clock-up.jp/">Bitcoin ClockUpMemo</a>
+</li>
+<li>
+  <a href="https://blog.logicky.com/2017/05/14/bitcoind%e3%81%ae%e3%83%96%e3%83%ad%e3%83%83%e3%82%af%e4%bf%9d%e5%ad%98%e5%85%88%e3%83%87%e3%82%a3%e3%83%ac%e3%82%af%e3%83%88%e3%83%aa%e3%82%92%e6%8c%87%e5%ae%9a%e3%81%99%e3%82%8b/">bitcoindのブロック保存先ディレクトリを指定する</a>
+</li>
+<li>
+  <a href="https://en.bitcoin.it/wiki/Running_Bitcoin#Bitcoin.conf_Configuration_File">Bitcoin.conf Configuration File</a>
+</li>
 </ul>
-<h3 id="heading7">フルノードの分布図</h3>
+<h3 id="フルノードの分布図">フルノードの分布図</h3>
 <ul>
-<li><a href="https://bitnodes.earn.com/">BITNODES</a></li>
+<li>
+  <a href="https://bitnodes.earn.com/">BITNODES</a>
+</li>
 </ul>
-<h3 id="heading8">マイナーとノードの違い</h3>
+<h3 id="マイナーとノードの違い">マイナーとノードの違い</h3>
 <ul>
 <li>マイナーも1つのノードではあるが, マイナーの主な役割はプルーフオブワーク（PoW）を行い取引をブロックに収納しネットワークに送信すること.</li>
 <li>マイナー以外のユーザーがノードを立ち上げる主な目的は, 取引が正しくブロックに取り込まれたかを検証しブロックチェーンに追加する.</li>
 <li>マイナーには新規発行のビットコインの取得という経済的インセンティブがある.</li>
 <li>ノードを立ち上げるユーザーには, 自身で取引の正当性を検証することができることと, ノードが増えることで非中央集化するネットワークのセキュリティを強化するというインセンティブがある.</li>
-<li><strong>Reference:</strong> <a href="https://btcnews.jp/1hudmbki16479/">ノードの分布状況から紐解く、世界に広がるビットコインのネットワーク</a></li>
+<li><strong>Reference:</strong> 
+  <a href="https://btcnews.jp/1hudmbki16479/">ノードの分布状況から紐解く、世界に広がるビットコインのネットワーク</a>
+</li>
 </ul>
-<h2 id="bitcoindbitcoincli">bitcoindとbitcoin-cliの違い</h2>
+<h2 id="bitcoindとbitcoin-cliの違い">bitcoindとbitcoin-cliの違い</h2>
 <ul>
 <li><strong>bitcoind:</strong> Bitcoinの一通りの機能を実装したしたサーバーのこと.
 <ul>
@@ -265,29 +490,37 @@ https://github.com/alex-shpak/hugo-book
 </ul>
 </li>
 <li><strong>bitcoin-cli:</strong> JSON-RPCを使って, bitcoindと通信し, 様々な操作を行えるツールのこと.</li>
-<li><strong>References:</strong> <a href="https://bitcoin.peryaudo.org/comparison.html">Bitcoinウォレットの比較</a></li>
+<li><strong>References:</strong> 
+  <a href="https://bitcoin.peryaudo.org/comparison.html">Bitcoinウォレットの比較</a>
+</li>
 </ul>
-<h3 id="bitcoindcurl">bitcoindにcurlでアクセス</h3>
+<h3 id="bitcoindにcurlでアクセス">bitcoindにcurlでアクセス</h3>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># getblockinfo</span>
 curl --data-binary <span style="color:#2aa198">&#39;{&#34;jsonrpc&#34;:&#34;1.0&#34;,&#34;id&#34;:&#34;curltext&#34;,&#34;method&#34;:&#34;getblockchaininfo&#34;,&#34;params&#34;:[]}&#39;</span> -H <span style="color:#2aa198">&#39;content-type:text/plain;&#39;</span> http://solareenlo:solareenlo@127.0.0.1:8332/ | jq
-</code></pre></div><h3 id="bitcoinclixargs">bitcoin-cliとxargsの使用例</h3>
+</code></pre></div><h3 id="bitcoin-cliとxargsの使用例">bitcoin-cliとxargsの使用例</h3>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># ブロック高が一番高いブロックの内容を出力する例</span>
 bitcoin-cli getbestblockhash | xargs bitcoin-cli getblock
 <span style="color:#586e75"># 最新ブロックのcoinbase txのトランザクションIDを取得する例</span>
 bitcoin-cli getblockhash <span style="color:#2aa198">1</span> | xargs -IXXX bitcoin-cli getblock XXX <span style="color:#2aa198">2</span> | jq <span style="color:#2aa198">&#34;.tx[0].txid&#34;</span>
 <span style="color:#586e75"># 最新ブロックの一番初めのトランザクション内容を表示する例</span>
 bitcoin-cli getbestblockhash | xargs bitcoin-cli getblock | jq <span style="color:#2aa198">&#34;.tx[0]&#34;</span> | xargs bitcoin-cli getrawtransaction | xargs bitcoin-cli decoderawtransaction
-</code></pre></div><p><strong>References:</strong> <a href="https://medium.com/blockchain-engineer-blog/%E9%96%8B%E7%99%BA%E3%81%AB%E3%82%88%E3%81%8F%E4%BD%BF%E3%81%86bitcoin-%E9%96%A2%E9%80%A3cli%E3%83%84%E3%83%BC%E3%83%AB-12006691b4a1">開発によく使うbitcoin 関連cliツール</a></p>
-<h3 id="bitcoincliutxo">bitcoin-cliを使ってUTXOを集める</h3>
+</code></pre></div><p><strong>References:</strong> 
+  <a href="https://medium.com/blockchain-engineer-blog/%e9%96%8b%e7%99%ba%e3%81%ab%e3%82%88%e3%81%8f%e4%bd%bf%e3%81%86bitcoin-%e9%96%a2%e9%80%a3cli%e3%83%84%e3%83%bc%e3%83%ab-12006691b4a1">開発によく使うbitcoin 関連cliツール</a>
+</p>
+<h3 id="bitcoin-cliを使ってutxoを集める">bitcoin-cliを使ってUTXOを集める</h3>
 <ul>
-<li><a href="https://techmedia-think.hatenablog.com/entry/2018/10/15/161105">Output Descriptorとscantxoutsetを使ってUTXOセットをスキャンする</a></li>
+<li>
+  <a href="https://techmedia-think.hatenablog.com/entry/2018/10/15/161105">Output Descriptorとscantxoutsetを使ってUTXOセットをスキャンする</a>
+</li>
 </ul>
-<h2 id="blockchain">Blockchainの中身の見方</h2>
+<h2 id="blockchainの中身の見方">Blockchainの中身の見方</h2>
 <ul>
-<li><a href="http://learnmeabitcoin.com/glossary/blkdat">blk.dat</a></li>
+<li>
+  <a href="http://learnmeabitcoin.com/glossary/blkdat">blk.dat</a>
+</li>
 </ul>
-<h2 id="heading9">アドレス</h2>
-<h3 id="heading10">一般的なアドレス生成の流れ</h3>
+<h2 id="アドレス">アドレス</h2>
+<h3 id="一般的なアドレス生成の流れ">一般的なアドレス生成の流れ</h3>
 <ol>
 <li>秘密鍵からECDSAで公開鍵を生成</li>
 </ol>
@@ -300,40 +533,64 @@ bitcoin-cli getbestblockhash | xargs bitcoin-cli getblock | jq <span style="colo
 <li>4バイトのチェックサムを一番後ろに加える</li>
 <li>Base58のフォーマットでエンコーディングする</li>
 </ul>
-<p><strong>Reference:</strong> <a href="https://zoom-blc.com/from-private-key-to-address">秘密鍵から公開鍵そしてアドレスが生成されるまでの流れ【仮想通貨】</a></p>
-<h3 id="heading11">一般的なアドレス生成の図</h3>
+<p><strong>Reference:</strong> 
+  <a href="https://zoom-blc.com/from-private-key-to-address">秘密鍵から公開鍵そしてアドレスが生成されるまでの流れ【仮想通貨】</a>
+</p>
+<h3 id="一般的なアドレス生成の図">一般的なアドレス生成の図</h3>
 <p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
-<p><strong>Reference:</strong> <a href="https://tomokazu-kozuma.com/a-method-of-generating-a-public-key-and-a-bitcoin-address-from-a-private-key/">秘密鍵から公開鍵とビットコインアドレスを生成する方法</a></p>
-<h3 id="heading12">秘密鍵/公開鍵/アドレスの関係</h3>
+<p><strong>Reference:</strong> 
+  <a href="https://tomokazu-kozuma.com/a-method-of-generating-a-public-key-and-a-bitcoin-address-from-a-private-key/">秘密鍵から公開鍵とビットコインアドレスを生成する方法</a>
+</p>
+<h3 id="秘密鍵公開鍵アドレスの関係">秘密鍵/公開鍵/アドレスの関係</h3>
 <!-- raw HTML omitted -->
-<p><strong>Reference:</strong> <a href="https://www.crypto-currencies.jp/bitcoin/remittance/wallets.html">公開鍵、秘密鍵、ビットコインアドレスの関係</a></p>
-<h3 id="wif">秘密鍵/WIF/公開鍵/アドレスの関係</h3>
+<p><strong>Reference:</strong> 
+  <a href="https://www.crypto-currencies.jp/bitcoin/remittance/wallets.html">公開鍵、秘密鍵、ビットコインアドレスの関係</a>
+</p>
+<h3 id="秘密鍵wif公開鍵アドレスの関係">秘密鍵/WIF/公開鍵/アドレスの関係</h3>
 <!-- raw HTML omitted -->
-<p><strong>Reference:</strong> <a href="https://qiita.com/monapay/items/f708f61f2ad102b548f8">暗号通貨(Bitcoin, Monacoin)のプロトコルを理解する: 公開鍵と秘密鍵</a></p>
-<h3 id="hd">HDウォレットにおけるアドレス生成の手順</h3>
+<p><strong>Reference:</strong> 
+  <a href="https://qiita.com/monapay/items/f708f61f2ad102b548f8">暗号通貨(Bitcoin, Monacoin)のプロトコルを理解する: 公開鍵と秘密鍵</a>
+</p>
+<h3 id="hdウォレットにおけるアドレス生成の手順">HDウォレットにおけるアドレス生成の手順</h3>
 <!-- raw HTML omitted -->
-<p>Entropy (<a href="https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki">BIP39</a>, 128bit, 160bit, 192bit, 224bit, 256bitの長さ)<br>
+<p>Entropy (
+  <a href="https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki">BIP39</a>
+, 128bit, 160bit, 192bit, 224bit, 256bitの長さ)<br>
 ↓<br>
-Mnemonic (<a href="https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki">BIP39</a>, 2048(11bit)個の単語群から選んだ、12個, 15個, 18個, 21個, 24個の単語群)<br>
+Mnemonic (
+  <a href="https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki">BIP39</a>
+, 2048(11bit)個の単語群から選んだ、12個, 15個, 18個, 21個, 24個の単語群)<br>
 ↓<br>
-Master Node (<a href="https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki">BIP39</a>, 512bit(=64byte))<br>
+Master Node (
+  <a href="https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki">BIP39</a>
+, 512bit(=64byte))<br>
 ↓<br>
-左半分: Master Key(<a href="https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki">BIP32</a>), 右半分: Chain Code(<a href="https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki">BIP32</a>)<br>
+左半分: Master Key(
+  <a href="https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki">BIP32</a>
+), 右半分: Chain Code(
+  <a href="https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki">BIP32</a>
+)<br>
 ↓ (Master Key + Chain Code)<br>
-拡張鍵 (<a href="https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki">BIP32</a>)<br>
+拡張鍵 (
+  <a href="https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki">BIP32</a>
+)<br>
 ↓<br>
-HD Wallet (<a href="https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki">BIP32</a>)<br>
+HD Wallet (
+  <a href="https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki">BIP32</a>
+)<br>
 ↓<br>
 アドレス</p>
-<h3 id="entropy">Entropyのターミナルでの作成方法</h3>
+<h3 id="entropyのターミナルでの作成方法">Entropyのターミナルでの作成方法</h3>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># entropyの生成はmacのターミナルで</span>
 $ cat /dev/urandom |<span style="color:#268bd2">LC_ALL</span><span style="color:#719e07">=</span>C tr -dc <span style="color:#2aa198">&#39;a-f0-9&#39;</span> | fold -w <span style="color:#2aa198">64</span> | head -n <span style="color:#2aa198">1</span>
 <span style="color:#586e75"># entropyの生成はlinuxの端末で</span>
 $ cat /dev/urandom |tr -dc a-f0-9|head -c<span style="color:#2aa198">${</span><span style="color:#268bd2">1</span><span style="color:#719e07">:-</span><span style="color:#268bd2">64</span><span style="color:#2aa198">}</span>
-</code></pre></div><h3 id="heading13">アドレスの種類</h3>
+</code></pre></div><h3 id="アドレスの種類">アドレスの種類</h3>
 <!-- raw HTML omitted -->
-<p><strong>Reference:</strong> <a href="https://en.bitcoin.it/wiki/Address">Address</a></p>
-<h2 id="heading14">プレフィックス</h2>
+<p><strong>Reference:</strong> 
+  <a href="https://en.bitcoin.it/wiki/Address">Address</a>
+</p>
+<h2 id="プレフィックス">プレフィックス</h2>
 <table>
 <thead>
 <tr>
@@ -429,24 +686,30 @@ $ cat /dev/urandom |tr -dc a-f0-9|head -c<span style="color:#2aa198">${</span><s
 <td>tb1</td>
 </tr>
 <tr>
-<td><a href="https://en.bitcoin.it/wiki/List_of_address_prefixes">List of address prefixes</a></td>
+<td>
+  <a href="https://en.bitcoin.it/wiki/List_of_address_prefixes">List of address prefixes</a>
+</td>
 <td></td>
 <td></td>
 <td></td>
 </tr>
 </tbody>
 </table>
-<h2 id="heading15">単位</h2>
+<h2 id="単位">単位</h2>
 <p>0.00000001 BTC = 1 Satoshi<br>
 1 BTC = 100000000 Satoshi</p>
 <h2 id="script">Script</h2>
 <ul>
 <li>TransactionとScriptとLightning Networkについて分かりやすいスライド</li>
-<li><a href="https://www.slideshare.net/YukiInoue1/bitcoin-87157473">スクリプトから理解するライトニングネットワーク</a></li>
+<li>
+  <a href="https://www.slideshare.net/YukiInoue1/bitcoin-87157473">スクリプトから理解するライトニングネットワーク</a>
+</li>
 <li>サトシは後に, 以下の2つの理由でP2PK ではなくP2PKHを使うことを決めた.</li>
 <li>楕円曲線暗号（公開鍵や秘密鍵に使われれている暗号）が, 楕円曲線上の離散対数問題を解くために改良されたショアのアルゴリズムによって解かれてしまうから. 簡単に言うとそれが意味するのは, 理論上, 量子コンピューターがそう遠くない未来に公開鍵から秘密鍵を導出できてしまうということ. ビットコインを使うときだけ公開鍵を公開することによって, そういった攻撃を無力化することができる（一度使われたビットコインアドレスを二度と使わない前提だが）.</li>
 <li>ハッシュサイズがより小さくなるので（20バイトになる）, 印刷するにも小さくできるしQRコードのような小さい記録媒体に埋め込むことがより簡単になる.</li>
-<li><strong>Reference:</strong> <a href="https://programmingblockchain.gitbook.io/programmingblockchain-japanese/other_types_of_ownership/p2pk-h-_pay_to_public_key_-hash">P2PKH (Pay to Public Key Hash)</a></li>
+<li><strong>Reference:</strong> 
+  <a href="https://programmingblockchain.gitbook.io/programmingblockchain-japanese/other_types_of_ownership/p2pk-h-_pay_to_public_key_-hash">P2PKH (Pay to Public Key Hash)</a>
+</li>
 </ul>
 <h3 id="scriptsig">ScriptSig</h3>
 <p>ScriptSigはInputにあって, [$ \sf{ScriptSig} \fallingdotseq \sf{Unlock Script}]
@@ -455,131 +718,165 @@ ScriptSigにはSigとPubKeyがある.
 <h3 id="scriptpubkey">ScriptPubKey</h3>
 <p>ScriptPubKeyはOutputにあって, [$ \sf{ScriptPubKey} \fallingdotseq \sf{Lock Script}]
 Lockしないと誰でもBTCを取り出せてしますから.</p>
-<h3 id="p2shscriptpubkey">P2SHのScriptPubKey</h3>
+<h3 id="p2shのscriptpubkey">P2SHのScriptPubKey</h3>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># P2SHのScriptPubKey</span>
 OP_HASH160 <span style="color:#719e07">[</span>20-byte-hash-value<span style="color:#719e07">]</span> OP_EQUAL
-</code></pre></div><h3 id="bitcoin-script">オンラインでBitcoin Scriptの挙動を確認できるサイト</h3>
+</code></pre></div><h3 id="オンラインでbitcoin-scriptの挙動を確認できるサイト">オンラインでBitcoin Scriptの挙動を確認できるサイト</h3>
 <ul>
-<li><a href="https://bitcoin-script-debugger.visvirial.com">Bitcoin Script Online Debugger</a></li>
+<li>
+  <a href="https://bitcoin-script-debugger.visvirial.com">Bitcoin Script Online Debugger</a>
+</li>
 </ul>
-<h2 id="heading16">トランザクション</h2>
+<h2 id="トランザクション">トランザクション</h2>
 <p>トランザクション生成と検証の仕方が分かりやすいスライド</p>
 <ul>
-<li><a href="https://www.slideshare.net/kenjiurushima/20140602-bitcoin1-201406031222">Bitcoinを技術的に理解する</a> の32ページ目から</li>
-<li><a href="https://tech.coincheck.blog/entry/2019/02/12/113706">Bitcoinのtransactionの署名検証をscriptから理解する</a></li>
+<li>
+  <a href="https://www.slideshare.net/kenjiurushima/20140602-bitcoin1-201406031222">Bitcoinを技術的に理解する</a>
+ の32ページ目から</li>
+<li>
+  <a href="https://tech.coincheck.blog/entry/2019/02/12/113706">Bitcoinのtransactionの署名検証をscriptから理解する</a>
+</li>
 </ul>
 <h2 id="segwit">Segwit</h2>
 <ul>
-<li><a href="https://medium.com/blockchain-engineer-blog/segwit%E3%81%AE%E5%88%86%E3%81%8B%E3%82%8A%E3%81%A5%E3%82%89%E3%81%84%E7%82%B9%E3%81%A8%E3%81%9D%E3%81%AE%E7%90%86%E7%94%B1-83532a40c204">SegWitの分かりづらい点とその理由</a></li>
+<li>
+  <a href="https://medium.com/blockchain-engineer-blog/segwit%e3%81%ae%e5%88%86%e3%81%8b%e3%82%8a%e3%81%a5%e3%82%89%e3%81%84%e7%82%b9%e3%81%a8%e3%81%9d%e3%81%ae%e7%90%86%e7%94%b1-83532a40c204">SegWitの分かりづらい点とその理由</a>
+</li>
 </ul>
-<h3 id="heading17">スクリプト構造</h3>
+<h3 id="スクリプト構造">スクリプト構造</h3>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># P2WPKH</span>
 witness      : &lt;signature&gt; &lt;pubkey&gt;
 scriptSig    : <span style="color:#719e07">(</span>empty<span style="color:#719e07">)</span>
 scriptPubKey : <span style="color:#2aa198">0</span> &lt;20-byte SHA160<span style="color:#719e07">(</span>pubkey<span style="color:#719e07">)</span>&gt;
-               <span style="color:#719e07">(</span>0x0014<span style="color:#719e07">{</span>20-byte SHA160<span style="color:#719e07">(</span>pubkey<span style="color:#719e07">)</span><span style="color:#719e07">}</span><span style="color:#719e07">)</span>
+               <span style="color:#719e07">(</span>0x0014<span style="color:#719e07">{</span>20-byte SHA160<span style="color:#719e07">(</span>pubkey<span style="color:#719e07">)})</span>
 <span style="color:#586e75"># P2WSH</span>
 witness      : <span style="color:#2aa198">0</span> &lt;signature1&gt; &lt;<span style="color:#2aa198">1</span> &lt;pubkey1&gt; &lt;pubkey2&gt; <span style="color:#2aa198">2</span> CHECKMULTISIG&gt;
 scriptSig    : <span style="color:#719e07">(</span>empty<span style="color:#719e07">)</span>
 scriptPubKey : <span style="color:#2aa198">0</span> &lt;32-byte sha256<span style="color:#719e07">(</span>witness script<span style="color:#719e07">)</span>&gt;
-               <span style="color:#719e07">(</span>0x0020<span style="color:#719e07">{</span>32-byte sha256<span style="color:#719e07">(</span>witness script<span style="color:#719e07">)</span><span style="color:#719e07">}</span><span style="color:#719e07">)</span>
+               <span style="color:#719e07">(</span>0x0020<span style="color:#719e07">{</span>32-byte sha256<span style="color:#719e07">(</span>witness script<span style="color:#719e07">)})</span>
 </code></pre></div><h3 id="base32">Base32</h3>
 <!-- raw HTML omitted -->
 <h2 id="transaction-fee">Transaction Fee</h2>
 <ul>
-<li><a href="https://bitcoinfees.earn.com/">PREDICTING BITCOIN FEES FOR TRANSACTIONS.</a></li>
-<li><a href="https://bitinfocharts.com/comparison/bitcoin-transactionfees.html">Bitcoin Avg. Transaction Fee historical chart</a></li>
+<li>
+  <a href="https://bitcoinfees.earn.com/">PREDICTING BITCOIN FEES FOR TRANSACTIONS.</a>
+</li>
+<li>
+  <a href="https://bitinfocharts.com/comparison/bitcoin-transactionfees.html">Bitcoin Avg. Transaction Fee historical chart</a>
+</li>
 </ul>
 <h2 id="references">References</h2>
 <ul>
-<li><a href="https://bitcoin.peryaudo.org/index.html">bitcoinのしくみ</a></li>
-<li><a href="https://programmingblockchain.gitbook.io/programmingblockchain-japanese/">Programming The Blockchain C# 日本語</a></li>
-<li><a href="https://bc-2.jp/season1">Blockchain Core Camp season1のビデオ資料</a></li>
-<li><a href="https://bc-2.jp/season2">Blockchain Core Camp season2のビデオ資料</a></li>
-<li><a href="https://dergigi.com/bitcoin/resources/">Bitcoin Resources</a></li>
+<li>
+  <a href="https://bitcoin.peryaudo.org/index.html">bitcoinのしくみ</a>
+</li>
+<li>
+  <a href="https://programmingblockchain.gitbook.io/programmingblockchain-japanese/">Programming The Blockchain C# 日本語</a>
+</li>
+<li>
+  <a href="https://bc-2.jp/season1">Blockchain Core Camp season1のビデオ資料</a>
+</li>
+<li>
+  <a href="https://bc-2.jp/season2">Blockchain Core Camp season2のビデオ資料</a>
+</li>
+<li>
+  <a href="https://dergigi.com/bitcoin/resources/">Bitcoin Resources</a>
+</li>
 </ul>
 </article>
+ 
+      
 
-      <div class="book-footer justify-between">
-  
+      <footer class="book-footer">
+        
+  <div class="flex justify-between">
 
-  
-  
+
+
   <div>
     
-    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/commit/56cbf0f3eb345a7a9217be0c9a7f661a1dddaeb4" title='Last modified by solareenlo | Jul 14, 2019' target="_blank">
-      <img src="/svg/calendar.svg" alt="Calendar" />
+    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/commit/56cbf0f3eb345a7a9217be0c9a7f661a1dddaeb4" title='Last modified by solareenlo | Jul 14, 2019' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
       <span>Jul 14, 2019</span>
     </a>
   </div>
-  
-  
 
-  
+
+
   <div>
-    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/edit/master/content/docs/bitcoin.md" target="_blank">
-      <img src="/svg/edit.svg" alt="Edit" />
+    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/edit/master/content/docs/bitcoin.md" target="_blank" rel="noopener">
+      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
       <span>Edit this page</span>
     </a>
   </div>
-  
 
 </div>
 
+ 
+        
+      </footer>
+
       
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
     </div>
 
     
-  
-
-  <aside class="book-toc levels-3 fixed">
-    <nav id="TableOfContents">
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
   <ul>
-    <li><a href="#heading">目的</a></li>
-    <li><a href="#heading1">特徴</a></li>
-    <li><a href="#heading2">技術</a></li>
-    <li><a href="#heading3">プレイヤー</a></li>
-    <li><a href="#heading4">スケーリング方法</a></li>
-    <li><a href="#heading5">フルノード</a>
+    <li><a href="#目的">目的</a></li>
+    <li><a href="#特徴">特徴</a></li>
+    <li><a href="#技術">技術</a></li>
+    <li><a href="#プレイヤー">プレイヤー</a></li>
+    <li><a href="#スケーリング方法">スケーリング方法</a></li>
+    <li><a href="#フルノード">フルノード</a>
       <ul>
-        <li><a href="#heading6">フルノードの立て方</a></li>
-        <li><a href="#heading7">フルノードの分布図</a></li>
-        <li><a href="#heading8">マイナーとノードの違い</a></li>
+        <li><a href="#フルノードの立て方">フルノードの立て方</a></li>
+        <li><a href="#フルノードの分布図">フルノードの分布図</a></li>
+        <li><a href="#マイナーとノードの違い">マイナーとノードの違い</a></li>
       </ul>
     </li>
-    <li><a href="#bitcoindbitcoincli">bitcoindとbitcoin-cliの違い</a>
+    <li><a href="#bitcoindとbitcoin-cliの違い">bitcoindとbitcoin-cliの違い</a>
       <ul>
-        <li><a href="#bitcoindcurl">bitcoindにcurlでアクセス</a></li>
-        <li><a href="#bitcoinclixargs">bitcoin-cliとxargsの使用例</a></li>
-        <li><a href="#bitcoincliutxo">bitcoin-cliを使ってUTXOを集める</a></li>
+        <li><a href="#bitcoindにcurlでアクセス">bitcoindにcurlでアクセス</a></li>
+        <li><a href="#bitcoin-cliとxargsの使用例">bitcoin-cliとxargsの使用例</a></li>
+        <li><a href="#bitcoin-cliを使ってutxoを集める">bitcoin-cliを使ってUTXOを集める</a></li>
       </ul>
     </li>
-    <li><a href="#blockchain">Blockchainの中身の見方</a></li>
-    <li><a href="#heading9">アドレス</a>
+    <li><a href="#blockchainの中身の見方">Blockchainの中身の見方</a></li>
+    <li><a href="#アドレス">アドレス</a>
       <ul>
-        <li><a href="#heading10">一般的なアドレス生成の流れ</a></li>
-        <li><a href="#heading11">一般的なアドレス生成の図</a></li>
-        <li><a href="#heading12">秘密鍵/公開鍵/アドレスの関係</a></li>
-        <li><a href="#wif">秘密鍵/WIF/公開鍵/アドレスの関係</a></li>
-        <li><a href="#hd">HDウォレットにおけるアドレス生成の手順</a></li>
-        <li><a href="#entropy">Entropyのターミナルでの作成方法</a></li>
-        <li><a href="#heading13">アドレスの種類</a></li>
+        <li><a href="#一般的なアドレス生成の流れ">一般的なアドレス生成の流れ</a></li>
+        <li><a href="#一般的なアドレス生成の図">一般的なアドレス生成の図</a></li>
+        <li><a href="#秘密鍵公開鍵アドレスの関係">秘密鍵/公開鍵/アドレスの関係</a></li>
+        <li><a href="#秘密鍵wif公開鍵アドレスの関係">秘密鍵/WIF/公開鍵/アドレスの関係</a></li>
+        <li><a href="#hdウォレットにおけるアドレス生成の手順">HDウォレットにおけるアドレス生成の手順</a></li>
+        <li><a href="#entropyのターミナルでの作成方法">Entropyのターミナルでの作成方法</a></li>
+        <li><a href="#アドレスの種類">アドレスの種類</a></li>
       </ul>
     </li>
-    <li><a href="#heading14">プレフィックス</a></li>
-    <li><a href="#heading15">単位</a></li>
+    <li><a href="#プレフィックス">プレフィックス</a></li>
+    <li><a href="#単位">単位</a></li>
     <li><a href="#script">Script</a>
       <ul>
         <li><a href="#scriptsig">ScriptSig</a></li>
         <li><a href="#scriptpubkey">ScriptPubKey</a></li>
-        <li><a href="#p2shscriptpubkey">P2SHのScriptPubKey</a></li>
-        <li><a href="#bitcoin-script">オンラインでBitcoin Scriptの挙動を確認できるサイト</a></li>
+        <li><a href="#p2shのscriptpubkey">P2SHのScriptPubKey</a></li>
+        <li><a href="#オンラインでbitcoin-scriptの挙動を確認できるサイト">オンラインでBitcoin Scriptの挙動を確認できるサイト</a></li>
       </ul>
     </li>
-    <li><a href="#heading16">トランザクション</a></li>
+    <li><a href="#トランザクション">トランザクション</a></li>
     <li><a href="#segwit">Segwit</a>
       <ul>
-        <li><a href="#heading17">スクリプト構造</a></li>
+        <li><a href="#スクリプト構造">スクリプト構造</a></li>
         <li><a href="#base32">Base32</a></li>
       </ul>
     </li>
@@ -587,13 +884,25 @@ scriptPubKey : <span style="color:#2aa198">0</span> &lt;32-byte sha256<span styl
     <li><a href="#references">References</a></li>
   </ul>
 </nav>
-  </aside>
 
-
-
+ 
+    </aside>
+    
   </main>
 
   
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+

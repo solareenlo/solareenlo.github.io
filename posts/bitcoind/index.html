@@ -4,14 +4,20 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="bitcoindへのアクセス方法"><meta property="og:title" content="bitcoindへのアクセス方法" />
-<meta property="og:description" content=" bitcoindへのアクセス方法3選(bitcoin-cli, curl, POST). 3つともJSON-RPCで通信してる.
+<meta name="description" content=" bitcoindへのアクセス方法3選(bitcoin-cli, curl, POST). 3つとも JSON-RPC で通信してる.
  bitcoindとは, 名前の通りunixのデーモンとして動作する事を目的とするBitcoinのクライアントで, JSON-RPCで開発者向けのAPIを提供する. したがって, Webサービスとして動作するBitcoinウォレットのバックエンドとしてや, マイニングプールのサーバーとして使われる.
-Reference: Bitcoinウォレットの比較
- 1. bitcoin-cliを使ってアクセスする.  bitcoin-cliとは, bitcoindへJSON-RPCを使ってアクセスするツールのこと.
+Reference: Bitcoinウォレットの比較  1. bitcoin-cliを使ってアクセスする.  bitcoin-cliとは, bitcoindへJSON-RPCを使ってアクセスするツールのこと.
  bitcoindを使ってBitcoinのフルノードを立ち上げて,
 bitcoin-cli getblockchaininfo とか.
-2. cURLを使ってアクセスする. 下記curlを行う要件.
+2. cURL を使ってアクセスする. 下記curlを行う要件.
+ ネットワーク: mainnet 接続環境: ローカル ポート番号: 8332 ユーザーの名前: user-name パスワード: user-password 投げつけているbitcoin-cliのメソッド: getblockchaininfo  curl --data-binary &#39;{&quot;jsonrpc&quot;:&quot;1.0&quot;,&quot;id&quot;:&quot;curltext&quot;,&quot;method&quot;:&quot;getblockchaininfo&quot;,&quot;params&quot;:[]}&#39; -H &#39;content-type:text/plain;&#39; http://user-name:user-password@127.0.0.1:8332/ | jq 3. 自作プログラムでPOSTしてアクセスする. bitcoindはHTTPリクエストメソッドのPOSTに対応しているので, JSON-RPCをPOSTで投げつける. 以下のプログラムはNode.jsを使った例.
+ https://github.com/solareenlo/bc-json-rpc  "><meta property="og:title" content="bitcoindへのアクセス方法" />
+<meta property="og:description" content=" bitcoindへのアクセス方法3選(bitcoin-cli, curl, POST). 3つとも JSON-RPC で通信してる.
+ bitcoindとは, 名前の通りunixのデーモンとして動作する事を目的とするBitcoinのクライアントで, JSON-RPCで開発者向けのAPIを提供する. したがって, Webサービスとして動作するBitcoinウォレットのバックエンドとしてや, マイニングプールのサーバーとして使われる.
+Reference: Bitcoinウォレットの比較  1. bitcoin-cliを使ってアクセスする.  bitcoin-cliとは, bitcoindへJSON-RPCを使ってアクセスするツールのこと.
+ bitcoindを使ってBitcoinのフルノードを立ち上げて,
+bitcoin-cli getblockchaininfo とか.
+2. cURL を使ってアクセスする. 下記curlを行う要件.
  ネットワーク: mainnet 接続環境: ローカル ポート番号: 8332 ユーザーの名前: user-name パスワード: user-password 投げつけているbitcoin-cliのメソッド: getblockchaininfo  curl --data-binary &#39;{&quot;jsonrpc&quot;:&quot;1.0&quot;,&quot;id&quot;:&quot;curltext&quot;,&quot;method&quot;:&quot;getblockchaininfo&quot;,&quot;params&quot;:[]}&#39; -H &#39;content-type:text/plain;&#39; http://user-name:user-password@127.0.0.1:8332/ | jq 3. 自作プログラムでPOSTしてアクセスする. bitcoindはHTTPリクエストメソッドのPOSTに対応しているので, JSON-RPCをPOSTで投げつける. 以下のプログラムはNode.jsを使った例.
  https://github.com/solareenlo/bc-json-rpc  " />
 <meta property="og:type" content="article" />
@@ -22,10 +28,10 @@ bitcoin-cli getblockchaininfo とか.
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 
 
-<link rel="stylesheet" href="/book.min.0d8f55f751a5f22793c02b19a8a0822122d183a7e99645f6b428174dd3eeec94.css" integrity="sha256-DY9V91Gl8ieTwCsZqKCCISLRg6fplkX2tCgXTdPu7JQ=">
+<link rel="stylesheet" href="/book.min.58981925ddc33520ebc4b651e423503306a3203982a9b8426a20913f11092a1f.css" integrity="sha256-WJgZJd3DNSDrxLZR5CNQMwajIDmCqbhCaiCRPxEJKh8=">
 
 
-<script defer src="/en.search.min.0de8e26fe8b38f83ff163b7738b4abcdbbe90ae41f3d554ee92aed704668dc09.js" integrity="sha256-Dejib&#43;izj4P/Fjt3OLSrzbvpCuQfPVVO6SrtcEZo3Ak="></script>
+<script defer src="/en.search.min.cd69dcbc57adb833562b43f1f38bae1ac2260c98f1c7775cd3eeaef066265c87.js" integrity="sha256-zWncvFetuDNWK0Px84uuGsImDJjxx3dc0&#43;6u8GYmXIc="></script>
 
 <!--
 Made with Book Theme
@@ -37,18 +43,18 @@ https://github.com/alex-shpak/hugo-book
 
 <body>
   <input type="checkbox" class="hidden" id="menu-control" />
-  <main class="flex container">
-
-    <aside class="book-menu fixed">
-      <nav>
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
 <h2 class="book-brand">
-  <a href="https://solareenlo.com/"><span>solareenlo</span>
+  <a href="/"><span>solareenlo</span>
   </a>
 </h2>
 
 
 <div class="book-search">
-  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
   <div class="book-search-spinner spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
@@ -57,97 +63,232 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-    <ul>
-<li><a href="/"><strong>はじめに</strong></a></li>
-<li><a href="/posts/"><strong>Blog</strong></a></li>
-<li><a href="/docs/programming/"><strong>Programming</strong></a>
-<ul>
-<li><a href="/docs/terminal/">Terminal</a></li>
-<li><a href="/docs/command/">Command</a></li>
-<li><a href="/docs/sed/">sed</a></li>
-<li><a href="/docs/shell-script/">Shell Script</a></li>
-<li><a href="/docs/vim/">Vim</a></li>
-<li><a href="/docs/vimium/">Vimium</a></li>
-<li><a href="/docs/git/">Git</a></li>
-<li><a href="/docs/github/">GitHub</a></li>
-<li><a href="/docs/linter-formatter/">Linter/Formatter</a></li>
-<li><a href="/docs/test/">Test</a></li>
-<li><a href="/docs/password-manager/">Password Manager</a></li>
-</ul>
+
+
+
+
+
+
+  <ul>
+<li>
+  <a href="/"><strong>はじめに</strong></a>
 </li>
-<li><a href="/docs/programming-language/"><strong>Programming Language</strong></a>
-<ul>
-<li><a href="/docs/c/">C</a></li>
-<li><a href="/docs/rust/">Rust</a></li>
-<li><a href="/docs/javascript/">JavaScript</a></li>
-<li><a href="/docs/css/">CSS</a></li>
-<li><a href="/docs/nodejs/">Node.js</a></li>
-<li><a href="/docs/npm/">npm</a></li>
-<li><a href="/docs/typescript/">TypeScript</a></li>
-<li><a href="/docs/angular/">Angular</a></li>
-<li><a href="/docs/react/">React</a></li>
-<li><a href="/docs/react-static/">React Static</a></li>
-<li><a href="/docs/haskell/">Haskell</a></li>
-<li><a href="/docs/hugo/">Hugo</a></li>
-<li><a href="/docs/programming-language-docs/">Docs</a></li>
-</ul>
+<li>
+  <a href="/posts/"><strong>Blog</strong></a>
 </li>
-<li><a href="/docs/latex/"><strong>LaTeX</strong></a>
+<li>
+  <a href="/docs/programming/"><strong>Programming</strong></a>
+
 <ul>
-<li><a href="/docs/platex-book/">Book</a></li>
-</ul>
+<li>
+  <a href="/docs/terminal/">Terminal</a>
 </li>
-<li><a href="/docs/vps/"><strong>VPS</strong></a>
-<ul>
-<li><a href="/docs/ssh/">SSH</a></li>
-<li><a href="/docs/ubuntu/">Ubuntu</a></li>
-<li><a href="/docs/alpine-linux/">Alpine Linux</a></li>
-</ul>
+<li>
+  <a href="/docs/command/">Command</a>
 </li>
-<li><a href="/docs/db/"><strong>DB</strong></a>
-<ul>
-<li><a href="/docs/mysql/">MySQL</a></li>
-<li><a href="/docs/mongodb/">MongoDB</a></li>
-<li><a href="/docs/redis/">Redis</a></li>
-</ul>
+<li>
+  <a href="/docs/sed/">sed</a>
 </li>
-<li><a href="/docs/cloud/"><strong>Cloud</strong></a>
-<ul>
-<li><a href="/docs/aws/">AWS</a></li>
-<li><a href="/docs/gcp/">GCP</a></li>
-<li><a href="/docs/firebase/">Firebase</a></li>
-<li><a href="/docs/zeit-now/">ZEIT Now</a></li>
-</ul>
+<li>
+  <a href="/docs/shell-script/">Shell Script</a>
 </li>
-<li><a href="/docs/ci-cd/"><strong>CI/CD</strong></a>
-<ul>
-<li><a href="/docs/jenkins/">Jenkins</a></li>
-<li><a href="/docs/travis-ci/">Travis CI</a></li>
-<li><a href="/docs/circleci/">CircleCI</a></li>
-</ul>
+<li>
+  <a href="/docs/vim/">Vim</a>
 </li>
-<li><a href="/docs/container/"><strong>Container</strong></a>
-<ul>
-<li><a href="/docs/docker1/">Docker1</a></li>
-<li><a href="/docs/docker2/">Docker2</a></li>
-<li><a href="/docs/docker-hub/">Docker Hub</a></li>
-<li><a href="/docs/docker-compose/">Docker Compose</a></li>
-<li><a href="/docs/kubernetes/">Kubernetes</a></li>
-</ul>
+<li>
+  <a href="/docs/vimium/">Vimium</a>
 </li>
-<li><a href="/docs/crypto/"><strong>Crypto</strong></a>
-<ul>
-<li><a href="/docs/blockchain/">Blockchain</a></li>
-<li><a href="/docs/bitcoin/">Bitcoin</a></li>
-<li><a href="/docs/ethereum/">Ethereum</a></li>
-<li><a href="/docs/iota/">IOTA</a></li>
-<li><a href="/docs/nem/">NEM</a></li>
-<li><a href="/docs/substrate/">Substrate</a></li>
-<li><a href="/docs/white-paper/">White Paper</a></li>
-<li><a href="/docs/crypto-docs/">Docs</a></li>
-</ul>
+<li>
+  <a href="/docs/git/">Git</a>
+</li>
+<li>
+  <a href="/docs/github/">GitHub</a>
+</li>
+<li>
+  <a href="/docs/linter-formatter/">Linter/Formatter</a>
+</li>
+<li>
+  <a href="/docs/test/">Test</a>
+</li>
+<li>
+  <a href="/docs/password-manager/">Password Manager</a>
 </li>
 </ul>
+</li>
+<li>
+  <a href="/docs/programming-language/"><strong>Programming Language</strong></a>
+
+<ul>
+<li>
+  <a href="/docs/c/">C</a>
+</li>
+<li>
+  <a href="/docs/rust/">Rust</a>
+</li>
+<li>
+  <a href="/docs/javascript/">JavaScript</a>
+</li>
+<li>
+  <a href="/docs/css/">CSS</a>
+</li>
+<li>
+  <a href="/docs/nodejs/">Node.js</a>
+</li>
+<li>
+  <a href="/docs/npm/">npm</a>
+</li>
+<li>
+  <a href="/docs/typescript/">TypeScript</a>
+</li>
+<li>
+  <a href="/docs/angular/">Angular</a>
+</li>
+<li>
+  <a href="/docs/react/">React</a>
+</li>
+<li>
+  <a href="/docs/react-static/">React Static</a>
+</li>
+<li>
+  <a href="/docs/haskell/">Haskell</a>
+</li>
+<li>
+  <a href="/docs/hugo/">Hugo</a>
+</li>
+<li>
+  <a href="/docs/programming-language-docs/">Docs</a>
+</li>
+</ul>
+</li>
+<li>
+  <a href="/docs/latex/"><strong>LaTeX</strong></a>
+
+<ul>
+<li>
+  <a href="/docs/platex-book/">Book</a>
+</li>
+</ul>
+</li>
+<li>
+  <a href="/docs/vps/"><strong>VPS</strong></a>
+
+<ul>
+<li>
+  <a href="/docs/ssh/">SSH</a>
+</li>
+<li>
+  <a href="/docs/ubuntu/">Ubuntu</a>
+</li>
+<li>
+  <a href="/docs/alpine-linux/">Alpine Linux</a>
+</li>
+</ul>
+</li>
+<li>
+  <a href="/docs/db/"><strong>DB</strong></a>
+
+<ul>
+<li>
+  <a href="/docs/mysql/">MySQL</a>
+</li>
+<li>
+  <a href="/docs/mongodb/">MongoDB</a>
+</li>
+<li>
+  <a href="/docs/redis/">Redis</a>
+</li>
+</ul>
+</li>
+<li>
+  <a href="/docs/cloud/"><strong>Cloud</strong></a>
+
+<ul>
+<li>
+  <a href="/docs/aws/">AWS</a>
+</li>
+<li>
+  <a href="/docs/gcp/">GCP</a>
+</li>
+<li>
+  <a href="/docs/firebase/">Firebase</a>
+</li>
+<li>
+  <a href="/docs/zeit-now/">ZEIT Now</a>
+</li>
+</ul>
+</li>
+<li>
+  <a href="/docs/ci-cd/"><strong>CI/CD</strong></a>
+
+<ul>
+<li>
+  <a href="/docs/jenkins/">Jenkins</a>
+</li>
+<li>
+  <a href="/docs/travis-ci/">Travis CI</a>
+</li>
+<li>
+  <a href="/docs/circleci/">CircleCI</a>
+</li>
+</ul>
+</li>
+<li>
+  <a href="/docs/container/"><strong>Container</strong></a>
+
+<ul>
+<li>
+  <a href="/docs/docker1/">Docker1</a>
+</li>
+<li>
+  <a href="/docs/docker2/">Docker2</a>
+</li>
+<li>
+  <a href="/docs/docker-hub/">Docker Hub</a>
+</li>
+<li>
+  <a href="/docs/docker-compose/">Docker Compose</a>
+</li>
+<li>
+  <a href="/docs/kubernetes/">Kubernetes</a>
+</li>
+</ul>
+</li>
+<li>
+  <a href="/docs/crypto/"><strong>Crypto</strong></a>
+
+<ul>
+<li>
+  <a href="/docs/blockchain/">Blockchain</a>
+</li>
+<li>
+  <a href="/docs/bitcoin/">Bitcoin</a>
+</li>
+<li>
+  <a href="/docs/ethereum/">Ethereum</a>
+</li>
+<li>
+  <a href="/docs/iota/">IOTA</a>
+</li>
+<li>
+  <a href="/docs/nem/">NEM</a>
+</li>
+<li>
+  <a href="/docs/substrate/">Substrate</a>
+</li>
+<li>
+  <a href="/docs/white-paper/">White Paper</a>
+</li>
+<li>
+  <a href="/docs/crypto-docs/">Docs</a>
+</li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
 
 
 
@@ -156,50 +297,87 @@ https://github.com/alex-shpak/hugo-book
 </nav>
 
 
-<script>
-(function() {
-  var menu = document.querySelector("aside.book-menu nav");
-  addEventListener("beforeunload", function(event) {
-    localStorage.setItem("menu.scrollTop", menu.scrollTop);
-  });
-  menu.scrollTop = localStorage.getItem("menu.scrollTop");
-})();
-</script>
 
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
     </aside>
 
-    <div class="book-posts">
-      <header class="flex align-center justify-between book-header">
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
   <label for="menu-control">
-    <img src="/svg/menu.svg" alt="Menu" />
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
+
   <strong>bitcoindへのアクセス方法</strong>
-</header>
+
+  <label for="toc-control">
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+  </label>
+</div>
+
+
+  
+    <input type="checkbox" class="hidden" id="toc-control" />
+    <aside class="hidden clearfix">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-bitcoin-cliを使ってアクセスする">1. bitcoin-cliを使ってアクセスする.</a></li>
+    <li><a href="#2-curlhttpsjawikipediaorgwikicurlを使ってアクセスする">2. <a href="https://ja.wikipedia.org/wiki/CURL">cURL</a>を使ってアクセスする.</a></li>
+    <li><a href="#3-自作プログラムでpostしてアクセスする">3. 自作プログラムでPOSTしてアクセスする.</a></li>
+  </ul>
+</nav>
+
+
+    </aside>
+  
+ 
+      </header>
 
       
+      
+<article class="markdown">
+  <h1>
+    <a href="/posts/bitcoind/">bitcoindへのアクセス方法</a>
+  </h1>
+  
 
-<header class="markdown">
-  <h1>bitcoindへのアクセス方法</h1>
-  <h5>
-    <strong>Apr 17, 2019</strong>
-  </h5>
-</header>
-<article class="markdown"><hr>
+  <h5>Apr 17, 2019</h5>
+
+
+
+  
+
+  
+
+
+  <p><hr>
 <p>bitcoindへのアクセス方法3選(bitcoin-cli, curl, POST).
-3つとも<a href="https://ja.wikipedia.org/wiki/JSON-RPC">JSON-RPC</a>で通信してる.</p>
+3つとも
+  <a href="https://ja.wikipedia.org/wiki/JSON-RPC">JSON-RPC</a>
+で通信してる.</p>
 <blockquote>
 <p>bitcoindとは, 名前の通りunixのデーモンとして動作する事を目的とするBitcoinのクライアントで, JSON-RPCで開発者向けのAPIを提供する.
 したがって, Webサービスとして動作するBitcoinウォレットのバックエンドとしてや, マイニングプールのサーバーとして使われる.</p>
-<p><strong>Reference:</strong> <a href="https://bitcoin.peryaudo.org/comparison.html">Bitcoinウォレットの比較</a></p>
+<p><strong>Reference:</strong> 
+  <a href="https://bitcoin.peryaudo.org/comparison.html">Bitcoinウォレットの比較</a>
+</p>
 </blockquote>
-<h2 id="1-bitcoincli">1. bitcoin-cliを使ってアクセスする.</h2>
+<h2 id="1-bitcoin-cliを使ってアクセスする">1. bitcoin-cliを使ってアクセスする.</h2>
 <blockquote>
 <p>bitcoin-cliとは, bitcoindへJSON-RPCを使ってアクセスするツールのこと.</p>
 </blockquote>
 <p>bitcoindを使ってBitcoinのフルノードを立ち上げて,</p>
 <pre><code>bitcoin-cli getblockchaininfo
 </code></pre><p>とか.</p>
-<h2 id="2-curlhttpsjawikipediaorgwikicurl">2. <a href="https://ja.wikipedia.org/wiki/CURL">cURL</a>を使ってアクセスする.</h2>
+<h2 id="2-curlhttpsjawikipediaorgwikicurlを使ってアクセスする">2. 
+  <a href="https://ja.wikipedia.org/wiki/CURL">cURL</a>
+を使ってアクセスする.</h2>
 <p>下記curlを行う要件.</p>
 <ul>
 <li>ネットワーク: mainnet</li>
@@ -210,61 +388,86 @@ https://github.com/alex-shpak/hugo-book
 <li>投げつけているbitcoin-cliのメソッド: getblockchaininfo</li>
 </ul>
 <pre><code>curl --data-binary '{&quot;jsonrpc&quot;:&quot;1.0&quot;,&quot;id&quot;:&quot;curltext&quot;,&quot;method&quot;:&quot;getblockchaininfo&quot;,&quot;params&quot;:[]}' -H 'content-type:text/plain;' http://user-name:user-password@127.0.0.1:8332/ | jq
-</code></pre><h2 id="3-post">3. 自作プログラムでPOSTしてアクセスする.</h2>
+</code></pre><h2 id="3-自作プログラムでpostしてアクセスする">3. 自作プログラムでPOSTしてアクセスする.</h2>
 <p>bitcoindはHTTPリクエストメソッドのPOSTに対応しているので, JSON-RPCをPOSTで投げつける.
 以下のプログラムはNode.jsを使った例.</p>
 <ul>
 <li><a href="https://github.com/solareenlo/bc-json-rpc">https://github.com/solareenlo/bc-json-rpc</a></li>
 </ul>
+</p>
 </article>
+ 
+      
 
-      <div class="book-footer justify-between">
-  
+      <footer class="book-footer">
+        
+  <div class="flex justify-between">
 
-  
-  
+
+
   <div>
     
-    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/commit/58117c1effff3b93b5c41bb2cfe75f90f8c2838b" title='Last modified by solareenlo | Apr 17, 2019' target="_blank">
-      <img src="/svg/calendar.svg" alt="Calendar" />
+    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/commit/58117c1effff3b93b5c41bb2cfe75f90f8c2838b" title='Last modified by solareenlo | Apr 17, 2019' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
       <span>Apr 17, 2019</span>
     </a>
   </div>
-  
-  
 
-  
+
+
   <div>
-    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/edit/master/content/posts/bitcoind.md" target="_blank">
-      <img src="/svg/edit.svg" alt="Edit" />
+    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/edit/master/content/posts/bitcoind.md" target="_blank" rel="noopener">
+      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
       <span>Edit this page</span>
     </a>
   </div>
-  
 
 </div>
 
+ 
+        
+      </footer>
+
       
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
     </div>
 
     
-  
-
-  <aside class="book-toc levels-3 fixed">
-    <nav id="TableOfContents">
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
   <ul>
-    <li><a href="#1-bitcoincli">1. bitcoin-cliを使ってアクセスする.</a></li>
-    <li><a href="#2-curlhttpsjawikipediaorgwikicurl">2. cURLを使ってアクセスする.</a></li>
-    <li><a href="#3-post">3. 自作プログラムでPOSTしてアクセスする.</a></li>
+    <li><a href="#1-bitcoin-cliを使ってアクセスする">1. bitcoin-cliを使ってアクセスする.</a></li>
+    <li><a href="#2-curlhttpsjawikipediaorgwikicurlを使ってアクセスする">2. <a href="https://ja.wikipedia.org/wiki/CURL">cURL</a>を使ってアクセスする.</a></li>
+    <li><a href="#3-自作プログラムでpostしてアクセスする">3. 自作プログラムでPOSTしてアクセスする.</a></li>
   </ul>
 </nav>
-  </aside>
 
-
-
+ 
+    </aside>
+    
   </main>
 
   
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -4,9 +4,8 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Oracle Blockchain GIG#5"><meta property="og:title" content="Oracle Blockchain GIG#5" />
-<meta property="og:description" content="Blockchain GIG #5
- ハッシュタグは#blockchaingig  Oracleさん ユースケース  食品のトレーサビリティ 貿易系 人事情報・学歴情報 サプライチェーンが多い コバルトのトレーサビリティ 医療情報の共有 サプライヤーの共有 GEのインターカンパニーの売掛・買掛をブロックチェーンで管理しよう  インテグレーション・見える化・ データーの連携レイヤーをブロックチェーンで使った 6週間で作れた    ベスプラ  チャネルとはサブネットワークに分けるもの ChannelとPeerの関係 Transient Data  台帳に含まれないようにChaincodeに引き渡せるデータ   Pravate Data Collection  プライベートデータを持つノードを事前に決めておく必要がある   暗号化  鍵交換問題 Transient Dataを使って共通鍵を引き渡す 暗号化アルゴリズムは稀代化する 誰をどの程度信頼するか  デフォルトではPeerにアクセスできれば台帳が読める Peerも結局のところOS上のプロセスの一つなので、ホストマシンをキチンとセキュアにする     アプリケーションとスマコン  スマコンをチェインコードという 台帳に全てを書こうとしない ワークフローはアプリケーションで行う  １企業内でのワークフローはアプリケーションで行う   スマコンは必ず決定論的にする ワールドステートの現在状態と引数のみに依存するようにする PushではなくてPullでスマコンを行うようにする   パフォーマンス  ネットワーク構成  Channelの構成  プライバシーの構成に応じてChannelを分ける   Peerの構成     World Stateへのアクセス  アクセスするデータの最小化  Read/WriteされるKeyを出来る限り最小にする 大規模クエリや分析などはオンチェーンでの処理には向かない   SQL Rich クエリは使えない   Oracle DB 20c  行をハッシュ値で繋いだTableです    富士通さん ミッション  ブロックチェーンをSEが使いやすい状態に仕立てて提供・運用すること PaaS化して自動運用 短期開発のため、システム/アプリケーションの開発に密に関わる  SEが躓くHyperledger Fabricの壁  複数のPeerにリクエストする必要がある スマコン(チェーンコード)の開発  データとストアとしてStateDB(KVS)を持つアプリケーションのようなもの 基本的には案件ごとに開発する必要がある どこまで考慮するば良いかの線引きが難しい    SEが躓かないための解決策  使用性向上機能を設ける  RESTサーバーを設ける ユースケース別チェーンコードを設ける    トラブル事例１(不自然な画面遷移)  スタンプラリーPoCのアプリ開発における事例  アプリからトランザクションが複数投げられてた    原因  クーポン・スタンプに対する認識の違い  来店前に用意するもの・来店後に用意するもの    対策  １度のコールでメソッドを複数実行できるメソッドを追加した(バルク実行)  一度にバルク実行するメソッド群に依存会計が無いことが前提   アプリ側で吸収する  処理をまとめる発想を捨てて、違和感のない箇所に分散させる 違和感を消すために、同期・非同期で処理させる    テスト工程でエラーが発生する  遅いPeerでエラーが発生する  ノードの配置はAnti-Affinityポリジーを守ってた Anti-Affinityポリシーとは可用性のためにノードを物理的に分散化させること    原因  遅いPeerのトランザクションより先に速いPeerのトランザクションが処理さえる  解決策  遅いPeerのために待ってあげる  RFTの時にお客様から  トランザクション・チェーンコード・ステート・ブロックを事前に説明する  開発リードタイム短縮も大事ですが  構想通りのブロックチェーンシステムが出来たか評価する No Block, No Life  LayerXさん DApps開発特有のハマりポイントご紹介  アプリ開発の1つのコンポーネントとして使う  アジェンダ  DAppsのアーキテクチャ全体像 Indexer イベント駆動のトランザクション実行 コントラクトデプロイのフロー UX  DAppsのアーキテクチャ全体像  サーバーが必要  MetaMask   Indexerが必要  コントラクト上にあるデータをDBなどにキャッシュする  二重実行されてないことを確認する indexing済みの次のブロックからログを取得する 取得したイベントのログの数だけループする   Quorum-indexer-DBの流れにする DB-APIにする   Quorum, indexer, API, DB, App  イベント駆動のトランザクション実行(ignitor)  トランザクションのイベント発火を起点として別のトランザクションを実行する トリガー専用のイベントを用意する 失敗専用のイベントを発火する。失敗をrevertとするのではなくて。  ignitorとindexerとの協調  ignitorとindexerを完全に独立させることはできない indexerは1ブロックに含まれるイベントをatomicにDBに保存しているので、  コントラクのデプロイフロー トランザクション実行中の状態をどうするか？  途中のAPIで表示処理する  ディスカッション 現実での紐付け問題はどうするか？ ブロックチェーンがはまるところは  需要と供給が公開される市場  " />
+<meta name="description" content=" Blockchain GIG #5  ハッシュタグは#blockchaingig  Oracleさん ユースケース  食品のトレーサビリティ 貿易系 人事情報・学歴情報 サプライチェーンが多い コバルトのトレーサビリティ 医療情報の共有 サプライヤーの共有 GEのインターカンパニーの売掛・買掛をブロックチェーンで管理しよう  インテグレーション・見える化・ データーの連携レイヤーをブロックチェーンで使った 6週間で作れた    ベスプラ  チャネルとはサブネットワークに分けるもの ChannelとPeerの関係 Transient Data  台帳に含まれないようにChaincodeに引き渡せるデータ   Pravate Data Collection  プライベートデータを持つノードを事前に決めておく必要がある   暗号化  鍵交換問題 Transient Dataを使って共通鍵を引き渡す 暗号化アルゴリズムは稀代化する 誰をどの程度信頼するか  デフォルトではPeerにアクセスできれば台帳が読める Peerも結局のところOS上のプロセスの一つなので、ホストマシンをキチンとセキュアにする     アプリケーションとスマコン  スマコンをチェインコードという 台帳に全てを書こうとしない ワークフローはアプリケーションで行う  １企業内でのワークフローはアプリケーションで行う   スマコンは必ず決定論的にする ワールドステートの現在状態と引数のみに依存するようにする PushではなくてPullでスマコンを行うようにする   パフォーマンス  ネットワーク構成  Channelの構成  プライバシーの構成に応じてChannelを分ける   Peerの構成     World Stateへのアクセス  アクセスするデータの最小化  Read/WriteされるKeyを出来る限り最小にする 大規模クエリや分析などはオンチェーンでの処理には向かない   SQL Rich クエリは使えない   Oracle DB 20c  行をハッシュ値で繋いだTableです    富士通さん ミッション  ブロックチェーンをSEが使いやすい状態に仕立てて提供・運用すること PaaS化して自動運用 短期開発のため、システム/アプリケーションの開発に密に関わる  SEが躓くHyperledger Fabricの壁  複数のPeerにリクエストする必要がある スマコン(チェーンコード)の開発  データとストアとしてStateDB(KVS)を持つアプリケーションのようなもの 基本的には案件ごとに開発する必要がある どこまで考慮するば良いかの線引きが難しい    SEが躓かないための解決策  使用性向上機能を設ける  RESTサーバーを設ける ユースケース別チェーンコードを設ける    トラブル事例１(不自然な画面遷移)  スタンプラリーPoCのアプリ開発における事例  アプリからトランザクションが複数投げられてた    原因  クーポン・スタンプに対する認識の違い  来店前に用意するもの・来店後に用意するもの    対策  １度のコールでメソッドを複数実行できるメソッドを追加した(バルク実行)  一度にバルク実行するメソッド群に依存会計が無いことが前提   アプリ側で吸収する  処理をまとめる発想を捨てて、違和感のない箇所に分散させる 違和感を消すために、同期・非同期で処理させる    テスト工程でエラーが発生する  遅いPeerでエラーが発生する  ノードの配置はAnti-Affinityポリジーを守ってた Anti-Affinityポリシーとは可用性のためにノードを物理的に分散化させること    原因  遅いPeerのトランザクションより先に速いPeerのトランザクションが処理さえる  解決策  遅いPeerのために待ってあげる  RFTの時にお客様から  トランザクション・チェーンコード・ステート・ブロックを事前に説明する  開発リードタイム短縮も大事ですが  構想通りのブロックチェーンシステムが出来たか評価する No Block, No Life  LayerXさん DApps開発特有のハマりポイントご紹介  アプリ開発の1つのコンポーネントとして使う  アジェンダ  DAppsのアーキテクチャ全体像 Indexer イベント駆動のトランザクション実行 コントラクトデプロイのフロー UX  DAppsのアーキテクチャ全体像  サーバーが必要  MetaMask   Indexerが必要  コントラクト上にあるデータをDBなどにキャッシュする  二重実行されてないことを確認する indexing済みの次のブロックからログを取得する 取得したイベントのログの数だけループする   Quorum-indexer-DBの流れにする DB-APIにする   Quorum, indexer, API, DB, App  イベント駆動のトランザクション実行(ignitor)  トランザクションのイベント発火を起点として別のトランザクションを実行する トリガー専用のイベントを用意する 失敗専用のイベントを発火する。失敗をrevertとするのではなくて。  ignitorとindexerとの協調  ignitorとindexerを完全に独立させることはできない indexerは1ブロックに含まれるイベントをatomicにDBに保存しているので、  コントラクのデプロイフロー トランザクション実行中の状態をどうするか？  途中のAPIで表示処理する  ディスカッション 現実での紐付け問題はどうするか？ ブロックチェーンがはまるところは  需要と供給が公開される市場  "><meta property="og:title" content="Oracle Blockchain GIG#5" />
+<meta property="og:description" content=" Blockchain GIG #5  ハッシュタグは#blockchaingig  Oracleさん ユースケース  食品のトレーサビリティ 貿易系 人事情報・学歴情報 サプライチェーンが多い コバルトのトレーサビリティ 医療情報の共有 サプライヤーの共有 GEのインターカンパニーの売掛・買掛をブロックチェーンで管理しよう  インテグレーション・見える化・ データーの連携レイヤーをブロックチェーンで使った 6週間で作れた    ベスプラ  チャネルとはサブネットワークに分けるもの ChannelとPeerの関係 Transient Data  台帳に含まれないようにChaincodeに引き渡せるデータ   Pravate Data Collection  プライベートデータを持つノードを事前に決めておく必要がある   暗号化  鍵交換問題 Transient Dataを使って共通鍵を引き渡す 暗号化アルゴリズムは稀代化する 誰をどの程度信頼するか  デフォルトではPeerにアクセスできれば台帳が読める Peerも結局のところOS上のプロセスの一つなので、ホストマシンをキチンとセキュアにする     アプリケーションとスマコン  スマコンをチェインコードという 台帳に全てを書こうとしない ワークフローはアプリケーションで行う  １企業内でのワークフローはアプリケーションで行う   スマコンは必ず決定論的にする ワールドステートの現在状態と引数のみに依存するようにする PushではなくてPullでスマコンを行うようにする   パフォーマンス  ネットワーク構成  Channelの構成  プライバシーの構成に応じてChannelを分ける   Peerの構成     World Stateへのアクセス  アクセスするデータの最小化  Read/WriteされるKeyを出来る限り最小にする 大規模クエリや分析などはオンチェーンでの処理には向かない   SQL Rich クエリは使えない   Oracle DB 20c  行をハッシュ値で繋いだTableです    富士通さん ミッション  ブロックチェーンをSEが使いやすい状態に仕立てて提供・運用すること PaaS化して自動運用 短期開発のため、システム/アプリケーションの開発に密に関わる  SEが躓くHyperledger Fabricの壁  複数のPeerにリクエストする必要がある スマコン(チェーンコード)の開発  データとストアとしてStateDB(KVS)を持つアプリケーションのようなもの 基本的には案件ごとに開発する必要がある どこまで考慮するば良いかの線引きが難しい    SEが躓かないための解決策  使用性向上機能を設ける  RESTサーバーを設ける ユースケース別チェーンコードを設ける    トラブル事例１(不自然な画面遷移)  スタンプラリーPoCのアプリ開発における事例  アプリからトランザクションが複数投げられてた    原因  クーポン・スタンプに対する認識の違い  来店前に用意するもの・来店後に用意するもの    対策  １度のコールでメソッドを複数実行できるメソッドを追加した(バルク実行)  一度にバルク実行するメソッド群に依存会計が無いことが前提   アプリ側で吸収する  処理をまとめる発想を捨てて、違和感のない箇所に分散させる 違和感を消すために、同期・非同期で処理させる    テスト工程でエラーが発生する  遅いPeerでエラーが発生する  ノードの配置はAnti-Affinityポリジーを守ってた Anti-Affinityポリシーとは可用性のためにノードを物理的に分散化させること    原因  遅いPeerのトランザクションより先に速いPeerのトランザクションが処理さえる  解決策  遅いPeerのために待ってあげる  RFTの時にお客様から  トランザクション・チェーンコード・ステート・ブロックを事前に説明する  開発リードタイム短縮も大事ですが  構想通りのブロックチェーンシステムが出来たか評価する No Block, No Life  LayerXさん DApps開発特有のハマりポイントご紹介  アプリ開発の1つのコンポーネントとして使う  アジェンダ  DAppsのアーキテクチャ全体像 Indexer イベント駆動のトランザクション実行 コントラクトデプロイのフロー UX  DAppsのアーキテクチャ全体像  サーバーが必要  MetaMask   Indexerが必要  コントラクト上にあるデータをDBなどにキャッシュする  二重実行されてないことを確認する indexing済みの次のブロックからログを取得する 取得したイベントのログの数だけループする   Quorum-indexer-DBの流れにする DB-APIにする   Quorum, indexer, API, DB, App  イベント駆動のトランザクション実行(ignitor)  トランザクションのイベント発火を起点として別のトランザクションを実行する トリガー専用のイベントを用意する 失敗専用のイベントを発火する。失敗をrevertとするのではなくて。  ignitorとindexerとの協調  ignitorとindexerを完全に独立させることはできない indexerは1ブロックに含まれるイベントをatomicにDBに保存しているので、  コントラクのデプロイフロー トランザクション実行中の状態をどうするか？  途中のAPIで表示処理する  ディスカッション 現実での紐付け問題はどうするか？ ブロックチェーンがはまるところは  需要と供給が公開される市場  " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://solareenlo.com/posts/blockchaingig005/" />
 <meta property="article:published_time" content="2019-10-10T18:30:00+09:00" />
@@ -15,10 +14,10 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 
 
-<link rel="stylesheet" href="/book.min.0d8f55f751a5f22793c02b19a8a0822122d183a7e99645f6b428174dd3eeec94.css" integrity="sha256-DY9V91Gl8ieTwCsZqKCCISLRg6fplkX2tCgXTdPu7JQ=">
+<link rel="stylesheet" href="/book.min.58981925ddc33520ebc4b651e423503306a3203982a9b8426a20913f11092a1f.css" integrity="sha256-WJgZJd3DNSDrxLZR5CNQMwajIDmCqbhCaiCRPxEJKh8=">
 
 
-<script defer src="/en.search.min.0de8e26fe8b38f83ff163b7738b4abcdbbe90ae41f3d554ee92aed704668dc09.js" integrity="sha256-Dejib&#43;izj4P/Fjt3OLSrzbvpCuQfPVVO6SrtcEZo3Ak="></script>
+<script defer src="/en.search.min.cd69dcbc57adb833562b43f1f38bae1ac2260c98f1c7775cd3eeaef066265c87.js" integrity="sha256-zWncvFetuDNWK0Px84uuGsImDJjxx3dc0&#43;6u8GYmXIc="></script>
 
 <!--
 Made with Book Theme
@@ -30,18 +29,18 @@ https://github.com/alex-shpak/hugo-book
 
 <body>
   <input type="checkbox" class="hidden" id="menu-control" />
-  <main class="flex container">
-
-    <aside class="book-menu fixed">
-      <nav>
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
 <h2 class="book-brand">
-  <a href="https://solareenlo.com/"><span>solareenlo</span>
+  <a href="/"><span>solareenlo</span>
   </a>
 </h2>
 
 
 <div class="book-search">
-  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
   <div class="book-search-spinner spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
@@ -50,97 +49,232 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-    <ul>
-<li><a href="/"><strong>はじめに</strong></a></li>
-<li><a href="/posts/"><strong>Blog</strong></a></li>
-<li><a href="/docs/programming/"><strong>Programming</strong></a>
-<ul>
-<li><a href="/docs/terminal/">Terminal</a></li>
-<li><a href="/docs/command/">Command</a></li>
-<li><a href="/docs/sed/">sed</a></li>
-<li><a href="/docs/shell-script/">Shell Script</a></li>
-<li><a href="/docs/vim/">Vim</a></li>
-<li><a href="/docs/vimium/">Vimium</a></li>
-<li><a href="/docs/git/">Git</a></li>
-<li><a href="/docs/github/">GitHub</a></li>
-<li><a href="/docs/linter-formatter/">Linter/Formatter</a></li>
-<li><a href="/docs/test/">Test</a></li>
-<li><a href="/docs/password-manager/">Password Manager</a></li>
-</ul>
+
+
+
+
+
+
+  <ul>
+<li>
+  <a href="/"><strong>はじめに</strong></a>
 </li>
-<li><a href="/docs/programming-language/"><strong>Programming Language</strong></a>
-<ul>
-<li><a href="/docs/c/">C</a></li>
-<li><a href="/docs/rust/">Rust</a></li>
-<li><a href="/docs/javascript/">JavaScript</a></li>
-<li><a href="/docs/css/">CSS</a></li>
-<li><a href="/docs/nodejs/">Node.js</a></li>
-<li><a href="/docs/npm/">npm</a></li>
-<li><a href="/docs/typescript/">TypeScript</a></li>
-<li><a href="/docs/angular/">Angular</a></li>
-<li><a href="/docs/react/">React</a></li>
-<li><a href="/docs/react-static/">React Static</a></li>
-<li><a href="/docs/haskell/">Haskell</a></li>
-<li><a href="/docs/hugo/">Hugo</a></li>
-<li><a href="/docs/programming-language-docs/">Docs</a></li>
-</ul>
+<li>
+  <a href="/posts/"><strong>Blog</strong></a>
 </li>
-<li><a href="/docs/latex/"><strong>LaTeX</strong></a>
+<li>
+  <a href="/docs/programming/"><strong>Programming</strong></a>
+
 <ul>
-<li><a href="/docs/platex-book/">Book</a></li>
-</ul>
+<li>
+  <a href="/docs/terminal/">Terminal</a>
 </li>
-<li><a href="/docs/vps/"><strong>VPS</strong></a>
-<ul>
-<li><a href="/docs/ssh/">SSH</a></li>
-<li><a href="/docs/ubuntu/">Ubuntu</a></li>
-<li><a href="/docs/alpine-linux/">Alpine Linux</a></li>
-</ul>
+<li>
+  <a href="/docs/command/">Command</a>
 </li>
-<li><a href="/docs/db/"><strong>DB</strong></a>
-<ul>
-<li><a href="/docs/mysql/">MySQL</a></li>
-<li><a href="/docs/mongodb/">MongoDB</a></li>
-<li><a href="/docs/redis/">Redis</a></li>
-</ul>
+<li>
+  <a href="/docs/sed/">sed</a>
 </li>
-<li><a href="/docs/cloud/"><strong>Cloud</strong></a>
-<ul>
-<li><a href="/docs/aws/">AWS</a></li>
-<li><a href="/docs/gcp/">GCP</a></li>
-<li><a href="/docs/firebase/">Firebase</a></li>
-<li><a href="/docs/zeit-now/">ZEIT Now</a></li>
-</ul>
+<li>
+  <a href="/docs/shell-script/">Shell Script</a>
 </li>
-<li><a href="/docs/ci-cd/"><strong>CI/CD</strong></a>
-<ul>
-<li><a href="/docs/jenkins/">Jenkins</a></li>
-<li><a href="/docs/travis-ci/">Travis CI</a></li>
-<li><a href="/docs/circleci/">CircleCI</a></li>
-</ul>
+<li>
+  <a href="/docs/vim/">Vim</a>
 </li>
-<li><a href="/docs/container/"><strong>Container</strong></a>
-<ul>
-<li><a href="/docs/docker1/">Docker1</a></li>
-<li><a href="/docs/docker2/">Docker2</a></li>
-<li><a href="/docs/docker-hub/">Docker Hub</a></li>
-<li><a href="/docs/docker-compose/">Docker Compose</a></li>
-<li><a href="/docs/kubernetes/">Kubernetes</a></li>
-</ul>
+<li>
+  <a href="/docs/vimium/">Vimium</a>
 </li>
-<li><a href="/docs/crypto/"><strong>Crypto</strong></a>
-<ul>
-<li><a href="/docs/blockchain/">Blockchain</a></li>
-<li><a href="/docs/bitcoin/">Bitcoin</a></li>
-<li><a href="/docs/ethereum/">Ethereum</a></li>
-<li><a href="/docs/iota/">IOTA</a></li>
-<li><a href="/docs/nem/">NEM</a></li>
-<li><a href="/docs/substrate/">Substrate</a></li>
-<li><a href="/docs/white-paper/">White Paper</a></li>
-<li><a href="/docs/crypto-docs/">Docs</a></li>
-</ul>
+<li>
+  <a href="/docs/git/">Git</a>
+</li>
+<li>
+  <a href="/docs/github/">GitHub</a>
+</li>
+<li>
+  <a href="/docs/linter-formatter/">Linter/Formatter</a>
+</li>
+<li>
+  <a href="/docs/test/">Test</a>
+</li>
+<li>
+  <a href="/docs/password-manager/">Password Manager</a>
 </li>
 </ul>
+</li>
+<li>
+  <a href="/docs/programming-language/"><strong>Programming Language</strong></a>
+
+<ul>
+<li>
+  <a href="/docs/c/">C</a>
+</li>
+<li>
+  <a href="/docs/rust/">Rust</a>
+</li>
+<li>
+  <a href="/docs/javascript/">JavaScript</a>
+</li>
+<li>
+  <a href="/docs/css/">CSS</a>
+</li>
+<li>
+  <a href="/docs/nodejs/">Node.js</a>
+</li>
+<li>
+  <a href="/docs/npm/">npm</a>
+</li>
+<li>
+  <a href="/docs/typescript/">TypeScript</a>
+</li>
+<li>
+  <a href="/docs/angular/">Angular</a>
+</li>
+<li>
+  <a href="/docs/react/">React</a>
+</li>
+<li>
+  <a href="/docs/react-static/">React Static</a>
+</li>
+<li>
+  <a href="/docs/haskell/">Haskell</a>
+</li>
+<li>
+  <a href="/docs/hugo/">Hugo</a>
+</li>
+<li>
+  <a href="/docs/programming-language-docs/">Docs</a>
+</li>
+</ul>
+</li>
+<li>
+  <a href="/docs/latex/"><strong>LaTeX</strong></a>
+
+<ul>
+<li>
+  <a href="/docs/platex-book/">Book</a>
+</li>
+</ul>
+</li>
+<li>
+  <a href="/docs/vps/"><strong>VPS</strong></a>
+
+<ul>
+<li>
+  <a href="/docs/ssh/">SSH</a>
+</li>
+<li>
+  <a href="/docs/ubuntu/">Ubuntu</a>
+</li>
+<li>
+  <a href="/docs/alpine-linux/">Alpine Linux</a>
+</li>
+</ul>
+</li>
+<li>
+  <a href="/docs/db/"><strong>DB</strong></a>
+
+<ul>
+<li>
+  <a href="/docs/mysql/">MySQL</a>
+</li>
+<li>
+  <a href="/docs/mongodb/">MongoDB</a>
+</li>
+<li>
+  <a href="/docs/redis/">Redis</a>
+</li>
+</ul>
+</li>
+<li>
+  <a href="/docs/cloud/"><strong>Cloud</strong></a>
+
+<ul>
+<li>
+  <a href="/docs/aws/">AWS</a>
+</li>
+<li>
+  <a href="/docs/gcp/">GCP</a>
+</li>
+<li>
+  <a href="/docs/firebase/">Firebase</a>
+</li>
+<li>
+  <a href="/docs/zeit-now/">ZEIT Now</a>
+</li>
+</ul>
+</li>
+<li>
+  <a href="/docs/ci-cd/"><strong>CI/CD</strong></a>
+
+<ul>
+<li>
+  <a href="/docs/jenkins/">Jenkins</a>
+</li>
+<li>
+  <a href="/docs/travis-ci/">Travis CI</a>
+</li>
+<li>
+  <a href="/docs/circleci/">CircleCI</a>
+</li>
+</ul>
+</li>
+<li>
+  <a href="/docs/container/"><strong>Container</strong></a>
+
+<ul>
+<li>
+  <a href="/docs/docker1/">Docker1</a>
+</li>
+<li>
+  <a href="/docs/docker2/">Docker2</a>
+</li>
+<li>
+  <a href="/docs/docker-hub/">Docker Hub</a>
+</li>
+<li>
+  <a href="/docs/docker-compose/">Docker Compose</a>
+</li>
+<li>
+  <a href="/docs/kubernetes/">Kubernetes</a>
+</li>
+</ul>
+</li>
+<li>
+  <a href="/docs/crypto/"><strong>Crypto</strong></a>
+
+<ul>
+<li>
+  <a href="/docs/blockchain/">Blockchain</a>
+</li>
+<li>
+  <a href="/docs/bitcoin/">Bitcoin</a>
+</li>
+<li>
+  <a href="/docs/ethereum/">Ethereum</a>
+</li>
+<li>
+  <a href="/docs/iota/">IOTA</a>
+</li>
+<li>
+  <a href="/docs/nem/">NEM</a>
+</li>
+<li>
+  <a href="/docs/substrate/">Substrate</a>
+</li>
+<li>
+  <a href="/docs/white-paper/">White Paper</a>
+</li>
+<li>
+  <a href="/docs/crypto-docs/">Docs</a>
+</li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
 
 
 
@@ -149,40 +283,111 @@ https://github.com/alex-shpak/hugo-book
 </nav>
 
 
-<script>
-(function() {
-  var menu = document.querySelector("aside.book-menu nav");
-  addEventListener("beforeunload", function(event) {
-    localStorage.setItem("menu.scrollTop", menu.scrollTop);
-  });
-  menu.scrollTop = localStorage.getItem("menu.scrollTop");
-})();
-</script>
 
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
     </aside>
 
-    <div class="book-posts">
-      <header class="flex align-center justify-between book-header">
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
   <label for="menu-control">
-    <img src="/svg/menu.svg" alt="Menu" />
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
+
   <strong>Oracle Blockchain GIG#5</strong>
-</header>
+
+  <label for="toc-control">
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+  </label>
+</div>
+
+
+  
+    <input type="checkbox" class="hidden" id="toc-control" />
+    <aside class="hidden clearfix">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#oracleさん">Oracleさん</a>
+      <ul>
+        <li><a href="#ユースケース">ユースケース</a></li>
+        <li><a href="#ベスプラ">ベスプラ</a></li>
+      </ul>
+    </li>
+    <li><a href="#富士通さん">富士通さん</a>
+      <ul>
+        <li><a href="#ミッション">ミッション</a></li>
+        <li><a href="#seが躓くhyperledger-fabricの壁">SEが躓くHyperledger Fabricの壁</a></li>
+        <li><a href="#seが躓かないための解決策">SEが躓かないための解決策</a></li>
+        <li><a href="#トラブル事例１不自然な画面遷移">トラブル事例１(不自然な画面遷移)</a></li>
+        <li><a href="#テスト工程でエラーが発生する">テスト工程でエラーが発生する</a></li>
+        <li><a href="#rftの時にお客様から">RFTの時にお客様から</a></li>
+        <li><a href="#開発リードタイム短縮も大事ですが">開発リードタイム短縮も大事ですが</a></li>
+      </ul>
+    </li>
+    <li><a href="#layerxさん">LayerXさん</a>
+      <ul>
+        <li><a href="#dapps開発特有のハマりポイントご紹介">DApps開発特有のハマりポイントご紹介</a></li>
+        <li><a href="#アジェンダ">アジェンダ</a></li>
+        <li><a href="#dappsのアーキテクチャ全体像">DAppsのアーキテクチャ全体像</a></li>
+        <li><a href="#イベント駆動のトランザクション実行ignitor">イベント駆動のトランザクション実行(ignitor)</a></li>
+        <li><a href="#ignitorとindexerとの協調">ignitorとindexerとの協調</a></li>
+        <li><a href="#コントラクのデプロイフロー">コントラクのデプロイフロー</a></li>
+      </ul>
+    </li>
+    <li><a href="#ディスカッション">ディスカッション</a>
+      <ul>
+        <li><a href="#現実での紐付け問題はどうするか">現実での紐付け問題はどうするか？</a></li>
+        <li><a href="#ブロックチェーンがはまるところは">ブロックチェーンがはまるところは</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+    </aside>
+  
+ 
+      </header>
 
       
+      
+<article class="markdown">
+  <h1>
+    <a href="/posts/blockchaingig005/">Oracle Blockchain GIG#5</a>
+  </h1>
+  
 
-<header class="markdown">
-  <h1>Oracle Blockchain GIG#5</h1>
-  <h5>
-    <strong>Oct 10, 2019</strong>
-  </h5>
-</header>
-<article class="markdown"><p><a href="https://oracle-code-tokyo-dev.connpass.com/event/147125/">Blockchain GIG #5</a></p>
+  <h5>Oct 10, 2019</h5>
+
+
+
+  
+  <div>
+    , 
+  </div>
+  
+
+  
+  <div>
+    , 
+  </div>
+  
+
+
+  <p><p>
+  <a href="https://oracle-code-tokyo-dev.connpass.com/event/147125/">Blockchain GIG #5</a>
+</p>
 <ul>
 <li>ハッシュタグは<code>#blockchaingig</code></li>
 </ul>
-<h2 id="oracle">Oracleさん</h2>
-<h3 id="heading">ユースケース</h3>
+<h2 id="oracleさん">Oracleさん</h2>
+<h3 id="ユースケース">ユースケース</h3>
 <ul>
 <li>食品のトレーサビリティ</li>
 <li>貿易系</li>
@@ -199,7 +404,7 @@ https://github.com/alex-shpak/hugo-book
 </ul>
 </li>
 </ul>
-<h3 id="heading1">ベスプラ</h3>
+<h3 id="ベスプラ">ベスプラ</h3>
 <ul>
 <li>チャネルとはサブネットワークに分けるもの</li>
 <li>ChannelとPeerの関係</li>
@@ -271,14 +476,14 @@ https://github.com/alex-shpak/hugo-book
 </ul>
 </li>
 </ul>
-<h2 id="heading2">富士通さん</h2>
-<h3 id="heading3">ミッション</h3>
+<h2 id="富士通さん">富士通さん</h2>
+<h3 id="ミッション">ミッション</h3>
 <ul>
 <li>ブロックチェーンをSEが使いやすい状態に仕立てて提供・運用すること</li>
 <li>PaaS化して自動運用</li>
 <li>短期開発のため、システム/アプリケーションの開発に密に関わる</li>
 </ul>
-<h3 id="sehyperledger-fabric">SEが躓くHyperledger Fabricの壁</h3>
+<h3 id="seが躓くhyperledger-fabricの壁">SEが躓くHyperledger Fabricの壁</h3>
 <ul>
 <li>複数のPeerにリクエストする必要がある</li>
 <li>スマコン(チェーンコード)の開発
@@ -289,7 +494,7 @@ https://github.com/alex-shpak/hugo-book
 </ul>
 </li>
 </ul>
-<h3 id="se">SEが躓かないための解決策</h3>
+<h3 id="seが躓かないための解決策">SEが躓かないための解決策</h3>
 <ul>
 <li>使用性向上機能を設ける
 <ul>
@@ -298,7 +503,7 @@ https://github.com/alex-shpak/hugo-book
 </ul>
 </li>
 </ul>
-<h3 id="heading4">トラブル事例１(不自然な画面遷移)</h3>
+<h3 id="トラブル事例１不自然な画面遷移">トラブル事例１(不自然な画面遷移)</h3>
 <ul>
 <li>スタンプラリーPoCのアプリ開発における事例
 <ul>
@@ -306,7 +511,7 @@ https://github.com/alex-shpak/hugo-book
 </ul>
 </li>
 </ul>
-<h4 id="heading5">原因</h4>
+<h4 id="原因">原因</h4>
 <ul>
 <li>クーポン・スタンプに対する認識の違い
 <ul>
@@ -314,7 +519,7 @@ https://github.com/alex-shpak/hugo-book
 </ul>
 </li>
 </ul>
-<h4 id="heading6">対策</h4>
+<h4 id="対策">対策</h4>
 <ul>
 <li>１度のコールでメソッドを複数実行できるメソッドを追加した(バルク実行)
 <ul>
@@ -328,7 +533,7 @@ https://github.com/alex-shpak/hugo-book
 </ul>
 </li>
 </ul>
-<h3 id="heading7">テスト工程でエラーが発生する</h3>
+<h3 id="テスト工程でエラーが発生する">テスト工程でエラーが発生する</h3>
 <ul>
 <li>遅いPeerでエラーが発生する
 <ul>
@@ -337,29 +542,29 @@ https://github.com/alex-shpak/hugo-book
 </ul>
 </li>
 </ul>
-<h4 id="heading8">原因</h4>
+<h4 id="原因-1">原因</h4>
 <ul>
 <li>遅いPeerのトランザクションより先に速いPeerのトランザクションが処理さえる</li>
 </ul>
-<h4 id="heading9">解決策</h4>
+<h4 id="解決策">解決策</h4>
 <ul>
 <li>遅いPeerのために待ってあげる</li>
 </ul>
-<h3 id="rft">RFTの時にお客様から</h3>
+<h3 id="rftの時にお客様から">RFTの時にお客様から</h3>
 <ul>
 <li>トランザクション・チェーンコード・ステート・ブロックを事前に説明する</li>
 </ul>
-<h3 id="heading10">開発リードタイム短縮も大事ですが</h3>
+<h3 id="開発リードタイム短縮も大事ですが">開発リードタイム短縮も大事ですが</h3>
 <ul>
 <li>構想通りのブロックチェーンシステムが出来たか評価する</li>
 <li>No Block, No Life</li>
 </ul>
-<h2 id="layerx">LayerXさん</h2>
-<h3 id="dapps">DApps開発特有のハマりポイントご紹介</h3>
+<h2 id="layerxさん">LayerXさん</h2>
+<h3 id="dapps開発特有のハマりポイントご紹介">DApps開発特有のハマりポイントご紹介</h3>
 <ul>
 <li>アプリ開発の1つのコンポーネントとして使う</li>
 </ul>
-<h3 id="heading11">アジェンダ</h3>
+<h3 id="アジェンダ">アジェンダ</h3>
 <ul>
 <li>DAppsのアーキテクチャ全体像</li>
 <li>Indexer</li>
@@ -367,7 +572,7 @@ https://github.com/alex-shpak/hugo-book
 <li>コントラクトデプロイのフロー</li>
 <li>UX</li>
 </ul>
-<h3 id="dapps1">DAppsのアーキテクチャ全体像</h3>
+<h3 id="dappsのアーキテクチャ全体像">DAppsのアーキテクチャ全体像</h3>
 <ul>
 <li>サーバーが必要
 <ul>
@@ -389,107 +594,132 @@ https://github.com/alex-shpak/hugo-book
 </li>
 <li>Quorum, indexer, API, DB, App</li>
 </ul>
-<h3 id="ignitor">イベント駆動のトランザクション実行(ignitor)</h3>
+<h3 id="イベント駆動のトランザクション実行ignitor">イベント駆動のトランザクション実行(ignitor)</h3>
 <ul>
 <li>トランザクションのイベント発火を起点として別のトランザクションを実行する</li>
 <li>トリガー専用のイベントを用意する</li>
 <li>失敗専用のイベントを発火する。失敗をrevertとするのではなくて。</li>
 </ul>
-<h3 id="ignitorindexer">ignitorとindexerとの協調</h3>
+<h3 id="ignitorとindexerとの協調">ignitorとindexerとの協調</h3>
 <ul>
 <li>ignitorとindexerを完全に独立させることはできない</li>
 <li>indexerは1ブロックに含まれるイベントをatomicにDBに保存しているので、</li>
 </ul>
-<h3 id="heading12">コントラクのデプロイフロー</h3>
-<h4 id="heading13">トランザクション実行中の状態をどうするか？</h4>
+<h3 id="コントラクのデプロイフロー">コントラクのデプロイフロー</h3>
+<h4 id="トランザクション実行中の状態をどうするか">トランザクション実行中の状態をどうするか？</h4>
 <ul>
 <li>途中のAPIで表示処理する</li>
 </ul>
-<h2 id="heading14">ディスカッション</h2>
-<h3 id="heading15">現実での紐付け問題はどうするか？</h3>
-<h3 id="heading16">ブロックチェーンがはまるところは</h3>
+<h2 id="ディスカッション">ディスカッション</h2>
+<h3 id="現実での紐付け問題はどうするか">現実での紐付け問題はどうするか？</h3>
+<h3 id="ブロックチェーンがはまるところは">ブロックチェーンがはまるところは</h3>
 <ul>
 <li>需要と供給が公開される市場</li>
 </ul>
+</p>
 </article>
+ 
+      
 
-      <div class="book-footer justify-between">
-  
+      <footer class="book-footer">
+        
+  <div class="flex justify-between">
 
-  
-  
+
+
   <div>
     
-    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/commit/ab735722e5d742cd88d56156178e723ffe826791" title='Last modified by solareenlo | Oct 19, 2019' target="_blank">
-      <img src="/svg/calendar.svg" alt="Calendar" />
+    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/commit/ab735722e5d742cd88d56156178e723ffe826791" title='Last modified by solareenlo | Oct 19, 2019' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
       <span>Oct 19, 2019</span>
     </a>
   </div>
-  
-  
 
-  
+
+
   <div>
-    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/edit/master/content/posts/blockchaingig005.md" target="_blank">
-      <img src="/svg/edit.svg" alt="Edit" />
+    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/edit/master/content/posts/blockchaingig005.md" target="_blank" rel="noopener">
+      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
       <span>Edit this page</span>
     </a>
   </div>
-  
 
 </div>
 
+ 
+        
+      </footer>
+
       
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
     </div>
 
     
-  
-
-  <aside class="book-toc levels-3 fixed">
-    <nav id="TableOfContents">
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
   <ul>
-    <li><a href="#oracle">Oracleさん</a>
+    <li><a href="#oracleさん">Oracleさん</a>
       <ul>
-        <li><a href="#heading">ユースケース</a></li>
-        <li><a href="#heading1">ベスプラ</a></li>
+        <li><a href="#ユースケース">ユースケース</a></li>
+        <li><a href="#ベスプラ">ベスプラ</a></li>
       </ul>
     </li>
-    <li><a href="#heading2">富士通さん</a>
+    <li><a href="#富士通さん">富士通さん</a>
       <ul>
-        <li><a href="#heading3">ミッション</a></li>
-        <li><a href="#sehyperledger-fabric">SEが躓くHyperledger Fabricの壁</a></li>
-        <li><a href="#se">SEが躓かないための解決策</a></li>
-        <li><a href="#heading4">トラブル事例１(不自然な画面遷移)</a></li>
-        <li><a href="#heading7">テスト工程でエラーが発生する</a></li>
-        <li><a href="#rft">RFTの時にお客様から</a></li>
-        <li><a href="#heading10">開発リードタイム短縮も大事ですが</a></li>
+        <li><a href="#ミッション">ミッション</a></li>
+        <li><a href="#seが躓くhyperledger-fabricの壁">SEが躓くHyperledger Fabricの壁</a></li>
+        <li><a href="#seが躓かないための解決策">SEが躓かないための解決策</a></li>
+        <li><a href="#トラブル事例１不自然な画面遷移">トラブル事例１(不自然な画面遷移)</a></li>
+        <li><a href="#テスト工程でエラーが発生する">テスト工程でエラーが発生する</a></li>
+        <li><a href="#rftの時にお客様から">RFTの時にお客様から</a></li>
+        <li><a href="#開発リードタイム短縮も大事ですが">開発リードタイム短縮も大事ですが</a></li>
       </ul>
     </li>
-    <li><a href="#layerx">LayerXさん</a>
+    <li><a href="#layerxさん">LayerXさん</a>
       <ul>
-        <li><a href="#dapps">DApps開発特有のハマりポイントご紹介</a></li>
-        <li><a href="#heading11">アジェンダ</a></li>
-        <li><a href="#dapps1">DAppsのアーキテクチャ全体像</a></li>
-        <li><a href="#ignitor">イベント駆動のトランザクション実行(ignitor)</a></li>
-        <li><a href="#ignitorindexer">ignitorとindexerとの協調</a></li>
-        <li><a href="#heading12">コントラクのデプロイフロー</a></li>
+        <li><a href="#dapps開発特有のハマりポイントご紹介">DApps開発特有のハマりポイントご紹介</a></li>
+        <li><a href="#アジェンダ">アジェンダ</a></li>
+        <li><a href="#dappsのアーキテクチャ全体像">DAppsのアーキテクチャ全体像</a></li>
+        <li><a href="#イベント駆動のトランザクション実行ignitor">イベント駆動のトランザクション実行(ignitor)</a></li>
+        <li><a href="#ignitorとindexerとの協調">ignitorとindexerとの協調</a></li>
+        <li><a href="#コントラクのデプロイフロー">コントラクのデプロイフロー</a></li>
       </ul>
     </li>
-    <li><a href="#heading14">ディスカッション</a>
+    <li><a href="#ディスカッション">ディスカッション</a>
       <ul>
-        <li><a href="#heading15">現実での紐付け問題はどうするか？</a></li>
-        <li><a href="#heading16">ブロックチェーンがはまるところは</a></li>
+        <li><a href="#現実での紐付け問題はどうするか">現実での紐付け問題はどうするか？</a></li>
+        <li><a href="#ブロックチェーンがはまるところは">ブロックチェーンがはまるところは</a></li>
       </ul>
     </li>
   </ul>
 </nav>
-  </aside>
 
-
-
+ 
+    </aside>
+    
   </main>
 
   
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
