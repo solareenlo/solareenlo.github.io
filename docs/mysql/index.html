@@ -17,10 +17,10 @@ SQLの実行順番    順番 操作名 命令文     1 テーブルの指定 fro
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 
 
-<link rel="stylesheet" href="/book.min.58981925ddc33520ebc4b651e423503306a3203982a9b8426a20913f11092a1f.css" integrity="sha256-WJgZJd3DNSDrxLZR5CNQMwajIDmCqbhCaiCRPxEJKh8=">
+<link rel="stylesheet" href="/book.min.5fa1289292eb5e3222d2349e8d9deaae01ee5d99834b1dc07cee7554c8837bdb.css" integrity="sha256-X6EokpLrXjIi0jSejZ3qrgHuXZmDSx3AfO51VMiDe9s=">
 
 
-<script defer src="/en.search.min.cd69dcbc57adb833562b43f1f38bae1ac2260c98f1c7775cd3eeaef066265c87.js" integrity="sha256-zWncvFetuDNWK0Px84uuGsImDJjxx3dc0&#43;6u8GYmXIc="></script>
+<script defer src="/en.search.min.f6af7aaf107e98993b66c1f023305140923412c3b362b6205e4b0b7d66698b72.js" integrity="sha256-9q96rxB&#43;mJk7ZsHwIzBRQJI0EsOzYrYgXksLfWZpi3I="></script>
 
 <!--
 Made with Book Theme
@@ -279,6 +279,24 @@ https://github.com/alex-shpak/hugo-book
 
 
 
+  
+<ul>
+  
+  <li>
+    <a href="https://github.com/solareenlo/" target="_blank" rel="noopener">
+        Github
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://twitter.com/solareenlo/" target="_blank" rel="noopener">
+        Twitter
+      </a>
+  </li>
+  
+</ul>
+
+
 
 
 
@@ -316,42 +334,47 @@ https://github.com/alex-shpak/hugo-book
       
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#mysqlのデータ構造">MySQLのデータ構造</a></li>
-    <li><a href="#sqlの実行順番">SQLの実行順番</a></li>
-    <li><a href="#mysqlの基本的な使い方">MySQLの基本的な使い方</a></li>
-    <li><a href="#dbを表示新規作成削除操作対象にする">DBを表示・新規作成・削除・操作対象にする</a></li>
-    <li><a href="#作業用ユーザーを新規作成削除する">作業用ユーザーを新規作成・削除する</a></li>
-    <li><a href="#外部ファイルを実行する">外部ファイルを実行する</a></li>
-    <li><a href="#tableを新規作成一覧表示中身表示削除する">Tableを新規作成・一覧表示・中身表示・削除する</a></li>
-    <li><a href="#mysqlが扱えるデータ型">MySQLが扱えるデータ型</a></li>
-    <li><a href="#recordの挿入">Recordの挿入</a></li>
-    <li><a href="#fieldに制限をかける">Fieldに制限をかける</a></li>
-    <li><a href="#tableの構造を変える">Tableの構造を変える</a></li>
-    <li><a href="#recordを抽出する">Recordを抽出する</a></li>
-    <li><a href="#文字列を抽出条件にする">文字列を抽出条件にする</a></li>
-    <li><a href="#数字で並び替えたり-抽出条件を制限したりする">数字で並び替えたり, 抽出条件を制限したりする</a></li>
-    <li><a href="#recordを更新-削除する">Recordを更新, 削除する</a></li>
-    <li><a href="#数値の演算を行ったり-活用したりする">数値の演算を行ったり, 活用したりする</a></li>
-    <li><a href="#文字列の演算を行う">文字列の演算を行う</a></li>
-    <li><a href="#enum型を使う">enum型を使う</a></li>
-    <li><a href="#set型を使う">set型を使う</a></li>
-    <li><a href="#if-caseの使い方">if, caseの使い方</a></li>
-    <li><a href="#抽出結果をtableにする">抽出結果をtableにする</a></li>
-    <li><a href="#dataの集計処理を行う">Dataの集計処理を行う</a></li>
-    <li><a href="#group集計">Group集計</a></li>
-    <li><a href="#sub-queryを使う">Sub Queryを使う</a></li>
-    <li><a href="#viewを使う">Viewを使う</a></li>
-    <li><a href="#transactionを使う">Transactionを使う</a></li>
-    <li><a href="#indexを使う">Indexを使う</a></li>
-    <li><a href="#inner-join内部結合を使う">Inner join(内部結合)を使う</a></li>
-    <li><a href="#outter-join外部結合を使う">Outter join(外部結合)を使う</a></li>
-    <li><a href="#foreign-keyを使う">Foreign keyを使う</a></li>
-    <li><a href="#last_insert_idを使う">last_insert_id()を使う</a></li>
-    <li><a href="#triggerを使う">triggerを使う</a></li>
-    <li><a href="#triggerで複数の処理を行う">triggerで複数の処理を行う</a></li>
-    <li><a href="#current_timestampを使う">current_timestampを使う</a></li>
-    <li><a href="#日付を扱う">日付を扱う</a></li>
-    <li><a href="#backupを行い復元できるようにする">Backupを行い復元できるようにする</a></li>
+    <li><a href="#mysqlとは">MySQLとは</a></li>
+    <li><a href="#mysqlv1414の使い方">MySQL(v14.14)の使い方</a>
+      <ul>
+        <li><a href="#mysqlのデータ構造">MySQLのデータ構造</a></li>
+        <li><a href="#sqlの実行順番">SQLの実行順番</a></li>
+        <li><a href="#mysqlの基本的な使い方">MySQLの基本的な使い方</a></li>
+        <li><a href="#dbを表示新規作成削除操作対象にする">DBを表示・新規作成・削除・操作対象にする</a></li>
+        <li><a href="#作業用ユーザーを新規作成削除する">作業用ユーザーを新規作成・削除する</a></li>
+        <li><a href="#外部ファイルを実行する">外部ファイルを実行する</a></li>
+        <li><a href="#tableを新規作成一覧表示中身表示削除する">Tableを新規作成・一覧表示・中身表示・削除する</a></li>
+        <li><a href="#mysqlが扱えるデータ型">MySQLが扱えるデータ型</a></li>
+        <li><a href="#recordの挿入">Recordの挿入</a></li>
+        <li><a href="#fieldに制限をかける">Fieldに制限をかける</a></li>
+        <li><a href="#tableの構造を変える">Tableの構造を変える</a></li>
+        <li><a href="#recordを抽出する">Recordを抽出する</a></li>
+        <li><a href="#文字列を抽出条件にする">文字列を抽出条件にする</a></li>
+        <li><a href="#数字で並び替えたり-抽出条件を制限したりする">数字で並び替えたり, 抽出条件を制限したりする</a></li>
+        <li><a href="#recordを更新-削除する">Recordを更新, 削除する</a></li>
+        <li><a href="#数値の演算を行ったり-活用したりする">数値の演算を行ったり, 活用したりする</a></li>
+        <li><a href="#文字列の演算を行う">文字列の演算を行う</a></li>
+        <li><a href="#enum型を使う">enum型を使う</a></li>
+        <li><a href="#set型を使う">set型を使う</a></li>
+        <li><a href="#if-caseの使い方">if, caseの使い方</a></li>
+        <li><a href="#抽出結果をtableにする">抽出結果をtableにする</a></li>
+        <li><a href="#dataの集計処理を行う">Dataの集計処理を行う</a></li>
+        <li><a href="#group集計">Group集計</a></li>
+        <li><a href="#sub-queryを使う">Sub Queryを使う</a></li>
+        <li><a href="#viewを使う">Viewを使う</a></li>
+        <li><a href="#transactionを使う">Transactionを使う</a></li>
+        <li><a href="#indexを使う">Indexを使う</a></li>
+        <li><a href="#inner-join内部結合を使う">Inner join(内部結合)を使う</a></li>
+        <li><a href="#outter-join外部結合を使う">Outter join(外部結合)を使う</a></li>
+        <li><a href="#foreign-keyを使う">Foreign keyを使う</a></li>
+        <li><a href="#last_insert_idを使う">last_insert_id()を使う</a></li>
+        <li><a href="#triggerを使う">triggerを使う</a></li>
+        <li><a href="#triggerで複数の処理を行う">triggerで複数の処理を行う</a></li>
+        <li><a href="#current_timestampを使う">current_timestampを使う</a></li>
+        <li><a href="#日付を扱う">日付を扱う</a></li>
+        <li><a href="#backupを行い復元できるようにする">Backupを行い復元できるようにする</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 
@@ -1131,42 +1154,47 @@ mysql&gt; quit;
       
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#mysqlのデータ構造">MySQLのデータ構造</a></li>
-    <li><a href="#sqlの実行順番">SQLの実行順番</a></li>
-    <li><a href="#mysqlの基本的な使い方">MySQLの基本的な使い方</a></li>
-    <li><a href="#dbを表示新規作成削除操作対象にする">DBを表示・新規作成・削除・操作対象にする</a></li>
-    <li><a href="#作業用ユーザーを新規作成削除する">作業用ユーザーを新規作成・削除する</a></li>
-    <li><a href="#外部ファイルを実行する">外部ファイルを実行する</a></li>
-    <li><a href="#tableを新規作成一覧表示中身表示削除する">Tableを新規作成・一覧表示・中身表示・削除する</a></li>
-    <li><a href="#mysqlが扱えるデータ型">MySQLが扱えるデータ型</a></li>
-    <li><a href="#recordの挿入">Recordの挿入</a></li>
-    <li><a href="#fieldに制限をかける">Fieldに制限をかける</a></li>
-    <li><a href="#tableの構造を変える">Tableの構造を変える</a></li>
-    <li><a href="#recordを抽出する">Recordを抽出する</a></li>
-    <li><a href="#文字列を抽出条件にする">文字列を抽出条件にする</a></li>
-    <li><a href="#数字で並び替えたり-抽出条件を制限したりする">数字で並び替えたり, 抽出条件を制限したりする</a></li>
-    <li><a href="#recordを更新-削除する">Recordを更新, 削除する</a></li>
-    <li><a href="#数値の演算を行ったり-活用したりする">数値の演算を行ったり, 活用したりする</a></li>
-    <li><a href="#文字列の演算を行う">文字列の演算を行う</a></li>
-    <li><a href="#enum型を使う">enum型を使う</a></li>
-    <li><a href="#set型を使う">set型を使う</a></li>
-    <li><a href="#if-caseの使い方">if, caseの使い方</a></li>
-    <li><a href="#抽出結果をtableにする">抽出結果をtableにする</a></li>
-    <li><a href="#dataの集計処理を行う">Dataの集計処理を行う</a></li>
-    <li><a href="#group集計">Group集計</a></li>
-    <li><a href="#sub-queryを使う">Sub Queryを使う</a></li>
-    <li><a href="#viewを使う">Viewを使う</a></li>
-    <li><a href="#transactionを使う">Transactionを使う</a></li>
-    <li><a href="#indexを使う">Indexを使う</a></li>
-    <li><a href="#inner-join内部結合を使う">Inner join(内部結合)を使う</a></li>
-    <li><a href="#outter-join外部結合を使う">Outter join(外部結合)を使う</a></li>
-    <li><a href="#foreign-keyを使う">Foreign keyを使う</a></li>
-    <li><a href="#last_insert_idを使う">last_insert_id()を使う</a></li>
-    <li><a href="#triggerを使う">triggerを使う</a></li>
-    <li><a href="#triggerで複数の処理を行う">triggerで複数の処理を行う</a></li>
-    <li><a href="#current_timestampを使う">current_timestampを使う</a></li>
-    <li><a href="#日付を扱う">日付を扱う</a></li>
-    <li><a href="#backupを行い復元できるようにする">Backupを行い復元できるようにする</a></li>
+    <li><a href="#mysqlとは">MySQLとは</a></li>
+    <li><a href="#mysqlv1414の使い方">MySQL(v14.14)の使い方</a>
+      <ul>
+        <li><a href="#mysqlのデータ構造">MySQLのデータ構造</a></li>
+        <li><a href="#sqlの実行順番">SQLの実行順番</a></li>
+        <li><a href="#mysqlの基本的な使い方">MySQLの基本的な使い方</a></li>
+        <li><a href="#dbを表示新規作成削除操作対象にする">DBを表示・新規作成・削除・操作対象にする</a></li>
+        <li><a href="#作業用ユーザーを新規作成削除する">作業用ユーザーを新規作成・削除する</a></li>
+        <li><a href="#外部ファイルを実行する">外部ファイルを実行する</a></li>
+        <li><a href="#tableを新規作成一覧表示中身表示削除する">Tableを新規作成・一覧表示・中身表示・削除する</a></li>
+        <li><a href="#mysqlが扱えるデータ型">MySQLが扱えるデータ型</a></li>
+        <li><a href="#recordの挿入">Recordの挿入</a></li>
+        <li><a href="#fieldに制限をかける">Fieldに制限をかける</a></li>
+        <li><a href="#tableの構造を変える">Tableの構造を変える</a></li>
+        <li><a href="#recordを抽出する">Recordを抽出する</a></li>
+        <li><a href="#文字列を抽出条件にする">文字列を抽出条件にする</a></li>
+        <li><a href="#数字で並び替えたり-抽出条件を制限したりする">数字で並び替えたり, 抽出条件を制限したりする</a></li>
+        <li><a href="#recordを更新-削除する">Recordを更新, 削除する</a></li>
+        <li><a href="#数値の演算を行ったり-活用したりする">数値の演算を行ったり, 活用したりする</a></li>
+        <li><a href="#文字列の演算を行う">文字列の演算を行う</a></li>
+        <li><a href="#enum型を使う">enum型を使う</a></li>
+        <li><a href="#set型を使う">set型を使う</a></li>
+        <li><a href="#if-caseの使い方">if, caseの使い方</a></li>
+        <li><a href="#抽出結果をtableにする">抽出結果をtableにする</a></li>
+        <li><a href="#dataの集計処理を行う">Dataの集計処理を行う</a></li>
+        <li><a href="#group集計">Group集計</a></li>
+        <li><a href="#sub-queryを使う">Sub Queryを使う</a></li>
+        <li><a href="#viewを使う">Viewを使う</a></li>
+        <li><a href="#transactionを使う">Transactionを使う</a></li>
+        <li><a href="#indexを使う">Indexを使う</a></li>
+        <li><a href="#inner-join内部結合を使う">Inner join(内部結合)を使う</a></li>
+        <li><a href="#outter-join外部結合を使う">Outter join(外部結合)を使う</a></li>
+        <li><a href="#foreign-keyを使う">Foreign keyを使う</a></li>
+        <li><a href="#last_insert_idを使う">last_insert_id()を使う</a></li>
+        <li><a href="#triggerを使う">triggerを使う</a></li>
+        <li><a href="#triggerで複数の処理を行う">triggerで複数の処理を行う</a></li>
+        <li><a href="#current_timestampを使う">current_timestampを使う</a></li>
+        <li><a href="#日付を扱う">日付を扱う</a></li>
+        <li><a href="#backupを行い復元できるようにする">Backupを行い復元できるようにする</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 

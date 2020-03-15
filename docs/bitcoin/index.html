@@ -17,10 +17,10 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 
 
-<link rel="stylesheet" href="/book.min.58981925ddc33520ebc4b651e423503306a3203982a9b8426a20913f11092a1f.css" integrity="sha256-WJgZJd3DNSDrxLZR5CNQMwajIDmCqbhCaiCRPxEJKh8=">
+<link rel="stylesheet" href="/book.min.5fa1289292eb5e3222d2349e8d9deaae01ee5d99834b1dc07cee7554c8837bdb.css" integrity="sha256-X6EokpLrXjIi0jSejZ3qrgHuXZmDSx3AfO51VMiDe9s=">
 
 
-<script defer src="/en.search.min.cd69dcbc57adb833562b43f1f38bae1ac2260c98f1c7775cd3eeaef066265c87.js" integrity="sha256-zWncvFetuDNWK0Px84uuGsImDJjxx3dc0&#43;6u8GYmXIc="></script>
+<script defer src="/en.search.min.f6af7aaf107e98993b66c1f023305140923412c3b362b6205e4b0b7d66698b72.js" integrity="sha256-9q96rxB&#43;mJk7ZsHwIzBRQJI0EsOzYrYgXksLfWZpi3I="></script>
 
 <!--
 Made with Book Theme
@@ -279,6 +279,24 @@ https://github.com/alex-shpak/hugo-book
 
 
 
+  
+<ul>
+  
+  <li>
+    <a href="https://github.com/solareenlo/" target="_blank" rel="noopener">
+        Github
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://twitter.com/solareenlo/" target="_blank" rel="noopener">
+        Twitter
+      </a>
+  </li>
+  
+</ul>
+
+
 
 
 
@@ -316,56 +334,60 @@ https://github.com/alex-shpak/hugo-book
       
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#目的">目的</a></li>
-    <li><a href="#特徴">特徴</a></li>
-    <li><a href="#技術">技術</a></li>
-    <li><a href="#プレイヤー">プレイヤー</a></li>
-    <li><a href="#スケーリング方法">スケーリング方法</a></li>
-    <li><a href="#フルノード">フルノード</a>
+    <li><a href="#bitcoinとは">Bitcoinとは</a>
       <ul>
-        <li><a href="#フルノードの立て方">フルノードの立て方</a></li>
-        <li><a href="#フルノードの分布図">フルノードの分布図</a></li>
-        <li><a href="#マイナーとノードの違い">マイナーとノードの違い</a></li>
+        <li><a href="#目的">目的</a></li>
+        <li><a href="#特徴">特徴</a></li>
+        <li><a href="#技術">技術</a></li>
+        <li><a href="#プレイヤー">プレイヤー</a></li>
+        <li><a href="#スケーリング方法">スケーリング方法</a></li>
+        <li><a href="#フルノード">フルノード</a>
+          <ul>
+            <li><a href="#フルノードの立て方">フルノードの立て方</a></li>
+            <li><a href="#フルノードの分布図">フルノードの分布図</a></li>
+            <li><a href="#マイナーとノードの違い">マイナーとノードの違い</a></li>
+          </ul>
+        </li>
+        <li><a href="#bitcoindとbitcoin-cliの違い">bitcoindとbitcoin-cliの違い</a>
+          <ul>
+            <li><a href="#bitcoindにcurlでアクセス">bitcoindにcurlでアクセス</a></li>
+            <li><a href="#bitcoin-cliとxargsの使用例">bitcoin-cliとxargsの使用例</a></li>
+            <li><a href="#bitcoin-cliを使ってutxoを集める">bitcoin-cliを使ってUTXOを集める</a></li>
+          </ul>
+        </li>
+        <li><a href="#blockchainの中身の見方">Blockchainの中身の見方</a></li>
+        <li><a href="#アドレス">アドレス</a>
+          <ul>
+            <li><a href="#一般的なアドレス生成の流れ">一般的なアドレス生成の流れ</a></li>
+            <li><a href="#一般的なアドレス生成の図">一般的なアドレス生成の図</a></li>
+            <li><a href="#秘密鍵公開鍵アドレスの関係">秘密鍵/公開鍵/アドレスの関係</a></li>
+            <li><a href="#秘密鍵wif公開鍵アドレスの関係">秘密鍵/WIF/公開鍵/アドレスの関係</a></li>
+            <li><a href="#hdウォレットにおけるアドレス生成の手順">HDウォレットにおけるアドレス生成の手順</a></li>
+            <li><a href="#entropyのターミナルでの作成方法">Entropyのターミナルでの作成方法</a></li>
+            <li><a href="#アドレスの種類">アドレスの種類</a></li>
+          </ul>
+        </li>
+        <li><a href="#プレフィックス">プレフィックス</a></li>
+        <li><a href="#単位">単位</a></li>
+        <li><a href="#script">Script</a>
+          <ul>
+            <li><a href="#scriptsig">ScriptSig</a></li>
+            <li><a href="#scriptpubkey">ScriptPubKey</a></li>
+            <li><a href="#p2shのscriptpubkey">P2SHのScriptPubKey</a></li>
+            <li><a href="#オンラインでbitcoin-scriptの挙動を確認できるサイト">オンラインでBitcoin Scriptの挙動を確認できるサイト</a></li>
+          </ul>
+        </li>
+        <li><a href="#トランザクション">トランザクション</a></li>
+        <li><a href="#segwit">Segwit</a>
+          <ul>
+            <li><a href="#スクリプト構造">スクリプト構造</a></li>
+            <li><a href="#base32">Base32</a></li>
+          </ul>
+        </li>
+        <li><a href="#transaction-fee">Transaction Fee</a></li>
+        <li><a href="#references">References</a></li>
       </ul>
     </li>
-    <li><a href="#bitcoindとbitcoin-cliの違い">bitcoindとbitcoin-cliの違い</a>
-      <ul>
-        <li><a href="#bitcoindにcurlでアクセス">bitcoindにcurlでアクセス</a></li>
-        <li><a href="#bitcoin-cliとxargsの使用例">bitcoin-cliとxargsの使用例</a></li>
-        <li><a href="#bitcoin-cliを使ってutxoを集める">bitcoin-cliを使ってUTXOを集める</a></li>
-      </ul>
-    </li>
-    <li><a href="#blockchainの中身の見方">Blockchainの中身の見方</a></li>
-    <li><a href="#アドレス">アドレス</a>
-      <ul>
-        <li><a href="#一般的なアドレス生成の流れ">一般的なアドレス生成の流れ</a></li>
-        <li><a href="#一般的なアドレス生成の図">一般的なアドレス生成の図</a></li>
-        <li><a href="#秘密鍵公開鍵アドレスの関係">秘密鍵/公開鍵/アドレスの関係</a></li>
-        <li><a href="#秘密鍵wif公開鍵アドレスの関係">秘密鍵/WIF/公開鍵/アドレスの関係</a></li>
-        <li><a href="#hdウォレットにおけるアドレス生成の手順">HDウォレットにおけるアドレス生成の手順</a></li>
-        <li><a href="#entropyのターミナルでの作成方法">Entropyのターミナルでの作成方法</a></li>
-        <li><a href="#アドレスの種類">アドレスの種類</a></li>
-      </ul>
-    </li>
-    <li><a href="#プレフィックス">プレフィックス</a></li>
-    <li><a href="#単位">単位</a></li>
-    <li><a href="#script">Script</a>
-      <ul>
-        <li><a href="#scriptsig">ScriptSig</a></li>
-        <li><a href="#scriptpubkey">ScriptPubKey</a></li>
-        <li><a href="#p2shのscriptpubkey">P2SHのScriptPubKey</a></li>
-        <li><a href="#オンラインでbitcoin-scriptの挙動を確認できるサイト">オンラインでBitcoin Scriptの挙動を確認できるサイト</a></li>
-      </ul>
-    </li>
-    <li><a href="#トランザクション">トランザクション</a></li>
-    <li><a href="#segwit">Segwit</a>
-      <ul>
-        <li><a href="#スクリプト構造">スクリプト構造</a></li>
-        <li><a href="#base32">Base32</a></li>
-      </ul>
-    </li>
-    <li><a href="#transaction-fee">Transaction Fee</a></li>
-    <li><a href="#references">References</a></li>
   </ul>
 </nav>
 
@@ -537,22 +559,23 @@ bitcoin-cli getbestblockhash | xargs bitcoin-cli getblock | jq <span style="colo
   <a href="https://zoom-blc.com/from-private-key-to-address">秘密鍵から公開鍵そしてアドレスが生成されるまでの流れ【仮想通貨】</a>
 </p>
 <h3 id="一般的なアドレス生成の図">一般的なアドレス生成の図</h3>
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p><img src="/images/bitcoin/public-key-to-bitcoin-address.png" width="50%" height="50%"><img src="/images/bitcoin/base58check-encoding.png" width="50%" height="50%"></p>
 <p><strong>Reference:</strong> 
   <a href="https://tomokazu-kozuma.com/a-method-of-generating-a-public-key-and-a-bitcoin-address-from-a-private-key/">秘密鍵から公開鍵とビットコインアドレスを生成する方法</a>
 </p>
 <h3 id="秘密鍵公開鍵アドレスの関係">秘密鍵/公開鍵/アドレスの関係</h3>
-<!-- raw HTML omitted -->
+<img src="/images/bitcoin/pubkey-prvkey-address.gif" width="100%" height="100%">
 <p><strong>Reference:</strong> 
   <a href="https://www.crypto-currencies.jp/bitcoin/remittance/wallets.html">公開鍵、秘密鍵、ビットコインアドレスの関係</a>
 </p>
 <h3 id="秘密鍵wif公開鍵アドレスの関係">秘密鍵/WIF/公開鍵/アドレスの関係</h3>
-<!-- raw HTML omitted -->
+<img src="/images/bitcoin/wif-prv-pub-address.png" width="100%" height="100%">
 <p><strong>Reference:</strong> 
   <a href="https://qiita.com/monapay/items/f708f61f2ad102b548f8">暗号通貨(Bitcoin, Monacoin)のプロトコルを理解する: 公開鍵と秘密鍵</a>
 </p>
 <h3 id="hdウォレットにおけるアドレス生成の手順">HDウォレットにおけるアドレス生成の手順</h3>
-<!-- raw HTML omitted -->
+<img src="/images/bitcoin/hdwallet.png" width="100%" height="100%">
+**Reference:** [bips/bip-0032.mediawiki](https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki)
 <p>Entropy (
   <a href="https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki">BIP39</a>
 , 128bit, 160bit, 192bit, 224bit, 256bitの長さ)<br>
@@ -586,7 +609,7 @@ $ cat /dev/urandom |<span style="color:#268bd2">LC_ALL</span><span style="color:
 <span style="color:#586e75"># entropyの生成はlinuxの端末で</span>
 $ cat /dev/urandom |tr -dc a-f0-9|head -c<span style="color:#2aa198">${</span><span style="color:#268bd2">1</span><span style="color:#719e07">:-</span><span style="color:#268bd2">64</span><span style="color:#2aa198">}</span>
 </code></pre></div><h3 id="アドレスの種類">アドレスの種類</h3>
-<!-- raw HTML omitted -->
+<img src="/images/bitcoin/bitcoin-address.jpg" width="100%" height="100%">
 <p><strong>Reference:</strong> 
   <a href="https://en.bitcoin.it/wiki/Address">Address</a>
 </p>
@@ -755,7 +778,8 @@ scriptSig    : <span style="color:#719e07">(</span>empty<span style="color:#719e
 scriptPubKey : <span style="color:#2aa198">0</span> &lt;32-byte sha256<span style="color:#719e07">(</span>witness script<span style="color:#719e07">)</span>&gt;
                <span style="color:#719e07">(</span>0x0020<span style="color:#719e07">{</span>32-byte sha256<span style="color:#719e07">(</span>witness script<span style="color:#719e07">)})</span>
 </code></pre></div><h3 id="base32">Base32</h3>
-<!-- raw HTML omitted -->
+<img src="/images/bitcoin/segwit-address-format.png" width="100%" height="100%">
+**Reference:** https://bc-2.jp/materials/0105_Bech32.pdf
 <h2 id="transaction-fee">Transaction Fee</h2>
 <ul>
 <li>
@@ -832,56 +856,60 @@ scriptPubKey : <span style="color:#2aa198">0</span> &lt;32-byte sha256<span styl
       
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#目的">目的</a></li>
-    <li><a href="#特徴">特徴</a></li>
-    <li><a href="#技術">技術</a></li>
-    <li><a href="#プレイヤー">プレイヤー</a></li>
-    <li><a href="#スケーリング方法">スケーリング方法</a></li>
-    <li><a href="#フルノード">フルノード</a>
+    <li><a href="#bitcoinとは">Bitcoinとは</a>
       <ul>
-        <li><a href="#フルノードの立て方">フルノードの立て方</a></li>
-        <li><a href="#フルノードの分布図">フルノードの分布図</a></li>
-        <li><a href="#マイナーとノードの違い">マイナーとノードの違い</a></li>
+        <li><a href="#目的">目的</a></li>
+        <li><a href="#特徴">特徴</a></li>
+        <li><a href="#技術">技術</a></li>
+        <li><a href="#プレイヤー">プレイヤー</a></li>
+        <li><a href="#スケーリング方法">スケーリング方法</a></li>
+        <li><a href="#フルノード">フルノード</a>
+          <ul>
+            <li><a href="#フルノードの立て方">フルノードの立て方</a></li>
+            <li><a href="#フルノードの分布図">フルノードの分布図</a></li>
+            <li><a href="#マイナーとノードの違い">マイナーとノードの違い</a></li>
+          </ul>
+        </li>
+        <li><a href="#bitcoindとbitcoin-cliの違い">bitcoindとbitcoin-cliの違い</a>
+          <ul>
+            <li><a href="#bitcoindにcurlでアクセス">bitcoindにcurlでアクセス</a></li>
+            <li><a href="#bitcoin-cliとxargsの使用例">bitcoin-cliとxargsの使用例</a></li>
+            <li><a href="#bitcoin-cliを使ってutxoを集める">bitcoin-cliを使ってUTXOを集める</a></li>
+          </ul>
+        </li>
+        <li><a href="#blockchainの中身の見方">Blockchainの中身の見方</a></li>
+        <li><a href="#アドレス">アドレス</a>
+          <ul>
+            <li><a href="#一般的なアドレス生成の流れ">一般的なアドレス生成の流れ</a></li>
+            <li><a href="#一般的なアドレス生成の図">一般的なアドレス生成の図</a></li>
+            <li><a href="#秘密鍵公開鍵アドレスの関係">秘密鍵/公開鍵/アドレスの関係</a></li>
+            <li><a href="#秘密鍵wif公開鍵アドレスの関係">秘密鍵/WIF/公開鍵/アドレスの関係</a></li>
+            <li><a href="#hdウォレットにおけるアドレス生成の手順">HDウォレットにおけるアドレス生成の手順</a></li>
+            <li><a href="#entropyのターミナルでの作成方法">Entropyのターミナルでの作成方法</a></li>
+            <li><a href="#アドレスの種類">アドレスの種類</a></li>
+          </ul>
+        </li>
+        <li><a href="#プレフィックス">プレフィックス</a></li>
+        <li><a href="#単位">単位</a></li>
+        <li><a href="#script">Script</a>
+          <ul>
+            <li><a href="#scriptsig">ScriptSig</a></li>
+            <li><a href="#scriptpubkey">ScriptPubKey</a></li>
+            <li><a href="#p2shのscriptpubkey">P2SHのScriptPubKey</a></li>
+            <li><a href="#オンラインでbitcoin-scriptの挙動を確認できるサイト">オンラインでBitcoin Scriptの挙動を確認できるサイト</a></li>
+          </ul>
+        </li>
+        <li><a href="#トランザクション">トランザクション</a></li>
+        <li><a href="#segwit">Segwit</a>
+          <ul>
+            <li><a href="#スクリプト構造">スクリプト構造</a></li>
+            <li><a href="#base32">Base32</a></li>
+          </ul>
+        </li>
+        <li><a href="#transaction-fee">Transaction Fee</a></li>
+        <li><a href="#references">References</a></li>
       </ul>
     </li>
-    <li><a href="#bitcoindとbitcoin-cliの違い">bitcoindとbitcoin-cliの違い</a>
-      <ul>
-        <li><a href="#bitcoindにcurlでアクセス">bitcoindにcurlでアクセス</a></li>
-        <li><a href="#bitcoin-cliとxargsの使用例">bitcoin-cliとxargsの使用例</a></li>
-        <li><a href="#bitcoin-cliを使ってutxoを集める">bitcoin-cliを使ってUTXOを集める</a></li>
-      </ul>
-    </li>
-    <li><a href="#blockchainの中身の見方">Blockchainの中身の見方</a></li>
-    <li><a href="#アドレス">アドレス</a>
-      <ul>
-        <li><a href="#一般的なアドレス生成の流れ">一般的なアドレス生成の流れ</a></li>
-        <li><a href="#一般的なアドレス生成の図">一般的なアドレス生成の図</a></li>
-        <li><a href="#秘密鍵公開鍵アドレスの関係">秘密鍵/公開鍵/アドレスの関係</a></li>
-        <li><a href="#秘密鍵wif公開鍵アドレスの関係">秘密鍵/WIF/公開鍵/アドレスの関係</a></li>
-        <li><a href="#hdウォレットにおけるアドレス生成の手順">HDウォレットにおけるアドレス生成の手順</a></li>
-        <li><a href="#entropyのターミナルでの作成方法">Entropyのターミナルでの作成方法</a></li>
-        <li><a href="#アドレスの種類">アドレスの種類</a></li>
-      </ul>
-    </li>
-    <li><a href="#プレフィックス">プレフィックス</a></li>
-    <li><a href="#単位">単位</a></li>
-    <li><a href="#script">Script</a>
-      <ul>
-        <li><a href="#scriptsig">ScriptSig</a></li>
-        <li><a href="#scriptpubkey">ScriptPubKey</a></li>
-        <li><a href="#p2shのscriptpubkey">P2SHのScriptPubKey</a></li>
-        <li><a href="#オンラインでbitcoin-scriptの挙動を確認できるサイト">オンラインでBitcoin Scriptの挙動を確認できるサイト</a></li>
-      </ul>
-    </li>
-    <li><a href="#トランザクション">トランザクション</a></li>
-    <li><a href="#segwit">Segwit</a>
-      <ul>
-        <li><a href="#スクリプト構造">スクリプト構造</a></li>
-        <li><a href="#base32">Base32</a></li>
-      </ul>
-    </li>
-    <li><a href="#transaction-fee">Transaction Fee</a></li>
-    <li><a href="#references">References</a></li>
   </ul>
 </nav>
 

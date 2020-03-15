@@ -13,10 +13,10 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 
 
-<link rel="stylesheet" href="/book.min.58981925ddc33520ebc4b651e423503306a3203982a9b8426a20913f11092a1f.css" integrity="sha256-WJgZJd3DNSDrxLZR5CNQMwajIDmCqbhCaiCRPxEJKh8=">
+<link rel="stylesheet" href="/book.min.5fa1289292eb5e3222d2349e8d9deaae01ee5d99834b1dc07cee7554c8837bdb.css" integrity="sha256-X6EokpLrXjIi0jSejZ3qrgHuXZmDSx3AfO51VMiDe9s=">
 
 
-<script defer src="/en.search.min.cd69dcbc57adb833562b43f1f38bae1ac2260c98f1c7775cd3eeaef066265c87.js" integrity="sha256-zWncvFetuDNWK0Px84uuGsImDJjxx3dc0&#43;6u8GYmXIc="></script>
+<script defer src="/en.search.min.f6af7aaf107e98993b66c1f023305140923412c3b362b6205e4b0b7d66698b72.js" integrity="sha256-9q96rxB&#43;mJk7ZsHwIzBRQJI0EsOzYrYgXksLfWZpi3I="></script>
 
 <!--
 Made with Book Theme
@@ -275,6 +275,24 @@ https://github.com/alex-shpak/hugo-book
 
 
 
+  
+<ul>
+  
+  <li>
+    <a href="https://github.com/solareenlo/" target="_blank" rel="noopener">
+        Github
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://twitter.com/solareenlo/" target="_blank" rel="noopener">
+        Twitter
+      </a>
+  </li>
+  
+</ul>
+
+
 
 
 
@@ -312,13 +330,18 @@ https://github.com/alex-shpak/hugo-book
       
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#用語">用語</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#3大原則">3大原則</a></li>
-    <li><a href="#要素">要素</a></li>
-    <li><a href="#図解">図解</a></li>
+    <li><a href="#reactとは">Reactとは</a>
+      <ul>
+        <li><a href="#用語">用語</a></li>
+      </ul>
+    </li>
+    <li><a href="#reduxとは">Reduxとは</a>
+      <ul>
+        <li><a href="#3大原則">3大原則</a></li>
+        <li><a href="#要素">要素</a></li>
+        <li><a href="#図解">図解</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 
@@ -352,23 +375,23 @@ https://github.com/alex-shpak/hugo-book
 <tbody>
 <tr>
 <td>Virtual DOM</td>
-<td><!-- raw HTML omitted -->DOMを作るために必要な情報を持っているオブジェクト.<!-- raw HTML omitted -->Virtual DOMの内容を元にHTMLを作成してブラウザに描画する.</td>
+<td><li>DOMを作るために必要な情報を持っているオブジェクト.<li>Virtual DOMの内容を元にHTMLを作成してブラウザに描画する.</td>
 </tr>
 <tr>
 <td>JSX</td>
-<td><!-- raw HTML omitted -->Virtual DOMの元となる構文.<!-- raw HTML omitted -->Babelがscript要素の内容をブラウザが解釈できるように変換を行う.<!-- raw HTML omitted -->JSV -&gt; JavaScriptと変換される.<!-- raw HTML omitted -->基本的にはHTMLと同じ記法.</td>
+<td><li>Virtual DOMの元となる構文.<li>Babelがscript要素の内容をブラウザが解釈できるように変換を行う.<li>JSV -&gt; JavaScriptと変換される.<li>基本的にはHTMLと同じ記法.</td>
 </tr>
 <tr>
 <td>コンポーネント</td>
-<td><!-- raw HTML omitted -->個々の部品<!-- raw HTML omitted -->HTMLのパーツをコンポーネント単位で管理し組み合わせてUIの作成を行う.</td>
+<td><li>個々の部品<li>HTMLのパーツをコンポーネント単位で管理し組み合わせてUIの作成を行う.</td>
 </tr>
 <tr>
 <td>props</td>
-<td><!-- raw HTML omitted -->親コンポーネントから渡されたプロパティ<!-- raw HTML omitted -->不変のデータ</td>
+<td><li>親コンポーネントから渡されたプロパティ<li>不変のデータ</td>
 </tr>
 <tr>
 <td>state</td>
-<td><!-- raw HTML omitted -->そのコンポーネントが持っている状態<!-- raw HTML omitted -->可変のデータ</td>
+<td><li>そのコンポーネントが持っている状態<li>可変のデータ</td>
 </tr>
 </tbody>
 </table>
@@ -417,9 +440,10 @@ https://github.com/alex-shpak/hugo-book
 </table>
 <h2 id="図解">図解</h2>
 <p>Flux</p>
-<!-- raw HTML omitted -->
+<img src="/images/redux/flux.jpg" width="60%" height="60%">
 <p>Redux</p>
-<!-- raw HTML omitted -->
+<img src="/images/redux/flow1.jpg" width="60%" height="60%">
+<img src="/images/redux/flow2.png" width="60%" height="60%">
 <ul>
 <li><strong>References:</strong></li>
 <li>
@@ -478,13 +502,18 @@ https://github.com/alex-shpak/hugo-book
       
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#用語">用語</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#3大原則">3大原則</a></li>
-    <li><a href="#要素">要素</a></li>
-    <li><a href="#図解">図解</a></li>
+    <li><a href="#reactとは">Reactとは</a>
+      <ul>
+        <li><a href="#用語">用語</a></li>
+      </ul>
+    </li>
+    <li><a href="#reduxとは">Reduxとは</a>
+      <ul>
+        <li><a href="#3大原則">3大原則</a></li>
+        <li><a href="#要素">要素</a></li>
+        <li><a href="#図解">図解</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 

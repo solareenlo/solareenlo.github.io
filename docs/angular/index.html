@@ -4,8 +4,14 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Angularとは  Typescript/JavaScriptやその他の言語を使用してモバイルおよびデスクトップWebアプリケーションを構築するための開発プラットフォーム. GitHubリポジトリ: https://github.com/angular/angular References:  https://angular.io/docs https://angular.jp/docs https://angular.keicode.com    用語    用語 意味     module アプリを構成するコンポーネントを束ねたもの.   root module アプリが起動する時に呼びされる大元のモジュール.Angularアプリには必ずある.   component View(画面の一部)を制御する.   template componentのUIをどのようにHTMLで表現するかを指定するもの..htmlのこと.   Decorators モジュールやクラスなどの要素に対してメタ情報を付与するもの   constructor TS, JSに付随するものでClassの初期化時に発動する   data binding コンポーネントにおいてテンプレートとクラス内の要素を繋ぐ仕組み.テンプレートとコンポーネントのコードを繋ぐ方法   template reference variable #testを使って, そのDOM要素をtest変数で参照できるようにする仕組み.    Decoratorsのパラメーター    パラメーター名 意味     imports 現在のモジュールで利用する他のモジュール／コンポーネント   exports 現在のモジュールで外部に公開するコンポーネントなど   declarations モジュール配下のコンポーネント   bootstrap 最初に起動すべき最上位のコンポーネント(＝ルートコンポーネント)   templateUrl 描画するhtml   template 描画する内容   styleUrls どのcssを使うか   styles 直接cssの内容を記述する   selector コンポーネントの適応先を表す(html, css, classなどとして指定できる)    インストール npm i -g @angular/cli @angular/core バージョンアップ ng update @angular/cli @angular/core DockerでAngular Dockerfileの中身"><meta property="og:title" content="" />
-<meta property="og:description" content="Angularとは  Typescript/JavaScriptやその他の言語を使用してモバイルおよびデスクトップWebアプリケーションを構築するための開発プラットフォーム. GitHubリポジトリ: https://github.com/angular/angular References:  https://angular.io/docs https://angular.jp/docs https://angular.keicode.com    用語    用語 意味     module アプリを構成するコンポーネントを束ねたもの.   root module アプリが起動する時に呼びされる大元のモジュール.Angularアプリには必ずある.   component View(画面の一部)を制御する.   template componentのUIをどのようにHTMLで表現するかを指定するもの..htmlのこと.   Decorators モジュールやクラスなどの要素に対してメタ情報を付与するもの   constructor TS, JSに付随するものでClassの初期化時に発動する   data binding コンポーネントにおいてテンプレートとクラス内の要素を繋ぐ仕組み.テンプレートとコンポーネントのコードを繋ぐ方法   template reference variable #testを使って, そのDOM要素をtest変数で参照できるようにする仕組み.    Decoratorsのパラメーター    パラメーター名 意味     imports 現在のモジュールで利用する他のモジュール／コンポーネント   exports 現在のモジュールで外部に公開するコンポーネントなど   declarations モジュール配下のコンポーネント   bootstrap 最初に起動すべき最上位のコンポーネント(＝ルートコンポーネント)   templateUrl 描画するhtml   template 描画する内容   styleUrls どのcssを使うか   styles 直接cssの内容を記述する   selector コンポーネントの適応先を表す(html, css, classなどとして指定できる)    インストール npm i -g @angular/cli @angular/core バージョンアップ ng update @angular/cli @angular/core DockerでAngular Dockerfileの中身" />
+<meta name="description" content="Angularとは  Typescript/JavaScriptやその他の言語を使用してモバイルおよびデスクトップWebアプリケーションを構築するための開発プラットフォーム. GitHubリポジトリ: https://github.com/angular/angular References:  https://angular.io/docs https://angular.jp/docs https://angular.keicode.com    用語    用語 意味     module アプリを構成するコンポーネントを束ねたもの.   root module アプリが起動する時に呼びされる大元のモジュール.
+Angularアプリには必ずある.   component View(画面の一部)を制御する.   template componentのUIをどのようにHTMLで表現するかを指定するもの.
+.htmlのこと.   Decorators モジュールやクラスなどの要素に対してメタ情報を付与するもの   constructor TS, JSに付随するものでClassの初期化時に発動する   data binding コンポーネントにおいてテンプレートとクラス内の要素を繋ぐ仕組み.
+テンプレートとコンポーネントのコードを繋ぐ方法   template reference variable #testを使って, そのDOM要素をtest変数で参照できるようにする仕組み.    Decoratorsのパラメーター    パラメーター名 意味     imports 現在のモジュールで利用する他のモジュール／コンポーネント   exports 現在のモジュールで外部に公開するコンポーネントなど   declarations モジュール配下のコンポーネント   bootstrap 最初に起動すべき最上位のコンポーネント(＝ルートコンポーネント)   templateUrl 描画するhtml   template 描画する内容   styleUrls どのcssを使うか   styles 直接cssの内容を記述する   selector コンポーネントの適応先を表す(html, css, classなどとして指定できる)    インストール npm i -g @angular/cli @angular/core バージョンアップ ng update @angular/cli @angular/core DockerでAngular Dockerfileの中身"><meta property="og:title" content="" />
+<meta property="og:description" content="Angularとは  Typescript/JavaScriptやその他の言語を使用してモバイルおよびデスクトップWebアプリケーションを構築するための開発プラットフォーム. GitHubリポジトリ: https://github.com/angular/angular References:  https://angular.io/docs https://angular.jp/docs https://angular.keicode.com    用語    用語 意味     module アプリを構成するコンポーネントを束ねたもの.   root module アプリが起動する時に呼びされる大元のモジュール.
+Angularアプリには必ずある.   component View(画面の一部)を制御する.   template componentのUIをどのようにHTMLで表現するかを指定するもの.
+.htmlのこと.   Decorators モジュールやクラスなどの要素に対してメタ情報を付与するもの   constructor TS, JSに付随するものでClassの初期化時に発動する   data binding コンポーネントにおいてテンプレートとクラス内の要素を繋ぐ仕組み.
+テンプレートとコンポーネントのコードを繋ぐ方法   template reference variable #testを使って, そのDOM要素をtest変数で参照できるようにする仕組み.    Decoratorsのパラメーター    パラメーター名 意味     imports 現在のモジュールで利用する他のモジュール／コンポーネント   exports 現在のモジュールで外部に公開するコンポーネントなど   declarations モジュール配下のコンポーネント   bootstrap 最初に起動すべき最上位のコンポーネント(＝ルートコンポーネント)   templateUrl 描画するhtml   template 描画する内容   styleUrls どのcssを使うか   styles 直接cssの内容を記述する   selector コンポーネントの適応先を表す(html, css, classなどとして指定できる)    インストール npm i -g @angular/cli @angular/core バージョンアップ ng update @angular/cli @angular/core DockerでAngular Dockerfileの中身" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://solareenlo.com/docs/angular/" />
 <meta property="article:modified_time" content="2019-07-02T08:16:55+09:00" />
@@ -13,10 +19,10 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 
 
-<link rel="stylesheet" href="/book.min.58981925ddc33520ebc4b651e423503306a3203982a9b8426a20913f11092a1f.css" integrity="sha256-WJgZJd3DNSDrxLZR5CNQMwajIDmCqbhCaiCRPxEJKh8=">
+<link rel="stylesheet" href="/book.min.5fa1289292eb5e3222d2349e8d9deaae01ee5d99834b1dc07cee7554c8837bdb.css" integrity="sha256-X6EokpLrXjIi0jSejZ3qrgHuXZmDSx3AfO51VMiDe9s=">
 
 
-<script defer src="/en.search.min.cd69dcbc57adb833562b43f1f38bae1ac2260c98f1c7775cd3eeaef066265c87.js" integrity="sha256-zWncvFetuDNWK0Px84uuGsImDJjxx3dc0&#43;6u8GYmXIc="></script>
+<script defer src="/en.search.min.f6af7aaf107e98993b66c1f023305140923412c3b362b6205e4b0b7d66698b72.js" integrity="sha256-9q96rxB&#43;mJk7ZsHwIzBRQJI0EsOzYrYgXksLfWZpi3I="></script>
 
 <!--
 Made with Book Theme
@@ -275,6 +281,24 @@ https://github.com/alex-shpak/hugo-book
 
 
 
+  
+<ul>
+  
+  <li>
+    <a href="https://github.com/solareenlo/" target="_blank" rel="noopener">
+        Github
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://twitter.com/solareenlo/" target="_blank" rel="noopener">
+        Twitter
+      </a>
+  </li>
+  
+</ul>
+
+
 
 
 
@@ -312,44 +336,48 @@ https://github.com/alex-shpak/hugo-book
       
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#用語">用語</a>
+    <li><a href="#angularとは">Angularとは</a>
       <ul>
-        <li><a href="#decoratorsのパラメーター">Decoratorsのパラメーター</a></li>
+        <li><a href="#用語">用語</a>
+          <ul>
+            <li><a href="#decoratorsのパラメーター">Decoratorsのパラメーター</a></li>
+          </ul>
+        </li>
+        <li><a href="#インストール">インストール</a></li>
+        <li><a href="#バージョンアップ">バージョンアップ</a></li>
+        <li><a href="#dockerでangular">DockerでAngular</a></li>
+        <li><a href="#npmの脆弱性を指摘されたら">npmの脆弱性を指摘されたら</a></li>
+        <li><a href="#travisci経由でgithub-pagesに公開">TravisCI経由でGitHub Pagesに公開</a></li>
+        <li><a href="#マテリアルデザイン">マテリアルデザイン</a>
+          <ul>
+            <li><a href="#インストール-1">インストール</a></li>
+            <li><a href="#バージョンアップ-1">バージョンアップ</a></li>
+            <li><a href="#簡単な使い方">簡単な使い方</a></li>
+            <li><a href="#ファイル選択ボタンをmaterial化">ファイル選択ボタンをMaterial化</a></li>
+          </ul>
+        </li>
+        <li><a href="#基本的な使い方">基本的な使い方</a></li>
+        <li><a href="#値を渡すデータバインド">値を渡す(データバインド)</a>
+          <ul>
+            <li><a href="#tsからhtmlへ値を渡す"><code>.ts</code>から<code>.html</code>へ値を渡す</a></li>
+            <li><a href="#tsからhtmlのの中に値を渡す"><code>.ts</code>から<code>.html</code>の<code>&lt;&gt;</code>の中に値を渡す</a></li>
+            <li><a href="#ユーザーからのinputを受け付ける">ユーザーからの<code>input</code>を受け付ける.</a></li>
+            <li><a href="#入力された値をコンポーネント内で操作する">入力された値をコンポーネント内で操作する</a></li>
+            <li><a href="#子a--親--子bと渡す">子A &gt; 親 &gt; 子Bと渡す</a></li>
+            <li><a href="#eventemitter">EventEmitter</a></li>
+            <li><a href="#コンポーネント間で値を渡す">コンポーネント間で値を渡す</a></li>
+          </ul>
+        </li>
+        <li><a href="#値を渡すテンプレート参照変数">値を渡す(テンプレート参照変数)</a></li>
+        <li><a href="#ngif-else">ngIf else</a></li>
+        <li><a href="#ngstyle">ngStyle</a></li>
+        <li><a href="#ngclass">ngClass</a></li>
+        <li><a href="#要素を渡す">要素を渡す</a></li>
+        <li><a href="#コンポーネントのライフサイクル">コンポーネントのライフサイクル</a></li>
+        <li><a href="#formを使う">formを使う</a></li>
+        <li><a href="#デプロイ">デプロイ</a></li>
       </ul>
     </li>
-    <li><a href="#インストール">インストール</a></li>
-    <li><a href="#バージョンアップ">バージョンアップ</a></li>
-    <li><a href="#dockerでangular">DockerでAngular</a></li>
-    <li><a href="#npmの脆弱性を指摘されたら">npmの脆弱性を指摘されたら</a></li>
-    <li><a href="#travisci経由でgithub-pagesに公開">TravisCI経由でGitHub Pagesに公開</a></li>
-    <li><a href="#マテリアルデザイン">マテリアルデザイン</a>
-      <ul>
-        <li><a href="#インストール-1">インストール</a></li>
-        <li><a href="#バージョンアップ-1">バージョンアップ</a></li>
-        <li><a href="#簡単な使い方">簡単な使い方</a></li>
-        <li><a href="#ファイル選択ボタンをmaterial化">ファイル選択ボタンをMaterial化</a></li>
-      </ul>
-    </li>
-    <li><a href="#基本的な使い方">基本的な使い方</a></li>
-    <li><a href="#値を渡すデータバインド">値を渡す(データバインド)</a>
-      <ul>
-        <li><a href="#tsからhtmlへ値を渡す"><code>.ts</code>から<code>.html</code>へ値を渡す</a></li>
-        <li><a href="#tsからhtmlのの中に値を渡す"><code>.ts</code>から<code>.html</code>の<code>&lt;&gt;</code>の中に値を渡す</a></li>
-        <li><a href="#ユーザーからのinputを受け付ける">ユーザーからの<code>input</code>を受け付ける.</a></li>
-        <li><a href="#入力された値をコンポーネント内で操作する">入力された値をコンポーネント内で操作する</a></li>
-        <li><a href="#子a--親--子bと渡す">子A &gt; 親 &gt; 子Bと渡す</a></li>
-        <li><a href="#eventemitter">EventEmitter</a></li>
-        <li><a href="#コンポーネント間で値を渡す">コンポーネント間で値を渡す</a></li>
-      </ul>
-    </li>
-    <li><a href="#値を渡すテンプレート参照変数">値を渡す(テンプレート参照変数)</a></li>
-    <li><a href="#ngif-else">ngIf else</a></li>
-    <li><a href="#ngstyle">ngStyle</a></li>
-    <li><a href="#ngclass">ngClass</a></li>
-    <li><a href="#要素を渡す">要素を渡す</a></li>
-    <li><a href="#コンポーネントのライフサイクル">コンポーネントのライフサイクル</a></li>
-    <li><a href="#formを使う">formを使う</a></li>
-    <li><a href="#デプロイ">デプロイ</a></li>
   </ul>
 </nav>
 
@@ -388,7 +416,7 @@ https://github.com/alex-shpak/hugo-book
 </tr>
 <tr>
 <td>root module</td>
-<td>アプリが起動する時に呼びされる大元のモジュール.<!-- raw HTML omitted -->Angularアプリには必ずある.</td>
+<td>アプリが起動する時に呼びされる大元のモジュール.<br>Angularアプリには必ずある.</td>
 </tr>
 <tr>
 <td>component</td>
@@ -396,7 +424,7 @@ https://github.com/alex-shpak/hugo-book
 </tr>
 <tr>
 <td>template</td>
-<td>componentのUIをどのようにHTMLで表現するかを指定するもの.<!-- raw HTML omitted -->.htmlのこと.</td>
+<td>componentのUIをどのようにHTMLで表現するかを指定するもの.<br>.htmlのこと.</td>
 </tr>
 <tr>
 <td>Decorators</td>
@@ -408,7 +436,7 @@ https://github.com/alex-shpak/hugo-book
 </tr>
 <tr>
 <td>data binding</td>
-<td>コンポーネントにおいてテンプレートとクラス内の要素を繋ぐ仕組み.<!-- raw HTML omitted -->テンプレートとコンポーネントのコードを繋ぐ方法</td>
+<td>コンポーネントにおいてテンプレートとクラス内の要素を繋ぐ仕組み.<br>テンプレートとコンポーネントのコードを繋ぐ方法</td>
 </tr>
 <tr>
 <td>template reference variable</td>
@@ -1011,35 +1039,35 @@ Aコンポーネント内の<code>&lt;ng-content&gt;&lt;/ng-content&gt;</code>�
 <tbody>
 <tr>
 <td>ngOnChanges()</td>
-<td><!-- raw HTML omitted -->Angularがデータバインドされた入力プロパティを(再)設定するときに応答する.<!-- raw HTML omitted -->このメソッドは, 現在および以前のプロパティ値のSimpleChangesオブジェクトを受け取る.<!-- raw HTML omitted -->ngOnInit()の前に呼び出され, データバインドされた入力プロパティが変更されるたびに呼び出される.</td>
+<td><li>Angularがデータバインドされた入力プロパティを(再)設定するときに応答する.<li>このメソッドは, 現在および以前のプロパティ値のSimpleChangesオブジェクトを受け取る.<li>ngOnInit()の前に呼び出され, データバインドされた入力プロパティが変更されるたびに呼び出される.</td>
 </tr>
 <tr>
 <td>ngOnInit()</td>
-<td><!-- raw HTML omitted -->Angularがデータバインドされたプロパティを最初に表示し, ディレクティブ/コンポーネントの入力プロパティを設定した後で, ディレクティブ/コンポーネントを初期化する.<!-- raw HTML omitted -->最初のngOnChanges()の後に一度呼び出される.</td>
+<td><li>Angularがデータバインドされたプロパティを最初に表示し, ディレクティブ/コンポーネントの入力プロパティを設定した後で, ディレクティブ/コンポーネントを初期化する.<li>最初のngOnChanges()の後に一度呼び出される.</td>
 </tr>
 <tr>
 <td>ngDoCheck()</td>
-<td><!-- raw HTML omitted -->Angularが検出できない, または検出できない変更を検出して, それに基づいて実行する.<!-- raw HTML omitted -->変更検知の実行中に毎回, そしてngOnChanges()とngOnInit()の直後に呼び出される.</td>
+<td><li>Angularが検出できない, または検出できない変更を検出して, それに基づいて実行する.<li>変更検知の実行中に毎回, そしてngOnChanges()とngOnInit()の直後に呼び出される.</td>
 </tr>
 <tr>
 <td>ngAfterContentInit()</td>
-<td><!-- raw HTML omitted -->Angularがコンポーネントのビューあるいはディレクティブが存在するビューに, 外部コンテンツを投影した後に応答する.<!-- raw HTML omitted -->最初のngDoCheck()の後に1度呼び出される.</td>
+<td><li>Angularがコンポーネントのビューあるいはディレクティブが存在するビューに, 外部コンテンツを投影した後に応答する.<li>最初のngDoCheck()の後に1度呼び出される.</td>
 </tr>
 <tr>
 <td>ngAfterContentChecked()</td>
-<td><!-- raw HTML omitted -->Angularがディレクティブ/コンポーネントに投影された外部コンテンツをチェックした後に応答する. <!-- raw HTML omitted -->ngAfterContentInit()とその後全てのngDoCheck()の後に呼び出される.</td>
+<td><li>Angularがディレクティブ/コンポーネントに投影された外部コンテンツをチェックした後に応答する. <li>ngAfterContentInit()とその後全てのngDoCheck()の後に呼び出される.</td>
 </tr>
 <tr>
 <td>ngAfterViewInit()</td>
-<td><!-- raw HTML omitted -->Angularがコンポーネントのビューと子のビュー, あるいはディレクティブが存在するビューを初期化した後に応答する.<!-- raw HTML omitted -->最初のngAfterContentChecked()の後に1度呼び出される.</td>
+<td><li>Angularがコンポーネントのビューと子のビュー, あるいはディレクティブが存在するビューを初期化した後に応答する.<li>最初のngAfterContentChecked()の後に1度呼び出される.</td>
 </tr>
 <tr>
 <td>ngAfterViewChecked()</td>
-<td><!-- raw HTML omitted -->Angularがコンポーネントのビューと子のビュー, あるいはディレクティブが存在するビューをチェックした後に応答する.<!-- raw HTML omitted -->ngAfterViewInit()とその後のすべてのngAfterContentChecked()の後に呼び出される.</td>
+<td><li>Angularがコンポーネントのビューと子のビュー, あるいはディレクティブが存在するビューをチェックした後に応答する.<li>ngAfterViewInit()とその後のすべてのngAfterContentChecked()の後に呼び出される.</td>
 </tr>
 <tr>
 <td>ngOnDestroy()</td>
-<td><!-- raw HTML omitted -->Angularがディレクティブ/コンポーネントを破棄する直前に, クリーンアップする.<!-- raw HTML omitted -->メモリリークを回避するためにObservableの購読を解除し, イベントハンドラをデタッチしましょう.<!-- raw HTML omitted -->Angularがディレクティブ/コンポーネントを破棄する直前に呼び出される.</td>
+<td><li>Angularがディレクティブ/コンポーネントを破棄する直前に, クリーンアップする.<li>メモリリークを回避するためにObservableの購読を解除し, イベントハンドラをデタッチしましょう.<li>Angularがディレクティブ/コンポーネントを破棄する直前に呼び出される.</td>
 </tr>
 <tr>
 <td><strong>Reference:</strong> 
@@ -1140,44 +1168,48 @@ Aコンポーネント内の<code>&lt;ng-content&gt;&lt;/ng-content&gt;</code>�
       
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#用語">用語</a>
+    <li><a href="#angularとは">Angularとは</a>
       <ul>
-        <li><a href="#decoratorsのパラメーター">Decoratorsのパラメーター</a></li>
+        <li><a href="#用語">用語</a>
+          <ul>
+            <li><a href="#decoratorsのパラメーター">Decoratorsのパラメーター</a></li>
+          </ul>
+        </li>
+        <li><a href="#インストール">インストール</a></li>
+        <li><a href="#バージョンアップ">バージョンアップ</a></li>
+        <li><a href="#dockerでangular">DockerでAngular</a></li>
+        <li><a href="#npmの脆弱性を指摘されたら">npmの脆弱性を指摘されたら</a></li>
+        <li><a href="#travisci経由でgithub-pagesに公開">TravisCI経由でGitHub Pagesに公開</a></li>
+        <li><a href="#マテリアルデザイン">マテリアルデザイン</a>
+          <ul>
+            <li><a href="#インストール-1">インストール</a></li>
+            <li><a href="#バージョンアップ-1">バージョンアップ</a></li>
+            <li><a href="#簡単な使い方">簡単な使い方</a></li>
+            <li><a href="#ファイル選択ボタンをmaterial化">ファイル選択ボタンをMaterial化</a></li>
+          </ul>
+        </li>
+        <li><a href="#基本的な使い方">基本的な使い方</a></li>
+        <li><a href="#値を渡すデータバインド">値を渡す(データバインド)</a>
+          <ul>
+            <li><a href="#tsからhtmlへ値を渡す"><code>.ts</code>から<code>.html</code>へ値を渡す</a></li>
+            <li><a href="#tsからhtmlのの中に値を渡す"><code>.ts</code>から<code>.html</code>の<code>&lt;&gt;</code>の中に値を渡す</a></li>
+            <li><a href="#ユーザーからのinputを受け付ける">ユーザーからの<code>input</code>を受け付ける.</a></li>
+            <li><a href="#入力された値をコンポーネント内で操作する">入力された値をコンポーネント内で操作する</a></li>
+            <li><a href="#子a--親--子bと渡す">子A &gt; 親 &gt; 子Bと渡す</a></li>
+            <li><a href="#eventemitter">EventEmitter</a></li>
+            <li><a href="#コンポーネント間で値を渡す">コンポーネント間で値を渡す</a></li>
+          </ul>
+        </li>
+        <li><a href="#値を渡すテンプレート参照変数">値を渡す(テンプレート参照変数)</a></li>
+        <li><a href="#ngif-else">ngIf else</a></li>
+        <li><a href="#ngstyle">ngStyle</a></li>
+        <li><a href="#ngclass">ngClass</a></li>
+        <li><a href="#要素を渡す">要素を渡す</a></li>
+        <li><a href="#コンポーネントのライフサイクル">コンポーネントのライフサイクル</a></li>
+        <li><a href="#formを使う">formを使う</a></li>
+        <li><a href="#デプロイ">デプロイ</a></li>
       </ul>
     </li>
-    <li><a href="#インストール">インストール</a></li>
-    <li><a href="#バージョンアップ">バージョンアップ</a></li>
-    <li><a href="#dockerでangular">DockerでAngular</a></li>
-    <li><a href="#npmの脆弱性を指摘されたら">npmの脆弱性を指摘されたら</a></li>
-    <li><a href="#travisci経由でgithub-pagesに公開">TravisCI経由でGitHub Pagesに公開</a></li>
-    <li><a href="#マテリアルデザイン">マテリアルデザイン</a>
-      <ul>
-        <li><a href="#インストール-1">インストール</a></li>
-        <li><a href="#バージョンアップ-1">バージョンアップ</a></li>
-        <li><a href="#簡単な使い方">簡単な使い方</a></li>
-        <li><a href="#ファイル選択ボタンをmaterial化">ファイル選択ボタンをMaterial化</a></li>
-      </ul>
-    </li>
-    <li><a href="#基本的な使い方">基本的な使い方</a></li>
-    <li><a href="#値を渡すデータバインド">値を渡す(データバインド)</a>
-      <ul>
-        <li><a href="#tsからhtmlへ値を渡す"><code>.ts</code>から<code>.html</code>へ値を渡す</a></li>
-        <li><a href="#tsからhtmlのの中に値を渡す"><code>.ts</code>から<code>.html</code>の<code>&lt;&gt;</code>の中に値を渡す</a></li>
-        <li><a href="#ユーザーからのinputを受け付ける">ユーザーからの<code>input</code>を受け付ける.</a></li>
-        <li><a href="#入力された値をコンポーネント内で操作する">入力された値をコンポーネント内で操作する</a></li>
-        <li><a href="#子a--親--子bと渡す">子A &gt; 親 &gt; 子Bと渡す</a></li>
-        <li><a href="#eventemitter">EventEmitter</a></li>
-        <li><a href="#コンポーネント間で値を渡す">コンポーネント間で値を渡す</a></li>
-      </ul>
-    </li>
-    <li><a href="#値を渡すテンプレート参照変数">値を渡す(テンプレート参照変数)</a></li>
-    <li><a href="#ngif-else">ngIf else</a></li>
-    <li><a href="#ngstyle">ngStyle</a></li>
-    <li><a href="#ngclass">ngClass</a></li>
-    <li><a href="#要素を渡す">要素を渡す</a></li>
-    <li><a href="#コンポーネントのライフサイクル">コンポーネントのライフサイクル</a></li>
-    <li><a href="#formを使う">formを使う</a></li>
-    <li><a href="#デプロイ">デプロイ</a></li>
   </ul>
 </nav>
 

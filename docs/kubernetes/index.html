@@ -21,10 +21,10 @@ Reference: Docker Compose利用者から見た Kubernetes 開発環境構築入�
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 
 
-<link rel="stylesheet" href="/book.min.58981925ddc33520ebc4b651e423503306a3203982a9b8426a20913f11092a1f.css" integrity="sha256-WJgZJd3DNSDrxLZR5CNQMwajIDmCqbhCaiCRPxEJKh8=">
+<link rel="stylesheet" href="/book.min.5fa1289292eb5e3222d2349e8d9deaae01ee5d99834b1dc07cee7554c8837bdb.css" integrity="sha256-X6EokpLrXjIi0jSejZ3qrgHuXZmDSx3AfO51VMiDe9s=">
 
 
-<script defer src="/en.search.min.cd69dcbc57adb833562b43f1f38bae1ac2260c98f1c7775cd3eeaef066265c87.js" integrity="sha256-zWncvFetuDNWK0Px84uuGsImDJjxx3dc0&#43;6u8GYmXIc="></script>
+<script defer src="/en.search.min.f6af7aaf107e98993b66c1f023305140923412c3b362b6205e4b0b7d66698b72.js" integrity="sha256-9q96rxB&#43;mJk7ZsHwIzBRQJI0EsOzYrYgXksLfWZpi3I="></script>
 
 <!--
 Made with Book Theme
@@ -283,6 +283,24 @@ https://github.com/alex-shpak/hugo-book
 
 
 
+  
+<ul>
+  
+  <li>
+    <a href="https://github.com/solareenlo/" target="_blank" rel="noopener">
+        Github
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://twitter.com/solareenlo/" target="_blank" rel="noopener">
+        Twitter
+      </a>
+  </li>
+  
+</ul>
+
+
 
 
 
@@ -320,32 +338,37 @@ https://github.com/alex-shpak/hugo-book
       
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#他のオーケストレーションと違うところ">他のオーケストレーションと違うところ</a></li>
-    <li><a href="#docker-composeとの違い">Docker Composeとの違い</a></li>
-    <li><a href="#用語集">用語集</a></li>
-    <li><a href="#yaml内の用語集">yaml内の用語集</a>
+    <li><a href="#kubernetesとは">Kubernetesとは</a>
       <ul>
-        <li><a href="#apiversionの調べ方">apiVersionの調べ方</a></li>
-        <li><a href="#serviceのtype4種類">ServiceのType4種類</a></li>
-        <li><a href="#persistentvolumeclaimのaccessmodes3種類">PersistentVolumeClaimのaccessModes3種類</a></li>
-        <li><a href="#storageclassの一覧">StorageClassの一覧</a></li>
-        <li><a href="#volumemountsのsubpath">volumeMountsのsubPath</a></li>
+        <li><a href="#他のオーケストレーションと違うところ">他のオーケストレーションと違うところ</a></li>
+        <li><a href="#docker-composeとの違い">Docker Composeとの違い</a></li>
+        <li><a href="#用語集">用語集</a></li>
+        <li><a href="#yaml内の用語集">yaml内の用語集</a>
+          <ul>
+            <li><a href="#apiversionの調べ方">apiVersionの調べ方</a></li>
+            <li><a href="#serviceのtype4種類">ServiceのType4種類</a></li>
+            <li><a href="#persistentvolumeclaimのaccessmodes3種類">PersistentVolumeClaimのaccessModes3種類</a></li>
+            <li><a href="#storageclassの一覧">StorageClassの一覧</a></li>
+            <li><a href="#volumemountsのsubpath">volumeMountsのsubPath</a></li>
+          </ul>
+        </li>
+        <li><a href="#macのローカル環境で動かす">Macのローカル環境で動かす</a></li>
+        <li><a href="#ubuntuのローカル環境で動かす">Ubuntuのローカル環境で動かす</a>
+          <ul>
+            <li><a href="#minikubeの使い方"><code>minikube</code>の使い方</a></li>
+            <li><a href="#kubectlの使い方"><code>kubectl</code>の使い方</a></li>
+            <li><a href="#自分のpcからvmにアクセスしてdockerコンテナを見る方法">自分のPCからVMにアクセスしてDockerコンテナを見る方法</a></li>
+          </ul>
+        </li>
+        <li><a href="#1度デプロイしたイメージのバージョンアップ方法">1度デプロイしたイメージのバージョンアップ方法</a></li>
+        <li><a href="#イメージのバージョンにgitのshaを使う">イメージのバージョンにgitのshaを使う</a></li>
+        <li><a href="#ローカルで動かした例">ローカルで動かした例</a></li>
+        <li><a href="#gkeで動かした例">GKEで動かした例</a></li>
+        <li><a href="#tls">TLS</a></li>
+        <li><a href="#良書">良書</a></li>
       </ul>
     </li>
-    <li><a href="#macのローカル環境で動かす">Macのローカル環境で動かす</a></li>
-    <li><a href="#ubuntuのローカル環境で動かす">Ubuntuのローカル環境で動かす</a>
-      <ul>
-        <li><a href="#minikubeの使い方"><code>minikube</code>の使い方</a></li>
-        <li><a href="#kubectlの使い方"><code>kubectl</code>の使い方</a></li>
-        <li><a href="#自分のpcからvmにアクセスしてdockerコンテナを見る方法">自分のPCからVMにアクセスしてDockerコンテナを見る方法</a></li>
-      </ul>
-    </li>
-    <li><a href="#1度デプロイしたイメージのバージョンアップ方法">1度デプロイしたイメージのバージョンアップ方法</a></li>
-    <li><a href="#イメージのバージョンにgitのshaを使う">イメージのバージョンにgitのshaを使う</a></li>
-    <li><a href="#ローカルで動かした例">ローカルで動かした例</a></li>
-    <li><a href="#gkeで動かした例">GKEで動かした例</a></li>
-    <li><a href="#tls">TLS</a></li>
-    <li><a href="#良書">良書</a></li>
+    <li><a href="#helm">Helm</a></li>
   </ul>
 </nav>
 
@@ -437,7 +460,7 @@ https://github.com/alex-shpak/hugo-book
 <tbody>
 <tr>
 <td>Node</td>
-<td>コンテナが動作するサーバのこと.<!-- raw HTML omitted --><!-- raw HTML omitted -->Master(Master Node): 全Nodeを管理する.<!-- raw HTML omitted -->Node(Woker Node): 各リソースを動かす.</td>
+<td>コンテナが動作するサーバのこと.<br><li>Master(Master Node): 全Nodeを管理する.<li>Node(Woker Node): 各リソースを動かす.</td>
 </tr>
 <tr>
 <td>Pod</td>
@@ -445,23 +468,23 @@ https://github.com/alex-shpak/hugo-book
 </tr>
 <tr>
 <td>ReplicaSet</td>
-<td>対象Podのクラスタ全体における生成・管理を行う.<!-- raw HTML omitted -->PodTemplateと呼ばれるPodのテンプレートをもとに、Podを指定された数(レプリカ数)に調整・管理を行う仕組み.<!-- raw HTML omitted -->そうすることで, Podのセルフヒーリングを行う.</td>
+<td>対象Podのクラスタ全体における生成・管理を行う.<br>PodTemplateと呼ばれるPodのテンプレートをもとに、Podを指定された数(レプリカ数)に調整・管理を行う仕組み.<br>そうすることで, Podのセルフヒーリングを行う.</td>
 </tr>
 <tr>
 <td>Deployment</td>
-<td>ReplicaSetの生成・管理を行う.<!-- raw HTML omitted -->ローリングアップデートやロールバックといったデプロイ管理の仕組みを提供する.</td>
+<td>ReplicaSetの生成・管理を行う.<br>ローリングアップデートやロールバックといったデプロイ管理の仕組みを提供する.</td>
 </tr>
 <tr>
 <td>Service</td>
-<td>Podへのアクセス経路を提供する.<!-- raw HTML omitted -->OSI参照モデルのL4層まで扱える.<!-- raw HTML omitted -->- クラスタ内部のみで利用できるService(ClusterIP)や,<!-- raw HTML omitted -->- クラスタ外部からアクセス可能なService(NodePort)などを作成することができる.</td>
+<td>Podへのアクセス経路を提供する.<br>OSI参照モデルのL4層まで扱える.<br>- クラスタ内部のみで利用できるService(ClusterIP)や,<br>- クラスタ外部からアクセス可能なService(NodePort)などを作成することができる.</td>
 </tr>
 <tr>
 <td>Ingress</td>
-<td>Serviceの上位リソース.<!-- raw HTML omitted -->OSI参照モデルのL7層レベルまで扱える.</td>
+<td>Serviceの上位リソース.<br>OSI参照モデルのL7層レベルまで扱える.</td>
 </tr>
 <tr>
 <td>ConfigMap</td>
-<td>環境変数のような設定値, また設定ファイル情報そのものを管理する.<!-- raw HTML omitted -->Key-Value形式.</td>
+<td>環境変数のような設定値, また設定ファイル情報そのものを管理する.<br>Key-Value形式.</td>
 </tr>
 <tr>
 <td>Secret</td>
@@ -469,15 +492,15 @@ https://github.com/alex-shpak/hugo-book
 </tr>
 <tr>
 <td>PersistentVolume</td>
-<td>ボリューム領域を定義する.<!-- raw HTML omitted -->EBSやNFSのような外部ストレージも定義できる.</td>
+<td>ボリューム領域を定義する.<br>EBSやNFSのような外部ストレージも定義できる.</td>
 </tr>
 <tr>
 <td>PersistentVolumeClaim</td>
-<td>利用するボリューム領域の要求を定義する.<!-- raw HTML omitted -->PersistentVolumeとPodを紐付けるために利用する.</td>
+<td>利用するボリューム領域の要求を定義する.<br>PersistentVolumeとPodを紐付けるために利用する.</td>
 </tr>
 <tr>
 <td>Namespace</td>
-<td>仮想的なKubernetesクラスタの分離機能.<!-- raw HTML omitted --><!-- raw HTML omitted --><strong>default</strong>: デフォルトのNamespace<!-- raw HTML omitted --><strong>kube-system</strong>: Kubernetesクラスタのコンポーネントやaddonが展開されるNamespace<!-- raw HTML omitted --><strong>kube-public</strong>: 全ユーザが利用できるConfigMapなどを配置するNamespace</td>
+<td>仮想的なKubernetesクラスタの分離機能.<br><li><strong>default</strong>: デフォルトのNamespace<li><strong>kube-system</strong>: Kubernetesクラスタのコンポーネントやaddonが展開されるNamespace<li><strong>kube-public</strong>: 全ユーザが利用できるConfigMapなどを配置するNamespace</td>
 </tr>
 </tbody>
 </table>
@@ -505,11 +528,11 @@ https://github.com/alex-shpak/hugo-book
 </tr>
 <tr>
 <td>kind</td>
-<td>リソースの種別を指定.<!-- raw HTML omitted -->(Deployment, Serviceとか)</td>
+<td>リソースの種別を指定.<br>(Deployment, Serviceとか)</td>
 </tr>
 <tr>
 <td>metadata</td>
-<td>リソースへ付与可能なメタデータ.<!-- raw HTML omitted -->主に名称やラベルを付与する.</td>
+<td>リソースへ付与可能なメタデータ.<br>主に名称やラベルを付与する.</td>
 </tr>
 <tr>
 <td>spec</td>
@@ -791,7 +814,7 @@ kubectl <span style="color:#b58900">set</span> image solareenlo/worker-deploymen
 <tr>
 <td>package</td>
 <td>-</td>
-<td>1つのアプリケーションとして成り立つchartの単位.<!-- raw HTML omitted -->この単位でデプロイを行う.</td>
+<td>1つのアプリケーションとして成り立つchartの単位.<br>この単位でデプロイを行う.</td>
 </tr>
 <tr>
 <td>release</td>
@@ -869,32 +892,37 @@ kubectl <span style="color:#b58900">set</span> image solareenlo/worker-deploymen
       
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#他のオーケストレーションと違うところ">他のオーケストレーションと違うところ</a></li>
-    <li><a href="#docker-composeとの違い">Docker Composeとの違い</a></li>
-    <li><a href="#用語集">用語集</a></li>
-    <li><a href="#yaml内の用語集">yaml内の用語集</a>
+    <li><a href="#kubernetesとは">Kubernetesとは</a>
       <ul>
-        <li><a href="#apiversionの調べ方">apiVersionの調べ方</a></li>
-        <li><a href="#serviceのtype4種類">ServiceのType4種類</a></li>
-        <li><a href="#persistentvolumeclaimのaccessmodes3種類">PersistentVolumeClaimのaccessModes3種類</a></li>
-        <li><a href="#storageclassの一覧">StorageClassの一覧</a></li>
-        <li><a href="#volumemountsのsubpath">volumeMountsのsubPath</a></li>
+        <li><a href="#他のオーケストレーションと違うところ">他のオーケストレーションと違うところ</a></li>
+        <li><a href="#docker-composeとの違い">Docker Composeとの違い</a></li>
+        <li><a href="#用語集">用語集</a></li>
+        <li><a href="#yaml内の用語集">yaml内の用語集</a>
+          <ul>
+            <li><a href="#apiversionの調べ方">apiVersionの調べ方</a></li>
+            <li><a href="#serviceのtype4種類">ServiceのType4種類</a></li>
+            <li><a href="#persistentvolumeclaimのaccessmodes3種類">PersistentVolumeClaimのaccessModes3種類</a></li>
+            <li><a href="#storageclassの一覧">StorageClassの一覧</a></li>
+            <li><a href="#volumemountsのsubpath">volumeMountsのsubPath</a></li>
+          </ul>
+        </li>
+        <li><a href="#macのローカル環境で動かす">Macのローカル環境で動かす</a></li>
+        <li><a href="#ubuntuのローカル環境で動かす">Ubuntuのローカル環境で動かす</a>
+          <ul>
+            <li><a href="#minikubeの使い方"><code>minikube</code>の使い方</a></li>
+            <li><a href="#kubectlの使い方"><code>kubectl</code>の使い方</a></li>
+            <li><a href="#自分のpcからvmにアクセスしてdockerコンテナを見る方法">自分のPCからVMにアクセスしてDockerコンテナを見る方法</a></li>
+          </ul>
+        </li>
+        <li><a href="#1度デプロイしたイメージのバージョンアップ方法">1度デプロイしたイメージのバージョンアップ方法</a></li>
+        <li><a href="#イメージのバージョンにgitのshaを使う">イメージのバージョンにgitのshaを使う</a></li>
+        <li><a href="#ローカルで動かした例">ローカルで動かした例</a></li>
+        <li><a href="#gkeで動かした例">GKEで動かした例</a></li>
+        <li><a href="#tls">TLS</a></li>
+        <li><a href="#良書">良書</a></li>
       </ul>
     </li>
-    <li><a href="#macのローカル環境で動かす">Macのローカル環境で動かす</a></li>
-    <li><a href="#ubuntuのローカル環境で動かす">Ubuntuのローカル環境で動かす</a>
-      <ul>
-        <li><a href="#minikubeの使い方"><code>minikube</code>の使い方</a></li>
-        <li><a href="#kubectlの使い方"><code>kubectl</code>の使い方</a></li>
-        <li><a href="#自分のpcからvmにアクセスしてdockerコンテナを見る方法">自分のPCからVMにアクセスしてDockerコンテナを見る方法</a></li>
-      </ul>
-    </li>
-    <li><a href="#1度デプロイしたイメージのバージョンアップ方法">1度デプロイしたイメージのバージョンアップ方法</a></li>
-    <li><a href="#イメージのバージョンにgitのshaを使う">イメージのバージョンにgitのshaを使う</a></li>
-    <li><a href="#ローカルで動かした例">ローカルで動かした例</a></li>
-    <li><a href="#gkeで動かした例">GKEで動かした例</a></li>
-    <li><a href="#tls">TLS</a></li>
-    <li><a href="#良書">良書</a></li>
+    <li><a href="#helm">Helm</a></li>
   </ul>
 </nav>
 

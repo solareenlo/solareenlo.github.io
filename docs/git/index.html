@@ -21,10 +21,10 @@ source ~/.bashrc branch local branchから新branch作成 cd ディレクトリ 
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 
 
-<link rel="stylesheet" href="/book.min.58981925ddc33520ebc4b651e423503306a3203982a9b8426a20913f11092a1f.css" integrity="sha256-WJgZJd3DNSDrxLZR5CNQMwajIDmCqbhCaiCRPxEJKh8=">
+<link rel="stylesheet" href="/book.min.5fa1289292eb5e3222d2349e8d9deaae01ee5d99834b1dc07cee7554c8837bdb.css" integrity="sha256-X6EokpLrXjIi0jSejZ3qrgHuXZmDSx3AfO51VMiDe9s=">
 
 
-<script defer src="/en.search.min.cd69dcbc57adb833562b43f1f38bae1ac2260c98f1c7775cd3eeaef066265c87.js" integrity="sha256-zWncvFetuDNWK0Px84uuGsImDJjxx3dc0&#43;6u8GYmXIc="></script>
+<script defer src="/en.search.min.f6af7aaf107e98993b66c1f023305140923412c3b362b6205e4b0b7d66698b72.js" integrity="sha256-9q96rxB&#43;mJk7ZsHwIzBRQJI0EsOzYrYgXksLfWZpi3I="></script>
 
 <!--
 Made with Book Theme
@@ -283,6 +283,24 @@ https://github.com/alex-shpak/hugo-book
 
 
 
+  
+<ul>
+  
+  <li>
+    <a href="https://github.com/solareenlo/" target="_blank" rel="noopener">
+        Github
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://twitter.com/solareenlo/" target="_blank" rel="noopener">
+        Twitter
+      </a>
+  </li>
+  
+</ul>
+
+
 
 
 
@@ -320,66 +338,71 @@ https://github.com/alex-shpak/hugo-book
       
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#gitの構成">gitの構成</a></li>
-    <li><a href="#git補完">git補完</a>
+    <li><a href="#gitとは">Gitとは</a>
       <ul>
-        <li><a href="#git-completionbashをインストール"><code>git-completion.bash</code>をインストール</a></li>
-        <li><a href="#git-promptshのインストール"><code>git-prompt.sh</code>のインストール</a></li>
+        <li><a href="#gitの構成">gitの構成</a></li>
+        <li><a href="#git補完">git補完</a>
+          <ul>
+            <li><a href="#git-completionbashをインストール"><code>git-completion.bash</code>をインストール</a></li>
+            <li><a href="#git-promptshのインストール"><code>git-prompt.sh</code>のインストール</a></li>
+          </ul>
+        </li>
+        <li><a href="#branch">branch</a>
+          <ul>
+            <li><a href="#local-branchから新branch作成">local branchから新branch作成</a></li>
+            <li><a href="#リモートbranchから新branch作成">リモートbranchから新branch作成</a></li>
+            <li><a href="#branchの削除">branchの削除</a></li>
+          </ul>
+        </li>
+        <li><a href="#remote">remote</a>
+          <ul>
+            <li><a href="#remoteから特定のbranchを指定してcloneする">remoteから特定のbranchを指定してcloneする</a></li>
+            <li><a href="#remote-branch削除">remote branch削除</a></li>
+          </ul>
+        </li>
+        <li><a href="#commit">commit</a>
+          <ul>
+            <li><a href="#一時的に過去のcommitに戻る">一時的に過去のcommitに戻る</a></li>
+          </ul>
+        </li>
+        <li><a href="#submodule">submodule</a>
+          <ul>
+            <li><a href="#submoduleの追加">submoduleの追加</a></li>
+            <li><a href="#submoduleの削除">submoduleの削除</a></li>
+            <li><a href="#submoduleも一緒にclone">submoduleも一緒にclone</a></li>
+            <li><a href="#submoduleのcloneをし忘れたら">submoduleのcloneをし忘れたら</a></li>
+            <li><a href="#submoduleの更新">submoduleの更新</a></li>
+          </ul>
+        </li>
+        <li><a href="#fork">fork</a>
+          <ul>
+            <li><a href="#fork元の更新を取り込む">fork元の更新を取り込む</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
-    <li><a href="#branch">branch</a>
+    <li><a href="#基本操作">基本操作</a>
       <ul>
-        <li><a href="#local-branchから新branch作成">local branchから新branch作成</a></li>
-        <li><a href="#リモートbranchから新branch作成">リモートbranchから新branch作成</a></li>
-        <li><a href="#branchの削除">branchの削除</a></li>
+        <li><a href="#gitの設定">gitの設定</a></li>
+        <li><a href="#commit-1">commit</a></li>
+        <li><a href="#log">log</a></li>
+        <li><a href="#現在の状態を把握する">現在の状態を把握する</a></li>
+        <li><a href="#差分を確認する">差分を確認する</a></li>
+        <li><a href="#gitでのファイル操作">gitでのファイル操作</a></li>
+        <li><a href="#gitの管理に含めない方法">gitの管理に含めない方法</a></li>
+        <li><a href="#直前のcommitを変更">直前のcommitを変更</a></li>
+        <li><a href="#過去のバージョンに戻る１">過去のバージョンに戻る（１）</a></li>
+        <li><a href="#過去のバージョンに戻る２">過去のバージョンに戻る（２）</a></li>
+        <li><a href="#branch-1">branch</a></li>
+        <li><a href="#branchをmerge">branchをmerge</a></li>
+        <li><a href="#mergeの衝突を解消">mergeの衝突を解消</a></li>
+        <li><a href="#tag">tag</a></li>
+        <li><a href="#エイリアス">エイリアス</a></li>
+        <li><a href="#初めての共同作業">初めての共同作業</a></li>
+        <li><a href="#共同作業でコンフリクトが起こったら">共同作業でコンフリクトが起こったら</a></li>
+        <li><a href="#git-rev-parse">git rev-parse</a></li>
       </ul>
     </li>
-    <li><a href="#remote">remote</a>
-      <ul>
-        <li><a href="#remoteから特定のbranchを指定してcloneする">remoteから特定のbranchを指定してcloneする</a></li>
-        <li><a href="#remote-branch削除">remote branch削除</a></li>
-      </ul>
-    </li>
-    <li><a href="#commit">commit</a>
-      <ul>
-        <li><a href="#一時的に過去のcommitに戻る">一時的に過去のcommitに戻る</a></li>
-      </ul>
-    </li>
-    <li><a href="#submodule">submodule</a>
-      <ul>
-        <li><a href="#submoduleの追加">submoduleの追加</a></li>
-        <li><a href="#submoduleの削除">submoduleの削除</a></li>
-        <li><a href="#submoduleも一緒にclone">submoduleも一緒にclone</a></li>
-        <li><a href="#submoduleのcloneをし忘れたら">submoduleのcloneをし忘れたら</a></li>
-        <li><a href="#submoduleの更新">submoduleの更新</a></li>
-      </ul>
-    </li>
-    <li><a href="#fork">fork</a>
-      <ul>
-        <li><a href="#fork元の更新を取り込む">fork元の更新を取り込む</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li><a href="#gitの設定">gitの設定</a></li>
-    <li><a href="#commit-1">commit</a></li>
-    <li><a href="#log">log</a></li>
-    <li><a href="#現在の状態を把握する">現在の状態を把握する</a></li>
-    <li><a href="#差分を確認する">差分を確認する</a></li>
-    <li><a href="#gitでのファイル操作">gitでのファイル操作</a></li>
-    <li><a href="#gitの管理に含めない方法">gitの管理に含めない方法</a></li>
-    <li><a href="#直前のcommitを変更">直前のcommitを変更</a></li>
-    <li><a href="#過去のバージョンに戻る１">過去のバージョンに戻る（１）</a></li>
-    <li><a href="#過去のバージョンに戻る２">過去のバージョンに戻る（２）</a></li>
-    <li><a href="#branch-1">branch</a></li>
-    <li><a href="#branchをmerge">branchをmerge</a></li>
-    <li><a href="#mergeの衝突を解消">mergeの衝突を解消</a></li>
-    <li><a href="#tag">tag</a></li>
-    <li><a href="#エイリアス">エイリアス</a></li>
-    <li><a href="#初めての共同作業">初めての共同作業</a></li>
-    <li><a href="#共同作業でコンフリクトが起こったら">共同作業でコンフリクトが起こったら</a></li>
-    <li><a href="#git-rev-parse">git rev-parse</a></li>
   </ul>
 </nav>
 
@@ -740,66 +763,71 @@ git push origin master
       
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#gitの構成">gitの構成</a></li>
-    <li><a href="#git補完">git補完</a>
+    <li><a href="#gitとは">Gitとは</a>
       <ul>
-        <li><a href="#git-completionbashをインストール"><code>git-completion.bash</code>をインストール</a></li>
-        <li><a href="#git-promptshのインストール"><code>git-prompt.sh</code>のインストール</a></li>
+        <li><a href="#gitの構成">gitの構成</a></li>
+        <li><a href="#git補完">git補完</a>
+          <ul>
+            <li><a href="#git-completionbashをインストール"><code>git-completion.bash</code>をインストール</a></li>
+            <li><a href="#git-promptshのインストール"><code>git-prompt.sh</code>のインストール</a></li>
+          </ul>
+        </li>
+        <li><a href="#branch">branch</a>
+          <ul>
+            <li><a href="#local-branchから新branch作成">local branchから新branch作成</a></li>
+            <li><a href="#リモートbranchから新branch作成">リモートbranchから新branch作成</a></li>
+            <li><a href="#branchの削除">branchの削除</a></li>
+          </ul>
+        </li>
+        <li><a href="#remote">remote</a>
+          <ul>
+            <li><a href="#remoteから特定のbranchを指定してcloneする">remoteから特定のbranchを指定してcloneする</a></li>
+            <li><a href="#remote-branch削除">remote branch削除</a></li>
+          </ul>
+        </li>
+        <li><a href="#commit">commit</a>
+          <ul>
+            <li><a href="#一時的に過去のcommitに戻る">一時的に過去のcommitに戻る</a></li>
+          </ul>
+        </li>
+        <li><a href="#submodule">submodule</a>
+          <ul>
+            <li><a href="#submoduleの追加">submoduleの追加</a></li>
+            <li><a href="#submoduleの削除">submoduleの削除</a></li>
+            <li><a href="#submoduleも一緒にclone">submoduleも一緒にclone</a></li>
+            <li><a href="#submoduleのcloneをし忘れたら">submoduleのcloneをし忘れたら</a></li>
+            <li><a href="#submoduleの更新">submoduleの更新</a></li>
+          </ul>
+        </li>
+        <li><a href="#fork">fork</a>
+          <ul>
+            <li><a href="#fork元の更新を取り込む">fork元の更新を取り込む</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
-    <li><a href="#branch">branch</a>
+    <li><a href="#基本操作">基本操作</a>
       <ul>
-        <li><a href="#local-branchから新branch作成">local branchから新branch作成</a></li>
-        <li><a href="#リモートbranchから新branch作成">リモートbranchから新branch作成</a></li>
-        <li><a href="#branchの削除">branchの削除</a></li>
+        <li><a href="#gitの設定">gitの設定</a></li>
+        <li><a href="#commit-1">commit</a></li>
+        <li><a href="#log">log</a></li>
+        <li><a href="#現在の状態を把握する">現在の状態を把握する</a></li>
+        <li><a href="#差分を確認する">差分を確認する</a></li>
+        <li><a href="#gitでのファイル操作">gitでのファイル操作</a></li>
+        <li><a href="#gitの管理に含めない方法">gitの管理に含めない方法</a></li>
+        <li><a href="#直前のcommitを変更">直前のcommitを変更</a></li>
+        <li><a href="#過去のバージョンに戻る１">過去のバージョンに戻る（１）</a></li>
+        <li><a href="#過去のバージョンに戻る２">過去のバージョンに戻る（２）</a></li>
+        <li><a href="#branch-1">branch</a></li>
+        <li><a href="#branchをmerge">branchをmerge</a></li>
+        <li><a href="#mergeの衝突を解消">mergeの衝突を解消</a></li>
+        <li><a href="#tag">tag</a></li>
+        <li><a href="#エイリアス">エイリアス</a></li>
+        <li><a href="#初めての共同作業">初めての共同作業</a></li>
+        <li><a href="#共同作業でコンフリクトが起こったら">共同作業でコンフリクトが起こったら</a></li>
+        <li><a href="#git-rev-parse">git rev-parse</a></li>
       </ul>
     </li>
-    <li><a href="#remote">remote</a>
-      <ul>
-        <li><a href="#remoteから特定のbranchを指定してcloneする">remoteから特定のbranchを指定してcloneする</a></li>
-        <li><a href="#remote-branch削除">remote branch削除</a></li>
-      </ul>
-    </li>
-    <li><a href="#commit">commit</a>
-      <ul>
-        <li><a href="#一時的に過去のcommitに戻る">一時的に過去のcommitに戻る</a></li>
-      </ul>
-    </li>
-    <li><a href="#submodule">submodule</a>
-      <ul>
-        <li><a href="#submoduleの追加">submoduleの追加</a></li>
-        <li><a href="#submoduleの削除">submoduleの削除</a></li>
-        <li><a href="#submoduleも一緒にclone">submoduleも一緒にclone</a></li>
-        <li><a href="#submoduleのcloneをし忘れたら">submoduleのcloneをし忘れたら</a></li>
-        <li><a href="#submoduleの更新">submoduleの更新</a></li>
-      </ul>
-    </li>
-    <li><a href="#fork">fork</a>
-      <ul>
-        <li><a href="#fork元の更新を取り込む">fork元の更新を取り込む</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li><a href="#gitの設定">gitの設定</a></li>
-    <li><a href="#commit-1">commit</a></li>
-    <li><a href="#log">log</a></li>
-    <li><a href="#現在の状態を把握する">現在の状態を把握する</a></li>
-    <li><a href="#差分を確認する">差分を確認する</a></li>
-    <li><a href="#gitでのファイル操作">gitでのファイル操作</a></li>
-    <li><a href="#gitの管理に含めない方法">gitの管理に含めない方法</a></li>
-    <li><a href="#直前のcommitを変更">直前のcommitを変更</a></li>
-    <li><a href="#過去のバージョンに戻る１">過去のバージョンに戻る（１）</a></li>
-    <li><a href="#過去のバージョンに戻る２">過去のバージョンに戻る（２）</a></li>
-    <li><a href="#branch-1">branch</a></li>
-    <li><a href="#branchをmerge">branchをmerge</a></li>
-    <li><a href="#mergeの衝突を解消">mergeの衝突を解消</a></li>
-    <li><a href="#tag">tag</a></li>
-    <li><a href="#エイリアス">エイリアス</a></li>
-    <li><a href="#初めての共同作業">初めての共同作業</a></li>
-    <li><a href="#共同作業でコンフリクトが起こったら">共同作業でコンフリクトが起こったら</a></li>
-    <li><a href="#git-rev-parse">git rev-parse</a></li>
   </ul>
 </nav>
 

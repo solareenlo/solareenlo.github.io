@@ -24,7 +24,10 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://solareenlo.com/docs/angular/</guid>
-      <description>Angularとは  Typescript/JavaScriptやその他の言語を使用してモバイルおよびデスクトップWebアプリケーションを構築するための開発プラットフォーム. GitHubリポジトリ: https://github.com/angular/angular References:  https://angular.io/docs https://angular.jp/docs https://angular.keicode.com    用語    用語 意味     module アプリを構成するコンポーネントを束ねたもの.   root module アプリが起動する時に呼びされる大元のモジュール.Angularアプリには必ずある.   component View(画面の一部)を制御する.   template componentのUIをどのようにHTMLで表現するかを指定するもの..htmlのこと.   Decorators モジュールやクラスなどの要素に対してメタ情報を付与するもの   constructor TS, JSに付随するものでClassの初期化時に発動する   data binding コンポーネントにおいてテンプレートとクラス内の要素を繋ぐ仕組み.テンプレートとコンポーネントのコードを繋ぐ方法   template reference variable #testを使って, そのDOM要素をtest変数で参照できるようにする仕組み.    Decoratorsのパラメーター    パラメーター名 意味     imports 現在のモジュールで利用する他のモジュール／コンポーネント   exports 現在のモジュールで外部に公開するコンポーネントなど   declarations モジュール配下のコンポーネント   bootstrap 最初に起動すべき最上位のコンポーネント(＝ルートコンポーネント)   templateUrl 描画するhtml   template 描画する内容   styleUrls どのcssを使うか   styles 直接cssの内容を記述する   selector コンポーネントの適応先を表す(html, css, classなどとして指定できる)    インストール npm i -g @angular/cli @angular/core バージョンアップ ng update @angular/cli @angular/core DockerでAngular Dockerfileの中身</description>
+      <description>Angularとは  Typescript/JavaScriptやその他の言語を使用してモバイルおよびデスクトップWebアプリケーションを構築するための開発プラットフォーム. GitHubリポジトリ: https://github.com/angular/angular References:  https://angular.io/docs https://angular.jp/docs https://angular.keicode.com    用語    用語 意味     module アプリを構成するコンポーネントを束ねたもの.   root module アプリが起動する時に呼びされる大元のモジュール.
+Angularアプリには必ずある.   component View(画面の一部)を制御する.   template componentのUIをどのようにHTMLで表現するかを指定するもの.
+.htmlのこと.   Decorators モジュールやクラスなどの要素に対してメタ情報を付与するもの   constructor TS, JSに付随するものでClassの初期化時に発動する   data binding コンポーネントにおいてテンプレートとクラス内の要素を繋ぐ仕組み.
+テンプレートとコンポーネントのコードを繋ぐ方法   template reference variable #testを使って, そのDOM要素をtest変数で参照できるようにする仕組み.    Decoratorsのパラメーター    パラメーター名 意味     imports 現在のモジュールで利用する他のモジュール／コンポーネント   exports 現在のモジュールで外部に公開するコンポーネントなど   declarations モジュール配下のコンポーネント   bootstrap 最初に起動すべき最上位のコンポーネント(＝ルートコンポーネント)   templateUrl 描画するhtml   template 描画する内容   styleUrls どのcssを使うか   styles 直接cssの内容を記述する   selector コンポーネントの適応先を表す(html, css, classなどとして指定できる)    インストール npm i -g @angular/cli @angular/core バージョンアップ ng update @angular/cli @angular/core DockerでAngular Dockerfileの中身</description>
     </item>
     
     <item>
@@ -294,7 +297,8 @@ yarn add prettier --dev --exact   コードを開いて, コードの一番上�
       
       <guid>https://solareenlo.com/docs/nodejs/</guid>
       <description>Node.jsとは  サーバーサイドJavaScript環境のこと. サーバーサイドもJavaScripで記述できるようにした. シングルスレッドでノンブロッキングI/Oを行う. GitHubリポジトリ: https://github.com/nodejs  インストール Mac: https://nodejs.org/en/
-Ubuntu: Official Node.js binary distributions テストツールの種類  テストの環境を提供する（ Mocha , Jasmine , Jest , Karma ）   テストの構造を提供する（ Mocha , Jasmine , Jest , Cucumber） アサーション機能を提供する（ Chai , Jasmine , Jest , Unexpected） 生成, 表示, テスト結果をウォッチする（ Mocha , Jasmine , Jest , Karma ）以前の実行時からの変更が意図されたものであることを確認するために, コンポーネントやデータ構造を生成し, スナップショットを比較する（ Jest , Ava ） モック, スパイ, スタブを提供する（ Sinon , Jasmine , enzyme , Jest , testdouble) コードカバレッジのレポートを生成する（Istanbul, Jest ) シナリオ実行の管理ができるブラウザ, または疑似ブラウザの環境を提供する（ Protractor , Nightwatch , Phantom, Casper）  Reference: 2017年JavaScriptのテスト概論 日付を扱う   moment/moment   iamkun/dayjs   date-fns/date-fns   引数で判定 引数1つでok.</description>
+Ubuntu: Official Node.js binary distributions テストツールの種類  テストの環境を提供する（ Mocha , Jasmine , Jest , Karma ）   テストの構造を提供する（ Mocha , Jasmine , Jest , Cucumber） アサーション機能を提供する（ Chai , Jasmine , Jest , Unexpected） 生成, 表示, テスト結果をウォッチする（ Mocha , Jasmine , Jest , Karma ）
+以前の実行時からの変更が意図されたものであることを確認するために, コンポーネントやデータ構造を生成し, スナップショットを比較する（ Jest , Ava ） モック, スパイ, スタブを提供する（ Sinon , Jasmine , enzyme , Jest , testdouble) コードカバレッジのレポートを生成する（Istanbul, Jest ) シナリオ実行の管理ができるブラウザ, または疑似ブラウザの環境を提供する（ Protractor , Nightwatch , Phantom, Casper）  Reference: 2017年JavaScriptのテスト概論 日付を扱う   moment/moment   iamkun/dayjs   date-fns/date-fns   引数で判定 引数1つでok.</description>
     </item>
     
     <item>

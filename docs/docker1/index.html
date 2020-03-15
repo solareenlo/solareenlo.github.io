@@ -27,10 +27,10 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 
 
-<link rel="stylesheet" href="/book.min.58981925ddc33520ebc4b651e423503306a3203982a9b8426a20913f11092a1f.css" integrity="sha256-WJgZJd3DNSDrxLZR5CNQMwajIDmCqbhCaiCRPxEJKh8=">
+<link rel="stylesheet" href="/book.min.5fa1289292eb5e3222d2349e8d9deaae01ee5d99834b1dc07cee7554c8837bdb.css" integrity="sha256-X6EokpLrXjIi0jSejZ3qrgHuXZmDSx3AfO51VMiDe9s=">
 
 
-<script defer src="/en.search.min.cd69dcbc57adb833562b43f1f38bae1ac2260c98f1c7775cd3eeaef066265c87.js" integrity="sha256-zWncvFetuDNWK0Px84uuGsImDJjxx3dc0&#43;6u8GYmXIc="></script>
+<script defer src="/en.search.min.f6af7aaf107e98993b66c1f023305140923412c3b362b6205e4b0b7d66698b72.js" integrity="sha256-9q96rxB&#43;mJk7ZsHwIzBRQJI0EsOzYrYgXksLfWZpi3I="></script>
 
 <!--
 Made with Book Theme
@@ -289,6 +289,24 @@ https://github.com/alex-shpak/hugo-book
 
 
 
+  
+<ul>
+  
+  <li>
+    <a href="https://github.com/solareenlo/" target="_blank" rel="noopener">
+        Github
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://twitter.com/solareenlo/" target="_blank" rel="noopener">
+        Twitter
+      </a>
+  </li>
+  
+</ul>
+
+
 
 
 
@@ -326,76 +344,80 @@ https://github.com/alex-shpak/hugo-book
       
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#dockerのメリットデメリット">Dockerのメリット/デメリット</a>
+    <li><a href="#dockerとは">Dockerとは</a>
       <ul>
-        <li><a href="#メリット">メリット</a></li>
-        <li><a href="#デメリット">デメリット</a></li>
-      </ul>
-    </li>
-    <li><a href="#なぜrootユーザーか">なぜrootユーザーか</a></li>
-    <li><a href="#インストール方法">インストール方法</a>
-      <ul>
-        <li><a href="#linux編">Linux編</a></li>
-      </ul>
-    </li>
-    <li><a href="#基本的な使い方v18095">基本的な使い方(v18.09.5)</a></li>
-    <li><a href="#container">container</a>
-      <ul>
-        <li><a href="#dockerでhello-world">DockerでHello World!</a></li>
-        <li><a href="#コンテナを起動停止再起動">コンテナを起動/停止/再起動</a></li>
-        <li><a href="#一覧log表示">一覧/log表示</a></li>
-        <li><a href="#コンテナの状態を見る">コンテナの状態を見る</a></li>
-        <li><a href="#コンテナを動かす">コンテナを動かす</a></li>
-        <li><a href="#対話型モードでコンテナを動かす">対話型モードでコンテナを動かす</a></li>
-        <li><a href="#alpineを動かす">Alpineを動かす</a></li>
-        <li><a href="#コンテナの停止とともにコンテナ削除">コンテナの停止とともにコンテナ削除</a></li>
-        <li><a href="#コンテナを一度に停止する">コンテナを一度に停止する</a></li>
-        <li><a href="#コンテナを一度に削除する">コンテナを一度に削除する</a></li>
-        <li><a href="#起動しているコンテナに入る">起動しているコンテナに入る</a></li>
-        <li><a href="#portを指定してnginxを起動する">portを指定してnginxを起動する</a></li>
-      </ul>
-    </li>
-    <li><a href="#network">network</a>
-      <ul>
-        <li><a href="#ネットワークを新規に作って接続して削除する">ネットワークを新規に作って接続して削除する</a></li>
-        <li><a href="#コンテナからコンテナに問い合わせる">コンテナからコンテナに問い合わせる</a></li>
-        <li><a href="#2個コンテナを立ててdnsラウンドロビンを使ってみる">2個コンテナを立ててDNSラウンドロビンを使ってみる</a></li>
-      </ul>
-    </li>
-    <li><a href="#image">image</a>
-      <ul>
-        <li><a href="#一括してimageを削除">一括してimageを削除</a></li>
-        <li><a href="#一括してimageを最新へ更新">一括してimageを最新へ更新</a></li>
-        <li><a href="#imageをdocker-hubからpull">imageをDocker Hubからpull</a></li>
-        <li><a href="#タグ付けしてpull">タグ付けしてpull</a></li>
-        <li><a href="#既にあるimageに新たにタグ付けする">既にあるimageに新たにタグ付けする</a></li>
-        <li><a href="#docker-hubにログイン">Docker Hubにログイン</a></li>
-        <li><a href="#docker-hubに自分でタグ付けしたimageをpush">Docker Hubに自分でタグ付けしたimageをpush</a></li>
-      </ul>
-    </li>
-    <li><a href="#dockerfile">Dockerfile</a>
-      <ul>
-        <li><a href="#dockerfileを書いてみる">Dockerfileを書いてみる</a></li>
-        <li><a href="#dockerfileからイメージを作成する">DockerFileからイメージを作成する</a></li>
-        <li><a href="#ローカルにあるファイルをコピーしてイメージを作成する">ローカルにあるファイルをコピーしてイメージを作成する</a></li>
-        <li><a href="#copyとaddの違い">COPYとADDの違い</a></li>
-        <li><a href="#workdirで作業ディレクトリを指定する">WORKDIRで作業ディレクトリを指定する</a></li>
-        <li><a href="#nodejs用のdockerfileをスクラッチから書いてみる">Node.js用のDockerfileをスクラッチから書いてみる</a></li>
-        <li><a href="#任意のdockerfileを指定する">任意のDockerfileを指定する</a></li>
-      </ul>
-    </li>
-    <li><a href="#volume">volume</a>
-      <ul>
-        <li><a href="#-vを使ってvolumeをmysqlコンテナにマウントする">-vを使ってvolumeをmysqlコンテナにマウントする</a></li>
-        <li><a href="#--mountを使ってvolumeをmysqlコンテナにマウントする">&ndash;mountを使ってvolumeをmysqlコンテナにマウントする</a></li>
-        <li><a href="#2つのコンテナに同じvolumeをマウントする">2つのコンテナに同じvolumeをマウントする</a></li>
-      </ul>
-    </li>
-    <li><a href="#bind-mount">bind mount</a>
-      <ul>
-        <li><a href="#-vを使ってdocker外のデータをnginxコンテナにマウントする">-vを使ってDocker外のデータをnginxコンテナにマウントする</a></li>
-        <li><a href="#--mountを使ってdocker外のデータをnginxコンテナにマウントする">&ndash;mountを使ってDocker外のデータをnginxコンテナにマウントする</a></li>
-        <li><a href="#ローカルのjekyllをコンテナのjekllサーバで動かす">ローカルのJekyllをコンテナのJekllサーバで動かす</a></li>
+        <li><a href="#dockerのメリットデメリット">Dockerのメリット/デメリット</a>
+          <ul>
+            <li><a href="#メリット">メリット</a></li>
+            <li><a href="#デメリット">デメリット</a></li>
+          </ul>
+        </li>
+        <li><a href="#なぜrootユーザーか">なぜrootユーザーか</a></li>
+        <li><a href="#インストール方法">インストール方法</a>
+          <ul>
+            <li><a href="#linux編">Linux編</a></li>
+          </ul>
+        </li>
+        <li><a href="#基本的な使い方v18095">基本的な使い方(v18.09.5)</a></li>
+        <li><a href="#container">container</a>
+          <ul>
+            <li><a href="#dockerでhello-world">DockerでHello World!</a></li>
+            <li><a href="#コンテナを起動停止再起動">コンテナを起動/停止/再起動</a></li>
+            <li><a href="#一覧log表示">一覧/log表示</a></li>
+            <li><a href="#コンテナの状態を見る">コンテナの状態を見る</a></li>
+            <li><a href="#コンテナを動かす">コンテナを動かす</a></li>
+            <li><a href="#対話型モードでコンテナを動かす">対話型モードでコンテナを動かす</a></li>
+            <li><a href="#alpineを動かす">Alpineを動かす</a></li>
+            <li><a href="#コンテナの停止とともにコンテナ削除">コンテナの停止とともにコンテナ削除</a></li>
+            <li><a href="#コンテナを一度に停止する">コンテナを一度に停止する</a></li>
+            <li><a href="#コンテナを一度に削除する">コンテナを一度に削除する</a></li>
+            <li><a href="#起動しているコンテナに入る">起動しているコンテナに入る</a></li>
+            <li><a href="#portを指定してnginxを起動する">portを指定してnginxを起動する</a></li>
+          </ul>
+        </li>
+        <li><a href="#network">network</a>
+          <ul>
+            <li><a href="#ネットワークを新規に作って接続して削除する">ネットワークを新規に作って接続して削除する</a></li>
+            <li><a href="#コンテナからコンテナに問い合わせる">コンテナからコンテナに問い合わせる</a></li>
+            <li><a href="#2個コンテナを立ててdnsラウンドロビンを使ってみる">2個コンテナを立ててDNSラウンドロビンを使ってみる</a></li>
+          </ul>
+        </li>
+        <li><a href="#image">image</a>
+          <ul>
+            <li><a href="#一括してimageを削除">一括してimageを削除</a></li>
+            <li><a href="#一括してimageを最新へ更新">一括してimageを最新へ更新</a></li>
+            <li><a href="#imageをdocker-hubからpull">imageをDocker Hubからpull</a></li>
+            <li><a href="#タグ付けしてpull">タグ付けしてpull</a></li>
+            <li><a href="#既にあるimageに新たにタグ付けする">既にあるimageに新たにタグ付けする</a></li>
+            <li><a href="#docker-hubにログイン">Docker Hubにログイン</a></li>
+            <li><a href="#docker-hubに自分でタグ付けしたimageをpush">Docker Hubに自分でタグ付けしたimageをpush</a></li>
+          </ul>
+        </li>
+        <li><a href="#dockerfile">Dockerfile</a>
+          <ul>
+            <li><a href="#dockerfileを書いてみる">Dockerfileを書いてみる</a></li>
+            <li><a href="#dockerfileからイメージを作成する">DockerFileからイメージを作成する</a></li>
+            <li><a href="#ローカルにあるファイルをコピーしてイメージを作成する">ローカルにあるファイルをコピーしてイメージを作成する</a></li>
+            <li><a href="#copyとaddの違い">COPYとADDの違い</a></li>
+            <li><a href="#workdirで作業ディレクトリを指定する">WORKDIRで作業ディレクトリを指定する</a></li>
+            <li><a href="#nodejs用のdockerfileをスクラッチから書いてみる">Node.js用のDockerfileをスクラッチから書いてみる</a></li>
+            <li><a href="#任意のdockerfileを指定する">任意のDockerfileを指定する</a></li>
+          </ul>
+        </li>
+        <li><a href="#volume">volume</a>
+          <ul>
+            <li><a href="#-vを使ってvolumeをmysqlコンテナにマウントする">-vを使ってvolumeをmysqlコンテナにマウントする</a></li>
+            <li><a href="#--mountを使ってvolumeをmysqlコンテナにマウントする">&ndash;mountを使ってvolumeをmysqlコンテナにマウントする</a></li>
+            <li><a href="#2つのコンテナに同じvolumeをマウントする">2つのコンテナに同じvolumeをマウントする</a></li>
+          </ul>
+        </li>
+        <li><a href="#bind-mount">bind mount</a>
+          <ul>
+            <li><a href="#-vを使ってdocker外のデータをnginxコンテナにマウントする">-vを使ってDocker外のデータをnginxコンテナにマウントする</a></li>
+            <li><a href="#--mountを使ってdocker外のデータをnginxコンテナにマウントする">&ndash;mountを使ってDocker外のデータをnginxコンテナにマウントする</a></li>
+            <li><a href="#ローカルのjekyllをコンテナのjekllサーバで動かす">ローカルのJekyllをコンテナのJekllサーバで動かす</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
@@ -915,76 +937,80 @@ docker run -p 80:4000 --mount <span style="color:#268bd2">type</span><span style
       
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#dockerのメリットデメリット">Dockerのメリット/デメリット</a>
+    <li><a href="#dockerとは">Dockerとは</a>
       <ul>
-        <li><a href="#メリット">メリット</a></li>
-        <li><a href="#デメリット">デメリット</a></li>
-      </ul>
-    </li>
-    <li><a href="#なぜrootユーザーか">なぜrootユーザーか</a></li>
-    <li><a href="#インストール方法">インストール方法</a>
-      <ul>
-        <li><a href="#linux編">Linux編</a></li>
-      </ul>
-    </li>
-    <li><a href="#基本的な使い方v18095">基本的な使い方(v18.09.5)</a></li>
-    <li><a href="#container">container</a>
-      <ul>
-        <li><a href="#dockerでhello-world">DockerでHello World!</a></li>
-        <li><a href="#コンテナを起動停止再起動">コンテナを起動/停止/再起動</a></li>
-        <li><a href="#一覧log表示">一覧/log表示</a></li>
-        <li><a href="#コンテナの状態を見る">コンテナの状態を見る</a></li>
-        <li><a href="#コンテナを動かす">コンテナを動かす</a></li>
-        <li><a href="#対話型モードでコンテナを動かす">対話型モードでコンテナを動かす</a></li>
-        <li><a href="#alpineを動かす">Alpineを動かす</a></li>
-        <li><a href="#コンテナの停止とともにコンテナ削除">コンテナの停止とともにコンテナ削除</a></li>
-        <li><a href="#コンテナを一度に停止する">コンテナを一度に停止する</a></li>
-        <li><a href="#コンテナを一度に削除する">コンテナを一度に削除する</a></li>
-        <li><a href="#起動しているコンテナに入る">起動しているコンテナに入る</a></li>
-        <li><a href="#portを指定してnginxを起動する">portを指定してnginxを起動する</a></li>
-      </ul>
-    </li>
-    <li><a href="#network">network</a>
-      <ul>
-        <li><a href="#ネットワークを新規に作って接続して削除する">ネットワークを新規に作って接続して削除する</a></li>
-        <li><a href="#コンテナからコンテナに問い合わせる">コンテナからコンテナに問い合わせる</a></li>
-        <li><a href="#2個コンテナを立ててdnsラウンドロビンを使ってみる">2個コンテナを立ててDNSラウンドロビンを使ってみる</a></li>
-      </ul>
-    </li>
-    <li><a href="#image">image</a>
-      <ul>
-        <li><a href="#一括してimageを削除">一括してimageを削除</a></li>
-        <li><a href="#一括してimageを最新へ更新">一括してimageを最新へ更新</a></li>
-        <li><a href="#imageをdocker-hubからpull">imageをDocker Hubからpull</a></li>
-        <li><a href="#タグ付けしてpull">タグ付けしてpull</a></li>
-        <li><a href="#既にあるimageに新たにタグ付けする">既にあるimageに新たにタグ付けする</a></li>
-        <li><a href="#docker-hubにログイン">Docker Hubにログイン</a></li>
-        <li><a href="#docker-hubに自分でタグ付けしたimageをpush">Docker Hubに自分でタグ付けしたimageをpush</a></li>
-      </ul>
-    </li>
-    <li><a href="#dockerfile">Dockerfile</a>
-      <ul>
-        <li><a href="#dockerfileを書いてみる">Dockerfileを書いてみる</a></li>
-        <li><a href="#dockerfileからイメージを作成する">DockerFileからイメージを作成する</a></li>
-        <li><a href="#ローカルにあるファイルをコピーしてイメージを作成する">ローカルにあるファイルをコピーしてイメージを作成する</a></li>
-        <li><a href="#copyとaddの違い">COPYとADDの違い</a></li>
-        <li><a href="#workdirで作業ディレクトリを指定する">WORKDIRで作業ディレクトリを指定する</a></li>
-        <li><a href="#nodejs用のdockerfileをスクラッチから書いてみる">Node.js用のDockerfileをスクラッチから書いてみる</a></li>
-        <li><a href="#任意のdockerfileを指定する">任意のDockerfileを指定する</a></li>
-      </ul>
-    </li>
-    <li><a href="#volume">volume</a>
-      <ul>
-        <li><a href="#-vを使ってvolumeをmysqlコンテナにマウントする">-vを使ってvolumeをmysqlコンテナにマウントする</a></li>
-        <li><a href="#--mountを使ってvolumeをmysqlコンテナにマウントする">&ndash;mountを使ってvolumeをmysqlコンテナにマウントする</a></li>
-        <li><a href="#2つのコンテナに同じvolumeをマウントする">2つのコンテナに同じvolumeをマウントする</a></li>
-      </ul>
-    </li>
-    <li><a href="#bind-mount">bind mount</a>
-      <ul>
-        <li><a href="#-vを使ってdocker外のデータをnginxコンテナにマウントする">-vを使ってDocker外のデータをnginxコンテナにマウントする</a></li>
-        <li><a href="#--mountを使ってdocker外のデータをnginxコンテナにマウントする">&ndash;mountを使ってDocker外のデータをnginxコンテナにマウントする</a></li>
-        <li><a href="#ローカルのjekyllをコンテナのjekllサーバで動かす">ローカルのJekyllをコンテナのJekllサーバで動かす</a></li>
+        <li><a href="#dockerのメリットデメリット">Dockerのメリット/デメリット</a>
+          <ul>
+            <li><a href="#メリット">メリット</a></li>
+            <li><a href="#デメリット">デメリット</a></li>
+          </ul>
+        </li>
+        <li><a href="#なぜrootユーザーか">なぜrootユーザーか</a></li>
+        <li><a href="#インストール方法">インストール方法</a>
+          <ul>
+            <li><a href="#linux編">Linux編</a></li>
+          </ul>
+        </li>
+        <li><a href="#基本的な使い方v18095">基本的な使い方(v18.09.5)</a></li>
+        <li><a href="#container">container</a>
+          <ul>
+            <li><a href="#dockerでhello-world">DockerでHello World!</a></li>
+            <li><a href="#コンテナを起動停止再起動">コンテナを起動/停止/再起動</a></li>
+            <li><a href="#一覧log表示">一覧/log表示</a></li>
+            <li><a href="#コンテナの状態を見る">コンテナの状態を見る</a></li>
+            <li><a href="#コンテナを動かす">コンテナを動かす</a></li>
+            <li><a href="#対話型モードでコンテナを動かす">対話型モードでコンテナを動かす</a></li>
+            <li><a href="#alpineを動かす">Alpineを動かす</a></li>
+            <li><a href="#コンテナの停止とともにコンテナ削除">コンテナの停止とともにコンテナ削除</a></li>
+            <li><a href="#コンテナを一度に停止する">コンテナを一度に停止する</a></li>
+            <li><a href="#コンテナを一度に削除する">コンテナを一度に削除する</a></li>
+            <li><a href="#起動しているコンテナに入る">起動しているコンテナに入る</a></li>
+            <li><a href="#portを指定してnginxを起動する">portを指定してnginxを起動する</a></li>
+          </ul>
+        </li>
+        <li><a href="#network">network</a>
+          <ul>
+            <li><a href="#ネットワークを新規に作って接続して削除する">ネットワークを新規に作って接続して削除する</a></li>
+            <li><a href="#コンテナからコンテナに問い合わせる">コンテナからコンテナに問い合わせる</a></li>
+            <li><a href="#2個コンテナを立ててdnsラウンドロビンを使ってみる">2個コンテナを立ててDNSラウンドロビンを使ってみる</a></li>
+          </ul>
+        </li>
+        <li><a href="#image">image</a>
+          <ul>
+            <li><a href="#一括してimageを削除">一括してimageを削除</a></li>
+            <li><a href="#一括してimageを最新へ更新">一括してimageを最新へ更新</a></li>
+            <li><a href="#imageをdocker-hubからpull">imageをDocker Hubからpull</a></li>
+            <li><a href="#タグ付けしてpull">タグ付けしてpull</a></li>
+            <li><a href="#既にあるimageに新たにタグ付けする">既にあるimageに新たにタグ付けする</a></li>
+            <li><a href="#docker-hubにログイン">Docker Hubにログイン</a></li>
+            <li><a href="#docker-hubに自分でタグ付けしたimageをpush">Docker Hubに自分でタグ付けしたimageをpush</a></li>
+          </ul>
+        </li>
+        <li><a href="#dockerfile">Dockerfile</a>
+          <ul>
+            <li><a href="#dockerfileを書いてみる">Dockerfileを書いてみる</a></li>
+            <li><a href="#dockerfileからイメージを作成する">DockerFileからイメージを作成する</a></li>
+            <li><a href="#ローカルにあるファイルをコピーしてイメージを作成する">ローカルにあるファイルをコピーしてイメージを作成する</a></li>
+            <li><a href="#copyとaddの違い">COPYとADDの違い</a></li>
+            <li><a href="#workdirで作業ディレクトリを指定する">WORKDIRで作業ディレクトリを指定する</a></li>
+            <li><a href="#nodejs用のdockerfileをスクラッチから書いてみる">Node.js用のDockerfileをスクラッチから書いてみる</a></li>
+            <li><a href="#任意のdockerfileを指定する">任意のDockerfileを指定する</a></li>
+          </ul>
+        </li>
+        <li><a href="#volume">volume</a>
+          <ul>
+            <li><a href="#-vを使ってvolumeをmysqlコンテナにマウントする">-vを使ってvolumeをmysqlコンテナにマウントする</a></li>
+            <li><a href="#--mountを使ってvolumeをmysqlコンテナにマウントする">&ndash;mountを使ってvolumeをmysqlコンテナにマウントする</a></li>
+            <li><a href="#2つのコンテナに同じvolumeをマウントする">2つのコンテナに同じvolumeをマウントする</a></li>
+          </ul>
+        </li>
+        <li><a href="#bind-mount">bind mount</a>
+          <ul>
+            <li><a href="#-vを使ってdocker外のデータをnginxコンテナにマウントする">-vを使ってDocker外のデータをnginxコンテナにマウントする</a></li>
+            <li><a href="#--mountを使ってdocker外のデータをnginxコンテナにマウントする">&ndash;mountを使ってDocker外のデータをnginxコンテナにマウントする</a></li>
+            <li><a href="#ローカルのjekyllをコンテナのjekllサーバで動かす">ローカルのJekyllをコンテナのJekllサーバで動かす</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>

@@ -13,10 +13,10 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 
 
-<link rel="stylesheet" href="/book.min.58981925ddc33520ebc4b651e423503306a3203982a9b8426a20913f11092a1f.css" integrity="sha256-WJgZJd3DNSDrxLZR5CNQMwajIDmCqbhCaiCRPxEJKh8=">
+<link rel="stylesheet" href="/book.min.5fa1289292eb5e3222d2349e8d9deaae01ee5d99834b1dc07cee7554c8837bdb.css" integrity="sha256-X6EokpLrXjIi0jSejZ3qrgHuXZmDSx3AfO51VMiDe9s=">
 
 
-<script defer src="/en.search.min.cd69dcbc57adb833562b43f1f38bae1ac2260c98f1c7775cd3eeaef066265c87.js" integrity="sha256-zWncvFetuDNWK0Px84uuGsImDJjxx3dc0&#43;6u8GYmXIc="></script>
+<script defer src="/en.search.min.f6af7aaf107e98993b66c1f023305140923412c3b362b6205e4b0b7d66698b72.js" integrity="sha256-9q96rxB&#43;mJk7ZsHwIzBRQJI0EsOzYrYgXksLfWZpi3I="></script>
 
 <!--
 Made with Book Theme
@@ -275,6 +275,24 @@ https://github.com/alex-shpak/hugo-book
 
 
 
+  
+<ul>
+  
+  <li>
+    <a href="https://github.com/solareenlo/" target="_blank" rel="noopener">
+        Github
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://twitter.com/solareenlo/" target="_blank" rel="noopener">
+        Twitter
+      </a>
+  </li>
+  
+</ul>
+
+
 
 
 
@@ -312,53 +330,57 @@ https://github.com/alex-shpak/hugo-book
       
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#ソースからインストール">ソースからインストール</a>
+    <li><a href="#vimとは">Vimとは</a>
       <ul>
-        <li><a href="#スクラッチからインストール">スクラッチからインストール</a></li>
-        <li><a href="#インストールし直す">インストールし直す</a></li>
-        <li><a href="#clipboard機能とclientserver機能を付けてインストール">clipboard機能とclientserver機能を付けてインストール</a></li>
-        <li><a href="#references">References</a></li>
+        <li><a href="#ソースからインストール">ソースからインストール</a>
+          <ul>
+            <li><a href="#スクラッチからインストール">スクラッチからインストール</a></li>
+            <li><a href="#インストールし直す">インストールし直す</a></li>
+            <li><a href="#clipboard機能とclientserver機能を付けてインストール">clipboard機能とclientserver機能を付けてインストール</a></li>
+            <li><a href="#references">References</a></li>
+          </ul>
+        </li>
+        <li><a href="#vimrcの例">.vimrcの例</a></li>
+        <li><a href="#使い方">使い方</a>
+          <ul>
+            <li><a href="#削除">削除</a></li>
+            <li><a href="#置換">置換</a></li>
+            <li><a href="#外部コマンド実行">外部コマンド実行</a></li>
+            <li><a href="#新規にファイル作成">新規にファイル作成</a></li>
+            <li><a href="#references-1">References</a></li>
+          </ul>
+        </li>
+        <li><a href="#オススメのプラグイン">オススメのプラグイン</a></li>
+        <li><a href="#プラグインマネージャー">プラグインマネージャー</a>
+          <ul>
+            <li><a href="#deinvim">dein.vim</a></li>
+          </ul>
+        </li>
+        <li><a href="#コメントアウト">コメントアウト</a>
+          <ul>
+            <li><a href="#tcomment">tcomment</a></li>
+          </ul>
+        </li>
+        <li><a href="#シンボル置換">シンボル置換</a>
+          <ul>
+            <li><a href="#surroundvim">surround.vim</a></li>
+          </ul>
+        </li>
+        <li><a href="#ツリー表示">ツリー表示</a>
+          <ul>
+            <li><a href="#nerdtree">NERDTree</a></li>
+          </ul>
+        </li>
+        <li><a href="#アイコン表示">アイコン表示</a>
+          <ul>
+            <li><a href="#vim-devicons">vim-devicons</a></li>
+            <li><a href="#手順">手順</a></li>
+          </ul>
+        </li>
+        <li><a href="#プラグインランキング">プラグインランキング</a></li>
+        <li><a href="#vim-script">Vim Script</a></li>
       </ul>
     </li>
-    <li><a href="#vimrcの例">.vimrcの例</a></li>
-    <li><a href="#使い方">使い方</a>
-      <ul>
-        <li><a href="#削除">削除</a></li>
-        <li><a href="#置換">置換</a></li>
-        <li><a href="#外部コマンド実行">外部コマンド実行</a></li>
-        <li><a href="#新規にファイル作成">新規にファイル作成</a></li>
-        <li><a href="#references-1">References</a></li>
-      </ul>
-    </li>
-    <li><a href="#オススメのプラグイン">オススメのプラグイン</a></li>
-    <li><a href="#プラグインマネージャー">プラグインマネージャー</a>
-      <ul>
-        <li><a href="#deinvim">dein.vim</a></li>
-      </ul>
-    </li>
-    <li><a href="#コメントアウト">コメントアウト</a>
-      <ul>
-        <li><a href="#tcomment">tcomment</a></li>
-      </ul>
-    </li>
-    <li><a href="#シンボル置換">シンボル置換</a>
-      <ul>
-        <li><a href="#surroundvim">surround.vim</a></li>
-      </ul>
-    </li>
-    <li><a href="#ツリー表示">ツリー表示</a>
-      <ul>
-        <li><a href="#nerdtree">NERDTree</a></li>
-      </ul>
-    </li>
-    <li><a href="#アイコン表示">アイコン表示</a>
-      <ul>
-        <li><a href="#vim-devicons">vim-devicons</a></li>
-        <li><a href="#手順">手順</a></li>
-      </ul>
-    </li>
-    <li><a href="#プラグインランキング">プラグインランキング</a></li>
-    <li><a href="#vim-script">Vim Script</a></li>
   </ul>
 </nav>
 
@@ -510,7 +532,7 @@ vim --version
 </tr>
 <tr>
 <td>:<code>'&lt;,'&gt;</code>s/old/new/g</td>
-<td>ビジュアルモードで選択中の範囲の全ての<code>old</code>を<code>new</code>に置換.<!-- raw HTML omitted --><code>'&lt;,'&gt;</code>の部分は, 範囲を選択中に<code>:</code>を押すと自動的に出る.</td>
+<td>ビジュアルモードで選択中の範囲の全ての<code>old</code>を<code>new</code>に置換.<br><code>'&lt;,'&gt;</code>の部分は, 範囲を選択中に<code>:</code>を押すと自動的に出る.</td>
 </tr>
 </tbody>
 </table>
@@ -844,53 +866,57 @@ ds<span style="color:#2aa198">&#34;
       
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#ソースからインストール">ソースからインストール</a>
+    <li><a href="#vimとは">Vimとは</a>
       <ul>
-        <li><a href="#スクラッチからインストール">スクラッチからインストール</a></li>
-        <li><a href="#インストールし直す">インストールし直す</a></li>
-        <li><a href="#clipboard機能とclientserver機能を付けてインストール">clipboard機能とclientserver機能を付けてインストール</a></li>
-        <li><a href="#references">References</a></li>
+        <li><a href="#ソースからインストール">ソースからインストール</a>
+          <ul>
+            <li><a href="#スクラッチからインストール">スクラッチからインストール</a></li>
+            <li><a href="#インストールし直す">インストールし直す</a></li>
+            <li><a href="#clipboard機能とclientserver機能を付けてインストール">clipboard機能とclientserver機能を付けてインストール</a></li>
+            <li><a href="#references">References</a></li>
+          </ul>
+        </li>
+        <li><a href="#vimrcの例">.vimrcの例</a></li>
+        <li><a href="#使い方">使い方</a>
+          <ul>
+            <li><a href="#削除">削除</a></li>
+            <li><a href="#置換">置換</a></li>
+            <li><a href="#外部コマンド実行">外部コマンド実行</a></li>
+            <li><a href="#新規にファイル作成">新規にファイル作成</a></li>
+            <li><a href="#references-1">References</a></li>
+          </ul>
+        </li>
+        <li><a href="#オススメのプラグイン">オススメのプラグイン</a></li>
+        <li><a href="#プラグインマネージャー">プラグインマネージャー</a>
+          <ul>
+            <li><a href="#deinvim">dein.vim</a></li>
+          </ul>
+        </li>
+        <li><a href="#コメントアウト">コメントアウト</a>
+          <ul>
+            <li><a href="#tcomment">tcomment</a></li>
+          </ul>
+        </li>
+        <li><a href="#シンボル置換">シンボル置換</a>
+          <ul>
+            <li><a href="#surroundvim">surround.vim</a></li>
+          </ul>
+        </li>
+        <li><a href="#ツリー表示">ツリー表示</a>
+          <ul>
+            <li><a href="#nerdtree">NERDTree</a></li>
+          </ul>
+        </li>
+        <li><a href="#アイコン表示">アイコン表示</a>
+          <ul>
+            <li><a href="#vim-devicons">vim-devicons</a></li>
+            <li><a href="#手順">手順</a></li>
+          </ul>
+        </li>
+        <li><a href="#プラグインランキング">プラグインランキング</a></li>
+        <li><a href="#vim-script">Vim Script</a></li>
       </ul>
     </li>
-    <li><a href="#vimrcの例">.vimrcの例</a></li>
-    <li><a href="#使い方">使い方</a>
-      <ul>
-        <li><a href="#削除">削除</a></li>
-        <li><a href="#置換">置換</a></li>
-        <li><a href="#外部コマンド実行">外部コマンド実行</a></li>
-        <li><a href="#新規にファイル作成">新規にファイル作成</a></li>
-        <li><a href="#references-1">References</a></li>
-      </ul>
-    </li>
-    <li><a href="#オススメのプラグイン">オススメのプラグイン</a></li>
-    <li><a href="#プラグインマネージャー">プラグインマネージャー</a>
-      <ul>
-        <li><a href="#deinvim">dein.vim</a></li>
-      </ul>
-    </li>
-    <li><a href="#コメントアウト">コメントアウト</a>
-      <ul>
-        <li><a href="#tcomment">tcomment</a></li>
-      </ul>
-    </li>
-    <li><a href="#シンボル置換">シンボル置換</a>
-      <ul>
-        <li><a href="#surroundvim">surround.vim</a></li>
-      </ul>
-    </li>
-    <li><a href="#ツリー表示">ツリー表示</a>
-      <ul>
-        <li><a href="#nerdtree">NERDTree</a></li>
-      </ul>
-    </li>
-    <li><a href="#アイコン表示">アイコン表示</a>
-      <ul>
-        <li><a href="#vim-devicons">vim-devicons</a></li>
-        <li><a href="#手順">手順</a></li>
-      </ul>
-    </li>
-    <li><a href="#プラグインランキング">プラグインランキング</a></li>
-    <li><a href="#vim-script">Vim Script</a></li>
   </ul>
 </nav>
 
