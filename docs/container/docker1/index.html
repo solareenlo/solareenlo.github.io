@@ -28,7 +28,7 @@
   Dockerのメリット/デメリット メリット  ゲストOSはホストのKernelを直接使うためオーバーヘッドが小さくて高速 ゲストOSがそれぞれにKernelを持たないため, Memory消費量やDisk消費量を節約できる 必要とする資源が少ないため, 多くのゲストOSを立ち上げることが可能 Kernelを新しく起動する必要がないため, ゲストOSの起動が速い コンテナのイメージ(雛形)からコンテナ(実体)を作るため, 同一構成のOSを簡単に複数作れる テストが通ったイメージは本番環境でもすぐに使える(開発とデプロイのサイクルが速い) Reference: Dockerの利点  デメリット  提供できるホストの種類が少ない(ホストOSのKernelにLinux使ってたらゲストOSのKernelにWindows Serverは使えない) 完全仮想化に比べて, 管理者が学ぶべきことが多い Reference: Dockerの欠点  なぜrootユーザーか Dockerはroot権限で動いているデーモン(dockerd)とunixソケットまたはtcp/ipで通信しているが, dockerdにアクセスするにはdockerグループに所属しているかroot権限が必要." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://solareenlo.com/docs/container/docker1/" />
-<meta property="article:modified_time" content="2020-03-20T07:56:42+09:00" />
+<meta property="article:modified_time" content="2020-03-20T08:26:13+09:00" />
 <title>Docker1 | solareenlo</title>
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 
@@ -982,7 +982,7 @@ docker run -p 80:4000 --mount <span style="color:#268bd2">type</span><span style
 
   <div>
     
-    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/commit/bea798d93c9116bad5b5ceb26ca3159b372095e9" title='Last modified by solareenlo | Mar 20, 2020' target="_blank" rel="noopener">
+    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/commit/0e38baa1d802d4c43252be1f2a8128fe424abf61" title='Last modified by solareenlo | Mar 20, 2020' target="_blank" rel="noopener">
       <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
       <span>Mar 20, 2020</span>
     </a>

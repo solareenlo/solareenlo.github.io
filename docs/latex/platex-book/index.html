@@ -8,7 +8,7 @@
 <meta property="og:description" content="pLaTeXで本を作成する方法  総合開発環境を使う方法とコマンドラインを使う方法の2種類がある.  Mac編   TexShopというlatexの総合開発環境を使うのが簡単.  Ubuntu編  Ubuntuでは総合開発環境を使わずに, TeX Live(TeXのディストリビューション)とzathura(pdfビューア)を使って, コマンドラインで作成していく.  TeX Liveのインストール # ミラーサイトからinstall-tl-unx.tar.gzをダウンロードする # wget を使用する場合 wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz # curl を使用する場合 curl -O http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz # install-tl-unx.tar.gzを展開する tar xvf install-tl-unx.tar.gz # 展開したディレクトリに移動する cd install-tl* # root権限でインストーラを実行する # Iを入力してインストールを開始する sudo ./install-tl -no-gui -repository http://mirror.ctan.org/systems/texlive/tlnet/ # インストールが途中でストップした場合は, 以下のコマンドで再開する sudo ./install-tl -no-gui -profile installation.profile # インストールが終了したら /usr/local/bin ディレクトリ配下にシンボリックリンクを追加する # ????はバージョンを入力する sudo /usr/local/texlive/????/bin/*/tlmgr path add  Reference: https://texwiki.texjp.org/?Linux  Tex Liveのアップデート sudo tlmgr update --self --all pdfビューアのインストール  ここでは pwmt/zathuraをインストールする." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://solareenlo.com/docs/latex/platex-book/" />
-<meta property="article:modified_time" content="2020-03-20T07:56:42+09:00" />
+<meta property="article:modified_time" content="2020-03-20T08:26:13+09:00" />
 <title>Platex Book | solareenlo</title>
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 
@@ -516,7 +516,7 @@ cat ~/.config/zathura/zathurarc
 
   <div>
     
-    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/commit/bea798d93c9116bad5b5ceb26ca3159b372095e9" title='Last modified by solareenlo | Mar 20, 2020' target="_blank" rel="noopener">
+    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/commit/0e38baa1d802d4c43252be1f2a8128fe424abf61" title='Last modified by solareenlo | Mar 20, 2020' target="_blank" rel="noopener">
       <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
       <span>Mar 20, 2020</span>
     </a>
