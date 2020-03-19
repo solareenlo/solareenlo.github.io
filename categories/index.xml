@@ -1,14 +1,32 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on solareenlo</title>
     <link>https://solareenlo.com/categories/</link>
     <description>Recent content in Categories on solareenlo</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 17 Oct 2019 19:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 15 Mar 2020 02:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://solareenlo.com/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>42Tokyo</title>
+      <link>https://solareenlo.com/categories/42Tokyo/</link>
+      <pubDate>Sun, 15 Mar 2020 02:00:00 +0900</pubDate>
+      
+      <guid>https://solareenlo.com/categories/42Tokyo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>piscine</title>
+      <link>https://solareenlo.com/categories/piscine/</link>
+      <pubDate>Sun, 15 Mar 2020 02:00:00 +0900</pubDate>
+      
+      <guid>https://solareenlo.com/categories/piscine/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>fintech</title>
@@ -20,20 +38,20 @@
     </item>
     
     <item>
-      <title>blockchain</title>
-      <link>https://solareenlo.com/categories/blockchain/</link>
+      <title>Blockchain</title>
+      <link>https://solareenlo.com/categories/Blockchain/</link>
       <pubDate>Wed, 16 Oct 2019 19:00:00 +0900</pubDate>
       
-      <guid>https://solareenlo.com/categories/blockchain/</guid>
+      <guid>https://solareenlo.com/categories/Blockchain/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>meetup</title>
-      <link>https://solareenlo.com/categories/meetup/</link>
+      <title>Meetup</title>
+      <link>https://solareenlo.com/categories/Meetup/</link>
       <pubDate>Wed, 16 Oct 2019 19:00:00 +0900</pubDate>
       
-      <guid>https://solareenlo.com/categories/meetup/</guid>
+      <guid>https://solareenlo.com/categories/Meetup/</guid>
       <description></description>
     </item>
     
@@ -52,24 +70,6 @@
       <pubDate>Fri, 11 Oct 2019 19:30:00 +0900</pubDate>
       
       <guid>https://solareenlo.com/categories/Meet-up/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Blockchain</title>
-      <link>https://solareenlo.com/categories/Blockchain/</link>
-      <pubDate>Thu, 10 Oct 2019 18:30:00 +0900</pubDate>
-      
-      <guid>https://solareenlo.com/categories/Blockchain/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Meetup</title>
-      <link>https://solareenlo.com/categories/Meetup/</link>
-      <pubDate>Thu, 10 Oct 2019 18:30:00 +0900</pubDate>
-      
-      <guid>https://solareenlo.com/categories/Meetup/</guid>
       <description></description>
     </item>
     

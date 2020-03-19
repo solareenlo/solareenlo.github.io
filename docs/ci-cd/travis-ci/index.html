@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Travis CIとは  GitHub上のソフトウェアのビルドやテストを行う, オンラインで分散型の継続的インテグレーション(CI)サービスのこと. https://travis-ci.org が無料でオープンソースのプロジェクト用, https://travis-ci.com が有料でプライベートリポジトリ用の利用ができる.  Travis CiからAWS Elastic Beanstalkへ   AWS Elastic Beanstalk Deployment  Dokcerのテストがpassedにならない時の対処法 Travis CIでDockerのテストを以下のように設定するとpassedにならないことがある.
+script: docker run solareenlo/react-test npm run test -- --coverage そんな時は以下のようにテストを設定する.
+script: docker run -e CI=true solareenlo/react-test npm run test -- --watchAll=falseb 環境変数が設定できない時 Travis CIの環境変数を設定する項目では特殊文字(; &amp; ( ) | ^ &lt; &gt; ? * [ ] $ ` &#39; &quot; \ ! { } 改行 タブ スペース)がそのままの入力ではエスケープされないので, シングルクォーテーション(&#39;&#39;)で囲む必要がある."><meta property="og:title" content="" />
+<meta property="og:description" content="Travis CIとは  GitHub上のソフトウェアのビルドやテストを行う, オンラインで分散型の継続的インテグレーション(CI)サービスのこと. https://travis-ci.org が無料でオープンソースのプロジェクト用, https://travis-ci.com が有料でプライベートリポジトリ用の利用ができる.  Travis CiからAWS Elastic Beanstalkへ   AWS Elastic Beanstalk Deployment  Dokcerのテストがpassedにならない時の対処法 Travis CIでDockerのテストを以下のように設定するとpassedにならないことがある.
+script: docker run solareenlo/react-test npm run test -- --coverage そんな時は以下のようにテストを設定する.
+script: docker run -e CI=true solareenlo/react-test npm run test -- --watchAll=falseb 環境変数が設定できない時 Travis CIの環境変数を設定する項目では特殊文字(; &amp; ( ) | ^ &lt; &gt; ? * [ ] $ ` &#39; &quot; \ ! { } 改行 タブ スペース)がそのままの入力ではエスケープされないので, シングルクォーテーション(&#39;&#39;)で囲む必要がある." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://solareenlo.com/docs/ci-cd/travis-ci/" />
+<meta property="article:modified_time" content="2020-03-20T07:56:42+09:00" />
+<title>Travis Ci | solareenlo</title>
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/book.min.5fa1289292eb5e3222d2349e8d9deaae01ee5d99834b1dc07cee7554c8837bdb.css" integrity="sha256-X6EokpLrXjIi0jSejZ3qrgHuXZmDSx3AfO51VMiDe9s=">
+
+
+<script defer src="/en.search.min.844700da278f680d62ac5ca6567f92e5956d82d24388836ec3df22a102ef0194.js" integrity="sha256-hEcA2iePaA1irFymVn&#43;S5ZVtgtJDiINuw98ioQLvAZQ="></script>
+
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><span>solareenlo</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        Blog
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+
+  
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/programming/" class="collapsed ">Programming</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/pl/" class="collapsed ">Programming Language</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/latex/" class="collapsed ">LaTeX</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/vps/" class="collapsed ">VPS</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/db/" class="collapsed ">DB</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/cloud/" class="collapsed ">Cloud</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/ci-cd/" class="collapsed ">CI/CD</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  
+  <a href="/docs/ci-cd/circleci/" class="">Circleci</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/ci-cd/jenkins/" class="">Jenkins</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/ci-cd/travis-ci/" class="active">Travis Ci</a>
+  
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/container/" class="collapsed ">Conatainer</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/crypto/" class="collapsed ">Crypto</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://github.com/solareenlo/" target="_blank" rel="noopener">
+        Github
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://twitter.com/solareenlo/" target="_blank" rel="noopener">
+        Twitter
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Travis Ci</strong>
+
+  <label for="toc-control">
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+  </label>
+</div>
+
+
+  
+    <input type="checkbox" class="hidden" id="toc-control" />
+    <aside class="hidden clearfix">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#travis-ciとは">Travis CIとは</a>
+      <ul>
+        <li><a href="#travis-ciからaws-elastic-beanstalkへ">Travis CiからAWS Elastic Beanstalkへ</a></li>
+        <li><a href="#dokcerのテストがpassedにならない時の対処法">Dokcerのテストがpassedにならない時の対処法</a></li>
+        <li><a href="#環境変数が設定できない時">環境変数が設定できない時</a></li>
+        <li><a href="#秘密情報を暗号化">秘密情報を暗号化</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+    </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="travis-ciとは">Travis CIとは</h1>
+<ul>
+<li>GitHub上のソフトウェアのビルドやテストを行う, オンラインで分散型の継続的インテグレーション(CI)サービスのこと.</li>
+<li><a href="https://travis-ci.org">https://travis-ci.org</a> が無料でオープンソースのプロジェクト用, <a href="https://travis-ci.com">https://travis-ci.com</a> が有料でプライベートリポジトリ用の利用ができる.</li>
+</ul>
+<h2 id="travis-ciからaws-elastic-beanstalkへ">Travis CiからAWS Elastic Beanstalkへ</h2>
+<ul>
+<li>
+  <a href="https://docs.travis-ci.com/user/deployment/elasticbeanstalk/">AWS Elastic Beanstalk Deployment</a></li>
+</ul>
+<h2 id="dokcerのテストがpassedにならない時の対処法">Dokcerのテストがpassedにならない時の対処法</h2>
+<p>Travis CIでDockerのテストを以下のように設定するとpassedにならないことがある.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#719e07">script</span>:
+  docker run solareenlo/react-test npm run test -- --coverage
+</code></pre></div><p>そんな時は以下のようにテストを設定する.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#719e07">script</span>:
+  docker run -e CI=<span style="color:#cb4b16">true</span> solareenlo/react-test npm run test -- --watchAll=falseb
+</code></pre></div><h2 id="環境変数が設定できない時">環境変数が設定できない時</h2>
+<p>Travis CIの環境変数を設定する項目では特殊文字(; &amp; ( ) | ^ &lt; &gt; ? * [ ] $ ` ' &quot; \ ! { } 改行 タブ スペース)がそのままの入力ではエスケープされないので, シングルクォーテーション('')で囲む必要がある.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># 例</span>
+<span style="color:#719e07">=</span>rrTDKhZYgT2Zm4&amp;TF+D^pyp84Uf9<span style="color:#719e07">[</span>Tw7xZ9Parhx<span style="color:#719e07">[</span><span style="color:#268bd2">$A83QCGRb</span>.NKxAnqUd%7<span style="color:#719e07">(</span>t
+</code></pre></div><p>を</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># 例</span>
+<span style="color:#2aa198">&#39;=rrTDKhZYgT2Zm4&amp;TF+D^pyp84Uf9[Tw7xZ9Parhx[$A83QCGRb.NKxAnqUd%7(t&#39;</span>
+</code></pre></div><p>と入力する.</p>
+<h2 id="秘密情報を暗号化">秘密情報を暗号化</h2>
+<p>DockerでTravis CLIを使って送る.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run -it -v <span style="color:#719e07">$(</span><span style="color:#b58900">pwd</span><span style="color:#719e07">)</span>:/app ruby:2.3 sh
+gem install travis --no-document
+gem install travis
+travis login
+&gt; Username:
+solareenlo
+&gt; Password <span style="color:#719e07">for</span> solareenlo:
+******************************
+&gt; Two-factor authentication code <span style="color:#719e07">for</span> solareenlo:
+<span style="color:#2aa198">999999</span>
+&gt; Successfully logged in as solareenlo!
+<span style="color:#586e75"># そして$(pwd)に秘匿情報が載ったファイル(ここではservice-account.json)を置いて,</span>
+<span style="color:#586e75"># 以下でTravis CIのsolareenlo/multi-k8s-gke用にservice-account.jsonを暗号化するし,</span>
+<span style="color:#586e75"># Travis CIの当該プロジェクトに登録もする.</span>
+travis encrypt-file service-account.json -r solareenlo/multi-k8s-gke
+</code></pre></div><p>これで, <code>service-account.json</code>ファイルから暗号化された<code>service-account.json.enc</code>ファイルが作成される.</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex justify-between">
+
+
+
+  <div>
+    
+    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/commit/bea798d93c9116bad5b5ceb26ca3159b372095e9" title='Last modified by solareenlo | Mar 20, 2020' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>Mar 20, 2020</span>
+    </a>
+  </div>
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/edit/master/content/docs/ci-cd/travis-ci.md" target="_blank" rel="noopener">
+      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#travis-ciとは">Travis CIとは</a>
+      <ul>
+        <li><a href="#travis-ciからaws-elastic-beanstalkへ">Travis CiからAWS Elastic Beanstalkへ</a></li>
+        <li><a href="#dokcerのテストがpassedにならない時の対処法">Dokcerのテストがpassedにならない時の対処法</a></li>
+        <li><a href="#環境変数が設定できない時">環境変数が設定できない時</a></li>
+        <li><a href="#秘密情報を暗号化">秘密情報を暗号化</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

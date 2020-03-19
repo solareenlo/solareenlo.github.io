@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>42Tokyo on solareenlo</title>
+    <link>https://solareenlo.com/categories/42Tokyo/</link>
+    <description>Recent content in 42Tokyo on solareenlo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 15 Mar 2020 02:00:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://solareenlo.com/categories/42Tokyo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>42Tokyo の Piscine を受けてきました．</title>
+      <link>https://solareenlo.com/posts/42tokyo/</link>
+      <pubDate>Sun, 15 Mar 2020 02:00:00 +0900</pubDate>
+      
+      <guid>https://solareenlo.com/posts/42tokyo/</guid>
+      <description>感想 とても楽しかったです．</description>
+    </item>
+    
+  </channel>
+</rss>

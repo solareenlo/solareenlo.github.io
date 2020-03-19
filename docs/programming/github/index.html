@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="GitHubとは  ソフトウェア開発のプラットフォーム兼ソースコードなどのホスティングサービス. https://github.com  GitHubとGitLab同時にpush 先ずは普通にGitHubとGitLabにリポジトリを作成し, リモートリポジトリを追加する.
+# GitLabのリポジトリをリモートに追加 git remote set-url --add origin git@gitlab.com/solareenlo/リポジトリ名.git # 確認 git remote -v &gt; origin git@github.com:solareenlo/リポジトリ名.git (fetch) &gt; origin git@github.com:solareenlo/リポジトリ名.git (push) &gt; origin git@gitlab.com:solareenlo/リポジトリ名.git (push) # 以下を行うとGitHubとGitLabに同時にpushされる. git push -u origin master リポジトリに他のリポジトリをリンク付けする git submodule add -b &lt;リンク付けする方のブランチ名&gt; &lt;リンク付けする方のURL&gt; &lt;リンク付けされるディレクトリ名&gt; リポジトリをforkして更新する fork -&gt; clone -&gt; remote -&gt; fetch -&gt; marge -&gt; push
+ssh接続ができなくなったときは ~/.ssh/configの中身を
+Host github github.com Hostname github.com Port 22 User git IdentityFile ~/."><meta property="og:title" content="" />
+<meta property="og:description" content="GitHubとは  ソフトウェア開発のプラットフォーム兼ソースコードなどのホスティングサービス. https://github.com  GitHubとGitLab同時にpush 先ずは普通にGitHubとGitLabにリポジトリを作成し, リモートリポジトリを追加する.
+# GitLabのリポジトリをリモートに追加 git remote set-url --add origin git@gitlab.com/solareenlo/リポジトリ名.git # 確認 git remote -v &gt; origin git@github.com:solareenlo/リポジトリ名.git (fetch) &gt; origin git@github.com:solareenlo/リポジトリ名.git (push) &gt; origin git@gitlab.com:solareenlo/リポジトリ名.git (push) # 以下を行うとGitHubとGitLabに同時にpushされる. git push -u origin master リポジトリに他のリポジトリをリンク付けする git submodule add -b &lt;リンク付けする方のブランチ名&gt; &lt;リンク付けする方のURL&gt; &lt;リンク付けされるディレクトリ名&gt; リポジトリをforkして更新する fork -&gt; clone -&gt; remote -&gt; fetch -&gt; marge -&gt; push
+ssh接続ができなくなったときは ~/.ssh/configの中身を
+Host github github.com Hostname github.com Port 22 User git IdentityFile ~/." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://solareenlo.com/docs/programming/github/" />
+<meta property="article:modified_time" content="2020-03-20T07:56:42+09:00" />
+<title>Github | solareenlo</title>
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/book.min.5fa1289292eb5e3222d2349e8d9deaae01ee5d99834b1dc07cee7554c8837bdb.css" integrity="sha256-X6EokpLrXjIi0jSejZ3qrgHuXZmDSx3AfO51VMiDe9s=">
+
+
+<script defer src="/en.search.min.844700da278f680d62ac5ca6567f92e5956d82d24388836ec3df22a102ef0194.js" integrity="sha256-hEcA2iePaA1irFymVn&#43;S5ZVtgtJDiINuw98ioQLvAZQ="></script>
+
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><span>solareenlo</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        Blog
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+
+  
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/programming/" class="collapsed ">Programming</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  
+  <a href="/docs/programming/command/" class="">Command</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/programming/git/" class="">Git</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/programming/github/" class="active">Github</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/programming/linter-formatter/" class="">Linter Formatter</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/programming/password-manager/" class="">Password Manager</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/programming/sed/" class="">Sed</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/programming/shell-script/" class="">Shell Script</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/programming/terminal/" class="">Terminal</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/programming/test/" class="">Test</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/programming/vim/" class="">Vim</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/programming/vimium/" class="">Vimium</a>
+  
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/pl/" class="collapsed ">Programming Language</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/latex/" class="collapsed ">LaTeX</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/vps/" class="collapsed ">VPS</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/db/" class="collapsed ">DB</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/cloud/" class="collapsed ">Cloud</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/ci-cd/" class="collapsed ">CI/CD</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/container/" class="collapsed ">Conatainer</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/crypto/" class="collapsed ">Crypto</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://github.com/solareenlo/" target="_blank" rel="noopener">
+        Github
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://twitter.com/solareenlo/" target="_blank" rel="noopener">
+        Twitter
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Github</strong>
+
+  <label for="toc-control">
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+  </label>
+</div>
+
+
+  
+    <input type="checkbox" class="hidden" id="toc-control" />
+    <aside class="hidden clearfix">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#githubとは">GitHubとは</a>
+      <ul>
+        <li><a href="#githubとgitlab同時にpush">GitHubとGitLab同時にpush</a></li>
+        <li><a href="#リポジトリに他のリポジトリをリンク付けする">リポジトリに他のリポジトリをリンク付けする</a></li>
+        <li><a href="#リポジトリをforkして更新する">リポジトリをforkして更新する</a></li>
+        <li><a href="#ssh接続ができなくなったときは">ssh接続ができなくなったときは</a></li>
+        <li><a href="#スライドショー">スライドショー</a></li>
+        <li><a href="#チートシート">チートシート</a></li>
+      </ul>
+    </li>
+    <li><a href="#github-pagesとは">GitHub Pagesとは</a>
+      <ul>
+        <li><a href="#静的サイトを公開する">静的サイトを公開する</a></li>
+        <li><a href="#サブドメインを割り当てる">サブドメインを割り当てる</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+    </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="githubとは">GitHubとは</h1>
+<ul>
+<li>ソフトウェア開発のプラットフォーム兼ソースコードなどのホスティングサービス.</li>
+<li><a href="https://github.com">https://github.com</a></li>
+</ul>
+<h2 id="githubとgitlab同時にpush">GitHubとGitLab同時にpush</h2>
+<p>先ずは普通にGitHubとGitLabにリポジトリを作成し,
+リモートリポジトリを追加する.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># GitLabのリポジトリをリモートに追加</span>
+git remote set-url --add origin git@gitlab.com/solareenlo/リポジトリ名.git
+<span style="color:#586e75"># 確認</span>
+git remote -v
+&gt; origin  git@github.com:solareenlo/リポジトリ名.git <span style="color:#719e07">(</span>fetch<span style="color:#719e07">)</span>
+&gt; origin  git@github.com:solareenlo/リポジトリ名.git <span style="color:#719e07">(</span>push<span style="color:#719e07">)</span>
+&gt; origin  git@gitlab.com:solareenlo/リポジトリ名.git <span style="color:#719e07">(</span>push<span style="color:#719e07">)</span>
+<span style="color:#586e75"># 以下を行うとGitHubとGitLabに同時にpushされる.</span>
+git push -u origin master
+</code></pre></div><h2 id="リポジトリに他のリポジトリをリンク付けする">リポジトリに他のリポジトリをリンク付けする</h2>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git submodule add -b &lt;リンク付けする方のブランチ名&gt; &lt;リンク付けする方のURL&gt; &lt;リンク付けされるディレクトリ名&gt;
+</code></pre></div><h2 id="リポジトリをforkして更新する">リポジトリをforkして更新する</h2>
+<p>fork -&gt; clone -&gt; remote -&gt; fetch -&gt; marge -&gt; push</p>
+<h2 id="ssh接続ができなくなったときは">ssh接続ができなくなったときは</h2>
+<p><code>~/.ssh/config</code>の中身を</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Host github github.com
+  Hostname github.com
+  Port <span style="color:#2aa198">22</span>
+  User git
+  IdentityFile ~/.ssh/id_git_rsa
+</code></pre></div><p>のように, Hostのところに<code>github.com</code>を追加してみる.</p>
+<h2 id="スライドショー">スライドショー</h2>
+<ul>
+<li>
+  <a href="https://github.com/hiroppy/fusuma">hiroppy/fusuma</a></li>
+<li>
+  <a href="https://github.com/hakimel/reveal.js">hakimel/reveal.js</a></li>
+<li>
+  <a href="https://github.com/gnab/remark">gnab/remark</a></li>
+<li>
+  <a href="https://github.com/gitpitch/gitpitch">gitpitch/gitpitch</a></li>
+</ul>
+<h2 id="チートシート">チートシート</h2>
+<ul>
+<li>
+  <a href="https://github.github.com/training-kit/">Git Cheat Sheets</a></li>
+</ul>
+<h1 id="github-pagesとは">GitHub Pagesとは</h1>
+<ul>
+<li>GitHubの静的サイトホスティングサービスのこと.</li>
+</ul>
+<h2 id="静的サイトを公開する">静的サイトを公開する</h2>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#b58900">cd</span> 作業ディレクトリ名
+git checkout -b gh-pages
+vim index.html // index.htmlを作成
+git push -u origin gh-pages
+</code></pre></div><p>gh-pagesという名前のブランチにindex.htmlファイルを作っておけば, それが静的サイトとして「https://ユーザー名.github.io/リポジトリ名」として公開される.</p>
+<h2 id="サブドメインを割り当てる">サブドメインを割り当てる</h2>
+<ul>
+<li>GitHub Pagesでサブドメインを割り当てる時はCNAMEを使用する.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>ホスト名</th>
+<th>TYPE</th>
+<th>TTL</th>
+<th>VALUE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>docs.iotajapan.com</td>
+<td>CNAME</td>
+<td>3600</td>
+<td>iotajapan.github.io</td>
+</tr>
+</tbody>
+</table>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex justify-between">
+
+
+
+  <div>
+    
+    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/commit/bea798d93c9116bad5b5ceb26ca3159b372095e9" title='Last modified by solareenlo | Mar 20, 2020' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>Mar 20, 2020</span>
+    </a>
+  </div>
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/edit/master/content/docs/programming/github.md" target="_blank" rel="noopener">
+      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#githubとは">GitHubとは</a>
+      <ul>
+        <li><a href="#githubとgitlab同時にpush">GitHubとGitLab同時にpush</a></li>
+        <li><a href="#リポジトリに他のリポジトリをリンク付けする">リポジトリに他のリポジトリをリンク付けする</a></li>
+        <li><a href="#リポジトリをforkして更新する">リポジトリをforkして更新する</a></li>
+        <li><a href="#ssh接続ができなくなったときは">ssh接続ができなくなったときは</a></li>
+        <li><a href="#スライドショー">スライドショー</a></li>
+        <li><a href="#チートシート">チートシート</a></li>
+      </ul>
+    </li>
+    <li><a href="#github-pagesとは">GitHub Pagesとは</a>
+      <ul>
+        <li><a href="#静的サイトを公開する">静的サイトを公開する</a></li>
+        <li><a href="#サブドメインを割り当てる">サブドメインを割り当てる</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

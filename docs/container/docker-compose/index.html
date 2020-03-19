@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Docker Composeとは  複数のコンテナで構成されるアプリケーションを定義と実行するためのツールのこと. Dockerとは切り離されてる. Composeはアプリケーションのサービスをファイルで定義する. Dockerコマンドと高い親和性があるため, 学習コストが比較的低い. Swarmモードにサービスをデプロイできるオーケストレーション機能もある. Reference: Docker Compose 徹底解説 GitHubリポジトリ: https://github.com/docker/compose  活用場面  利用者視点 docker-compose.ymlがあれば, すぐに何でも実行できる. 開発者視点 環境の再構築が簡単 バージョン違いの環境を作りやすい 1つのマシン上に, 複数の環境を立ち上げられやすい  適切に書かれたYAMLファイルさえあれば, 誰でも簡単に環境構築もアプリケーション実行もできるのが強み.
+インストール  https://docs.docker.com/compose/install/  docker-compose.ymlの書き方  services:(使うイメージ), networks:(使うネットワーク), volumes:(使うボリューム)を定義する. docker-compose.ymlの書き方 -&gt; Docker Compose - docker-compose.yml リファレンス  公式Reference   Compose file version 3 reference  working directory指定 working_dirを使う.
+version: &#39;3&#39; services: angular: image: angular-first-app ports: - &#34;4200:4200&#34; volumes: - .:/usr/src/app working_dir: /usr/src/app/first-app command: ng serve --host=0."><meta property="og:title" content="" />
+<meta property="og:description" content="Docker Composeとは  複数のコンテナで構成されるアプリケーションを定義と実行するためのツールのこと. Dockerとは切り離されてる. Composeはアプリケーションのサービスをファイルで定義する. Dockerコマンドと高い親和性があるため, 学習コストが比較的低い. Swarmモードにサービスをデプロイできるオーケストレーション機能もある. Reference: Docker Compose 徹底解説 GitHubリポジトリ: https://github.com/docker/compose  活用場面  利用者視点 docker-compose.ymlがあれば, すぐに何でも実行できる. 開発者視点 環境の再構築が簡単 バージョン違いの環境を作りやすい 1つのマシン上に, 複数の環境を立ち上げられやすい  適切に書かれたYAMLファイルさえあれば, 誰でも簡単に環境構築もアプリケーション実行もできるのが強み.
+インストール  https://docs.docker.com/compose/install/  docker-compose.ymlの書き方  services:(使うイメージ), networks:(使うネットワーク), volumes:(使うボリューム)を定義する. docker-compose.ymlの書き方 -&gt; Docker Compose - docker-compose.yml リファレンス  公式Reference   Compose file version 3 reference  working directory指定 working_dirを使う.
+version: &#39;3&#39; services: angular: image: angular-first-app ports: - &#34;4200:4200&#34; volumes: - .:/usr/src/app working_dir: /usr/src/app/first-app command: ng serve --host=0." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://solareenlo.com/docs/container/docker-compose/" />
+<meta property="article:modified_time" content="2020-03-20T07:56:42+09:00" />
+<title>Docker Compose | solareenlo</title>
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/book.min.5fa1289292eb5e3222d2349e8d9deaae01ee5d99834b1dc07cee7554c8837bdb.css" integrity="sha256-X6EokpLrXjIi0jSejZ3qrgHuXZmDSx3AfO51VMiDe9s=">
+
+
+<script defer src="/en.search.min.844700da278f680d62ac5ca6567f92e5956d82d24388836ec3df22a102ef0194.js" integrity="sha256-hEcA2iePaA1irFymVn&#43;S5ZVtgtJDiINuw98ioQLvAZQ="></script>
+
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><span>solareenlo</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        Blog
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+
+  
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/programming/" class="collapsed ">Programming</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/pl/" class="collapsed ">Programming Language</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/latex/" class="collapsed ">LaTeX</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/vps/" class="collapsed ">VPS</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/db/" class="collapsed ">DB</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/cloud/" class="collapsed ">Cloud</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/ci-cd/" class="collapsed ">CI/CD</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/container/" class="collapsed ">Conatainer</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  
+  <a href="/docs/container/docker-compose/" class="active">Docker Compose</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/container/docker-hub/" class="">Docker Hub</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/container/docker1/" class="">Docker1</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/container/docker2/" class="">Docker2</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/container/kubernetes/" class="">Kubernetes</a>
+  
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/crypto/" class="collapsed ">Crypto</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://github.com/solareenlo/" target="_blank" rel="noopener">
+        Github
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://twitter.com/solareenlo/" target="_blank" rel="noopener">
+        Twitter
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Docker Compose</strong>
+
+  <label for="toc-control">
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+  </label>
+</div>
+
+
+  
+    <input type="checkbox" class="hidden" id="toc-control" />
+    <aside class="hidden clearfix">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#docker-composeとは">Docker Composeとは</a>
+      <ul>
+        <li><a href="#活用場面">活用場面</a></li>
+        <li><a href="#インストール">インストール</a></li>
+        <li><a href="#docker-composeymlの書き方">docker-compose.ymlの書き方</a>
+          <ul>
+            <li><a href="#公式reference">公式Reference</a></li>
+            <li><a href="#working-directory指定">working directory指定</a></li>
+          </ul>
+        </li>
+        <li><a href="#起動と停止">起動と停止</a></li>
+        <li><a href="#nginxとhttpd">nginxとhttpd</a></li>
+        <li><a href="#drupalとpostgresql">DrupalとPostgreSQL</a></li>
+        <li><a href="#nodejsとredix">Node.jsとRedix</a></li>
+        <li><a href="#複数のイメージを作る">複数のイメージを作る</a></li>
+        <li><a href="#dockerfileでカスタムイメージを作成しつつdocker-composeで動かす">dockerfileでカスタムイメージを作成しつつdocker-composeで動かす</a></li>
+        <li><a href="#テストを行う">テストを行う</a></li>
+        <li><a href="#環境変数">環境変数</a></li>
+        <li><a href="#volumes">volumes</a></li>
+        <li><a href="#awsで動かした例">AWSで動かした例</a></li>
+        <li><a href="#nodejsを動かした例">Node.jsを動かした例</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+    </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="docker-composeとは">Docker Composeとは</h1>
+<ul>
+<li>複数のコンテナで構成されるアプリケーションを定義と実行するためのツールのこと.</li>
+<li>Dockerとは切り離されてる.</li>
+<li>Composeはアプリケーションのサービスをファイルで定義する.</li>
+<li>Dockerコマンドと高い親和性があるため, 学習コストが比較的低い.</li>
+<li>Swarmモードにサービスをデプロイできるオーケストレーション機能もある.</li>
+<li><strong>Reference:</strong> 
+  <a href="https://www.slideshare.net/zembutsu/docker-compose-guidebook">Docker Compose 徹底解説</a></li>
+<li><strong>GitHubリポジトリ:</strong> <a href="https://github.com/docker/compose">https://github.com/docker/compose</a></li>
+</ul>
+<h2 id="活用場面">活用場面</h2>
+<ul>
+<li>利用者視点</li>
+<li><code>docker-compose.yml</code>があれば, すぐに何でも実行できる.</li>
+<li>開発者視点</li>
+<li>環境の再構築が簡単</li>
+<li>バージョン違いの環境を作りやすい</li>
+<li>1つのマシン上に, 複数の環境を立ち上げられやすい</li>
+</ul>
+<p>適切に書かれたYAMLファイルさえあれば, 誰でも簡単に環境構築もアプリケーション実行もできるのが強み.</p>
+<h2 id="インストール">インストール</h2>
+<ul>
+<li><a href="https://docs.docker.com/compose/install/">https://docs.docker.com/compose/install/</a></li>
+</ul>
+<h2 id="docker-composeymlの書き方">docker-compose.ymlの書き方</h2>
+<ul>
+<li><strong>services:</strong>(使うイメージ), <strong>networks:</strong>(使うネットワーク), <strong>volumes:</strong>(使うボリューム)を定義する.</li>
+<li>docker-compose.ymlの書き方 -&gt; 
+  <a href="https://qiita.com/zembutsu/items/9e9d80e05e36e882caaa">Docker Compose - docker-compose.yml リファレンス</a></li>
+</ul>
+<h3 id="公式reference">公式Reference</h3>
+<ul>
+<li>
+  <a href="https://docs.docker.com/compose/compose-file/">Compose file version 3 reference</a></li>
+</ul>
+<h3 id="working-directory指定">working directory指定</h3>
+<p><code>working_dir</code>を使う.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#719e07">version</span>: <span style="color:#2aa198">&#39;3&#39;</span>
+<span style="color:#719e07">services</span>:
+  <span style="color:#719e07">angular</span>:
+    <span style="color:#719e07">image</span>: angular-first-app
+    <span style="color:#719e07">ports</span>:
+      - <span style="color:#2aa198">&#34;4200:4200&#34;</span>
+    <span style="color:#719e07">volumes</span>:
+      - .:/usr/src/app
+    <span style="color:#719e07">working_dir</span>: /usr/src/app/first-app
+    <span style="color:#719e07">command</span>: ng serve --host=<span style="color:#2aa198">0.0.0.0</span>
+</code></pre></div><h2 id="起動と停止">起動と停止</h2>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># 起動</span>
+docker-compose up
+<span style="color:#586e75"># ビルドして起動</span>
+docker-compose up --build
+<span style="color:#586e75"># バックグラウンドで起動</span>
+docker-compose up -d
+<span style="color:#586e75"># 停止</span>
+docker-compose down
+<span style="color:#586e75"># ボリュームも削除しつつ停止</span>
+docker-compose down -v
+</code></pre></div><h2 id="nginxとhttpd">nginxとhttpd</h2>
+<p><code>docker-compose</code>を以下の様に書く.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#586e75"># docker-compose.yml</span>
+<span style="color:#719e07">version</span>: <span style="color:#2aa198">&#39;3&#39;</span>
+
+<span style="color:#719e07">services</span>:
+  <span style="color:#719e07">proxy</span>:
+    <span style="color:#719e07">image</span>: nginx:latest <span style="color:#586e75"># this will use the latest version of 1.13.x</span>
+    <span style="color:#719e07">ports</span>:
+      - <span style="color:#2aa198">&#39;80:80&#39;</span> <span style="color:#586e75"># expose 80 on host and sent to 80 in container</span>
+    <span style="color:#719e07">volumes</span>:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+  <span style="color:#719e07">web</span>:
+    <span style="color:#719e07">image</span>: httpd:latest  <span style="color:#586e75"># this will use httpd:latest</span>
+</code></pre></div><p><code>nginx.conf</code>を以下の様に書く.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#586e75"># nginx.conf
+</span><span style="color:#586e75"></span><span style="color:#719e07">server</span> {
+
+	<span style="color:#719e07">listen</span> <span style="color:#2aa198">80</span>;
+
+	<span style="color:#719e07">location</span> <span style="color:#2aa198">/</span> {
+
+		<span style="color:#719e07">proxy_pass</span>         <span style="color:#2aa198">http://web</span>;
+		<span style="color:#719e07">proxy_redirect</span>     <span style="color:#cb4b16">off</span>;
+		<span style="color:#719e07">proxy_set_header</span>   <span style="color:#2aa198">Host</span> <span style="color:#268bd2">$host</span>;
+		<span style="color:#719e07">proxy_set_header</span>   <span style="color:#2aa198">X-Real-IP</span> <span style="color:#268bd2">$remote_addr</span>;
+		<span style="color:#719e07">proxy_set_header</span>   <span style="color:#2aa198">X-Forwarded-For</span> <span style="color:#268bd2">$proxy_add_x_forwarded_for</span>;
+		<span style="color:#719e07">proxy_set_header</span>   <span style="color:#2aa198">X-Forwarded-Host</span> <span style="color:#268bd2">$server_name</span>;
+
+	}
+}
+</code></pre></div><p>そして, 以下を実行する.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker-compose up -d <span style="color:#586e75"># デーモンでコンテナ群を起動</span>
+docker-compose ps <span style="color:#586e75"># 動いてるコンテナ一覧が見られる</span>
+&gt;           Name                   Command          State         Ports
+&gt; ----------------------------------------------------------------------------
+&gt; compose-sample-2_proxy_1   nginx -g daemon off;   Up      0.0.0.0:80-&gt;80/tcp
+&gt; compose-sample-2_web_1     httpd-foreground       Up      80/tcp
+docker-compose down <span style="color:#586e75"># コンテナ群を停止する</span>
+</code></pre></div><p><strong>コード例:</strong> 
+  <a href="https://github.com/solareenlo/udemy-docker-mastery/tree/master/compose-sample-2">solareenlo/udemy-docker-mastery/compose-sample-2</a></p>
+<h2 id="drupalとpostgresql">DrupalとPostgreSQL</h2>
+<p><code>docker-compose.yml</code>に以下を記述する.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#586e75"># Drupal with PostgreSQL</span>
+<span style="color:#586e75">#</span>
+<span style="color:#586e75"># Access via &#34;http://localhost:8081&#34;</span>
+<span style="color:#586e75">#   (or &#34;http://$(docker-machine ip):8081&#34; if using docker-machine)</span>
+<span style="color:#586e75">#</span>
+<span style="color:#586e75"># During initial Drupal setup,</span>
+<span style="color:#586e75"># Database type: PostgreSQL</span>
+<span style="color:#586e75"># Database name: postgres</span>
+<span style="color:#586e75"># Database username: postgres</span>
+<span style="color:#586e75"># Database password: passwd</span>
+<span style="color:#586e75"># ADVANCED OPTIONS; Database host: postgres</span>
+<span style="color:#586e75"># ADVANCED OPTIONS; Database port: 5432</span>
+
+<span style="color:#719e07">version</span>: <span style="color:#2aa198">&#39;3.7&#39;</span>
+
+<span style="color:#719e07">services</span>:
+  <span style="color:#719e07">drupal</span>:
+    <span style="color:#719e07">image</span>: drupal:<span style="color:#2aa198">8</span>-apache
+    <span style="color:#719e07">ports</span>:
+      - <span style="color:#2aa198">8081</span>:<span style="color:#2aa198">80</span>
+    <span style="color:#719e07">volumes</span>:
+      - drupal-modules:/var/www/html/modules
+      - drupal-profiles:/var/www/html/profiles
+      - drupal-themes:/var/www/html/themes
+      - drupal-sites:/var/www/html/sites
+    <span style="color:#719e07">restart</span>: always
+
+  <span style="color:#719e07">postgres</span>:
+    <span style="color:#719e07">image</span>: postgres:<span style="color:#2aa198">10</span>
+    <span style="color:#719e07">environment</span>:
+      <span style="color:#719e07">POSTGRES_PASSWORD</span>: passwd
+    <span style="color:#719e07">restart</span>: always
+
+<span style="color:#719e07">volumes</span>:
+  <span style="color:#719e07">drupal-modules</span>:
+  <span style="color:#719e07">drupal-profiles</span>:
+  <span style="color:#719e07">drupal-themes</span>:
+  <span style="color:#719e07">drupal-sites</span>:
+</code></pre></div><p>そして, 起動する.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker-compose up -d <span style="color:#586e75"># DrupalとPostgreSQLを起動</span>
+docker-compose ps <span style="color:#586e75"># 起動してるか確認</span>
+&gt;              Name                            Command               State          Ports
+&gt; -----------------------------------------------------------------------------------------------
+&gt; compose-assignment-1_drupal_1     docker-php-entrypoint apac ...   Up      0.0.0.0:8081-&gt;80/tcp
+&gt; compose-assignment-1_postgres_1   docker-entrypoint.sh postgres    Up      5432/tcp
+</code></pre></div><p>任意のブラウザで<code>localhost:8081</code>を開くとDrupalが立ち上がってる.<br>
+設定値は以下.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Database type: PostgreSQL
+Database name: postgres
+Database username: postgres
+Database password: passwd
+ADVANCED OPTIONS; Database host: postgres
+ADVANCED OPTIONS; Database port: <span style="color:#2aa198">5432</span>
+</code></pre></div><p>そして, 停止する.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker-compose down -v <span style="color:#586e75"># volumeも一緒に削除.</span>
+</code></pre></div><p><strong>コード例:</strong> 
+  <a href="https://github.com/solareenlo/udemy-docker-mastery/tree/master/compose-assignment-1">solareenlo/udemy-docker-mastery/compose-assignment-1</a></p>
+<h2 id="nodejsとredix">Node.jsとRedix</h2>
+<p><code>docker-compose.yml</code>に以下の様に書く.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#586e75"># docker-compose.yml</span>
+<span style="color:#719e07">version</span>: <span style="color:#2aa198">&#39;3&#39;</span>
+<span style="color:#719e07">services</span>:
+  <span style="color:#719e07">redis-server</span>:
+    <span style="color:#719e07">image</span>: <span style="color:#2aa198">&#39;redis&#39;</span>
+  <span style="color:#719e07">node-app</span>:
+    <span style="color:#719e07">build</span>: .
+    <span style="color:#719e07">ports</span>:
+      - <span style="color:#2aa198">&#34;8082:8082&#34;</span>
+</code></pre></div><p><code>Dockerfile</code>に以下の様に書く.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#586e75"># Dockerfile</span>
+<span style="color:#719e07">FROM</span><span style="color:#2aa198"> node:alpine</span>
+
+<span style="color:#719e07">WORKDIR</span><span style="color:#2aa198"> &#39;/app&#39;</span>
+
+<span style="color:#719e07">COPY</span> package.json .
+<span style="color:#719e07">RUN</span> npm install
+<span style="color:#719e07">COPY</span> . .
+
+<span style="color:#719e07">CMD</span> [<span style="color:#2aa198">&#34;npm&#34;</span>, <span style="color:#2aa198">&#34;start&#34;</span>]
+</code></pre></div><p>そして, 以下の様に実行する.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker-compose up -d
+<span style="color:#586e75"># 任意のブラウザでlobalhost:8082を訪れると訪問回数を表示するサイトが表示される</span>
+docker-compose down
+</code></pre></div><p><strong>コード例:</strong> 
+  <a href="https://github.com/solareenlo/visits-docker-nodejs">solareenlo/visits-docker-nodejs</a></p>
+<h2 id="複数のイメージを作る">複数のイメージを作る</h2>
+<p>Dockerfileからカスタムnginxイメージを作成しつつ, カスタムnginxコンテナとhttpdコンテナを動かしている.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone git@github.com:solareenlo/udemy-docker-mastery.git
+<span style="color:#b58900">cd</span> udemy-docker-mastery/compose-sample-3
+</code></pre></div><p><code>docker-compose.yml</code>の中身は以下.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#719e07">version</span>: <span style="color:#2aa198">&#39;2&#39;</span>
+<span style="color:#719e07">services</span>:
+  <span style="color:#719e07">proxy</span>:
+    <span style="color:#719e07">build</span>:
+      <span style="color:#719e07">context</span>: .
+      <span style="color:#719e07">dockerfile</span>: nginx.Dockerfile
+    <span style="color:#719e07">image</span>: custom-nginx
+    <span style="color:#719e07">ports</span>:
+      - <span style="color:#2aa198">&#39;80:80&#39;</span>
+  <span style="color:#719e07">web</span>:
+    <span style="color:#719e07">image</span>: httpd
+    <span style="color:#719e07">volumes</span>:
+      - ./html:/usr/local/apache2/htdocs/
+</code></pre></div><p>カスタムnginxの<code>nginx.Dockerfile</code>の中身は以下.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#719e07">FROM</span><span style="color:#2aa198"> nginx:1.13</span>
+<span style="color:#719e07">COPY</span> nginx.conf /etc/nginx/conf.d/default.conf
+</code></pre></div><p><code>nginx.conf</code>の中身は以下.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#719e07">server</span> {
+	<span style="color:#719e07">listen</span> <span style="color:#2aa198">80</span>;
+	<span style="color:#719e07">location</span> <span style="color:#2aa198">/</span> {
+		<span style="color:#719e07">proxy_pass</span>         <span style="color:#2aa198">http://web</span>;
+		<span style="color:#719e07">proxy_redirect</span>     <span style="color:#cb4b16">off</span>;
+		<span style="color:#719e07">proxy_set_header</span>   <span style="color:#2aa198">Host</span> <span style="color:#268bd2">$host</span>;
+		<span style="color:#719e07">proxy_set_header</span>   <span style="color:#2aa198">X-Real-IP</span> <span style="color:#268bd2">$remote_addr</span>;
+		<span style="color:#719e07">proxy_set_header</span>   <span style="color:#2aa198">X-Forwarded-For</span> <span style="color:#268bd2">$proxy_add_x_forwarded_for</span>;
+		<span style="color:#719e07">proxy_set_header</span>   <span style="color:#2aa198">X-Forwarded-Host</span> <span style="color:#268bd2">$server_name</span>;
+	}
+}
+</code></pre></div><p>webコンテナで使っているhtmlディレクトリの中身は<code>https://startbootstrap.com/template-overviews/agency/</code>です.<br>
+そして, 起動する.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker-compose up -d
+</code></pre></div><p><code>localhost:80</code>を開くとサイトが見られる.<br>
+そして, 停止する.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker-compose down --rmi <span style="color:#b58900">local</span>
+</code></pre></div><p><strong>コード例:</strong> 
+  <a href="https://github.com/solareenlo/udemy-docker-mastery/tree/master/compose-sample-3">solareenlo/udemy-docker-mastery/compose-sample-3</a></p>
+<h2 id="dockerfileでカスタムイメージを作成しつつdocker-composeで動かす">dockerfileでカスタムイメージを作成しつつdocker-composeで動かす</h2>
+<p><code>Dockerfile</code>に下記を記入する.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#719e07">FROM</span><span style="color:#2aa198"> drupal:8-apache</span>
+<span style="color:#719e07">RUN</span> apt-get update <span style="color:#719e07">&amp;&amp;</span> apt-get install -y git <span style="color:#cb4b16">\
+</span><span style="color:#cb4b16"></span>    <span style="color:#719e07">&amp;&amp;</span> rm -rf /var/lib/apt/lists/*
+<span style="color:#719e07">WORKDIR</span><span style="color:#2aa198"> /var/www/html/themes</span>
+<span style="color:#719e07">RUN</span> git clone --branch 8.x-3.x --single-branch --depth <span style="color:#2aa198">1</span> https://git.drupal.org/project/bootstrap.git <span style="color:#cb4b16">\
+</span><span style="color:#cb4b16"></span>    <span style="color:#719e07">&amp;&amp;</span> chown -R www-data:www-data bootstrap
+<span style="color:#719e07">WORKDIR</span><span style="color:#2aa198"> /var/www/html</span>
+</code></pre></div><p><code>docker-compose.yml</code>に下記を記入する.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#586e75"># Drupal with PostgreSQL</span>
+<span style="color:#586e75">#</span>
+<span style="color:#586e75"># Access via &#34;http://localhost:8081&#34;</span>
+<span style="color:#586e75">#   (or &#34;http://$(docker-machine ip):8081&#34; if using docker-machine)</span>
+<span style="color:#586e75">#</span>
+<span style="color:#586e75"># During initial Drupal setup,</span>
+<span style="color:#586e75"># Database type: PostgreSQL</span>
+<span style="color:#586e75"># Database name: postgres</span>
+<span style="color:#586e75"># Database username: postgres</span>
+<span style="color:#586e75"># Database password: passwd</span>
+<span style="color:#586e75"># ADVANCED OPTIONS; Database host: postgres</span>
+<span style="color:#586e75"># ADVANCED OPTIONS; Database port: 5432</span>
+
+<span style="color:#719e07">version</span>: <span style="color:#2aa198">&#39;3.7&#39;</span>
+
+<span style="color:#719e07">services</span>:
+  <span style="color:#719e07">drupal</span>:
+    <span style="color:#719e07">image</span>: custom-drupal
+    <span style="color:#719e07">build</span>: .
+    <span style="color:#719e07">ports</span>:
+      - <span style="color:#2aa198">8081</span>:<span style="color:#2aa198">80</span>
+    <span style="color:#719e07">volumes</span>:
+      - drupal-modules:/var/www/html/modules
+      - drupal-profiles:/var/www/html/profiles
+      - drupal-themes:/var/www/html/themes
+      - drupal-sites:/var/www/html/sites
+    <span style="color:#719e07">restart</span>: always
+
+  <span style="color:#719e07">postgres</span>:
+    <span style="color:#719e07">image</span>: postgres:<span style="color:#2aa198">10</span>
+    <span style="color:#719e07">environment</span>:
+      <span style="color:#719e07">POSTGRES_PASSWORD</span>: passwd
+    <span style="color:#719e07">volumes</span>:
+      - drupal-data:/var/lib/postgresql/data
+    <span style="color:#719e07">restart</span>: always
+
+<span style="color:#719e07">volumes</span>:
+  <span style="color:#719e07">drupal-modules</span>:
+  <span style="color:#719e07">drupal-profiles</span>:
+  <span style="color:#719e07">drupal-themes</span>:
+  <span style="color:#719e07">drupal-sites</span>:
+  <span style="color:#719e07">drupal-data</span>:
+</code></pre></div><p>そして, 下記を実行する.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">dokcer-compose up -d
+</code></pre></div><p>すると, 任意のブラウザで<code>localhost:8081</code>を開くとDrupalが走っていて,<br>
+設定値は以下を入力して,</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Database type: PostgreSQL
+Database name: postgres
+Database username: postgres
+Database password: passwd
+ADVANCED OPTIONS; Database host: postgres
+ADVANCED OPTIONS; Database port: <span style="color:#2aa198">5432</span>
+</code></pre></div><p>ページのテーマをDockerfileで設定してダウンロードしてきたBootstrapに変えてみる.<br>
+停止するには,</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker-compose down
+</code></pre></div><p><strong>コード例:</strong> 
+  <a href="https://github.com/solareenlo/udemy-docker-mastery/tree/master/compose-assignment-2">solareenlo/udemy-docker-mastery/compose-assignment-2</a></p>
+<h2 id="テストを行う">テストを行う</h2>
+<p>以下のように<code>docker-compose.yml</code>に<code>tests</code>項目を追加する.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#586e75"># docker-compose.ymlの中身</span>
+<span style="color:#719e07">version</span>: <span style="color:#2aa198">&#39;3&#39;</span>
+<span style="color:#719e07">services</span>:
+  <span style="color:#719e07">web</span>:
+    <span style="color:#719e07">build</span>:
+      <span style="color:#719e07">context</span>: .
+      <span style="color:#719e07">dockerfile</span>: Dockerfile.dev
+    <span style="color:#719e07">ports</span>:
+      - <span style="color:#2aa198">&#34;3001:3000&#34;</span>
+    <span style="color:#719e07">volumes</span>:
+      - /app/node_modules
+      - .:/app
+  <span style="color:#719e07">tests</span>:
+    <span style="color:#719e07">build</span>:
+      <span style="color:#719e07">context</span>: .
+      <span style="color:#719e07">dockerfile</span>: Dockerfile.dev
+    <span style="color:#719e07">volumes</span>:
+      - /app/node_modules
+      - .:/app
+    <span style="color:#719e07">command</span>: [<span style="color:#2aa198">&#34;npm&#34;</span>, <span style="color:#2aa198">&#34;run&#34;</span>, <span style="color:#2aa198">&#34;test&#34;</span>]
+</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#586e75"># Dockerfile.devの中身</span>
+<span style="color:#719e07">FROM</span><span style="color:#2aa198"> node:alpine</span>
+
+<span style="color:#719e07">WORKDIR</span><span style="color:#2aa198"> &#39;/app&#39;</span>
+
+<span style="color:#719e07">COPY</span> package.json .
+<span style="color:#719e07">RUN</span> npm install
+
+<span style="color:#719e07">COPY</span> . .
+
+<span style="color:#719e07">CMD</span> [<span style="color:#2aa198">&#34;npm&#34;</span>, <span style="color:#2aa198">&#34;run&#34;</span>, <span style="color:#2aa198">&#34;start&#34;</span>]
+</code></pre></div><p>そして, 以下でビルドし, 実行する.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker-compose up --build
+</code></pre></div><p>テスト用のコードを変更すると, 標準出力で結果が出てくる.</p>
+<p><strong>コード例:</strong> 
+  <a href="https://github.com/solareenlo/frontend-docker-react">frontend-docker-react</a></p>
+<h2 id="環境変数">環境変数</h2>
+<p>以下のように<code>variabeleName=value</code>と書けばコンテナの中で有効な環境変数になる.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">environment:
+  - <span style="color:#268bd2">REDIS_HOST</span><span style="color:#719e07">=</span>redis
+  - <span style="color:#268bd2">REDIS_PORT</span><span style="color:#719e07">=</span><span style="color:#2aa198">6378</span>
+</code></pre></div><p>以下のように<code>variableName</code>とだけ書けばホストから環境変数を取ってきてコンテナの中で有効な環境変数になる.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">environment:
+  - REDIS_HOST
+</code></pre></div><ul>
+<li><strong>Referece:</strong></li>
+<li>
+  <a href="https://qiita.com/kimullaa/items/f556431b8103e686f356">Docker-Compose の変数定義について</a></li>
+</ul>
+<h2 id="volumes">volumes</h2>
+<p>以下のようにパスを<code>volumes</code>に指定するとボリュームとしてマウントしてくれる.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">volumes
+  - /path/to/filename
+</code></pre></div><p>以下のように<code>ホストのパス:コンテナのパス</code>と書くとホストをマウントしてくれる.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">volumes
+  - host/path:./path/to/test
+</code></pre></div><ul>
+<li><strong>References:</strong></li>
+<li>
+  <a href="https://qiita.com/gounx2/items/23b0dc8b8b95cc629f32">Docker、ボリューム(Volume)について真面目に調べた</a></li>
+<li>
+  <a href="https://qiita.com/zembutsu/items/9e9d80e05e36e882caaa">Docker Compose - docker-compose.yml リファレンス</a></li>
+</ul>
+<h2 id="awsで動かした例">AWSで動かした例</h2>
+<ul>
+<li>
+  <a href="https://github.com/solareenlo/complex-docker">solareenlo/complex-docker</a></li>
+</ul>
+<h2 id="nodejsを動かした例">Node.jsを動かした例</h2>
+<ul>
+<li>
+  <a href="https://github.com/BretFisher/node-docker-good-defaults">BretFisher/node-docker-good-defaults</a></li>
+</ul>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex justify-between">
+
+
+
+  <div>
+    
+    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/commit/bea798d93c9116bad5b5ceb26ca3159b372095e9" title='Last modified by solareenlo | Mar 20, 2020' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>Mar 20, 2020</span>
+    </a>
+  </div>
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/edit/master/content/docs/container/docker-compose.md" target="_blank" rel="noopener">
+      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#docker-composeとは">Docker Composeとは</a>
+      <ul>
+        <li><a href="#活用場面">活用場面</a></li>
+        <li><a href="#インストール">インストール</a></li>
+        <li><a href="#docker-composeymlの書き方">docker-compose.ymlの書き方</a>
+          <ul>
+            <li><a href="#公式reference">公式Reference</a></li>
+            <li><a href="#working-directory指定">working directory指定</a></li>
+          </ul>
+        </li>
+        <li><a href="#起動と停止">起動と停止</a></li>
+        <li><a href="#nginxとhttpd">nginxとhttpd</a></li>
+        <li><a href="#drupalとpostgresql">DrupalとPostgreSQL</a></li>
+        <li><a href="#nodejsとredix">Node.jsとRedix</a></li>
+        <li><a href="#複数のイメージを作る">複数のイメージを作る</a></li>
+        <li><a href="#dockerfileでカスタムイメージを作成しつつdocker-composeで動かす">dockerfileでカスタムイメージを作成しつつdocker-composeで動かす</a></li>
+        <li><a href="#テストを行う">テストを行う</a></li>
+        <li><a href="#環境変数">環境変数</a></li>
+        <li><a href="#volumes">volumes</a></li>
+        <li><a href="#awsで動かした例">AWSで動かした例</a></li>
+        <li><a href="#nodejsを動かした例">Node.jsを動かした例</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

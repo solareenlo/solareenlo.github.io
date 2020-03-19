@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Dockerとは   コンテナ型の仮想環境を作成, 配布, 実行するためのプラットフォームのこと.
+  プロセスを簡単にコンテナ化(isolate)し, 簡単かつ素早く開発・移動・実行できるプラットフォームのこと.
+  Dockerコンテナは実行に必要な全てをパッケージして簡単に動かせる
+  Dockerイメージは複数のイメージ・レイヤとメタ情報の積み重なりからできている.
+  コンテナのプロセスはデフォルトでisolate(隔離・分離)された状態
+  Dockerについての良い読み物1→ 2018年なぜ私達はコンテナ/Dockerを使うのか.
+  Dockerについての良い読み物2→ 標準化が進むコンテナとサーバーレス！ 「提供したい価値」から見極める活用の勘所とは【デブサミ2018 福岡】
+  Dockerについての良い説明→ いまさらDockerに入門したので分かりやすくまとめます
+  Dockerについての良いスライド→ Docker Compose 徹底解説
+  公式サイト: https://www.docker.com
+  Dockerのメリット/デメリット メリット  ゲストOSはホストのKernelを直接使うためオーバーヘッドが小さくて高速 ゲストOSがそれぞれにKernelを持たないため, Memory消費量やDisk消費量を節約できる 必要とする資源が少ないため, 多くのゲストOSを立ち上げることが可能 Kernelを新しく起動する必要がないため, ゲストOSの起動が速い コンテナのイメージ(雛形)からコンテナ(実体)を作るため, 同一構成のOSを簡単に複数作れる テストが通ったイメージは本番環境でもすぐに使える(開発とデプロイのサイクルが速い) Reference: Dockerの利点  デメリット  提供できるホストの種類が少ない(ホストOSのKernelにLinux使ってたらゲストOSのKernelにWindows Serverは使えない) 完全仮想化に比べて, 管理者が学ぶべきことが多い Reference: Dockerの欠点  なぜrootユーザーか Dockerはroot権限で動いているデーモン(dockerd)とunixソケットまたはtcp/ipで通信しているが, dockerdにアクセスするにはdockerグループに所属しているかroot権限が必要."><meta property="og:title" content="" />
+<meta property="og:description" content="Dockerとは   コンテナ型の仮想環境を作成, 配布, 実行するためのプラットフォームのこと.
+  プロセスを簡単にコンテナ化(isolate)し, 簡単かつ素早く開発・移動・実行できるプラットフォームのこと.
+  Dockerコンテナは実行に必要な全てをパッケージして簡単に動かせる
+  Dockerイメージは複数のイメージ・レイヤとメタ情報の積み重なりからできている.
+  コンテナのプロセスはデフォルトでisolate(隔離・分離)された状態
+  Dockerについての良い読み物1→ 2018年なぜ私達はコンテナ/Dockerを使うのか.
+  Dockerについての良い読み物2→ 標準化が進むコンテナとサーバーレス！ 「提供したい価値」から見極める活用の勘所とは【デブサミ2018 福岡】
+  Dockerについての良い説明→ いまさらDockerに入門したので分かりやすくまとめます
+  Dockerについての良いスライド→ Docker Compose 徹底解説
+  公式サイト: https://www.docker.com
+  Dockerのメリット/デメリット メリット  ゲストOSはホストのKernelを直接使うためオーバーヘッドが小さくて高速 ゲストOSがそれぞれにKernelを持たないため, Memory消費量やDisk消費量を節約できる 必要とする資源が少ないため, 多くのゲストOSを立ち上げることが可能 Kernelを新しく起動する必要がないため, ゲストOSの起動が速い コンテナのイメージ(雛形)からコンテナ(実体)を作るため, 同一構成のOSを簡単に複数作れる テストが通ったイメージは本番環境でもすぐに使える(開発とデプロイのサイクルが速い) Reference: Dockerの利点  デメリット  提供できるホストの種類が少ない(ホストOSのKernelにLinux使ってたらゲストOSのKernelにWindows Serverは使えない) 完全仮想化に比べて, 管理者が学ぶべきことが多い Reference: Dockerの欠点  なぜrootユーザーか Dockerはroot権限で動いているデーモン(dockerd)とunixソケットまたはtcp/ipで通信しているが, dockerdにアクセスするにはdockerグループに所属しているかroot権限が必要." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://solareenlo.com/docs/container/docker1/" />
+<meta property="article:modified_time" content="2020-03-20T07:56:42+09:00" />
+<title>Docker1 | solareenlo</title>
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/book.min.5fa1289292eb5e3222d2349e8d9deaae01ee5d99834b1dc07cee7554c8837bdb.css" integrity="sha256-X6EokpLrXjIi0jSejZ3qrgHuXZmDSx3AfO51VMiDe9s=">
+
+
+<script defer src="/en.search.min.844700da278f680d62ac5ca6567f92e5956d82d24388836ec3df22a102ef0194.js" integrity="sha256-hEcA2iePaA1irFymVn&#43;S5ZVtgtJDiINuw98ioQLvAZQ="></script>
+
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><span>solareenlo</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        Blog
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+
+  
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/programming/" class="collapsed ">Programming</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/pl/" class="collapsed ">Programming Language</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/latex/" class="collapsed ">LaTeX</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/vps/" class="collapsed ">VPS</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/db/" class="collapsed ">DB</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/cloud/" class="collapsed ">Cloud</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/ci-cd/" class="collapsed ">CI/CD</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/container/" class="collapsed ">Conatainer</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  
+  <a href="/docs/container/docker-compose/" class="">Docker Compose</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/container/docker-hub/" class="">Docker Hub</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/container/docker1/" class="active">Docker1</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/container/docker2/" class="">Docker2</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/container/kubernetes/" class="">Kubernetes</a>
+  
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/crypto/" class="collapsed ">Crypto</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://github.com/solareenlo/" target="_blank" rel="noopener">
+        Github
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://twitter.com/solareenlo/" target="_blank" rel="noopener">
+        Twitter
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Docker1</strong>
+
+  <label for="toc-control">
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+  </label>
+</div>
+
+
+  
+    <input type="checkbox" class="hidden" id="toc-control" />
+    <aside class="hidden clearfix">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#dockerとは">Dockerとは</a>
+      <ul>
+        <li><a href="#dockerのメリットデメリット">Dockerのメリット/デメリット</a>
+          <ul>
+            <li><a href="#メリット">メリット</a></li>
+            <li><a href="#デメリット">デメリット</a></li>
+          </ul>
+        </li>
+        <li><a href="#なぜrootユーザーか">なぜrootユーザーか</a></li>
+        <li><a href="#インストール方法">インストール方法</a>
+          <ul>
+            <li><a href="#linux編">Linux編</a></li>
+          </ul>
+        </li>
+        <li><a href="#基本的な使い方v18095">基本的な使い方(v18.09.5)</a></li>
+        <li><a href="#container">container</a>
+          <ul>
+            <li><a href="#dockerでhello-world">DockerでHello World!</a></li>
+            <li><a href="#コンテナを起動停止再起動">コンテナを起動/停止/再起動</a></li>
+            <li><a href="#一覧log表示">一覧/log表示</a></li>
+            <li><a href="#コンテナの状態を見る">コンテナの状態を見る</a></li>
+            <li><a href="#コンテナを動かす">コンテナを動かす</a></li>
+            <li><a href="#対話型モードでコンテナを動かす">対話型モードでコンテナを動かす</a></li>
+            <li><a href="#alpineを動かす">Alpineを動かす</a></li>
+            <li><a href="#コンテナの停止とともにコンテナ削除">コンテナの停止とともにコンテナ削除</a></li>
+            <li><a href="#コンテナを一度に停止する">コンテナを一度に停止する</a></li>
+            <li><a href="#コンテナを一度に削除する">コンテナを一度に削除する</a></li>
+            <li><a href="#起動しているコンテナに入る">起動しているコンテナに入る</a></li>
+            <li><a href="#portを指定してnginxを起動する">portを指定してnginxを起動する</a></li>
+          </ul>
+        </li>
+        <li><a href="#network">network</a>
+          <ul>
+            <li><a href="#ネットワークを新規に作って接続して削除する">ネットワークを新規に作って接続して削除する</a></li>
+            <li><a href="#コンテナからコンテナに問い合わせる">コンテナからコンテナに問い合わせる</a></li>
+            <li><a href="#2個コンテナを立ててdnsラウンドロビンを使ってみる">2個コンテナを立ててDNSラウンドロビンを使ってみる</a></li>
+          </ul>
+        </li>
+        <li><a href="#image">image</a>
+          <ul>
+            <li><a href="#一括してimageを削除">一括してimageを削除</a></li>
+            <li><a href="#一括してimageを最新へ更新">一括してimageを最新へ更新</a></li>
+            <li><a href="#imageをdocker-hubからpull">imageをDocker Hubからpull</a></li>
+            <li><a href="#タグ付けしてpull">タグ付けしてpull</a></li>
+            <li><a href="#既にあるimageに新たにタグ付けする">既にあるimageに新たにタグ付けする</a></li>
+            <li><a href="#docker-hubにログイン">Docker Hubにログイン</a></li>
+            <li><a href="#docker-hubに自分でタグ付けしたimageをpush">Docker Hubに自分でタグ付けしたimageをpush</a></li>
+          </ul>
+        </li>
+        <li><a href="#dockerfile">Dockerfile</a>
+          <ul>
+            <li><a href="#dockerfileを書いてみる">Dockerfileを書いてみる</a></li>
+            <li><a href="#dockerfileからイメージを作成する">DockerFileからイメージを作成する</a></li>
+            <li><a href="#ローカルにあるファイルをコピーしてイメージを作成する">ローカルにあるファイルをコピーしてイメージを作成する</a></li>
+            <li><a href="#copyとaddの違い">COPYとADDの違い</a></li>
+            <li><a href="#workdirで作業ディレクトリを指定する">WORKDIRで作業ディレクトリを指定する</a></li>
+            <li><a href="#nodejs用のdockerfileをスクラッチから書いてみる">Node.js用のDockerfileをスクラッチから書いてみる</a></li>
+            <li><a href="#任意のdockerfileを指定する">任意のDockerfileを指定する</a></li>
+          </ul>
+        </li>
+        <li><a href="#volume">volume</a>
+          <ul>
+            <li><a href="#-vを使ってvolumeをmysqlコンテナにマウントする">-vを使ってvolumeをmysqlコンテナにマウントする</a></li>
+            <li><a href="#--mountを使ってvolumeをmysqlコンテナにマウントする">&ndash;mountを使ってvolumeをmysqlコンテナにマウントする</a></li>
+            <li><a href="#2つのコンテナに同じvolumeをマウントする">2つのコンテナに同じvolumeをマウントする</a></li>
+          </ul>
+        </li>
+        <li><a href="#bind-mount">bind mount</a>
+          <ul>
+            <li><a href="#-vを使ってdocker外のデータをnginxコンテナにマウントする">-vを使ってDocker外のデータをnginxコンテナにマウントする</a></li>
+            <li><a href="#--mountを使ってdocker外のデータをnginxコンテナにマウントする">&ndash;mountを使ってDocker外のデータをnginxコンテナにマウントする</a></li>
+            <li><a href="#ローカルのjekyllをコンテナのjekllサーバで動かす">ローカルのJekyllをコンテナのJekllサーバで動かす</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+    </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="dockerとは">Dockerとは</h1>
+<ul>
+<li>
+<p>コンテナ型の仮想環境を作成, 配布, 実行するためのプラットフォームのこと.</p>
+</li>
+<li>
+<p>プロセスを簡単にコンテナ化(isolate)し, 簡単かつ素早く開発・移動・実行できるプラットフォームのこと.</p>
+</li>
+<li>
+<p>Dockerコンテナは実行に必要な全てをパッケージして簡単に動かせる</p>
+</li>
+<li>
+<p>Dockerイメージは複数のイメージ・レイヤとメタ情報の積み重なりからできている.</p>
+</li>
+<li>
+<p>コンテナのプロセスはデフォルトでisolate(隔離・分離)された状態</p>
+</li>
+<li>
+<p>Dockerについての良い読み物1→
+  <a href="http://iga-ninja.hatenablog.com/entry/2018/06/28/091412">2018年なぜ私達はコンテナ/Dockerを使うのか</a>.</p>
+</li>
+<li>
+<p>Dockerについての良い読み物2→
+  <a href="https://codezine.jp/article/detail/11098">標準化が進むコンテナとサーバーレス！ 「提供したい価値」から見極める活用の勘所とは【デブサミ2018 福岡】</a></p>
+</li>
+<li>
+<p>Dockerについての良い説明→
+  <a href="https://qiita.com/gold-kou/items/44860fbda1a34a001fc1">いまさらDockerに入門したので分かりやすくまとめます</a></p>
+</li>
+<li>
+<p>Dockerについての良いスライド→
+  <a href="https://www.slideshare.net/zembutsu/docker-compose-guidebook">Docker Compose 徹底解説</a></p>
+</li>
+<li>
+<p><strong>公式サイト:</strong> <a href="https://www.docker.com">https://www.docker.com</a></p>
+</li>
+</ul>
+<h2 id="dockerのメリットデメリット">Dockerのメリット/デメリット</h2>
+<h3 id="メリット">メリット</h3>
+<ul>
+<li>ゲストOSはホストのKernelを直接使うためオーバーヘッドが小さくて高速</li>
+<li>ゲストOSがそれぞれにKernelを持たないため, Memory消費量やDisk消費量を節約できる</li>
+<li>必要とする資源が少ないため, 多くのゲストOSを立ち上げることが可能</li>
+<li>Kernelを新しく起動する必要がないため, ゲストOSの起動が速い</li>
+<li>コンテナのイメージ(雛形)からコンテナ(実体)を作るため, 同一構成のOSを簡単に複数作れる</li>
+<li>テストが通ったイメージは本番環境でもすぐに使える(開発とデプロイのサイクルが速い)</li>
+<li><strong>Reference:</strong> 
+  <a href="http://docker.yuichi.com/about/strength/index.html">Dockerの利点</a></li>
+</ul>
+<h3 id="デメリット">デメリット</h3>
+<ul>
+<li>提供できるホストの種類が少ない(ホストOSのKernelにLinux使ってたらゲストOSのKernelにWindows Serverは使えない)</li>
+<li>完全仮想化に比べて, 管理者が学ぶべきことが多い</li>
+<li><strong>Reference:</strong> 
+  <a href="http://docker.yuichi.com/about/strength/index.html">Dockerの欠点</a></li>
+</ul>
+<h2 id="なぜrootユーザーか">なぜrootユーザーか</h2>
+<p>Dockerはroot権限で動いているデーモン(dockerd)とunixソケットまたはtcp/ipで通信しているが, dockerdにアクセスするにはdockerグループに所属しているかroot権限が必要.
+そしてdockerはroot無しでアクセスできる様にすると簡単に権限昇格ができてしまい, いろんなことができる様になってしまうから.<br>
+<strong>Reference:</strong>  
+  <a href="https://qiita.com/matyapiro31/items/3e6398ce737e2cdb5a22">Dockerでユーザーをdockerグループに追加することの危険性を理解しよう</a></p>
+<h2 id="インストール方法">インストール方法</h2>
+<h3 id="linux編">Linux編</h3>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -fsSL get.docker.com -o get-docker.sh
+sh get-docker.sh
+</code></pre></div><h2 id="基本的な使い方v18095">基本的な使い方(v18.09.5)</h2>
+<p><strong>Reference:</strong> 
+  <a href="https://qiita.com/curseoff/items/a9e64ad01d673abb6866">Dockerコマンドメモ</a></p>
+<h2 id="container">container</h2>
+<h3 id="dockerでhello-world">DockerでHello World!</h3>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker container run --rm alpine /bin/echo <span style="color:#2aa198">&#39;Hello World!&#39;</span>
+&gt; Hello World!
+</code></pre></div><h3 id="コンテナを起動停止再起動">コンテナを起動/停止/再起動</h3>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75">`</span>docker run<span style="color:#586e75">`</span> <span style="color:#719e07">=</span> <span style="color:#586e75">`</span>docker create<span style="color:#586e75">`</span> + <span style="color:#586e75">`</span>docker start<span style="color:#586e75">`</span>
+</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo docker container run nginx // 起動
+sudo docker container run -d nginx // デーモンとして起動
+sudo docker container stop &lt;CONTAINERID か NAMES&gt; // 停止
+sudo docker container start &lt;CONTAINERID か NAMES&gt; // 再起動
+</code></pre></div><h3 id="一覧log表示">一覧/log表示</h3>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo docker container run --publish 80:80 --name webhost nginx // nginxを起動
+sudo docker container run --publish 80:80 --detach --name webhost nginx // デーモンとして起動
+sudo docker container ls // 起動しているコンテナ一覧表示
+&gt; CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                NAMES
+&gt; b6e083217819        nginx               <span style="color:#2aa198">&#34;nginx -g &#39;daemon of…&#34;</span>   <span style="color:#2aa198">7</span> minutes ago       Up <span style="color:#2aa198">23</span> seconds       0.0.0.0:80-&gt;80/tcp   webhost
+&gt; 9ea87fb8e2e1        mongo               <span style="color:#2aa198">&#34;docker-entrypoint.s…&#34;</span>   <span style="color:#2aa198">10</span> hours ago        Up <span style="color:#2aa198">10</span> hours         27017/tcp            mongo
+sudo docker container logs &lt;CONTAINERID か NAMES&gt; // 指定したコンテナのlogを表示
+sudo docker container ls -a // コンテナの一覧を表示
+sudo docker container ls -aq // コンテナIDだけ表示
+</code></pre></div><h3 id="コンテナの状態を見る">コンテナの状態を見る</h3>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo docker container top &lt;CONTAINERID or NAMES&gt; // コンテナが実行しているプロセスを表示
+sudo docker container inspect &lt;CONTAINERID or NAMES&gt; // コンテナの詳細を表示
+sudo docker cotnainer stats &lt;CONTAINERID or NAMES&gt; // コンテナのパフォーマンスを表示
+</code></pre></div><h3 id="コンテナを動かす">コンテナを動かす</h3>
+<p><code>run</code>コマンドを使う.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">// mysqlを使う
+sudo docker container run -d --name mysql -e <span style="color:#268bd2">MYSQL_RANDOM_ROOT_PASSWORD</span><span style="color:#719e07">=</span>ture mysql // mysqlを動かす
+</code></pre></div><h3 id="対話型モードでコンテナを動かす">対話型モードでコンテナを動かす</h3>
+<p><code>-it</code>オプションを使う.</p>
+<ul>
+<li><code>-t</code>: ホスト側の入力をコンテナの標準出力をつなげる</li>
+<li><code>-i</code>: キーボードから入力した文字はコンテナ内のプロセスに送られる</li>
+</ul>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo docker container run -it ubuntu /bin/bash // ubuntuを動かす
+apt install curl -y
+curl https://google.lcom
+&gt; &lt;HTML&gt;&lt;HEAD&gt;&lt;meta http-equiv<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;content-type&#34;</span> <span style="color:#268bd2">content</span><span style="color:#719e07">=</span><span style="color:#2aa198">&#34;text/html;charset=utf-8&#34;</span>&gt;
+&gt; &lt;TITLE&gt;301 Moved&lt;/TITLE&gt;&lt;/HEAD&gt;&lt;BODY&gt;
+&gt; &lt;H1&gt;301 Moved&lt;/H1&gt;
+&gt; The document has moved
+&gt; &lt;A <span style="color:#268bd2">HREF</span><span style="color:#719e07">=</span><span style="color:#2aa198">&#34;https://www.google.com/&#34;</span>&gt;here&lt;/A&gt;.
+&gt; &lt;/BODY&gt;&lt;/HTML&gt;
+</code></pre></div><h3 id="alpineを動かす">Alpineを動かす</h3>
+<p>Alpineは軽量なLinux distributionの1つ.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo docker container run -it alpine /bin/ash
+apk add curl
+curl https://google.com
+</code></pre></div><h3 id="コンテナの停止とともにコンテナ削除">コンテナの停止とともにコンテナ削除</h3>
+<p><code>--rm</code>オプションを使う.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo docker container run --rm -it alpine /bin/ash
+</code></pre></div><h3 id="コンテナを一度に停止する">コンテナを一度に停止する</h3>
+<p><code>-q</code>オプションで起動しているコンテナIDを取得し, バッククォートで引数として渡す.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo docker container stop <span style="color:#586e75">`</span>sudo docker container ls -q<span style="color:#586e75">`</span>
+</code></pre></div><h3 id="コンテナを一度に削除する">コンテナを一度に削除する</h3>
+<p><code>-aq</code>オプションで存在するコンテナIDを取得し, バッククォートで引数として渡す.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo docker container rm <span style="color:#586e75">`</span>sudo docker container ls -aq<span style="color:#586e75">`</span>
+</code></pre></div><h3 id="起動しているコンテナに入る">起動しているコンテナに入る</h3>
+<p><code>exec</code>コマンドを使う.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo docker container <span style="color:#b58900">exec</span> -it コンテナ名
+</code></pre></div><h3 id="portを指定してnginxを起動する">portを指定してnginxを起動する</h3>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo docker container run -p 80:80 --name webhost nginx // 80:80の順番はHOST:CONTAINERの順番になっている.
+sudo docker container port webhost // portの繋がりがどうなっているか確認
+&gt; 80/tcp -&gt; 0.0.0.0:80
+sudo docker container inspect --format <span style="color:#2aa198">&#39;{{ .NetworkSettings.IPAddress }}&#39;</span> webhost // webhostのIPアドレスを表示
+&gt; 172.17.0.2
+</code></pre></div><h2 id="network">network</h2>
+<h3 id="ネットワークを新規に作って接続して削除する">ネットワークを新規に作って接続して削除する</h3>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo docker network ls
+&gt; NETWORK ID          NAME                DRIVER              SCOPE
+&gt; bc9b26e5c4d9        bridge              bridge              <span style="color:#b58900">local</span>
+&gt; ba4557f6a2be        host                host                <span style="color:#b58900">local</span>
+&gt; 5ac181d8a48b        none                null                <span style="color:#b58900">local</span>
+</code></pre></div><ul>
+<li><strong>bridge:</strong> Linux bridgeで仮想インタフェースを作成し, そのインタフェースに対してvethでDockerコンテナと接続する方式で, Dockerホストが属するネットワークとは異なる, 仮想bridge上のネットワークにコンテナを作成し, NAT形式で外部のノードと通信する形式.</li>
+<li><strong>host:</strong> Dockerホストと同じネットワークにスタックするドライバで, Dockerホストマシンと同じネットワークインタフェース, IPアドレスを持つようになる.</li>
+<li><strong>null:</strong> ネットワーク接続を必要としないコンテナを作成する場合に使用する.</li>
+<li><strong>Reference:</strong> 
+  <a href="https://qiita.com/TsutomuNakamura/items/ed046ee21caca4a2ffd9">Docker network 概論</a></li>
+<li>bridge・hostいずれもインターネット経由でコンテナへのアクセスが可能.</li>
+<li>bridgeはホストの任意のポートをコンテナのポートにマップすることが出来る.</li>
+<li>hostはコンテナでexposeされたポートをホストでも利用する. その為一つのホストで同じポートを使うコンテナは利用できない.</li>
+<li><strong>Reference:</strong> 
+  <a href="https://qiita.com/toshihirock/items/f5b9f7799ec8bf8c328e">Docker の bridge と host ネットワークについて勉強する</a></li>
+</ul>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo docker network create my_app_net // 新規ネットワークを作成
+sudo docker container run -d --name new_nginx --network my_app_net nginx // この新規に作成したネットワークでコンテナを走らせる
+sudo docker network inspect my_app_net // 新規ネットワークにどのコンテナが接続されているかを確認する
+sudo docker network connect bridge new_nginx // bridgeネットワークにnew_nginxコンテナを接続する
+sudo docker network disconnect bridge new_nginx // 先ほど繋いだコンテナの接続を切る
+</code></pre></div><ul>
+<li>コンテナを起動するデフォルトの設定では外部へのポートは閉じられてる.</li>
+<li>なので, -pオプションを使って手動で外部とのポートと繋ぐ必要がある.</li>
+</ul>
+<h3 id="コンテナからコンテナに問い合わせる">コンテナからコンテナに問い合わせる</h3>
+<p>同じネットワーク内にあるコンテナからコンテナへ問い合わせる.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker container run -d --name my_nginx --network my_app_net nginx:alpine
+sudo docker container <span style="color:#b58900">exec</span> -it my_nginx ping new_nginx
+&gt; <span style="color:#2aa198">64</span> bytes from 172.18.0.2: <span style="color:#268bd2">seq</span><span style="color:#719e07">=</span><span style="color:#2aa198">0</span> <span style="color:#268bd2">ttl</span><span style="color:#719e07">=</span><span style="color:#2aa198">64</span> <span style="color:#268bd2">time</span><span style="color:#719e07">=</span>0.060 ms
+&gt; <span style="color:#2aa198">64</span> bytes from 172.18.0.2: <span style="color:#268bd2">seq</span><span style="color:#719e07">=</span><span style="color:#2aa198">1</span> <span style="color:#268bd2">ttl</span><span style="color:#719e07">=</span><span style="color:#2aa198">64</span> <span style="color:#268bd2">time</span><span style="color:#719e07">=</span>0.069 ms
+&gt; <span style="color:#2aa198">64</span> bytes from 172.18.0.2: <span style="color:#268bd2">seq</span><span style="color:#719e07">=</span><span style="color:#2aa198">2</span> <span style="color:#268bd2">ttl</span><span style="color:#719e07">=</span><span style="color:#2aa198">64</span> <span style="color:#268bd2">time</span><span style="color:#719e07">=</span>0.093 ms
+</code></pre></div><h3 id="2個コンテナを立ててdnsラウンドロビンを使ってみる">2個コンテナを立ててDNSラウンドロビンを使ってみる</h3>
+<p>elasticsearchを2つコンテナとして立ててる.<br>
+<strong>Reference:</strong> 
+  <a href="https://qiita.com/nskydiving/items/1c2dc4e0b9c98d164329">はじめての Elasticsearch</a></p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo docker network create dude // 新規にdudeネットワークを作成
+sudo docker container run -d --net dude --net-alias search elasticsearch:2
+sudo docker container run -d --net dude --net-alias search elasticsearch:2
+sudo docker container ls
+&gt; CONTAINER ID        IMAGE               COMMAND                  CREATED              STATUS              PORTS                NAMES
+&gt; 46d60f6737ca        elasticsearch:2     <span style="color:#2aa198">&#34;/docker-entrypoint.…&#34;</span>   About a minute ago   Up About a minute   9200/tcp, 9300/tcp   vigilant_stonebraker
+&gt; 4bea0ab17400        elasticsearch:2     <span style="color:#2aa198">&#34;/docker-entrypoint.…&#34;</span>   About a minute ago   Up About a minute   9200/tcp, 9300/tcp   determined_archimedes
+sudo docker container run --rm --net dude alpine nslookup search // dudeネットワークでalpineコンテナを立ち上げて, nslookupでsearchのipアドレスを問い合わせてる
+&gt; nslookup: can<span style="color:#2aa198">&#39;t resolve &#39;</span><span style="color:#719e07">(</span>null<span style="color:#719e07">)</span>&#39;: Name does not resolve
+&gt; Name:      search
+&gt; Address 1: 172.19.0.3 search.dude
+&gt; Address 2: 172.19.0.2 search.dude
+sudo docker container run --rm --net dude centos curl -s search:9200 | jq // dudeネットワークにcentosコンテナ立ち上げて, curlでsearchのエイリアスの効いたIPアドレスの9200番ポートに問い合わせてる
+&gt; <span style="color:#719e07">{</span>
+&gt;   <span style="color:#2aa198">&#34;name&#34;</span>: <span style="color:#2aa198">&#34;Miek&#34;</span>,
+&gt;   <span style="color:#2aa198">&#34;cluster_name&#34;</span>: <span style="color:#2aa198">&#34;elasticsearch&#34;</span>,
+&gt;   <span style="color:#2aa198">&#34;cluster_uuid&#34;</span>: <span style="color:#2aa198">&#34;tf7h0SLXS8Gx6UMxgC7hRg&#34;</span>,
+&gt;   <span style="color:#2aa198">&#34;version&#34;</span>: <span style="color:#719e07">{</span>
+&gt;     <span style="color:#2aa198">&#34;number&#34;</span>: <span style="color:#2aa198">&#34;2.4.6&#34;</span>,
+&gt;     <span style="color:#2aa198">&#34;build_hash&#34;</span>: <span style="color:#2aa198">&#34;5376dca9f70f3abef96a77f4bb22720ace8240fd&#34;</span>,
+&gt;     <span style="color:#2aa198">&#34;build_timestamp&#34;</span>: <span style="color:#2aa198">&#34;2017-07-18T12:17:44Z&#34;</span>,
+&gt;     <span style="color:#2aa198">&#34;build_snapshot&#34;</span>: false,
+&gt;     <span style="color:#2aa198">&#34;lucene_version&#34;</span>: <span style="color:#2aa198">&#34;5.5.4&#34;</span>
+&gt;   <span style="color:#719e07">}</span>,
+&gt;   <span style="color:#2aa198">&#34;tagline&#34;</span>: <span style="color:#2aa198">&#34;You Know, for Search&#34;</span>
+&gt; <span style="color:#719e07">}</span>
+sudo docker container run --rm --net dude centos curl -s search:9200 | jq // dudeネットワークにcentosコンテナ立ち上げて, curlでsearchのエイリアスの効いたIPアドレスの9200番ポートに問い合わせてる
+&gt; <span style="color:#719e07">{</span> // 2回目は1回目とは違うコンテナに問い合わせてる
+&gt;   <span style="color:#2aa198">&#34;name&#34;</span>: <span style="color:#2aa198">&#34;Mondo&#34;</span>,
+&gt;   <span style="color:#2aa198">&#34;cluster_name&#34;</span>: <span style="color:#2aa198">&#34;elasticsearch&#34;</span>,
+&gt;   <span style="color:#2aa198">&#34;cluster_uuid&#34;</span>: <span style="color:#2aa198">&#34;OoTXK8QASzWdxxEF64iEHA&#34;</span>,
+&gt;   <span style="color:#2aa198">&#34;version&#34;</span>: <span style="color:#719e07">{</span>
+&gt;     <span style="color:#2aa198">&#34;number&#34;</span>: <span style="color:#2aa198">&#34;2.4.6&#34;</span>,
+&gt;     <span style="color:#2aa198">&#34;build_hash&#34;</span>: <span style="color:#2aa198">&#34;5376dca9f70f3abef96a77f4bb22720ace8240fd&#34;</span>,
+&gt;     <span style="color:#2aa198">&#34;build_timestamp&#34;</span>: <span style="color:#2aa198">&#34;2017-07-18T12:17:44Z&#34;</span>,
+&gt;     <span style="color:#2aa198">&#34;build_snapshot&#34;</span>: false,
+&gt;     <span style="color:#2aa198">&#34;lucene_version&#34;</span>: <span style="color:#2aa198">&#34;5.5.4&#34;</span>
+&gt;   <span style="color:#719e07">}</span>,
+&gt;   <span style="color:#2aa198">&#34;tagline&#34;</span>: <span style="color:#2aa198">&#34;You Know, for Search&#34;</span>
+&gt; <span style="color:#719e07">}</span>
+</code></pre></div><h2 id="image">image</h2>
+<p>Dockerのイメージは2種類のレイヤ構造になっている.</p>
+<ul>
+<li>読み込み専用レイヤのイメージレイヤ</li>
+<li>読み書き可能なコンテナレイヤ</li>
+</ul>
+<p>Dockerはユニオンファイルシステム(複数のファイルシステム上のディレクトリやファイルをレイヤとしてスタックし, それらを仮想的に一つのファイルシステムとして扱う技術)を使い, コンテナを軽量化している.
+<strong>Reference:</strong> 
+  <a href="https://www.techscore.com/blog/2018/12/10/docker-images-and-layers/">知らないと損する Docker イメージのレイヤ構造とは</a></p>
+<h3 id="一括してimageを削除">一括してimageを削除</h3>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker rmi <span style="color:#586e75">`</span>docker images -a -q<span style="color:#586e75">`</span>
+</code></pre></div><h3 id="一括してimageを最新へ更新">一括してimageを最新へ更新</h3>
+<p><strong>Reference:</strong> 
+  <a href="https://qiita.com/suin/items/5d65320ee9fb9596249f">一括してDockerイメージを最新にアップデートしたい</a></p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo docker images | cut -d <span style="color:#2aa198">&#39; &#39;</span> -f1 | tail -n +2 | sort | uniq | egrep -v <span style="color:#2aa198">&#39;^(&lt;none&gt;|ubuntu)$&#39;</span> | xargs -P0 -L1 sudo docker pull
+</code></pre></div><h3 id="imageをdocker-hubからpull">imageをDocker Hubからpull</h3>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo docker pull mysql
+</code></pre></div><h3 id="タグ付けしてpull">タグ付けしてpull</h3>
+<p>タグけせずにpullを行うとデフォルトでタグ名がlatestになる.<br>
+タグ付けするときはイメージ名の後ろに「:」を付けて, その後ろにタグ名を指定する.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo docker image pull nginx:mainline
+</code></pre></div><h3 id="既にあるimageに新たにタグ付けする">既にあるimageに新たにタグ付けする</h3>
+<p>タグ付けするとDocker Hubにタグ別にどんどんイメージをpushできる.<br>
+タグを変えるだけだと同じイメージが使われる.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo docker image tag nginx solareenlo/nginx
+</code></pre></div><h3 id="docker-hubにログイン">Docker Hubにログイン</h3>
+<p>そのままローカル環境からDocker Hubにログインするとパスワードが平文のまま保存されるのでpassなどを使って暗号化して保存する.
+保存方法は
+  <a href="/posts/docker-pass/">こらら</a>.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo docker login
+</code></pre></div><h3 id="docker-hubに自分でタグ付けしたimageをpush">Docker Hubに自分でタグ付けしたimageをpush</h3>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo docker push solareenlo/nginx
+</code></pre></div><h2 id="dockerfile">Dockerfile</h2>
+<h3 id="dockerfileを書いてみる">Dockerfileを書いてみる</h3>
+<ul>
+<li><code>FROM</code>: 元となるイメージを指定する. Docker Hubから引っ張ってくる.</li>
+<li><code>ENV</code>: 環境変数を設定できる.</li>
+<li><code>RUN</code>: 既存イメージ上の新しいレイヤで, あらゆるコマンドを実行し, その結果をコミットする命令.
+一度<code>RUN</code>を抜けるとホームディレクトリからの実行となる. ひたすらコマンドで書く.</li>
+<li><code>EXPOSE</code>: コンテナがリッスンするポートを設定できる.
+これを設定した後コンテナ起動時に<code>-p</code>を使ってポートの公開範囲を指定する必要がある.</li>
+<li><code>CMD</code>: 構築時には何もしないが、イメージで実行するコマンドを指定する.
+一度だけ実行する. 複数<code>CMD</code>がある場合は一番後ろのものが実行される.
+&lt;コマンド&gt;をシェルを使わずに実行したい場合, コマンドをJSON配列で記述し, 実行可能なフルパスで指定する必要がある.
+配列の形式が<code>CMD</code>では望ましい形式.
+あらゆる追加パラメータは個々の配列の文字列として指定する必要がある.</li>
+</ul>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#586e75"># こんな感じにDockerfileに書いてみる</span>
+<span style="color:#719e07">FROM</span><span style="color:#2aa198"> debian:stretch-slim</span>
+<span style="color:#719e07">ENV</span> NGINX_VERSION 1.13.6-1~stretch
+<span style="color:#719e07">ENV</span> NJS_VERSION   1.13.6.0.1.14-1~stretch
+<span style="color:#719e07">RUN</span> apt-get update <span style="color:#cb4b16">\
+</span><span style="color:#cb4b16"></span>  <span style="color:#719e07">&amp;&amp;</span> apt-get install --no-install-recommends --no-install-suggests -y gnupg1 <span style="color:#cb4b16">\
+</span><span style="color:#cb4b16"></span>  <span style="color:#719e07">&amp;&amp;</span> <span style="color:#cb4b16">\
+</span><span style="color:#cb4b16"></span>  <span style="color:#268bd2">NGINX_GPGKEY</span><span style="color:#719e07">=</span>573BFD6B3D8FBC641079A6ABABF5BD827BD9BF62; <span style="color:#cb4b16">\
+</span><span style="color:#cb4b16"></span>  <span style="color:#268bd2">found</span><span style="color:#719e07">=</span><span style="color:#2aa198">&#39;&#39;</span>; <span style="color:#cb4b16">\
+</span><span style="color:#cb4b16"></span>  <span style="color:#719e07">for</span> server in <span style="color:#cb4b16">\
+</span><span style="color:#cb4b16"></span>    ha.pool.sks-keyservers.net <span style="color:#cb4b16">\
+</span><span style="color:#cb4b16"></span>    hkp://keyserver.ubuntu.com:80 <span style="color:#cb4b16">\
+</span><span style="color:#cb4b16"></span>    hkp://p80.pool.sks-keyservers.net:80 <span style="color:#cb4b16">\
+</span><span style="color:#cb4b16"></span>    pgp.mit.edu <span style="color:#cb4b16">\
+</span><span style="color:#cb4b16"></span>  ; <span style="color:#719e07">do</span> <span style="color:#cb4b16">\
+</span><span style="color:#cb4b16"></span>    <span style="color:#b58900">echo</span> <span style="color:#2aa198">&#34;Fetching GPG key </span><span style="color:#268bd2">$NGINX_GPGKEY</span><span style="color:#2aa198"> from </span><span style="color:#268bd2">$server</span><span style="color:#2aa198">&#34;</span>; <span style="color:#cb4b16">\
+</span><span style="color:#cb4b16"></span>    apt-key adv --keyserver <span style="color:#2aa198">&#34;</span><span style="color:#268bd2">$server</span><span style="color:#2aa198">&#34;</span> --keyserver-options <span style="color:#268bd2">timeout</span><span style="color:#719e07">=</span><span style="color:#2aa198">10</span> --recv-keys <span style="color:#2aa198">&#34;</span><span style="color:#268bd2">$NGINX_GPGKEY</span><span style="color:#2aa198">&#34;</span> <span style="color:#719e07">&amp;&amp;</span> <span style="color:#268bd2">found</span><span style="color:#719e07">=</span>yes <span style="color:#719e07">&amp;&amp;</span> break; <span style="color:#cb4b16">\
+</span><span style="color:#cb4b16"></span>  <span style="color:#719e07">done</span>; <span style="color:#cb4b16">\
+</span><span style="color:#cb4b16"></span>  <span style="color:#b58900">test</span> -z <span style="color:#2aa198">&#34;</span><span style="color:#268bd2">$found</span><span style="color:#2aa198">&#34;</span> <span style="color:#719e07">&amp;&amp;</span> <span style="color:#b58900">echo</span> &gt;&amp;<span style="color:#2aa198">2</span> <span style="color:#2aa198">&#34;error: failed to fetch GPG key </span><span style="color:#268bd2">$NGINX_GPGKEY</span><span style="color:#2aa198">&#34;</span> <span style="color:#719e07">&amp;&amp;</span> <span style="color:#b58900">exit</span> 1; <span style="color:#cb4b16">\
+</span><span style="color:#cb4b16"></span>  apt-get remove --purge -y gnupg1 <span style="color:#719e07">&amp;&amp;</span> apt-get -y --purge autoremove <span style="color:#719e07">&amp;&amp;</span> rm -rf /var/lib/apt/lists/* <span style="color:#cb4b16">\
+</span><span style="color:#cb4b16"></span>  <span style="color:#719e07">&amp;&amp;</span> <span style="color:#b58900">echo</span> <span style="color:#2aa198">&#34;deb http://nginx.org/packages/mainline/debian/ stretch nginx&#34;</span> &gt;&gt; /etc/apt/sources.list <span style="color:#cb4b16">\
+</span><span style="color:#cb4b16"></span>  <span style="color:#719e07">&amp;&amp;</span> apt-get update <span style="color:#cb4b16">\
+</span><span style="color:#cb4b16"></span>  <span style="color:#719e07">&amp;&amp;</span> apt-get install --no-install-recommends --no-install-suggests -y <span style="color:#cb4b16">\
+</span><span style="color:#cb4b16"></span>            <span style="color:#268bd2">nginx</span><span style="color:#719e07">=</span><span style="color:#2aa198">${</span><span style="color:#268bd2">NGINX_VERSION</span><span style="color:#2aa198">}</span> <span style="color:#cb4b16">\
+</span><span style="color:#cb4b16"></span>            nginx-module-xslt<span style="color:#719e07">=</span><span style="color:#2aa198">${</span><span style="color:#268bd2">NGINX_VERSION</span><span style="color:#2aa198">}</span> <span style="color:#cb4b16">\
+</span><span style="color:#cb4b16"></span>            nginx-module-geoip<span style="color:#719e07">=</span><span style="color:#2aa198">${</span><span style="color:#268bd2">NGINX_VERSION</span><span style="color:#2aa198">}</span> <span style="color:#cb4b16">\
+</span><span style="color:#cb4b16"></span>            nginx-module-image-filter<span style="color:#719e07">=</span><span style="color:#2aa198">${</span><span style="color:#268bd2">NGINX_VERSION</span><span style="color:#2aa198">}</span> <span style="color:#cb4b16">\
+</span><span style="color:#cb4b16"></span>            nginx-module-njs<span style="color:#719e07">=</span><span style="color:#2aa198">${</span><span style="color:#268bd2">NJS_VERSION</span><span style="color:#2aa198">}</span> <span style="color:#cb4b16">\
+</span><span style="color:#cb4b16"></span>            gettext-base <span style="color:#cb4b16">\
+</span><span style="color:#cb4b16"></span>  <span style="color:#719e07">&amp;&amp;</span> rm -rf /var/lib/apt/lists/*
+<span style="color:#719e07">RUN</span> ln -sf /dev/stdout /var/log/nginx/access.log <span style="color:#cb4b16">\
+</span><span style="color:#cb4b16"></span>  <span style="color:#719e07">&amp;&amp;</span> ln -sf /dev/stderr /var/log/nginx/error.log
+<span style="color:#719e07">EXPOSE</span><span style="color:#2aa198"> 80 443</span>
+<span style="color:#719e07">CMD</span> [<span style="color:#2aa198">&#34;nginx&#34;</span>, <span style="color:#2aa198">&#34;-g&#34;</span>, <span style="color:#2aa198">&#34;daemon off;&#34;</span>]
+</code></pre></div><h3 id="dockerfileからイメージを作成する">DockerFileからイメージを作成する</h3>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">// Dockerfileのあるディレクトリで以下を実行して新たにイメージを作成する.
+sudo docker image build -t customnginx .
+
+// そして, コンテナを作成し, <span style="color:#586e75">`</span>localhost:80<span style="color:#586e75">`</span>にアクセスする.
+sudo docker container run --rm -p 80:80 --name nginx2 customnginx
+</code></pre></div><h3 id="ローカルにあるファイルをコピーしてイメージを作成する">ローカルにあるファイルをコピーしてイメージを作成する</h3>
+<p>以下のように<code>index.html</code>を作って,</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#719e07">&lt;!doctype html&gt;</span>
+&lt;<span style="color:#268bd2">html</span> lang<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;en&#34;</span>&gt;
+&lt;<span style="color:#268bd2">head</span>&gt;
+  &lt;<span style="color:#268bd2">meta</span> charset<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;utf-8&#34;</span>&gt;
+
+  &lt;<span style="color:#268bd2">title</span>&gt;2番目のDockerfile動いてる!&lt;/<span style="color:#268bd2">title</span>&gt;
+
+&lt;/<span style="color:#268bd2">head</span>&gt;
+
+&lt;<span style="color:#268bd2">body</span>&gt;
+  &lt;<span style="color:#268bd2">h1</span>&gt;ビルド時にカスタムファイルをイメージにコピーして, コンテナを正常に実行できています.&lt;/<span style="color:#268bd2">h1</span>&gt;
+&lt;/<span style="color:#268bd2">body</span>&gt;
+&lt;/<span style="color:#268bd2">html</span>&gt;
+</code></pre></div><p>以下のようにDokcerfileを作ってみる.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#586e75"># Dockerfileはこんな感じ</span>
+<span style="color:#719e07">FROM</span><span style="color:#2aa198"> nginx:latest</span>
+<span style="color:#719e07">WORKDIR</span><span style="color:#2aa198"> /usr/share/nginx/html</span>
+<span style="color:#719e07">COPY</span> index.html index.html
+</code></pre></div><p>そして, イメージを作ってコンテナを走らせて, <code>localhost:80</code>にアクセスすると, 先ほど作った<code>index.html</code>が表示される.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo docker image build -t nginx-with-html .
+sudo docker container run -p 80:80 --rm nginx-with-html
+</code></pre></div><h3 id="copyとaddの違い">COPYとADDの違い</h3>
+<ul>
+<li><code>COPY</code>はローカルのファイルをイメージのレイヤーにコピーできる.</li>
+<li><code>ADD</code>はリモートのファイルもイメージのレイヤーにコピーできる.</li>
+</ul>
+<h3 id="workdirで作業ディレクトリを指定する">WORKDIRで作業ディレクトリを指定する</h3>
+<ul>
+<li>Dockerfileで<code>RUN</code>, <code>CMD</code>, <code>ENTRYPOINT</code>, <code>COPY</code>, <code>ADD</code>命令実行時の作業ディレクトリを指定できる.</li>
+<li>複数回の利用が可能で, 複数回利用すると相対パスになる.</li>
+</ul>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#719e07">WORKDIR</span><span style="color:#2aa198"> /a</span>
+<span style="color:#719e07">WORKDIR</span><span style="color:#2aa198"> b</span>
+<span style="color:#719e07">WORKDIR</span><span style="color:#2aa198"> c</span>
+<span style="color:#719e07">RUN</span> pwd
+</code></pre></div><p>とすると, <code>/a/b/c pwd</code>となる.</p>
+<ul>
+<li>WORKDIRはENVを使った環境変数も利用できる.</li>
+</ul>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#719e07">ENV</span> DIRPATH /path
+<span style="color:#719e07">WORKDIR</span><span style="color:#2aa198"> $DIRPATH/to</span>
+<span style="color:#719e07">RUN</span> pwd
+</code></pre></div><p>とすると, <code>/path/to pwd</code>となる.</p>
+<h3 id="nodejs用のdockerfileをスクラッチから書いてみる">Node.js用のDockerfileをスクラッチから書いてみる</h3>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#586e75"># alpine用のnodeイメージインストールする</span>
+<span style="color:#719e07">FROM</span><span style="color:#2aa198"> node:8.16.0-alpine</span>
+<span style="color:#586e75"># コンテナの3000番ポートを開く</span>
+<span style="color:#719e07">EXPOSE</span><span style="color:#2aa198"> 3000</span>
+<span style="color:#586e75"># tiniをインストールして, 作業ディレクトリを作成する</span>
+<span style="color:#719e07">RUN</span> apk add --update tini <span style="color:#cb4b16">\
+</span><span style="color:#cb4b16"></span>  <span style="color:#719e07">&amp;&amp;</span> mkdir -p /usr/src/app
+<span style="color:#586e75"># 作業ディレクトリに移動する</span>
+<span style="color:#719e07">WORKDIR</span><span style="color:#2aa198"> /usr/src/app</span>
+<span style="color:#586e75"># package.jsonを作業ディレクトリにコピーする</span>
+<span style="color:#719e07">COPY</span> package.json package.json
+<span style="color:#586e75"># 作業ディレクトリにnpmパッケージをインストールする</span>
+<span style="color:#719e07">RUN</span> npm install
+<span style="color:#719e07">RUN</span> npm cache clean --force
+<span style="color:#586e75"># コンテナのイメージレイヤーに必要なファイル全てをコピーする</span>
+<span style="color:#719e07">COPY</span> . .
+<span style="color:#586e75"># tiniでnodeを起動する</span>
+<span style="color:#719e07">CMD</span> [<span style="color:#2aa198">&#34;/sbin/tini&#34;</span>, <span style="color:#2aa198">&#34;--&#34;</span>, <span style="color:#2aa198">&#34;node&#34;</span>, <span style="color:#2aa198">&#34;./bin/www&#34;</span>]
+</code></pre></div><p>こんな感んじでDokcerfileを作成する.<br>
+<strong>コード例:</strong> 
+  <a href="https://github.com/solareenlo/udemy-docker-mastery/tree/master/dockerfile-assignment-1">dockerfile-assignment-1</a><br>
+そして, イメージをビルドして, コンテナを起動して, localhost:3000にアクセスする.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker image build -t nodetest .
+docker container run --rm -p 80:3000 nodetest
+</code></pre></div><h3 id="任意のdockerfileを指定する">任意のDockerfileを指定する</h3>
+<p><code>-f</code>を使う.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker build -f Dockerfile.dev .
+</code></pre></div><h2 id="volume">volume</h2>
+<ul>
+<li>volumeはDockerが管理するデータ領域(コンテナが消えても残るデータ領域)をコンテナ上にマウントする機能のこと.</li>
+<li>volumeのデータは<code>/var/lib/docker/volumes</code>配下にある.</li>
+<li>設定する方法は<code>-v</code>と<code>--mount</code>の2種類ある.</li>
+<li>コンテナ内のvolumeにマウントしたらよいpathはhub.docker.comにあるイメージのページのタグのページから探すと良い.</li>
+<li>新規ユーザーは<code>--mount</code>を使おう.</li>
+<li><code>--mount</code>が<code>key=value</code>形式で分かりやすいから.</li>
+</ul>
+<h3 id="-vを使ってvolumeをmysqlコンテナにマウントする">-vを使ってvolumeをmysqlコンテナにマウントする</h3>
+<p>下記ではDocker内のvolumeという永続的にデータが保管されるところに<code>mysql-db</code>というディレクトリが作成されて, それがコンテナ内の<code>/var/lib/mysql</code>に紐付くということ.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker container run -d --name mysql -e <span style="color:#268bd2">MYSQL_ALLOW_EMPTY_PASSWORD</span><span style="color:#719e07">=</span>True -v mysql-db:/var/lib/mysql mysql
+</code></pre></div><h3 id="--mountを使ってvolumeをmysqlコンテナにマウントする">&ndash;mountを使ってvolumeをmysqlコンテナにマウントする</h3>
+<p><code>--mount</code>は, <code>key=value</code>形式でvolumeの指定をするフラグ.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker container run -d --name mysql2 -e <span style="color:#268bd2">MYSQL_ALLOW_EMPTY_PASSWORD</span><span style="color:#719e07">=</span>True --mount <span style="color:#268bd2">type</span><span style="color:#719e07">=</span>volume,src<span style="color:#719e07">=</span>mysql-db2,dst<span style="color:#719e07">=</span>/var/lib/mysql mysql
+</code></pre></div><h3 id="2つのコンテナに同じvolumeをマウントする">2つのコンテナに同じvolumeをマウントする</h3>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker container run -d --name psql --mount <span style="color:#268bd2">type</span><span style="color:#719e07">=</span>volume,src<span style="color:#719e07">=</span>psql,dst<span style="color:#719e07">=</span>/var/lib/postgresql/data postgres:alpine
+docker container logs -f psql
+&gt; psqlのlogが標準出力される
+docker container stop psql
+docker container run -d --name psql2 --mount <span style="color:#268bd2">type</span><span style="color:#719e07">=</span>volume,src<span style="color:#719e07">=</span>psql,dst<span style="color:#719e07">=</span>/var/lib/postgresql/data postgres:alpine
+docker container logs -f psql2
+&gt; psql2のlogが出力される
+docker volume ls
+&gt; DRIVER              VOLUME NAME
+&gt; <span style="color:#b58900">local</span>               psql
+</code></pre></div><h2 id="bind-mount">bind mount</h2>
+<p>bind mountはDocker外の任意のファイル・ディレクトリをコンテナ内にマウントする機能のこと.</p>
+<h3 id="-vを使ってdocker外のデータをnginxコンテナにマウントする">-vを使ってDocker外のデータをnginxコンテナにマウントする</h3>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone git@github.com:solareenlo/udemy-docker-mastery.git
+ch udemy-docker-mastery/dockerfile-sample-2
+docker container run -d --name nginx -p 80:80 -v <span style="color:#719e07">$(</span><span style="color:#b58900">pwd</span><span style="color:#719e07">)</span>:/usr/share/nginx/html nginx
+</code></pre></div><h3 id="--mountを使ってdocker外のデータをnginxコンテナにマウントする">&ndash;mountを使ってDocker外のデータをnginxコンテナにマウントする</h3>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone git@github.com:solareenlo/udemy-docker-mastery.git
+ch udemy-docker-mastery/dockerfile-sample-2
+docker container run -d --name nginx2 -p 8080:80 --mount <span style="color:#268bd2">type</span><span style="color:#719e07">=</span>bind,src<span style="color:#719e07">=</span><span style="color:#719e07">$(</span><span style="color:#b58900">pwd</span><span style="color:#719e07">)</span>,dst<span style="color:#719e07">=</span>/usr/share/nginx/html nginx
+</code></pre></div><p>そして, nginxの中に入って, Docker外のデータとコンテナがきちんとマウントされてるかどうかを確かめてみる.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker container <span style="color:#b58900">exec</span> -it nginx /bin/bash
+<span style="color:#b58900">cd</span> /usr/share/nginx/html
+ls -la
+&gt; drwxr-xr-x <span style="color:#2aa198">2</span> <span style="color:#2aa198">1000</span> <span style="color:#2aa198">1000</span> <span style="color:#2aa198">4096</span> Apr <span style="color:#2aa198">24</span> 16:17 .
+&gt; drwxr-xr-x <span style="color:#2aa198">3</span> root root <span style="color:#2aa198">4096</span> Apr <span style="color:#2aa198">16</span> 21:20 ..
+&gt; -rw-r--r-- <span style="color:#2aa198">1</span> <span style="color:#2aa198">1000</span> <span style="color:#2aa198">1000</span>  <span style="color:#2aa198">415</span> Apr <span style="color:#2aa198">19</span> 17:34 Dockerfile
+&gt; -rw-r--r-- <span style="color:#2aa198">1</span> <span style="color:#2aa198">1000</span> <span style="color:#2aa198">1000</span>  <span style="color:#2aa198">285</span> Apr <span style="color:#2aa198">23</span> 22:54 index.html
+<span style="color:#586e75"># 別のターミナルを開いて, コンテナをマウントしたディレクトリでtest.mdを作成すると,</span>
+ls -la
+&gt; drwxr-xr-x <span style="color:#2aa198">2</span> <span style="color:#2aa198">1000</span> <span style="color:#2aa198">1000</span> <span style="color:#2aa198">4096</span> Apr <span style="color:#2aa198">25</span> 01:20 .
+&gt; drwxr-xr-x <span style="color:#2aa198">3</span> root root <span style="color:#2aa198">4096</span> Apr <span style="color:#2aa198">16</span> 21:20 ..
+&gt; -rw-r--r-- <span style="color:#2aa198">1</span> <span style="color:#2aa198">1000</span> <span style="color:#2aa198">1000</span>  <span style="color:#2aa198">415</span> Apr <span style="color:#2aa198">19</span> 17:34 Dockerfile
+&gt; -rw-r--r-- <span style="color:#2aa198">1</span> <span style="color:#2aa198">1000</span> <span style="color:#2aa198">1000</span>  <span style="color:#2aa198">285</span> Apr <span style="color:#2aa198">23</span> 22:54 index.html
+&gt; -rw-rw-r-- <span style="color:#2aa198">1</span> <span style="color:#2aa198">1000</span> <span style="color:#2aa198">1000</span>    <span style="color:#2aa198">0</span> Apr <span style="color:#2aa198">25</span> 01:20 test.md
+<span style="color:#586e75"># test.mdがきちんと増えてる.</span>
+</code></pre></div><h3 id="ローカルのjekyllをコンテナのjekllサーバで動かす">ローカルのJekyllをコンテナのJekllサーバで動かす</h3>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone git@github.com:solareenlo/udemy-docker-mastery.git
+<span style="color:#b58900">cd</span> udemy-docker-mastery/bindmount-sample-1
+docker run -p 80:4000 --mount <span style="color:#268bd2">type</span><span style="color:#719e07">=</span>bind,src<span style="color:#719e07">=</span><span style="color:#719e07">$(</span><span style="color:#b58900">pwd</span><span style="color:#719e07">)</span>,dst<span style="color:#719e07">=</span>/site bretfisher/jekyll-serve
+&gt; コンテナでJekyllサーバが起動する
+&gt; Configuration file: /site/_config.yml
+&gt;        Deprecation: The <span style="color:#2aa198">&#39;gems&#39;</span> configuration option has been renamed to <span style="color:#2aa198">&#39;plugins&#39;</span>. Please update your config file accordingly.
+&gt;             Source: /site
+&gt;        Destination: /site/_site
+&gt;  Incremental build: disabled. Enable with --incremental
+&gt;       Generating...
+&gt;        Jekyll Feed: Generating feed <span style="color:#719e07">for</span> posts
+&gt;                     <span style="color:#719e07">done</span> in 0.261 seconds.
+&gt;  Auto-regeneration: enabled <span style="color:#719e07">for</span> <span style="color:#2aa198">&#39;/site&#39;</span>
+&gt;     Server address: http://0.0.0.0:4000/
+&gt;   Server running... press ctrl-c to stop.
+</code></pre></div><p>ブラウザで<code>localhost:80</code>にアクセスするとJekyllで作ったサイトが立ち上がってる.</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex justify-between">
+
+
+
+  <div>
+    
+    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/commit/bea798d93c9116bad5b5ceb26ca3159b372095e9" title='Last modified by solareenlo | Mar 20, 2020' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>Mar 20, 2020</span>
+    </a>
+  </div>
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/edit/master/content/docs/container/docker1.md" target="_blank" rel="noopener">
+      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#dockerとは">Dockerとは</a>
+      <ul>
+        <li><a href="#dockerのメリットデメリット">Dockerのメリット/デメリット</a>
+          <ul>
+            <li><a href="#メリット">メリット</a></li>
+            <li><a href="#デメリット">デメリット</a></li>
+          </ul>
+        </li>
+        <li><a href="#なぜrootユーザーか">なぜrootユーザーか</a></li>
+        <li><a href="#インストール方法">インストール方法</a>
+          <ul>
+            <li><a href="#linux編">Linux編</a></li>
+          </ul>
+        </li>
+        <li><a href="#基本的な使い方v18095">基本的な使い方(v18.09.5)</a></li>
+        <li><a href="#container">container</a>
+          <ul>
+            <li><a href="#dockerでhello-world">DockerでHello World!</a></li>
+            <li><a href="#コンテナを起動停止再起動">コンテナを起動/停止/再起動</a></li>
+            <li><a href="#一覧log表示">一覧/log表示</a></li>
+            <li><a href="#コンテナの状態を見る">コンテナの状態を見る</a></li>
+            <li><a href="#コンテナを動かす">コンテナを動かす</a></li>
+            <li><a href="#対話型モードでコンテナを動かす">対話型モードでコンテナを動かす</a></li>
+            <li><a href="#alpineを動かす">Alpineを動かす</a></li>
+            <li><a href="#コンテナの停止とともにコンテナ削除">コンテナの停止とともにコンテナ削除</a></li>
+            <li><a href="#コンテナを一度に停止する">コンテナを一度に停止する</a></li>
+            <li><a href="#コンテナを一度に削除する">コンテナを一度に削除する</a></li>
+            <li><a href="#起動しているコンテナに入る">起動しているコンテナに入る</a></li>
+            <li><a href="#portを指定してnginxを起動する">portを指定してnginxを起動する</a></li>
+          </ul>
+        </li>
+        <li><a href="#network">network</a>
+          <ul>
+            <li><a href="#ネットワークを新規に作って接続して削除する">ネットワークを新規に作って接続して削除する</a></li>
+            <li><a href="#コンテナからコンテナに問い合わせる">コンテナからコンテナに問い合わせる</a></li>
+            <li><a href="#2個コンテナを立ててdnsラウンドロビンを使ってみる">2個コンテナを立ててDNSラウンドロビンを使ってみる</a></li>
+          </ul>
+        </li>
+        <li><a href="#image">image</a>
+          <ul>
+            <li><a href="#一括してimageを削除">一括してimageを削除</a></li>
+            <li><a href="#一括してimageを最新へ更新">一括してimageを最新へ更新</a></li>
+            <li><a href="#imageをdocker-hubからpull">imageをDocker Hubからpull</a></li>
+            <li><a href="#タグ付けしてpull">タグ付けしてpull</a></li>
+            <li><a href="#既にあるimageに新たにタグ付けする">既にあるimageに新たにタグ付けする</a></li>
+            <li><a href="#docker-hubにログイン">Docker Hubにログイン</a></li>
+            <li><a href="#docker-hubに自分でタグ付けしたimageをpush">Docker Hubに自分でタグ付けしたimageをpush</a></li>
+          </ul>
+        </li>
+        <li><a href="#dockerfile">Dockerfile</a>
+          <ul>
+            <li><a href="#dockerfileを書いてみる">Dockerfileを書いてみる</a></li>
+            <li><a href="#dockerfileからイメージを作成する">DockerFileからイメージを作成する</a></li>
+            <li><a href="#ローカルにあるファイルをコピーしてイメージを作成する">ローカルにあるファイルをコピーしてイメージを作成する</a></li>
+            <li><a href="#copyとaddの違い">COPYとADDの違い</a></li>
+            <li><a href="#workdirで作業ディレクトリを指定する">WORKDIRで作業ディレクトリを指定する</a></li>
+            <li><a href="#nodejs用のdockerfileをスクラッチから書いてみる">Node.js用のDockerfileをスクラッチから書いてみる</a></li>
+            <li><a href="#任意のdockerfileを指定する">任意のDockerfileを指定する</a></li>
+          </ul>
+        </li>
+        <li><a href="#volume">volume</a>
+          <ul>
+            <li><a href="#-vを使ってvolumeをmysqlコンテナにマウントする">-vを使ってvolumeをmysqlコンテナにマウントする</a></li>
+            <li><a href="#--mountを使ってvolumeをmysqlコンテナにマウントする">&ndash;mountを使ってvolumeをmysqlコンテナにマウントする</a></li>
+            <li><a href="#2つのコンテナに同じvolumeをマウントする">2つのコンテナに同じvolumeをマウントする</a></li>
+          </ul>
+        </li>
+        <li><a href="#bind-mount">bind mount</a>
+          <ul>
+            <li><a href="#-vを使ってdocker外のデータをnginxコンテナにマウントする">-vを使ってDocker外のデータをnginxコンテナにマウントする</a></li>
+            <li><a href="#--mountを使ってdocker外のデータをnginxコンテナにマウントする">&ndash;mountを使ってDocker外のデータをnginxコンテナにマウントする</a></li>
+            <li><a href="#ローカルのjekyllをコンテナのjekllサーバで動かす">ローカルのJekyllをコンテナのJekllサーバで動かす</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

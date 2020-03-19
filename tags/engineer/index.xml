@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>engineer on solareenlo</title>
@@ -16,7 +16,7 @@
       <pubDate>Tue, 30 Apr 2019 10:00:00 +0900</pubDate>
       
       <guid>https://solareenlo.com/posts/app/</guid>
-      <description> 本を作成  Re:VIEW pandoc  質疑応答  sli.do  作図  draw.io  マークダウン表示  typora  wikiの新しい形  Scrapbox  ノートアプリ  Notion  サーバーレスアプリのホスティングサービス  Now  JSONの書きミスチェッカー  JOSNLint  全文検索  Elasticsearch  モニタリング  KIBANA Grafana Prometheus  </description>
+      <description>本を作成   Re:VIEW  pandoc  質疑応答   sli.do  作図   draw.io  マークダウン表示   typora  wikiの新しい形   Scrapbox  ノートアプリ   Notion  サーバーレスアプリのホスティングサービス   Now  JSONの書きミスチェッカー   JOSNLint  全文検索   Elasticsearch  モニタリング   KIBANA  Grafana  Prometheus  </description>
     </item>
     
     <item>
@@ -27,7 +27,7 @@
       <guid>https://solareenlo.com/posts/bitbank01/</guid>
       <description>  bitbank Drink Meetup #1 〜エンジニア〜の自分なりのメモ
  秘密鍵の安全な生成法 用意するもの
- 電磁波を通さない物質で囲まれたシェルター 電波が通じてない山奥 完全にランダムで賽の目が出るサイコロ 上記のセットを複数個  とってもセキュアに暗号資産を管理してくれるところ  xapo  </description>
+ 電磁波を通さない物質で囲まれたシェルター 電波が通じてない山奥 完全にランダムで賽の目が出るサイコロ 上記のセットを複数個  とってもセキュアに暗号資産を管理してくれるところ   xapo  </description>
     </item>
     
   </channel>

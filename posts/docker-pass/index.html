@@ -5,10 +5,10 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Ubuntu用
- なぜDocker Hubのパスワードをpassを使って管理するか? ローカルからDocker Hubにログインすると, その時のパスワードを平文のまま保存されるから.     ここ からdocker-credential-passの最新バージョンをダウンロードする. tar -zxvf docker-credential-pass.tar.gz (解凍する.) mv docker-credential-pass /usr/local/bin (PATHが通ってるところにファイルを移動する.) sudo apt-get install gpg pass ( gpg と pass をインストール.) gpg --generate-keyで新しい秘密鍵と公開鍵の組を作る. gpg --list-keysで出てきた, pubの16進数の40文字(大文字のA-F, 0-9の文字列)をコピーする. pass init AAAAAAAAAABBBBBBBBBBCCCCCCCCCCDDDDDDDDDでpassを初期化する. pass insert docker-credential-helpers/docker-pass-initialized-checkでとりあえずのディレクトリを作成する. docker-credential-pass listで{}と返ってくる. ~/.docker/config.jsonに{&quot;credsStore&quot;: &quot;pass&quot;}と書き込む. docker loginでDockerにログインする.   うまくいかないときは権限をchmodを使って変更してみる.
+ なぜDocker Hubのパスワードをpassを使って管理するか? ローカルからDocker Hubにログインすると, その時のパスワードを平文のまま保存されるから.     ここからdocker-credential-passの最新バージョンをダウンロードする. tar -zxvf docker-credential-pass.tar.gz (解凍する.) mv docker-credential-pass /usr/local/bin (PATHが通ってるところにファイルを移動する.) sudo apt-get install gpg pass ( gpgと passをインストール.) gpg --generate-keyで新しい秘密鍵と公開鍵の組を作る. gpg --list-keysで出てきた, pubの16進数の40文字(大文字のA-F, 0-9の文字列)をコピーする. pass init AAAAAAAAAABBBBBBBBBBCCCCCCCCCCDDDDDDDDDでpassを初期化する. pass insert docker-credential-helpers/docker-pass-initialized-checkでとりあえずのディレクトリを作成する. docker-credential-pass listで{}と返ってくる. ~/.docker/config.jsonに{&quot;credsStore&quot;: &quot;pass&quot;}と書き込む. docker loginでDockerにログインする.   うまくいかないときは権限をchmodを使って変更してみる.
  curl -O https://github.com/docker/docker-credential-helpers/releases/download/v0.6.0/docker-credential-pass-v0.6.0-amd64.tar.gz tar -xvf docker-credential-pass.tar.gz mv docker-credential-pass /usr/local/bin apt-get install gpg pass gpg --generate-key gpg --list-keys &gt; pub rsa2048 2019-04-22 [SC] [有効期限: 2021-04-21] &gt; D7D35B60A7FA571541959AF3C4821C32793D5F5A // ここの公開鍵をコピーする &gt; uid [ 究極 ] solareenlo &lt;test@example."><meta property="og:title" content="ローカル環境のDocker Hubのパスワードをpassで管理する方法" />
 <meta property="og:description" content="Ubuntu用
- なぜDocker Hubのパスワードをpassを使って管理するか? ローカルからDocker Hubにログインすると, その時のパスワードを平文のまま保存されるから.     ここ からdocker-credential-passの最新バージョンをダウンロードする. tar -zxvf docker-credential-pass.tar.gz (解凍する.) mv docker-credential-pass /usr/local/bin (PATHが通ってるところにファイルを移動する.) sudo apt-get install gpg pass ( gpg と pass をインストール.) gpg --generate-keyで新しい秘密鍵と公開鍵の組を作る. gpg --list-keysで出てきた, pubの16進数の40文字(大文字のA-F, 0-9の文字列)をコピーする. pass init AAAAAAAAAABBBBBBBBBBCCCCCCCCCCDDDDDDDDDでpassを初期化する. pass insert docker-credential-helpers/docker-pass-initialized-checkでとりあえずのディレクトリを作成する. docker-credential-pass listで{}と返ってくる. ~/.docker/config.jsonに{&quot;credsStore&quot;: &quot;pass&quot;}と書き込む. docker loginでDockerにログインする.   うまくいかないときは権限をchmodを使って変更してみる.
+ なぜDocker Hubのパスワードをpassを使って管理するか? ローカルからDocker Hubにログインすると, その時のパスワードを平文のまま保存されるから.     ここからdocker-credential-passの最新バージョンをダウンロードする. tar -zxvf docker-credential-pass.tar.gz (解凍する.) mv docker-credential-pass /usr/local/bin (PATHが通ってるところにファイルを移動する.) sudo apt-get install gpg pass ( gpgと passをインストール.) gpg --generate-keyで新しい秘密鍵と公開鍵の組を作る. gpg --list-keysで出てきた, pubの16進数の40文字(大文字のA-F, 0-9の文字列)をコピーする. pass init AAAAAAAAAABBBBBBBBBBCCCCCCCCCCDDDDDDDDDでpassを初期化する. pass insert docker-credential-helpers/docker-pass-initialized-checkでとりあえずのディレクトリを作成する. docker-credential-pass listで{}と返ってくる. ~/.docker/config.jsonに{&quot;credsStore&quot;: &quot;pass&quot;}と書き込む. docker loginでDockerにログインする.   うまくいかないときは権限をchmodを使って変更してみる.
  curl -O https://github.com/docker/docker-credential-helpers/releases/download/v0.6.0/docker-credential-pass-v0.6.0-amd64.tar.gz tar -xvf docker-credential-pass.tar.gz mv docker-credential-pass /usr/local/bin apt-get install gpg pass gpg --generate-key gpg --list-keys &gt; pub rsa2048 2019-04-22 [SC] [有効期限: 2021-04-21] &gt; D7D35B60A7FA571541959AF3C4821C32793D5F5A // ここの公開鍵をコピーする &gt; uid [ 究極 ] solareenlo &lt;test@example." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://solareenlo.com/posts/docker-pass/" />
@@ -21,7 +21,7 @@
 <link rel="stylesheet" href="/book.min.5fa1289292eb5e3222d2349e8d9deaae01ee5d99834b1dc07cee7554c8837bdb.css" integrity="sha256-X6EokpLrXjIi0jSejZ3qrgHuXZmDSx3AfO51VMiDe9s=">
 
 
-<script defer src="/en.search.min.f6af7aaf107e98993b66c1f023305140923412c3b362b6205e4b0b7d66698b72.js" integrity="sha256-9q96rxB&#43;mJk7ZsHwIzBRQJI0EsOzYrYgXksLfWZpi3I="></script>
+<script defer src="/en.search.min.844700da278f680d62ac5ca6567f92e5956d82d24388836ec3df22a102ef0194.js" integrity="sha256-hEcA2iePaA1irFymVn&#43;S5ZVtgtJDiINuw98ioQLvAZQ="></script>
 
 <!--
 Made with Book Theme
@@ -54,226 +54,261 @@ https://github.com/alex-shpak/hugo-book
 
 
 
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        Blog
+      </a>
+  </li>
+  
+</ul>
 
 
 
 
 
+
+
+  
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
   <ul>
-<li>
-  <a href="/"><strong>はじめに</strong></a>
-</li>
-<li>
-  <a href="/posts/"><strong>Blog</strong></a>
-</li>
-<li>
-  <a href="/docs/programming/"><strong>Programming</strong></a>
+    
+      
+        
 
-<ul>
-<li>
-  <a href="/docs/terminal/">Terminal</a>
-</li>
-<li>
-  <a href="/docs/command/">Command</a>
-</li>
-<li>
-  <a href="/docs/sed/">sed</a>
-</li>
-<li>
-  <a href="/docs/shell-script/">Shell Script</a>
-</li>
-<li>
-  <a href="/docs/vim/">Vim</a>
-</li>
-<li>
-  <a href="/docs/vimium/">Vimium</a>
-</li>
-<li>
-  <a href="/docs/git/">Git</a>
-</li>
-<li>
-  <a href="/docs/github/">GitHub</a>
-</li>
-<li>
-  <a href="/docs/linter-formatter/">Linter/Formatter</a>
-</li>
-<li>
-  <a href="/docs/test/">Test</a>
-</li>
-<li>
-  <a href="/docs/password-manager/">Password Manager</a>
-</li>
-</ul>
-</li>
-<li>
-  <a href="/docs/programming-language/"><strong>Programming Language</strong></a>
+  <li>
+    
 
-<ul>
-<li>
-  <a href="/docs/c/">C</a>
-</li>
-<li>
-  <a href="/docs/rust/">Rust</a>
-</li>
-<li>
-  <a href="/docs/javascript/">JavaScript</a>
-</li>
-<li>
-  <a href="/docs/css/">CSS</a>
-</li>
-<li>
-  <a href="/docs/nodejs/">Node.js</a>
-</li>
-<li>
-  <a href="/docs/npm/">npm</a>
-</li>
-<li>
-  <a href="/docs/typescript/">TypeScript</a>
-</li>
-<li>
-  <a href="/docs/angular/">Angular</a>
-</li>
-<li>
-  <a href="/docs/react/">React</a>
-</li>
-<li>
-  <a href="/docs/react-static/">React Static</a>
-</li>
-<li>
-  <a href="/docs/haskell/">Haskell</a>
-</li>
-<li>
-  <a href="/docs/hugo/">Hugo</a>
-</li>
-<li>
-  <a href="/docs/programming-language-docs/">Docs</a>
-</li>
-</ul>
-</li>
-<li>
-  <a href="/docs/latex/"><strong>LaTeX</strong></a>
+  
+  <a href="/docs/programming/" class="collapsed ">Programming</a>
+  
 
-<ul>
-<li>
-  <a href="/docs/platex-book/">Book</a>
-</li>
-</ul>
-</li>
-<li>
-  <a href="/docs/vps/"><strong>VPS</strong></a>
 
-<ul>
-<li>
-  <a href="/docs/ssh/">SSH</a>
-</li>
-<li>
-  <a href="/docs/ubuntu/">Ubuntu</a>
-</li>
-<li>
-  <a href="/docs/alpine-linux/">Alpine Linux</a>
-</li>
-</ul>
-</li>
-<li>
-  <a href="/docs/db/"><strong>DB</strong></a>
+    
 
-<ul>
-<li>
-  <a href="/docs/mysql/">MySQL</a>
-</li>
-<li>
-  <a href="/docs/mongodb/">MongoDB</a>
-</li>
-<li>
-  <a href="/docs/redis/">Redis</a>
-</li>
-</ul>
-</li>
-<li>
-  <a href="/docs/cloud/"><strong>Cloud</strong></a>
 
-<ul>
-<li>
-  <a href="/docs/aws/">AWS</a>
-</li>
-<li>
-  <a href="/docs/gcp/">GCP</a>
-</li>
-<li>
-  <a href="/docs/firebase/">Firebase</a>
-</li>
-<li>
-  <a href="/docs/zeit-now/">ZEIT Now</a>
-</li>
-</ul>
-</li>
-<li>
-  <a href="/docs/ci-cd/"><strong>CI/CD</strong></a>
 
-<ul>
-<li>
-  <a href="/docs/jenkins/">Jenkins</a>
-</li>
-<li>
-  <a href="/docs/travis-ci/">Travis CI</a>
-</li>
-<li>
-  <a href="/docs/circleci/">CircleCI</a>
-</li>
-</ul>
-</li>
-<li>
-  <a href="/docs/container/"><strong>Container</strong></a>
 
-<ul>
-<li>
-  <a href="/docs/docker1/">Docker1</a>
-</li>
-<li>
-  <a href="/docs/docker2/">Docker2</a>
-</li>
-<li>
-  <a href="/docs/docker-hub/">Docker Hub</a>
-</li>
-<li>
-  <a href="/docs/docker-compose/">Docker Compose</a>
-</li>
-<li>
-  <a href="/docs/kubernetes/">Kubernetes</a>
-</li>
-</ul>
-</li>
-<li>
-  <a href="/docs/crypto/"><strong>Crypto</strong></a>
 
-<ul>
-<li>
-  <a href="/docs/blockchain/">Blockchain</a>
-</li>
-<li>
-  <a href="/docs/bitcoin/">Bitcoin</a>
-</li>
-<li>
-  <a href="/docs/ethereum/">Ethereum</a>
-</li>
-<li>
-  <a href="/docs/iota/">IOTA</a>
-</li>
-<li>
-  <a href="/docs/nem/">NEM</a>
-</li>
-<li>
-  <a href="/docs/substrate/">Substrate</a>
-</li>
-<li>
-  <a href="/docs/white-paper/">White Paper</a>
-</li>
-<li>
-  <a href="/docs/crypto-docs/">Docs</a>
-</li>
-</ul>
-</li>
-</ul>
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/pl/" class="collapsed ">Programming Language</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/latex/" class="collapsed ">LaTeX</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/vps/" class="collapsed ">VPS</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/db/" class="collapsed ">DB</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/cloud/" class="collapsed ">Cloud</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/ci-cd/" class="collapsed ">CI/CD</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/container/" class="collapsed ">Conatainer</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/crypto/" class="collapsed ">Crypto</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
 
 
 
@@ -356,12 +391,16 @@ https://github.com/alex-shpak/hugo-book
   
   <div>
     
+        <a href="/categories/Docker-Hub/">Docker Hub</a>
   </div>
   
 
   
   <div>
-    , , 
+    
+        <a href="/tags/Docker/">Docker</a>, 
+        <a href="/tags/Docker-Hub/">Docker Hub</a>, 
+        <a href="/tags/pass/">pass</a>
   </div>
   
 
@@ -375,15 +414,12 @@ https://github.com/alex-shpak/hugo-book
 </blockquote>
 <ol>
 <li>
-  <a href="https://github.com/docker/docker-credential-helpers/releases">ここ</a>
-から<code>docker-credential-pass</code>の最新バージョンをダウンロードする.</li>
+  <a href="https://github.com/docker/docker-credential-helpers/releases">ここ</a>から<code>docker-credential-pass</code>の最新バージョンをダウンロードする.</li>
 <li><code>tar -zxvf docker-credential-pass.tar.gz</code> (解凍する.)</li>
 <li><code>mv docker-credential-pass /usr/local/bin</code> (PATHが通ってるところにファイルを移動する.)</li>
 <li><code>sudo apt-get install gpg pass</code> (
-  <a href="https://www.gnupg.org/index.html">gpg</a>
-と
-  <a href="https://www.passwordstore.org">pass</a>
-をインストール.)</li>
+  <a href="https://www.gnupg.org/index.html">gpg</a>と
+  <a href="https://www.passwordstore.org">pass</a>をインストール.)</li>
 <li><code>gpg --generate-key</code>で新しい秘密鍵と公開鍵の組を作る.</li>
 <li><code>gpg --list-keys</code>で出てきた, pubの16進数の40文字(大文字のA-F, 0-9の文字列)をコピーする.</li>
 <li><code>pass init AAAAAAAAAABBBBBBBBBBCCCCCCCCCCDDDDDDDDD</code>でpassを初期化する.</li>
@@ -418,14 +454,11 @@ docker login
 </code></pre></div><ul>
 <li><strong>References:</strong></li>
 <li>
-  <a href="https://stackoverflow.com/questions/50151833/cannot-login-to-docker-account/50569553">Cannot login to Docker account</a>
-</li>
+  <a href="https://stackoverflow.com/questions/50151833/cannot-login-to-docker-account/50569553">Cannot login to Docker account</a></li>
 <li>
-  <a href="https://github.com/docker/docker-credential-helpers/issues/102">Document how to initialize docker-credentials-pass #102</a>
-</li>
+  <a href="https://github.com/docker/docker-credential-helpers/issues/102">Document how to initialize docker-credentials-pass #102</a></li>
 <li>
-  <a href="https://docs.docker.com/engine/reference/commandline/login/#credentials-store">Credentials store</a>
-</li>
+  <a href="https://docs.docker.com/engine/reference/commandline/login/#credentials-store">Credentials store</a></li>
 </ul>
 </p>
 </article>

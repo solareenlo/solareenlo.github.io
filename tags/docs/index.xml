@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>docs on solareenlo</title>
@@ -16,7 +16,7 @@
       <pubDate>Mon, 17 Jun 2019 06:00:00 +0900</pubDate>
       
       <guid>https://solareenlo.com/posts/documentation/</guid>
-      <description> https://readthedocs.org https://www.sphinx-doc.org/en/master/ https://www.mkdocs.org  https://github.com/squidfunk/mkdocs-material  https://www.gitbook.com  </description>
+      <description> https://readthedocs.org https://www.sphinx-doc.org/en/master/ https://www.mkdocs.org  https://github.com/squidfunk/mkdocs-material   https://www.gitbook.com  </description>
     </item>
     
   </channel>

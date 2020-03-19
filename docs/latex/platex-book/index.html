@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="pLaTeXで本を作成する方法  総合開発環境を使う方法とコマンドラインを使う方法の2種類がある.  Mac編   TexShopというlatexの総合開発環境を使うのが簡単.  Ubuntu編  Ubuntuでは総合開発環境を使わずに, TeX Live(TeXのディストリビューション)とzathura(pdfビューア)を使って, コマンドラインで作成していく.  TeX Liveのインストール # ミラーサイトからinstall-tl-unx.tar.gzをダウンロードする # wget を使用する場合 wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz # curl を使用する場合 curl -O http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz # install-tl-unx.tar.gzを展開する tar xvf install-tl-unx.tar.gz # 展開したディレクトリに移動する cd install-tl* # root権限でインストーラを実行する # Iを入力してインストールを開始する sudo ./install-tl -no-gui -repository http://mirror.ctan.org/systems/texlive/tlnet/ # インストールが途中でストップした場合は, 以下のコマンドで再開する sudo ./install-tl -no-gui -profile installation.profile # インストールが終了したら /usr/local/bin ディレクトリ配下にシンボリックリンクを追加する # ????はバージョンを入力する sudo /usr/local/texlive/????/bin/*/tlmgr path add  Reference: https://texwiki.texjp.org/?Linux  Tex Liveのアップデート sudo tlmgr update --self --all pdfビューアのインストール  ここでは pwmt/zathuraをインストールする."><meta property="og:title" content="" />
+<meta property="og:description" content="pLaTeXで本を作成する方法  総合開発環境を使う方法とコマンドラインを使う方法の2種類がある.  Mac編   TexShopというlatexの総合開発環境を使うのが簡単.  Ubuntu編  Ubuntuでは総合開発環境を使わずに, TeX Live(TeXのディストリビューション)とzathura(pdfビューア)を使って, コマンドラインで作成していく.  TeX Liveのインストール # ミラーサイトからinstall-tl-unx.tar.gzをダウンロードする # wget を使用する場合 wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz # curl を使用する場合 curl -O http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz # install-tl-unx.tar.gzを展開する tar xvf install-tl-unx.tar.gz # 展開したディレクトリに移動する cd install-tl* # root権限でインストーラを実行する # Iを入力してインストールを開始する sudo ./install-tl -no-gui -repository http://mirror.ctan.org/systems/texlive/tlnet/ # インストールが途中でストップした場合は, 以下のコマンドで再開する sudo ./install-tl -no-gui -profile installation.profile # インストールが終了したら /usr/local/bin ディレクトリ配下にシンボリックリンクを追加する # ????はバージョンを入力する sudo /usr/local/texlive/????/bin/*/tlmgr path add  Reference: https://texwiki.texjp.org/?Linux  Tex Liveのアップデート sudo tlmgr update --self --all pdfビューアのインストール  ここでは pwmt/zathuraをインストールする." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://solareenlo.com/docs/latex/platex-book/" />
+<meta property="article:modified_time" content="2020-03-20T07:56:42+09:00" />
+<title>Platex Book | solareenlo</title>
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/book.min.5fa1289292eb5e3222d2349e8d9deaae01ee5d99834b1dc07cee7554c8837bdb.css" integrity="sha256-X6EokpLrXjIi0jSejZ3qrgHuXZmDSx3AfO51VMiDe9s=">
+
+
+<script defer src="/en.search.min.844700da278f680d62ac5ca6567f92e5956d82d24388836ec3df22a102ef0194.js" integrity="sha256-hEcA2iePaA1irFymVn&#43;S5ZVtgtJDiINuw98ioQLvAZQ="></script>
+
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><span>solareenlo</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        Blog
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+
+  
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/programming/" class="collapsed ">Programming</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/pl/" class="collapsed ">Programming Language</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/latex/" class="collapsed ">LaTeX</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  
+  <a href="/docs/latex/platex-book/" class="active">Platex Book</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/latex/zathura-install/" class="">Zathura Install</a>
+  
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/vps/" class="collapsed ">VPS</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/db/" class="collapsed ">DB</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/cloud/" class="collapsed ">Cloud</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/ci-cd/" class="collapsed ">CI/CD</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/container/" class="collapsed ">Conatainer</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/crypto/" class="collapsed ">Crypto</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://github.com/solareenlo/" target="_blank" rel="noopener">
+        Github
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://twitter.com/solareenlo/" target="_blank" rel="noopener">
+        Twitter
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Platex Book</strong>
+
+  <label for="toc-control">
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+  </label>
+</div>
+
+
+  
+    <input type="checkbox" class="hidden" id="toc-control" />
+    <aside class="hidden clearfix">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#platexで本を作成する方法">pLaTeXで本を作成する方法</a>
+      <ul>
+        <li><a href="#mac編">Mac編</a></li>
+        <li><a href="#ubuntu編">Ubuntu編</a>
+          <ul>
+            <li><a href="#tex-liveのインストール">TeX Liveのインストール</a></li>
+            <li><a href="#tex-liveのアップデート">Tex Liveのアップデート</a></li>
+            <li><a href="#pdfビューアのインストール">pdfビューアのインストール</a></li>
+            <li><a href="#tex-liveの使い方">TeX Liveの使い方</a></li>
+            <li><a href="#zathuraの使い方">zathuraの使い方</a></li>
+            <li><a href="#zathurarcの設定">zathurarcの設定</a></li>
+            <li><a href="#vimプラグイン">vimプラグイン</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+    </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="platexで本を作成する方法">pLaTeXで本を作成する方法</h1>
+<ul>
+<li>総合開発環境を使う方法とコマンドラインを使う方法の2種類がある.</li>
+</ul>
+<h2 id="mac編">Mac編</h2>
+<ul>
+<li>
+  <a href="https://pages.uoregon.edu/koch/texshop/">TexShop</a>というlatexの総合開発環境を使うのが簡単.</li>
+</ul>
+<h2 id="ubuntu編">Ubuntu編</h2>
+<ul>
+<li>Ubuntuでは総合開発環境を使わずに, TeX Live(TeXのディストリビューション)とzathura(pdfビューア)を使って, コマンドラインで作成していく.</li>
+</ul>
+<h3 id="tex-liveのインストール">TeX Liveのインストール</h3>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># ミラーサイトからinstall-tl-unx.tar.gzをダウンロードする</span>
+<span style="color:#586e75"># wget を使用する場合</span>
+wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
+<span style="color:#586e75"># curl を使用する場合</span>
+curl -O http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
+
+<span style="color:#586e75"># install-tl-unx.tar.gzを展開する</span>
+tar xvf install-tl-unx.tar.gz
+
+<span style="color:#586e75"># 展開したディレクトリに移動する</span>
+<span style="color:#b58900">cd</span> install-tl*
+
+<span style="color:#586e75"># root権限でインストーラを実行する</span>
+<span style="color:#586e75"># Iを入力してインストールを開始する</span>
+sudo ./install-tl -no-gui -repository http://mirror.ctan.org/systems/texlive/tlnet/
+
+<span style="color:#586e75"># インストールが途中でストップした場合は, 以下のコマンドで再開する</span>
+sudo ./install-tl -no-gui -profile installation.profile
+
+<span style="color:#586e75"># インストールが終了したら /usr/local/bin ディレクトリ配下にシンボリックリンクを追加する</span>
+<span style="color:#586e75"># ????はバージョンを入力する</span>
+sudo /usr/local/texlive/????/bin/*/tlmgr path add
+</code></pre></div><ul>
+<li><strong>Reference:</strong> <a href="https://texwiki.texjp.org/?Linux">https://texwiki.texjp.org/?Linux</a></li>
+</ul>
+<h3 id="tex-liveのアップデート">Tex Liveのアップデート</h3>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo tlmgr update --self --all
+</code></pre></div><h3 id="pdfビューアのインストール">pdfビューアのインストール</h3>
+<ul>
+<li>ここでは
+  <a href="https://github.com/pwmt/zathura">pwmt/zathura</a>をインストールする.</li>
+<li>zathuraはvimのキーバインドで操作できる軽量なpdfビューアで, 印刷はできない.</li>
+<li>zathuraをインストールする</li>
+</ul>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt update
+sudo apt upgrade -y
+sudo apt install zathura
+</code></pre></div><ul>
+<li>
+  <a href="/docs/latex/zathura-install/">zathuraをソースコードからビルドしてインストールする方法</a></li>
+</ul>
+<h3 id="tex-liveの使い方">TeX Liveの使い方</h3>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># texからdviを作成する</span>
+latex book.tex
+platex book.tex
+<span style="color:#586e75"># dviからpdfを作成する</span>
+dvipdfmx book.dvi
+</code></pre></div><h3 id="zathuraの使い方">zathuraの使い方</h3>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">zathura bool.pdf
+<span style="color:#586e75"># バックグラウンドでpdfを表示する</span>
+zathura --frok book.pdf
+</code></pre></div><ul>
+<li>操作方法はvimのキーバインド.</li>
+</ul>
+<h3 id="zathurarcの設定">zathurarcの設定</h3>
+<ul>
+<li><code>zathurarc</code>にzathuraの設定をすることができる.</li>
+</ul>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># zathurarcのhelpを表示する</span>
+man zathurarc
+<span style="color:#586e75"># zoomとscrollとclipboardを設定する</span>
+cat ~/.config/zathura/zathurarc
+<span style="color:#b58900">set</span> zoom-step <span style="color:#2aa198">30</span>
+<span style="color:#b58900">set</span> scroll-step <span style="color:#2aa198">100</span>
+<span style="color:#b58900">set</span> selection-clipboard clipboard
+</code></pre></div><h3 id="vimプラグイン">vimプラグイン</h3>
+<ul>
+<li>
+  <a href="https://github.com/lervag/vimtex">lervag/vimtex</a></li>
+<li>
+  <a href="https://ymatz.net/journal/20180428/">lervag/vimtexが良い</a></li>
+</ul>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex justify-between">
+
+
+
+  <div>
+    
+    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/commit/bea798d93c9116bad5b5ceb26ca3159b372095e9" title='Last modified by solareenlo | Mar 20, 2020' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>Mar 20, 2020</span>
+    </a>
+  </div>
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/edit/master/content/docs/latex/platex-book.md" target="_blank" rel="noopener">
+      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#platexで本を作成する方法">pLaTeXで本を作成する方法</a>
+      <ul>
+        <li><a href="#mac編">Mac編</a></li>
+        <li><a href="#ubuntu編">Ubuntu編</a>
+          <ul>
+            <li><a href="#tex-liveのインストール">TeX Liveのインストール</a></li>
+            <li><a href="#tex-liveのアップデート">Tex Liveのアップデート</a></li>
+            <li><a href="#pdfビューアのインストール">pdfビューアのインストール</a></li>
+            <li><a href="#tex-liveの使い方">TeX Liveの使い方</a></li>
+            <li><a href="#zathuraの使い方">zathuraの使い方</a></li>
+            <li><a href="#zathurarcの設定">zathurarcの設定</a></li>
+            <li><a href="#vimプラグイン">vimプラグイン</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

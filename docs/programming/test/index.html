@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="テストとは  書いたコードにバグがないか確認する行為.  テストの種類  単体テスト: 入力をモック化し, 個々の関数やクラスをテストし, 出力結果が予想通りであることを確認するテスト. 統合テスト: いくつかのモジュールを組み合わせて予想通りに動作することを保証するテスト. 機能テスト: 製品自体を使って(例えばブラウザを使って), あるシナリオをテストする. 確実に想定した動作をするかといった内部構造は考慮しない. リグレッションテスト: プログラムに機能を追加したり変更を加えたことによって、今まで普通に動いていた部分が動かなくなっていないかを確認するテスト. 受け入れテスト: システム開発を外注して, 発注者の本来の目的や意図通りに稼働するかのテスト. References:  2017年JavaScriptのテスト概論  テストの種類と技法  "><meta property="og:title" content="" />
+<meta property="og:description" content="テストとは  書いたコードにバグがないか確認する行為.  テストの種類  単体テスト: 入力をモック化し, 個々の関数やクラスをテストし, 出力結果が予想通りであることを確認するテスト. 統合テスト: いくつかのモジュールを組み合わせて予想通りに動作することを保証するテスト. 機能テスト: 製品自体を使って(例えばブラウザを使って), あるシナリオをテストする. 確実に想定した動作をするかといった内部構造は考慮しない. リグレッションテスト: プログラムに機能を追加したり変更を加えたことによって、今まで普通に動いていた部分が動かなくなっていないかを確認するテスト. 受け入れテスト: システム開発を外注して, 発注者の本来の目的や意図通りに稼働するかのテスト. References:  2017年JavaScriptのテスト概論  テストの種類と技法  " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://solareenlo.com/docs/programming/test/" />
+<meta property="article:modified_time" content="2020-03-20T07:56:42+09:00" />
+<title>Test | solareenlo</title>
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/book.min.5fa1289292eb5e3222d2349e8d9deaae01ee5d99834b1dc07cee7554c8837bdb.css" integrity="sha256-X6EokpLrXjIi0jSejZ3qrgHuXZmDSx3AfO51VMiDe9s=">
+
+
+<script defer src="/en.search.min.844700da278f680d62ac5ca6567f92e5956d82d24388836ec3df22a102ef0194.js" integrity="sha256-hEcA2iePaA1irFymVn&#43;S5ZVtgtJDiINuw98ioQLvAZQ="></script>
+
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><span>solareenlo</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        Blog
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+
+  
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/programming/" class="collapsed ">Programming</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  
+  <a href="/docs/programming/command/" class="">Command</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/programming/git/" class="">Git</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/programming/github/" class="">Github</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/programming/linter-formatter/" class="">Linter Formatter</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/programming/password-manager/" class="">Password Manager</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/programming/sed/" class="">Sed</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/programming/shell-script/" class="">Shell Script</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/programming/terminal/" class="">Terminal</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/programming/test/" class="active">Test</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/programming/vim/" class="">Vim</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/programming/vimium/" class="">Vimium</a>
+  
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/pl/" class="collapsed ">Programming Language</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/latex/" class="collapsed ">LaTeX</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/vps/" class="collapsed ">VPS</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/db/" class="collapsed ">DB</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/cloud/" class="collapsed ">Cloud</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/ci-cd/" class="collapsed ">CI/CD</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/container/" class="collapsed ">Conatainer</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/crypto/" class="collapsed ">Crypto</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://github.com/solareenlo/" target="_blank" rel="noopener">
+        Github
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://twitter.com/solareenlo/" target="_blank" rel="noopener">
+        Twitter
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Test</strong>
+
+  <label for="toc-control">
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+  </label>
+</div>
+
+
+  
+    <input type="checkbox" class="hidden" id="toc-control" />
+    <aside class="hidden clearfix">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#テストとは">テストとは</a>
+      <ul>
+        <li><a href="#テストの種類">テストの種類</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+    </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="テストとは">テストとは</h1>
+<ul>
+<li>書いたコードにバグがないか確認する行為.</li>
+</ul>
+<h2 id="テストの種類">テストの種類</h2>
+<ul>
+<li><strong>単体テスト:</strong> 入力をモック化し, 個々の関数やクラスをテストし, 出力結果が予想通りであることを確認するテスト.</li>
+<li><strong>統合テスト:</strong> いくつかのモジュールを組み合わせて予想通りに動作することを保証するテスト.</li>
+<li><strong>機能テスト:</strong> 製品自体を使って(例えばブラウザを使って), あるシナリオをテストする. 確実に想定した動作をするかといった内部構造は考慮しない.</li>
+<li><strong>リグレッションテスト:</strong> プログラムに機能を追加したり変更を加えたことによって、今まで普通に動いていた部分が動かなくなっていないかを確認するテスト.</li>
+<li><strong>受け入れテスト:</strong> システム開発を外注して, 発注者の本来の目的や意図通りに稼働するかのテスト.</li>
+<li><strong>References:</strong></li>
+<li>
+  <a href="https://postd.cc/a-complete-guide-to-testing-javascript-in-2017/">2017年JavaScriptのテスト概論</a></li>
+<li>
+  <a href="https://qiita.com/ktarow/items/8c3d94d6c21a0c86b799">テストの種類と技法</a></li>
+</ul>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex justify-between">
+
+
+
+  <div>
+    
+    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/commit/bea798d93c9116bad5b5ceb26ca3159b372095e9" title='Last modified by solareenlo | Mar 20, 2020' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>Mar 20, 2020</span>
+    </a>
+  </div>
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/edit/master/content/docs/programming/test.md" target="_blank" rel="noopener">
+      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#テストとは">テストとは</a>
+      <ul>
+        <li><a href="#テストの種類">テストの種類</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

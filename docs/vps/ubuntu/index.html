@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Ubuntuとは  コミュニティにより開発されているオペレーティングシステムのこと. 無料で提供されている. Linuxディストリビューションの1つ. 公式サイト: https://www.ubuntu.com  Raid0作成  Reference: How To Create RAID Arrays with mdadm on Ubuntu 18.04  ターミナルの色を変える ~/.bashrcの当該部分を以下の様に書き換える.
+if [ &#34;$color_prompt&#34; = yes ]; then PS1=&#39;${debian_chroot:&#43;($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\033[01;31m\]$(__git_ps1)\[\033[00m\]\n\[\033[01;35m\]-&gt; \$\[\033[00m\] &#39; else PS1=&#39;${debian_chroot:&#43;($debian_chroot)}\u@\h:\w\$ &#39; fi 再起動 sudo shutdown -r now // or sudo reboot mountしているSSDのlabel名を変更する Ubuntuのディスクプリで当該のSSDをmountする.
+df -Th &gt; Filesystem Type Size Used Avail Use% Mounted on &gt; /dev/nvme2n1p1 ext4 234G 61M 222G 1% /media/solareenlo/ssd021 でSSDのFilesystem名(この場合は/dev/nvme2n1p1)を確認する.
+sudo umount /dev/nvme2n1p1 で一度SSDをunmountする."><meta property="og:title" content="" />
+<meta property="og:description" content="Ubuntuとは  コミュニティにより開発されているオペレーティングシステムのこと. 無料で提供されている. Linuxディストリビューションの1つ. 公式サイト: https://www.ubuntu.com  Raid0作成  Reference: How To Create RAID Arrays with mdadm on Ubuntu 18.04  ターミナルの色を変える ~/.bashrcの当該部分を以下の様に書き換える.
+if [ &#34;$color_prompt&#34; = yes ]; then PS1=&#39;${debian_chroot:&#43;($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\033[01;31m\]$(__git_ps1)\[\033[00m\]\n\[\033[01;35m\]-&gt; \$\[\033[00m\] &#39; else PS1=&#39;${debian_chroot:&#43;($debian_chroot)}\u@\h:\w\$ &#39; fi 再起動 sudo shutdown -r now // or sudo reboot mountしているSSDのlabel名を変更する Ubuntuのディスクプリで当該のSSDをmountする.
+df -Th &gt; Filesystem Type Size Used Avail Use% Mounted on &gt; /dev/nvme2n1p1 ext4 234G 61M 222G 1% /media/solareenlo/ssd021 でSSDのFilesystem名(この場合は/dev/nvme2n1p1)を確認する.
+sudo umount /dev/nvme2n1p1 で一度SSDをunmountする." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://solareenlo.com/docs/vps/ubuntu/" />
+<meta property="article:modified_time" content="2020-03-20T07:56:42+09:00" />
+<title>Ubuntu | solareenlo</title>
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/book.min.5fa1289292eb5e3222d2349e8d9deaae01ee5d99834b1dc07cee7554c8837bdb.css" integrity="sha256-X6EokpLrXjIi0jSejZ3qrgHuXZmDSx3AfO51VMiDe9s=">
+
+
+<script defer src="/en.search.min.844700da278f680d62ac5ca6567f92e5956d82d24388836ec3df22a102ef0194.js" integrity="sha256-hEcA2iePaA1irFymVn&#43;S5ZVtgtJDiINuw98ioQLvAZQ="></script>
+
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><span>solareenlo</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        Blog
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+
+  
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/programming/" class="collapsed ">Programming</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/pl/" class="collapsed ">Programming Language</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/latex/" class="collapsed ">LaTeX</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/vps/" class="collapsed ">VPS</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  
+  <a href="/docs/vps/alpine-linux/" class="">Alpine Linux</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/vps/ubuntu/" class="active">Ubuntu</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/vps/ssh/" class="">SSH</a>
+  
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/db/" class="collapsed ">DB</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/cloud/" class="collapsed ">Cloud</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/ci-cd/" class="collapsed ">CI/CD</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/container/" class="collapsed ">Conatainer</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/crypto/" class="collapsed ">Crypto</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://github.com/solareenlo/" target="_blank" rel="noopener">
+        Github
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://twitter.com/solareenlo/" target="_blank" rel="noopener">
+        Twitter
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Ubuntu</strong>
+
+  <label for="toc-control">
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+  </label>
+</div>
+
+
+  
+    <input type="checkbox" class="hidden" id="toc-control" />
+    <aside class="hidden clearfix">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#ubuntuとは">Ubuntuとは</a>
+      <ul>
+        <li><a href="#raid0作成">Raid0作成</a></li>
+        <li><a href="#ターミナルの色を変える">ターミナルの色を変える</a></li>
+        <li><a href="#再起動">再起動</a></li>
+        <li><a href="#mountしているssdのlabel名を変更する">mountしているSSDのlabel名を変更する</a></li>
+        <li><a href="#snapでのupdate">snapでのupdate</a></li>
+        <li><a href="#バージョン確認">バージョン確認</a></li>
+        <li><a href="#aptチートシート">aptチートシート</a></li>
+        <li><a href="#アプリがインストールされてる場所">アプリがインストールされてる場所</a></li>
+        <li><a href="#pathの確認">PATHの確認</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+    </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="ubuntuとは">Ubuntuとは</h1>
+<ul>
+<li>コミュニティにより開発されているオペレーティングシステムのこと.</li>
+<li>無料で提供されている.</li>
+<li>Linuxディストリビューションの1つ.</li>
+<li><strong>公式サイト:</strong> <a href="https://www.ubuntu.com">https://www.ubuntu.com</a></li>
+</ul>
+<h2 id="raid0作成">Raid0作成</h2>
+<ul>
+<li><strong>Reference:</strong> 
+  <a href="https://www.digitalocean.com/community/tutorials/how-to-create-raid-arrays-with-mdadm-on-ubuntu-18-04">How To Create RAID Arrays with mdadm on Ubuntu 18.04</a></li>
+</ul>
+<h2 id="ターミナルの色を変える">ターミナルの色を変える</h2>
+<p><code>~/.bashrc</code>の当該部分を以下の様に書き換える.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#719e07">if</span> <span style="color:#719e07">[</span> <span style="color:#2aa198">&#34;</span><span style="color:#268bd2">$color_prompt</span><span style="color:#2aa198">&#34;</span> <span style="color:#719e07">=</span> yes <span style="color:#719e07">]</span>; <span style="color:#719e07">then</span>
+    <span style="color:#268bd2">PS1</span><span style="color:#719e07">=</span><span style="color:#2aa198">&#39;${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\033[01;31m\]$(__git_ps1)\[\033[00m\]\n\[\033[01;35m\]-&gt; \$\[\033[00m\] &#39;</span>
+<span style="color:#719e07">else</span>
+    <span style="color:#268bd2">PS1</span><span style="color:#719e07">=</span><span style="color:#2aa198">&#39;${debian_chroot:+($debian_chroot)}\u@\h:\w\$ &#39;</span>
+<span style="color:#719e07">fi</span>
+</code></pre></div><h2 id="再起動">再起動</h2>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo shutdown -r now
+// or
+sudo reboot
+</code></pre></div><h2 id="mountしているssdのlabel名を変更する">mountしているSSDのlabel名を変更する</h2>
+<p>Ubuntuのディスクプリで当該のSSDをmountする.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">df -Th
+&gt; Filesystem     Type      Size  Used Avail Use% Mounted on
+&gt; /dev/nvme2n1p1 ext4      234G   61M  222G   1% /media/solareenlo/ssd021
+</code></pre></div><p>でSSDのFilesystem名(この場合は<code>/dev/nvme2n1p1</code>)を確認する.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo umount /dev/nvme2n1p1
+</code></pre></div><p>で一度SSDをunmountする.</p>
+<p>SSDのTypeがext2/ext3/ext4の場合は,</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo e2label /dev/nvme2n1p1 ssd02
+</code></pre></div><p>とし, label名を<code>ssd021</code>から<code>ssd02</code>に変更する.</p>
+<p>そして, Ubuntuのディスクアプリで当該のSSDをmountする.</p>
+<h2 id="snapでのupdate">snapでのupdate</h2>
+<p>snapとはLinuxのパッケージ管理システムの1つ.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">snap refresh
+</code></pre></div><h2 id="バージョン確認">バージョン確認</h2>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat /etc/os-release
+</code></pre></div><h2 id="aptチートシート">aptチートシート</h2>
+<table>
+<thead>
+<tr>
+<th>コマンド</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sudo apt update</td>
+<td>リポジトリ一覧を更新<br>(リポジトリ追加・削除時には必ず実行すること)</td>
+</tr>
+<tr>
+<td>sudo apt upgrade</td>
+<td>パッケージを更新<br>(通常のパッケージ更新時はこのコマンドを使用する)</td>
+</tr>
+<tr>
+<td>sudo apt full-upgrade</td>
+<td>パッケージを更新<br>(保留されているパッケージを更新するときに使用する)</td>
+</tr>
+<tr>
+<td>sudo apt autoremove</td>
+<td>更新に伴い必要なくなったパッケージを削除<br>(apt実行時にこのコマンドを実行するよう表示されたら実行する)</td>
+</tr>
+<tr>
+<td>sudo apt install {パッケージ名やdebファイルのパス}</td>
+<td>パッケージやdebファイルをインストール</td>
+</tr>
+<tr>
+<td>sudo apt remove {パッケージ名}</td>
+<td>パッケージを削除</td>
+</tr>
+<tr>
+<td>sudo apt remove &ndash;purge {パッケージ名}</td>
+<td>パッケージを完全削除</td>
+</tr>
+<tr>
+<td>sudo apt show {パッケージ名}</td>
+<td>パッケージの詳細情報を表示</td>
+</tr>
+<tr>
+<td>sudo apt list {パッケージ名}</td>
+<td>パッケージを検索(完全一致)</td>
+</tr>
+<tr>
+<td>sudo apt search {パッケージ名}</td>
+<td>パッケージを検索(部分一致)</td>
+</tr>
+<tr>
+<td>sudo dpkg -l</td>
+<td>インストール済みのパッケージ一覧を表示</td>
+</tr>
+<tr>
+<td>sudo dpkg -L {パッケージ名}</td>
+<td>パッケージのインストール先を表示</td>
+</tr>
+<tr>
+<td>cat /var/log/apt/history.log</td>
+<td>aptコマンドの使用履歴を表示</td>
+</tr>
+<tr>
+<td>sudo apt autoclean</td>
+<td>キャッシュされているが, インストールはされていないdebファイルを削除</td>
+</tr>
+<tr>
+<td>sudo apt clean</td>
+<td>キャッシュされている全てのdebファイルを削除</td>
+</tr>
+<tr>
+<td>echo &ldquo;{パッケージ名} hold&rdquo;</td>
+<td>dpkg &ndash;set-selections</td>
+</tr>
+<tr>
+<td>echo &ldquo;{パッケージ名} install&rdquo;</td>
+<td>dpkg &ndash;set-selections</td>
+</tr>
+<tr>
+<td><strong>Referecne:</strong> 
+  <a href="https://qiita.com/SUZUKI_Masaya/items/1fd9489e631c78e5b007">aptコマンドチートシート</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="アプリがインストールされてる場所">アプリがインストールされてる場所</h2>
+<ul>
+<li>Ubuntuソフトウェアおよびターミナルからインストールした場合は<code>/usr/lib</code>にインストールされてる.</li>
+<li>webからアプリをインストールした場合は<code>/opt</code>にインストールする.</li>
+</ul>
+<h2 id="pathの確認">PATHの確認</h2>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#b58900">echo</span> <span style="color:#268bd2">$PATH</span> | tr -s <span style="color:#2aa198">&#34;:&#34;</span> <span style="color:#2aa198">&#34;\n&#34;</span>
+</code></pre></div></article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex justify-between">
+
+
+
+  <div>
+    
+    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/commit/bea798d93c9116bad5b5ceb26ca3159b372095e9" title='Last modified by solareenlo | Mar 20, 2020' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>Mar 20, 2020</span>
+    </a>
+  </div>
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/edit/master/content/docs/vps/ubuntu.md" target="_blank" rel="noopener">
+      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#ubuntuとは">Ubuntuとは</a>
+      <ul>
+        <li><a href="#raid0作成">Raid0作成</a></li>
+        <li><a href="#ターミナルの色を変える">ターミナルの色を変える</a></li>
+        <li><a href="#再起動">再起動</a></li>
+        <li><a href="#mountしているssdのlabel名を変更する">mountしているSSDのlabel名を変更する</a></li>
+        <li><a href="#snapでのupdate">snapでのupdate</a></li>
+        <li><a href="#バージョン確認">バージョン確認</a></li>
+        <li><a href="#aptチートシート">aptチートシート</a></li>
+        <li><a href="#アプリがインストールされてる場所">アプリがインストールされてる場所</a></li>
+        <li><a href="#pathの確認">PATHの確認</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

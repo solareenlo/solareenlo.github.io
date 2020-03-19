@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Rust on solareenlo</title>
@@ -17,7 +17,7 @@
       
       <guid>https://solareenlo.com/posts/plasma-substrate01/</guid>
       <description>Plasma × Substrate 勉強会 #1の自分なりのメモ
- Introducing Plasma Chamber プラズマとは  セキュアにトランザクションをさばく. マークル木を使ってデータを圧縮する. 1分ごとに行う. エンドユーザーが出金したいときはルートチェーンに問い合わせる. 他の人にチャレンジされなければ許可されて出金される仕組み. スケーラブル・セキュリティ・ユーザビリの高いDappasが作れるぞ.  プラズマの悪い点  受取手はトランザクションの履歴を確認しないといけない. ファイナリティは待たないといけない. Exit期間があるのでUIが悪い  Plasma Chamberは上記の3つの悪い点を改善するぞ What I mean by &amp;lsquo;usable&amp;rsquo; High TPS, Less Gas, Work on Mobile, Instant Finality, ERC20使える
+ Introducing Plasma Chamber  プラズマとは  セキュアにトランザクションをさばく. マークル木を使ってデータを圧縮する. 1分ごとに行う. エンドユーザーが出金したいときはルートチェーンに問い合わせる. 他の人にチャレンジされなければ許可されて出金される仕組み. スケーラブル・セキュリティ・ユーザビリの高いDappasが作れるぞ.  プラズマの悪い点  受取手はトランザクションの履歴を確認しないといけない. ファイナリティは待たないといけない. Exit期間があるのでUIが悪い  Plasma Chamberは上記の3つの悪い点を改善するぞ What I mean by &amp;lsquo;usable&amp;rsquo; High TPS, Less Gas, Work on Mobile, Instant Finality, ERC20使える
 特徴  Exit Game Operatorが資金をかっさらう事がある. それに対する対策を行った. Gas Const/Proof Size Reduction Instantaneous Finality Fast Finality Contract に供託しておく. ユーザー, マーチャント, オペレーター, Ethereum オペレーターまではhttpsで通信する. オペレーターまでなら2秒以下でファイナリティが得られる. Ethereumのブロックチェーンまで待つと2.5分から7分かかる. Plasma MVP → Plasma Cash → Plasma Cashflow → ?</description>
     </item>
     

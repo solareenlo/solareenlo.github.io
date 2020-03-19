@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DB on solareenlo</title>
+    <link>https://solareenlo.com/docs/db/</link>
+    <description>Recent content in DB on solareenlo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	<atom:link href="https://solareenlo.com/docs/db/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>https://solareenlo.com/docs/db/redis/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://solareenlo.com/docs/db/redis/</guid>
+      <description>Redisとは  ネットワーク接続された永続化可能なインメモリデータベースのひとつ. インメモリデータベースとは, メモリ上にデータを保存するタイプのデータベースのこと. メモリはCPUから直接アクセスできるため, （RDBなどの）ストレージにデータを保存するオンディスクDBに比べ, とても高速に動作することができる. GitHubリポジトリ: https://github.com/antirez/redis  </description>
+    </item>
+    
+    <item>
+      <title>MongoDB</title>
+      <link>https://solareenlo.com/docs/db/mongodb/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://solareenlo.com/docs/db/mongodb/</guid>
+      <description>MongoDBとは  オープンソースで公開されているドキュメント指向データベースの1つ. GitHubリポジトリ: https://github.com/mongodb/mongo  インストール  https://docs.mongodb.com/manual/installation/  mongodb(v4.0.5)のコンソールからの使い方色々 Excel, Oracle, MongoDB, Object の大まかな比較    Excel Oracle MongoDB Object     ブック Schema Database 特になし   シート Table Collection 特になし   行 Row Document Object群   列 Column Field Key   セル Field Value Value    起動方法 $ mongod // mongodbが起動する $ CNTL-C // mongodbを停止する // か, $ sudo service mongod start $ sudo service mongod stop コンソールからのアクセス方法 $ mongo // アクセスして, &amp;gt; exit // 終了.</description>
+    </item>
+    
+    <item>
+      <title>MySQL</title>
+      <link>https://solareenlo.com/docs/db/mysql/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://solareenlo.com/docs/db/mysql/</guid>
+      <description>MySQLとは  オープンソースで公開されている関係データベース管理システム(RDBMS)の1つ. GitHubリポジトリ: https://github.com/mysql/mysql-server  MySQL(v14.14)の使い方 (Ver 14.14 Distrib 5.7.25, for Linux (x86_64))
+MySQLのデータ構造 Database -&amp;gt; 複数のTable -&amp;gt; その中にid, title, bodyを持つ表があって, -&amp;gt; 行をRecord, Row, 列をField, Columと言う. こういったDatabaseやTableやFieldやRecordを扱う言語をSQL(Structured Query Language)と言う.
+SQLの実行順番    順番 操作名 命令文     1 テーブルの指定 from   2 結合 on, join   3 取得条件 where   4 グループ化 group by   5 関数 count, sum, avg, min, max   6 having having   7 検索 select, distinct   8 順序 order by   9 limit limit    MySQLの基本的な使い方 # Ubuntuへのインストール sudo apt install mysql-server mysql-client # 起動確認 sudo service mysql status &amp;gt; mysql.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,14 +1,24 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Meetup on solareenlo</title>
     <link>https://solareenlo.com/categories/Meetup/</link>
     <description>Recent content in Meetup on solareenlo</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 10 Oct 2019 18:30:00 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 16 Oct 2019 19:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://solareenlo.com/categories/Meetup/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>2020年のブロックチェーン業界を考える</title>
+      <link>https://solareenlo.com/posts/think-about-2020-blockchain-industry/</link>
+      <pubDate>Wed, 16 Oct 2019 19:00:00 +0900</pubDate>
+      
+      <guid>https://solareenlo.com/posts/think-about-2020-blockchain-industry/</guid>
+      <description> 2020年のブロックチェーン業界を考える
+ ビットコインは地道なスケーリングを行っている スクリプトレススクリプトはスクリプトで行っていることを署名に入れる マルチレイヤーで開発していく ビットコインはとても強固 JPモルガン，Libra，中国政府発行のコインはそれぞれ目的が違う  JPモルガンは為替ネットワーク Libraはバスケット通貨 中国政府は金融政策    </description>
+    </item>
     
     <item>
       <title>Oracle Blockchain GIG#5</title>
@@ -16,8 +26,17 @@
       <pubDate>Thu, 10 Oct 2019 18:30:00 +0900</pubDate>
       
       <guid>https://solareenlo.com/posts/blockchaingig005/</guid>
-      <description>Blockchain GIG #5
- ハッシュタグは#blockchaingig  Oracleさん ユースケース  食品のトレーサビリティ 貿易系 人事情報・学歴情報 サプライチェーンが多い コバルトのトレーサビリティ 医療情報の共有 サプライヤーの共有 GEのインターカンパニーの売掛・買掛をブロックチェーンで管理しよう  インテグレーション・見える化・ データーの連携レイヤーをブロックチェーンで使った 6週間で作れた   ベスプラ  チャネルとはサブネットワークに分けるもの ChannelとPeerの関係 Transient Data  台帳に含まれないようにChaincodeに引き渡せるデータ  Pravate Data Collection  プライベートデータを持つノードを事前に決めておく必要がある  暗号化  鍵交換問題 Transient Dataを使って共通鍵を引き渡す 暗号化アルゴリズムは稀代化する 誰をどの程度信頼するか  デフォルトではPeerにアクセスできれば台帳が読める Peerも結局のところOS上のプロセスの一つなので、ホストマシンをキチンとセキュアにする   アプリケーションとスマコン  スマコンをチェインコードという 台帳に全てを書こうとしない ワークフローはアプリケーションで行う  １企業内でのワークフローはアプリケーションで行う  スマコンは必ず決定論的にする ワールドステートの現在状態と引数のみに依存するようにする PushではなくてPullでスマコンを行うようにする  パフォーマンス  ネットワーク構成  Channelの構成  プライバシーの構成に応じてChannelを分ける  Peerの構成   World Stateへのアクセス  アクセスするデータの最小化  Read/WriteされるKeyを出来る限り最小にする 大規模クエリや分析などはオンチェーンでの処理には向かない  SQL Rich クエリは使えない  Oracle DB 20c  行をハッシュ値で繋いだTableです   富士通さん ミッション  ブロックチェーンをSEが使いやすい状態に仕立てて提供・運用すること PaaS化して自動運用 短期開発のため、システム/アプリケーションの開発に密に関わる  SEが躓くHyperledger Fabricの壁  複数のPeerにリクエストする必要がある スマコン(チェーンコード)の開発  データとストアとしてStateDB(KVS)を持つアプリケーションのようなもの 基本的には案件ごとに開発する必要がある どこまで考慮するば良いかの線引きが難しい   SEが躓かないための解決策  使用性向上機能を設ける  RESTサーバーを設ける ユースケース別チェーンコードを設ける   トラブル事例１(不自然な画面遷移)  スタンプラリーPoCのアプリ開発における事例</description>
+      <description> Blockchain GIG #5
+ ハッシュタグは#blockchaingig  Oracleさん ユースケース  食品のトレーサビリティ 貿易系 人事情報・学歴情報 サプライチェーンが多い コバルトのトレーサビリティ 医療情報の共有 サプライヤーの共有 GEのインターカンパニーの売掛・買掛をブロックチェーンで管理しよう  インテグレーション・見える化・ データーの連携レイヤーをブロックチェーンで使った 6週間で作れた    ベスプラ  チャネルとはサブネットワークに分けるもの ChannelとPeerの関係 Transient Data  台帳に含まれないようにChaincodeに引き渡せるデータ   Pravate Data Collection  プライベートデータを持つノードを事前に決めておく必要がある   暗号化  鍵交換問題 Transient Dataを使って共通鍵を引き渡す 暗号化アルゴリズムは稀代化する 誰をどの程度信頼するか  デフォルトではPeerにアクセスできれば台帳が読める Peerも結局のところOS上のプロセスの一つなので、ホストマシンをキチンとセキュアにする     アプリケーションとスマコン  スマコンをチェインコードという 台帳に全てを書こうとしない ワークフローはアプリケーションで行う  １企業内でのワークフローはアプリケーションで行う   スマコンは必ず決定論的にする ワールドステートの現在状態と引数のみに依存するようにする PushではなくてPullでスマコンを行うようにする   パフォーマンス  ネットワーク構成  Channelの構成  プライバシーの構成に応じてChannelを分ける   Peerの構成     World Stateへのアクセス  アクセスするデータの最小化  Read/WriteされるKeyを出来る限り最小にする 大規模クエリや分析などはオンチェーンでの処理には向かない   SQL Rich クエリは使えない   Oracle DB 20c  行をハッシュ値で繋いだTableです    富士通さん ミッション  ブロックチェーンをSEが使いやすい状態に仕立てて提供・運用すること PaaS化して自動運用 短期開発のため、システム/アプリケーションの開発に密に関わる  SEが躓くHyperledger Fabricの壁  複数のPeerにリクエストする必要がある スマコン(チェーンコード)の開発  データとストアとしてStateDB(KVS)を持つアプリケーションのようなもの 基本的には案件ごとに開発する必要がある どこまで考慮するば良いかの線引きが難しい    SEが躓かないための解決策  使用性向上機能を設ける  RESTサーバーを設ける ユースケース別チェーンコードを設ける    トラブル事例１(不自然な画面遷移)  スタンプラリーPoCのアプリ開発における事例  アプリからトランザクションが複数投げられてた    原因  クーポン・スタンプに対する認識の違い  来店前に用意するもの・来店後に用意するもの    対策  １度のコールでメソッドを複数実行できるメソッドを追加した(バルク実行)  一度にバルク実行するメソッド群に依存会計が無いことが前提   アプリ側で吸収する  処理をまとめる発想を捨てて、違和感のない箇所に分散させる 違和感を消すために、同期・非同期で処理させる    テスト工程でエラーが発生する  遅いPeerでエラーが発生する  ノードの配置はAnti-Affinityポリジーを守ってた Anti-Affinityポリシーとは可用性のためにノードを物理的に分散化させること    原因  遅いPeerのトランザクションより先に速いPeerのトランザクションが処理さえる  解決策  遅いPeerのために待ってあげる  RFTの時にお客様から  トランザクション・チェーンコード・ステート・ブロックを事前に説明する  開発リードタイム短縮も大事ですが  構想通りのブロックチェーンシステムが出来たか評価する No Block, No Life  LayerXさん DApps開発特有のハマりポイントご紹介  アプリ開発の1つのコンポーネントとして使う  アジェンダ  DAppsのアーキテクチャ全体像 Indexer イベント駆動のトランザクション実行 コントラクトデプロイのフロー UX  DAppsのアーキテクチャ全体像  サーバーが必要  MetaMask   Indexerが必要  コントラクト上にあるデータをDBなどにキャッシュする  二重実行されてないことを確認する indexing済みの次のブロックからログを取得する 取得したイベントのログの数だけループする   Quorum-indexer-DBの流れにする DB-APIにする   Quorum, indexer, API, DB, App  イベント駆動のトランザクション実行(ignitor)  トランザクションのイベント発火を起点として別のトランザクションを実行する トリガー専用のイベントを用意する 失敗専用のイベントを発火する。失敗をrevertとするのではなくて。  ignitorとindexerとの協調  ignitorとindexerを完全に独立させることはできない indexerは1ブロックに含まれるイベントをatomicにDBに保存しているので、  コントラクのデプロイフロー トランザクション実行中の状態をどうするか？  途中のAPIで表示処理する  ディスカッション 現実での紐付け問題はどうするか？ ブロックチェーンがはまるところは  需要と供給が公開される市場  </description>
+    </item>
+    
+    <item>
+      <title>技術書典ミートアップ</title>
+      <link>https://solareenlo.com/posts/techbook-meetup/</link>
+      <pubDate>Fri, 28 Jun 2019 18:00:00 +0900</pubDate>
+      
+      <guid>https://solareenlo.com/posts/techbook-meetup/</guid>
+      <description>用語説明  同人誌・・・自家製の本のこと  同人誌とは、同じ思考を持った人たちで作る本の一種である. 個人や仲間と一緒に作り上げる本のこと. えっちなのではないよ.   即売会・・・同人誌を頒布したりすること 頒布・・・ 同人誌を売って布教すること サークル・・・本を頒布する側  利益を上げるのが第一目的ではない. 普及するのが目的.   お客さん・・・本を購入する側  なぜ作るのか？  楽しいから  知らないことを気軽に知ることができて楽しい.   同好の士を増やすぞ！ 体験を共有したい！（成功・失敗を問わず, 俺屍）  どうやって作るのか？  印刷所に頼む  日光企画さんかねこのしっぽさん   コピー機で頑張って作る  sevenelevenさんのコピー機で一応作れる   電子書籍  QRコードで頒布する   紙の本がとても人気があります.  紙の本が売り切れたら電子書籍を売るパターンが多いそうです.    使うツールは？  Re:VIEWがオススメ. GitHubで差分を見やすく, mergeしやすい形式がオススメです. markdownよりもRe:VIEWを使うのが便利. md2review（markdown &amp;gt; Re:VIEW）  本が間に合わなかったら？  本がなくてブースに座るのは辛い思いをします. 6割でも出しましょう. 無断欠席は次回以降出禁になります.  必要な経費  一般(参加費7,000円)とパトロン(参加費20,000円)の抽選確率の違いはない.</description>
     </item>
     
     <item>
@@ -28,7 +47,7 @@
       <guid>https://solareenlo.com/posts/bitbank01/</guid>
       <description>  bitbank Drink Meetup #1 〜エンジニア〜の自分なりのメモ
  秘密鍵の安全な生成法 用意するもの
- 電磁波を通さない物質で囲まれたシェルター 電波が通じてない山奥 完全にランダムで賽の目が出るサイコロ 上記のセットを複数個  とってもセキュアに暗号資産を管理してくれるところ  xapo  </description>
+ 電磁波を通さない物質で囲まれたシェルター 電波が通じてない山奥 完全にランダムで賽の目が出るサイコロ 上記のセットを複数個  とってもセキュアに暗号資産を管理してくれるところ   xapo  </description>
     </item>
     
   </channel>
