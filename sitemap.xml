@@ -3,16 +3,6 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://solareenlo.com/docs/example/table-of-contents/with-toc/</loc>
-    <lastmod>2020-03-15T09:33:53+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://solareenlo.com/docs/example/</loc>
-    <lastmod>2020-03-20T07:56:42+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://solareenlo.com/docs/programming/</loc>
     <lastmod>2020-03-20T08:26:13+09:00</lastmod>
   </url>
@@ -20,11 +10,6 @@
   <url>
     <loc>https://solareenlo.com/docs/pl/</loc>
     <lastmod>2020-03-21T17:16:56+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://solareenlo.com/docs/example/table-of-contents/without-toc/</loc>
-    <lastmod>2020-03-15T09:33:53+09:00</lastmod>
   </url>
   
   <url>
@@ -64,16 +49,7 @@
   
   <url>
     <loc>https://solareenlo.com/docs/tools/</loc>
-  </url>
-  
-  <url>
-    <loc>https://solareenlo.com/docs/example/table-of-contents/</loc>
-    <lastmod>2020-03-15T09:33:53+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://solareenlo.com/docs/example/collapsed/</loc>
-    <lastmod>2020-03-15T09:33:53+09:00</lastmod>
+    <lastmod>2020-03-22T04:16:52+09:00</lastmod>
   </url>
   
   <url>
@@ -462,21 +438,6 @@
   </url>
   
   <url>
-    <loc>https://solareenlo.com/docs/example/collapsed/3rd-level/4th-level/</loc>
-    <lastmod>2020-03-15T09:33:53+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://solareenlo.com/docs/example/collapsed/3rd-level/</loc>
-    <lastmod>2020-03-15T09:33:53+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://solareenlo.com/docs/example/hidden/</loc>
-    <lastmod>2020-03-15T09:33:53+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://solareenlo.com/docs/latex/platex-book/</loc>
     <lastmod>2020-03-20T08:26:13+09:00</lastmod>
   </url>
@@ -628,7 +589,7 @@
   
   <url>
     <loc>https://solareenlo.com/docs/</loc>
-    <lastmod>2020-03-21T17:16:56+09:00</lastmod>
+    <lastmod>2020-03-22T04:16:52+09:00</lastmod>
   </url>
   
   <url>
