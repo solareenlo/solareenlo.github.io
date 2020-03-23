@@ -16,7 +16,7 @@
 <link rel="stylesheet" href="/book.min.5fa1289292eb5e3222d2349e8d9deaae01ee5d99834b1dc07cee7554c8837bdb.css" integrity="sha256-X6EokpLrXjIi0jSejZ3qrgHuXZmDSx3AfO51VMiDe9s=">
 
 
-<script defer src="/en.search.min.51451fefae81d4f4d218a41937e09006d7ac5ab14d21706fa6a4a2fc958a87c2.js" integrity="sha256-UUUf766B1PTSGKQZN&#43;CQBtesWrFNIXBvpqSi/JWKh8I="></script>
+<script defer src="/en.search.min.5702fb6f7fc00a1fa17b628819d74f73a1d366820075919e6b98c9f6b8ee0eb9.js" integrity="sha256-VwL7b3/ACh&#43;he2KIGddPc6HTZoIAdZGea5jJ9rjuDrk="></script>
 
 <link rel="alternate" type="application/rss+xml" href="https://solareenlo.com/categories/Blockchain/index.xml" title="solareenlo" />
 <!--
@@ -412,7 +412,7 @@ https://github.com/alex-shpak/hugo-book
       
         <li class="flex justify-between">
           <a href="/categories/Blockchain/">Blockchain</a>
-          <span>3</span>
+          <span>4</span>
         </li>
       
         <li class="flex justify-between">
@@ -456,11 +456,6 @@ https://github.com/alex-shpak/hugo-book
         </li>
       
         <li class="flex justify-between">
-          <a href="/categories/Angular/">Angular</a>
-          <span>1</span>
-        </li>
-      
-        <li class="flex justify-between">
           <a href="/categories/Docker/">Docker</a>
           <span>2</span>
         </li>
@@ -472,21 +467,6 @@ https://github.com/alex-shpak/hugo-book
       
         <li class="flex justify-between">
           <a href="/categories/DockerHub/">DockerHub</a>
-          <span>1</span>
-        </li>
-      
-        <li class="flex justify-between">
-          <a href="/categories/Plasma/">Plasma</a>
-          <span>1</span>
-        </li>
-      
-        <li class="flex justify-between">
-          <a href="/categories/Rust/">Rust</a>
-          <span>1</span>
-        </li>
-      
-        <li class="flex justify-between">
-          <a href="/categories/Substrate/">Substrate</a>
           <span>1</span>
         </li>
       
@@ -515,16 +495,6 @@ https://github.com/alex-shpak/hugo-book
         </li>
       
         <li class="flex justify-between">
-          <a href="/tags/5G/">5G</a>
-          <span>1</span>
-        </li>
-      
-        <li class="flex justify-between">
-          <a href="/tags/overview/">overview</a>
-          <span>1</span>
-        </li>
-      
-        <li class="flex justify-between">
           <a href="/tags/Hands-on/">Hands-on</a>
           <span>1</span>
         </li>
@@ -536,6 +506,11 @@ https://github.com/alex-shpak/hugo-book
       
         <li class="flex justify-between">
           <a href="/tags/BiiLabs/">BiiLabs</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/Angular/">Angular</a>
           <span>1</span>
         </li>
       
@@ -556,6 +531,26 @@ https://github.com/alex-shpak/hugo-book
       
         <li class="flex justify-between">
           <a href="/tags/bitbank/">bitbank</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/Plasma/">Plasma</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/Rust/">Rust</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/Substrate/">Substrate</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/hugo/">hugo</a>
           <span>1</span>
         </li>
       
@@ -625,6 +620,39 @@ https://github.com/alex-shpak/hugo-book
 
     <p> Blockchain GIG #5
  ハッシュタグは#blockchaingig  Oracleさん ユースケース  食品のトレーサビリティ 貿易系 人事情報・学歴情報 サプライチェーンが多い コバルトのトレーサビリティ 医療情報の共有 サプライヤーの共有 GEのインターカンパニーの売掛・買掛をブロックチェーンで管理しよう  インテグレーション・見える化・ データーの連携レイヤーをブロックチェーンで使った 6週間で作れた    ベスプラ  チャネルとはサブネットワークに分けるもの ChannelとPeerの関係 Transient Data  台帳に含まれないようにChaincodeに引き渡せるデータ   Pravate Data Collection  プライベートデータを持つノードを事前に決めておく必要がある   暗号化  鍵交換問題 Transient Dataを使って共通鍵を引き渡す 暗号化アルゴリズムは稀代化する 誰をどの程度信頼するか  デフォルトではPeerにアクセスできれば台帳が読める Peerも結局のところOS上のプロセスの一つなので、ホストマシンをキチンとセキュアにする     アプリケーションとスマコン  スマコンをチェインコードという 台帳に全てを書こうとしない ワークフローはアプリケーションで行う  １企業内でのワークフローはアプリケーションで行う   スマコンは必ず決定論的にする ワールドステートの現在状態と引数のみに依存するようにする PushではなくてPullでスマコンを行うようにする   パフォーマンス  ネットワーク構成  Channelの構成  プライバシーの構成に応じてChannelを分ける   Peerの構成     World Stateへのアクセス  アクセスするデータの最小化  Read/WriteされるKeyを出来る限り最小にする 大規模クエリや分析などはオンチェーンでの処理には向かない   SQL Rich クエリは使えない   Oracle DB 20c  行をハッシュ値で繋いだTableです    富士通さん ミッション  ブロックチェーンをSEが使いやすい状態に仕立てて提供・運用すること PaaS化して自動運用 短期開発のため、システム/アプリケーションの開発に密に関わる  SEが躓くHyperledger Fabricの壁  複数のPeerにリクエストする必要がある スマコン(チェーンコード)の開発  データとストアとしてStateDB(KVS)を持つアプリケーションのようなもの 基本的には案件ごとに開発する必要がある どこまで考慮するば良いかの線引きが難しい    SEが躓かないための解決策  使用性向上機能を設ける  RESTサーバーを設ける ユースケース別チェーンコードを設ける    トラブル事例１(不自然な画面遷移)  スタンプラリーPoCのアプリ開発における事例  アプリからトランザクションが複数投げられてた    原因  クーポン・スタンプに対する認識の違い  来店前に用意するもの・来店後に用意するもの    対策  １度のコールでメソッドを複数実行できるメソッドを追加した(バルク実行)  一度にバルク実行するメソッド群に依存会計が無いことが前提   アプリ側で吸収する  処理をまとめる発想を捨てて、違和感のない箇所に分散させる 違和感を消すために、同期・非同期で処理させる    テスト工程でエラーが発生する  遅いPeerでエラーが発生する  ノードの配置はAnti-Affinityポリジーを守ってた Anti-Affinityポリシーとは可用性のためにノードを物理的に分散化させること    原因  遅いPeerのトランザクションより先に速いPeerのトランザクションが処理さえる  解決策  遅いPeerのために待ってあげる  RFTの時にお客様から  トランザクション・チェーンコード・ステート・ブロックを事前に説明する  開発リードタイム短縮も大事ですが  構想通りのブロックチェーンシステムが出来たか評価する No Block, No Life  LayerXさん DApps開発特有のハマりポイントご紹介  アプリ開発の1つのコンポーネントとして使う  アジェンダ  DAppsのアーキテクチャ全体像 Indexer イベント駆動のトランザクション実行 コントラクトデプロイのフロー UX  DAppsのアーキテクチャ全体像  サーバーが必要  MetaMask   Indexerが必要  コントラクト上にあるデータをDBなどにキャッシュする  二重実行されてないことを確認する indexing済みの次のブロックからログを取得する 取得したイベントのログの数だけループする   Quorum-indexer-DBの流れにする DB-APIにする   Quorum, indexer, API, DB, App  イベント駆動のトランザクション実行(ignitor)  トランザクションのイベント発火を起点として別のトランザクションを実行する トリガー専用のイベントを用意する 失敗専用のイベントを発火する。失敗をrevertとするのではなくて。  ignitorとindexerとの協調  ignitorとindexerを完全に独立させることはできない indexerは1ブロックに含まれるイベントをatomicにDBに保存しているので、  コントラクのデプロイフロー トランザクション実行中の状態をどうするか？  途中のAPIで表示処理する  ディスカッション 現実での紐付け問題はどうするか？ ブロックチェーンがはまるところは  需要と供給が公開される市場  
+    </p>
+  </article>
+  
+  <article class="markdown book-post">
+    <h2>
+      <a href="/posts/tezos-hands-on/">Tezosハンズオン</a>
+    </h2>
+    
+
+  <h5>Jun 15, 2019</h5>
+
+
+
+  
+  <div>
+    
+        <a href="/categories/meetup/">meetup</a>, 
+        <a href="/categories/Blockchain/">Blockchain</a>
+  </div>
+  
+
+  
+  <div>
+    
+        <a href="/tags/Hands-on/">Hands-on</a>, 
+        <a href="/tags/Tezos/">Tezos</a>
+  </div>
+  
+
+
+    <p>Tezosとは  第3世代のブロックチェーン 2018-09: Mainnet開始 ペーパーで約束されたものをほぼ実装した. 財団がRandDにお金を出してる. PoS  Tezosの特徴  プロトコルはステークホルダーの物というのが第一の信条.  LPos: Liqid Proof of Stake オンチェーン・ガバナンス: 自己修正投票   安全第一  形式検証を用いている    DPoS Proof-of-Stake  トークン所有量に応じたブロック生成権が与えらえる.  ASICが必要ない 手数料が高騰しない 環境に良い   トークンを所有していないマイナーからプロトコルをステークホルダーに解放する.  Delegated PoS (委任PoS)  ステーク投票により選ばれた少数のノードにブロック生成権を与える. 権利を投票に使う. EOSが代表格 利点  PC持ってないステークホルダーも間接的にブロック生成に参加できる. ノード数を減らすことで合意形成効率を上げられる.   欠点  過度にノード数を減らすと分散性・安全性を損なう.    Liquid PoS (Tezos)  選ばれた少数のノードではなく, 誰でもベーキング(ブロック生成)できる. マーケティングにより, マイニングとは言わずにベーキングと言う. ベーカリー(ベーキングの委任を受ける業者のこと), ベーキング権(マイニングする権利), ベーキング(マイニングのこと)という. マイニングを少数ノードに牛耳られることなくステークホルダーに還元するためにLPoSを採用している.
+      <a href="/posts/tezos-hands-on/">...</a>
+      
     </p>
   </article>
   
@@ -720,7 +748,7 @@ bitcoin-cli getblockchaininfo とか.
       
         <li class="flex justify-between">
           <a href="/categories/Blockchain/">Blockchain</a>
-          <span>3</span>
+          <span>4</span>
         </li>
       
         <li class="flex justify-between">
@@ -764,11 +792,6 @@ bitcoin-cli getblockchaininfo とか.
         </li>
       
         <li class="flex justify-between">
-          <a href="/categories/Angular/">Angular</a>
-          <span>1</span>
-        </li>
-      
-        <li class="flex justify-between">
           <a href="/categories/Docker/">Docker</a>
           <span>2</span>
         </li>
@@ -780,21 +803,6 @@ bitcoin-cli getblockchaininfo とか.
       
         <li class="flex justify-between">
           <a href="/categories/DockerHub/">DockerHub</a>
-          <span>1</span>
-        </li>
-      
-        <li class="flex justify-between">
-          <a href="/categories/Plasma/">Plasma</a>
-          <span>1</span>
-        </li>
-      
-        <li class="flex justify-between">
-          <a href="/categories/Rust/">Rust</a>
-          <span>1</span>
-        </li>
-      
-        <li class="flex justify-between">
-          <a href="/categories/Substrate/">Substrate</a>
           <span>1</span>
         </li>
       
@@ -823,16 +831,6 @@ bitcoin-cli getblockchaininfo とか.
         </li>
       
         <li class="flex justify-between">
-          <a href="/tags/5G/">5G</a>
-          <span>1</span>
-        </li>
-      
-        <li class="flex justify-between">
-          <a href="/tags/overview/">overview</a>
-          <span>1</span>
-        </li>
-      
-        <li class="flex justify-between">
           <a href="/tags/Hands-on/">Hands-on</a>
           <span>1</span>
         </li>
@@ -844,6 +842,11 @@ bitcoin-cli getblockchaininfo とか.
       
         <li class="flex justify-between">
           <a href="/tags/BiiLabs/">BiiLabs</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/Angular/">Angular</a>
           <span>1</span>
         </li>
       
@@ -864,6 +867,26 @@ bitcoin-cli getblockchaininfo とか.
       
         <li class="flex justify-between">
           <a href="/tags/bitbank/">bitbank</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/Plasma/">Plasma</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/Rust/">Rust</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/Substrate/">Substrate</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/hugo/">hugo</a>
           <span>1</span>
         </li>
       

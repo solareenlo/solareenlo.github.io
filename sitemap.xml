@@ -54,27 +54,27 @@
   
   <url>
     <loc>https://solareenlo.com/categories/42Tokyo/</loc>
-    <lastmod>2020-03-20T08:57:13+09:00</lastmod>
+    <lastmod>2020-03-23T04:20:14+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://solareenlo.com/posts/42tokyo/</loc>
-    <lastmod>2020-03-20T08:57:13+09:00</lastmod>
+    <lastmod>2020-03-23T04:20:14+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://solareenlo.com/categories/</loc>
-    <lastmod>2020-03-23T03:49:55+09:00</lastmod>
+    <lastmod>2020-03-23T04:20:14+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://solareenlo.com/tags/piscine/</loc>
-    <lastmod>2020-03-20T08:57:13+09:00</lastmod>
+    <lastmod>2020-03-23T04:20:14+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://solareenlo.com/tags/</loc>
-    <lastmod>2020-03-23T03:49:55+09:00</lastmod>
+    <lastmod>2020-03-23T04:20:14+09:00</lastmod>
   </url>
   
   <url>
@@ -158,22 +158,12 @@
   </url>
   
   <url>
-    <loc>https://solareenlo.com/tags/5G/</loc>
-    <lastmod>2019-07-09T13:31:16+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://solareenlo.com/categories/5G/</loc>
     <lastmod>2019-07-09T13:31:16+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://solareenlo.com/posts/5g-overview/</loc>
-    <lastmod>2019-07-09T13:31:16+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://solareenlo.com/tags/overview/</loc>
     <lastmod>2019-07-09T13:31:16+09:00</lastmod>
   </url>
   
@@ -228,7 +218,7 @@
   </url>
   
   <url>
-    <loc>https://solareenlo.com/categories/Angular/</loc>
+    <loc>https://solareenlo.com/tags/Angular/</loc>
     <lastmod>2020-03-20T08:57:13+09:00</lastmod>
   </url>
   
@@ -293,7 +283,7 @@
   </url>
   
   <url>
-    <loc>https://solareenlo.com/categories/Plasma/</loc>
+    <loc>https://solareenlo.com/tags/Plasma/</loc>
     <lastmod>2020-03-20T08:57:13+09:00</lastmod>
   </url>
   
@@ -303,18 +293,23 @@
   </url>
   
   <url>
-    <loc>https://solareenlo.com/categories/Rust/</loc>
+    <loc>https://solareenlo.com/tags/Rust/</loc>
     <lastmod>2020-03-20T08:57:13+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://solareenlo.com/categories/Substrate/</loc>
+    <loc>https://solareenlo.com/tags/Substrate/</loc>
     <lastmod>2020-03-20T08:57:13+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://solareenlo.com/posts/bitcoind/</loc>
     <lastmod>2020-03-23T03:49:55+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://solareenlo.com/tags/hugo/</loc>
+    <lastmod>2019-05-12T20:16:21+09:00</lastmod>
   </url>
   
   <url>
