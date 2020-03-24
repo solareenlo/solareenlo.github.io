@@ -728,6 +728,15 @@ sudo umount /dev/nvme2n1p1 で一度SSDをunmountする.</description>
     </item>
     
     <item>
+      <title>HHKB</title>
+      <link>https://solareenlo.com/docs/programming/hhkb/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://solareenlo.com/docs/programming/hhkb/</guid>
+      <description>HHKB とは  株式会社 PFU から提供されている，高性能コンパクトキーボードのこと．  特徴  独自のキー配列． キースイッチは静電容量無接点方式を採用． キーボードサイズは60％．  Ubuntu 18.04 で HHKB HYBRID を使う方法 1. Ubuntu で英字キーボードを使えるようにする  Refernce: Ubuntu 19.04で英語キーボードを使えるようにする方法  2. Ubuntu に HHKB を Bluetooth 接続する  操作方法は Keyboard の裏面に書いてある．  </description>
+    </item>
+    
+    <item>
       <title>IOTA</title>
       <link>https://solareenlo.com/docs/crypto/iota/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

@@ -132,5 +132,14 @@ if [ &amp;#34;$color_prompt&amp;#34; = yes ]; then PS1=&amp;#39;${debian_chroot:
       <description>Vimiumとは  Google Chromeをvimのキーバインドで操作できるChromeの拡張機能. GitHubリポジトリ: philc/vimium  操作方法 現在のページ ? show the help dialog for a list of all available keys h scroll left j scroll down k scroll up l scroll right gg scroll to top of the page G scroll to bottom of the page d scroll down half a page u scroll up half a page f open a link in the current tab F open a link in a new tab r reload gs view source i enter insert mode -- all commands will be ignored until you hit Esc to exit yy copy the current url to the clipboard yf copy a link url to the clipboard gf cycle forward to the next frame gF focus the main/top frame 新しいページ o Open URL, bookmark, or history entry O Open URL, bookmark, history entry in a new tab b Open bookmark B Open bookmark in a new tab 検索 / enter find mode -- type your search query and hit enter to search, or Esc to cancel n cycle forward to the next find match N cycle backward to the previous find match 履歴 H go back in history L go forward in history タブ J, gT go one tab left K, gt go one tab right g0 go to the first tab g$ go to the last tab ^ visit the previously-visited tab t create tab yt duplicate current tab x close current tab X restore closed tab (i.</description>
     </item>
     
+    <item>
+      <title>HHKB</title>
+      <link>https://solareenlo.com/docs/programming/hhkb/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://solareenlo.com/docs/programming/hhkb/</guid>
+      <description>HHKB とは  株式会社 PFU から提供されている，高性能コンパクトキーボードのこと．  特徴  独自のキー配列． キースイッチは静電容量無接点方式を採用． キーボードサイズは60％．  Ubuntu 18.04 で HHKB HYBRID を使う方法 1. Ubuntu で英字キーボードを使えるようにする  Refernce: Ubuntu 19.04で英語キーボードを使えるようにする方法  2. Ubuntu に HHKB を Bluetooth 接続する  操作方法は Keyboard の裏面に書いてある．  </description>
+    </item>
+    
   </channel>
 </rss>
