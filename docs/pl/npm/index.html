@@ -4,21 +4,21 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="NPM  Node.jsのパッケージ管理ツール. 公式サイト: https://npmjs.com  インストール npm自体のインストール   Downloading and installing Node.js and npm  npm自体のupdate npm update -y npm # もしくは npm install npm@latest -g npm自体のバージョン管理 Reference: How to Update Node.js to Latest Version (Linux, Ubuntu, OSX, Others)
-パッケージのインストール npm i &lt;パッケージ名&gt; # 本番環境へインストール npm i -D &lt;パッケージ名&gt; # 開発環境へインストール パッケージの脆弱性確認 npm audit パッケージを最新へ npm outdated # 新しいバージョンを確認 npm install -g npm-check-updates # アップデートマネージャーをインストール ncu # 新しいバージョンを確認 ncu -u # package."><meta property="og:title" content="" />
-<meta property="og:description" content="NPM  Node.jsのパッケージ管理ツール. 公式サイト: https://npmjs.com  インストール npm自体のインストール   Downloading and installing Node.js and npm  npm自体のupdate npm update -y npm # もしくは npm install npm@latest -g npm自体のバージョン管理 Reference: How to Update Node.js to Latest Version (Linux, Ubuntu, OSX, Others)
+<meta name="description" content="npm とは  Node.js のパッケージ管理ツール． 公式サイト: https://npmjs.com  インストール npm 自体のインストール   Downloading and installing Node.js and npm  npm 自体の update npm update -y npm # もしくは npm install npm@latest -g npm 自体のバージョン管理 Reference: How to Update Node.js to Latest Version (Linux, Ubuntu, OSX, Others)
+パッケージのインストール npm i &lt;パッケージ名&gt; # 本番環境へインストール npm i -D &lt;パッケージ名&gt; # 開発環境へインストール パッケージの脆弱性確認 npm audit パッケージを最新へ npm outdated # 新しいバージョンを確認 npm install -g npm-check-updates # アップデートマネージャーをインストール ncu # 新しいバージョンを確認 ncu -u # package."><meta property="og:title" content="npm" />
+<meta property="og:description" content="npm とは  Node.js のパッケージ管理ツール． 公式サイト: https://npmjs.com  インストール npm 自体のインストール   Downloading and installing Node.js and npm  npm 自体の update npm update -y npm # もしくは npm install npm@latest -g npm 自体のバージョン管理 Reference: How to Update Node.js to Latest Version (Linux, Ubuntu, OSX, Others)
 パッケージのインストール npm i &lt;パッケージ名&gt; # 本番環境へインストール npm i -D &lt;パッケージ名&gt; # 開発環境へインストール パッケージの脆弱性確認 npm audit パッケージを最新へ npm outdated # 新しいバージョンを確認 npm install -g npm-check-updates # アップデートマネージャーをインストール ncu # 新しいバージョンを確認 ncu -u # package." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://solareenlo.com/docs/pl/npm/" />
-<meta property="article:modified_time" content="2020-03-20T07:56:42+09:00" />
-<title>Npm | solareenlo</title>
+<meta property="article:modified_time" content="2020-03-24T10:08:18+09:00" />
+<title>npm | solareenlo</title>
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 
 
 <link rel="stylesheet" href="/book.min.5fa1289292eb5e3222d2349e8d9deaae01ee5d99834b1dc07cee7554c8837bdb.css" integrity="sha256-X6EokpLrXjIi0jSejZ3qrgHuXZmDSx3AfO51VMiDe9s=">
 
 
-<script defer src="/en.search.min.bee497c77136708cb23509268f4b23efdba08ed81e67f709f4cda52238f84dce.js" integrity="sha256-vuSXx3E2cIyyNQkmj0sj79ugjtgeZ/cJ9M2lIjj4Tc4="></script>
+<script defer src="/en.search.min.791f8b2272f916e6c88a63615b0927bc3740127c87cddb23fa8ff8a0702dd8b4.js" integrity="sha256-eR&#43;LInL5FubIimNhWwknvDdAEnyHzdsj&#43;o/4oHAt2LQ="></script>
 
 <!--
 Made with Book Theme
@@ -203,16 +203,6 @@ https://github.com/alex-shpak/hugo-book
         <li>
 
   
-  <a href="/docs/pl/npm/" class="active">Npm</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
   <a href="/docs/pl/pl-docs/" class="">Pl Docs</a>
   
 
@@ -254,6 +244,16 @@ https://github.com/alex-shpak/hugo-book
 
   
   <a href="/docs/pl/typescript/" class="">Typescript</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/pl/npm/" class="active">npm</a>
   
 
 </li>
@@ -512,7 +512,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Npm</strong>
+  <strong>npm</strong>
 
   <label for="toc-control">
     <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
@@ -526,13 +526,13 @@ https://github.com/alex-shpak/hugo-book
       
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#npm">NPM</a>
+    <li><a href="#npm-とは">npm とは</a>
       <ul>
         <li><a href="#インストール">インストール</a>
           <ul>
-            <li><a href="#npm自体のインストール">npm自体のインストール</a></li>
-            <li><a href="#npm自体のupdate">npm自体のupdate</a></li>
-            <li><a href="#npm自体のバージョン管理">npm自体のバージョン管理</a></li>
+            <li><a href="#npm-自体のインストール">npm 自体のインストール</a></li>
+            <li><a href="#npm-自体の-update">npm 自体の update</a></li>
+            <li><a href="#npm-自体のバージョン管理">npm 自体のバージョン管理</a></li>
             <li><a href="#パッケージのインストール">パッケージのインストール</a></li>
             <li><a href="#パッケージの脆弱性確認">パッケージの脆弱性確認</a></li>
             <li><a href="#パッケージを最新へ">パッケージを最新へ</a></li>
@@ -562,22 +562,22 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h1 id="npm">NPM</h1>
+  <article class="markdown"><h1 id="npm-とは">npm とは</h1>
 <ul>
-<li>Node.jsのパッケージ管理ツール.</li>
+<li>Node.js のパッケージ管理ツール．</li>
 <li><strong>公式サイト:</strong> <a href="https://npmjs.com">https://npmjs.com</a></li>
 </ul>
 <h2 id="インストール">インストール</h2>
-<h3 id="npm自体のインストール">npm自体のインストール</h3>
+<h3 id="npm-自体のインストール">npm 自体のインストール</h3>
 <ul>
 <li>
   <a href="https://docs.npmjs.com/downloading-and-installing-node-js-and-npm">Downloading and installing Node.js and npm</a></li>
 </ul>
-<h3 id="npm自体のupdate">npm自体のupdate</h3>
+<h3 id="npm-自体の-update">npm 自体の update</h3>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm update -y npm
 <span style="color:#586e75"># もしくは</span>
 npm install npm@latest -g
-</code></pre></div><h3 id="npm自体のバージョン管理">npm自体のバージョン管理</h3>
+</code></pre></div><h3 id="npm-自体のバージョン管理">npm 自体のバージョン管理</h3>
 <p><strong>Reference:</strong> 
   <a href="https://www.hostingadvice.com/how-to/update-node-js-latest-version/">How to Update Node.js to Latest Version (Linux, Ubuntu, OSX, Others)</a></p>
 <h3 id="パッケージのインストール">パッケージのインストール</h3>
@@ -589,13 +589,13 @@ npm i -D &lt;パッケージ名&gt; <span style="color:#586e75"># 開発環境�
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm outdated <span style="color:#586e75"># 新しいバージョンを確認</span>
 npm install -g npm-check-updates <span style="color:#586e75"># アップデートマネージャーをインストール</span>
 ncu <span style="color:#586e75"># 新しいバージョンを確認</span>
-ncu -u <span style="color:#586e75"># package.jsonを更新</span>
+ncu -u <span style="color:#586e75"># package.json を更新</span>
 npm update <span style="color:#586e75"># パッケージを更新</span>
 </code></pre></div><h1 id="便利なパッケージ">便利なパッケージ</h1>
 <h2 id="npm-run-all">npm-run-all</h2>
 <ul>
-<li>複数のnpmを実行するためのコマンドラインツール</li>
-<li><strong>GitHubリポジトリ:</strong> 
+<li>複数の npm を実行するためのコマンドラインツール</li>
+<li><strong>GitHub リポジトリ:</strong> 
   <a href="https://github.com/mysticatea/npm-run-all">mysticatea/npm-run-all</a></li>
 </ul>
 <h3 id="インストール-1">インストール</h3>
@@ -620,9 +620,9 @@ run-p &lt;1つ目のタスク&gt; &lt;2つ目の処理&gt; <span style="color:#5
 
   <div>
     
-    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/commit/bea798d93c9116bad5b5ceb26ca3159b372095e9" title='Last modified by solareenlo | Mar 20, 2020' target="_blank" rel="noopener">
+    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/commit/3285b7fe4e9ca1b4a159aab823c6752e9a355597" title='Last modified by solareenlo | Mar 24, 2020' target="_blank" rel="noopener">
       <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>Mar 20, 2020</span>
+      <span>Mar 24, 2020</span>
     </a>
   </div>
 
@@ -657,13 +657,13 @@ run-p &lt;1つ目のタスク&gt; &lt;2つ目の処理&gt; <span style="color:#5
       
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#npm">NPM</a>
+    <li><a href="#npm-とは">npm とは</a>
       <ul>
         <li><a href="#インストール">インストール</a>
           <ul>
-            <li><a href="#npm自体のインストール">npm自体のインストール</a></li>
-            <li><a href="#npm自体のupdate">npm自体のupdate</a></li>
-            <li><a href="#npm自体のバージョン管理">npm自体のバージョン管理</a></li>
+            <li><a href="#npm-自体のインストール">npm 自体のインストール</a></li>
+            <li><a href="#npm-自体の-update">npm 自体の update</a></li>
+            <li><a href="#npm-自体のバージョン管理">npm 自体のバージョン管理</a></li>
             <li><a href="#パッケージのインストール">パッケージのインストール</a></li>
             <li><a href="#パッケージの脆弱性確認">パッケージの脆弱性確認</a></li>
             <li><a href="#パッケージを最新へ">パッケージを最新へ</a></li>
