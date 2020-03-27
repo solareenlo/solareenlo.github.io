@@ -116,6 +116,15 @@ if [ &amp;#34;$color_prompt&amp;#34; = yes ]; then PS1=&amp;#39;${debian_chroot:
     
     <item>
       <title></title>
+      <link>https://solareenlo.com/docs/programming/tmux/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://solareenlo.com/docs/programming/tmux/</guid>
+      <description>tmux とは  端末多重化ソフトウェアの1つ． 単一のウィンドウで複数の端末セッションにアクセスできる． GitHub: tmux/tmux  おすすめの設定ファイルの雛形  GitHub: gpakosz/.tmux  </description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>https://solareenlo.com/docs/programming/vim/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
