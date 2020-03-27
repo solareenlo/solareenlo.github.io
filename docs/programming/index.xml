@@ -25,6 +25,15 @@ sha256を出力 # Mac shasum -a 256 &amp;lt;ファイル名&amp;gt; # Linux sha2
     
     <item>
       <title></title>
+      <link>https://solareenlo.com/docs/programming/fonts/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://solareenlo.com/docs/programming/fonts/</guid>
+      <description>fonts おすすめフォント ターミナルに絵文字フォントを追加する  GitHub: ryanoasis/nerd-fonts  プログラミング用の日本語フォント  GitHub: miiton/Cica  Web 用フォント  Google Fonts の Noto Sans JP  google-webfonts-helper  日本語Webフォントの流行の最適化「NotoSans」「サブセット化」  日本語WEBフォントをサブセット化する際の参考文字列一覧  日本語WebフォントにNoto Sans CJK JPを指定する時に気を付けたこと  </description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>https://solareenlo.com/docs/programming/git/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
