@@ -1,1426 +1,460 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Angularとは  Typescript/JavaScriptやその他の言語を使用してモバイルおよびデスクトップWebアプリケーションを構築するための開発プラットフォーム. GitHubリポジトリ: https://github.com/angular/angular References:  https://angular.io/docs https://angular.jp/docs https://angular.keicode.com    用語    用語 意味     module アプリを構成するコンポーネントを束ねたもの.   root module アプリが起動する時に呼びされる大元のモジュール.
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Angularとは  Typescript/JavaScriptやその他の言語を使用してモバイルおよびデスクトップWebアプリケーションを構築するための開発プラットフォーム. GitHubリポジトリ: https://github.com/angular/angular References:  https://angular.io/docs https://angular.jp/docs https://angular.keicode.com    用語    用語 意味     module アプリを構成するコンポーネントを束ねたもの.   root module アプリが起動する時に呼びされる大元のモジュール.
 Angularアプリには必ずある.   component View(画面の一部)を制御する.   template componentのUIをどのようにHTMLで表現するかを指定するもの.
 .htmlのこと.   Decorators モジュールやクラスなどの要素に対してメタ情報を付与するもの   constructor TS, JSに付随するものでClassの初期化時に発動する   data binding コンポーネントにおいてテンプレートとクラス内の要素を繋ぐ仕組み.
-テンプレートとコンポーネントのコードを繋ぐ方法   template reference variable #testを使って, そのDOM要素をtest変数で参照できるようにする仕組み.    Decoratorsのパラメーター    パラメーター名 意味     imports 現在のモジュールで利用する他のモジュール／コンポーネント   exports 現在のモジュールで外部に公開するコンポーネントなど   declarations モジュール配下のコンポーネント   bootstrap 最初に起動すべき最上位のコンポーネント(＝ルートコンポーネント)   templateUrl 描画するhtml   template 描画する内容   styleUrls どのcssを使うか   styles 直接cssの内容を記述する   selector コンポーネントの適応先を表す(html, css, classなどとして指定できる)    インストール npm i -g @angular/cli @angular/core バージョンアップ ng update @angular/cli @angular/core DockerでAngular Dockerfileの中身"><meta property="og:title" content="" />
-<meta property="og:description" content="Angularとは  Typescript/JavaScriptやその他の言語を使用してモバイルおよびデスクトップWebアプリケーションを構築するための開発プラットフォーム. GitHubリポジトリ: https://github.com/angular/angular References:  https://angular.io/docs https://angular.jp/docs https://angular.keicode.com    用語    用語 意味     module アプリを構成するコンポーネントを束ねたもの.   root module アプリが起動する時に呼びされる大元のモジュール.
+テンプレートとコンポーネントのコードを繋ぐ方法   template reference variable #testを使って, そのDOM要素をtest変数で参照できるようにする仕組み.    Decoratorsのパラメーター    パラメーター名 意味     imports 現在のモジュールで利用する他のモジュール／コンポーネント   exports 現在のモジュールで外部に公開するコンポーネントなど   declarations モジュール配下のコンポーネント   bootstrap 最初に起動すべき最上位のコンポーネント(＝ルートコンポーネント)   templateUrl 描画するhtml   template 描画する内容   styleUrls どのcssを使うか   styles 直接cssの内容を記述する   selector コンポーネントの適応先を表す(html, css, classなどとして指定できる)    インストール npm i -g @angular/cli @angular/core バージョンアップ ng update @angular/cli @angular/core DockerでAngular Dockerfileの中身"><meta property="og:title" content><meta property="og:description" content="Angularとは  Typescript/JavaScriptやその他の言語を使用してモバイルおよびデスクトップWebアプリケーションを構築するための開発プラットフォーム. GitHubリポジトリ: https://github.com/angular/angular References:  https://angular.io/docs https://angular.jp/docs https://angular.keicode.com    用語    用語 意味     module アプリを構成するコンポーネントを束ねたもの.   root module アプリが起動する時に呼びされる大元のモジュール.
 Angularアプリには必ずある.   component View(画面の一部)を制御する.   template componentのUIをどのようにHTMLで表現するかを指定するもの.
 .htmlのこと.   Decorators モジュールやクラスなどの要素に対してメタ情報を付与するもの   constructor TS, JSに付随するものでClassの初期化時に発動する   data binding コンポーネントにおいてテンプレートとクラス内の要素を繋ぐ仕組み.
-テンプレートとコンポーネントのコードを繋ぐ方法   template reference variable #testを使って, そのDOM要素をtest変数で参照できるようにする仕組み.    Decoratorsのパラメーター    パラメーター名 意味     imports 現在のモジュールで利用する他のモジュール／コンポーネント   exports 現在のモジュールで外部に公開するコンポーネントなど   declarations モジュール配下のコンポーネント   bootstrap 最初に起動すべき最上位のコンポーネント(＝ルートコンポーネント)   templateUrl 描画するhtml   template 描画する内容   styleUrls どのcssを使うか   styles 直接cssの内容を記述する   selector コンポーネントの適応先を表す(html, css, classなどとして指定できる)    インストール npm i -g @angular/cli @angular/core バージョンアップ ng update @angular/cli @angular/core DockerでAngular Dockerfileの中身" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://solareenlo.com/docs/pl/angular/" />
-<meta property="article:modified_time" content="2020-03-20T07:56:42+09:00" />
-<title>Angular | solareenlo</title>
-<link rel="icon" href="/favicon.png" type="image/x-icon">
-
-
-<link rel="stylesheet" href="/book.min.e80d0e54115ef090f688943719b0c54d1ce5720639cefab6c880b93a94108e5f.css" integrity="sha256-6A0OVBFe8JD2iJQ3GbDFTRzlcgY5zvq2yIC5OpQQjl8=">
-
-
-<script defer src="/en.search.min.fe50d3aa7de56b83bfe5fcc90cb97ada0291970dc546ea9f867b166c76778a19.js" integrity="sha256-/lDTqn3la4O/5fzJDLl62gKRlw3FRuqfhnsWbHZ3ihk="></script>
-
-<!--
-Made with Book Theme
-https://github.com/alex-shpak/hugo-book
--->
-
-  
-</head>
-
-<body>
-  <input type="checkbox" class="hidden" id="menu-control" />
-  <main class="container flex">
-    <aside class="book-menu">
-      
-  <nav>
-<h2 class="book-brand">
-  <a href="/"><span>solareenlo</span>
-  </a>
-</h2>
-
-
-<div class="book-search">
-  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
-  <div class="book-search-spinner spinner hidden"></div>
-  <ul id="book-search-results"></ul>
-</div>
-
-
-
-
-
-
-  
-<ul>
-  
-  <li>
-    <a href="/posts/" >
-        Blog
-      </a>
-  </li>
-  
-</ul>
-
-
-
-
-
-
-
-  
-
-  
-  
-
-
-
-
-
- 
-  
-    
-
-
-
-
-  
-  <ul>
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/docs/programming/" class="collapsed ">Programming</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/docs/pl/" class="collapsed ">Programming Language</a>
-  
-
-
-    
-
-
-
-
-  
-  <ul>
-    
-      
-        <li>
-
-  
-  <a href="/docs/pl/angular/" class="active">Angular</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/docs/pl/c/" class="">C</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/docs/pl/css/" class="">Css</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/docs/pl/haskell/" class="">Haskell</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/docs/pl/hugo/" class="">Hugo</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/docs/pl/javascript/" class="">Javascript</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/docs/pl/nodejs/" class="">Nodejs</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/docs/pl/pl-docs/" class="">Pl Docs</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/docs/pl/react-static/" class="">React Static</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/docs/pl/react/" class="">React</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/docs/pl/rust/" class="">Rust</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/docs/pl/typescript/" class="">Typescript</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/docs/pl/npm/" class="">npm</a>
-  
-
-</li>
-      
-    
-  </ul>
-  
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/docs/latex/" class="collapsed ">LaTeX</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/docs/vps/" class="collapsed ">VPS</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/docs/db/" class="collapsed ">DB</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/docs/cloud/" class="collapsed ">Cloud</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/docs/ci-cd/" class="collapsed ">CI/CD</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/docs/container/" class="collapsed ">Conatainer</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/docs/crypto/" class="collapsed ">Crypto</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/docs/tools/" class="">Tools</a>
-  
-
-
-    
-
-
-
-
-  
-  <ul>
-    
-  </ul>
-  
-
-
-
-  </li>
-
-
-      
-    
-  </ul>
-  
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-<ul>
-  
-  <li>
-    <a href="https://github.com/solareenlo/" target="_blank" rel="noopener">
-        Github
-      </a>
-  </li>
-  
-  <li>
-    <a href="https://twitter.com/solareenlo/" target="_blank" rel="noopener">
-        Twitter
-      </a>
-  </li>
-  
-</ul>
-
-
-
-
-
-
-</nav>
-
-
-
-
-  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
-
-
- 
-    </aside>
-
-    <div class="book-page">
-      <header class="book-header">
-        
-  <div class="flex align-center justify-between">
-  <label for="menu-control">
-    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
-  </label>
-
-  <strong>Angular</strong>
-
-  <label for="toc-control">
-    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
-  </label>
-</div>
-
-
-  
-    <input type="checkbox" class="hidden" id="toc-control" />
-    <aside class="hidden clearfix">
-      
-  <nav id="TableOfContents">
-  <ul>
-    <li><a href="#angularとは">Angularとは</a>
-      <ul>
-        <li><a href="#用語">用語</a>
-          <ul>
-            <li><a href="#decoratorsのパラメーター">Decoratorsのパラメーター</a></li>
-          </ul>
-        </li>
-        <li><a href="#インストール">インストール</a></li>
-        <li><a href="#バージョンアップ">バージョンアップ</a></li>
-        <li><a href="#dockerでangular">DockerでAngular</a></li>
-        <li><a href="#npmの脆弱性を指摘されたら">npmの脆弱性を指摘されたら</a></li>
-        <li><a href="#travisci経由でgithub-pagesに公開">TravisCI経由でGitHub Pagesに公開</a></li>
-        <li><a href="#マテリアルデザイン">マテリアルデザイン</a>
-          <ul>
-            <li><a href="#インストール-1">インストール</a></li>
-            <li><a href="#バージョンアップ-1">バージョンアップ</a></li>
-            <li><a href="#簡単な使い方">簡単な使い方</a></li>
-            <li><a href="#ファイル選択ボタンをmaterial化">ファイル選択ボタンをMaterial化</a></li>
-          </ul>
-        </li>
-        <li><a href="#基本的な使い方">基本的な使い方</a></li>
-        <li><a href="#値を渡すデータバインド">値を渡す(データバインド)</a>
-          <ul>
-            <li><a href="#tsからhtmlへ値を渡す"><code>.ts</code>から<code>.html</code>へ値を渡す</a></li>
-            <li><a href="#tsからhtmlのの中に値を渡す"><code>.ts</code>から<code>.html</code>の<code>&lt;&gt;</code>の中に値を渡す</a></li>
-            <li><a href="#ユーザーからのinputを受け付ける">ユーザーからの<code>input</code>を受け付ける.</a></li>
-            <li><a href="#入力された値をコンポーネント内で操作する">入力された値をコンポーネント内で操作する</a></li>
-            <li><a href="#子a--親--子bと渡す">子A &gt; 親 &gt; 子Bと渡す</a></li>
-            <li><a href="#eventemitter">EventEmitter</a></li>
-            <li><a href="#コンポーネント間で値を渡す">コンポーネント間で値を渡す</a></li>
-          </ul>
-        </li>
-        <li><a href="#値を渡すテンプレート参照変数">値を渡す(テンプレート参照変数)</a></li>
-        <li><a href="#ngif-else">ngIf else</a></li>
-        <li><a href="#ngstyle">ngStyle</a></li>
-        <li><a href="#ngclass">ngClass</a></li>
-        <li><a href="#要素を渡す">要素を渡す</a></li>
-        <li><a href="#コンポーネントのライフサイクル">コンポーネントのライフサイクル</a></li>
-        <li><a href="#formを使う">formを使う</a></li>
-        <li><a href="#デプロイ">デプロイ</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-
-
-    </aside>
-  
- 
-      </header>
-
-      
-      
-  <article class="markdown"><h1 id="angularとは">Angularとは</h1>
-<ul>
-<li>Typescript/JavaScriptやその他の言語を使用してモバイルおよびデスクトップWebアプリケーションを構築するための開発プラットフォーム.</li>
-<li><strong>GitHubリポジトリ:</strong> <a href="https://github.com/angular/angular">https://github.com/angular/angular</a></li>
-<li><strong>References:</strong>
-<ul>
-<li><a href="https://angular.io/docs">https://angular.io/docs</a></li>
-<li><a href="https://angular.jp/docs">https://angular.jp/docs</a></li>
-<li><a href="https://angular.keicode.com">https://angular.keicode.com</a></li>
-</ul>
-</li>
-</ul>
-<h2 id="用語">用語</h2>
-<table>
-<thead>
-<tr>
-<th>用語</th>
-<th>意味</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>module</td>
-<td>アプリを構成するコンポーネントを束ねたもの.</td>
-</tr>
-<tr>
-<td>root module</td>
-<td>アプリが起動する時に呼びされる大元のモジュール.<br>Angularアプリには必ずある.</td>
-</tr>
-<tr>
-<td>component</td>
-<td>View(画面の一部)を制御する.</td>
-</tr>
-<tr>
-<td>template</td>
-<td>componentのUIをどのようにHTMLで表現するかを指定するもの.<br>.htmlのこと.</td>
-</tr>
-<tr>
-<td>Decorators</td>
-<td>モジュールやクラスなどの要素に対してメタ情報を付与するもの</td>
-</tr>
-<tr>
-<td>constructor</td>
-<td>TS, JSに付随するものでClassの初期化時に発動する</td>
-</tr>
-<tr>
-<td>data binding</td>
-<td>コンポーネントにおいてテンプレートとクラス内の要素を繋ぐ仕組み.<br>テンプレートとコンポーネントのコードを繋ぐ方法</td>
-</tr>
-<tr>
-<td>template reference variable</td>
-<td><code>#test</code>を使って, そのDOM要素をtest変数で参照できるようにする仕組み.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="decoratorsのパラメーター">Decoratorsのパラメーター</h3>
-<table>
-<thead>
-<tr>
-<th>パラメーター名</th>
-<th>意味</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>imports</td>
-<td>現在のモジュールで利用する他のモジュール／コンポーネント</td>
-</tr>
-<tr>
-<td>exports</td>
-<td>現在のモジュールで外部に公開するコンポーネントなど</td>
-</tr>
-<tr>
-<td>declarations</td>
-<td>モジュール配下のコンポーネント</td>
-</tr>
-<tr>
-<td>bootstrap</td>
-<td>最初に起動すべき最上位のコンポーネント(＝ルートコンポーネント)</td>
-</tr>
-<tr>
-<td>templateUrl</td>
-<td>描画するhtml</td>
-</tr>
-<tr>
-<td>template</td>
-<td>描画する内容</td>
-</tr>
-<tr>
-<td>styleUrls</td>
-<td>どのcssを使うか</td>
-</tr>
-<tr>
-<td>styles</td>
-<td>直接cssの内容を記述する</td>
-</tr>
-<tr>
-<td>selector</td>
-<td>コンポーネントの適応先を表す(html, css, classなどとして指定できる)</td>
-</tr>
-</tbody>
-</table>
-<h2 id="インストール">インストール</h2>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm i -g @angular/cli @angular/core
-</code></pre></div><h2 id="バージョンアップ">バージョンアップ</h2>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ng update @angular/cli @angular/core
-</code></pre></div><h2 id="dockerでangular">DockerでAngular</h2>
-<p><code>Dockerfile</code>の中身</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#719e07">FROM</span><span style="color:#2aa198"> node:10.16.0-alpine</span>
-
-<span style="color:#719e07">RUN</span> apk update <span style="color:#cb4b16">\
-</span><span style="color:#cb4b16"></span>  <span style="color:#719e07">&amp;&amp;</span> npm install -g @angular/cli@8.0.6 <span style="color:#cb4b16">\
-</span><span style="color:#cb4b16"></span>  <span style="color:#719e07">&amp;&amp;</span> rm -rf /tmp/* /var/cache/apk/* *.tar.gz ~/.npm <span style="color:#cb4b16">\
-</span><span style="color:#cb4b16"></span>  <span style="color:#719e07">&amp;&amp;</span> npm cache clear --force <span style="color:#cb4b16">\
-</span><span style="color:#cb4b16"></span>  <span style="color:#719e07">&amp;&amp;</span> yarn cache clean <span style="color:#cb4b16">\
-</span><span style="color:#cb4b16"></span>  <span style="color:#719e07">&amp;&amp;</span> sed -i -e <span style="color:#2aa198">&#34;s/bin\/ash/bin\/sh/&#34;</span> /etc/passwd
-
-<span style="color:#719e07">WORKDIR</span><span style="color:#2aa198"> /app</span>
-</code></pre></div><p><code>docker-compose.yml</code>の中身</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#719e07">version</span>: <span style="color:#2aa198">&#34;3&#34;</span>
-<span style="color:#719e07">services</span>:
-  <span style="color:#719e07">angular</span>:
-    <span style="color:#719e07">image</span>: solareenlo/angular-cli
-    <span style="color:#719e07">build</span>: .
-    <span style="color:#719e07">command</span>: ash -c <span style="color:#2aa198">&#34;ng serve --host=0.0.0.0&#34;</span>
-    <span style="color:#719e07">volumes</span>:
+テンプレートとコンポーネントのコードを繋ぐ方法   template reference variable #testを使って, そのDOM要素をtest変数で参照できるようにする仕組み.    Decoratorsのパラメーター    パラメーター名 意味     imports 現在のモジュールで利用する他のモジュール／コンポーネント   exports 現在のモジュールで外部に公開するコンポーネントなど   declarations モジュール配下のコンポーネント   bootstrap 最初に起動すべき最上位のコンポーネント(＝ルートコンポーネント)   templateUrl 描画するhtml   template 描画する内容   styleUrls どのcssを使うか   styles 直接cssの内容を記述する   selector コンポーネントの適応先を表す(html, css, classなどとして指定できる)    インストール npm i -g @angular/cli @angular/core バージョンアップ ng update @angular/cli @angular/core DockerでAngular Dockerfileの中身"><meta property="og:type" content="article"><meta property="og:url" content="https://solareenlo.com/docs/pl/angular/"><meta property="article:modified_time" content="2020-03-20T07:56:42+09:00"><title>Angular | solareenlo</title><link rel=icon href=/favicon.png type=image/x-icon><link rel=stylesheet href=/book.min.e80d0e54115ef090f688943719b0c54d1ce5720639cefab6c880b93a94108e5f.css integrity="sha256-6A0OVBFe8JD2iJQ3GbDFTRzlcgY5zvq2yIC5OpQQjl8="><script defer src=/en.search.min.dbcd92b91258cca1451c52491aad178764e00d01988792390b7fa75c52a308d8.js integrity="sha256-282SuRJYzKFFHFJJGq0Xh2TgDQGYh5I5C3+nXFKjCNg="></script></head><body><input type=checkbox class=hidden id=menu-control><main class="container flex"><aside class=book-menu><nav><h2 class=book-brand><a href=/><span>solareenlo</span></a></h2><div class=book-search><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner spinner hidden"></div><ul id=book-search-results></ul></div><ul><li><a href=/posts/>Blog</a></li></ul><ul><li><a href=/docs/programming/ class=collapsed>Programming</a></li><li><a href=/docs/pl/ class=collapsed>Programming Language</a><ul><li><a href=/docs/pl/angular/ class=active>Angular</a></li><li><a href=/docs/pl/c/>C</a></li><li><a href=/docs/pl/css/>Css</a></li><li><a href=/docs/pl/haskell/>Haskell</a></li><li><a href=/docs/pl/hugo/>Hugo</a></li><li><a href=/docs/pl/javascript/>Javascript</a></li><li><a href=/docs/pl/nodejs/>Nodejs</a></li><li><a href=/docs/pl/pl-docs/>Pl Docs</a></li><li><a href=/docs/pl/react-static/>React Static</a></li><li><a href=/docs/pl/react/>React</a></li><li><a href=/docs/pl/rust/>Rust</a></li><li><a href=/docs/pl/scala/>Scala</a></li><li><a href=/docs/pl/typescript/>Typescript</a></li><li><a href=/docs/pl/npm/>npm</a></li></ul></li><li><a href=/docs/latex/ class=collapsed>LaTeX</a></li><li><a href=/docs/vps/ class=collapsed>VPS</a></li><li><a href=/docs/db/ class=collapsed>DB</a></li><li><a href=/docs/cloud/ class=collapsed>Cloud</a></li><li><a href=/docs/ci-cd/ class=collapsed>CI/CD</a></li><li><a href=/docs/container/ class=collapsed>Conatainer</a></li><li><a href=/docs/crypto/ class=collapsed>Crypto</a></li><li><a href=/docs/tools/>Tools</a><ul></ul></li></ul><ul><li><a href=https://github.com/solareenlo/ target=_blank rel=noopener>Github</a></li><li><a href=https://twitter.com/solareenlo/ target=_blank rel=noopener>Twitter</a></li></ul></nav><script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/svg/menu.svg class=book-icon alt=Menu></label>
+<strong>Angular</strong>
+<label for=toc-control><img src=/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><input type=checkbox class=hidden id=toc-control><aside class="hidden clearfix"><nav id=TableOfContents><ul><li><a href=#angularとは>Angularとは</a><ul><li><a href=#用語>用語</a><ul><li><a href=#decoratorsのパラメーター>Decoratorsのパラメーター</a></li></ul></li><li><a href=#インストール>インストール</a></li><li><a href=#バージョンアップ>バージョンアップ</a></li><li><a href=#dockerでangular>DockerでAngular</a></li><li><a href=#npmの脆弱性を指摘されたら>npmの脆弱性を指摘されたら</a></li><li><a href=#travisci経由でgithub-pagesに公開>TravisCI経由でGitHub Pagesに公開</a></li><li><a href=#マテリアルデザイン>マテリアルデザイン</a><ul><li><a href=#インストール-1>インストール</a></li><li><a href=#バージョンアップ-1>バージョンアップ</a></li><li><a href=#簡単な使い方>簡単な使い方</a></li><li><a href=#ファイル選択ボタンをmaterial化>ファイル選択ボタンをMaterial化</a></li></ul></li><li><a href=#基本的な使い方>基本的な使い方</a></li><li><a href=#値を渡すデータバインド>値を渡す(データバインド)</a><ul><li><a href=#tsからhtmlへ値を渡す><code>.ts</code>から<code>.html</code>へ値を渡す</a></li><li><a href=#tsからhtmlのの中に値を渡す><code>.ts</code>から<code>.html</code>の<code>&lt;></code>の中に値を渡す</a></li><li><a href=#ユーザーからのinputを受け付ける>ユーザーからの<code>input</code>を受け付ける.</a></li><li><a href=#入力された値をコンポーネント内で操作する>入力された値をコンポーネント内で操作する</a></li><li><a href=#子a--親--子bと渡す>子A > 親 > 子Bと渡す</a></li><li><a href=#eventemitter>EventEmitter</a></li><li><a href=#コンポーネント間で値を渡す>コンポーネント間で値を渡す</a></li></ul></li><li><a href=#値を渡すテンプレート参照変数>値を渡す(テンプレート参照変数)</a></li><li><a href=#ngif-else>ngIf else</a></li><li><a href=#ngstyle>ngStyle</a></li><li><a href=#ngclass>ngClass</a></li><li><a href=#要素を渡す>要素を渡す</a></li><li><a href=#コンポーネントのライフサイクル>コンポーネントのライフサイクル</a></li><li><a href=#formを使う>formを使う</a></li><li><a href=#デプロイ>デプロイ</a></li></ul></li></ul></nav></aside></header><article class=markdown><h1 id=angularとは>Angularとは</h1><ul><li>Typescript/JavaScriptやその他の言語を使用してモバイルおよびデスクトップWebアプリケーションを構築するための開発プラットフォーム.</li><li><strong>GitHubリポジトリ:</strong> <a href=https://github.com/angular/angular>https://github.com/angular/angular</a></li><li><strong>References:</strong><ul><li><a href=https://angular.io/docs>https://angular.io/docs</a></li><li><a href=https://angular.jp/docs>https://angular.jp/docs</a></li><li><a href=https://angular.keicode.com>https://angular.keicode.com</a></li></ul></li></ul><h2 id=用語>用語</h2><table><thead><tr><th>用語</th><th>意味</th></tr></thead><tbody><tr><td>module</td><td>アプリを構成するコンポーネントを束ねたもの.</td></tr><tr><td>root module</td><td>アプリが起動する時に呼びされる大元のモジュール.<br>Angularアプリには必ずある.</td></tr><tr><td>component</td><td>View(画面の一部)を制御する.</td></tr><tr><td>template</td><td>componentのUIをどのようにHTMLで表現するかを指定するもの.<br>.htmlのこと.</td></tr><tr><td>Decorators</td><td>モジュールやクラスなどの要素に対してメタ情報を付与するもの</td></tr><tr><td>constructor</td><td>TS, JSに付随するものでClassの初期化時に発動する</td></tr><tr><td>data binding</td><td>コンポーネントにおいてテンプレートとクラス内の要素を繋ぐ仕組み.<br>テンプレートとコンポーネントのコードを繋ぐ方法</td></tr><tr><td>template reference variable</td><td><code>#test</code>を使って, そのDOM要素をtest変数で参照できるようにする仕組み.</td></tr></tbody></table><h3 id=decoratorsのパラメーター>Decoratorsのパラメーター</h3><table><thead><tr><th>パラメーター名</th><th>意味</th></tr></thead><tbody><tr><td>imports</td><td>現在のモジュールで利用する他のモジュール／コンポーネント</td></tr><tr><td>exports</td><td>現在のモジュールで外部に公開するコンポーネントなど</td></tr><tr><td>declarations</td><td>モジュール配下のコンポーネント</td></tr><tr><td>bootstrap</td><td>最初に起動すべき最上位のコンポーネント(＝ルートコンポーネント)</td></tr><tr><td>templateUrl</td><td>描画するhtml</td></tr><tr><td>template</td><td>描画する内容</td></tr><tr><td>styleUrls</td><td>どのcssを使うか</td></tr><tr><td>styles</td><td>直接cssの内容を記述する</td></tr><tr><td>selector</td><td>コンポーネントの適応先を表す(html, css, classなどとして指定できる)</td></tr></tbody></table><h2 id=インストール>インストール</h2><div class=highlight><pre style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>npm i -g @angular/cli @angular/core
+</code></pre></div><h2 id=バージョンアップ>バージョンアップ</h2><div class=highlight><pre style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>ng update @angular/cli @angular/core
+</code></pre></div><h2 id=dockerでangular>DockerでAngular</h2><p><code>Dockerfile</code>の中身</p><div class=highlight><pre style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-dockerfile data-lang=dockerfile><span style=color:#719e07>FROM</span><span style=color:#2aa198> node:10.16.0-alpine</span>
+
+<span style=color:#719e07>RUN</span> apk update <span style=color:#cb4b16>\
+</span><span style=color:#cb4b16></span>  <span style=color:#719e07>&amp;&amp;</span> npm install -g @angular/cli@8.0.6 <span style=color:#cb4b16>\
+</span><span style=color:#cb4b16></span>  <span style=color:#719e07>&amp;&amp;</span> rm -rf /tmp/* /var/cache/apk/* *.tar.gz ~/.npm <span style=color:#cb4b16>\
+</span><span style=color:#cb4b16></span>  <span style=color:#719e07>&amp;&amp;</span> npm cache clear --force <span style=color:#cb4b16>\
+</span><span style=color:#cb4b16></span>  <span style=color:#719e07>&amp;&amp;</span> yarn cache clean <span style=color:#cb4b16>\
+</span><span style=color:#cb4b16></span>  <span style=color:#719e07>&amp;&amp;</span> sed -i -e <span style=color:#2aa198>&#34;s/bin\/ash/bin\/sh/&#34;</span> /etc/passwd
+
+<span style=color:#719e07>WORKDIR</span><span style=color:#2aa198> /app</span>
+</code></pre></div><p><code>docker-compose.yml</code>の中身</p><div class=highlight><pre style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=color:#719e07>version</span>: <span style=color:#2aa198>&#34;3&#34;</span>
+<span style=color:#719e07>services</span>:
+  <span style=color:#719e07>angular</span>:
+    <span style=color:#719e07>image</span>: solareenlo/angular-cli
+    <span style=color:#719e07>build</span>: .
+    <span style=color:#719e07>command</span>: ash -c <span style=color:#2aa198>&#34;ng serve --host=0.0.0.0&#34;</span>
+    <span style=color:#719e07>volumes</span>:
       - .:/app
-    <span style="color:#719e07">ports</span>:
-      - <span style="color:#2aa198">&#34;4200:4200&#34;</span>
-</code></pre></div><p>として, <code>Dockerfile</code>だけでコンテナを動かすときは,</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># first-appを作成</span>
-docker run -it --rm -w /app -v <span style="color:#719e07">$(</span><span style="color:#b58900">pwd</span><span style="color:#719e07">)</span>:/app solareenlo/angular-cli ng new first-app
-<span style="color:#586e75"># first-appディレクトリに移動</span>
-<span style="color:#b58900">cd</span> first-app
-<span style="color:#586e75"># コンテナに入って作業する</span>
-docker run -it --rm -w /app -v <span style="color:#719e07">$(</span><span style="color:#b58900">pwd</span><span style="color:#719e07">)</span>:/app solareenlo/angular-cli sh
-<span style="color:#586e75"># コンポーネントを作成</span>
-docker run -it --rm -w /app -v <span style="color:#719e07">$(</span><span style="color:#b58900">pwd</span><span style="color:#719e07">)</span>:/app solareenlo/angular-cli ng generate component sample-component
-docker run -it --rm -w /app -v <span style="color:#719e07">$(</span><span style="color:#b58900">pwd</span><span style="color:#719e07">)</span>:/app solareenlo/angular-cli ng g c sample-component
-<span style="color:#586e75"># コンテナを立ち上げる</span>
-docker run -d -w /app -v <span style="color:#719e07">$(</span><span style="color:#b58900">pwd</span><span style="color:#719e07">)</span>:/app -p 4200:4200 solareenlo/angular-cli ng serve --host 0.0.0.0
-</code></pre></div><p>で, <code>localhost:4200</code>を開く.</p>
-<p><code>Dockerfile</code>と<code>docker-compose.yml</code>でコンテナを動かすときは,</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#586e75"># first-appを作成</span>
-docker run -it --rm -w /app -v <span style="color:#719e07">$(</span><span style="color:#b58900">pwd</span><span style="color:#719e07">)</span>:/app solareenlo/angular-cli ng new first-app
-<span style="color:#586e75"># first-appディレクトリに移動</span>
-<span style="color:#b58900">cd</span> first-app
-<span style="color:#586e75"># コンテナに入って作業する</span>
-docker run -it --rm -w /app -v <span style="color:#719e07">$(</span><span style="color:#b58900">pwd</span><span style="color:#719e07">)</span>:/app solareenlo/angular-cli sh
-<span style="color:#586e75"># docker-compose を使ってコンテナを立ち上げる</span>
+    <span style=color:#719e07>ports</span>:
+      - <span style=color:#2aa198>&#34;4200:4200&#34;</span>
+</code></pre></div><p>として, <code>Dockerfile</code>だけでコンテナを動かすときは,</p><div class=highlight><pre style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#586e75># first-appを作成</span>
+docker run -it --rm -w /app -v <span style=color:#719e07>$(</span><span style=color:#b58900>pwd</span><span style=color:#719e07>)</span>:/app solareenlo/angular-cli ng new first-app
+<span style=color:#586e75># first-appディレクトリに移動</span>
+<span style=color:#b58900>cd</span> first-app
+<span style=color:#586e75># コンテナに入って作業する</span>
+docker run -it --rm -w /app -v <span style=color:#719e07>$(</span><span style=color:#b58900>pwd</span><span style=color:#719e07>)</span>:/app solareenlo/angular-cli sh
+<span style=color:#586e75># コンポーネントを作成</span>
+docker run -it --rm -w /app -v <span style=color:#719e07>$(</span><span style=color:#b58900>pwd</span><span style=color:#719e07>)</span>:/app solareenlo/angular-cli ng generate component sample-component
+docker run -it --rm -w /app -v <span style=color:#719e07>$(</span><span style=color:#b58900>pwd</span><span style=color:#719e07>)</span>:/app solareenlo/angular-cli ng g c sample-component
+<span style=color:#586e75># コンテナを立ち上げる</span>
+docker run -d -w /app -v <span style=color:#719e07>$(</span><span style=color:#b58900>pwd</span><span style=color:#719e07>)</span>:/app -p 4200:4200 solareenlo/angular-cli ng serve --host 0.0.0.0
+</code></pre></div><p>で, <code>localhost:4200</code>を開く.</p><p><code>Dockerfile</code>と<code>docker-compose.yml</code>でコンテナを動かすときは,</p><div class=highlight><pre style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#586e75># first-appを作成</span>
+docker run -it --rm -w /app -v <span style=color:#719e07>$(</span><span style=color:#b58900>pwd</span><span style=color:#719e07>)</span>:/app solareenlo/angular-cli ng new first-app
+<span style=color:#586e75># first-appディレクトリに移動</span>
+<span style=color:#b58900>cd</span> first-app
+<span style=color:#586e75># コンテナに入って作業する</span>
+docker run -it --rm -w /app -v <span style=color:#719e07>$(</span><span style=color:#b58900>pwd</span><span style=color:#719e07>)</span>:/app solareenlo/angular-cli sh
+<span style=color:#586e75># docker-compose を使ってコンテナを立ち上げる</span>
 docker-compose up -d
-<span style="color:#586e75"># コンテナの中に入って作業する</span>
-docker-compose <span style="color:#b58900">exec</span> angular sh
-<span style="color:#586e75"># コンポーネント作成</span>
-docker-compose <span style="color:#b58900">exec</span> angular ng generate component sample-component
-docker-compose <span style="color:#b58900">exec</span> angular ng g c sample-component
-<span style="color:#586e75"># テストは作らずにコンポーネント作成</span>
-docker-compose <span style="color:#b58900">exec</span> angular ng g c sample-component --spec <span style="color:#b58900">false</span>
-<span style="color:#586e75"># コンポーネントの中にコンポーネントを作成</span>
-docker-compose <span style="color:#b58900">exec</span> angular ng g c sample-component/test --spec <span style="color:#b58900">false</span>
-<span style="color:#586e75"># マテリアルデザインをインストール</span>
-docker-compose <span style="color:#b58900">exec</span> angular ng add @angular/material
-<span style="color:#586e75"># 関連するコンテンを全て止める</span>
+<span style=color:#586e75># コンテナの中に入って作業する</span>
+docker-compose <span style=color:#b58900>exec</span> angular sh
+<span style=color:#586e75># コンポーネント作成</span>
+docker-compose <span style=color:#b58900>exec</span> angular ng generate component sample-component
+docker-compose <span style=color:#b58900>exec</span> angular ng g c sample-component
+<span style=color:#586e75># テストは作らずにコンポーネント作成</span>
+docker-compose <span style=color:#b58900>exec</span> angular ng g c sample-component --spec <span style=color:#b58900>false</span>
+<span style=color:#586e75># コンポーネントの中にコンポーネントを作成</span>
+docker-compose <span style=color:#b58900>exec</span> angular ng g c sample-component/test --spec <span style=color:#b58900>false</span>
+<span style=color:#586e75># マテリアルデザインをインストール</span>
+docker-compose <span style=color:#b58900>exec</span> angular ng add @angular/material
+<span style=color:#586e75># 関連するコンテンを全て止める</span>
 docker-compose stop
-<span style="color:#586e75"># 関連するコンテナを全削除</span>
+<span style=color:#586e75># 関連するコンテナを全削除</span>
 docker-compose rm
-</code></pre></div><p>で, <code>localhost:4200</code>を開く.</p>
-<p><strong>コード例:</strong> 
-  <a href="https://github.com/solareenlo/angular-cli">solareenlo/angular-cli</a></p>
-<h2 id="npmの脆弱性を指摘されたら">npmの脆弱性を指摘されたら</h2>
-<p>
-  <a href="https://qiita.com/disneyduffy/items/383ac95bb6a568f6360f">Angularでtarの脆弱性（Arbitrary File Overwrite）を指摘されたので修正する</a></p>
-<h2 id="travisci経由でgithub-pagesに公開">TravisCI経由でGitHub Pagesに公開</h2>
-<ol>
-<li>新規リポジトリを作成</li>
-</ol>
-<ul>
-<li>GitHub APIトークンを生成</li>
-<li>Travi CIの設定</li>
-<li>APIトークンの設定</li>
-<li>リポジトリをクローン</li>
-<li>Angular CLIで新規アプリを作成</li>
-<li>(単体テスト)karma.conf.jsの修正</li>
-<li>(総合テスト)protractor.conf.jsの修正</li>
-<li>.travis.ymlの追加</li>
-<li>GitHub Pagesにアクセス</li>
-</ul>
-<p><strong>Reference:</strong> 
-  <a href="https://qiita.com/puku0x/items/0143af73c4d7af948fc8">AngularアプリをTravis CIからGitHub Pagesへデプロイする</a></p>
-<h2 id="マテリアルデザイン">マテリアルデザイン</h2>
-<ul>
-<li>Googleが提唱した新しいデザインの方向性.</li>
-<li>優れた古典と最新の技術と科学を組み合わせたもの.</li>
-<li>Angular用にもデザインコンポーネントがある.</li>
-<li><strong>公式HP:</strong> <a href="https://material.angular.io">https://material.angular.io</a></li>
-</ul>
-<h3 id="インストール-1">インストール</h3>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm i --save @angular/material
-<span style="color:#586e75"># or</span>
+</code></pre></div><p>で, <code>localhost:4200</code>を開く.</p><p><strong>コード例:</strong>
+<a href=https://github.com/solareenlo/angular-cli>solareenlo/angular-cli</a></p><h2 id=npmの脆弱性を指摘されたら>npmの脆弱性を指摘されたら</h2><p><a href=https://qiita.com/disneyduffy/items/383ac95bb6a568f6360f>Angularでtarの脆弱性（Arbitrary File Overwrite）を指摘されたので修正する</a></p><h2 id=travisci経由でgithub-pagesに公開>TravisCI経由でGitHub Pagesに公開</h2><ol><li>新規リポジトリを作成</li></ol><ul><li>GitHub APIトークンを生成</li><li>Travi CIの設定</li><li>APIトークンの設定</li><li>リポジトリをクローン</li><li>Angular CLIで新規アプリを作成</li><li>(単体テスト)karma.conf.jsの修正</li><li>(総合テスト)protractor.conf.jsの修正</li><li>.travis.ymlの追加</li><li>GitHub Pagesにアクセス</li></ul><p><strong>Reference:</strong>
+<a href=https://qiita.com/puku0x/items/0143af73c4d7af948fc8>AngularアプリをTravis CIからGitHub Pagesへデプロイする</a></p><h2 id=マテリアルデザイン>マテリアルデザイン</h2><ul><li>Googleが提唱した新しいデザインの方向性.</li><li>優れた古典と最新の技術と科学を組み合わせたもの.</li><li>Angular用にもデザインコンポーネントがある.</li><li><strong>公式HP:</strong> <a href=https://material.angular.io>https://material.angular.io</a></li></ul><h3 id=インストール-1>インストール</h3><div class=highlight><pre style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>npm i --save @angular/material
+<span style=color:#586e75># or</span>
 ng add @angular/material
-</code></pre></div><h3 id="バージョンアップ-1">バージョンアップ</h3>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ng update @angular/material
-</code></pre></div><h3 id="簡単な使い方">簡単な使い方</h3>
-<p><code>app.module.ts</code>に以下を追加し,</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#268bd2">import</span> { MatInputModule, MatCardModule, MatButtonModule } from <span style="color:#2aa198">&#39;@angular/material&#39;</span>;
-<span style="color:#268bd2">@NgModule</span> ({
-  imports<span style="color:#719e07">:</span> [
+</code></pre></div><h3 id=バージョンアップ-1>バージョンアップ</h3><div class=highlight><pre style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>ng update @angular/material
+</code></pre></div><h3 id=簡単な使い方>簡単な使い方</h3><p><code>app.module.ts</code>に以下を追加し,</p><div class=highlight><pre style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-typescript data-lang=typescript><span style=color:#268bd2>import</span> { MatInputModule, MatCardModule, MatButtonModule } from <span style=color:#2aa198>&#39;@angular/material&#39;</span>;
+<span style=color:#268bd2>@NgModule</span> ({
+  imports<span style=color:#719e07>:</span> [
     MatInputModule,
     MatCardModule,
     MatButtonModule
   ]
 })
-</code></pre></div><p><code>.html</code>で, 以下の様に使用し,</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#268bd2">mat-car</span>&gt;
-  &lt;<span style="color:#268bd2">mat-form-field</span>&gt;
-    &lt;<span style="color:#268bd2">textarea</span> matInput [(ngModel)]=&#34;enteredValue&#34;&gt;&lt;/<span style="color:#268bd2">textarea</span>&gt;
-  &lt;/<span style="color:#268bd2">mat-form-field</span>&gt;
-  &lt;<span style="color:#268bd2">button</span>
+</code></pre></div><p><code>.html</code>で, 以下の様に使用し,</p><div class=highlight><pre style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>&lt;<span style=color:#268bd2>mat-car</span>&gt;
+  &lt;<span style=color:#268bd2>mat-form-field</span>&gt;
+    &lt;<span style=color:#268bd2>textarea</span> matInput [(ngModel)]=&#34;enteredValue&#34;&gt;&lt;/<span style=color:#268bd2>textarea</span>&gt;
+  &lt;/<span style=color:#268bd2>mat-form-field</span>&gt;
+  &lt;<span style=color:#268bd2>button</span>
     mat-raised-button
-    color<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;primary&#34;</span>
+    color<span style=color:#719e07>=</span><span style=color:#2aa198>&#34;primary&#34;</span>
     (click)=&#34;onAddPost()&#34;&gt;
     Save Post
-  &lt;/<span style="color:#268bd2">button</span>&gt;
-&lt;/<span style="color:#268bd2">mat-card</span>&gt;
-</code></pre></div><p><code>.css</code>に以下の様に書く.</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#268bd2">mat-card</span>{
-  <span style="color:#719e07">width</span>: <span style="color:#2aa198">80</span>;
-  <span style="color:#719e07">margin</span>: <span style="color:#cb4b16">auto</span>;
+  &lt;/<span style=color:#268bd2>button</span>&gt;
+&lt;/<span style=color:#268bd2>mat-card</span>&gt;
+</code></pre></div><p><code>.css</code>に以下の様に書く.</p><div class=highlight><pre style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-css data-lang=css><span style=color:#268bd2>mat-card</span>{
+  <span style=color:#719e07>width</span>: <span style=color:#2aa198>80</span>;
+  <span style=color:#719e07>margin</span>: <span style=color:#cb4b16>auto</span>;
 }
-<span style="color:#268bd2">mat-form-field</span><span style="color:#719e07">,</span>
-<span style="color:#268bd2">textarea</span> {
-  <span style="color:#719e07">width</span>: <span style="color:#2aa198">100</span><span style="color:#dc322f">%</span>;
+<span style=color:#268bd2>mat-form-field</span><span style=color:#719e07>,</span>
+<span style=color:#268bd2>textarea</span> {
+  <span style=color:#719e07>width</span>: <span style=color:#2aa198>100</span><span style=color:#dc322f>%</span>;
 }
-</code></pre></div><h3 id="ファイル選択ボタンをmaterial化">ファイル選択ボタンをMaterial化</h3>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#586e75">/* .cssファイル */</span>
-.<span style="color:#268bd2">file-select-button</span><span style="color:#719e07">,</span> .<span style="color:#268bd2">file-name</span> {
-  <span style="color:#719e07">display</span>: <span style="color:#cb4b16">inline</span><span style="color:#719e07">-</span><span style="color:#cb4b16">block</span>;
-  <span style="color:#719e07">margin</span>: <span style="color:#2aa198">8</span><span style="color:#dc322f">px</span>;
+</code></pre></div><h3 id=ファイル選択ボタンをmaterial化>ファイル選択ボタンをMaterial化</h3><div class=highlight><pre style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-css data-lang=css><span style=color:#586e75>/* .cssファイル */</span>
+.<span style=color:#268bd2>file-select-button</span><span style=color:#719e07>,</span> .<span style=color:#268bd2>file-name</span> {
+  <span style=color:#719e07>display</span>: <span style=color:#cb4b16>inline</span><span style=color:#719e07>-</span><span style=color:#cb4b16>block</span>;
+  <span style=color:#719e07>margin</span>: <span style=color:#2aa198>8</span><span style=color:#dc322f>px</span>;
   }
-</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#586e75">&lt;!-- .htmlファイル --&gt;</span>
-&lt;<span style="color:#268bd2">div</span> class<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;container&#34;</span>&gt;
-  &lt;<span style="color:#268bd2">input</span> type<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;file&#34;</span> style<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;display: none&#34;</span> #fileInput accept<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;image/*&#34;</span> (change)=&#34;onChangeFileInput()&#34; /&gt;
-  &lt;<span style="color:#268bd2">button</span> mat-raised-button color<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;primary&#34;</span> class<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;file-select-button&#34;</span> (click)=&#34;onClickFileInputButton()&#34;&gt;
-    &lt;<span style="color:#268bd2">mat-icon</span>&gt;attach_file&lt;/<span style="color:#268bd2">mat-icon</span>&gt;
+</code></pre></div><div class=highlight><pre style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=color:#586e75>&lt;!-- .htmlファイル --&gt;</span>
+&lt;<span style=color:#268bd2>div</span> class<span style=color:#719e07>=</span><span style=color:#2aa198>&#34;container&#34;</span>&gt;
+  &lt;<span style=color:#268bd2>input</span> type<span style=color:#719e07>=</span><span style=color:#2aa198>&#34;file&#34;</span> style<span style=color:#719e07>=</span><span style=color:#2aa198>&#34;display: none&#34;</span> #fileInput accept<span style=color:#719e07>=</span><span style=color:#2aa198>&#34;image/*&#34;</span> (change)=&#34;onChangeFileInput()&#34; /&gt;
+  &lt;<span style=color:#268bd2>button</span> mat-raised-button color<span style=color:#719e07>=</span><span style=color:#2aa198>&#34;primary&#34;</span> class<span style=color:#719e07>=</span><span style=color:#2aa198>&#34;file-select-button&#34;</span> (click)=&#34;onClickFileInputButton()&#34;&gt;
+    &lt;<span style=color:#268bd2>mat-icon</span>&gt;attach_file&lt;/<span style=color:#268bd2>mat-icon</span>&gt;
     ファイルを選択
-  &lt;/<span style="color:#268bd2">button</span>&gt;
+  &lt;/<span style=color:#268bd2>button</span>&gt;
 
-  &lt;<span style="color:#268bd2">p</span> class<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;file-name&#34;</span> *ngIf<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;!file; else fileName&#34;</span>&gt;ファイルが選択されていません&lt;/<span style="color:#268bd2">p</span>&gt;
-  &lt;<span style="color:#268bd2">ng-template</span> #fileName&gt;
-    &lt;<span style="color:#268bd2">p</span> class<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;file-name&#34;</span>&gt;{{ file?.name }}&lt;/<span style="color:#268bd2">p</span>&gt;
-  &lt;/<span style="color:#268bd2">ng-template</span>&gt;
-&lt;/<span style="color:#268bd2">div</span>&gt;
-</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#586e75">// .tsファイル
-</span><span style="color:#586e75"></span><span style="color:#268bd2">import</span> { Component, ViewChild } from <span style="color:#2aa198">&#39;@angular/core&#39;</span>;
+  &lt;<span style=color:#268bd2>p</span> class<span style=color:#719e07>=</span><span style=color:#2aa198>&#34;file-name&#34;</span> *ngIf<span style=color:#719e07>=</span><span style=color:#2aa198>&#34;!file; else fileName&#34;</span>&gt;ファイルが選択されていません&lt;/<span style=color:#268bd2>p</span>&gt;
+  &lt;<span style=color:#268bd2>ng-template</span> #fileName&gt;
+    &lt;<span style=color:#268bd2>p</span> class<span style=color:#719e07>=</span><span style=color:#2aa198>&#34;file-name&#34;</span>&gt;{{ file?.name }}&lt;/<span style=color:#268bd2>p</span>&gt;
+  &lt;/<span style=color:#268bd2>ng-template</span>&gt;
+&lt;/<span style=color:#268bd2>div</span>&gt;
+</code></pre></div><div class=highlight><pre style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-typescript data-lang=typescript><span style=color:#586e75>// .tsファイル
+</span><span style=color:#586e75></span><span style=color:#268bd2>import</span> { Component, ViewChild } from <span style=color:#2aa198>&#39;@angular/core&#39;</span>;
 
-<span style="color:#268bd2">@Component</span>({
-  selector<span style="color:#719e07">:</span> <span style="color:#2aa198">&#39;my-app&#39;</span>,
-  templateUrl<span style="color:#719e07">:</span> <span style="color:#2aa198">&#39;./app.component.html&#39;</span>,
-  styleUrls<span style="color:#719e07">:</span> [ <span style="color:#2aa198">&#39;./app.component.css&#39;</span> ]
+<span style=color:#268bd2>@Component</span>({
+  selector<span style=color:#719e07>:</span> <span style=color:#2aa198>&#39;my-app&#39;</span>,
+  templateUrl<span style=color:#719e07>:</span> <span style=color:#2aa198>&#39;./app.component.html&#39;</span>,
+  styleUrls<span style=color:#719e07>:</span> [ <span style=color:#2aa198>&#39;./app.component.css&#39;</span> ]
 })
-<span style="color:#268bd2">export</span> <span style="color:#268bd2">class</span> AppComponent  {
-  <span style="color:#268bd2">@ViewChild</span>(<span style="color:#2aa198">&#39;fileInput&#39;</span>)
+<span style=color:#268bd2>export</span> <span style=color:#268bd2>class</span> AppComponent  {
+  <span style=color:#268bd2>@ViewChild</span>(<span style=color:#2aa198>&#39;fileInput&#39;</span>)
   fileInput;
 
-  file: <span style="color:#dc322f">File</span> <span style="color:#719e07">|</span> <span style="color:#cb4b16">null</span> <span style="color:#719e07">=</span> <span style="color:#cb4b16">null</span>;
+  file: <span style=color:#dc322f>File</span> <span style=color:#719e07>|</span> <span style=color:#cb4b16>null</span> <span style=color:#719e07>=</span> <span style=color:#cb4b16>null</span>;
 
-  onClickFileInputButton()<span style="color:#719e07">:</span> <span style="color:#719e07">void</span> {
-    <span style="color:#719e07">this</span>.fileInput.nativeElement.click();
+  onClickFileInputButton()<span style=color:#719e07>:</span> <span style=color:#719e07>void</span> {
+    <span style=color:#719e07>this</span>.fileInput.nativeElement.click();
   }
 
-  onChangeFileInput()<span style="color:#719e07">:</span> <span style="color:#719e07">void</span> {
-    <span style="color:#268bd2">const</span> files<span style="color:#719e07">:</span> { [key: <span style="color:#dc322f">string</span>]<span style="color:#719e07">:</span> File } <span style="color:#719e07">=</span> <span style="color:#719e07">this</span>.fileInput.nativeElement.files;
-    <span style="color:#719e07">this</span>.file <span style="color:#719e07">=</span> files[<span style="color:#2aa198">0</span>];
+  onChangeFileInput()<span style=color:#719e07>:</span> <span style=color:#719e07>void</span> {
+    <span style=color:#268bd2>const</span> files<span style=color:#719e07>:</span> { [key: <span style=color:#dc322f>string</span>]<span style=color:#719e07>:</span> File } <span style=color:#719e07>=</span> <span style=color:#719e07>this</span>.fileInput.nativeElement.files;
+    <span style=color:#719e07>this</span>.file <span style=color:#719e07>=</span> files[<span style=color:#2aa198>0</span>];
   }
 }
-</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#586e75">// app.module.tsファイル
-</span><span style="color:#586e75"></span><span style="color:#268bd2">import</span> { NgModule } from <span style="color:#2aa198">&#39;@angular/core&#39;</span>;
-<span style="color:#268bd2">import</span> { BrowserModule } from <span style="color:#2aa198">&#39;@angular/platform-browser&#39;</span>;
-<span style="color:#268bd2">import</span> { FormsModule } from <span style="color:#2aa198">&#39;@angular/forms&#39;</span>;
-<span style="color:#268bd2">import</span> { MatButtonModule, MatIconModule } from <span style="color:#2aa198">&#39;@angular/material&#39;</span>;
+</code></pre></div><div class=highlight><pre style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-typescript data-lang=typescript><span style=color:#586e75>// app.module.tsファイル
+</span><span style=color:#586e75></span><span style=color:#268bd2>import</span> { NgModule } from <span style=color:#2aa198>&#39;@angular/core&#39;</span>;
+<span style=color:#268bd2>import</span> { BrowserModule } from <span style=color:#2aa198>&#39;@angular/platform-browser&#39;</span>;
+<span style=color:#268bd2>import</span> { FormsModule } from <span style=color:#2aa198>&#39;@angular/forms&#39;</span>;
+<span style=color:#268bd2>import</span> { MatButtonModule, MatIconModule } from <span style=color:#2aa198>&#39;@angular/material&#39;</span>;
 
-<span style="color:#268bd2">import</span> { AppComponent } from <span style="color:#2aa198">&#39;./app.component&#39;</span>;
-<span style="color:#268bd2">import</span> { HelloComponent } from <span style="color:#2aa198">&#39;./hello.component&#39;</span>;
+<span style=color:#268bd2>import</span> { AppComponent } from <span style=color:#2aa198>&#39;./app.component&#39;</span>;
+<span style=color:#268bd2>import</span> { HelloComponent } from <span style=color:#2aa198>&#39;./hello.component&#39;</span>;
 
-<span style="color:#268bd2">@NgModule</span>({
-  imports<span style="color:#719e07">:</span>      [ BrowserModule, FormsModule, MatButtonModule, MatIconModule ],
-  declarations<span style="color:#719e07">:</span> [ AppComponent, HelloComponent ],
-  bootstrap<span style="color:#719e07">:</span>    [ AppComponent ]
+<span style=color:#268bd2>@NgModule</span>({
+  imports<span style=color:#719e07>:</span>      [ BrowserModule, FormsModule, MatButtonModule, MatIconModule ],
+  declarations<span style=color:#719e07>:</span> [ AppComponent, HelloComponent ],
+  bootstrap<span style=color:#719e07>:</span>    [ AppComponent ]
 })
-<span style="color:#268bd2">export</span> <span style="color:#268bd2">class</span> AppModule { }
-</code></pre></div><p><strong>Reference:</strong> 
-  <a href="https://qiita.com/daikiojm/items/d744d63300915b2d8c4b">Angular Materialでファイル選択ボタン</a></p>
-<h2 id="基本的な使い方">基本的な使い方</h2>
-<ul>
-<li>
-<p>コンポーネント単位で作っていく.</p>
-</li>
-<li>
-<p>以下の様な感じで<code>xxx.component.ts</code>にコンポーネントの名前を<code>selector: 'app-servers'</code>で指定して, <code>xxx.component.html</code>の中で<code>&lt;app-server&gt;&lt;/app-server&gt;</code>と書いてどんどん使っていく.</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#268bd2">@Component</span>({
-selector<span style="color:#719e07">:</span> <span style="color:#2aa198">&#39;app-servers&#39;</span>,
-templateUrl<span style="color:#719e07">:</span> <span style="color:#2aa198">&#39;./servers.component.html&#39;</span>,
-<span style="color:#586e75">// template: &#39;&lt;app-server&gt;&lt;/app-server&gt;&#39;,
-</span><span style="color:#586e75"></span>styleUrls<span style="color:#719e07">:</span> [<span style="color:#2aa198">&#39;./servers.component.css&#39;</span>]
+<span style=color:#268bd2>export</span> <span style=color:#268bd2>class</span> AppModule { }
+</code></pre></div><p><strong>Reference:</strong>
+<a href=https://qiita.com/daikiojm/items/d744d63300915b2d8c4b>Angular Materialでファイル選択ボタン</a></p><h2 id=基本的な使い方>基本的な使い方</h2><ul><li><p>コンポーネント単位で作っていく.</p></li><li><p>以下の様な感じで<code>xxx.component.ts</code>にコンポーネントの名前を<code>selector: 'app-servers'</code>で指定して, <code>xxx.component.html</code>の中で<code>&lt;app-server>&lt;/app-server></code>と書いてどんどん使っていく.</p><div class=highlight><pre style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-typescript data-lang=typescript><span style=color:#268bd2>@Component</span>({
+selector<span style=color:#719e07>:</span> <span style=color:#2aa198>&#39;app-servers&#39;</span>,
+templateUrl<span style=color:#719e07>:</span> <span style=color:#2aa198>&#39;./servers.component.html&#39;</span>,
+<span style=color:#586e75>// template: &#39;&lt;app-server&gt;&lt;/app-server&gt;&#39;,
+</span><span style=color:#586e75></span>styleUrls<span style=color:#719e07>:</span> [<span style=color:#2aa198>&#39;./servers.component.css&#39;</span>]
 })
-</code></pre></div></li>
-<li>
-<p>必要なコンポーネント・モジュールができたら<code>app.module.ts</code>に追加していく.</p>
-</li>
-<li>
-<p><code>xxx.component.html</code>にhtmlを, <code>xxx.component.cs</code>にcssを, <code>xxx.component.ts</code>にjsをどんどん書いてく.</p>
-</li>
-</ul>
-<h2 id="値を渡すデータバインド">値を渡す(データバインド)</h2>
-<ul>
-<li><code>[]</code>は, TypeScriptからHTMLへのバインドを表す.</li>
-<li><code>()</code>は, HTMLからTypeScriptへのバインドを表す.</li>
-<li><code>[()]</code>は, 双方向のバインドを表す.</li>
-</ul>
-<h3 id="tsからhtmlへ値を渡す"><code>.ts</code>から<code>.html</code>へ値を渡す</h3>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#586e75">// .tx側
-</span><span style="color:#586e75"></span><span style="color:#268bd2">export</span> <span style="color:#268bd2">class</span> TestComponent <span style="color:#268bd2">implements</span> OnInit {
-  newPost <span style="color:#719e07">=</span> <span style="color:#2aa198">&#39;Yes&#39;</span>;
-  <span style="color:#268bd2">constructor</span>() {}
+</code></pre></div></li><li><p>必要なコンポーネント・モジュールができたら<code>app.module.ts</code>に追加していく.</p></li><li><p><code>xxx.component.html</code>にhtmlを, <code>xxx.component.cs</code>にcssを, <code>xxx.component.ts</code>にjsをどんどん書いてく.</p></li></ul><h2 id=値を渡すデータバインド>値を渡す(データバインド)</h2><ul><li><code>[]</code>は, TypeScriptからHTMLへのバインドを表す.</li><li><code>()</code>は, HTMLからTypeScriptへのバインドを表す.</li><li><code>[()]</code>は, 双方向のバインドを表す.</li></ul><h3 id=tsからhtmlへ値を渡す><code>.ts</code>から<code>.html</code>へ値を渡す</h3><div class=highlight><pre style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-typescript data-lang=typescript><span style=color:#586e75>// .tx側
+</span><span style=color:#586e75></span><span style=color:#268bd2>export</span> <span style=color:#268bd2>class</span> TestComponent <span style=color:#268bd2>implements</span> OnInit {
+  newPost <span style=color:#719e07>=</span> <span style=color:#2aa198>&#39;Yes&#39;</span>;
+  <span style=color:#268bd2>constructor</span>() {}
   ngOnInit() {}
 }
-</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#586e75">&lt;!-- .thml側 --&gt;</span>
-&lt;<span style="color:#268bd2">h1</span>&gt;{{ newPost }}&lt;/<span style="color:#268bd2">h1</span>&gt;
-</code></pre></div><h3 id="tsからhtmlのの中に値を渡す"><code>.ts</code>から<code>.html</code>の<code>&lt;&gt;</code>の中に値を渡す</h3>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#586e75">// .ts側
-</span><span style="color:#586e75"></span><span style="color:#268bd2">export</span> <span style="color:#268bd2">class</span> TestComponent <span style="color:#268bd2">implements</span> OnInit {
-  newPost <span style="color:#719e07">=</span> <span style="color:#2aa198">&#39;Yes&#39;</span>;
-  <span style="color:#268bd2">constructor</span>() {}
+</code></pre></div><div class=highlight><pre style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=color:#586e75>&lt;!-- .thml側 --&gt;</span>
+&lt;<span style=color:#268bd2>h1</span>&gt;{{ newPost }}&lt;/<span style=color:#268bd2>h1</span>&gt;
+</code></pre></div><h3 id=tsからhtmlのの中に値を渡す><code>.ts</code>から<code>.html</code>の<code>&lt;></code>の中に値を渡す</h3><div class=highlight><pre style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-typescript data-lang=typescript><span style=color:#586e75>// .ts側
+</span><span style=color:#586e75></span><span style=color:#268bd2>export</span> <span style=color:#268bd2>class</span> TestComponent <span style=color:#268bd2>implements</span> OnInit {
+  newPost <span style=color:#719e07>=</span> <span style=color:#2aa198>&#39;Yes&#39;</span>;
+  <span style=color:#268bd2>constructor</span>() {}
   ngOnInit() {}
 }
-</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#586e75">&lt;!-- .thml側 --&gt;</span>
-&lt;<span style="color:#268bd2">textarea</span> [value]=&#34;newPost&#34;&gt;&lt;/<span style="color:#268bd2">textarea</span>&gt;
-</code></pre></div><h3 id="ユーザーからのinputを受け付ける">ユーザーからの<code>input</code>を受け付ける.</h3>
-<p>1文字ずつ受け付けるのは2種類ある.<br>
-<code>xxx.component.html</code>に以下の様に書く.</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#586e75">&lt;!-- eventのbindを使う方法 --&gt;</span>
-&lt;<span style="color:#268bd2">input</span>
-  type<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;text&#34;</span>
-  class<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;form-control&#34;</span>
+</code></pre></div><div class=highlight><pre style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=color:#586e75>&lt;!-- .thml側 --&gt;</span>
+&lt;<span style=color:#268bd2>textarea</span> [value]=&#34;newPost&#34;&gt;&lt;/<span style=color:#268bd2>textarea</span>&gt;
+</code></pre></div><h3 id=ユーザーからのinputを受け付ける>ユーザーからの<code>input</code>を受け付ける.</h3><p>1文字ずつ受け付けるのは2種類ある.<br><code>xxx.component.html</code>に以下の様に書く.</p><div class=highlight><pre style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=color:#586e75>&lt;!-- eventのbindを使う方法 --&gt;</span>
+&lt;<span style=color:#268bd2>input</span>
+  type<span style=color:#719e07>=</span><span style=color:#2aa198>&#34;text&#34;</span>
+  class<span style=color:#719e07>=</span><span style=color:#2aa198>&#34;form-control&#34;</span>
   (input)=&#34;onUpdateServerName($event)&#34;&gt;
-&lt;<span style="color:#268bd2">p</span>&gt;{{ serverName }}&lt;/<span style="color:#268bd2">p</span>&gt; <span style="color:#586e75">&lt;!-- serverNameが表示される --&gt;</span>
+&lt;<span style=color:#268bd2>p</span>&gt;{{ serverName }}&lt;/<span style=color:#268bd2>p</span>&gt; <span style=color:#586e75>&lt;!-- serverNameが表示される --&gt;</span>
 
-<span style="color:#586e75">&lt;!--
-</span><span style="color:#586e75">ngModelモジュールを使う方法
-</span><span style="color:#586e75">これを使う場合はapp.module.tsに
-</span><span style="color:#586e75">---
-</span><span style="color:#586e75">import { FormsModule } from &#39;@angular/forms&#39;;
-</span><span style="color:#586e75">@NgModule({
-</span><span style="color:#586e75">  imports: [
-</span><span style="color:#586e75">    FormsModule
-</span><span style="color:#586e75">  ]
-</span><span style="color:#586e75">})
-</span><span style="color:#586e75">---
-</span><span style="color:#586e75">を追加する必要がある.
-</span><span style="color:#586e75">--&gt;</span>
-&lt;<span style="color:#268bd2">input</span>
- type<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;text&#34;</span>
- class<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;form-control&#34;</span>
+<span style=color:#586e75>&lt;!--
+</span><span style=color:#586e75>ngModelモジュールを使う方法
+</span><span style=color:#586e75>これを使う場合はapp.module.tsに
+</span><span style=color:#586e75>---
+</span><span style=color:#586e75>import { FormsModule } from &#39;@angular/forms&#39;;
+</span><span style=color:#586e75>@NgModule({
+</span><span style=color:#586e75>  imports: [
+</span><span style=color:#586e75>    FormsModule
+</span><span style=color:#586e75>  ]
+</span><span style=color:#586e75>})
+</span><span style=color:#586e75>---
+</span><span style=color:#586e75>を追加する必要がある.
+</span><span style=color:#586e75>--&gt;</span>
+&lt;<span style=color:#268bd2>input</span>
+ type<span style=color:#719e07>=</span><span style=color:#2aa198>&#34;text&#34;</span>
+ class<span style=color:#719e07>=</span><span style=color:#2aa198>&#34;form-control&#34;</span>
  [(ngModel)]=&#34;serverName&#34;&gt;
-&lt;<span style="color:#268bd2">p</span>&gt;{{ serverName }}&lt;/<span style="color:#268bd2">p</span>&gt; <span style="color:#586e75">&lt;!-- serverNameが表示される --&gt;</span>
-</code></pre></div><p>ボタンを押して受け付けるのは1つある.</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#586e75">&lt;!-- .html側 --&gt;</span>
-&lt;<span style="color:#268bd2">textarea</span> #postInput&gt;&lt;/<span style="color:#268bd2">textarea</span>&gt;
-&lt;<span style="color:#268bd2">button</span> (click)=&#34;onAddPost(postInput)&gt;&lt;/<span style="color:#268bd2">button</span>&gt;
-&lt;<span style="color:#268bd2">p</span>&gt;{{ newPost }}&lt;/<span style="color:#268bd2">p</span>&gt;
-</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#586e75">// .ts側
-</span><span style="color:#586e75"></span><span style="color:#268bd2">export</span> <span style="color:#268bd2">class</span> TestComponent <span style="color:#268bd2">implements</span> OnInit {
-  newPost <span style="color:#719e07">=</span> <span style="color:#2aa198">&#39;&#39;</span>;
-  <span style="color:#268bd2">constructor</span>() {}
+&lt;<span style=color:#268bd2>p</span>&gt;{{ serverName }}&lt;/<span style=color:#268bd2>p</span>&gt; <span style=color:#586e75>&lt;!-- serverNameが表示される --&gt;</span>
+</code></pre></div><p>ボタンを押して受け付けるのは1つある.</p><div class=highlight><pre style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=color:#586e75>&lt;!-- .html側 --&gt;</span>
+&lt;<span style=color:#268bd2>textarea</span> #postInput&gt;&lt;/<span style=color:#268bd2>textarea</span>&gt;
+&lt;<span style=color:#268bd2>button</span> (click)=&#34;onAddPost(postInput)&gt;&lt;/<span style=color:#268bd2>button</span>&gt;
+&lt;<span style=color:#268bd2>p</span>&gt;{{ newPost }}&lt;/<span style=color:#268bd2>p</span>&gt;
+</code></pre></div><div class=highlight><pre style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-typescript data-lang=typescript><span style=color:#586e75>// .ts側
+</span><span style=color:#586e75></span><span style=color:#268bd2>export</span> <span style=color:#268bd2>class</span> TestComponent <span style=color:#268bd2>implements</span> OnInit {
+  newPost <span style=color:#719e07>=</span> <span style=color:#2aa198>&#39;&#39;</span>;
+  <span style=color:#268bd2>constructor</span>() {}
   ngOninit() {}
-  onAddPost(postInput: <span style="color:#dc322f">HTMLTextAreaElement</span>) {
-    <span style="color:#719e07">this</span>.newPost <span style="color:#719e07">=</span> postInput;
+  onAddPost(postInput: <span style=color:#dc322f>HTMLTextAreaElement</span>) {
+    <span style=color:#719e07>this</span>.newPost <span style=color:#719e07>=</span> postInput;
   }
 }
-</code></pre></div><h3 id="入力された値をコンポーネント内で操作する">入力された値をコンポーネント内で操作する</h3>
-<p><code>*.html</code>内において,</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#586e75">&lt;!-- ↓は親にそのまま入力した値がnewServerNameとして渡る --&gt;</span>
-&lt;<span style="color:#268bd2">input</span> type<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;text&#34;</span> class<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;form-control&#34;</span> [(ngModel)]=&#34;newServerName&#34;&gt;
-<span style="color:#586e75">&lt;!-- ↓は子に入力された値が#serverNameInputとして残ってる --&gt;</span>
-&lt;<span style="color:#268bd2">input</span> type<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;text&#34;</span> class<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;form-control&#34;</span> #serverNameInput&gt;
-</code></pre></div><h3 id="子a--親--子bと渡す">子A &gt; 親 &gt; 子Bと渡す</h3>
-<ul>
-<li>子A &gt; 親 が<code>@output()</code>で, データを渡す</li>
-<li>親 &gt; 子B が<code>@input()</code>で, データを渡す</li>
-</ul>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#586e75">// 子Aの.tsの中身
-</span><span style="color:#586e75"></span><span style="color:#268bd2">import</span> { Component, EventEmitter, Output } from <span style="color:#2aa198">&#39;@angular/core&#39;</span>;
-<span style="color:#268bd2">@Component</span>({
-  selector<span style="color:#719e07">:</span> <span style="color:#2aa198">&#39;app-achild&#39;</span>
+</code></pre></div><h3 id=入力された値をコンポーネント内で操作する>入力された値をコンポーネント内で操作する</h3><p><code>*.html</code>内において,</p><div class=highlight><pre style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=color:#586e75>&lt;!-- ↓は親にそのまま入力した値がnewServerNameとして渡る --&gt;</span>
+&lt;<span style=color:#268bd2>input</span> type<span style=color:#719e07>=</span><span style=color:#2aa198>&#34;text&#34;</span> class<span style=color:#719e07>=</span><span style=color:#2aa198>&#34;form-control&#34;</span> [(ngModel)]=&#34;newServerName&#34;&gt;
+<span style=color:#586e75>&lt;!-- ↓は子に入力された値が#serverNameInputとして残ってる --&gt;</span>
+&lt;<span style=color:#268bd2>input</span> type<span style=color:#719e07>=</span><span style=color:#2aa198>&#34;text&#34;</span> class<span style=color:#719e07>=</span><span style=color:#2aa198>&#34;form-control&#34;</span> #serverNameInput&gt;
+</code></pre></div><h3 id=子a--親--子bと渡す>子A > 親 > 子Bと渡す</h3><ul><li>子A > 親 が<code>@output()</code>で, データを渡す</li><li>親 > 子B が<code>@input()</code>で, データを渡す</li></ul><div class=highlight><pre style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-typescript data-lang=typescript><span style=color:#586e75>// 子Aの.tsの中身
+</span><span style=color:#586e75></span><span style=color:#268bd2>import</span> { Component, EventEmitter, Output } from <span style=color:#2aa198>&#39;@angular/core&#39;</span>;
+<span style=color:#268bd2>@Component</span>({
+  selector<span style=color:#719e07>:</span> <span style=color:#2aa198>&#39;app-achild&#39;</span>
 })
-<span style="color:#268bd2">export</span> <span style="color:#268bd2">class</span> AchildComponent {
-  <span style="color:#268bd2">@Output</span>() postCreated <span style="color:#719e07">=</span> <span style="color:#719e07">new</span> EventEmitter();
+<span style=color:#268bd2>export</span> <span style=color:#268bd2>class</span> AchildComponent {
+  <span style=color:#268bd2>@Output</span>() postCreated <span style=color:#719e07>=</span> <span style=color:#719e07>new</span> EventEmitter();
   onAddPost() {
-    <span style="color:#268bd2">const</span> post <span style="color:#719e07">=</span> <span style="color:#2aa198">&#39;test&#39;</span>;
-    <span style="color:#719e07">this</span>.postCreated.emit(post);
+    <span style=color:#268bd2>const</span> post <span style=color:#719e07>=</span> <span style=color:#2aa198>&#39;test&#39;</span>;
+    <span style=color:#719e07>this</span>.postCreated.emit(post);
   }
 }
-</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#586e75">&lt;!-- 親の.htmlの中身 --&gt;</span>
-<span style="color:#586e75">&lt;!-- ここ↓は@Outoutなので, 子の要素postCreatedから親の要素onPostAddedに情報が行く --&gt;</span>
-&lt;<span style="color:#268bd2">app-achild</span> (postCreated)=&#34;onPostAdded($event)&#34;&gt;&lt;/<span style="color:#268bd2">app-achild</span>&gt;
-<span style="color:#586e75">&lt;!-- ここ↓は@Input()なので, 子の要素postsに親の要素storedPostsから情報が行く --&gt;</span>
-&lt;<span style="color:#268bd2">app-bchild</span> [posts]=&#34;storedPosts&#34;&gt;&lt;/<span style="color:#268bd2">app-bchild</span>&gt;
-</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#586e75">// 親の.tsの中身の一部
-</span><span style="color:#586e75"></span><span style="color:#268bd2">export</span> <span style="color:#268bd2">class</span> AppComponent {
-  storedPosts <span style="color:#719e07">=</span> [];
+</code></pre></div><div class=highlight><pre style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=color:#586e75>&lt;!-- 親の.htmlの中身 --&gt;</span>
+<span style=color:#586e75>&lt;!-- ここ↓は@Outoutなので, 子の要素postCreatedから親の要素onPostAddedに情報が行く --&gt;</span>
+&lt;<span style=color:#268bd2>app-achild</span> (postCreated)=&#34;onPostAdded($event)&#34;&gt;&lt;/<span style=color:#268bd2>app-achild</span>&gt;
+<span style=color:#586e75>&lt;!-- ここ↓は@Input()なので, 子の要素postsに親の要素storedPostsから情報が行く --&gt;</span>
+&lt;<span style=color:#268bd2>app-bchild</span> [posts]=&#34;storedPosts&#34;&gt;&lt;/<span style=color:#268bd2>app-bchild</span>&gt;
+</code></pre></div><div class=highlight><pre style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-typescript data-lang=typescript><span style=color:#586e75>// 親の.tsの中身の一部
+</span><span style=color:#586e75></span><span style=color:#268bd2>export</span> <span style=color:#268bd2>class</span> AppComponent {
+  storedPosts <span style=color:#719e07>=</span> [];
   onPostAdded(post) {
-    <span style="color:#719e07">this</span>.storedPosts.push(post);
+    <span style=color:#719e07>this</span>.storedPosts.push(post);
   }
 }
-</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#586e75">// 子Aの.tsの中身
-</span><span style="color:#586e75"></span><span style="color:#268bd2">import</span> { Component, Input } from <span style="color:#2aa198">&#39;@angular/core&#39;</span>;
-<span style="color:#268bd2">@Component</span>({
-  selector<span style="color:#719e07">:</span> <span style="color:#2aa198">&#39;app-bchild&#39;</span>
+</code></pre></div><div class=highlight><pre style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-typescript data-lang=typescript><span style=color:#586e75>// 子Aの.tsの中身
+</span><span style=color:#586e75></span><span style=color:#268bd2>import</span> { Component, Input } from <span style=color:#2aa198>&#39;@angular/core&#39;</span>;
+<span style=color:#268bd2>@Component</span>({
+  selector<span style=color:#719e07>:</span> <span style=color:#2aa198>&#39;app-bchild&#39;</span>
 })
-<span style="color:#268bd2">export</span> <span style="color:#268bd2">class</span> AchildComponent {
-  <span style="color:#268bd2">@Input</span>() posts <span style="color:#719e07">=</span> [];
+<span style=color:#268bd2>export</span> <span style=color:#268bd2>class</span> AchildComponent {
+  <span style=color:#268bd2>@Input</span>() posts <span style=color:#719e07>=</span> [];
 }
-</code></pre></div><h3 id="eventemitter">EventEmitter</h3>
-<ul>
-<li>コンポーネントからその上位コンポーネントへの, 任意の値の通知を提供する.</li>
-</ul>
-<p>下位コンポーネントの<code>.ts</code>に以下の様にして使う.</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#268bd2">import</span> { EventEmitter, Output } from <span style="color:#2aa198">&#39;@angular/core&#39;</span>;
-<span style="color:#268bd2">export</span> <span style="color:#268bd2">class</span> TestComponent {
-  <span style="color:#268bd2">@output</span>() postCreated <span style="color:#719e07">=</span> <span style="color:#719e07">new</span> EventEmitter();
+</code></pre></div><h3 id=eventemitter>EventEmitter</h3><ul><li>コンポーネントからその上位コンポーネントへの, 任意の値の通知を提供する.</li></ul><p>下位コンポーネントの<code>.ts</code>に以下の様にして使う.</p><div class=highlight><pre style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-typescript data-lang=typescript><span style=color:#268bd2>import</span> { EventEmitter, Output } from <span style=color:#2aa198>&#39;@angular/core&#39;</span>;
+<span style=color:#268bd2>export</span> <span style=color:#268bd2>class</span> TestComponent {
+  <span style=color:#268bd2>@output</span>() postCreated <span style=color:#719e07>=</span> <span style=color:#719e07>new</span> EventEmitter();
   onAddPost() {
-    <span style="color:#268bd2">const</span> post <span style="color:#719e07">=</span> test;
-    <span style="color:#719e07">this</span>.postCreated.emit(post);
+    <span style=color:#268bd2>const</span> post <span style=color:#719e07>=</span> test;
+    <span style=color:#719e07>this</span>.postCreated.emit(post);
   }
 }
-</code></pre></div><h3 id="コンポーネント間で値を渡す">コンポーネント間で値を渡す</h3>
-<ul>
-<li>ここでは<code>xxx.service.ts</code>を使う.</li>
-<li>その際には<code>Injectable</code>コンポーネントを使用する.</li>
-<li><code>xxx.service.ts</code>で, 渡す<code>class</code>を作って,
+</code></pre></div><h3 id=コンポーネント間で値を渡す>コンポーネント間で値を渡す</h3><ul><li>ここでは<code>xxx.service.ts</code>を使う.</li><li>その際には<code>Injectable</code>コンポーネントを使用する.</li><li><code>xxx.service.ts</code>で, 渡す<code>class</code>を作って,
 それを2つのコンポーネントの<code>constructor</code>でそれぞれ作って,
-渡される方の子コンポーネントの<code>ngOnInit</code>で値を渡してあげる.</li>
-<li><code>RxJS</code>ライブラリを使って, streamで非同期でコンポーネント間でデータを渡せる.</li>
-</ul>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#586e75">// xxx.service.tsの例
-</span><span style="color:#586e75"></span><span style="color:#268bd2">import</span> { Injectable } from <span style="color:#2aa198">&#39;@angular/core&#39;</span>;
-<span style="color:#268bd2">import</span> { Post } from <span style="color:#2aa198">&#39;./post.model&#39;</span>;
-<span style="color:#268bd2">@Injectable</span>({providedIn<span style="color:#719e07">:</span> <span style="color:#2aa198">&#39;root&#39;</span>})
-<span style="color:#268bd2">export</span> <span style="color:#268bd2">class</span> PostsService {
-  <span style="color:#268bd2">private</span> posts: <span style="color:#dc322f">Post</span>[] <span style="color:#719e07">=</span> [];
+渡される方の子コンポーネントの<code>ngOnInit</code>で値を渡してあげる.</li><li><code>RxJS</code>ライブラリを使って, streamで非同期でコンポーネント間でデータを渡せる.</li></ul><div class=highlight><pre style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-typescript data-lang=typescript><span style=color:#586e75>// xxx.service.tsの例
+</span><span style=color:#586e75></span><span style=color:#268bd2>import</span> { Injectable } from <span style=color:#2aa198>&#39;@angular/core&#39;</span>;
+<span style=color:#268bd2>import</span> { Post } from <span style=color:#2aa198>&#39;./post.model&#39;</span>;
+<span style=color:#268bd2>@Injectable</span>({providedIn<span style=color:#719e07>:</span> <span style=color:#2aa198>&#39;root&#39;</span>})
+<span style=color:#268bd2>export</span> <span style=color:#268bd2>class</span> PostsService {
+  <span style=color:#268bd2>private</span> posts: <span style=color:#dc322f>Post</span>[] <span style=color:#719e07>=</span> [];
   getPosts() {
-    <span style="color:#719e07">return</span> [...<span style="color:#719e07">this</span>.posts];
+    <span style=color:#719e07>return</span> [...<span style=color:#719e07>this</span>.posts];
   }
-  addPosts(title: <span style="color:#dc322f">string</span>, content: <span style="color:#dc322f">string</span>) {
-    <span style="color:#268bd2">const</span> post: <span style="color:#dc322f">Post</span> <span style="color:#719e07">=</span> {title, content};
-    <span style="color:#719e07">this</span>.posts.push(post);
-  }
-}
-</code></pre></div><ol>
-<li><code>component</code>でデータを変更する.</li>
-</ol>
-<ul>
-<li><code>component</code>は変更したデータをメソッドコールによって<code>service</code>に渡す.</li>
-<li><code>service</code>は変更されたデータを受け取り, そのデータをイベント発火することで展開する.</li>
-<li>各<code>component</code>は発火されたイベントを<code>subscribe</code>し, 自身のプロパティを更新する.</li>
-</ul>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#586e75">// csv.service.tsの中身
-</span><span style="color:#586e75"></span><span style="color:#268bd2">import</span> { Injectable } from <span style="color:#2aa198">&#39;@angular/core&#39;</span>;
-<span style="color:#586e75">// イベント発火のためのSubjectをimport
-</span><span style="color:#586e75"></span><span style="color:#268bd2">import</span> { Subject } from <span style="color:#2aa198">&#39;rxjs&#39;</span>;
-
-<span style="color:#268bd2">@Injectable</span>({providedIn<span style="color:#719e07">:</span> <span style="color:#2aa198">&#39;root&#39;</span>})
-
-<span style="color:#268bd2">export</span> <span style="color:#268bd2">class</span> CsvService {
-  <span style="color:#586e75">// データの変更を通知するためのオブジェクト
-</span><span style="color:#586e75"></span>  <span style="color:#586e75">// 以降の｢Subscribeのためのプロパティを宣言｣と｢データの更新イベント｣で使用するプロパティを宣言し,  Subjectのインスタンスを生成する.
-</span><span style="color:#586e75"></span>  <span style="color:#586e75">// このプロパティを用いて共有データの変更通知を行う.
-</span><span style="color:#586e75"></span>  <span style="color:#268bd2">private</span> inputCsv  <span style="color:#719e07">=</span> <span style="color:#719e07">new</span> Subject<span style="color:#719e07">&lt;</span>File<span style="color:#719e07">&gt;</span>();
-  <span style="color:#586e75">// Subscribeするためのプロパティ(componetn間で共有するためのプロパティ)
-</span><span style="color:#586e75"></span>  <span style="color:#586e75">// 先に生成したオブジェクトinputCsvからasObservable()でオブジェクトを生成する.
-</span><span style="color:#586e75"></span>  <span style="color:#586e75">// asObservable()で生成されたオブジェクトは, データ共有を行うコンポーネント側でsubscribe(後述)することでデータ共有の仕組みを実現する.
-</span><span style="color:#586e75"></span>  <span style="color:#268bd2">public</span> inputCsv$ <span style="color:#719e07">=</span> <span style="color:#719e07">this</span>.inputCsv.asObservable();
-  <span style="color:#586e75">// CsvServiceのインスタンスを生成
-</span><span style="color:#586e75"></span>  <span style="color:#268bd2">constructor</span>() {}
-  <span style="color:#586e75">// データの更新イベント
-</span><span style="color:#586e75"></span>  <span style="color:#586e75">// これは先に生成したオブジェクトinputCsvからnext()を実行する.
-</span><span style="color:#586e75"></span>  <span style="color:#586e75">// このメソッドはデータ共有を行うコンポーネントから実行されることを想定したもので, 引数のinputをそのままnext()の引数にセットしている.
-</span><span style="color:#586e75"></span>  <span style="color:#586e75">// このメソッドでthis.inputCsv.next(input);が実行されることで, subscribe(後述)で待ち受けているコンポーネントに引数のデータが展開される.
-</span><span style="color:#586e75"></span>  <span style="color:#268bd2">public</span> onNotifyInputCsv(input: <span style="color:#dc322f">File</span>) {
-    <span style="color:#719e07">this</span>.inputCsv.next(input);
+  addPosts(title: <span style=color:#dc322f>string</span>, content: <span style=color:#dc322f>string</span>) {
+    <span style=color:#268bd2>const</span> post: <span style=color:#dc322f>Post</span> <span style=color:#719e07>=</span> {title, content};
+    <span style=color:#719e07>this</span>.posts.push(post);
   }
 }
-</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#586e75">// 送り手の.tsの中身
-</span><span style="color:#586e75"></span><span style="color:#268bd2">import</span> { Component, OnInit, ViewChild } from <span style="color:#2aa198">&#39;@angular/core&#39;</span>;
-<span style="color:#268bd2">import</span> { CsvService } from <span style="color:#2aa198">&#39;../service/csv.service&#39;</span>;
+</code></pre></div><ol><li><code>component</code>でデータを変更する.</li></ol><ul><li><code>component</code>は変更したデータをメソッドコールによって<code>service</code>に渡す.</li><li><code>service</code>は変更されたデータを受け取り, そのデータをイベント発火することで展開する.</li><li>各<code>component</code>は発火されたイベントを<code>subscribe</code>し, 自身のプロパティを更新する.</li></ul><div class=highlight><pre style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-typescript data-lang=typescript><span style=color:#586e75>// csv.service.tsの中身
+</span><span style=color:#586e75></span><span style=color:#268bd2>import</span> { Injectable } from <span style=color:#2aa198>&#39;@angular/core&#39;</span>;
+<span style=color:#586e75>// イベント発火のためのSubjectをimport
+</span><span style=color:#586e75></span><span style=color:#268bd2>import</span> { Subject } from <span style=color:#2aa198>&#39;rxjs&#39;</span>;
 
-<span style="color:#268bd2">@Component</span>({
-  selector<span style="color:#719e07">:</span> <span style="color:#2aa198">&#39;app-csv-input&#39;</span>,
-  templateUrl<span style="color:#719e07">:</span> <span style="color:#2aa198">&#39;./csv-input.component.html&#39;</span>,
-  styleUrls<span style="color:#719e07">:</span> [<span style="color:#2aa198">&#39;./csv-input.component.css&#39;</span>]
+<span style=color:#268bd2>@Injectable</span>({providedIn<span style=color:#719e07>:</span> <span style=color:#2aa198>&#39;root&#39;</span>})
+
+<span style=color:#268bd2>export</span> <span style=color:#268bd2>class</span> CsvService {
+  <span style=color:#586e75>// データの変更を通知するためのオブジェクト
+</span><span style=color:#586e75></span>  <span style=color:#586e75>// 以降の｢Subscribeのためのプロパティを宣言｣と｢データの更新イベント｣で使用するプロパティを宣言し,  Subjectのインスタンスを生成する.
+</span><span style=color:#586e75></span>  <span style=color:#586e75>// このプロパティを用いて共有データの変更通知を行う.
+</span><span style=color:#586e75></span>  <span style=color:#268bd2>private</span> inputCsv  <span style=color:#719e07>=</span> <span style=color:#719e07>new</span> Subject<span style=color:#719e07>&lt;</span>File<span style=color:#719e07>&gt;</span>();
+  <span style=color:#586e75>// Subscribeするためのプロパティ(componetn間で共有するためのプロパティ)
+</span><span style=color:#586e75></span>  <span style=color:#586e75>// 先に生成したオブジェクトinputCsvからasObservable()でオブジェクトを生成する.
+</span><span style=color:#586e75></span>  <span style=color:#586e75>// asObservable()で生成されたオブジェクトは, データ共有を行うコンポーネント側でsubscribe(後述)することでデータ共有の仕組みを実現する.
+</span><span style=color:#586e75></span>  <span style=color:#268bd2>public</span> inputCsv$ <span style=color:#719e07>=</span> <span style=color:#719e07>this</span>.inputCsv.asObservable();
+  <span style=color:#586e75>// CsvServiceのインスタンスを生成
+</span><span style=color:#586e75></span>  <span style=color:#268bd2>constructor</span>() {}
+  <span style=color:#586e75>// データの更新イベント
+</span><span style=color:#586e75></span>  <span style=color:#586e75>// これは先に生成したオブジェクトinputCsvからnext()を実行する.
+</span><span style=color:#586e75></span>  <span style=color:#586e75>// このメソッドはデータ共有を行うコンポーネントから実行されることを想定したもので, 引数のinputをそのままnext()の引数にセットしている.
+</span><span style=color:#586e75></span>  <span style=color:#586e75>// このメソッドでthis.inputCsv.next(input);が実行されることで, subscribe(後述)で待ち受けているコンポーネントに引数のデータが展開される.
+</span><span style=color:#586e75></span>  <span style=color:#268bd2>public</span> onNotifyInputCsv(input: <span style=color:#dc322f>File</span>) {
+    <span style=color:#719e07>this</span>.inputCsv.next(input);
+  }
+}
+</code></pre></div><div class=highlight><pre style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-typescript data-lang=typescript><span style=color:#586e75>// 送り手の.tsの中身
+</span><span style=color:#586e75></span><span style=color:#268bd2>import</span> { Component, OnInit, ViewChild } from <span style=color:#2aa198>&#39;@angular/core&#39;</span>;
+<span style=color:#268bd2>import</span> { CsvService } from <span style=color:#2aa198>&#39;../service/csv.service&#39;</span>;
+
+<span style=color:#268bd2>@Component</span>({
+  selector<span style=color:#719e07>:</span> <span style=color:#2aa198>&#39;app-csv-input&#39;</span>,
+  templateUrl<span style=color:#719e07>:</span> <span style=color:#2aa198>&#39;./csv-input.component.html&#39;</span>,
+  styleUrls<span style=color:#719e07>:</span> [<span style=color:#2aa198>&#39;./csv-input.component.css&#39;</span>]
 })
-<span style="color:#268bd2">export</span> <span style="color:#268bd2">class</span> CsvInputComponent <span style="color:#268bd2">implements</span> OnInit {
-  <span style="color:#268bd2">@ViewChild</span>(<span style="color:#2aa198">&#39;fileInput&#39;</span>)
+<span style=color:#268bd2>export</span> <span style=color:#268bd2>class</span> CsvInputComponent <span style=color:#268bd2>implements</span> OnInit {
+  <span style=color:#268bd2>@ViewChild</span>(<span style=color:#2aa198>&#39;fileInput&#39;</span>)
   fileInput;
-  file: <span style="color:#dc322f">File</span> <span style="color:#719e07">|</span> <span style="color:#cb4b16">null</span> <span style="color:#719e07">=</span> <span style="color:#cb4b16">null</span>;
-  onClickFileInputButton()<span style="color:#719e07">:</span> <span style="color:#719e07">void</span> {
-    <span style="color:#719e07">this</span>.fileInput.nativeElement.click();
+  file: <span style=color:#dc322f>File</span> <span style=color:#719e07>|</span> <span style=color:#cb4b16>null</span> <span style=color:#719e07>=</span> <span style=color:#cb4b16>null</span>;
+  onClickFileInputButton()<span style=color:#719e07>:</span> <span style=color:#719e07>void</span> {
+    <span style=color:#719e07>this</span>.fileInput.nativeElement.click();
   }
-  onChangeFileInput()<span style="color:#719e07">:</span> <span style="color:#719e07">void</span> {
-    <span style="color:#268bd2">const</span> files<span style="color:#719e07">:</span> { [key: <span style="color:#dc322f">string</span>]<span style="color:#719e07">:</span> File } <span style="color:#719e07">=</span> <span style="color:#719e07">this</span>.fileInput.nativeElement.files;
-    <span style="color:#719e07">this</span>.file <span style="color:#719e07">=</span> files[<span style="color:#2aa198">0</span>];
-    <span style="color:#586e75">// ここでデータをservice.tsへ送ってる.
-</span><span style="color:#586e75"></span>    <span style="color:#586e75">// ここで引数にセットしたデータがコンポーネント間で共有するデータとして扱われる.
-</span><span style="color:#586e75"></span>    <span style="color:#719e07">this</span>.csvService.onNotifyInputCsv(<span style="color:#719e07">this</span>.file);
+  onChangeFileInput()<span style=color:#719e07>:</span> <span style=color:#719e07>void</span> {
+    <span style=color:#268bd2>const</span> files<span style=color:#719e07>:</span> { [key: <span style=color:#dc322f>string</span>]<span style=color:#719e07>:</span> File } <span style=color:#719e07>=</span> <span style=color:#719e07>this</span>.fileInput.nativeElement.files;
+    <span style=color:#719e07>this</span>.file <span style=color:#719e07>=</span> files[<span style=color:#2aa198>0</span>];
+    <span style=color:#586e75>// ここでデータをservice.tsへ送ってる.
+</span><span style=color:#586e75></span>    <span style=color:#586e75>// ここで引数にセットしたデータがコンポーネント間で共有するデータとして扱われる.
+</span><span style=color:#586e75></span>    <span style=color:#719e07>this</span>.csvService.onNotifyInputCsv(<span style=color:#719e07>this</span>.file);
   }
-  <span style="color:#268bd2">constructor</span>(<span style="color:#268bd2">private</span> csvService: <span style="color:#dc322f">CsvService</span>) { }
+  <span style=color:#268bd2>constructor</span>(<span style=color:#268bd2>private</span> csvService: <span style=color:#dc322f>CsvService</span>) { }
   ngOnInit() {
   }
 }
-</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#586e75">// 受け手の.tsの中身
-</span><span style="color:#586e75"></span><span style="color:#268bd2">import</span> { Component, OnInit, OnDestroy } from <span style="color:#2aa198">&#39;@angular/core&#39;</span>;
-<span style="color:#268bd2">import</span> { Subscription } from <span style="color:#2aa198">&#39;rxjs&#39;</span>;
+</code></pre></div><div class=highlight><pre style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-typescript data-lang=typescript><span style=color:#586e75>// 受け手の.tsの中身
+</span><span style=color:#586e75></span><span style=color:#268bd2>import</span> { Component, OnInit, OnDestroy } from <span style=color:#2aa198>&#39;@angular/core&#39;</span>;
+<span style=color:#268bd2>import</span> { Subscription } from <span style=color:#2aa198>&#39;rxjs&#39;</span>;
 
-<span style="color:#268bd2">import</span> { CsvService } from <span style="color:#2aa198">&#39;../service/csv.service&#39;</span>;
+<span style=color:#268bd2>import</span> { CsvService } from <span style=color:#2aa198>&#39;../service/csv.service&#39;</span>;
 
-<span style="color:#268bd2">@Component</span>({
-  selector<span style="color:#719e07">:</span> <span style="color:#2aa198">&#39;app-calculate&#39;</span>,
-  templateUrl<span style="color:#719e07">:</span> <span style="color:#2aa198">&#39;./calculate.component.html&#39;</span>,
-  styleUrls<span style="color:#719e07">:</span> [<span style="color:#2aa198">&#39;./calculate.component.css&#39;</span>]
+<span style=color:#268bd2>@Component</span>({
+  selector<span style=color:#719e07>:</span> <span style=color:#2aa198>&#39;app-calculate&#39;</span>,
+  templateUrl<span style=color:#719e07>:</span> <span style=color:#2aa198>&#39;./calculate.component.html&#39;</span>,
+  styleUrls<span style=color:#719e07>:</span> [<span style=color:#2aa198>&#39;./calculate.component.css&#39;</span>]
 })
-<span style="color:#268bd2">export</span> <span style="color:#268bd2">class</span> CalculateComponent <span style="color:#268bd2">implements</span> OnInit, OnDestroy {
-  <span style="color:#268bd2">public</span> file: <span style="color:#dc322f">File</span> <span style="color:#719e07">|</span> <span style="color:#cb4b16">null</span> <span style="color:#719e07">=</span> <span style="color:#cb4b16">null</span>;
-  <span style="color:#586e75">// subscribeを保持するためのSubscription
-</span><span style="color:#586e75"></span>  <span style="color:#268bd2">private</span> csvSubscription: <span style="color:#dc322f">Subscription</span>;
-  <span style="color:#268bd2">constructor</span>(<span style="color:#268bd2">private</span> csvService: <span style="color:#dc322f">CsvService</span>) {}
+<span style=color:#268bd2>export</span> <span style=color:#268bd2>class</span> CalculateComponent <span style=color:#268bd2>implements</span> OnInit, OnDestroy {
+  <span style=color:#268bd2>public</span> file: <span style=color:#dc322f>File</span> <span style=color:#719e07>|</span> <span style=color:#cb4b16>null</span> <span style=color:#719e07>=</span> <span style=color:#cb4b16>null</span>;
+  <span style=color:#586e75>// subscribeを保持するためのSubscription
+</span><span style=color:#586e75></span>  <span style=color:#268bd2>private</span> csvSubscription: <span style=color:#dc322f>Subscription</span>;
+  <span style=color:#268bd2>constructor</span>(<span style=color:#268bd2>private</span> csvService: <span style=color:#dc322f>CsvService</span>) {}
   ngOnInit() {
-    <span style="color:#586e75">// serviceで共有しているデータが更新されたら発火されるイベントをキャッチする.
-</span><span style="color:#586e75"></span>    <span style="color:#586e75">// inputCsv におけるデータの更新イベントでnext()によって発火されたイベントをsubscribeするイベントハンドラを登録している.
-</span><span style="color:#586e75"></span>    <span style="color:#586e75">// またcsvSubscriptionにsubscribeのオブジェクトをセットしているのは, 後述のngOnDestroyでsubscribeの内容を破棄するため.
-</span><span style="color:#586e75"></span>    <span style="color:#719e07">this</span>.csvSubscription <span style="color:#719e07">=</span> <span style="color:#719e07">this</span>.csvService.inputCsv$.subscribe(csv <span style="color:#719e07">=&gt;</span> {
-      <span style="color:#719e07">this</span>.file <span style="color:#719e07">=</span> csv;
+    <span style=color:#586e75>// serviceで共有しているデータが更新されたら発火されるイベントをキャッチする.
+</span><span style=color:#586e75></span>    <span style=color:#586e75>// inputCsv におけるデータの更新イベントでnext()によって発火されたイベントをsubscribeするイベントハンドラを登録している.
+</span><span style=color:#586e75></span>    <span style=color:#586e75>// またcsvSubscriptionにsubscribeのオブジェクトをセットしているのは, 後述のngOnDestroyでsubscribeの内容を破棄するため.
+</span><span style=color:#586e75></span>    <span style=color:#719e07>this</span>.csvSubscription <span style=color:#719e07>=</span> <span style=color:#719e07>this</span>.csvService.inputCsv$.subscribe(csv <span style=color:#719e07>=&gt;</span> {
+      <span style=color:#719e07>this</span>.file <span style=color:#719e07>=</span> csv;
     });
   }
-  <span style="color:#586e75">// component破棄時の後処理
-</span><span style="color:#586e75"></span>  <span style="color:#586e75">// subscribeした内容をcomponentが破棄されるタイミングでunsubscribeすることで破棄する.
-</span><span style="color:#586e75"></span>  <span style="color:#586e75">// これを行わないと, 登録したイベントハンドラが延々と生き続けることになる.
-</span><span style="color:#586e75"></span>  ngOnDestroy() {
-    <span style="color:#719e07">this</span>.csvSubscription.unsubscribe();
+  <span style=color:#586e75>// component破棄時の後処理
+</span><span style=color:#586e75></span>  <span style=color:#586e75>// subscribeした内容をcomponentが破棄されるタイミングでunsubscribeすることで破棄する.
+</span><span style=color:#586e75></span>  <span style=color:#586e75>// これを行わないと, 登録したイベントハンドラが延々と生き続けることになる.
+</span><span style=color:#586e75></span>  ngOnDestroy() {
+    <span style=color:#719e07>this</span>.csvSubscription.unsubscribe();
   }
 }
-</code></pre></div><p><strong>Reference:</strong> 
-  <a href="https://qiita.com/ksh-fthr/items/e43dd37bff2e51e95a59">Angular サービスを使用してデータをコンポーネント間で共有する</a></p>
-<h2 id="値を渡すテンプレート参照変数">値を渡す(テンプレート参照変数)</h2>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#268bd2">input</span> #test type<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;text&#34;</span> (key)=&#34;onKey(test.value)&#34;&gt;
-</code></pre></div><p>これで, inputにテキストで入力された文字が1つずつonKey関数に渡っていく.</p>
-<h2 id="ngif-else">ngIf else</h2>
-<p>特定の状況下でのみアプリケーションがビューまたはビューの一部を表示する様にする.</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#586e75">&lt;!--  *.htmlの中身 --&gt;</span>
-&lt;<span style="color:#268bd2">p</span> *ngIf<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;serverCreated&#34;</span>&gt;Server was created, server name is {{ serverName }}&lt;/<span style="color:#268bd2">p</span>&gt;
-</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#586e75">// *.tsの中身
-</span><span style="color:#586e75"></span><span style="color:#268bd2">import</span> { Component, OnInit } from <span style="color:#2aa198">&#39;@angular/core&#39;</span>;
+</code></pre></div><p><strong>Reference:</strong>
+<a href=https://qiita.com/ksh-fthr/items/e43dd37bff2e51e95a59>Angular サービスを使用してデータをコンポーネント間で共有する</a></p><h2 id=値を渡すテンプレート参照変数>値を渡す(テンプレート参照変数)</h2><div class=highlight><pre style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>&lt;<span style=color:#268bd2>input</span> #test type<span style=color:#719e07>=</span><span style=color:#2aa198>&#34;text&#34;</span> (key)=&#34;onKey(test.value)&#34;&gt;
+</code></pre></div><p>これで, inputにテキストで入力された文字が1つずつonKey関数に渡っていく.</p><h2 id=ngif-else>ngIf else</h2><p>特定の状況下でのみアプリケーションがビューまたはビューの一部を表示する様にする.</p><div class=highlight><pre style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=color:#586e75>&lt;!--  *.htmlの中身 --&gt;</span>
+&lt;<span style=color:#268bd2>p</span> *ngIf<span style=color:#719e07>=</span><span style=color:#2aa198>&#34;serverCreated&#34;</span>&gt;Server was created, server name is {{ serverName }}&lt;/<span style=color:#268bd2>p</span>&gt;
+</code></pre></div><div class=highlight><pre style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-typescript data-lang=typescript><span style=color:#586e75>// *.tsの中身
+</span><span style=color:#586e75></span><span style=color:#268bd2>import</span> { Component, OnInit } from <span style=color:#2aa198>&#39;@angular/core&#39;</span>;
 
-<span style="color:#268bd2">@Component</span>({
-  selector<span style="color:#719e07">:</span> <span style="color:#2aa198">&#39;app-servers&#39;</span>,
-  templateUrl<span style="color:#719e07">:</span> <span style="color:#2aa198">&#39;./servers.component.html&#39;</span>,
-  styleUrls<span style="color:#719e07">:</span> [<span style="color:#2aa198">&#39;./servers.component.css&#39;</span>]
+<span style=color:#268bd2>@Component</span>({
+  selector<span style=color:#719e07>:</span> <span style=color:#2aa198>&#39;app-servers&#39;</span>,
+  templateUrl<span style=color:#719e07>:</span> <span style=color:#2aa198>&#39;./servers.component.html&#39;</span>,
+  styleUrls<span style=color:#719e07>:</span> [<span style=color:#2aa198>&#39;./servers.component.css&#39;</span>]
 })
-<span style="color:#268bd2">export</span> <span style="color:#268bd2">class</span> ServersComponent <span style="color:#268bd2">implements</span> OnInit {
-  serverCreated <span style="color:#719e07">=</span> <span style="color:#cb4b16">false</span>;
-  <span style="color:#268bd2">constructor</span>() {}
+<span style=color:#268bd2>export</span> <span style=color:#268bd2>class</span> ServersComponent <span style=color:#268bd2>implements</span> OnInit {
+  serverCreated <span style=color:#719e07>=</span> <span style=color:#cb4b16>false</span>;
+  <span style=color:#268bd2>constructor</span>() {}
   ngOnInit() {
   }
   onCreateServer() {
-    <span style="color:#719e07">this</span>.serverCreated <span style="color:#719e07">=</span> <span style="color:#cb4b16">true</span>;
-    <span style="color:#719e07">this</span>.serverCreationStatus <span style="color:#719e07">=</span> <span style="color:#2aa198">&#39;Server was created!&#39;</span>;
+    <span style=color:#719e07>this</span>.serverCreated <span style=color:#719e07>=</span> <span style=color:#cb4b16>true</span>;
+    <span style=color:#719e07>this</span>.serverCreationStatus <span style=color:#719e07>=</span> <span style=color:#2aa198>&#39;Server was created!&#39;</span>;
   }
 }
-</code></pre></div><h2 id="ngstyle">ngStyle</h2>
-<p>コンポーネントのスタイルを操作する.</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#586e75">&lt;!--  *.htmlの中身
-</span><span style="color:#586e75">Hello World!が緑になったり赤になったりする.--&gt;</span>
-&lt;<span style="color:#268bd2">p</span> [ngStyle]=&#34;{backgroundColor: getColor()}&#34;&gt;Hello World!&lt;/<span style="color:#268bd2">p</span>&gt;
-</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#586e75">// *.tsの中身
-</span><span style="color:#586e75"></span><span style="color:#268bd2">import</span> { Component } from <span style="color:#2aa198">&#39;@angular/core&#39;</span>;
-<span style="color:#268bd2">@Component</span>({
-  selector<span style="color:#719e07">:</span> <span style="color:#2aa198">&#39;app-server&#39;</span>,
-  templateUrl<span style="color:#719e07">:</span> <span style="color:#2aa198">&#39;./server.component.html&#39;</span>
+</code></pre></div><h2 id=ngstyle>ngStyle</h2><p>コンポーネントのスタイルを操作する.</p><div class=highlight><pre style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=color:#586e75>&lt;!--  *.htmlの中身
+</span><span style=color:#586e75>Hello World!が緑になったり赤になったりする.--&gt;</span>
+&lt;<span style=color:#268bd2>p</span> [ngStyle]=&#34;{backgroundColor: getColor()}&#34;&gt;Hello World!&lt;/<span style=color:#268bd2>p</span>&gt;
+</code></pre></div><div class=highlight><pre style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-typescript data-lang=typescript><span style=color:#586e75>// *.tsの中身
+</span><span style=color:#586e75></span><span style=color:#268bd2>import</span> { Component } from <span style=color:#2aa198>&#39;@angular/core&#39;</span>;
+<span style=color:#268bd2>@Component</span>({
+  selector<span style=color:#719e07>:</span> <span style=color:#2aa198>&#39;app-server&#39;</span>,
+  templateUrl<span style=color:#719e07>:</span> <span style=color:#2aa198>&#39;./server.component.html&#39;</span>
 })
-<span style="color:#268bd2">export</span> <span style="color:#268bd2">class</span> ServerComponent {
-  serverStatus <span style="color:#719e07">=</span> <span style="color:#2aa198">&#39;offline&#39;</span>;
-  <span style="color:#268bd2">constructor</span>() {
-    <span style="color:#719e07">this</span>.serverStatus <span style="color:#719e07">=</span> <span style="color:#b58900">Math</span>.random() <span style="color:#719e07">&gt;</span> <span style="color:#2aa198">0.5</span> <span style="color:#719e07">?</span> <span style="color:#2aa198">&#39;online&#39;</span> <span style="color:#719e07">:</span> <span style="color:#2aa198">&#39;offline&#39;</span>;
+<span style=color:#268bd2>export</span> <span style=color:#268bd2>class</span> ServerComponent {
+  serverStatus <span style=color:#719e07>=</span> <span style=color:#2aa198>&#39;offline&#39;</span>;
+  <span style=color:#268bd2>constructor</span>() {
+    <span style=color:#719e07>this</span>.serverStatus <span style=color:#719e07>=</span> <span style=color:#b58900>Math</span>.random() <span style=color:#719e07>&gt;</span> <span style=color:#2aa198>0.5</span> <span style=color:#719e07>?</span> <span style=color:#2aa198>&#39;online&#39;</span> <span style=color:#719e07>:</span> <span style=color:#2aa198>&#39;offline&#39;</span>;
   }
   getServerStatus() {
-    <span style="color:#719e07">return</span> <span style="color:#719e07">this</span>.serverStatus;
+    <span style=color:#719e07>return</span> <span style=color:#719e07>this</span>.serverStatus;
   }
   getColor() {
-    <span style="color:#719e07">return</span> <span style="color:#719e07">this</span>.serverStatus <span style="color:#719e07">===</span> <span style="color:#2aa198">&#39;online&#39;</span> <span style="color:#719e07">?</span> <span style="color:#2aa198">&#39;green&#39;</span> <span style="color:#719e07">:</span> <span style="color:#2aa198">&#39;red&#39;</span>;
+    <span style=color:#719e07>return</span> <span style=color:#719e07>this</span>.serverStatus <span style=color:#719e07>===</span> <span style=color:#2aa198>&#39;online&#39;</span> <span style=color:#719e07>?</span> <span style=color:#2aa198>&#39;green&#39;</span> <span style=color:#719e07>:</span> <span style=color:#2aa198>&#39;red&#39;</span>;
   }
 }
-</code></pre></div><h2 id="ngclass">ngClass</h2>
-<p>コンポーネントのクラスを扱う.</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#586e75">&lt;!--  *.htmlの中身
-</span><span style="color:#586e75">Hello World!の背景が緑になったり赤になったりする.
-</span><span style="color:#586e75">背景が緑の時に文字が白色になる.
-</span><span style="color:#586e75">--&gt;</span>
-&lt;<span style="color:#268bd2">p</span>
+</code></pre></div><h2 id=ngclass>ngClass</h2><p>コンポーネントのクラスを扱う.</p><div class=highlight><pre style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=color:#586e75>&lt;!--  *.htmlの中身
+</span><span style=color:#586e75>Hello World!の背景が緑になったり赤になったりする.
+</span><span style=color:#586e75>背景が緑の時に文字が白色になる.
+</span><span style=color:#586e75>--&gt;</span>
+&lt;<span style=color:#268bd2>p</span>
   [ngStyle]=&#34;{backgroundColor: getColor()}&#34;
-  [ngClass]=&#34;{online: serverStatus <span style="color:#719e07">=</span><span style="color:#2aa198">==</span> &#39;online&#39;}&#34;&gt;
+  [ngClass]=&#34;{online: serverStatus <span style=color:#719e07>=</span><span style=color:#2aa198>==</span> &#39;online&#39;}&#34;&gt;
   Hello World!
-&lt;/<span style="color:#268bd2">p</span>&gt;
-</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#586e75">// *.tsの中身
-</span><span style="color:#586e75"></span><span style="color:#268bd2">import</span> { Component } from <span style="color:#2aa198">&#39;@angular/core&#39;</span>;
-<span style="color:#268bd2">@Component</span>({
-  selector<span style="color:#719e07">:</span> <span style="color:#2aa198">&#39;app-server&#39;</span>,
-  templateUrl<span style="color:#719e07">:</span> <span style="color:#2aa198">&#39;./server.component.html&#39;</span>,
-  styles<span style="color:#719e07">:</span> [<span style="color:#586e75">`.online { color: white; }`</span>]
+&lt;/<span style=color:#268bd2>p</span>&gt;
+</code></pre></div><div class=highlight><pre style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-typescript data-lang=typescript><span style=color:#586e75>// *.tsの中身
+</span><span style=color:#586e75></span><span style=color:#268bd2>import</span> { Component } from <span style=color:#2aa198>&#39;@angular/core&#39;</span>;
+<span style=color:#268bd2>@Component</span>({
+  selector<span style=color:#719e07>:</span> <span style=color:#2aa198>&#39;app-server&#39;</span>,
+  templateUrl<span style=color:#719e07>:</span> <span style=color:#2aa198>&#39;./server.component.html&#39;</span>,
+  styles<span style=color:#719e07>:</span> [<span style=color:#586e75>`.online { color: white; }`</span>]
 })
-<span style="color:#268bd2">export</span> <span style="color:#268bd2">class</span> ServerComponent {
-  serverStatus <span style="color:#719e07">=</span> <span style="color:#2aa198">&#39;offline&#39;</span>;
-  <span style="color:#268bd2">constructor</span>() {
-    <span style="color:#719e07">this</span>.serverStatus <span style="color:#719e07">=</span> <span style="color:#b58900">Math</span>.random() <span style="color:#719e07">&gt;</span> <span style="color:#2aa198">0.5</span> <span style="color:#719e07">?</span> <span style="color:#2aa198">&#39;online&#39;</span> <span style="color:#719e07">:</span> <span style="color:#2aa198">&#39;offline&#39;</span>;
+<span style=color:#268bd2>export</span> <span style=color:#268bd2>class</span> ServerComponent {
+  serverStatus <span style=color:#719e07>=</span> <span style=color:#2aa198>&#39;offline&#39;</span>;
+  <span style=color:#268bd2>constructor</span>() {
+    <span style=color:#719e07>this</span>.serverStatus <span style=color:#719e07>=</span> <span style=color:#b58900>Math</span>.random() <span style=color:#719e07>&gt;</span> <span style=color:#2aa198>0.5</span> <span style=color:#719e07>?</span> <span style=color:#2aa198>&#39;online&#39;</span> <span style=color:#719e07>:</span> <span style=color:#2aa198>&#39;offline&#39;</span>;
   }
   getServerStatus() {
-    <span style="color:#719e07">return</span> <span style="color:#719e07">this</span>.serverStatus;
+    <span style=color:#719e07>return</span> <span style=color:#719e07>this</span>.serverStatus;
   }
   getColor() {
-    <span style="color:#719e07">return</span> <span style="color:#719e07">this</span>.serverStatus <span style="color:#719e07">===</span> <span style="color:#2aa198">&#39;online&#39;</span> <span style="color:#719e07">?</span> <span style="color:#2aa198">&#39;green&#39;</span> <span style="color:#719e07">:</span> <span style="color:#2aa198">&#39;red&#39;</span>;
+    <span style=color:#719e07>return</span> <span style=color:#719e07>this</span>.serverStatus <span style=color:#719e07>===</span> <span style=color:#2aa198>&#39;online&#39;</span> <span style=color:#719e07>?</span> <span style=color:#2aa198>&#39;green&#39;</span> <span style=color:#719e07>:</span> <span style=color:#2aa198>&#39;red&#39;</span>;
   }
 }
-</code></pre></div><h2 id="要素を渡す">要素を渡す</h2>
-<p>Aコンポーネントが利用させるときに,
+</code></pre></div><h2 id=要素を渡す>要素を渡す</h2><p>Aコンポーネントが利用させるときに,
 Aコンポーネントのタグに挟まっている要素をAコンポーネントが取得してきて,
-Aコンポーネント内の<code>&lt;ng-content&gt;&lt;/ng-content&gt;</code>の部分に展開する.</p>
-<h2 id="コンポーネントのライフサイクル">コンポーネントのライフサイクル</h2>
-<table>
-<thead>
-<tr>
-<th>フック</th>
-<th>目的とタイミング</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>ngOnChanges()</td>
-<td><li>Angularがデータバインドされた入力プロパティを(再)設定するときに応答する.<li>このメソッドは, 現在および以前のプロパティ値のSimpleChangesオブジェクトを受け取る.<li>ngOnInit()の前に呼び出され, データバインドされた入力プロパティが変更されるたびに呼び出される.</td>
-</tr>
-<tr>
-<td>ngOnInit()</td>
-<td><li>Angularがデータバインドされたプロパティを最初に表示し, ディレクティブ/コンポーネントの入力プロパティを設定した後で, ディレクティブ/コンポーネントを初期化する.<li>最初のngOnChanges()の後に一度呼び出される.</td>
-</tr>
-<tr>
-<td>ngDoCheck()</td>
-<td><li>Angularが検出できない, または検出できない変更を検出して, それに基づいて実行する.<li>変更検知の実行中に毎回, そしてngOnChanges()とngOnInit()の直後に呼び出される.</td>
-</tr>
-<tr>
-<td>ngAfterContentInit()</td>
-<td><li>Angularがコンポーネントのビューあるいはディレクティブが存在するビューに, 外部コンテンツを投影した後に応答する.<li>最初のngDoCheck()の後に1度呼び出される.</td>
-</tr>
-<tr>
-<td>ngAfterContentChecked()</td>
-<td><li>Angularがディレクティブ/コンポーネントに投影された外部コンテンツをチェックした後に応答する. <li>ngAfterContentInit()とその後全てのngDoCheck()の後に呼び出される.</td>
-</tr>
-<tr>
-<td>ngAfterViewInit()</td>
-<td><li>Angularがコンポーネントのビューと子のビュー, あるいはディレクティブが存在するビューを初期化した後に応答する.<li>最初のngAfterContentChecked()の後に1度呼び出される.</td>
-</tr>
-<tr>
-<td>ngAfterViewChecked()</td>
-<td><li>Angularがコンポーネントのビューと子のビュー, あるいはディレクティブが存在するビューをチェックした後に応答する.<li>ngAfterViewInit()とその後のすべてのngAfterContentChecked()の後に呼び出される.</td>
-</tr>
-<tr>
-<td>ngOnDestroy()</td>
-<td><li>Angularがディレクティブ/コンポーネントを破棄する直前に, クリーンアップする.<li>メモリリークを回避するためにObservableの購読を解除し, イベントハンドラをデタッチしましょう.<li>Angularがディレクティブ/コンポーネントを破棄する直前に呼び出される.</td>
-</tr>
-<tr>
-<td><strong>Reference:</strong> 
-  <a href="https://angular.jp/guide/lifecycle-hooks">ライフサイクル・フック</a></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h2 id="formを使う">formを使う</h2>
-<p><code>NgForm</code>モジュールを使えば良い.</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#586e75">// .tsの例
-</span><span style="color:#586e75"></span><span style="color:#268bd2">import</span> { NgForm } from <span style="color:#586e75">`@angular/forms`</span>;
-<span style="color:#268bd2">export</span> <span style="color:#268bd2">class</span> TestComponent {
-  onAddPost(form: <span style="color:#dc322f">NgForm</span>) {
-    <span style="color:#719e07">if</span> (form.invalid) {
-      <span style="color:#719e07">return</span> ;
+Aコンポーネント内の<code>&lt;ng-content>&lt;/ng-content></code>の部分に展開する.</p><h2 id=コンポーネントのライフサイクル>コンポーネントのライフサイクル</h2><table><thead><tr><th>フック</th><th>目的とタイミング</th></tr></thead><tbody><tr><td>ngOnChanges()</td><td><li>Angularがデータバインドされた入力プロパティを(再)設定するときに応答する.<li>このメソッドは, 現在および以前のプロパティ値のSimpleChangesオブジェクトを受け取る.<li>ngOnInit()の前に呼び出され, データバインドされた入力プロパティが変更されるたびに呼び出される.</td></tr><tr><td>ngOnInit()</td><td><li>Angularがデータバインドされたプロパティを最初に表示し, ディレクティブ/コンポーネントの入力プロパティを設定した後で, ディレクティブ/コンポーネントを初期化する.<li>最初のngOnChanges()の後に一度呼び出される.</td></tr><tr><td>ngDoCheck()</td><td><li>Angularが検出できない, または検出できない変更を検出して, それに基づいて実行する.<li>変更検知の実行中に毎回, そしてngOnChanges()とngOnInit()の直後に呼び出される.</td></tr><tr><td>ngAfterContentInit()</td><td><li>Angularがコンポーネントのビューあるいはディレクティブが存在するビューに, 外部コンテンツを投影した後に応答する.<li>最初のngDoCheck()の後に1度呼び出される.</td></tr><tr><td>ngAfterContentChecked()</td><td><li>Angularがディレクティブ/コンポーネントに投影された外部コンテンツをチェックした後に応答する.<li>ngAfterContentInit()とその後全てのngDoCheck()の後に呼び出される.</td></tr><tr><td>ngAfterViewInit()</td><td><li>Angularがコンポーネントのビューと子のビュー, あるいはディレクティブが存在するビューを初期化した後に応答する.<li>最初のngAfterContentChecked()の後に1度呼び出される.</td></tr><tr><td>ngAfterViewChecked()</td><td><li>Angularがコンポーネントのビューと子のビュー, あるいはディレクティブが存在するビューをチェックした後に応答する.<li>ngAfterViewInit()とその後のすべてのngAfterContentChecked()の後に呼び出される.</td></tr><tr><td>ngOnDestroy()</td><td><li>Angularがディレクティブ/コンポーネントを破棄する直前に, クリーンアップする.<li>メモリリークを回避するためにObservableの購読を解除し, イベントハンドラをデタッチしましょう.<li>Angularがディレクティブ/コンポーネントを破棄する直前に呼び出される.</td></tr><tr><td><strong>Reference:</strong>
+<a href=https://angular.jp/guide/lifecycle-hooks>ライフサイクル・フック</a></td><td></td></tr></tbody></table><h2 id=formを使う>formを使う</h2><p><code>NgForm</code>モジュールを使えば良い.</p><div class=highlight><pre style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-typescript data-lang=typescript><span style=color:#586e75>// .tsの例
+</span><span style=color:#586e75></span><span style=color:#268bd2>import</span> { NgForm } from <span style=color:#586e75>`@angular/forms`</span>;
+<span style=color:#268bd2>export</span> <span style=color:#268bd2>class</span> TestComponent {
+  onAddPost(form: <span style=color:#dc322f>NgForm</span>) {
+    <span style=color:#719e07>if</span> (form.invalid) {
+      <span style=color:#719e07>return</span> ;
     }
-    <span style="color:#268bd2">const</span> post <span style="color:#719e07">=</span> {
-      title: <span style="color:#dc322f">form.value.title</span>;
+    <span style=color:#268bd2>const</span> post <span style=color:#719e07>=</span> {
+      title: <span style=color:#dc322f>form.value.title</span>;
     }
   }
 }
-</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#586e75">&lt;!-- .htmlの例 --&gt;</span>
-&lt;<span style="color:#268bd2">form</span> (submit)=&#34;onAddPost(postForm)&#34; #postForm<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;ngForm&#34;</span>&gt;
-  &lt;<span style="color:#268bd2">mat-form-field</span>&gt;
-    &lt;<span style="color:#268bd2">input</span>
+</code></pre></div><div class=highlight><pre style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=color:#586e75>&lt;!-- .htmlの例 --&gt;</span>
+&lt;<span style=color:#268bd2>form</span> (submit)=&#34;onAddPost(postForm)&#34; #postForm<span style=color:#719e07>=</span><span style=color:#2aa198>&#34;ngForm&#34;</span>&gt;
+  &lt;<span style=color:#268bd2>mat-form-field</span>&gt;
+    &lt;<span style=color:#268bd2>input</span>
       matInput
-      type<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;text&#34;</span>
-      name<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;title&#34;</span>
+      type<span style=color:#719e07>=</span><span style=color:#2aa198>&#34;text&#34;</span>
+      name<span style=color:#719e07>=</span><span style=color:#2aa198>&#34;title&#34;</span>
       ngModel
       required
-      #title<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;ngModel&#34;</span>&gt;
-    &lt;<span style="color:#268bd2">mat-error</span> *ngIf<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;title.invalid&#34;</span>&gt;タイトルを入力してください.&lt;/<span style="color:#268bd2">mat-error</span>&gt;
-  &lt;/<span style="color:#268bd2">mat-form-field</span>&gt;
-&lt;/<span style="color:#268bd2">form</span>&gt;
-</code></pre></div><h2 id="デプロイ">デプロイ</h2>
-<ul>
-<li>
-  <a href="https://dev.classmethod.jp/cloud/aws-amplify-console-angular-ci-cd/">超簡単にサイト公開できるAWS Amplify Consoleを使ってAngularのCI/CD環境を作ってみる</a></li>
-<li>
-  <a href="https://qiita.com/puku0x/items/0143af73c4d7af948fc8">AngularアプリをTravis CIからGitHub Pagesへデプロイする</a></li>
-<li>
-  <a href="https://s8a.jp/angular-github-aws-s3-auto-deploy">Angularで作ったWebアプリをGitHubで管理してS3に自動デプロイする</a></li>
-<li>
-  <a href="https://zeit.co/guides/deploying-angular-with-now">Create an Angular Application That Builds and Deploys with Now</a></li>
-</ul>
-</article>
- 
-      
-
-      <footer class="book-footer">
-        
-  <div class="flex justify-between">
-
-
-
-  <div>
-    
-    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/commit/bea798d93c9116bad5b5ceb26ca3159b372095e9" title='Last modified by solareenlo | Mar 20, 2020' target="_blank" rel="noopener">
-      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>Mar 20, 2020</span>
-    </a>
-  </div>
-
-
-
-  <div>
-    <a class="flex align-center" href="https://github.com/solareenlo/blog-hugo/edit/master/content/docs/pl/angular.md" target="_blank" rel="noopener">
-      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
-      <span>Edit this page</span>
-    </a>
-  </div>
-
-</div>
-
- 
-        
-      </footer>
-
-      
-  
-  <div class="book-comments">
-
-</div>
-  
- 
-
-      <label for="menu-control" class="hidden book-menu-overlay"></label>
-    </div>
-
-    
-    <aside class="book-toc">
-      
-  <nav id="TableOfContents">
-  <ul>
-    <li><a href="#angularとは">Angularとは</a>
-      <ul>
-        <li><a href="#用語">用語</a>
-          <ul>
-            <li><a href="#decoratorsのパラメーター">Decoratorsのパラメーター</a></li>
-          </ul>
-        </li>
-        <li><a href="#インストール">インストール</a></li>
-        <li><a href="#バージョンアップ">バージョンアップ</a></li>
-        <li><a href="#dockerでangular">DockerでAngular</a></li>
-        <li><a href="#npmの脆弱性を指摘されたら">npmの脆弱性を指摘されたら</a></li>
-        <li><a href="#travisci経由でgithub-pagesに公開">TravisCI経由でGitHub Pagesに公開</a></li>
-        <li><a href="#マテリアルデザイン">マテリアルデザイン</a>
-          <ul>
-            <li><a href="#インストール-1">インストール</a></li>
-            <li><a href="#バージョンアップ-1">バージョンアップ</a></li>
-            <li><a href="#簡単な使い方">簡単な使い方</a></li>
-            <li><a href="#ファイル選択ボタンをmaterial化">ファイル選択ボタンをMaterial化</a></li>
-          </ul>
-        </li>
-        <li><a href="#基本的な使い方">基本的な使い方</a></li>
-        <li><a href="#値を渡すデータバインド">値を渡す(データバインド)</a>
-          <ul>
-            <li><a href="#tsからhtmlへ値を渡す"><code>.ts</code>から<code>.html</code>へ値を渡す</a></li>
-            <li><a href="#tsからhtmlのの中に値を渡す"><code>.ts</code>から<code>.html</code>の<code>&lt;&gt;</code>の中に値を渡す</a></li>
-            <li><a href="#ユーザーからのinputを受け付ける">ユーザーからの<code>input</code>を受け付ける.</a></li>
-            <li><a href="#入力された値をコンポーネント内で操作する">入力された値をコンポーネント内で操作する</a></li>
-            <li><a href="#子a--親--子bと渡す">子A &gt; 親 &gt; 子Bと渡す</a></li>
-            <li><a href="#eventemitter">EventEmitter</a></li>
-            <li><a href="#コンポーネント間で値を渡す">コンポーネント間で値を渡す</a></li>
-          </ul>
-        </li>
-        <li><a href="#値を渡すテンプレート参照変数">値を渡す(テンプレート参照変数)</a></li>
-        <li><a href="#ngif-else">ngIf else</a></li>
-        <li><a href="#ngstyle">ngStyle</a></li>
-        <li><a href="#ngclass">ngClass</a></li>
-        <li><a href="#要素を渡す">要素を渡す</a></li>
-        <li><a href="#コンポーネントのライフサイクル">コンポーネントのライフサイクル</a></li>
-        <li><a href="#formを使う">formを使う</a></li>
-        <li><a href="#デプロイ">デプロイ</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-
- 
-    </aside>
-    
-  </main>
-
-  
-</body>
-
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
+      #title<span style=color:#719e07>=</span><span style=color:#2aa198>&#34;ngModel&#34;</span>&gt;
+    &lt;<span style=color:#268bd2>mat-error</span> *ngIf<span style=color:#719e07>=</span><span style=color:#2aa198>&#34;title.invalid&#34;</span>&gt;タイトルを入力してください.&lt;/<span style=color:#268bd2>mat-error</span>&gt;
+  &lt;/<span style=color:#268bd2>mat-form-field</span>&gt;
+&lt;/<span style=color:#268bd2>form</span>&gt;
+</code></pre></div><h2 id=デプロイ>デプロイ</h2><ul><li><a href=https://dev.classmethod.jp/cloud/aws-amplify-console-angular-ci-cd/>超簡単にサイト公開できるAWS Amplify Consoleを使ってAngularのCI/CD環境を作ってみる</a></li><li><a href=https://qiita.com/puku0x/items/0143af73c4d7af948fc8>AngularアプリをTravis CIからGitHub Pagesへデプロイする</a></li><li><a href=https://s8a.jp/angular-github-aws-s3-auto-deploy>Angularで作ったWebアプリをGitHubで管理してS3に自動デプロイする</a></li><li><a href=https://zeit.co/guides/deploying-angular-with-now>Create an Angular Application That Builds and Deploys with Now</a></li></ul></article><footer class=book-footer><div class="flex justify-between"><div><a class="flex align-center" href=https://github.com/solareenlo/blog-hugo/commit/bea798d93c9116bad5b5ceb26ca3159b372095e9 title="Last modified by solareenlo | Mar 20, 2020" target=_blank rel=noopener><img src=/svg/calendar.svg class=book-icon alt=Calendar>
+<span>Mar 20, 2020</span></a></div><div><a class="flex align-center" href=https://github.com/solareenlo/blog-hugo/edit/master/content/docs/pl/angular.md target=_blank rel=noopener><img src=/svg/edit.svg class=book-icon alt=Edit>
+<span>Edit this page</span></a></div></div></footer><div class=book-comments></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><nav id=TableOfContents><ul><li><a href=#angularとは>Angularとは</a><ul><li><a href=#用語>用語</a><ul><li><a href=#decoratorsのパラメーター>Decoratorsのパラメーター</a></li></ul></li><li><a href=#インストール>インストール</a></li><li><a href=#バージョンアップ>バージョンアップ</a></li><li><a href=#dockerでangular>DockerでAngular</a></li><li><a href=#npmの脆弱性を指摘されたら>npmの脆弱性を指摘されたら</a></li><li><a href=#travisci経由でgithub-pagesに公開>TravisCI経由でGitHub Pagesに公開</a></li><li><a href=#マテリアルデザイン>マテリアルデザイン</a><ul><li><a href=#インストール-1>インストール</a></li><li><a href=#バージョンアップ-1>バージョンアップ</a></li><li><a href=#簡単な使い方>簡単な使い方</a></li><li><a href=#ファイル選択ボタンをmaterial化>ファイル選択ボタンをMaterial化</a></li></ul></li><li><a href=#基本的な使い方>基本的な使い方</a></li><li><a href=#値を渡すデータバインド>値を渡す(データバインド)</a><ul><li><a href=#tsからhtmlへ値を渡す><code>.ts</code>から<code>.html</code>へ値を渡す</a></li><li><a href=#tsからhtmlのの中に値を渡す><code>.ts</code>から<code>.html</code>の<code>&lt;></code>の中に値を渡す</a></li><li><a href=#ユーザーからのinputを受け付ける>ユーザーからの<code>input</code>を受け付ける.</a></li><li><a href=#入力された値をコンポーネント内で操作する>入力された値をコンポーネント内で操作する</a></li><li><a href=#子a--親--子bと渡す>子A > 親 > 子Bと渡す</a></li><li><a href=#eventemitter>EventEmitter</a></li><li><a href=#コンポーネント間で値を渡す>コンポーネント間で値を渡す</a></li></ul></li><li><a href=#値を渡すテンプレート参照変数>値を渡す(テンプレート参照変数)</a></li><li><a href=#ngif-else>ngIf else</a></li><li><a href=#ngstyle>ngStyle</a></li><li><a href=#ngclass>ngClass</a></li><li><a href=#要素を渡す>要素を渡す</a></li><li><a href=#コンポーネントのライフサイクル>コンポーネントのライフサイクル</a></li><li><a href=#formを使う>formを使う</a></li><li><a href=#デプロイ>デプロイ</a></li></ul></li></ul></nav></aside></main></body></html>

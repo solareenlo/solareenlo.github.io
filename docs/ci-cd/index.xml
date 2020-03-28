@@ -1,43 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>CI/CD on solareenlo</title>
-    <link>https://solareenlo.com/docs/ci-cd/</link>
-    <description>Recent content in CI/CD on solareenlo</description>
-    <generator>Hugo -- gohugo.io</generator>
-    
-	<atom:link href="https://solareenlo.com/docs/ci-cd/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title></title>
-      <link>https://solareenlo.com/docs/ci-cd/circleci/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://solareenlo.com/docs/ci-cd/circleci/</guid>
-      <description>CircleCIとは  クラウド上でCI/CDを行なってくれるサービスの1つ. 公式サイト: https://circleci.com  docs   CircleCI Documentation  Angular &amp;gt; CircleCI &amp;gt; GitHub Pages の例   iotajapan/ng-iotajapan  submoduleをpush出来るようにするには  Settings &amp;gt; PERMISSIONS &amp;gt; Checkout SSH keys でuser keyを有効にする.  AWSのS3へデプロイ   Nuxt.js+CircleCIで静的ページをAWSのS3へデプロイする  AWSのElastic Beanstalkへデプロイ   以下でCircleCIでElastic Beanstalk CLIを起動して, デプロイする.
-# .circleci/config.yml version: 2 jobs: deploy: working_directory: ~/app docker: - image: circleci/ruby:2.6.3 steps: - checkout - run: name: Installing deployment dependencies working_directory: / command: | sudo apt-get -y -qq update sudo apt-get install python-pip python-dev build-essential sudo pip install --upgrade setuptools sudo pip install awsebcli --upgrade - run: name: Deploying command: eb deploy master-TaxPlusAws01-env workflows: version: 2 build: jobs: - deploy: filters: branches: only: - master     以下はElastci Beanstalk CLIの設定.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://solareenlo.com/docs/ci-cd/jenkins/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://solareenlo.com/docs/ci-cd/jenkins/</guid>
-      <description>Jenkinsとは  オンプレミスのCI/CDツール. Jenkinsが全てのビルドプロセスの自動化を行うものではない. テストやデプロイなどの各フェーズはそれぞれ専用のツールで自動化を行い, Jenkinsはどういったタイミングでどのツールを呼び出すのかを指示し, エラーが出たら即座にフィードバックを行う処理をする. 公式サイト: https://jenkins.io  </description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://solareenlo.com/docs/ci-cd/travis-ci/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://solareenlo.com/docs/ci-cd/travis-ci/</guid>
-      <description>Travis CIとは  GitHub上のソフトウェアのビルドやテストを行う, オンラインで分散型の継続的インテグレーション(CI)サービスのこと. https://travis-ci.org が無料でオープンソースのプロジェクト用, https://travis-ci.com が有料でプライベートリポジトリ用の利用ができる.  Travis CiからAWS Elastic Beanstalkへ   AWS Elastic Beanstalk Deployment  Dokcerのテストがpassedにならない時の対処法 Travis CIでDockerのテストを以下のように設定するとpassedにならないことがある.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>CI/CD on solareenlo</title><link>https://solareenlo.com/docs/ci-cd/</link><description>Recent content in CI/CD on solareenlo</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://solareenlo.com/docs/ci-cd/index.xml" rel="self" type="application/rss+xml"/><item><title/><link>https://solareenlo.com/docs/ci-cd/circleci/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://solareenlo.com/docs/ci-cd/circleci/</guid><description>CircleCIとは クラウド上でCI/CDを行なってくれるサービスの1つ. 公式サイト: https://circleci.com docs CircleCI Documentation Angular &amp;gt; CircleCI &amp;gt; GitHub Pages の例 iotajapan/ng-iotajapan submoduleをpush出来るようにするには Settings &amp;gt; PERMISSIONS &amp;gt; Checkout SSH keys でuser keyを有効にする. AWSのS3へデプロイ Nuxt.js+CircleCIで静的ページをAWSのS3へデプロイする AWSのElastic Beanstalkへデプロイ 以下でCircleCIでElastic Beanstalk CLIを起動して, デプロイする.
+# .circleci/config.yml version: 2 jobs: deploy: working_directory: ~/app docker: - image: circleci/ruby:2.6.3 steps: - checkout - run: name: Installing deployment dependencies working_directory: / command: | sudo apt-get -y -qq update sudo apt-get install python-pip python-dev build-essential sudo pip install --upgrade setuptools sudo pip install awsebcli --upgrade - run: name: Deploying command: eb deploy master-TaxPlusAws01-env workflows: version: 2 build: jobs: - deploy: filters: branches: only: - master 以下はElastci Beanstalk CLIの設定.</description></item><item><title/><link>https://solareenlo.com/docs/ci-cd/jenkins/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://solareenlo.com/docs/ci-cd/jenkins/</guid><description>Jenkinsとは オンプレミスのCI/CDツール. Jenkinsが全てのビルドプロセスの自動化を行うものではない. テストやデプロイなどの各フェーズはそれぞれ専用のツールで自動化を行い, Jenkinsはどういったタイミングでどのツールを呼び出すのかを指示し, エラーが出たら即座にフィードバックを行う処理をする. 公式サイト: https://jenkins.io</description></item><item><title/><link>https://solareenlo.com/docs/ci-cd/travis-ci/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://solareenlo.com/docs/ci-cd/travis-ci/</guid><description>Travis CIとは GitHub上のソフトウェアのビルドやテストを行う, オンラインで分散型の継続的インテグレーション(CI)サービスのこと. https://travis-ci.org が無料でオープンソースのプロジェクト用, https://travis-ci.com が有料でプライベートリポジトリ用の利用ができる. Travis CiからAWS Elastic Beanstalkへ AWS Elastic Beanstalk Deployment Dokcerのテストがpassedにならない時の対処法 Travis CIでDockerのテストを以下のように設定するとpassedにならないことがある.
 script: docker run solareenlo/react-test npm run test -- --coverage そんな時は以下のようにテストを設定する.
-script: docker run -e CI=true solareenlo/react-test npm run test -- --watchAll=falseb 環境変数が設定できない時 Travis CIの環境変数を設定する項目では特殊文字(; &amp;amp; ( ) | ^ &amp;lt; &amp;gt; ? * [ ] $ ` &#39; &amp;quot; \ ! { } 改行 タブ スペース)がそのままの入力ではエスケープされないので, シングルクォーテーション(&#39;&#39;)で囲む必要がある.</description>
-    </item>
-    
-  </channel>
-</rss>
+script: docker run -e CI=true solareenlo/react-test npm run test -- --watchAll=falseb 環境変数が設定できない時 Travis CIの環境変数を設定する項目では特殊文字(; &amp;amp; ( ) | ^ &amp;lt; &amp;gt; ? * [ ] $ ` ' &amp;quot; \ ! { } 改行 タブ スペース)がそのままの入力ではエスケープされないので, シングルクォーテーション('')で囲む必要がある.</description></item></channel></rss>

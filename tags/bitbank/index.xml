@@ -1,25 +1,3 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>bitbank on solareenlo</title>
-    <link>https://solareenlo.com/tags/bitbank/</link>
-    <description>Recent content in bitbank on solareenlo</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 19 Apr 2019 08:00:00 +0900</lastBuildDate>
-    
-	<atom:link href="https://solareenlo.com/tags/bitbank/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>bitbank Drink Meetup #1 〜エンジニア〜</title>
-      <link>https://solareenlo.com/posts/bitbank01/</link>
-      <pubDate>Fri, 19 Apr 2019 08:00:00 +0900</pubDate>
-      
-      <guid>https://solareenlo.com/posts/bitbank01/</guid>
-      <description>  bitbank Drink Meetup #1 〜エンジニア〜の自分なりのメモ
- 秘密鍵の安全な生成法 用意するもの
- 電磁波を通さない物質で囲まれたシェルター 電波が通じてない山奥 完全にランダムで賽の目が出るサイコロ 上記のセットを複数個  とってもセキュアに暗号資産を管理してくれるところ   xapo  </description>
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>bitbank on solareenlo</title><link>https://solareenlo.com/tags/bitbank/</link><description>Recent content in bitbank on solareenlo</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Fri, 19 Apr 2019 08:00:00 +0900</lastBuildDate><atom:link href="https://solareenlo.com/tags/bitbank/index.xml" rel="self" type="application/rss+xml"/><item><title>bitbank Drink Meetup #1 〜エンジニア〜</title><link>https://solareenlo.com/posts/bitbank01/</link><pubDate>Fri, 19 Apr 2019 08:00:00 +0900</pubDate><guid>https://solareenlo.com/posts/bitbank01/</guid><description> bitbank Drink Meetup #1 〜エンジニア〜の自分なりのメモ
+秘密鍵の安全な生成法 用意するもの
+電磁波を通さない物質で囲まれたシェルター 電波が通じてない山奥 完全にランダムで賽の目が出るサイコロ 上記のセットを複数個 とってもセキュアに暗号資産を管理してくれるところ xapo</description></item></channel></rss>
