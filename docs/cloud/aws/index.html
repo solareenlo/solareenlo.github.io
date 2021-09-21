@@ -1,50 +1,572 @@
-<!doctype html><html lang=ja><head><meta name=generator content="Hugo 0.80.0"><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="アマゾンウェブサービス（AWS）とは #   Amazonが提供するパブリッククラウドコンピューティングのこと. 従量課金制. コンピューティング, ストレージ, データベース, 分析, ネットワーキング, モバイル, 開発者用ツール, 管理ツール, IoT, セキュリティ, エンタープライズアプリケーションなど, グローバルなクラウドベース製品を幅広く利用できる.  S3 #   インターネット用のオブジェクトストレージサービスのこと. Amazon Simple Storage Serviceの略.  Elastic Beanstalk #   Java, .NET, PHP, Node.js, Python, Ruby, GoおよびDockerを使用して開発されたウェブアプリケーションやサービスを, Apache, Nginx, Passenger, IISなどのサーバーでデプロイおよびスケーリングするためのサービスのこと. 平たく言うとアマゾン版VPS.  SSH接続 #   インスタンスを立ち上げる.    インスタンスにキーペア(秘密鍵/公開鍵のペア)を設定する.
+<!doctype html><html lang=ja dir=ltr>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=description content="アマゾンウェブサービス（AWS）とは #   Amazonが提供するパブリッククラウドコンピューティングのこと. 従量課金制. コンピューティング, ストレージ, データベース, 分析, ネットワーキング, モバイル, 開発者用ツール, 管理ツール, IoT, セキュリティ, エンタープライズアプリケーションなど, グローバルなクラウドベース製品を幅広く利用できる.  S3 #   インターネット用のオブジェクトストレージサービスのこと. Amazon Simple Storage Serviceの略.  Elastic Beanstalk #   Java, .NET, PHP, Node.js, Python, Ruby, GoおよびDockerを使用して開発されたウェブアプリケーションやサービスを, Apache, Nginx, Passenger, IISなどのサーバーでデプロイおよびスケーリングするためのサービスのこと. 平たく言うとアマゾン版VPS.  SSH接続 #   インスタンスを立ち上げる.    インスタンスにキーペア(秘密鍵/公開鍵のペア)を設定する.
   秘密鍵をダウンロードして(ファイル名sshkey.pem), インスタンスのIPアドレスを確認して, 以下を実行.
-chmod 600 sshkey.pem ssh -i sshkey.pem ec2-user@000.000.000.000   後は普通のVPSと同じ."><meta name=theme-color content="#FFFFFF"><meta property="og:title" content><meta property="og:description" content="アマゾンウェブサービス（AWS）とは #   Amazonが提供するパブリッククラウドコンピューティングのこと. 従量課金制. コンピューティング, ストレージ, データベース, 分析, ネットワーキング, モバイル, 開発者用ツール, 管理ツール, IoT, セキュリティ, エンタープライズアプリケーションなど, グローバルなクラウドベース製品を幅広く利用できる.  S3 #   インターネット用のオブジェクトストレージサービスのこと. Amazon Simple Storage Serviceの略.  Elastic Beanstalk #   Java, .NET, PHP, Node.js, Python, Ruby, GoおよびDockerを使用して開発されたウェブアプリケーションやサービスを, Apache, Nginx, Passenger, IISなどのサーバーでデプロイおよびスケーリングするためのサービスのこと. 平たく言うとアマゾン版VPS.  SSH接続 #   インスタンスを立ち上げる.    インスタンスにキーペア(秘密鍵/公開鍵のペア)を設定する.
+chmod 600 sshkey.pem ssh -i sshkey.pem ec2-user@000.000.000.000   後は普通のVPSと同じ.">
+<meta name=theme-color content="#FFFFFF"><meta property="og:title" content>
+<meta property="og:description" content="アマゾンウェブサービス（AWS）とは #   Amazonが提供するパブリッククラウドコンピューティングのこと. 従量課金制. コンピューティング, ストレージ, データベース, 分析, ネットワーキング, モバイル, 開発者用ツール, 管理ツール, IoT, セキュリティ, エンタープライズアプリケーションなど, グローバルなクラウドベース製品を幅広く利用できる.  S3 #   インターネット用のオブジェクトストレージサービスのこと. Amazon Simple Storage Serviceの略.  Elastic Beanstalk #   Java, .NET, PHP, Node.js, Python, Ruby, GoおよびDockerを使用して開発されたウェブアプリケーションやサービスを, Apache, Nginx, Passenger, IISなどのサーバーでデプロイおよびスケーリングするためのサービスのこと. 平たく言うとアマゾン版VPS.  SSH接続 #   インスタンスを立ち上げる.    インスタンスにキーペア(秘密鍵/公開鍵のペア)を設定する.
   秘密鍵をダウンロードして(ファイル名sshkey.pem), インスタンスのIPアドレスを確認して, 以下を実行.
-chmod 600 sshkey.pem ssh -i sshkey.pem ec2-user@000.000.000.000   後は普通のVPSと同じ."><meta property="og:type" content="article"><meta property="og:url" content="https://solareenlo.com/docs/cloud/aws/"><meta property="article:modified_time" content="2020-03-20T07:56:42+09:00"><title>Aws | solareenlo</title><link rel=manifest href=/manifest.json><link rel=icon href=/favicon.png type=image/x-icon><link rel=stylesheet href=/book.min.81c91df4d7ac1d9248c87650e9463592105b1f2bc5640263e0270a6070528cbc.css integrity="sha256-gckd9NesHZJIyHZQ6UY1khBbHyvFZAJj4CcKYHBSjLw="><script defer src=/ja.search.min.0bbc896c010732bd9bcadb3e627c9b8d5fe8508ba863ce303261751808fa854a.js integrity="sha256-C7yJbAEHMr2byts+YnybjV/oUIuoY84wMmF1GAj6hUo="></script></head><body><input type=checkbox class="hidden toggle" id=menu-control>
-<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><nav><h2 class=book-brand><a href=/><span>solareenlo</span></a></h2><div class=book-search><input type=text id=book-search-input placeholder=検索 aria-label=検索 maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><ul><li><a href=/posts/>Blog</a></li></ul><ul><li><input type=checkbox id=section-57e58ca5aae968f4961a4036f314a5de class=toggle>
-<label for=section-57e58ca5aae968f4961a4036f314a5de class="flex justify-between"><a href=https://solareenlo.com/docs/programming/>Programming</a>
-<span>▾</span></label><ul><li><a href=https://solareenlo.com/docs/programming/command/>Command</a></li><li><a href=https://solareenlo.com/docs/programming/fonts/>Fonts</a></li><li><a href=https://solareenlo.com/docs/programming/git/>Git</a></li><li><a href=https://solareenlo.com/docs/programming/github/>Github</a></li><li><a href=https://solareenlo.com/docs/programming/linter-formatter/>Linter Formatter</a></li><li><a href=https://solareenlo.com/docs/programming/password-manager/>Password Manager</a></li><li><a href=https://solareenlo.com/docs/programming/sed/>Sed</a></li><li><a href=https://solareenlo.com/docs/programming/shell-script/>Shell Script</a></li><li><a href=https://solareenlo.com/docs/programming/terminal/>Terminal</a></li><li><a href=https://solareenlo.com/docs/programming/test/>Test</a></li><li><a href=https://solareenlo.com/docs/programming/tmux/>Tmux</a></li><li><a href=https://solareenlo.com/docs/programming/vim/>Vim</a></li><li><a href=https://solareenlo.com/docs/programming/vimium/>Vimium</a></li><li><a href=https://solareenlo.com/docs/programming/wiki/>Wiki</a></li><li><a href=https://solareenlo.com/docs/programming/hhkb/>HHKB</a></li></ul></li><li><input type=checkbox id=section-771d1b18af68e81cd9d3d14cd5f6339b class=toggle>
-<label for=section-771d1b18af68e81cd9d3d14cd5f6339b class="flex justify-between"><a href=https://solareenlo.com/docs/pl/>Programming Language</a>
-<span>▾</span></label><ul><li><a href=https://solareenlo.com/docs/pl/angular/>Angular</a></li><li><a href=https://solareenlo.com/docs/pl/c/>C</a></li><li><a href=https://solareenlo.com/docs/pl/css/>Css</a></li><li><a href=https://solareenlo.com/docs/pl/go/>Go</a></li><li><a href=https://solareenlo.com/docs/pl/haskell/>Haskell</a></li><li><a href=https://solareenlo.com/docs/pl/hugo/>Hugo</a></li><li><a href=https://solareenlo.com/docs/pl/javascript/>Javascript</a></li><li><a href=https://solareenlo.com/docs/pl/nodejs/>Nodejs</a></li><li><a href=https://solareenlo.com/docs/pl/pl-docs/>Pl Docs</a></li><li><a href=https://solareenlo.com/docs/pl/react-static/>React Static</a></li><li><a href=https://solareenlo.com/docs/pl/react/>React</a></li><li><a href=https://solareenlo.com/docs/pl/rust/>Rust</a></li><li><a href=https://solareenlo.com/docs/pl/scala/>Scala</a></li><li><a href=https://solareenlo.com/docs/pl/typescript/>Typescript</a></li><li><a href=https://solareenlo.com/docs/pl/npm/>npm</a></li></ul></li><li><input type=checkbox id=section-a7bf5468f483fd7222967f135a5003c0 class=toggle>
-<label for=section-a7bf5468f483fd7222967f135a5003c0 class="flex justify-between"><a href=https://solareenlo.com/docs/latex/>LaTeX</a>
-<span>▾</span></label><ul><li><a href=https://solareenlo.com/docs/latex/platex-book/>Platex Book</a></li><li><a href=https://solareenlo.com/docs/latex/zathura-install/>Zathura Install</a></li></ul></li><li><input type=checkbox id=section-e14f9767e53904cbbdcb3f0bdbe82f2a class=toggle>
-<label for=section-e14f9767e53904cbbdcb3f0bdbe82f2a class="flex justify-between"><a href=https://solareenlo.com/docs/vps/>VPS</a>
-<span>▾</span></label><ul><li><a href=https://solareenlo.com/docs/vps/alpine-linux/>Alpine Linux</a></li><li><a href=https://solareenlo.com/docs/vps/ubuntu/>Ubuntu</a></li><li><a href=https://solareenlo.com/docs/vps/ssh/>SSH</a></li></ul></li><li><input type=checkbox id=section-99a3d9d52cfe7a0dcbd55cd8c23e4462 class=toggle>
-<label for=section-99a3d9d52cfe7a0dcbd55cd8c23e4462 class="flex justify-between"><a href=https://solareenlo.com/docs/db/>DB</a>
-<span>▾</span></label><ul><li><a href=https://solareenlo.com/docs/db/redis/>Redis</a></li><li><a href=https://solareenlo.com/docs/db/mongodb/>MongoDB</a></li><li><a href=https://solareenlo.com/docs/db/mysql/>MySQL</a></li></ul></li><li><input type=checkbox id=section-e5a49337b6189bd60f0b5e1d3a4a8539 class=toggle checked>
-<label for=section-e5a49337b6189bd60f0b5e1d3a4a8539 class="flex justify-between"><a href=https://solareenlo.com/docs/cloud/>Cloud</a>
-<span>▾</span></label><ul><li><a href=https://solareenlo.com/docs/cloud/aws/ class=active>Aws</a></li><li><a href=https://solareenlo.com/docs/cloud/firebase/>Firebase</a></li><li><a href=https://solareenlo.com/docs/cloud/gcp/>Gcp</a></li><li><a href=https://solareenlo.com/docs/cloud/sendgrid/>Sendgrid</a></li><li><a href=https://solareenlo.com/docs/cloud/zeit-now/>Zeit Now</a></li></ul></li><li><input type=checkbox id=section-dfa5c6b6f5f2def7a1fbf289a7570ac2 class=toggle>
-<label for=section-dfa5c6b6f5f2def7a1fbf289a7570ac2 class="flex justify-between"><a href=https://solareenlo.com/docs/ci-cd/>CI/CD</a>
-<span>▾</span></label><ul><li><a href=https://solareenlo.com/docs/ci-cd/circleci/>Circleci</a></li><li><a href=https://solareenlo.com/docs/ci-cd/jenkins/>Jenkins</a></li><li><a href=https://solareenlo.com/docs/ci-cd/travis-ci/>Travis Ci</a></li></ul></li><li><input type=checkbox id=section-10dd021a58cb696b6cb4f79141ec5ddb class=toggle>
-<label for=section-10dd021a58cb696b6cb4f79141ec5ddb class="flex justify-between"><a href=https://solareenlo.com/docs/container/>Conatainer</a>
-<span>▾</span></label><ul><li><a href=https://solareenlo.com/docs/container/docker-compose/>Docker Compose</a></li><li><a href=https://solareenlo.com/docs/container/docker-hub/>Docker Hub</a></li><li><a href=https://solareenlo.com/docs/container/docker1/>Docker1</a></li><li><a href=https://solareenlo.com/docs/container/docker2/>Docker2</a></li><li><a href=https://solareenlo.com/docs/container/kubernetes/>Kubernetes</a></li></ul></li><li><input type=checkbox id=section-342a656e10fe011a820c22dda53f7866 class=toggle>
-<label for=section-342a656e10fe011a820c22dda53f7866 class="flex justify-between"><a href=https://solareenlo.com/docs/crypto/>Crypto</a>
-<span>▾</span></label><ul><li><a href=https://solareenlo.com/docs/crypto/blockchain/>Blockchain</a></li><li><a href=https://solareenlo.com/docs/crypto/crypto-docs/>Crypto Docs</a></li><li><a href=https://solareenlo.com/docs/crypto/ethereum/>Ethereum</a></li><li><a href=https://solareenlo.com/docs/crypto/substrate/>Substrate</a></li><li><a href=https://solareenlo.com/docs/crypto/white-paper/>White Paper</a></li><li><a href=https://solareenlo.com/docs/crypto/bitcoin/>Bitcoin</a></li><li><a href=https://solareenlo.com/docs/crypto/iota/>IOTA</a></li><li><a href=https://solareenlo.com/docs/crypto/nem/>NEM</a></li><li><a href=https://solareenlo.com/docs/crypto/bitcoin-fullnode/>フルノード</a></li></ul></li><li><a href=https://solareenlo.com/docs/tools/>Tools</a><ul></ul></li></ul><ul><li><a href=https://github.com/solareenlo/blog-hugo target=_blank rel=noopener>Github</a></li></ul></nav><script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/svg/menu.svg class=book-icon alt=Menu></label>
+chmod 600 sshkey.pem ssh -i sshkey.pem ec2-user@000.000.000.000   後は普通のVPSと同じ.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://solareenlo.com/docs/cloud/aws/"><meta property="article:section" content="docs">
+<meta property="article:modified_time" content="2020-03-20T07:56:42+09:00">
+<title>Aws | solareenlo</title>
+<link rel=manifest href=/manifest.json>
+<link rel=icon href=/favicon.png type=image/x-icon>
+<link rel=stylesheet href=/book.min.3fc729a37471ee87e40517478b6ab5936d22fcb6008d40985724e4295d1a74c0.css integrity="sha256-P8cpo3Rx7ofkBRdHi2q1k20i/LYAjUCYVyTkKV0adMA=" crossorigin=anonymous>
+<script defer src=/flexsearch.min.js></script>
+<script defer src=/ja.search.min.f7cc464663b3b3a097afa2f984b8778e350346674fae4cd69f0f855aaa21c426.js integrity="sha256-98xGRmOzs6CXr6L5hLh3jjUDRmdPrkzWnw+FWqohxCY=" crossorigin=anonymous></script>
+</head>
+<body dir=ltr>
+<input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control>
+<main class="container flex">
+<aside class=book-menu>
+<div class=book-menu-content>
+<nav>
+<h2 class=book-brand>
+<a class="flex align-center" href=/><span>solareenlo</span>
+</a>
+</h2>
+<div class=book-search>
+<input type=text id=book-search-input placeholder=検索 aria-label=検索 maxlength=64 data-hotkeys=s/>
+<div class="book-search-spinner hidden"></div>
+<ul id=book-search-results></ul>
+</div>
+<ul>
+<li>
+<a href=/posts/>
+Blog
+</a>
+</li>
+</ul>
+<ul>
+<li>
+<input type=checkbox id=section-57e58ca5aae968f4961a4036f314a5de class=toggle>
+<label for=section-57e58ca5aae968f4961a4036f314a5de class="flex justify-between">
+<a href=https://solareenlo.com/docs/programming/>Programming</a>
+</label>
+<ul>
+<li>
+<a href=https://solareenlo.com/docs/programming/command/>Command</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/programming/fonts/>Fonts</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/programming/git/>Git</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/programming/github/>Github</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/programming/linter-formatter/>Linter Formatter</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/programming/password-manager/>Password Manager</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/programming/sed/>Sed</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/programming/shell-script/>Shell Script</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/programming/terminal/>Terminal</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/programming/test/>Test</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/programming/tmux/>Tmux</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/programming/vim/>Vim</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/programming/vimium/>Vimium</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/programming/wiki/>Wiki</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/programming/hhkb/>HHKB</a>
+</li>
+</ul>
+</li>
+<li>
+<input type=checkbox id=section-771d1b18af68e81cd9d3d14cd5f6339b class=toggle>
+<label for=section-771d1b18af68e81cd9d3d14cd5f6339b class="flex justify-between">
+<a href=https://solareenlo.com/docs/pl/>Programming Language</a>
+</label>
+<ul>
+<li>
+<a href=https://solareenlo.com/docs/pl/angular/>Angular</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/pl/c/>C</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/pl/css/>Css</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/pl/go/>Go</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/pl/haskell/>Haskell</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/pl/hugo/>Hugo</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/pl/javascript/>Javascript</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/pl/nodejs/>Nodejs</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/pl/pl-docs/>Pl Docs</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/pl/react-static/>React Static</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/pl/react/>React</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/pl/rust/>Rust</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/pl/scala/>Scala</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/pl/typescript/>Typescript</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/pl/npm/>npm</a>
+</li>
+</ul>
+</li>
+<li>
+<input type=checkbox id=section-a7bf5468f483fd7222967f135a5003c0 class=toggle>
+<label for=section-a7bf5468f483fd7222967f135a5003c0 class="flex justify-between">
+<a href=https://solareenlo.com/docs/latex/>LaTeX</a>
+</label>
+<ul>
+<li>
+<a href=https://solareenlo.com/docs/latex/platex-book/>Platex Book</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/latex/zathura-install/>Zathura Install</a>
+</li>
+</ul>
+</li>
+<li>
+<input type=checkbox id=section-e14f9767e53904cbbdcb3f0bdbe82f2a class=toggle>
+<label for=section-e14f9767e53904cbbdcb3f0bdbe82f2a class="flex justify-between">
+<a href=https://solareenlo.com/docs/vps/>VPS</a>
+</label>
+<ul>
+<li>
+<a href=https://solareenlo.com/docs/vps/alpine-linux/>Alpine Linux</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/vps/ubuntu/>Ubuntu</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/vps/ssh/>SSH</a>
+</li>
+</ul>
+</li>
+<li>
+<input type=checkbox id=section-99a3d9d52cfe7a0dcbd55cd8c23e4462 class=toggle>
+<label for=section-99a3d9d52cfe7a0dcbd55cd8c23e4462 class="flex justify-between">
+<a href=https://solareenlo.com/docs/db/>DB</a>
+</label>
+<ul>
+<li>
+<a href=https://solareenlo.com/docs/db/redis/>Redis</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/db/mongodb/>MongoDB</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/db/mysql/>MySQL</a>
+</li>
+</ul>
+</li>
+<li>
+<input type=checkbox id=section-e5a49337b6189bd60f0b5e1d3a4a8539 class=toggle checked>
+<label for=section-e5a49337b6189bd60f0b5e1d3a4a8539 class="flex justify-between">
+<a href=https://solareenlo.com/docs/cloud/>Cloud</a>
+</label>
+<ul>
+<li>
+<a href=https://solareenlo.com/docs/cloud/aws/ class=active>Aws</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/cloud/firebase/>Firebase</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/cloud/gcp/>Gcp</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/cloud/sendgrid/>Sendgrid</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/cloud/zeit-now/>Zeit Now</a>
+</li>
+</ul>
+</li>
+<li>
+<input type=checkbox id=section-dfa5c6b6f5f2def7a1fbf289a7570ac2 class=toggle>
+<label for=section-dfa5c6b6f5f2def7a1fbf289a7570ac2 class="flex justify-between">
+<a href=https://solareenlo.com/docs/ci-cd/>CI/CD</a>
+</label>
+<ul>
+<li>
+<a href=https://solareenlo.com/docs/ci-cd/circleci/>Circleci</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/ci-cd/jenkins/>Jenkins</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/ci-cd/travis-ci/>Travis Ci</a>
+</li>
+</ul>
+</li>
+<li>
+<input type=checkbox id=section-10dd021a58cb696b6cb4f79141ec5ddb class=toggle>
+<label for=section-10dd021a58cb696b6cb4f79141ec5ddb class="flex justify-between">
+<a href=https://solareenlo.com/docs/container/>Conatainer</a>
+</label>
+<ul>
+<li>
+<a href=https://solareenlo.com/docs/container/docker-compose/>Docker Compose</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/container/docker-hub/>Docker Hub</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/container/docker1/>Docker1</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/container/docker2/>Docker2</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/container/kubernetes/>Kubernetes</a>
+</li>
+</ul>
+</li>
+<li>
+<input type=checkbox id=section-342a656e10fe011a820c22dda53f7866 class=toggle>
+<label for=section-342a656e10fe011a820c22dda53f7866 class="flex justify-between">
+<a href=https://solareenlo.com/docs/crypto/>Crypto</a>
+</label>
+<ul>
+<li>
+<a href=https://solareenlo.com/docs/crypto/blockchain/>Blockchain</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/crypto/crypto-docs/>Crypto Docs</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/crypto/ethereum/>Ethereum</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/crypto/substrate/>Substrate</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/crypto/white-paper/>White Paper</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/crypto/bitcoin/>Bitcoin</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/crypto/iota/>IOTA</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/crypto/nem/>NEM</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/crypto/bitcoin-fullnode/>フルノード</a>
+</li>
+</ul>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/tools/>Tools</a>
+<ul>
+</ul>
+</li>
+</ul>
+<ul>
+<li>
+<a href=https://github.com/solareenlo/blog-hugo target=_blank rel=noopener>
+Github
+</a>
+</li>
+</ul>
+</nav>
+<script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+</div>
+</aside>
+<div class=book-page>
+<header class=book-header>
+<div class="flex align-center justify-between">
+<label for=menu-control>
+<img src=/svg/menu.svg class=book-icon alt=Menu>
+</label>
 <strong>Aws</strong>
-<label for=toc-control><img src=/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents><ul><li><a href=#アマゾンウェブサービスawsとは>アマゾンウェブサービス（AWS）とは</a><ul><li><a href=#s3>S3</a></li><li><a href=#elastic-beanstalk>Elastic Beanstalk</a><ul><li><a href=#ssh接続>SSH接続</a></li><li><a href=#amazon-linuxのバージョン確認>Amazon Linuxのバージョン確認</a></li><li><a href=#お名前comで取得したドメインを割り当てる>お名前.comで取得したドメインを割り当てる</a></li><li><a href=#https化する>https化する</a></li></ul></li><li><a href=#iam>IAM</a></li><li><a href=#ecs>ECS</a></li><li><a href=#rds>RDS</a></li><li><a href=#memcached>Memcached</a></li><li><a href=#vpc>VPC</a></li><li><a href=#vpcセキュリティグループ>VPCセキュリティグループ</a></li><li><a href=#amplify-console>Amplify Console</a></li><li><a href=#certificate-manager>Certificate Manager</a></li><li><a href=#ざっくり料金計算>ざっくり料金計算</a></li></ul></li></ul></nav></aside></header><article class=markdown><h1 id=アマゾンウェブサービスawsとは>アマゾンウェブサービス（AWS）とは
-<a class=anchor href=#%e3%82%a2%e3%83%9e%e3%82%be%e3%83%b3%e3%82%a6%e3%82%a7%e3%83%96%e3%82%b5%e3%83%bc%e3%83%93%e3%82%b9aws%e3%81%a8%e3%81%af>#</a></h1><ul><li>Amazonが提供するパブリッククラウドコンピューティングのこと.</li><li>従量課金制.</li><li>コンピューティング, ストレージ, データベース, 分析, ネットワーキング, モバイル, 開発者用ツール, 管理ツール, IoT, セキュリティ, エンタープライズアプリケーションなど, グローバルなクラウドベース製品を幅広く利用できる.</li></ul><h2 id=s3>S3
-<a class=anchor href=#s3>#</a></h2><ul><li>インターネット用のオブジェクトストレージサービスのこと.</li><li>Amazon Simple Storage Serviceの略.</li></ul><h2 id=elastic-beanstalk>Elastic Beanstalk
-<a class=anchor href=#elastic-beanstalk>#</a></h2><ul><li>Java, .NET, PHP, Node.js, Python, Ruby, GoおよびDockerを使用して開発されたウェブアプリケーションやサービスを, Apache, Nginx, Passenger, IISなどのサーバーでデプロイおよびスケーリングするためのサービスのこと.</li><li>平たく言うとアマゾン版VPS.</li></ul><h3 id=ssh接続>SSH接続
-<a class=anchor href=#ssh%e6%8e%a5%e7%b6%9a>#</a></h3><ol><li>インスタンスを立ち上げる.</li></ol><ul><li><p>インスタンスにキーペア(秘密鍵/公開鍵のペア)を設定する.</p></li><li><p>秘密鍵をダウンロードして(ファイル名<code>sshkey.pem</code>), インスタンスのIPアドレスを確認して, 以下を実行.</p><div class=highlight><pre style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>chmod <span style=color:#2aa198>600</span> sshkey.pem
+<label for=toc-control>
+<img src=/svg/toc.svg class=book-icon alt="Table of Contents">
+</label>
+</div>
+<aside class="hidden clearfix">
+<nav id=TableOfContents>
+<ul>
+<li><a href=#アマゾンウェブサービスawsとは>アマゾンウェブサービス（AWS）とは</a>
+<ul>
+<li><a href=#s3>S3</a></li>
+<li><a href=#elastic-beanstalk>Elastic Beanstalk</a>
+<ul>
+<li><a href=#ssh接続>SSH接続</a></li>
+<li><a href=#amazon-linuxのバージョン確認>Amazon Linuxのバージョン確認</a></li>
+<li><a href=#お名前comで取得したドメインを割り当てる>お名前.comで取得したドメインを割り当てる</a></li>
+<li><a href=#https化する>https化する</a></li>
+</ul>
+</li>
+<li><a href=#iam>IAM</a></li>
+<li><a href=#ecs>ECS</a></li>
+<li><a href=#rds>RDS</a></li>
+<li><a href=#memcached>Memcached</a></li>
+<li><a href=#vpc>VPC</a></li>
+<li><a href=#vpcセキュリティグループ>VPCセキュリティグループ</a></li>
+<li><a href=#amplify-console>Amplify Console</a></li>
+<li><a href=#certificate-manager>Certificate Manager</a></li>
+<li><a href=#ざっくり料金計算>ざっくり料金計算</a></li>
+</ul>
+</li>
+</ul>
+</nav>
+</aside>
+</header>
+<article class=markdown><h1 id=アマゾンウェブサービスawsとは>
+アマゾンウェブサービス（AWS）とは
+<a class=anchor href=#%e3%82%a2%e3%83%9e%e3%82%be%e3%83%b3%e3%82%a6%e3%82%a7%e3%83%96%e3%82%b5%e3%83%bc%e3%83%93%e3%82%b9aws%e3%81%a8%e3%81%af>#</a>
+</h1>
+<ul>
+<li>Amazonが提供するパブリッククラウドコンピューティングのこと.</li>
+<li>従量課金制.</li>
+<li>コンピューティング, ストレージ, データベース, 分析, ネットワーキング, モバイル, 開発者用ツール, 管理ツール, IoT, セキュリティ, エンタープライズアプリケーションなど, グローバルなクラウドベース製品を幅広く利用できる.</li>
+</ul>
+<h2 id=s3>
+S3
+<a class=anchor href=#s3>#</a>
+</h2>
+<ul>
+<li>インターネット用のオブジェクトストレージサービスのこと.</li>
+<li>Amazon Simple Storage Serviceの略.</li>
+</ul>
+<h2 id=elastic-beanstalk>
+Elastic Beanstalk
+<a class=anchor href=#elastic-beanstalk>#</a>
+</h2>
+<ul>
+<li>Java, .NET, PHP, Node.js, Python, Ruby, GoおよびDockerを使用して開発されたウェブアプリケーションやサービスを, Apache, Nginx, Passenger, IISなどのサーバーでデプロイおよびスケーリングするためのサービスのこと.</li>
+<li>平たく言うとアマゾン版VPS.</li>
+</ul>
+<h3 id=ssh接続>
+SSH接続
+<a class=anchor href=#ssh%e6%8e%a5%e7%b6%9a>#</a>
+</h3>
+<ol>
+<li>インスタンスを立ち上げる.</li>
+</ol>
+<ul>
+<li>
+<p>インスタンスにキーペア(秘密鍵/公開鍵のペア)を設定する.</p>
+</li>
+<li>
+<p>秘密鍵をダウンロードして(ファイル名<code>sshkey.pem</code>), インスタンスのIPアドレスを確認して, 以下を実行.</p>
+<div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>chmod <span style=color:#2aa198>600</span> sshkey.pem
 ssh -i sshkey.pem ec2-user@000.000.000.000
-</code></pre></div></li><li><p>後は普通のVPSと同じ.</p></li></ul><h3 id=amazon-linuxのバージョン確認>Amazon Linuxのバージョン確認
-<a class=anchor href=#amazon-linux%e3%81%ae%e3%83%90%e3%83%bc%e3%82%b8%e3%83%a7%e3%83%b3%e7%a2%ba%e8%aa%8d>#</a></h3><div class=highlight><pre style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>cat /etc/system-release
-</code></pre></div><h3 id=お名前comで取得したドメインを割り当てる>お名前.comで取得したドメインを割り当てる
-<a class=anchor href=#%e3%81%8a%e5%90%8d%e5%89%8dcom%e3%81%a7%e5%8f%96%e5%be%97%e3%81%97%e3%81%9f%e3%83%89%e3%83%a1%e3%82%a4%e3%83%b3%e3%82%92%e5%89%b2%e3%82%8a%e5%bd%93%e3%81%a6%e3%82%8b>#</a></h3><ol><li><code>Route 53</code>で<code>Create Hosted Zone</code>ボタンを押す.</li></ol><ul><li><code>Domain Name</code>に, <code>example.jp</code>など独自ドメインを入れて, <code>Create</code>を押す.</li><li>NS（ネームサーバー）のアドレス4つをコピペしておく.</li><li><code>Create Record Set</code>ボタンを押す.<ul><li>Type: A - IPv4 address もしくは iPV6 address</li><li>Alias: Yes</li><li>Alias Hostedを選択するとプルダウン表示されるので, そこからElastic Beanstalkのデフォルトのホスト名を選択</li></ul></li><li>お名前.comのドメイン設定のネームサーバー変更を選択する.</li><li><code>Elastic Beanstalk</code>に割り当てたいドメインにチェックを入れる.</li><li><code>他のネームサーバーの利用</code>を選択して, <code>Route 53</code>で控えたネームサーバーのアドレス4つを入れて確認画面へ進むを押して保存する.</li><li>数時間後には独自ドメインでアクセスできる.</li></ul><p><strong>Reference:</strong>
-<a href=https://qiita.com/roba4coding/items/9eaa542caa29d588e4d1>Elastic Beanstalkのサーバーにお名前.comで取得した独自ドメインを割り当てる</a></p><h3 id=https化する>https化する
-<a class=anchor href=#https%e5%8c%96%e3%81%99%e3%82%8b>#</a></h3><ol><li>ドメインを取得する.</li></ol><ul><li>上記の方法でElastic Beanstalkにカスタムドメインを割り当てる.</li><li>Elastic Beanstalkにロードバランサーを割り当てる.</li><li>Elastic Beanstalk > インスタンス > 設定 > 容量 > 環境タイプをロードバランサーへ > 1つ戻ってロードバランサー</li><li>ロードバランサーに証明書を割り当てる.</li></ul><h2 id=iam>IAM
-<a class=anchor href=#iam>#</a></h2><ul><li>ユーザーに対してAWSへのアクセスを安全に制御するための仕組みのこと.</li><li>AWS Identity and Access Managementの略.</li></ul><h2 id=ecs>ECS
-<a class=anchor href=#ecs>#</a></h2><ul><li>Dockerアプリケーションをスケーラブルなクラスターで実行するために使用するサービスのこと.
-Amazon Elastic Container Serviceの略.</li></ul><h2 id=rds>RDS
-<a class=anchor href=#rds>#</a></h2><ul><li>クラウド上でリレーショナルデータベースをセットアップ, 運用, スケーリングできるサービスのこと.</li><li>RDBで作ったコンテナの代わりに使える.</li><li>Amazon Relational Database Serviceの略.</li></ul><h2 id=memcached>Memcached
-<a class=anchor href=#memcached>#</a></h2><ul><li>高パフォーマンスキャッシュやセッションストアとして使用できる, 分散型インメモリkey-valueストアのこと.</li><li>Redisで作ったコンテナの代わりに使える.</li></ul><h2 id=vpc>VPC
-<a class=anchor href=#vpc>#</a></h2><ul><li>AWSアカウント専用の仮想ネットワークのこと.</li><li>定義した仮想ネットワーク内でAWSリソースを起動することができる.</li><li>Amazon Virtual Private Cloudの略.</li></ul><h2 id=vpcセキュリティグループ>VPCセキュリティグループ
-<a class=anchor href=#vpc%e3%82%bb%e3%82%ad%e3%83%a5%e3%83%aa%e3%83%86%e3%82%a3%e3%82%b0%e3%83%ab%e3%83%bc%e3%83%97>#</a></h2><ul><li>同一グループ外のインスタンスと通信を行う際のトラフィックを制御する仮想ファイアウォールのこと.</li></ul><h2 id=amplify-console>Amplify Console
-<a class=anchor href=#amplify-console>#</a></h2><ul><li>フルスタックのサーバーレスウェブアプリケーションのデプロイおよびホストするための, Gitベースのワークフローを提供する.</li><li>フルスタックのサーバーレスアプリケーションは, GraphQLやREST APIなどのクラウドリソース, ファイルおよびデータストレージで構成されたバックエンドと, React, Angular, Vue, Gatsbyなどの単一ページのアプリケーションフレームワークで構築されたフロントエンドから構成される.</li></ul><h2 id=certificate-manager>Certificate Manager
-<a class=anchor href=#certificate-manager>#</a></h2><ul><li>AWSでのウェブアプリのhttps化の設定の時に使用する.</li></ul><h2 id=ざっくり料金計算>ざっくり料金計算
-<a class=anchor href=#%e3%81%96%e3%81%a3%e3%81%8f%e3%82%8a%e6%96%99%e9%87%91%e8%a8%88%e7%ae%97>#</a></h2><ul><li><a href=https://aws.noplan.cc>ざっくりAWS</a><ul><li><strong>GitHubリポジトリ:</strong>
-<a href=https://github.com/noplan1989/aws-rough>noplan1989/aws-rough</a></li></ul></li></ul></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div><a class="flex align-center" href=https://github.com/solareenlo/blog-hugo/commit/bea798d93c9116bad5b5ceb26ca3159b372095e9 title="最終更新者 solareenlo | Mar 20, 2020" target=_blank rel=noopener><img src=/svg/calendar.svg class=book-icon alt=Calendar>
-<span>Mar 20, 2020</span></a></div><div><a class="flex align-center" href=https://github.com/solareenlo/blog-hugo/edit/master/content/content/docs/cloud/aws.md target=_blank rel=noopener><img src=/svg/edit.svg class=book-icon alt=Edit>
-<span>このページを編集する</span></a></div></div></footer><div class=book-comments></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><nav id=TableOfContents><ul><li><a href=#アマゾンウェブサービスawsとは>アマゾンウェブサービス（AWS）とは</a><ul><li><a href=#s3>S3</a></li><li><a href=#elastic-beanstalk>Elastic Beanstalk</a><ul><li><a href=#ssh接続>SSH接続</a></li><li><a href=#amazon-linuxのバージョン確認>Amazon Linuxのバージョン確認</a></li><li><a href=#お名前comで取得したドメインを割り当てる>お名前.comで取得したドメインを割り当てる</a></li><li><a href=#https化する>https化する</a></li></ul></li><li><a href=#iam>IAM</a></li><li><a href=#ecs>ECS</a></li><li><a href=#rds>RDS</a></li><li><a href=#memcached>Memcached</a></li><li><a href=#vpc>VPC</a></li><li><a href=#vpcセキュリティグループ>VPCセキュリティグループ</a></li><li><a href=#amplify-console>Amplify Console</a></li><li><a href=#certificate-manager>Certificate Manager</a></li><li><a href=#ざっくり料金計算>ざっくり料金計算</a></li></ul></li></ul></nav></aside></main></body></html>
+</code></pre></div></li>
+<li>
+<p>後は普通のVPSと同じ.</p>
+</li>
+</ul>
+<h3 id=amazon-linuxのバージョン確認>
+Amazon Linuxのバージョン確認
+<a class=anchor href=#amazon-linux%e3%81%ae%e3%83%90%e3%83%bc%e3%82%b8%e3%83%a7%e3%83%b3%e7%a2%ba%e8%aa%8d>#</a>
+</h3>
+<div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>cat /etc/system-release
+</code></pre></div><h3 id=お名前comで取得したドメインを割り当てる>
+お名前.comで取得したドメインを割り当てる
+<a class=anchor href=#%e3%81%8a%e5%90%8d%e5%89%8dcom%e3%81%a7%e5%8f%96%e5%be%97%e3%81%97%e3%81%9f%e3%83%89%e3%83%a1%e3%82%a4%e3%83%b3%e3%82%92%e5%89%b2%e3%82%8a%e5%bd%93%e3%81%a6%e3%82%8b>#</a>
+</h3>
+<ol>
+<li><code>Route 53</code>で<code>Create Hosted Zone</code>ボタンを押す.</li>
+</ol>
+<ul>
+<li><code>Domain Name</code>に, <code>example.jp</code>など独自ドメインを入れて, <code>Create</code>を押す.</li>
+<li>NS（ネームサーバー）のアドレス4つをコピペしておく.</li>
+<li><code>Create Record Set</code>ボタンを押す.
+<ul>
+<li>Type: A - IPv4 address もしくは iPV6 address</li>
+<li>Alias: Yes</li>
+<li>Alias Hostedを選択するとプルダウン表示されるので, そこからElastic Beanstalkのデフォルトのホスト名を選択</li>
+</ul>
+</li>
+<li>お名前.comのドメイン設定のネームサーバー変更を選択する.</li>
+<li><code>Elastic Beanstalk</code>に割り当てたいドメインにチェックを入れる.</li>
+<li><code>他のネームサーバーの利用</code>を選択して, <code>Route 53</code>で控えたネームサーバーのアドレス4つを入れて確認画面へ進むを押して保存する.</li>
+<li>数時間後には独自ドメインでアクセスできる.</li>
+</ul>
+<p><strong>Reference:</strong>
+<a href=https://qiita.com/roba4coding/items/9eaa542caa29d588e4d1>Elastic Beanstalkのサーバーにお名前.comで取得した独自ドメインを割り当てる</a></p>
+<h3 id=https化する>
+https化する
+<a class=anchor href=#https%e5%8c%96%e3%81%99%e3%82%8b>#</a>
+</h3>
+<ol>
+<li>ドメインを取得する.</li>
+</ol>
+<ul>
+<li>上記の方法でElastic Beanstalkにカスタムドメインを割り当てる.</li>
+<li>Elastic Beanstalkにロードバランサーを割り当てる.</li>
+<li>Elastic Beanstalk > インスタンス > 設定 > 容量 > 環境タイプをロードバランサーへ > 1つ戻ってロードバランサー</li>
+<li>ロードバランサーに証明書を割り当てる.</li>
+</ul>
+<h2 id=iam>
+IAM
+<a class=anchor href=#iam>#</a>
+</h2>
+<ul>
+<li>ユーザーに対してAWSへのアクセスを安全に制御するための仕組みのこと.</li>
+<li>AWS Identity and Access Managementの略.</li>
+</ul>
+<h2 id=ecs>
+ECS
+<a class=anchor href=#ecs>#</a>
+</h2>
+<ul>
+<li>Dockerアプリケーションをスケーラブルなクラスターで実行するために使用するサービスのこと.
+Amazon Elastic Container Serviceの略.</li>
+</ul>
+<h2 id=rds>
+RDS
+<a class=anchor href=#rds>#</a>
+</h2>
+<ul>
+<li>クラウド上でリレーショナルデータベースをセットアップ, 運用, スケーリングできるサービスのこと.</li>
+<li>RDBで作ったコンテナの代わりに使える.</li>
+<li>Amazon Relational Database Serviceの略.</li>
+</ul>
+<h2 id=memcached>
+Memcached
+<a class=anchor href=#memcached>#</a>
+</h2>
+<ul>
+<li>高パフォーマンスキャッシュやセッションストアとして使用できる, 分散型インメモリkey-valueストアのこと.</li>
+<li>Redisで作ったコンテナの代わりに使える.</li>
+</ul>
+<h2 id=vpc>
+VPC
+<a class=anchor href=#vpc>#</a>
+</h2>
+<ul>
+<li>AWSアカウント専用の仮想ネットワークのこと.</li>
+<li>定義した仮想ネットワーク内でAWSリソースを起動することができる.</li>
+<li>Amazon Virtual Private Cloudの略.</li>
+</ul>
+<h2 id=vpcセキュリティグループ>
+VPCセキュリティグループ
+<a class=anchor href=#vpc%e3%82%bb%e3%82%ad%e3%83%a5%e3%83%aa%e3%83%86%e3%82%a3%e3%82%b0%e3%83%ab%e3%83%bc%e3%83%97>#</a>
+</h2>
+<ul>
+<li>同一グループ外のインスタンスと通信を行う際のトラフィックを制御する仮想ファイアウォールのこと.</li>
+</ul>
+<h2 id=amplify-console>
+Amplify Console
+<a class=anchor href=#amplify-console>#</a>
+</h2>
+<ul>
+<li>フルスタックのサーバーレスウェブアプリケーションのデプロイおよびホストするための, Gitベースのワークフローを提供する.</li>
+<li>フルスタックのサーバーレスアプリケーションは, GraphQLやREST APIなどのクラウドリソース, ファイルおよびデータストレージで構成されたバックエンドと, React, Angular, Vue, Gatsbyなどの単一ページのアプリケーションフレームワークで構築されたフロントエンドから構成される.</li>
+</ul>
+<h2 id=certificate-manager>
+Certificate Manager
+<a class=anchor href=#certificate-manager>#</a>
+</h2>
+<ul>
+<li>AWSでのウェブアプリのhttps化の設定の時に使用する.</li>
+</ul>
+<h2 id=ざっくり料金計算>
+ざっくり料金計算
+<a class=anchor href=#%e3%81%96%e3%81%a3%e3%81%8f%e3%82%8a%e6%96%99%e9%87%91%e8%a8%88%e7%ae%97>#</a>
+</h2>
+<ul>
+<li>
+<a href=https://aws.noplan.cc>ざっくりAWS</a>
+<ul>
+<li><strong>GitHubリポジトリ:</strong>
+<a href=https://github.com/noplan1989/aws-rough>noplan1989/aws-rough</a></li>
+</ul>
+</li>
+</ul>
+</article>
+<footer class=book-footer>
+<div class="flex flex-wrap justify-between">
+<div><a class="flex align-center" href=https://github.com/solareenlo/blog-hugo/commit/bea798d93c9116bad5b5ceb26ca3159b372095e9 title="最終更新者 solareenlo | Mar 20, 2020" target=_blank rel=noopener>
+<img src=/svg/calendar.svg class=book-icon alt=Calendar>
+<span>Mar 20, 2020</span>
+</a>
+</div>
+<div>
+<a class="flex align-center" href=https://github.com/solareenlo/blog-hugo/edit/master/content/content/docs/cloud/aws.md target=_blank rel=noopener>
+<img src=/svg/edit.svg class=book-icon alt=Edit>
+<span>このページを編集する</span>
+</a>
+</div>
+</div>
+<script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script>
+</footer>
+<div class=book-comments>
+</div>
+<label for=menu-control class="hidden book-menu-overlay"></label>
+</div>
+<aside class=book-toc>
+<div class=book-toc-content>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#アマゾンウェブサービスawsとは>アマゾンウェブサービス（AWS）とは</a>
+<ul>
+<li><a href=#s3>S3</a></li>
+<li><a href=#elastic-beanstalk>Elastic Beanstalk</a>
+<ul>
+<li><a href=#ssh接続>SSH接続</a></li>
+<li><a href=#amazon-linuxのバージョン確認>Amazon Linuxのバージョン確認</a></li>
+<li><a href=#お名前comで取得したドメインを割り当てる>お名前.comで取得したドメインを割り当てる</a></li>
+<li><a href=#https化する>https化する</a></li>
+</ul>
+</li>
+<li><a href=#iam>IAM</a></li>
+<li><a href=#ecs>ECS</a></li>
+<li><a href=#rds>RDS</a></li>
+<li><a href=#memcached>Memcached</a></li>
+<li><a href=#vpc>VPC</a></li>
+<li><a href=#vpcセキュリティグループ>VPCセキュリティグループ</a></li>
+<li><a href=#amplify-console>Amplify Console</a></li>
+<li><a href=#certificate-manager>Certificate Manager</a></li>
+<li><a href=#ざっくり料金計算>ざっくり料金計算</a></li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+</aside>
+</main>
+</body>
+</html>

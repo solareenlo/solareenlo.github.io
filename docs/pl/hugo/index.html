@@ -1,62 +1,452 @@
-<!doctype html><html lang=ja><head><meta name=generator content="Hugo 0.80.0"><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Hugo とは #   静的な html を生成する事ができる静的サイトジェネレータの1つ． Go 言語で書かれてる． 記事を書くだけなら Go 言語を知らなくても良い． 記事は Markdown で書ける． GitHub リポジトリ: https://github.com/gohugoio/hugo  .md を削除した時に .html も同様に削除するオプション #  hugo server -D --cleanDestinationDir Mac で Hugo と GitHub Pages を使ってのサイトの作り方 #   こちら
-Hugo のコードの色選択 #   https://help.farbox.com/pygments.html  Chroma Style Gallery  全文検索 #   Search for your Hugo Website
-見た目変更 #  このサイトだと /サイトのディレクトリ/themes/book-fork/assets/ の中の .scss ファイルを操作する．
-イラストの追加 #    このサイトだと /ブログのディレクトリ/layouts/shortcodes/fontawesome."><meta name=theme-color content="#FFFFFF"><meta property="og:title" content><meta property="og:description" content="Hugo とは #   静的な html を生成する事ができる静的サイトジェネレータの1つ． Go 言語で書かれてる． 記事を書くだけなら Go 言語を知らなくても良い． 記事は Markdown で書ける． GitHub リポジトリ: https://github.com/gohugoio/hugo  .md を削除した時に .html も同様に削除するオプション #  hugo server -D --cleanDestinationDir Mac で Hugo と GitHub Pages を使ってのサイトの作り方 #   こちら
-Hugo のコードの色選択 #   https://help.farbox.com/pygments.html  Chroma Style Gallery  全文検索 #   Search for your Hugo Website
-見た目変更 #  このサイトだと /サイトのディレクトリ/themes/book-fork/assets/ の中の .scss ファイルを操作する．
-イラストの追加 #    このサイトだと /ブログのディレクトリ/layouts/shortcodes/fontawesome."><meta property="og:type" content="article"><meta property="og:url" content="https://solareenlo.com/docs/pl/hugo/"><meta property="article:modified_time" content="2020-03-29T06:19:53+09:00"><title>Hugo | solareenlo</title><link rel=manifest href=/manifest.json><link rel=icon href=/favicon.png type=image/x-icon><link rel=stylesheet href=/book.min.81c91df4d7ac1d9248c87650e9463592105b1f2bc5640263e0270a6070528cbc.css integrity="sha256-gckd9NesHZJIyHZQ6UY1khBbHyvFZAJj4CcKYHBSjLw="><script defer src=/ja.search.min.0bbc896c010732bd9bcadb3e627c9b8d5fe8508ba863ce303261751808fa854a.js integrity="sha256-C7yJbAEHMr2byts+YnybjV/oUIuoY84wMmF1GAj6hUo="></script></head><body><input type=checkbox class="hidden toggle" id=menu-control>
-<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><nav><h2 class=book-brand><a href=/><span>solareenlo</span></a></h2><div class=book-search><input type=text id=book-search-input placeholder=検索 aria-label=検索 maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><ul><li><a href=/posts/>Blog</a></li></ul><ul><li><input type=checkbox id=section-57e58ca5aae968f4961a4036f314a5de class=toggle>
-<label for=section-57e58ca5aae968f4961a4036f314a5de class="flex justify-between"><a href=https://solareenlo.com/docs/programming/>Programming</a>
-<span>▾</span></label><ul><li><a href=https://solareenlo.com/docs/programming/command/>Command</a></li><li><a href=https://solareenlo.com/docs/programming/fonts/>Fonts</a></li><li><a href=https://solareenlo.com/docs/programming/git/>Git</a></li><li><a href=https://solareenlo.com/docs/programming/github/>Github</a></li><li><a href=https://solareenlo.com/docs/programming/linter-formatter/>Linter Formatter</a></li><li><a href=https://solareenlo.com/docs/programming/password-manager/>Password Manager</a></li><li><a href=https://solareenlo.com/docs/programming/sed/>Sed</a></li><li><a href=https://solareenlo.com/docs/programming/shell-script/>Shell Script</a></li><li><a href=https://solareenlo.com/docs/programming/terminal/>Terminal</a></li><li><a href=https://solareenlo.com/docs/programming/test/>Test</a></li><li><a href=https://solareenlo.com/docs/programming/tmux/>Tmux</a></li><li><a href=https://solareenlo.com/docs/programming/vim/>Vim</a></li><li><a href=https://solareenlo.com/docs/programming/vimium/>Vimium</a></li><li><a href=https://solareenlo.com/docs/programming/wiki/>Wiki</a></li><li><a href=https://solareenlo.com/docs/programming/hhkb/>HHKB</a></li></ul></li><li><input type=checkbox id=section-771d1b18af68e81cd9d3d14cd5f6339b class=toggle checked>
-<label for=section-771d1b18af68e81cd9d3d14cd5f6339b class="flex justify-between"><a href=https://solareenlo.com/docs/pl/>Programming Language</a>
-<span>▾</span></label><ul><li><a href=https://solareenlo.com/docs/pl/angular/>Angular</a></li><li><a href=https://solareenlo.com/docs/pl/c/>C</a></li><li><a href=https://solareenlo.com/docs/pl/css/>Css</a></li><li><a href=https://solareenlo.com/docs/pl/go/>Go</a></li><li><a href=https://solareenlo.com/docs/pl/haskell/>Haskell</a></li><li><a href=https://solareenlo.com/docs/pl/hugo/ class=active>Hugo</a></li><li><a href=https://solareenlo.com/docs/pl/javascript/>Javascript</a></li><li><a href=https://solareenlo.com/docs/pl/nodejs/>Nodejs</a></li><li><a href=https://solareenlo.com/docs/pl/pl-docs/>Pl Docs</a></li><li><a href=https://solareenlo.com/docs/pl/react-static/>React Static</a></li><li><a href=https://solareenlo.com/docs/pl/react/>React</a></li><li><a href=https://solareenlo.com/docs/pl/rust/>Rust</a></li><li><a href=https://solareenlo.com/docs/pl/scala/>Scala</a></li><li><a href=https://solareenlo.com/docs/pl/typescript/>Typescript</a></li><li><a href=https://solareenlo.com/docs/pl/npm/>npm</a></li></ul></li><li><input type=checkbox id=section-a7bf5468f483fd7222967f135a5003c0 class=toggle>
-<label for=section-a7bf5468f483fd7222967f135a5003c0 class="flex justify-between"><a href=https://solareenlo.com/docs/latex/>LaTeX</a>
-<span>▾</span></label><ul><li><a href=https://solareenlo.com/docs/latex/platex-book/>Platex Book</a></li><li><a href=https://solareenlo.com/docs/latex/zathura-install/>Zathura Install</a></li></ul></li><li><input type=checkbox id=section-e14f9767e53904cbbdcb3f0bdbe82f2a class=toggle>
-<label for=section-e14f9767e53904cbbdcb3f0bdbe82f2a class="flex justify-between"><a href=https://solareenlo.com/docs/vps/>VPS</a>
-<span>▾</span></label><ul><li><a href=https://solareenlo.com/docs/vps/alpine-linux/>Alpine Linux</a></li><li><a href=https://solareenlo.com/docs/vps/ubuntu/>Ubuntu</a></li><li><a href=https://solareenlo.com/docs/vps/ssh/>SSH</a></li></ul></li><li><input type=checkbox id=section-99a3d9d52cfe7a0dcbd55cd8c23e4462 class=toggle>
-<label for=section-99a3d9d52cfe7a0dcbd55cd8c23e4462 class="flex justify-between"><a href=https://solareenlo.com/docs/db/>DB</a>
-<span>▾</span></label><ul><li><a href=https://solareenlo.com/docs/db/redis/>Redis</a></li><li><a href=https://solareenlo.com/docs/db/mongodb/>MongoDB</a></li><li><a href=https://solareenlo.com/docs/db/mysql/>MySQL</a></li></ul></li><li><input type=checkbox id=section-e5a49337b6189bd60f0b5e1d3a4a8539 class=toggle>
-<label for=section-e5a49337b6189bd60f0b5e1d3a4a8539 class="flex justify-between"><a href=https://solareenlo.com/docs/cloud/>Cloud</a>
-<span>▾</span></label><ul><li><a href=https://solareenlo.com/docs/cloud/aws/>Aws</a></li><li><a href=https://solareenlo.com/docs/cloud/firebase/>Firebase</a></li><li><a href=https://solareenlo.com/docs/cloud/gcp/>Gcp</a></li><li><a href=https://solareenlo.com/docs/cloud/sendgrid/>Sendgrid</a></li><li><a href=https://solareenlo.com/docs/cloud/zeit-now/>Zeit Now</a></li></ul></li><li><input type=checkbox id=section-dfa5c6b6f5f2def7a1fbf289a7570ac2 class=toggle>
-<label for=section-dfa5c6b6f5f2def7a1fbf289a7570ac2 class="flex justify-between"><a href=https://solareenlo.com/docs/ci-cd/>CI/CD</a>
-<span>▾</span></label><ul><li><a href=https://solareenlo.com/docs/ci-cd/circleci/>Circleci</a></li><li><a href=https://solareenlo.com/docs/ci-cd/jenkins/>Jenkins</a></li><li><a href=https://solareenlo.com/docs/ci-cd/travis-ci/>Travis Ci</a></li></ul></li><li><input type=checkbox id=section-10dd021a58cb696b6cb4f79141ec5ddb class=toggle>
-<label for=section-10dd021a58cb696b6cb4f79141ec5ddb class="flex justify-between"><a href=https://solareenlo.com/docs/container/>Conatainer</a>
-<span>▾</span></label><ul><li><a href=https://solareenlo.com/docs/container/docker-compose/>Docker Compose</a></li><li><a href=https://solareenlo.com/docs/container/docker-hub/>Docker Hub</a></li><li><a href=https://solareenlo.com/docs/container/docker1/>Docker1</a></li><li><a href=https://solareenlo.com/docs/container/docker2/>Docker2</a></li><li><a href=https://solareenlo.com/docs/container/kubernetes/>Kubernetes</a></li></ul></li><li><input type=checkbox id=section-342a656e10fe011a820c22dda53f7866 class=toggle>
-<label for=section-342a656e10fe011a820c22dda53f7866 class="flex justify-between"><a href=https://solareenlo.com/docs/crypto/>Crypto</a>
-<span>▾</span></label><ul><li><a href=https://solareenlo.com/docs/crypto/blockchain/>Blockchain</a></li><li><a href=https://solareenlo.com/docs/crypto/crypto-docs/>Crypto Docs</a></li><li><a href=https://solareenlo.com/docs/crypto/ethereum/>Ethereum</a></li><li><a href=https://solareenlo.com/docs/crypto/substrate/>Substrate</a></li><li><a href=https://solareenlo.com/docs/crypto/white-paper/>White Paper</a></li><li><a href=https://solareenlo.com/docs/crypto/bitcoin/>Bitcoin</a></li><li><a href=https://solareenlo.com/docs/crypto/iota/>IOTA</a></li><li><a href=https://solareenlo.com/docs/crypto/nem/>NEM</a></li><li><a href=https://solareenlo.com/docs/crypto/bitcoin-fullnode/>フルノード</a></li></ul></li><li><a href=https://solareenlo.com/docs/tools/>Tools</a><ul></ul></li></ul><ul><li><a href=https://github.com/solareenlo/blog-hugo target=_blank rel=noopener>Github</a></li></ul></nav><script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/svg/menu.svg class=book-icon alt=Menu></label>
+<!doctype html><html lang=ja dir=ltr>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=description content="Hugo とは #   静的な html を生成する事ができる静的サイトジェネレータの1つ． Go 言語で書かれてる． 記事を書くだけなら Go 言語を知らなくても良い． 記事は Markdown で書ける． GitHub リポジトリ: https://github.com/gohugoio/hugo  .md を削除した時に .html も同様に削除するオプション #  hugo server -D --cleanDestinationDir Mac で Hugo と GitHub Pages を使ってのサイトの作り方 #   こちら
+Hugo のコードの色選択 #    https://help.farbox.com/pygments.html  Chroma Style Gallery  全文検索 #   Search for your Hugo Website
+見た目変更 #  このサイトだと /サイトのディレクトリ/themes/book-fork/assets/ の中の .scss ファイルを操作する．">
+<meta name=theme-color content="#FFFFFF"><meta property="og:title" content>
+<meta property="og:description" content="Hugo とは #   静的な html を生成する事ができる静的サイトジェネレータの1つ． Go 言語で書かれてる． 記事を書くだけなら Go 言語を知らなくても良い． 記事は Markdown で書ける． GitHub リポジトリ: https://github.com/gohugoio/hugo  .md を削除した時に .html も同様に削除するオプション #  hugo server -D --cleanDestinationDir Mac で Hugo と GitHub Pages を使ってのサイトの作り方 #   こちら
+Hugo のコードの色選択 #    https://help.farbox.com/pygments.html  Chroma Style Gallery  全文検索 #   Search for your Hugo Website
+見た目変更 #  このサイトだと /サイトのディレクトリ/themes/book-fork/assets/ の中の .scss ファイルを操作する．">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://solareenlo.com/docs/pl/hugo/"><meta property="article:section" content="docs">
+<meta property="article:modified_time" content="2020-03-29T06:19:53+09:00">
+<title>Hugo | solareenlo</title>
+<link rel=manifest href=/manifest.json>
+<link rel=icon href=/favicon.png type=image/x-icon>
+<link rel=stylesheet href=/book.min.3fc729a37471ee87e40517478b6ab5936d22fcb6008d40985724e4295d1a74c0.css integrity="sha256-P8cpo3Rx7ofkBRdHi2q1k20i/LYAjUCYVyTkKV0adMA=" crossorigin=anonymous>
+<script defer src=/flexsearch.min.js></script>
+<script defer src=/ja.search.min.f7cc464663b3b3a097afa2f984b8778e350346674fae4cd69f0f855aaa21c426.js integrity="sha256-98xGRmOzs6CXr6L5hLh3jjUDRmdPrkzWnw+FWqohxCY=" crossorigin=anonymous></script>
+</head>
+<body dir=ltr>
+<input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control>
+<main class="container flex">
+<aside class=book-menu>
+<div class=book-menu-content>
+<nav>
+<h2 class=book-brand>
+<a class="flex align-center" href=/><span>solareenlo</span>
+</a>
+</h2>
+<div class=book-search>
+<input type=text id=book-search-input placeholder=検索 aria-label=検索 maxlength=64 data-hotkeys=s/>
+<div class="book-search-spinner hidden"></div>
+<ul id=book-search-results></ul>
+</div>
+<ul>
+<li>
+<a href=/posts/>
+Blog
+</a>
+</li>
+</ul>
+<ul>
+<li>
+<input type=checkbox id=section-57e58ca5aae968f4961a4036f314a5de class=toggle>
+<label for=section-57e58ca5aae968f4961a4036f314a5de class="flex justify-between">
+<a href=https://solareenlo.com/docs/programming/>Programming</a>
+</label>
+<ul>
+<li>
+<a href=https://solareenlo.com/docs/programming/command/>Command</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/programming/fonts/>Fonts</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/programming/git/>Git</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/programming/github/>Github</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/programming/linter-formatter/>Linter Formatter</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/programming/password-manager/>Password Manager</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/programming/sed/>Sed</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/programming/shell-script/>Shell Script</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/programming/terminal/>Terminal</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/programming/test/>Test</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/programming/tmux/>Tmux</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/programming/vim/>Vim</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/programming/vimium/>Vimium</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/programming/wiki/>Wiki</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/programming/hhkb/>HHKB</a>
+</li>
+</ul>
+</li>
+<li>
+<input type=checkbox id=section-771d1b18af68e81cd9d3d14cd5f6339b class=toggle checked>
+<label for=section-771d1b18af68e81cd9d3d14cd5f6339b class="flex justify-between">
+<a href=https://solareenlo.com/docs/pl/>Programming Language</a>
+</label>
+<ul>
+<li>
+<a href=https://solareenlo.com/docs/pl/angular/>Angular</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/pl/c/>C</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/pl/css/>Css</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/pl/go/>Go</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/pl/haskell/>Haskell</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/pl/hugo/ class=active>Hugo</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/pl/javascript/>Javascript</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/pl/nodejs/>Nodejs</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/pl/pl-docs/>Pl Docs</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/pl/react-static/>React Static</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/pl/react/>React</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/pl/rust/>Rust</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/pl/scala/>Scala</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/pl/typescript/>Typescript</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/pl/npm/>npm</a>
+</li>
+</ul>
+</li>
+<li>
+<input type=checkbox id=section-a7bf5468f483fd7222967f135a5003c0 class=toggle>
+<label for=section-a7bf5468f483fd7222967f135a5003c0 class="flex justify-between">
+<a href=https://solareenlo.com/docs/latex/>LaTeX</a>
+</label>
+<ul>
+<li>
+<a href=https://solareenlo.com/docs/latex/platex-book/>Platex Book</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/latex/zathura-install/>Zathura Install</a>
+</li>
+</ul>
+</li>
+<li>
+<input type=checkbox id=section-e14f9767e53904cbbdcb3f0bdbe82f2a class=toggle>
+<label for=section-e14f9767e53904cbbdcb3f0bdbe82f2a class="flex justify-between">
+<a href=https://solareenlo.com/docs/vps/>VPS</a>
+</label>
+<ul>
+<li>
+<a href=https://solareenlo.com/docs/vps/alpine-linux/>Alpine Linux</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/vps/ubuntu/>Ubuntu</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/vps/ssh/>SSH</a>
+</li>
+</ul>
+</li>
+<li>
+<input type=checkbox id=section-99a3d9d52cfe7a0dcbd55cd8c23e4462 class=toggle>
+<label for=section-99a3d9d52cfe7a0dcbd55cd8c23e4462 class="flex justify-between">
+<a href=https://solareenlo.com/docs/db/>DB</a>
+</label>
+<ul>
+<li>
+<a href=https://solareenlo.com/docs/db/redis/>Redis</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/db/mongodb/>MongoDB</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/db/mysql/>MySQL</a>
+</li>
+</ul>
+</li>
+<li>
+<input type=checkbox id=section-e5a49337b6189bd60f0b5e1d3a4a8539 class=toggle>
+<label for=section-e5a49337b6189bd60f0b5e1d3a4a8539 class="flex justify-between">
+<a href=https://solareenlo.com/docs/cloud/>Cloud</a>
+</label>
+<ul>
+<li>
+<a href=https://solareenlo.com/docs/cloud/aws/>Aws</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/cloud/firebase/>Firebase</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/cloud/gcp/>Gcp</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/cloud/sendgrid/>Sendgrid</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/cloud/zeit-now/>Zeit Now</a>
+</li>
+</ul>
+</li>
+<li>
+<input type=checkbox id=section-dfa5c6b6f5f2def7a1fbf289a7570ac2 class=toggle>
+<label for=section-dfa5c6b6f5f2def7a1fbf289a7570ac2 class="flex justify-between">
+<a href=https://solareenlo.com/docs/ci-cd/>CI/CD</a>
+</label>
+<ul>
+<li>
+<a href=https://solareenlo.com/docs/ci-cd/circleci/>Circleci</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/ci-cd/jenkins/>Jenkins</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/ci-cd/travis-ci/>Travis Ci</a>
+</li>
+</ul>
+</li>
+<li>
+<input type=checkbox id=section-10dd021a58cb696b6cb4f79141ec5ddb class=toggle>
+<label for=section-10dd021a58cb696b6cb4f79141ec5ddb class="flex justify-between">
+<a href=https://solareenlo.com/docs/container/>Conatainer</a>
+</label>
+<ul>
+<li>
+<a href=https://solareenlo.com/docs/container/docker-compose/>Docker Compose</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/container/docker-hub/>Docker Hub</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/container/docker1/>Docker1</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/container/docker2/>Docker2</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/container/kubernetes/>Kubernetes</a>
+</li>
+</ul>
+</li>
+<li>
+<input type=checkbox id=section-342a656e10fe011a820c22dda53f7866 class=toggle>
+<label for=section-342a656e10fe011a820c22dda53f7866 class="flex justify-between">
+<a href=https://solareenlo.com/docs/crypto/>Crypto</a>
+</label>
+<ul>
+<li>
+<a href=https://solareenlo.com/docs/crypto/blockchain/>Blockchain</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/crypto/crypto-docs/>Crypto Docs</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/crypto/ethereum/>Ethereum</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/crypto/substrate/>Substrate</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/crypto/white-paper/>White Paper</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/crypto/bitcoin/>Bitcoin</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/crypto/iota/>IOTA</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/crypto/nem/>NEM</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/crypto/bitcoin-fullnode/>フルノード</a>
+</li>
+</ul>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/tools/>Tools</a>
+<ul>
+</ul>
+</li>
+</ul>
+<ul>
+<li>
+<a href=https://github.com/solareenlo/blog-hugo target=_blank rel=noopener>
+Github
+</a>
+</li>
+</ul>
+</nav>
+<script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+</div>
+</aside>
+<div class=book-page>
+<header class=book-header>
+<div class="flex align-center justify-between">
+<label for=menu-control>
+<img src=/svg/menu.svg class=book-icon alt=Menu>
+</label>
 <strong>Hugo</strong>
-<label for=toc-control><img src=/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents><ul><li><a href=#hugo-とは>Hugo とは</a><ul><li><a href=#md-を削除した時に-html-も同様に削除するオプション>.md を削除した時に .html も同様に削除するオプション</a></li><li><a href=#mac-で-hugo-と-github-pages-を使ってのサイトの作り方>Mac で Hugo と GitHub Pages を使ってのサイトの作り方</a></li><li><a href=#hugo-のコードの色選択>Hugo のコードの色選択</a></li><li><a href=#全文検索>全文検索</a></li><li><a href=#見た目変更>見た目変更</a></li><li><a href=#イラストの追加>イラストの追加</a></li><li><a href=#github-actions-による-github-pages-への自動デプロイ>GitHub Actions による GitHub Pages への自動デプロイ</a><ul><li><a href=#1-yaml-を作成する>1. YAML を作成する</a></li><li><a href=#2-デプロイトークンを設定する>2. デプロイトークンを設定する</a></li><li><a href=#3-reference>3. Reference</a></li></ul></li></ul></li></ul></nav></aside></header><article class=markdown><h1 id=hugo-とは>Hugo とは
-<a class=anchor href=#hugo-%e3%81%a8%e3%81%af>#</a></h1><ul><li>静的な html を生成する事ができる静的サイトジェネレータの1つ．</li><li>Go 言語で書かれてる．</li><li>記事を書くだけなら Go 言語を知らなくても良い．</li><li>記事は Markdown で書ける．</li><li><strong>GitHub リポジトリ:</strong> <a href=https://github.com/gohugoio/hugo>https://github.com/gohugoio/hugo</a></li></ul><h2 id=md-を削除した時に-html-も同様に削除するオプション>.md を削除した時に .html も同様に削除するオプション
-<a class=anchor href=#md-%e3%82%92%e5%89%8a%e9%99%a4%e3%81%97%e3%81%9f%e6%99%82%e3%81%ab-html-%e3%82%82%e5%90%8c%e6%a7%98%e3%81%ab%e5%89%8a%e9%99%a4%e3%81%99%e3%82%8b%e3%82%aa%e3%83%97%e3%82%b7%e3%83%a7%e3%83%b3>#</a></h2><div class=highlight><pre style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>hugo server -D --cleanDestinationDir
-</code></pre></div><h2 id=mac-で-hugo-と-github-pages-を使ってのサイトの作り方>Mac で Hugo と GitHub Pages を使ってのサイトの作り方
-<a class=anchor href=#mac-%e3%81%a7-hugo-%e3%81%a8-github-pages-%e3%82%92%e4%bd%bf%e3%81%a3%e3%81%a6%e3%81%ae%e3%82%b5%e3%82%a4%e3%83%88%e3%81%ae%e4%bd%9c%e3%82%8a%e6%96%b9>#</a></h2><p><a href=/posts/how-to-make-this-site/>こちら</a></p><h2 id=hugo-のコードの色選択>Hugo のコードの色選択
-<a class=anchor href=#hugo-%e3%81%ae%e3%82%b3%e3%83%bc%e3%83%89%e3%81%ae%e8%89%b2%e9%81%b8%e6%8a%9e>#</a></h2><ul><li><a href=https://help.farbox.com/pygments.html>https://help.farbox.com/pygments.html</a></li><li><a href=https://xyproto.github.io/splash/docs/longer/index.html>Chroma Style Gallery</a></li></ul><h2 id=全文検索>全文検索
-<a class=anchor href=#%e5%85%a8%e6%96%87%e6%a4%9c%e7%b4%a2>#</a></h2><p><a href=https://gohugo.io/tools/search/>Search for your Hugo Website</a></p><h2 id=見た目変更>見た目変更
-<a class=anchor href=#%e8%a6%8b%e3%81%9f%e7%9b%ae%e5%a4%89%e6%9b%b4>#</a></h2><p>このサイトだと <code>/サイトのディレクトリ/themes/book-fork/assets/</code> の中の .scss ファイルを操作する．</p><h2 id=イラストの追加>イラストの追加
-<a class=anchor href=#%e3%82%a4%e3%83%a9%e3%82%b9%e3%83%88%e3%81%ae%e8%bf%bd%e5%8a%a0>#</a></h2><ol><li><p>このサイトだと <code>/ブログのディレクトリ/layouts/shortcodes/fontawesome.html</code> に</p><div class=highlight><pre style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>&lt;<span style=color:#268bd2>span</span> class<span style=color:#719e07>=</span><span style=color:#2aa198>&#34;inline-svg&#34;</span> &gt;
+<label for=toc-control>
+<img src=/svg/toc.svg class=book-icon alt="Table of Contents">
+</label>
+</div>
+<aside class="hidden clearfix">
+<nav id=TableOfContents>
+<ul>
+<li><a href=#hugo-とは>Hugo とは</a>
+<ul>
+<li><a href=#md-を削除した時に-html-も同様に削除するオプション>.md を削除した時に .html も同様に削除するオプション</a></li>
+<li><a href=#mac-で-hugo-と-github-pages-を使ってのサイトの作り方>Mac で Hugo と GitHub Pages を使ってのサイトの作り方</a></li>
+<li><a href=#hugo-のコードの色選択>Hugo のコードの色選択</a></li>
+<li><a href=#全文検索>全文検索</a></li>
+<li><a href=#見た目変更>見た目変更</a></li>
+<li><a href=#イラストの追加>イラストの追加</a></li>
+<li><a href=#github-actions-による-github-pages-への自動デプロイ>GitHub Actions による GitHub Pages への自動デプロイ</a>
+<ul>
+<li><a href=#1-yaml-を作成する>1. YAML を作成する</a></li>
+<li><a href=#2-デプロイトークンを設定する>2. デプロイトークンを設定する</a></li>
+<li><a href=#3-reference>3. Reference</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</aside>
+</header>
+<article class=markdown><h1 id=hugo-とは>
+Hugo とは
+<a class=anchor href=#hugo-%e3%81%a8%e3%81%af>#</a>
+</h1>
+<ul>
+<li>静的な html を生成する事ができる静的サイトジェネレータの1つ．</li>
+<li>Go 言語で書かれてる．</li>
+<li>記事を書くだけなら Go 言語を知らなくても良い．</li>
+<li>記事は Markdown で書ける．</li>
+<li><strong>GitHub リポジトリ:</strong>
+<a href=https://github.com/gohugoio/hugo>https://github.com/gohugoio/hugo</a></li>
+</ul>
+<h2 id=md-を削除した時に-html-も同様に削除するオプション>
+.md を削除した時に .html も同様に削除するオプション
+<a class=anchor href=#md-%e3%82%92%e5%89%8a%e9%99%a4%e3%81%97%e3%81%9f%e6%99%82%e3%81%ab-html-%e3%82%82%e5%90%8c%e6%a7%98%e3%81%ab%e5%89%8a%e9%99%a4%e3%81%99%e3%82%8b%e3%82%aa%e3%83%97%e3%82%b7%e3%83%a7%e3%83%b3>#</a>
+</h2>
+<div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>hugo server -D --cleanDestinationDir
+</code></pre></div><h2 id=mac-で-hugo-と-github-pages-を使ってのサイトの作り方>
+Mac で Hugo と GitHub Pages を使ってのサイトの作り方
+<a class=anchor href=#mac-%e3%81%a7-hugo-%e3%81%a8-github-pages-%e3%82%92%e4%bd%bf%e3%81%a3%e3%81%a6%e3%81%ae%e3%82%b5%e3%82%a4%e3%83%88%e3%81%ae%e4%bd%9c%e3%82%8a%e6%96%b9>#</a>
+</h2>
+<p>
+<a href=/posts/how-to-make-this-site/>こちら</a></p>
+<h2 id=hugo-のコードの色選択>
+Hugo のコードの色選択
+<a class=anchor href=#hugo-%e3%81%ae%e3%82%b3%e3%83%bc%e3%83%89%e3%81%ae%e8%89%b2%e9%81%b8%e6%8a%9e>#</a>
+</h2>
+<ul>
+<li>
+<a href=https://help.farbox.com/pygments.html>https://help.farbox.com/pygments.html</a></li>
+<li>
+<a href=https://xyproto.github.io/splash/docs/longer/index.html>Chroma Style Gallery</a></li>
+</ul>
+<h2 id=全文検索>
+全文検索
+<a class=anchor href=#%e5%85%a8%e6%96%87%e6%a4%9c%e7%b4%a2>#</a>
+</h2>
+<p>
+<a href=https://gohugo.io/tools/search/>Search for your Hugo Website</a></p>
+<h2 id=見た目変更>
+見た目変更
+<a class=anchor href=#%e8%a6%8b%e3%81%9f%e7%9b%ae%e5%a4%89%e6%9b%b4>#</a>
+</h2>
+<p>このサイトだと <code>/サイトのディレクトリ/themes/book-fork/assets/</code> の中の .scss ファイルを操作する．</p>
+<h2 id=イラストの追加>
+イラストの追加
+<a class=anchor href=#%e3%82%a4%e3%83%a9%e3%82%b9%e3%83%88%e3%81%ae%e8%bf%bd%e5%8a%a0>#</a>
+</h2>
+<ol>
+<li>
+<p>このサイトだと <code>/ブログのディレクトリ/layouts/shortcodes/fontawesome.html</code> に</p>
+<div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>&lt;<span style=color:#268bd2>span</span> class<span style=color:#719e07>=</span><span style=color:#2aa198>&#34;inline-svg&#34;</span> &gt;
 {{- $fname:=print &#34;fontawesome/&#34; ( .Get 0 ) &#34;.svg&#34; -}}
 {{- $path:=&#34;&lt;<span style=color:#268bd2>path</span>&#34; -}}
 {{- $fill:<span style=color:#719e07>=</span><span style=color:#2aa198>&#34;&lt;path fill=\&#34;</span>currentColor\&#34;&#34; -}}
 {{ replace (readFile $fname) $path $fill | safeHTML }}
 &lt;/span&gt;
-</code></pre></div><p>を追加する．</p></li><li><p>svg ファイルをどこからかダウンロードしてくる．
+</code></pre></div><p>を追加する．</p>
+</li>
+<li>
+<p>svg ファイルをどこからかダウンロードしてくる．
 オススメは
 <a href=https://fontawesome.com>Fontawesome</a> の
 <a href=https://github.com/FortAwesome/Font-Awesome>GitHub リポジトリ</a>から目当ての
-<a href=https://github.com/FortAwesome/Font-Awesome/blob/master/svgs/brands/github.svg>svg ファイル</a>を見つけて，curl とかで <code>/ブログのディレクトリ/content/fontawesome/</code> にダウンロードしてくる．</p><div class=highlight><pre style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#586e75># GitHub のイラストだとこんな感じ．</span>
+<a href=https://github.com/FortAwesome/Font-Awesome/blob/master/svgs/brands/github.svg>svg ファイル</a>を見つけて，curl とかで <code>/ブログのディレクトリ/content/fontawesome/</code> にダウンロードしてくる．</p>
+<div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#586e75># GitHub のイラストだとこんな感じ．</span>
 curl -O https://raw.githubusercontent.com/FortAwesome/Font-Awesome/master/svgs/brands/github.svg
-</code></pre></div></li><li><p>このサイトだと <code>/ブログのディレクトリ/thems/book-fork/assets/custom.scss</code> に</p><div class=highlight><pre style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-css data-lang=css>.<span style=color:#268bd2>inline-svg</span> {
-  <span style=color:#719e07>display</span>: <span style=color:#cb4b16>inline</span><span style=color:#719e07>-</span><span style=color:#cb4b16>block</span>;
+</code></pre></div></li>
+<li>
+<p>このサイトだと <code>/ブログのディレクトリ/thems/book-fork/assets/custom.scss</code> に</p>
+<div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-css data-lang=css>.<span style=color:#268bd2>inline-svg</span> {
+  <span style=color:#719e07>display</span>: <span style=color:#cb4b16>inline-block</span>;
   <span style=color:#719e07>height</span>: <span style=color:#2aa198>1.15</span><span style=color:#dc322f>rem</span>;
   <span style=color:#719e07>width</span>: <span style=color:#2aa198>1.15</span><span style=color:#dc322f>rem</span>;
   <span style=color:#719e07>top</span>: <span style=color:#2aa198>0.15</span><span style=color:#dc322f>rem</span>;
   <span style=color:#719e07>position</span>: <span style=color:#cb4b16>relative</span>;
 }
-</code></pre></div><p>を追加する．</p></li><li><p>.md ファイルの中で</p><div class=highlight><pre style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-markdown data-lang=markdown>{{\% fontawesome github %}}
-</code></pre></div><p>と使う．</p></li><li><p><strong>Reference:</strong>
-<a href=https://www.client9.com/using-font-awesome-icons-in-hugo/>Using Font Awesome Icons in Hugo</a></p></li></ol><h2 id=github-actions-による-github-pages-への自動デプロイ>GitHub Actions による GitHub Pages への自動デプロイ
-<a class=anchor href=#github-actions-%e3%81%ab%e3%82%88%e3%82%8b-github-pages-%e3%81%b8%e3%81%ae%e8%87%aa%e5%8b%95%e3%83%87%e3%83%97%e3%83%ad%e3%82%a4>#</a></h2><h3 id=1-yaml-を作成する>1. YAML を作成する
-<a class=anchor href=#1-yaml-%e3%82%92%e4%bd%9c%e6%88%90%e3%81%99%e3%82%8b>#</a></h3><ul><li>以下の YAML ファイルを master ブランチの <code>.github/workflows/gh-pages.yml</code> として Push すると自動で gh-pages で公開してくれるようになる．<div class=highlight><pre style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=color:#268bd2>name</span>: github pages
+</code></pre></div><p>を追加する．</p>
+</li>
+<li>
+<p>.md ファイルの中で</p>
+<div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-markdown data-lang=markdown>{{\% fontawesome github %}}
+</code></pre></div><p>と使う．</p>
+</li>
+<li>
+<p><strong>Reference:</strong>
+<a href=https://www.client9.com/using-font-awesome-icons-in-hugo/>Using Font Awesome Icons in Hugo</a></p>
+</li>
+</ol>
+<h2 id=github-actions-による-github-pages-への自動デプロイ>
+GitHub Actions による GitHub Pages への自動デプロイ
+<a class=anchor href=#github-actions-%e3%81%ab%e3%82%88%e3%82%8b-github-pages-%e3%81%b8%e3%81%ae%e8%87%aa%e5%8b%95%e3%83%87%e3%83%97%e3%83%ad%e3%82%a4>#</a>
+</h2>
+<h3 id=1-yaml-を作成する>
+1. YAML を作成する
+<a class=anchor href=#1-yaml-%e3%82%92%e4%bd%9c%e6%88%90%e3%81%99%e3%82%8b>#</a>
+</h3>
+<ul>
+<li>以下の YAML ファイルを master ブランチの <code>.github/workflows/gh-pages.yml</code> として Push すると自動で gh-pages で公開してくれるようになる．
+<div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=color:#268bd2>name</span>: github pages
 
 <span style=color:#268bd2>on</span>:
   <span style=color:#268bd2>push</span>:
@@ -84,12 +474,81 @@ curl -O https://raw.githubusercontent.com/FortAwesome/Font-Awesome/master/svgs/b
         <span style=color:#268bd2>with</span>:
           <span style=color:#268bd2>deploy_key</span>: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           <span style=color:#268bd2>publish_dir</span>: ./public
-</code></pre></div></li><li><strong>References:</strong><ul><li>GitHub:
-<a href=https://github.com/peaceiris/actions-gh-pages>peaceiris/actions-gh-pages</a></li><li>GitHub:
-<a href=https://github.com/peaceiris/actions-hugo>peaceiris/actions-hugo</a></li></ul></li></ul><h3 id=2-デプロイトークンを設定する>2. デプロイトークンを設定する
-<a class=anchor href=#2-%e3%83%87%e3%83%97%e3%83%ad%e3%82%a4%e3%83%88%e3%83%bc%e3%82%af%e3%83%b3%e3%82%92%e8%a8%ad%e5%ae%9a%e3%81%99%e3%82%8b>#</a></h3><ul><li>以下のコマンドでデプロイトークン用の秘密鍵と公開鍵のペアを作成する．<div class=highlight><pre style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>ssh-keygen -t rsa -b <span style=color:#2aa198>4096</span> -C <span style=color:#2aa198>&#34;</span><span style=color:#719e07>$(</span>git config user.email<span style=color:#719e07>)</span><span style=color:#2aa198>&#34;</span> -f gh-pages -N <span style=color:#2aa198>&#34;&#34;</span>
-</code></pre></div></li><li>出来上がった <code>gh-pages.pub</code> （公開鍵）を GitHub リポジトリの settings の <code>Deploy keys</code> に <code>Allow write access</code> オプションと共に登録する．</li><li>出来上がった <code>gh-pages</code> （秘密鍵）を GitHub リポジトリの settings の <code>Secrets</code> に <code>ACTIONS_DEPLOY_KEY</code> として登録する．</li></ul><h3 id=3-reference>3. Reference
-<a class=anchor href=#3-reference>#</a></h3><ul><li>Qiita:
-<a href=https://qiita.com/peaceiris/items/d401f2e5724fdcb0759d>GitHub Actions による GitHub Pages への自動デプロイ</a></li></ul></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div><a class="flex align-center" href=https://github.com/solareenlo/blog-hugo/commit/2732796602ad98e3bf32bd9c6ac4d5b319ea7923 title="最終更新者 solareenlo | Mar 29, 2020" target=_blank rel=noopener><img src=/svg/calendar.svg class=book-icon alt=Calendar>
-<span>Mar 29, 2020</span></a></div><div><a class="flex align-center" href=https://github.com/solareenlo/blog-hugo/edit/master/content/content/docs/pl/hugo.md target=_blank rel=noopener><img src=/svg/edit.svg class=book-icon alt=Edit>
-<span>このページを編集する</span></a></div></div></footer><div class=book-comments></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><nav id=TableOfContents><ul><li><a href=#hugo-とは>Hugo とは</a><ul><li><a href=#md-を削除した時に-html-も同様に削除するオプション>.md を削除した時に .html も同様に削除するオプション</a></li><li><a href=#mac-で-hugo-と-github-pages-を使ってのサイトの作り方>Mac で Hugo と GitHub Pages を使ってのサイトの作り方</a></li><li><a href=#hugo-のコードの色選択>Hugo のコードの色選択</a></li><li><a href=#全文検索>全文検索</a></li><li><a href=#見た目変更>見た目変更</a></li><li><a href=#イラストの追加>イラストの追加</a></li><li><a href=#github-actions-による-github-pages-への自動デプロイ>GitHub Actions による GitHub Pages への自動デプロイ</a><ul><li><a href=#1-yaml-を作成する>1. YAML を作成する</a></li><li><a href=#2-デプロイトークンを設定する>2. デプロイトークンを設定する</a></li><li><a href=#3-reference>3. Reference</a></li></ul></li></ul></li></ul></nav></aside></main></body></html>
+</code></pre></div></li>
+<li><strong>References:</strong>
+<ul>
+<li>GitHub:
+<a href=https://github.com/peaceiris/actions-gh-pages>peaceiris/actions-gh-pages</a></li>
+<li>GitHub:
+<a href=https://github.com/peaceiris/actions-hugo>peaceiris/actions-hugo</a></li>
+</ul>
+</li>
+</ul>
+<h3 id=2-デプロイトークンを設定する>
+2. デプロイトークンを設定する
+<a class=anchor href=#2-%e3%83%87%e3%83%97%e3%83%ad%e3%82%a4%e3%83%88%e3%83%bc%e3%82%af%e3%83%b3%e3%82%92%e8%a8%ad%e5%ae%9a%e3%81%99%e3%82%8b>#</a>
+</h3>
+<ul>
+<li>以下のコマンドでデプロイトークン用の秘密鍵と公開鍵のペアを作成する．
+<div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>ssh-keygen -t rsa -b <span style=color:#2aa198>4096</span> -C <span style=color:#2aa198>&#34;</span><span style=color:#719e07>$(</span>git config user.email<span style=color:#719e07>)</span><span style=color:#2aa198>&#34;</span> -f gh-pages -N <span style=color:#2aa198>&#34;&#34;</span>
+</code></pre></div></li>
+<li>出来上がった <code>gh-pages.pub</code> （公開鍵）を GitHub リポジトリの settings の <code>Deploy keys</code> に <code>Allow write access</code> オプションと共に登録する．</li>
+<li>出来上がった <code>gh-pages</code> （秘密鍵）を GitHub リポジトリの settings の <code>Secrets</code> に <code>ACTIONS_DEPLOY_KEY</code> として登録する．</li>
+</ul>
+<h3 id=3-reference>
+3. Reference
+<a class=anchor href=#3-reference>#</a>
+</h3>
+<ul>
+<li>Qiita:
+<a href=https://qiita.com/peaceiris/items/d401f2e5724fdcb0759d>GitHub Actions による GitHub Pages への自動デプロイ</a></li>
+</ul>
+</article>
+<footer class=book-footer>
+<div class="flex flex-wrap justify-between">
+<div><a class="flex align-center" href=https://github.com/solareenlo/blog-hugo/commit/2732796602ad98e3bf32bd9c6ac4d5b319ea7923 title="最終更新者 solareenlo | Mar 29, 2020" target=_blank rel=noopener>
+<img src=/svg/calendar.svg class=book-icon alt=Calendar>
+<span>Mar 29, 2020</span>
+</a>
+</div>
+<div>
+<a class="flex align-center" href=https://github.com/solareenlo/blog-hugo/edit/master/content/content/docs/pl/hugo.md target=_blank rel=noopener>
+<img src=/svg/edit.svg class=book-icon alt=Edit>
+<span>このページを編集する</span>
+</a>
+</div>
+</div>
+<script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script>
+</footer>
+<div class=book-comments>
+</div>
+<label for=menu-control class="hidden book-menu-overlay"></label>
+</div>
+<aside class=book-toc>
+<div class=book-toc-content>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#hugo-とは>Hugo とは</a>
+<ul>
+<li><a href=#md-を削除した時に-html-も同様に削除するオプション>.md を削除した時に .html も同様に削除するオプション</a></li>
+<li><a href=#mac-で-hugo-と-github-pages-を使ってのサイトの作り方>Mac で Hugo と GitHub Pages を使ってのサイトの作り方</a></li>
+<li><a href=#hugo-のコードの色選択>Hugo のコードの色選択</a></li>
+<li><a href=#全文検索>全文検索</a></li>
+<li><a href=#見た目変更>見た目変更</a></li>
+<li><a href=#イラストの追加>イラストの追加</a></li>
+<li><a href=#github-actions-による-github-pages-への自動デプロイ>GitHub Actions による GitHub Pages への自動デプロイ</a>
+<ul>
+<li><a href=#1-yaml-を作成する>1. YAML を作成する</a></li>
+<li><a href=#2-デプロイトークンを設定する>2. デプロイトークンを設定する</a></li>
+<li><a href=#3-reference>3. Reference</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+</aside>
+</main>
+</body>
+</html>

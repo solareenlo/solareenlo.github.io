@@ -1,39 +1,452 @@
-<!doctype html><html lang=ja><head><meta name=generator content="Hugo 0.80.0"><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="プログラミングとは #   コンピュータプログラムを作成することにより, 人間の意図した処理を行うようにコンピュータに指示を与える行為のこと. その為の便利なツールがたくさんある.  プログラミングをするのに役立つツール #   プログラミング言語 (C, Java, JavaScript, Pythonなど) 手続き型, オブジェクト指向型, 関数型, 静的型付け, 動的型付けなどいろんな種類がある. 最終的にバイナリデータになって, コンピュータが処理する. テキストエディタ ( Visual Studio Code, Vimなど) コードを書くのに役に立つエディタ. 統合開発環境 ( Visual Studio, Jet Brainsなど) コンパイル, テキストエディタ, デバッガなどを1つのソフトで行えるようにしたもの. バージョン管理システム ( gitなど) ファイルの変更履歴を管理する為のシステム. ホスティングサービス ( GitHub, GitLabなど) 上記gitを使って様々なプログラムをweb上に公開したり, それを通じて交流したりすることができるサービス. 無償・有償がある. Linter/Formatter コードのエラー指摘やスタイル調整をしてくれる.  勉強する #    repl.it (オンラインIDE)  hackr.io (コースやチュートリアルの紹介サイト)  ディベロッパーロードマップ #   フロントエンド - https://roadmap."><meta name=theme-color content="#FFFFFF"><meta property="og:title" content="Programming"><meta property="og:description" content><meta property="og:type" content="website"><meta property="og:url" content="https://solareenlo.com/docs/programming/"><title>Programming | solareenlo</title><link rel=manifest href=/manifest.json><link rel=icon href=/favicon.png type=image/x-icon><link rel=stylesheet href=/book.min.81c91df4d7ac1d9248c87650e9463592105b1f2bc5640263e0270a6070528cbc.css integrity="sha256-gckd9NesHZJIyHZQ6UY1khBbHyvFZAJj4CcKYHBSjLw="><script defer src=/ja.search.min.0bbc896c010732bd9bcadb3e627c9b8d5fe8508ba863ce303261751808fa854a.js integrity="sha256-C7yJbAEHMr2byts+YnybjV/oUIuoY84wMmF1GAj6hUo="></script><link rel=alternate type=application/rss+xml href=https://solareenlo.com/docs/programming/index.xml title=solareenlo></head><body><input type=checkbox class="hidden toggle" id=menu-control>
-<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><nav><h2 class=book-brand><a href=/><span>solareenlo</span></a></h2><div class=book-search><input type=text id=book-search-input placeholder=検索 aria-label=検索 maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><ul><li><a href=/posts/>Blog</a></li></ul><ul><li><input type=checkbox id=section-57e58ca5aae968f4961a4036f314a5de class=toggle checked>
-<label for=section-57e58ca5aae968f4961a4036f314a5de class="flex justify-between"><a href=https://solareenlo.com/docs/programming/ class=active>Programming</a>
-<span>▾</span></label><ul><li><a href=https://solareenlo.com/docs/programming/command/>Command</a></li><li><a href=https://solareenlo.com/docs/programming/fonts/>Fonts</a></li><li><a href=https://solareenlo.com/docs/programming/git/>Git</a></li><li><a href=https://solareenlo.com/docs/programming/github/>Github</a></li><li><a href=https://solareenlo.com/docs/programming/linter-formatter/>Linter Formatter</a></li><li><a href=https://solareenlo.com/docs/programming/password-manager/>Password Manager</a></li><li><a href=https://solareenlo.com/docs/programming/sed/>Sed</a></li><li><a href=https://solareenlo.com/docs/programming/shell-script/>Shell Script</a></li><li><a href=https://solareenlo.com/docs/programming/terminal/>Terminal</a></li><li><a href=https://solareenlo.com/docs/programming/test/>Test</a></li><li><a href=https://solareenlo.com/docs/programming/tmux/>Tmux</a></li><li><a href=https://solareenlo.com/docs/programming/vim/>Vim</a></li><li><a href=https://solareenlo.com/docs/programming/vimium/>Vimium</a></li><li><a href=https://solareenlo.com/docs/programming/wiki/>Wiki</a></li><li><a href=https://solareenlo.com/docs/programming/hhkb/>HHKB</a></li></ul></li><li><input type=checkbox id=section-771d1b18af68e81cd9d3d14cd5f6339b class=toggle>
-<label for=section-771d1b18af68e81cd9d3d14cd5f6339b class="flex justify-between"><a href=https://solareenlo.com/docs/pl/>Programming Language</a>
-<span>▾</span></label><ul><li><a href=https://solareenlo.com/docs/pl/angular/>Angular</a></li><li><a href=https://solareenlo.com/docs/pl/c/>C</a></li><li><a href=https://solareenlo.com/docs/pl/css/>Css</a></li><li><a href=https://solareenlo.com/docs/pl/go/>Go</a></li><li><a href=https://solareenlo.com/docs/pl/haskell/>Haskell</a></li><li><a href=https://solareenlo.com/docs/pl/hugo/>Hugo</a></li><li><a href=https://solareenlo.com/docs/pl/javascript/>Javascript</a></li><li><a href=https://solareenlo.com/docs/pl/nodejs/>Nodejs</a></li><li><a href=https://solareenlo.com/docs/pl/pl-docs/>Pl Docs</a></li><li><a href=https://solareenlo.com/docs/pl/react-static/>React Static</a></li><li><a href=https://solareenlo.com/docs/pl/react/>React</a></li><li><a href=https://solareenlo.com/docs/pl/rust/>Rust</a></li><li><a href=https://solareenlo.com/docs/pl/scala/>Scala</a></li><li><a href=https://solareenlo.com/docs/pl/typescript/>Typescript</a></li><li><a href=https://solareenlo.com/docs/pl/npm/>npm</a></li></ul></li><li><input type=checkbox id=section-a7bf5468f483fd7222967f135a5003c0 class=toggle>
-<label for=section-a7bf5468f483fd7222967f135a5003c0 class="flex justify-between"><a href=https://solareenlo.com/docs/latex/>LaTeX</a>
-<span>▾</span></label><ul><li><a href=https://solareenlo.com/docs/latex/platex-book/>Platex Book</a></li><li><a href=https://solareenlo.com/docs/latex/zathura-install/>Zathura Install</a></li></ul></li><li><input type=checkbox id=section-e14f9767e53904cbbdcb3f0bdbe82f2a class=toggle>
-<label for=section-e14f9767e53904cbbdcb3f0bdbe82f2a class="flex justify-between"><a href=https://solareenlo.com/docs/vps/>VPS</a>
-<span>▾</span></label><ul><li><a href=https://solareenlo.com/docs/vps/alpine-linux/>Alpine Linux</a></li><li><a href=https://solareenlo.com/docs/vps/ubuntu/>Ubuntu</a></li><li><a href=https://solareenlo.com/docs/vps/ssh/>SSH</a></li></ul></li><li><input type=checkbox id=section-99a3d9d52cfe7a0dcbd55cd8c23e4462 class=toggle>
-<label for=section-99a3d9d52cfe7a0dcbd55cd8c23e4462 class="flex justify-between"><a href=https://solareenlo.com/docs/db/>DB</a>
-<span>▾</span></label><ul><li><a href=https://solareenlo.com/docs/db/redis/>Redis</a></li><li><a href=https://solareenlo.com/docs/db/mongodb/>MongoDB</a></li><li><a href=https://solareenlo.com/docs/db/mysql/>MySQL</a></li></ul></li><li><input type=checkbox id=section-e5a49337b6189bd60f0b5e1d3a4a8539 class=toggle>
-<label for=section-e5a49337b6189bd60f0b5e1d3a4a8539 class="flex justify-between"><a href=https://solareenlo.com/docs/cloud/>Cloud</a>
-<span>▾</span></label><ul><li><a href=https://solareenlo.com/docs/cloud/aws/>Aws</a></li><li><a href=https://solareenlo.com/docs/cloud/firebase/>Firebase</a></li><li><a href=https://solareenlo.com/docs/cloud/gcp/>Gcp</a></li><li><a href=https://solareenlo.com/docs/cloud/sendgrid/>Sendgrid</a></li><li><a href=https://solareenlo.com/docs/cloud/zeit-now/>Zeit Now</a></li></ul></li><li><input type=checkbox id=section-dfa5c6b6f5f2def7a1fbf289a7570ac2 class=toggle>
-<label for=section-dfa5c6b6f5f2def7a1fbf289a7570ac2 class="flex justify-between"><a href=https://solareenlo.com/docs/ci-cd/>CI/CD</a>
-<span>▾</span></label><ul><li><a href=https://solareenlo.com/docs/ci-cd/circleci/>Circleci</a></li><li><a href=https://solareenlo.com/docs/ci-cd/jenkins/>Jenkins</a></li><li><a href=https://solareenlo.com/docs/ci-cd/travis-ci/>Travis Ci</a></li></ul></li><li><input type=checkbox id=section-10dd021a58cb696b6cb4f79141ec5ddb class=toggle>
-<label for=section-10dd021a58cb696b6cb4f79141ec5ddb class="flex justify-between"><a href=https://solareenlo.com/docs/container/>Conatainer</a>
-<span>▾</span></label><ul><li><a href=https://solareenlo.com/docs/container/docker-compose/>Docker Compose</a></li><li><a href=https://solareenlo.com/docs/container/docker-hub/>Docker Hub</a></li><li><a href=https://solareenlo.com/docs/container/docker1/>Docker1</a></li><li><a href=https://solareenlo.com/docs/container/docker2/>Docker2</a></li><li><a href=https://solareenlo.com/docs/container/kubernetes/>Kubernetes</a></li></ul></li><li><input type=checkbox id=section-342a656e10fe011a820c22dda53f7866 class=toggle>
-<label for=section-342a656e10fe011a820c22dda53f7866 class="flex justify-between"><a href=https://solareenlo.com/docs/crypto/>Crypto</a>
-<span>▾</span></label><ul><li><a href=https://solareenlo.com/docs/crypto/blockchain/>Blockchain</a></li><li><a href=https://solareenlo.com/docs/crypto/crypto-docs/>Crypto Docs</a></li><li><a href=https://solareenlo.com/docs/crypto/ethereum/>Ethereum</a></li><li><a href=https://solareenlo.com/docs/crypto/substrate/>Substrate</a></li><li><a href=https://solareenlo.com/docs/crypto/white-paper/>White Paper</a></li><li><a href=https://solareenlo.com/docs/crypto/bitcoin/>Bitcoin</a></li><li><a href=https://solareenlo.com/docs/crypto/iota/>IOTA</a></li><li><a href=https://solareenlo.com/docs/crypto/nem/>NEM</a></li><li><a href=https://solareenlo.com/docs/crypto/bitcoin-fullnode/>フルノード</a></li></ul></li><li><a href=https://solareenlo.com/docs/tools/>Tools</a><ul></ul></li></ul><ul><li><a href=https://github.com/solareenlo/blog-hugo target=_blank rel=noopener>Github</a></li></ul></nav><script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/svg/menu.svg class=book-icon alt=Menu></label>
+<!doctype html><html lang=ja dir=ltr>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=description content="プログラミングとは #   コンピュータプログラムを作成することにより, 人間の意図した処理を行うようにコンピュータに指示を与える行為のこと. その為の便利なツールがたくさんある.  プログラミングをするのに役立つツール #   プログラミング言語 (C, Java, JavaScript, Pythonなど) 手続き型, オブジェクト指向型, 関数型, 静的型付け, 動的型付けなどいろんな種類がある. 最終的にバイナリデータになって, コンピュータが処理する. テキストエディタ ( Visual Studio Code, Vimなど) コードを書くのに役に立つエディタ. 統合開発環境 ( Visual Studio, Jet Brainsなど) コンパイル, テキストエディタ, デバッガなどを1つのソフトで行えるようにしたもの. バージョン管理システム ( gitなど) ファイルの変更履歴を管理する為のシステム. ホスティングサービス ( GitHub, GitLabなど) 上記gitを使って様々なプログラムをweb上に公開したり, それを通じて交流したりすることができるサービス. 無償・有償がある. Linter/Formatter コードのエラー指摘やスタイル調整をしてくれる.  勉強する #    repl.it (オンラインIDE)  hackr.io (コースやチュートリアルの紹介サイト)  ディベロッパーロードマップ #   フロントエンド - https://roadmap.">
+<meta name=theme-color content="#FFFFFF"><meta property="og:title" content="Programming">
+<meta property="og:description" content>
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://solareenlo.com/docs/programming/">
+<title>Programming | solareenlo</title>
+<link rel=manifest href=/manifest.json>
+<link rel=icon href=/favicon.png type=image/x-icon>
+<link rel=stylesheet href=/book.min.3fc729a37471ee87e40517478b6ab5936d22fcb6008d40985724e4295d1a74c0.css integrity="sha256-P8cpo3Rx7ofkBRdHi2q1k20i/LYAjUCYVyTkKV0adMA=" crossorigin=anonymous>
+<script defer src=/flexsearch.min.js></script>
+<script defer src=/ja.search.min.f7cc464663b3b3a097afa2f984b8778e350346674fae4cd69f0f855aaa21c426.js integrity="sha256-98xGRmOzs6CXr6L5hLh3jjUDRmdPrkzWnw+FWqohxCY=" crossorigin=anonymous></script>
+<link rel=alternate type=application/rss+xml href=https://solareenlo.com/docs/programming/index.xml title=solareenlo>
+</head>
+<body dir=ltr>
+<input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control>
+<main class="container flex">
+<aside class=book-menu>
+<div class=book-menu-content>
+<nav>
+<h2 class=book-brand>
+<a class="flex align-center" href=/><span>solareenlo</span>
+</a>
+</h2>
+<div class=book-search>
+<input type=text id=book-search-input placeholder=検索 aria-label=検索 maxlength=64 data-hotkeys=s/>
+<div class="book-search-spinner hidden"></div>
+<ul id=book-search-results></ul>
+</div>
+<ul>
+<li>
+<a href=/posts/>
+Blog
+</a>
+</li>
+</ul>
+<ul>
+<li>
+<input type=checkbox id=section-57e58ca5aae968f4961a4036f314a5de class=toggle checked>
+<label for=section-57e58ca5aae968f4961a4036f314a5de class="flex justify-between">
+<a href=https://solareenlo.com/docs/programming/ class=active>Programming</a>
+</label>
+<ul>
+<li>
+<a href=https://solareenlo.com/docs/programming/command/>Command</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/programming/fonts/>Fonts</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/programming/git/>Git</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/programming/github/>Github</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/programming/linter-formatter/>Linter Formatter</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/programming/password-manager/>Password Manager</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/programming/sed/>Sed</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/programming/shell-script/>Shell Script</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/programming/terminal/>Terminal</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/programming/test/>Test</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/programming/tmux/>Tmux</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/programming/vim/>Vim</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/programming/vimium/>Vimium</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/programming/wiki/>Wiki</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/programming/hhkb/>HHKB</a>
+</li>
+</ul>
+</li>
+<li>
+<input type=checkbox id=section-771d1b18af68e81cd9d3d14cd5f6339b class=toggle>
+<label for=section-771d1b18af68e81cd9d3d14cd5f6339b class="flex justify-between">
+<a href=https://solareenlo.com/docs/pl/>Programming Language</a>
+</label>
+<ul>
+<li>
+<a href=https://solareenlo.com/docs/pl/angular/>Angular</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/pl/c/>C</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/pl/css/>Css</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/pl/go/>Go</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/pl/haskell/>Haskell</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/pl/hugo/>Hugo</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/pl/javascript/>Javascript</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/pl/nodejs/>Nodejs</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/pl/pl-docs/>Pl Docs</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/pl/react-static/>React Static</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/pl/react/>React</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/pl/rust/>Rust</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/pl/scala/>Scala</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/pl/typescript/>Typescript</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/pl/npm/>npm</a>
+</li>
+</ul>
+</li>
+<li>
+<input type=checkbox id=section-a7bf5468f483fd7222967f135a5003c0 class=toggle>
+<label for=section-a7bf5468f483fd7222967f135a5003c0 class="flex justify-between">
+<a href=https://solareenlo.com/docs/latex/>LaTeX</a>
+</label>
+<ul>
+<li>
+<a href=https://solareenlo.com/docs/latex/platex-book/>Platex Book</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/latex/zathura-install/>Zathura Install</a>
+</li>
+</ul>
+</li>
+<li>
+<input type=checkbox id=section-e14f9767e53904cbbdcb3f0bdbe82f2a class=toggle>
+<label for=section-e14f9767e53904cbbdcb3f0bdbe82f2a class="flex justify-between">
+<a href=https://solareenlo.com/docs/vps/>VPS</a>
+</label>
+<ul>
+<li>
+<a href=https://solareenlo.com/docs/vps/alpine-linux/>Alpine Linux</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/vps/ubuntu/>Ubuntu</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/vps/ssh/>SSH</a>
+</li>
+</ul>
+</li>
+<li>
+<input type=checkbox id=section-99a3d9d52cfe7a0dcbd55cd8c23e4462 class=toggle>
+<label for=section-99a3d9d52cfe7a0dcbd55cd8c23e4462 class="flex justify-between">
+<a href=https://solareenlo.com/docs/db/>DB</a>
+</label>
+<ul>
+<li>
+<a href=https://solareenlo.com/docs/db/redis/>Redis</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/db/mongodb/>MongoDB</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/db/mysql/>MySQL</a>
+</li>
+</ul>
+</li>
+<li>
+<input type=checkbox id=section-e5a49337b6189bd60f0b5e1d3a4a8539 class=toggle>
+<label for=section-e5a49337b6189bd60f0b5e1d3a4a8539 class="flex justify-between">
+<a href=https://solareenlo.com/docs/cloud/>Cloud</a>
+</label>
+<ul>
+<li>
+<a href=https://solareenlo.com/docs/cloud/aws/>Aws</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/cloud/firebase/>Firebase</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/cloud/gcp/>Gcp</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/cloud/sendgrid/>Sendgrid</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/cloud/zeit-now/>Zeit Now</a>
+</li>
+</ul>
+</li>
+<li>
+<input type=checkbox id=section-dfa5c6b6f5f2def7a1fbf289a7570ac2 class=toggle>
+<label for=section-dfa5c6b6f5f2def7a1fbf289a7570ac2 class="flex justify-between">
+<a href=https://solareenlo.com/docs/ci-cd/>CI/CD</a>
+</label>
+<ul>
+<li>
+<a href=https://solareenlo.com/docs/ci-cd/circleci/>Circleci</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/ci-cd/jenkins/>Jenkins</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/ci-cd/travis-ci/>Travis Ci</a>
+</li>
+</ul>
+</li>
+<li>
+<input type=checkbox id=section-10dd021a58cb696b6cb4f79141ec5ddb class=toggle>
+<label for=section-10dd021a58cb696b6cb4f79141ec5ddb class="flex justify-between">
+<a href=https://solareenlo.com/docs/container/>Conatainer</a>
+</label>
+<ul>
+<li>
+<a href=https://solareenlo.com/docs/container/docker-compose/>Docker Compose</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/container/docker-hub/>Docker Hub</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/container/docker1/>Docker1</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/container/docker2/>Docker2</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/container/kubernetes/>Kubernetes</a>
+</li>
+</ul>
+</li>
+<li>
+<input type=checkbox id=section-342a656e10fe011a820c22dda53f7866 class=toggle>
+<label for=section-342a656e10fe011a820c22dda53f7866 class="flex justify-between">
+<a href=https://solareenlo.com/docs/crypto/>Crypto</a>
+</label>
+<ul>
+<li>
+<a href=https://solareenlo.com/docs/crypto/blockchain/>Blockchain</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/crypto/crypto-docs/>Crypto Docs</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/crypto/ethereum/>Ethereum</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/crypto/substrate/>Substrate</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/crypto/white-paper/>White Paper</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/crypto/bitcoin/>Bitcoin</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/crypto/iota/>IOTA</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/crypto/nem/>NEM</a>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/crypto/bitcoin-fullnode/>フルノード</a>
+</li>
+</ul>
+</li>
+<li>
+<a href=https://solareenlo.com/docs/tools/>Tools</a>
+<ul>
+</ul>
+</li>
+</ul>
+<ul>
+<li>
+<a href=https://github.com/solareenlo/blog-hugo target=_blank rel=noopener>
+Github
+</a>
+</li>
+</ul>
+</nav>
+<script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+</div>
+</aside>
+<div class=book-page>
+<header class=book-header>
+<div class="flex align-center justify-between">
+<label for=menu-control>
+<img src=/svg/menu.svg class=book-icon alt=Menu>
+</label>
 <strong>Programming</strong>
-<label for=toc-control><img src=/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents><ul><li><a href=#プログラミングとは>プログラミングとは</a><ul><li><a href=#プログラミングをするのに役立つツール>プログラミングをするのに役立つツール</a></li><li><a href=#勉強する>勉強する</a></li><li><a href=#ディベロッパーロードマップ>ディベロッパーロードマップ</a></li><li><a href=#2019年前期における必須スキル>2019年前期における必須スキル</a></li></ul></li></ul></nav></aside></header><article class=markdown><h1 id=プログラミングとは>プログラミングとは
-<a class=anchor href=#%e3%83%97%e3%83%ad%e3%82%b0%e3%83%a9%e3%83%9f%e3%83%b3%e3%82%b0%e3%81%a8%e3%81%af>#</a></h1><ul><li>コンピュータプログラムを作成することにより, 人間の意図した処理を行うようにコンピュータに指示を与える行為のこと.</li><li>その為の便利なツールがたくさんある.</li></ul><h2 id=プログラミングをするのに役立つツール>プログラミングをするのに役立つツール
-<a class=anchor href=#%e3%83%97%e3%83%ad%e3%82%b0%e3%83%a9%e3%83%9f%e3%83%b3%e3%82%b0%e3%82%92%e3%81%99%e3%82%8b%e3%81%ae%e3%81%ab%e5%bd%b9%e7%ab%8b%e3%81%a4%e3%83%84%e3%83%bc%e3%83%ab>#</a></h2><ul><li>プログラミング言語 (C, Java, JavaScript, Pythonなど)</li><li>手続き型, オブジェクト指向型, 関数型, 静的型付け, 動的型付けなどいろんな種類がある.</li><li>最終的にバイナリデータになって, コンピュータが処理する.</li><li>テキストエディタ (
+<label for=toc-control>
+<img src=/svg/toc.svg class=book-icon alt="Table of Contents">
+</label>
+</div>
+<aside class="hidden clearfix">
+<nav id=TableOfContents>
+<ul>
+<li><a href=#プログラミングとは>プログラミングとは</a>
+<ul>
+<li><a href=#プログラミングをするのに役立つツール>プログラミングをするのに役立つツール</a></li>
+<li><a href=#勉強する>勉強する</a></li>
+<li><a href=#ディベロッパーロードマップ>ディベロッパーロードマップ</a></li>
+<li><a href=#2019年前期における必須スキル>2019年前期における必須スキル</a></li>
+</ul>
+</li>
+</ul>
+</nav>
+</aside>
+</header>
+<article class=markdown><h1 id=プログラミングとは>
+プログラミングとは
+<a class=anchor href=#%e3%83%97%e3%83%ad%e3%82%b0%e3%83%a9%e3%83%9f%e3%83%b3%e3%82%b0%e3%81%a8%e3%81%af>#</a>
+</h1>
+<ul>
+<li>コンピュータプログラムを作成することにより, 人間の意図した処理を行うようにコンピュータに指示を与える行為のこと.</li>
+<li>その為の便利なツールがたくさんある.</li>
+</ul>
+<h2 id=プログラミングをするのに役立つツール>
+プログラミングをするのに役立つツール
+<a class=anchor href=#%e3%83%97%e3%83%ad%e3%82%b0%e3%83%a9%e3%83%9f%e3%83%b3%e3%82%b0%e3%82%92%e3%81%99%e3%82%8b%e3%81%ae%e3%81%ab%e5%bd%b9%e7%ab%8b%e3%81%a4%e3%83%84%e3%83%bc%e3%83%ab>#</a>
+</h2>
+<ul>
+<li>プログラミング言語 (C, Java, JavaScript, Pythonなど)</li>
+<li>手続き型, オブジェクト指向型, 関数型, 静的型付け, 動的型付けなどいろんな種類がある.</li>
+<li>最終的にバイナリデータになって, コンピュータが処理する.</li>
+<li>テキストエディタ (
 <a href=https://github.com/Microsoft/vscode>Visual Studio Code</a>,
-<a href=https://github.com/vim/vim>Vim</a>など)</li><li>コードを書くのに役に立つエディタ.</li><li>統合開発環境 (
+<a href=https://github.com/vim/vim>Vim</a>など)</li>
+<li>コードを書くのに役に立つエディタ.</li>
+<li>統合開発環境 (
 <a href=https://visualstudio.microsoft.com/ja/>Visual Studio</a>,
-<a href=https://www.jetbrains.com>Jet Brains</a>など)</li><li>コンパイル, テキストエディタ, デバッガなどを1つのソフトで行えるようにしたもの.</li><li>バージョン管理システム (
-<a href=https://git-scm.com>git</a>など)</li><li>ファイルの変更履歴を管理する為のシステム.</li><li>ホスティングサービス (
+<a href=https://www.jetbrains.com>Jet Brains</a>など)</li>
+<li>コンパイル, テキストエディタ, デバッガなどを1つのソフトで行えるようにしたもの.</li>
+<li>バージョン管理システム (
+<a href=https://git-scm.com>git</a>など)</li>
+<li>ファイルの変更履歴を管理する為のシステム.</li>
+<li>ホスティングサービス (
 <a href=https://github.com>GitHub</a>,
-<a href=https://gitlab.com>GitLab</a>など)</li><li>上記gitを使って様々なプログラムをweb上に公開したり, それを通じて交流したりすることができるサービス.</li><li>無償・有償がある.</li><li>Linter/Formatter</li><li>コードのエラー指摘やスタイル調整をしてくれる.</li></ul><h2 id=勉強する>勉強する
-<a class=anchor href=#%e5%8b%89%e5%bc%b7%e3%81%99%e3%82%8b>#</a></h2><ul><li><a href=https://repl.it>repl.it</a> (オンラインIDE)</li><li><a href=https://hackr.io>hackr.io</a> (コースやチュートリアルの紹介サイト)</li></ul><h2 id=ディベロッパーロードマップ>ディベロッパーロードマップ
-<a class=anchor href=#%e3%83%87%e3%82%a3%e3%83%99%e3%83%ad%e3%83%83%e3%83%91%e3%83%bc%e3%83%ad%e3%83%bc%e3%83%89%e3%83%9e%e3%83%83%e3%83%97>#</a></h2><ul><li>フロントエンド - <a href=https://roadmap.sh/frontend>https://roadmap.sh/frontend</a></li><li>バックエンド - <a href=https://roadmap.sh/backend>https://roadmap.sh/backend</a></li><li>DevOps - <a href=https://roadmap.sh/devops>https://roadmap.sh/devops</a></li></ul><h2 id=2019年前期における必須スキル>2019年前期における必須スキル
-<a class=anchor href=#2019%e5%b9%b4%e5%89%8d%e6%9c%9f%e3%81%ab%e3%81%8a%e3%81%91%e3%82%8b%e5%bf%85%e9%a0%88%e3%82%b9%e3%82%ad%e3%83%ab>#</a></h2><ul><li>コード管理には
-<a href=/docs/programming/git/>Git</a>を用いる.</li><li>コードレビューを行う.</li><li>LinterやFormatterを使う.</li><li>パッケージマネージャを使う.</li><li>単体
+<a href=https://gitlab.com>GitLab</a>など)</li>
+<li>上記gitを使って様々なプログラムをweb上に公開したり, それを通じて交流したりすることができるサービス.</li>
+<li>無償・有償がある.</li>
+<li>Linter/Formatter</li>
+<li>コードのエラー指摘やスタイル調整をしてくれる.</li>
+</ul>
+<h2 id=勉強する>
+勉強する
+<a class=anchor href=#%e5%8b%89%e5%bc%b7%e3%81%99%e3%82%8b>#</a>
+</h2>
+<ul>
+<li>
+<a href=https://repl.it>repl.it</a> (オンラインIDE)</li>
+<li>
+<a href=https://hackr.io>hackr.io</a> (コースやチュートリアルの紹介サイト)</li>
+</ul>
+<h2 id=ディベロッパーロードマップ>
+ディベロッパーロードマップ
+<a class=anchor href=#%e3%83%87%e3%82%a3%e3%83%99%e3%83%ad%e3%83%83%e3%83%91%e3%83%bc%e3%83%ad%e3%83%bc%e3%83%89%e3%83%9e%e3%83%83%e3%83%97>#</a>
+</h2>
+<ul>
+<li>フロントエンド -
+<a href=https://roadmap.sh/frontend>https://roadmap.sh/frontend</a></li>
+<li>バックエンド -
+<a href=https://roadmap.sh/backend>https://roadmap.sh/backend</a></li>
+<li>DevOps -
+<a href=https://roadmap.sh/devops>https://roadmap.sh/devops</a></li>
+</ul>
+<h2 id=2019年前期における必須スキル>
+2019年前期における必須スキル
+<a class=anchor href=#2019%e5%b9%b4%e5%89%8d%e6%9c%9f%e3%81%ab%e3%81%8a%e3%81%91%e3%82%8b%e5%bf%85%e9%a0%88%e3%82%b9%e3%82%ad%e3%83%ab>#</a>
+</h2>
+<ul>
+<li>コード管理には
+<a href=/docs/programming/git/>Git</a>を用いる.</li>
+<li>コードレビューを行う.</li>
+<li>LinterやFormatterを使う.</li>
+<li>パッケージマネージャを使う.</li>
+<li>単体
 <a href=/docs/programming/test/>テスト</a>や総合
-<a href=/docs/programming/test/>テスト</a>を行う.</li><li><a href=/docs/container/docker1/>Docker</a>を活用する.</li><li><a href=/docs/ci-cd/>CI/CD</a>を行う.</li><li>新技術をどんどん活用する.</li></ul></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div><a class="flex align-center" href=https://github.com/solareenlo/blog-hugo/commit/0e38baa1d802d4c43252be1f2a8128fe424abf61 title="最終更新者 solareenlo | Mar 20, 2020" target=_blank rel=noopener><img src=/svg/calendar.svg class=book-icon alt=Calendar>
-<span>Mar 20, 2020</span></a></div><div><a class="flex align-center" href=https://github.com/solareenlo/blog-hugo/edit/master/content/content/docs/programming/_index.md target=_blank rel=noopener><img src=/svg/edit.svg class=book-icon alt=Edit>
-<span>このページを編集する</span></a></div></div></footer><div class=book-comments></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><nav id=TableOfContents><ul><li><a href=#プログラミングとは>プログラミングとは</a><ul><li><a href=#プログラミングをするのに役立つツール>プログラミングをするのに役立つツール</a></li><li><a href=#勉強する>勉強する</a></li><li><a href=#ディベロッパーロードマップ>ディベロッパーロードマップ</a></li><li><a href=#2019年前期における必須スキル>2019年前期における必須スキル</a></li></ul></li></ul></nav></aside></main></body></html>
+<a href=/docs/programming/test/>テスト</a>を行う.</li>
+<li>
+<a href=/docs/container/docker1/>Docker</a>を活用する.</li>
+<li>
+<a href=/docs/ci-cd/>CI/CD</a>を行う.</li>
+<li>新技術をどんどん活用する.</li>
+</ul>
+</article>
+<footer class=book-footer>
+<div class="flex flex-wrap justify-between">
+<div><a class="flex align-center" href=https://github.com/solareenlo/blog-hugo/commit/0e38baa1d802d4c43252be1f2a8128fe424abf61 title="最終更新者 solareenlo | Mar 20, 2020" target=_blank rel=noopener>
+<img src=/svg/calendar.svg class=book-icon alt=Calendar>
+<span>Mar 20, 2020</span>
+</a>
+</div>
+<div>
+<a class="flex align-center" href=https://github.com/solareenlo/blog-hugo/edit/master/content/content/docs/programming/_index.md target=_blank rel=noopener>
+<img src=/svg/edit.svg class=book-icon alt=Edit>
+<span>このページを編集する</span>
+</a>
+</div>
+</div>
+<script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script>
+</footer>
+<div class=book-comments>
+</div>
+<label for=menu-control class="hidden book-menu-overlay"></label>
+</div>
+<aside class=book-toc>
+<div class=book-toc-content>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#プログラミングとは>プログラミングとは</a>
+<ul>
+<li><a href=#プログラミングをするのに役立つツール>プログラミングをするのに役立つツール</a></li>
+<li><a href=#勉強する>勉強する</a></li>
+<li><a href=#ディベロッパーロードマップ>ディベロッパーロードマップ</a></li>
+<li><a href=#2019年前期における必須スキル>2019年前期における必須スキル</a></li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+</aside>
+</main>
+</body>
+</html>
