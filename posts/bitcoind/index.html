@@ -11,7 +11,8 @@ bitcoin-cli getblockchaininfo とか.
 2. cURLを使ってアクセスする. #  下記curlを行う要件.
  ネットワーク: mainnet 接続環境: ローカル ポート番号: 8332 ユーザーの名前: user-name パスワード: user-password 投げつけているbitcoin-cliのメソッド: getblockchaininfo  curl --data-binary '{&#34;jsonrpc&#34;:&#34;1.0&#34;,&#34;id&#34;:&#34;curltext&#34;,&#34;method&#34;:&#34;getblockchaininfo&#34;,&#34;params&#34;:[]}' -H 'content-type:text/plain;' http://user-name:user-password@127.0.0.1:8332/ | jq 3. 自作プログラムでPOSTしてアクセスする. #  bitcoindはHTTPリクエストメソッドのPOSTに対応しているので, JSON-RPCをPOSTで投げつける. 以下のプログラムはNode.jsを使った例.
   https://github.com/solareenlo/bc-json-rpc  ">
-<meta name=theme-color content="#FFFFFF"><meta property="og:title" content="bitcoindへのアクセス方法">
+<meta name=theme-color content="#FFFFFF">
+<meta name=color-scheme content="light dark"><meta property="og:title" content="bitcoindへのアクセス方法">
 <meta property="og:description" content=" bitcoindへのアクセス方法3選(bitcoin-cli, curl, POST). 3つとも JSON-RPCで通信してる.
  bitcoindとは, 名前の通りunixのデーモンとして動作する事を目的とするBitcoinのクライアントで, JSON-RPCで開発者向けのAPIを提供する. したがって, Webサービスとして動作するBitcoinウォレットのバックエンドとしてや, マイニングプールのサーバーとして使われる.
 Reference: Bitcoinウォレットの比較
@@ -30,7 +31,7 @@ bitcoin-cli getblockchaininfo とか.
 <link rel=icon href=/favicon.png type=image/x-icon>
 <link rel=stylesheet href=/book.min.3fc729a37471ee87e40517478b6ab5936d22fcb6008d40985724e4295d1a74c0.css integrity="sha256-P8cpo3Rx7ofkBRdHi2q1k20i/LYAjUCYVyTkKV0adMA=" crossorigin=anonymous>
 <script defer src=/flexsearch.min.js></script>
-<script defer src=/ja.search.min.f7cc464663b3b3a097afa2f984b8778e350346674fae4cd69f0f855aaa21c426.js integrity="sha256-98xGRmOzs6CXr6L5hLh3jjUDRmdPrkzWnw+FWqohxCY=" crossorigin=anonymous></script>
+<script defer src=/ja.search.min.381b7e7aefda0215c5d56d6cd4b0b82c055aa99fd7c8824f4b99e399988f29c7.js integrity="sha256-OBt+eu/aAhXF1W1s1LC4LAVaqZ/XyIJPS5njmZiPKcc=" crossorigin=anonymous></script>
 </head>
 <body dir=ltr>
 <input type=checkbox class="hidden toggle" id=menu-control>

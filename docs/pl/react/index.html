@@ -3,7 +3,8 @@
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta name=description content="Reactとは #   Facebookとコミュニティによって開発されているUIに特化したJavaScriptライブラリ. Facebookはコアの部分だけを作成して, コミュニティがその周りをどんどん作っている. Virtual DOM(仮想DOM)と呼ばれるレンダリング機構を採用している. Virtual DOMを採用しているので, ページに表示されている広いエリアの情報をJavaScriptで管理しておき、なにか変更があった場合に変更箇所のみを再描画するUIなどに向いている. GitHubリポジトリ: https://github.com/facebook/react/ Reference: Reactとは? – React入門  用語 #     名前 意味     Virtual DOM DOMを作るために必要な情報を持っているオブジェクト.Virtual DOMの内容を元にHTMLを作成してブラウザに描画する.   JSX Virtual DOMの元となる構文.Babelがscript要素の内容をブラウザが解釈できるように変換を行う.JSV -> JavaScriptと変換される.基本的にはHTMLと同じ記法.   コンポーネント 個々の部品HTMLのパーツをコンポーネント単位で管理し組み合わせてUIの作成を行う.   props 親コンポーネントから渡されたプロパティ不変のデータ   state そのコンポーネントが持っている状態可変のデータ    Reduxとは #   Reactが扱うUIのstateを管理するためのフレームワーク. ReactはFluxを採用しているが, ReduxはFluxの概念を拡張してより扱いやすくしたもの. Reduxはstateを管理するフレームワークなのでReact以外にもAngularやjQueryとも併用できるがReactが一番相性が良い.  3大原則 #   Single source of truth (信頼できる唯一の情報源) State in read-only (stateは常に読み取り専用にする) Changes are made with pure functions (actionがstateを変更する際にreducerを通して行う)  要素 #     名前 機能     Action 入力内容を元にデータを作成する   ActionCreator    Store データを貯める   State    Reducer 前の状態から新しい状態への純粋な関数    図解 #  Flux">
-<meta name=theme-color content="#FFFFFF"><meta property="og:title" content>
+<meta name=theme-color content="#FFFFFF">
+<meta name=color-scheme content="light dark"><meta property="og:title" content>
 <meta property="og:description" content="Reactとは #   Facebookとコミュニティによって開発されているUIに特化したJavaScriptライブラリ. Facebookはコアの部分だけを作成して, コミュニティがその周りをどんどん作っている. Virtual DOM(仮想DOM)と呼ばれるレンダリング機構を採用している. Virtual DOMを採用しているので, ページに表示されている広いエリアの情報をJavaScriptで管理しておき、なにか変更があった場合に変更箇所のみを再描画するUIなどに向いている. GitHubリポジトリ: https://github.com/facebook/react/ Reference: Reactとは? – React入門  用語 #     名前 意味     Virtual DOM DOMを作るために必要な情報を持っているオブジェクト.Virtual DOMの内容を元にHTMLを作成してブラウザに描画する.   JSX Virtual DOMの元となる構文.Babelがscript要素の内容をブラウザが解釈できるように変換を行う.JSV -> JavaScriptと変換される.基本的にはHTMLと同じ記法.   コンポーネント 個々の部品HTMLのパーツをコンポーネント単位で管理し組み合わせてUIの作成を行う.   props 親コンポーネントから渡されたプロパティ不変のデータ   state そのコンポーネントが持っている状態可変のデータ    Reduxとは #   Reactが扱うUIのstateを管理するためのフレームワーク. ReactはFluxを採用しているが, ReduxはFluxの概念を拡張してより扱いやすくしたもの. Reduxはstateを管理するフレームワークなのでReact以外にもAngularやjQueryとも併用できるがReactが一番相性が良い.  3大原則 #   Single source of truth (信頼できる唯一の情報源) State in read-only (stateは常に読み取り専用にする) Changes are made with pure functions (actionがstateを変更する際にreducerを通して行う)  要素 #     名前 機能     Action 入力内容を元にデータを作成する   ActionCreator    Store データを貯める   State    Reducer 前の状態から新しい状態への純粋な関数    図解 #  Flux">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://solareenlo.com/docs/pl/react/"><meta property="article:section" content="docs">
@@ -13,7 +14,7 @@
 <link rel=icon href=/favicon.png type=image/x-icon>
 <link rel=stylesheet href=/book.min.3fc729a37471ee87e40517478b6ab5936d22fcb6008d40985724e4295d1a74c0.css integrity="sha256-P8cpo3Rx7ofkBRdHi2q1k20i/LYAjUCYVyTkKV0adMA=" crossorigin=anonymous>
 <script defer src=/flexsearch.min.js></script>
-<script defer src=/ja.search.min.f7cc464663b3b3a097afa2f984b8778e350346674fae4cd69f0f855aaa21c426.js integrity="sha256-98xGRmOzs6CXr6L5hLh3jjUDRmdPrkzWnw+FWqohxCY=" crossorigin=anonymous></script>
+<script defer src=/ja.search.min.381b7e7aefda0215c5d56d6cd4b0b82c055aa99fd7c8824f4b99e399988f29c7.js integrity="sha256-OBt+eu/aAhXF1W1s1LC4LAVaqZ/XyIJPS5njmZiPKcc=" crossorigin=anonymous></script>
 </head>
 <body dir=ltr>
 <input type=checkbox class="hidden toggle" id=menu-control>

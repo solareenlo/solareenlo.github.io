@@ -4,7 +4,8 @@
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta name=description content="TypeScriptとは #   マイクロソフトによって開発されているオープンソースのプログラミング言語のこと. JavaScriptに, 静的型付け・クラスベースオブジェクト指向を加えた. GitHubリポジトリ: https://github.com/Microsoft/TypeScript  初めてのTypeScript #   solareenlo/Typescript-Practice/01_Getting_Started
 インストール #  npm i --save-dev typescript TypeScript + Node.js + Docker + Circle CI #    TypeScript + Node.js プロジェクトのはじめかた2019  TypeScriptでExpress.js開発するときにやることまとめ (docker/lint/format/tsのまま実行/autoreload)  bitjson/typescript-starter  microsoft/TypeScript-Node-Starter  objectのkeyにstringを設定したら, object[key]でエラーになった時の対処法 #   tsconfigに--suppressImplicitAnyIndexErrorsを付け加える. ブラケット記法でプロパティにアクセスした時にany型を許容するのでとっても非推奨.   以下のようにkeyはstring型と明示する. 問題点はkeyが全てstring型になること. interface ISomeObject { firstKey: string; secondKey: string; [key: string]: string; // <-この行を追加! } const obj = { firstKey: &#34;a&#34;, secondKey: &#34;b&#34;, } as ISomeObject; const key: string = 'secondKey'; const secondValue: string = obj[key]; なのでこうする.">
-<meta name=theme-color content="#FFFFFF"><meta property="og:title" content>
+<meta name=theme-color content="#FFFFFF">
+<meta name=color-scheme content="light dark"><meta property="og:title" content>
 <meta property="og:description" content="TypeScriptとは #   マイクロソフトによって開発されているオープンソースのプログラミング言語のこと. JavaScriptに, 静的型付け・クラスベースオブジェクト指向を加えた. GitHubリポジトリ: https://github.com/Microsoft/TypeScript  初めてのTypeScript #   solareenlo/Typescript-Practice/01_Getting_Started
 インストール #  npm i --save-dev typescript TypeScript + Node.js + Docker + Circle CI #    TypeScript + Node.js プロジェクトのはじめかた2019  TypeScriptでExpress.js開発するときにやることまとめ (docker/lint/format/tsのまま実行/autoreload)  bitjson/typescript-starter  microsoft/TypeScript-Node-Starter  objectのkeyにstringを設定したら, object[key]でエラーになった時の対処法 #   tsconfigに--suppressImplicitAnyIndexErrorsを付け加える. ブラケット記法でプロパティにアクセスした時にany型を許容するのでとっても非推奨.   以下のようにkeyはstring型と明示する. 問題点はkeyが全てstring型になること. interface ISomeObject { firstKey: string; secondKey: string; [key: string]: string; // <-この行を追加! } const obj = { firstKey: &#34;a&#34;, secondKey: &#34;b&#34;, } as ISomeObject; const key: string = 'secondKey'; const secondValue: string = obj[key]; なのでこうする.">
 <meta property="og:type" content="article">
@@ -15,7 +16,7 @@
 <link rel=icon href=/favicon.png type=image/x-icon>
 <link rel=stylesheet href=/book.min.3fc729a37471ee87e40517478b6ab5936d22fcb6008d40985724e4295d1a74c0.css integrity="sha256-P8cpo3Rx7ofkBRdHi2q1k20i/LYAjUCYVyTkKV0adMA=" crossorigin=anonymous>
 <script defer src=/flexsearch.min.js></script>
-<script defer src=/ja.search.min.f7cc464663b3b3a097afa2f984b8778e350346674fae4cd69f0f855aaa21c426.js integrity="sha256-98xGRmOzs6CXr6L5hLh3jjUDRmdPrkzWnw+FWqohxCY=" crossorigin=anonymous></script>
+<script defer src=/ja.search.min.381b7e7aefda0215c5d56d6cd4b0b82c055aa99fd7c8824f4b99e399988f29c7.js integrity="sha256-OBt+eu/aAhXF1W1s1LC4LAVaqZ/XyIJPS5njmZiPKcc=" crossorigin=anonymous></script>
 </head>
 <body dir=ltr>
 <input type=checkbox class="hidden toggle" id=menu-control>
@@ -398,8 +399,8 @@ objectのkeyにstringを設定したら, object[key]でエラーになった時�
 
 <span style=color:#268bd2>const</span> key: <span style=color:#dc322f>string</span> <span style=color:#719e07>=</span> <span style=color:#2aa198>&#39;secondKey&#39;</span>;
 <span style=color:#268bd2>const</span> secondValue: <span style=color:#dc322f>string</span> <span style=color:#719e07>=</span> obj[key];
-</code></pre></div><p>なのでこうする.
-が, <code>secondValue</code>の型が<code>string|boolean|number</code>型と複数の型になる.</p>
+</code></pre></div>なのでこうする.
+が, <code>secondValue</code>の型が<code>string|boolean|number</code>型と複数の型になる.
 <div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-typescript data-lang=typescript><span style=color:#268bd2>interface</span> ISomeObject {
     firstKey:      <span style=color:#dc322f>string</span>;
     secondKey:     <span style=color:#dc322f>number</span>;
@@ -425,7 +426,7 @@ objectのkeyにstringを設定したら, object[key]でエラーになった時�
 
 <span style=color:#268bd2>const</span> key: <span style=color:#dc322f>keyof</span> ISomeObject  <span style=color:#719e07>=</span> <span style=color:#2aa198>&#39;secondKey&#39;</span>; <span style=color:#586e75>// ここを変更
 </span><span style=color:#586e75></span><span style=color:#268bd2>const</span> secondValue <span style=color:#719e07>=</span> obj[key]; <span style=color:#586e75>// secondValueがnumber型に!
-</span></code></pre></div><p>ジェネリクスを使って、type safeにブラケット記法が使える関数を作ると以下の感じになる.</p>
+</span></code></pre></div>ジェネリクスを使って、type safeにブラケット記法が使える関数を作ると以下の感じになる.
 <div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-typescript data-lang=typescript><span style=color:#268bd2>const</span> accessByBracket <span style=color:#719e07>=</span> &lt;<span style=color:#268bd2>S</span>, T extends keyof S&gt;(obj: <span style=color:#dc322f>S</span>, key: <span style=color:#dc322f>T</span>) <span style=color:#719e07>=&gt;</span> {
   <span style=color:#719e07>return</span> obj[key];
 };

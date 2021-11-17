@@ -13,7 +13,8 @@
   Dockerについての良いスライド→ Docker Compose 徹底解説
   公式サイト: https://www.docker.com
   Dockerのメリット/デメリット #  メリット #   ゲストOSはホストのKernelを直接使うためオーバーヘッドが小さくて高速 ゲストOSがそれぞれにKernelを持たないため, Memory消費量やDisk消費量を節約できる 必要とする資源が少ないため, 多くのゲストOSを立ち上げることが可能 Kernelを新しく起動する必要がないため, ゲストOSの起動が速い コンテナのイメージ(雛形)からコンテナ(実体)を作るため, 同一構成のOSを簡単に複数作れる テストが通ったイメージは本番環境でもすぐに使える(開発とデプロイのサイクルが速い) Reference: Dockerの利点  デメリット #   提供できるホストの種類が少ない(ホストOSのKernelにLinux使ってたらゲストOSのKernelにWindows Serverは使えない) 完全仮想化に比べて, 管理者が学ぶべきことが多い Reference: Dockerの欠点  なぜrootユーザーか #  Dockerはroot権限で動いているデーモン(dockerd)とunixソケットまたはtcp/ipで通信しているが, dockerdにアクセスするにはdockerグループに所属しているかroot権限が必要.">
-<meta name=theme-color content="#FFFFFF"><meta property="og:title" content>
+<meta name=theme-color content="#FFFFFF">
+<meta name=color-scheme content="light dark"><meta property="og:title" content>
 <meta property="og:description" content="Dockerとは #    コンテナ型の仮想環境を作成, 配布, 実行するためのプラットフォームのこと.
   プロセスを簡単にコンテナ化(isolate)し, 簡単かつ素早く開発・移動・実行できるプラットフォームのこと.
   Dockerコンテナは実行に必要な全てをパッケージして簡単に動かせる
@@ -33,7 +34,7 @@
 <link rel=icon href=/favicon.png type=image/x-icon>
 <link rel=stylesheet href=/book.min.3fc729a37471ee87e40517478b6ab5936d22fcb6008d40985724e4295d1a74c0.css integrity="sha256-P8cpo3Rx7ofkBRdHi2q1k20i/LYAjUCYVyTkKV0adMA=" crossorigin=anonymous>
 <script defer src=/flexsearch.min.js></script>
-<script defer src=/ja.search.min.f7cc464663b3b3a097afa2f984b8778e350346674fae4cd69f0f855aaa21c426.js integrity="sha256-98xGRmOzs6CXr6L5hLh3jjUDRmdPrkzWnw+FWqohxCY=" crossorigin=anonymous></script>
+<script defer src=/ja.search.min.381b7e7aefda0215c5d56d6cd4b0b82c055aa99fd7c8824f4b99e399988f29c7.js integrity="sha256-OBt+eu/aAhXF1W1s1LC4LAVaqZ/XyIJPS5njmZiPKcc=" crossorigin=anonymous></script>
 </head>
 <body dir=ltr>
 <input type=checkbox class="hidden toggle" id=menu-control>

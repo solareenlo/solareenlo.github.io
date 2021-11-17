@@ -7,7 +7,8 @@
 ③ クラスター上にデプロイするシステムの構成をコード(マニフェストファイル)によって定義できる
  運用オペレーションはコードの変更によって実施し, 作業を簡素化する. 複数Kubernetesクラスターでの相互運用を実現する  Reference: Kubernetesの基礎
 Docker Composeとの違い #  Docker Composeは動作させるコンテナを意識するだけでほとんど良かったが, Kubernetesではそれに加えて動作させるホスト(Node)やコンテナのグループ化(Pod), その複製(ReplicaSet)と公開(Service, Ingress)といったインフラレベルで意識していたことも全て設定ファイルの1つとして管理できる.">
-<meta name=theme-color content="#FFFFFF"><meta property="og:title" content>
+<meta name=theme-color content="#FFFFFF">
+<meta name=color-scheme content="light dark"><meta property="og:title" content>
 <meta property="og:description" content="Kubernetesとは #   Dockerコンテナのクラスタ管理を始めとしたオーケストレーションを行うサービスのこと. ホスト間の連携やデプロイについても総括的に管理できる(ここがDocker Composeと違うところ). Kubernetesの大きな特徴の1つに宣言的設定がある. 宣言的設定とは, イミュータブルなインフラを作るための基本的な考え方で, 「システムのあるべき姿」を設定ファイルに宣言する！という考え方. Kubernetesは設定ファイルに書いたとおりのインフラを維持するように設計されている. ので, 設定ファイル(yamlファイル)をたくさん書く事になる. Reference: Docker Compose利用者から見た Kubernetes 開発環境構築入門 GitHubリポジトリ: https://github.com/kubernetes  他のオーケストレーションと違うところ #  ① 様々なOSSと組み合わせることにより, 柔軟に機能拡張なところ.
  コンテナ運用を更に効率化 / 高速化 詳細なメトリック監視と可視化・・・Prometheus + Grafana コンテナのログの転送収集・・・Fluentd / Fluent Bit ネットワークトラフィックの制御・・・ Istio + Envoy Kubernetesの適応領域の拡大 機械学習プラットフォーム・・・Kubeflow 分散ストレージ・・・Rook 分散型データベース・・・Vitess  ② 本格的な宣言的オペレーションとInfrastructure as Codeを実現可能
 ③ クラスター上にデプロイするシステムの構成をコード(マニフェストファイル)によって定義できる
@@ -21,7 +22,7 @@ Docker Composeとの違い #  Docker Composeは動作させるコンテナを意
 <link rel=icon href=/favicon.png type=image/x-icon>
 <link rel=stylesheet href=/book.min.3fc729a37471ee87e40517478b6ab5936d22fcb6008d40985724e4295d1a74c0.css integrity="sha256-P8cpo3Rx7ofkBRdHi2q1k20i/LYAjUCYVyTkKV0adMA=" crossorigin=anonymous>
 <script defer src=/flexsearch.min.js></script>
-<script defer src=/ja.search.min.f7cc464663b3b3a097afa2f984b8778e350346674fae4cd69f0f855aaa21c426.js integrity="sha256-98xGRmOzs6CXr6L5hLh3jjUDRmdPrkzWnw+FWqohxCY=" crossorigin=anonymous></script>
+<script defer src=/ja.search.min.381b7e7aefda0215c5d56d6cd4b0b82c055aa99fd7c8824f4b99e399988f29c7.js integrity="sha256-OBt+eu/aAhXF1W1s1LC4LAVaqZ/XyIJPS5njmZiPKcc=" crossorigin=anonymous></script>
 </head>
 <body dir=ltr>
 <input type=checkbox class="hidden toggle" id=menu-control>

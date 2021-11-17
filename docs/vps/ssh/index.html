@@ -7,7 +7,8 @@
 # sshのconfigファイルを用いて通信する方法 scp file_name.txt -F ~/.ssh/config iota3:~/github scp <渡したいファイルの名前> -F <コンフィグファイルの名前> <渡し先のマシン名>:<渡し先のディレクトリ> Mac -> Ubuntu を公開鍵暗号方式で接続する #  UbuntuをSSH接続可にする #  Ubuntu側で
 sudo apt-get install openssh-server で, Ubuntu側へSSHで接続できるようになる.
 Macで秘密鍵と公開鍵のペアを作成する #  まずMacで秘密鍵と公開鍵のペアを作成する.">
-<meta name=theme-color content="#FFFFFF"><meta property="og:title" content="SSH">
+<meta name=theme-color content="#FFFFFF">
+<meta name=color-scheme content="light dark"><meta property="og:title" content="SSH">
 <meta property="og:description" content="SSH(Secure Shell)とは #   暗号や認証の技術を利用して, 安全にリモートコンピュータと通信するためのプロトコルのこと. VPSに接続するときは必須.  SSHの流れ #  Reference: SSH通信って、結局何してるの？
 [local]1.通信用の秘密鍵・公開鍵の作成する. [local]2.サーバーに公開鍵を渡す. [server]A.サーバーにユーザーを登録する(sudo権限). [server]B.サーバーに登録されているユーザーと, 渡された公開鍵を紐づける. ※この状態で初めて作成したユーザーによるサーバーへのログインが可能となる. [local]3.作成したユーザーでログインする. [server]C.ログイン時に乱数を生成する. [server]D.Cで生成した乱数から, ハッシュ値を生成する. ※このハッシュ値は認証で使うのでサーバー側で保持しておく. [server]E.受け取った公開鍵 + Cで生成した乱数を用いて暗号を生成する. [server]F.Dで作成した暗号をローカルに送る. [local]4.1で作成した秘密鍵を用いて, 送られてきた暗号を解読し乱数を復元する. [local]5.乱数からハッシュ値を計算し, そのハッシュ値をサーバーに送る. [server]G.送られてきたハッシュ値と、Dで生成したハッシュ値を比較する. 一致していれば認証成功. 以後全ての通信は暗号化される. scp #  scpとはSSHを用いてファイルを秘匿化してコピーする技術のこと.
 # sshのconfigファイルを用いて通信する方法 scp file_name.txt -F ~/.ssh/config iota3:~/github scp <渡したいファイルの名前> -F <コンフィグファイルの名前> <渡し先のマシン名>:<渡し先のディレクトリ> Mac -> Ubuntu を公開鍵暗号方式で接続する #  UbuntuをSSH接続可にする #  Ubuntu側で
@@ -21,7 +22,7 @@ Macで秘密鍵と公開鍵のペアを作成する #  まずMacで秘密鍵と�
 <link rel=icon href=/favicon.png type=image/x-icon>
 <link rel=stylesheet href=/book.min.3fc729a37471ee87e40517478b6ab5936d22fcb6008d40985724e4295d1a74c0.css integrity="sha256-P8cpo3Rx7ofkBRdHi2q1k20i/LYAjUCYVyTkKV0adMA=" crossorigin=anonymous>
 <script defer src=/flexsearch.min.js></script>
-<script defer src=/ja.search.min.f7cc464663b3b3a097afa2f984b8778e350346674fae4cd69f0f855aaa21c426.js integrity="sha256-98xGRmOzs6CXr6L5hLh3jjUDRmdPrkzWnw+FWqohxCY=" crossorigin=anonymous></script>
+<script defer src=/ja.search.min.381b7e7aefda0215c5d56d6cd4b0b82c055aa99fd7c8824f4b99e399988f29c7.js integrity="sha256-OBt+eu/aAhXF1W1s1LC4LAVaqZ/XyIJPS5njmZiPKcc=" crossorigin=anonymous></script>
 </head>
 <body dir=ltr>
 <input type=checkbox class="hidden toggle" id=menu-control>
