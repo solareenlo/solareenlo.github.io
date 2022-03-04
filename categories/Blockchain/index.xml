@@ -7,5 +7,5 @@ Reference: Bitcoinウォレットの比較
 bitcoindを使ってBitcoinのフルノードを立ち上げて,
 bitcoin-cli getblockchaininfo とか.
 2. cURLを使ってアクセスする. # 下記curlを行う要件.
-ネットワーク: mainnet 接続環境: ローカル ポート番号: 8332 ユーザーの名前: user-name パスワード: user-password 投げつけているbitcoin-cliのメソッド: getblockchaininfo curl --data-binary '{&amp;quot;jsonrpc&amp;quot;:&amp;quot;1.0&amp;quot;,&amp;quot;id&amp;quot;:&amp;quot;curltext&amp;quot;,&amp;quot;method&amp;quot;:&amp;quot;getblockchaininfo&amp;quot;,&amp;quot;params&amp;quot;:[]}' -H 'content-type:text/plain;' http://user-name:user-password@127.0.0.1:8332/ | jq 3. 自作プログラムでPOSTしてアクセスする. # bitcoindはHTTPリクエストメソッドのPOSTに対応しているので, JSON-RPCをPOSTで投げつける. 以下のプログラムはNode.jsを使った例.
+ネットワーク: mainnet 接続環境: ローカル ポート番号: 8332 ユーザーの名前: user-name パスワード: user-password 投げつけているbitcoin-cliのメソッド: getblockchaininfo curl --data-binary &amp;#39;{&amp;#34;jsonrpc&amp;#34;:&amp;#34;1.0&amp;#34;,&amp;#34;id&amp;#34;:&amp;#34;curltext&amp;#34;,&amp;#34;method&amp;#34;:&amp;#34;getblockchaininfo&amp;#34;,&amp;#34;params&amp;#34;:[]}&amp;#39; -H &amp;#39;content-type:text/plain;&amp;#39; http://user-name:user-password@127.0.0.1:8332/ | jq 3. 自作プログラムでPOSTしてアクセスする. # bitcoindはHTTPリクエストメソッドのPOSTに対応しているので, JSON-RPCをPOSTで投げつける. 以下のプログラムはNode.jsを使った例.
 https://github.com/solareenlo/bc-json-rpc</description></item></channel></rss>

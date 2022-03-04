@@ -2,21 +2,19 @@
 <head>
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=description content="sedとは #   入力ストリーム（ファイルまたはパイプラインからの入力）に対してテキスト変換などのデータ処理をおこなうプログラム. 名称「sed」は「ストリームエディタ」を意味する英語「stream editor」から.  .gitignoreの/distを削除 #  sed -i -e &#34;/\/dist/d&#34; .gitignore # -i: 上書き保存 # -e: 行の削除 # d: 行目を表す(上の例だと\distを含む行) 初めてのsed #  cat names.txt > 1 taguchi > 2 koji > 3 taro > 4 hanako > 5 yasuda # 3行目を削除して標準出力する sed -e '3d' names.txt # 3dのところが1つしかない場合は-eを省略できる sed '3d' names.txt > 1 taguchi > 2 koji > 4 hanako > 5 yasuda # sedして上書きしたい場合 sed -i '3d' names.">
+<meta name=description content="sedとは #   入力ストリーム（ファイルまたはパイプラインからの入力）に対してテキスト変換などのデータ処理をおこなうプログラム. 名称「sed」は「ストリームエディタ」を意味する英語「stream editor」から.  .gitignoreの/distを削除 #  sed -i -e &#34;/\/dist/d&#34; .gitignore # -i: 上書き保存 # -e: 行の削除 # d: 行目を表す(上の例だと\distを含む行) 初めてのsed #  cat names.txt > 1 taguchi > 2 koji > 3 taro > 4 hanako > 5 yasuda  # 3行目を削除して標準出力する sed -e '3d' names.txt # 3dのところが1つしかない場合は-eを省略できる sed '3d' names.txt > 1 taguchi > 2 koji > 4 hanako > 5 yasuda  # sedして上書きしたい場合 sed -i '3d' names.">
 <meta name=theme-color content="#FFFFFF">
 <meta name=color-scheme content="light dark"><meta property="og:title" content>
-<meta property="og:description" content="sedとは #   入力ストリーム（ファイルまたはパイプラインからの入力）に対してテキスト変換などのデータ処理をおこなうプログラム. 名称「sed」は「ストリームエディタ」を意味する英語「stream editor」から.  .gitignoreの/distを削除 #  sed -i -e &#34;/\/dist/d&#34; .gitignore # -i: 上書き保存 # -e: 行の削除 # d: 行目を表す(上の例だと\distを含む行) 初めてのsed #  cat names.txt > 1 taguchi > 2 koji > 3 taro > 4 hanako > 5 yasuda # 3行目を削除して標準出力する sed -e '3d' names.txt # 3dのところが1つしかない場合は-eを省略できる sed '3d' names.txt > 1 taguchi > 2 koji > 4 hanako > 5 yasuda # sedして上書きしたい場合 sed -i '3d' names.">
+<meta property="og:description" content="sedとは #   入力ストリーム（ファイルまたはパイプラインからの入力）に対してテキスト変換などのデータ処理をおこなうプログラム. 名称「sed」は「ストリームエディタ」を意味する英語「stream editor」から.  .gitignoreの/distを削除 #  sed -i -e &#34;/\/dist/d&#34; .gitignore # -i: 上書き保存 # -e: 行の削除 # d: 行目を表す(上の例だと\distを含む行) 初めてのsed #  cat names.txt > 1 taguchi > 2 koji > 3 taro > 4 hanako > 5 yasuda  # 3行目を削除して標準出力する sed -e '3d' names.txt # 3dのところが1つしかない場合は-eを省略できる sed '3d' names.txt > 1 taguchi > 2 koji > 4 hanako > 5 yasuda  # sedして上書きしたい場合 sed -i '3d' names.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://solareenlo.com/docs/programming/sed/"><meta property="article:section" content="docs">
 <meta property="article:modified_time" content="2020-03-20T07:56:42+09:00">
-<title>Sed | solareenlo</title>
-<link rel=manifest href=/manifest.json>
+<title>Sed | solareenlo</title><link rel=manifest href=/manifest.json>
 <link rel=icon href=/favicon.png type=image/x-icon>
 <link rel=stylesheet href=/book.min.653769dc566cda7e41ad715944b80f4b376884be00ffc7ff135147d99a7a6ca4.css integrity="sha256-ZTdp3FZs2n5BrXFZRLgPSzdohL4A/8f/E1FH2Zp6bKQ=" crossorigin=anonymous>
 <script defer src=/flexsearch.min.js></script>
-<script defer src=/ja.search.min.7f051b3a78137d32a0c4c6ce51495ebb589205806e7284eaa97d9ec889e46b4e.js integrity="sha256-fwUbOngTfTKgxMbOUUleu1iSBYBucoTqqX2eyInka04=" crossorigin=anonymous></script>
-</head>
-<body dir=ltr>
+<script defer src=/ja.search.min.2ef973b17eb164a3b1d994571b8c0df19f666d3c5ae2c4f159cded0e1c8b2b26.js integrity="sha256-LvlzsX6xZKOx2ZRXG4wN8Z9mbTxa4sTxWc3tDhyLKyY=" crossorigin=anonymous></script>
+</head><body dir=ltr>
 <input type=checkbox class="hidden toggle" id=menu-control>
 <input type=checkbox class="hidden toggle" id=toc-control>
 <main class="container flex">
@@ -26,290 +24,198 @@
 <h2 class=book-brand>
 <a class="flex align-center" href=/><span>solareenlo</span>
 </a>
-</h2>
-<div class=book-search>
+</h2><div class=book-search>
 <input type=text id=book-search-input placeholder=検索 aria-label=検索 maxlength=64 data-hotkeys=s/>
-<div class="book-search-spinner hidden"></div>
-<ul id=book-search-results></ul>
-</div>
-<ul>
+<div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><ul>
 <li>
 <a href=/posts/>
 Blog
 </a>
-</li>
-</ul>
-<ul>
+</li></ul><ul>
 <li>
 <input type=checkbox id=section-57e58ca5aae968f4961a4036f314a5de class=toggle checked>
 <label for=section-57e58ca5aae968f4961a4036f314a5de class="flex justify-between">
-<a href=https://solareenlo.com/docs/programming/>Programming</a>
+<a href=/docs/programming/>Programming</a>
 </label>
 <ul>
 <li>
-<a href=https://solareenlo.com/docs/programming/command/>Command</a>
-</li>
-<li>
-<a href=https://solareenlo.com/docs/programming/fonts/>Fonts</a>
-</li>
-<li>
-<a href=https://solareenlo.com/docs/programming/git/>Git</a>
-</li>
-<li>
-<a href=https://solareenlo.com/docs/programming/github/>Github</a>
-</li>
-<li>
-<a href=https://solareenlo.com/docs/programming/linter-formatter/>Linter Formatter</a>
-</li>
-<li>
-<a href=https://solareenlo.com/docs/programming/password-manager/>Password Manager</a>
-</li>
-<li>
-<a href=https://solareenlo.com/docs/programming/sed/ class=active>Sed</a>
-</li>
-<li>
-<a href=https://solareenlo.com/docs/programming/shell-script/>Shell Script</a>
-</li>
-<li>
-<a href=https://solareenlo.com/docs/programming/terminal/>Terminal</a>
-</li>
-<li>
-<a href=https://solareenlo.com/docs/programming/test/>Test</a>
-</li>
-<li>
-<a href=https://solareenlo.com/docs/programming/tmux/>Tmux</a>
-</li>
-<li>
-<a href=https://solareenlo.com/docs/programming/vim/>Vim</a>
-</li>
-<li>
-<a href=https://solareenlo.com/docs/programming/vimium/>Vimium</a>
-</li>
-<li>
-<a href=https://solareenlo.com/docs/programming/wiki/>Wiki</a>
-</li>
-<li>
-<a href=https://solareenlo.com/docs/programming/hhkb/>HHKB</a>
-</li>
-</ul>
-</li>
-<li>
+<a href=/docs/programming/command/>Command</a>
+</li><li>
+<a href=/docs/programming/fonts/>Fonts</a>
+</li><li>
+<a href=/docs/programming/git/>Git</a>
+</li><li>
+<a href=/docs/programming/github/>Github</a>
+</li><li>
+<a href=/docs/programming/linter-formatter/>Linter Formatter</a>
+</li><li>
+<a href=/docs/programming/password-manager/>Password Manager</a>
+</li><li>
+<a href=/docs/programming/sed/ class=active>Sed</a>
+</li><li>
+<a href=/docs/programming/shell-script/>Shell Script</a>
+</li><li>
+<a href=/docs/programming/terminal/>Terminal</a>
+</li><li>
+<a href=/docs/programming/test/>Test</a>
+</li><li>
+<a href=/docs/programming/tmux/>Tmux</a>
+</li><li>
+<a href=/docs/programming/vim/>Vim</a>
+</li><li>
+<a href=/docs/programming/vimium/>Vimium</a>
+</li><li>
+<a href=/docs/programming/wiki/>Wiki</a>
+</li><li>
+<a href=/docs/programming/hhkb/>HHKB</a>
+</li></ul></li><li>
 <input type=checkbox id=section-771d1b18af68e81cd9d3d14cd5f6339b class=toggle>
 <label for=section-771d1b18af68e81cd9d3d14cd5f6339b class="flex justify-between">
-<a href=https://solareenlo.com/docs/pl/>Programming Language</a>
+<a href=/docs/pl/>Programming Language</a>
 </label>
 <ul>
 <li>
-<a href=https://solareenlo.com/docs/pl/angular/>Angular</a>
-</li>
-<li>
-<a href=https://solareenlo.com/docs/pl/c/>C</a>
-</li>
-<li>
-<a href=https://solareenlo.com/docs/pl/css/>Css</a>
-</li>
-<li>
-<a href=https://solareenlo.com/docs/pl/go/>Go</a>
-</li>
-<li>
-<a href=https://solareenlo.com/docs/pl/haskell/>Haskell</a>
-</li>
-<li>
-<a href=https://solareenlo.com/docs/pl/hugo/>Hugo</a>
-</li>
-<li>
-<a href=https://solareenlo.com/docs/pl/javascript/>Javascript</a>
-</li>
-<li>
-<a href=https://solareenlo.com/docs/pl/nodejs/>Nodejs</a>
-</li>
-<li>
-<a href=https://solareenlo.com/docs/pl/pl-docs/>Pl Docs</a>
-</li>
-<li>
-<a href=https://solareenlo.com/docs/pl/react-static/>React Static</a>
-</li>
-<li>
-<a href=https://solareenlo.com/docs/pl/react/>React</a>
-</li>
-<li>
-<a href=https://solareenlo.com/docs/pl/rust/>Rust</a>
-</li>
-<li>
-<a href=https://solareenlo.com/docs/pl/scala/>Scala</a>
-</li>
-<li>
-<a href=https://solareenlo.com/docs/pl/typescript/>Typescript</a>
-</li>
-<li>
-<a href=https://solareenlo.com/docs/pl/npm/>npm</a>
-</li>
-</ul>
-</li>
-<li>
+<a href=/docs/pl/angular/>Angular</a>
+</li><li>
+<a href=/docs/pl/c/>C</a>
+</li><li>
+<a href=/docs/pl/css/>Css</a>
+</li><li>
+<a href=/docs/pl/go/>Go</a>
+</li><li>
+<a href=/docs/pl/haskell/>Haskell</a>
+</li><li>
+<a href=/docs/pl/hugo/>Hugo</a>
+</li><li>
+<a href=/docs/pl/javascript/>Javascript</a>
+</li><li>
+<a href=/docs/pl/nodejs/>Nodejs</a>
+</li><li>
+<a href=/docs/pl/pl-docs/>Pl Docs</a>
+</li><li>
+<a href=/docs/pl/react-static/>React Static</a>
+</li><li>
+<a href=/docs/pl/react/>React</a>
+</li><li>
+<a href=/docs/pl/rust/>Rust</a>
+</li><li>
+<a href=/docs/pl/scala/>Scala</a>
+</li><li>
+<a href=/docs/pl/typescript/>Typescript</a>
+</li><li>
+<a href=/docs/pl/npm/>npm</a>
+</li></ul></li><li>
 <input type=checkbox id=section-a7bf5468f483fd7222967f135a5003c0 class=toggle>
 <label for=section-a7bf5468f483fd7222967f135a5003c0 class="flex justify-between">
-<a href=https://solareenlo.com/docs/latex/>LaTeX</a>
+<a href=/docs/latex/>LaTeX</a>
 </label>
 <ul>
 <li>
-<a href=https://solareenlo.com/docs/latex/platex-book/>Platex Book</a>
-</li>
-<li>
-<a href=https://solareenlo.com/docs/latex/zathura-install/>Zathura Install</a>
-</li>
-</ul>
-</li>
-<li>
+<a href=/docs/latex/platex-book/>Platex Book</a>
+</li><li>
+<a href=/docs/latex/zathura-install/>Zathura Install</a>
+</li></ul></li><li>
 <input type=checkbox id=section-e14f9767e53904cbbdcb3f0bdbe82f2a class=toggle>
 <label for=section-e14f9767e53904cbbdcb3f0bdbe82f2a class="flex justify-between">
-<a href=https://solareenlo.com/docs/vps/>VPS</a>
+<a href=/docs/vps/>VPS</a>
 </label>
 <ul>
 <li>
-<a href=https://solareenlo.com/docs/vps/alpine-linux/>Alpine Linux</a>
-</li>
-<li>
-<a href=https://solareenlo.com/docs/vps/ubuntu/>Ubuntu</a>
-</li>
-<li>
-<a href=https://solareenlo.com/docs/vps/ssh/>SSH</a>
-</li>
-</ul>
-</li>
-<li>
+<a href=/docs/vps/alpine-linux/>Alpine Linux</a>
+</li><li>
+<a href=/docs/vps/ubuntu/>Ubuntu</a>
+</li><li>
+<a href=/docs/vps/ssh/>SSH</a>
+</li></ul></li><li>
 <input type=checkbox id=section-99a3d9d52cfe7a0dcbd55cd8c23e4462 class=toggle>
 <label for=section-99a3d9d52cfe7a0dcbd55cd8c23e4462 class="flex justify-between">
-<a href=https://solareenlo.com/docs/db/>DB</a>
+<a href=/docs/db/>DB</a>
 </label>
 <ul>
 <li>
-<a href=https://solareenlo.com/docs/db/redis/>Redis</a>
-</li>
-<li>
-<a href=https://solareenlo.com/docs/db/mongodb/>MongoDB</a>
-</li>
-<li>
-<a href=https://solareenlo.com/docs/db/mysql/>MySQL</a>
-</li>
-</ul>
-</li>
-<li>
+<a href=/docs/db/redis/>Redis</a>
+</li><li>
+<a href=/docs/db/mongodb/>MongoDB</a>
+</li><li>
+<a href=/docs/db/mysql/>MySQL</a>
+</li></ul></li><li>
 <input type=checkbox id=section-e5a49337b6189bd60f0b5e1d3a4a8539 class=toggle>
 <label for=section-e5a49337b6189bd60f0b5e1d3a4a8539 class="flex justify-between">
-<a href=https://solareenlo.com/docs/cloud/>Cloud</a>
+<a href=/docs/cloud/>Cloud</a>
 </label>
 <ul>
 <li>
-<a href=https://solareenlo.com/docs/cloud/aws/>Aws</a>
-</li>
-<li>
-<a href=https://solareenlo.com/docs/cloud/firebase/>Firebase</a>
-</li>
-<li>
-<a href=https://solareenlo.com/docs/cloud/gcp/>Gcp</a>
-</li>
-<li>
-<a href=https://solareenlo.com/docs/cloud/sendgrid/>Sendgrid</a>
-</li>
-<li>
-<a href=https://solareenlo.com/docs/cloud/zeit-now/>Zeit Now</a>
-</li>
-</ul>
-</li>
-<li>
+<a href=/docs/cloud/aws/>Aws</a>
+</li><li>
+<a href=/docs/cloud/firebase/>Firebase</a>
+</li><li>
+<a href=/docs/cloud/gcp/>Gcp</a>
+</li><li>
+<a href=/docs/cloud/sendgrid/>Sendgrid</a>
+</li><li>
+<a href=/docs/cloud/zeit-now/>Zeit Now</a>
+</li></ul></li><li>
 <input type=checkbox id=section-dfa5c6b6f5f2def7a1fbf289a7570ac2 class=toggle>
 <label for=section-dfa5c6b6f5f2def7a1fbf289a7570ac2 class="flex justify-between">
-<a href=https://solareenlo.com/docs/ci-cd/>CI/CD</a>
+<a href=/docs/ci-cd/>CI/CD</a>
 </label>
 <ul>
 <li>
-<a href=https://solareenlo.com/docs/ci-cd/circleci/>Circleci</a>
-</li>
-<li>
-<a href=https://solareenlo.com/docs/ci-cd/jenkins/>Jenkins</a>
-</li>
-<li>
-<a href=https://solareenlo.com/docs/ci-cd/travis-ci/>Travis Ci</a>
-</li>
-</ul>
-</li>
-<li>
+<a href=/docs/ci-cd/circleci/>Circleci</a>
+</li><li>
+<a href=/docs/ci-cd/jenkins/>Jenkins</a>
+</li><li>
+<a href=/docs/ci-cd/travis-ci/>Travis Ci</a>
+</li></ul></li><li>
 <input type=checkbox id=section-10dd021a58cb696b6cb4f79141ec5ddb class=toggle>
 <label for=section-10dd021a58cb696b6cb4f79141ec5ddb class="flex justify-between">
-<a href=https://solareenlo.com/docs/container/>Conatainer</a>
+<a href=/docs/container/>Conatainer</a>
 </label>
 <ul>
 <li>
-<a href=https://solareenlo.com/docs/container/docker-compose/>Docker Compose</a>
-</li>
-<li>
-<a href=https://solareenlo.com/docs/container/docker-hub/>Docker Hub</a>
-</li>
-<li>
-<a href=https://solareenlo.com/docs/container/docker1/>Docker1</a>
-</li>
-<li>
-<a href=https://solareenlo.com/docs/container/docker2/>Docker2</a>
-</li>
-<li>
-<a href=https://solareenlo.com/docs/container/kubernetes/>Kubernetes</a>
-</li>
-</ul>
-</li>
-<li>
+<a href=/docs/container/docker-compose/>Docker Compose</a>
+</li><li>
+<a href=/docs/container/docker-hub/>Docker Hub</a>
+</li><li>
+<a href=/docs/container/docker1/>Docker1</a>
+</li><li>
+<a href=/docs/container/docker2/>Docker2</a>
+</li><li>
+<a href=/docs/container/kubernetes/>Kubernetes</a>
+</li></ul></li><li>
 <input type=checkbox id=section-342a656e10fe011a820c22dda53f7866 class=toggle>
 <label for=section-342a656e10fe011a820c22dda53f7866 class="flex justify-between">
-<a href=https://solareenlo.com/docs/crypto/>Crypto</a>
+<a href=/docs/crypto/>Crypto</a>
 </label>
 <ul>
 <li>
-<a href=https://solareenlo.com/docs/crypto/blockchain/>Blockchain</a>
-</li>
-<li>
-<a href=https://solareenlo.com/docs/crypto/crypto-docs/>Crypto Docs</a>
-</li>
-<li>
-<a href=https://solareenlo.com/docs/crypto/ethereum/>Ethereum</a>
-</li>
-<li>
-<a href=https://solareenlo.com/docs/crypto/substrate/>Substrate</a>
-</li>
-<li>
-<a href=https://solareenlo.com/docs/crypto/white-paper/>White Paper</a>
-</li>
-<li>
-<a href=https://solareenlo.com/docs/crypto/bitcoin/>Bitcoin</a>
-</li>
-<li>
-<a href=https://solareenlo.com/docs/crypto/iota/>IOTA</a>
-</li>
-<li>
-<a href=https://solareenlo.com/docs/crypto/nem/>NEM</a>
-</li>
-<li>
-<a href=https://solareenlo.com/docs/crypto/bitcoin-fullnode/>フルノード</a>
-</li>
-</ul>
-</li>
-<li>
-<a href=https://solareenlo.com/docs/tools/>Tools</a>
+<a href=/docs/crypto/blockchain/>Blockchain</a>
+</li><li>
+<a href=/docs/crypto/crypto-docs/>Crypto Docs</a>
+</li><li>
+<a href=/docs/crypto/ethereum/>Ethereum</a>
+</li><li>
+<a href=/docs/crypto/substrate/>Substrate</a>
+</li><li>
+<a href=/docs/crypto/white-paper/>White Paper</a>
+</li><li>
+<a href=/docs/crypto/bitcoin/>Bitcoin</a>
+</li><li>
+<a href=/docs/crypto/iota/>IOTA</a>
+</li><li>
+<a href=/docs/crypto/nem/>NEM</a>
+</li><li>
+<a href=/docs/crypto/bitcoin-fullnode/>フルノード</a>
+</li></ul></li><li>
+<a href=/docs/tools/>Tools</a>
 <ul>
-</ul>
-</li>
-</ul>
-<ul>
+</ul></li></ul><ul>
 <li>
 <a href=https://github.com/solareenlo/blog-hugo target=_blank rel=noopener>
 Github
 </a>
-</li>
-</ul>
-</nav>
-<script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
-</div>
-</aside>
-<div class=book-page>
+</li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+</div></aside><div class=book-page>
 <header class=book-header>
 <div class="flex align-center justify-between">
 <label for=menu-control>
@@ -319,425 +225,361 @@ Github
 <label for=toc-control>
 <img src=/svg/toc.svg class=book-icon alt="Table of Contents">
 </label>
-</div>
-<aside class="hidden clearfix">
+</div><aside class="hidden clearfix">
 <nav id=TableOfContents>
 <ul>
 <li><a href=#sedとは>sedとは</a>
 <ul>
-<li><a href=#gitignoreのdistを削除>.gitignoreの/distを削除</a></li>
-<li><a href=#初めてのsed>初めてのsed</a></li>
-<li><a href=#パターンスペースについて>パターンスペースについて</a></li>
-<li><a href=#アドレスを使いこなす>アドレスを使いこなす</a></li>
-<li><a href=#paiコマンドを使う>p/a/iコマンドを使う</a></li>
-<li><a href=#1文字ずつの文字置換にはyコマンドを使う>1文字ずつの文字置換にはyコマンドを使う</a></li>
-<li><a href=#文字列置換にはsコマンドを使う>文字列置換にはsコマンドを使う</a></li>
-<li><a href=#や1を使って置換する>&や\1を使って置換する</a></li>
-<li><a href=#ホールドスペースを使う>ホールドスペースを使う</a></li>
-</ul>
-</li>
-</ul>
-</nav>
-</aside>
-</header>
-<article class=markdown><h1 id=sedとは>
+<li><a href=#gitignoreのdistを削除>.gitignoreの/distを削除</a></li><li><a href=#初めてのsed>初めてのsed</a></li><li><a href=#パターンスペースについて>パターンスペースについて</a></li><li><a href=#アドレスを使いこなす>アドレスを使いこなす</a></li><li><a href=#paiコマンドを使う>p/a/iコマンドを使う</a></li><li><a href=#1文字ずつの文字置換にはyコマンドを使う>1文字ずつの文字置換にはyコマンドを使う</a></li><li><a href=#文字列置換にはsコマンドを使う>文字列置換にはsコマンドを使う</a></li><li><a href=#や1を使って置換する>&や\1を使って置換する</a></li><li><a href=#ホールドスペースを使う>ホールドスペースを使う</a></li></ul></li></ul></nav></aside></header><article class=markdown><h1 id=sedとは>
 sedとは
 <a class=anchor href=#sed%e3%81%a8%e3%81%af>#</a>
-</h1>
-<ul>
-<li>入力ストリーム（ファイルまたはパイプラインからの入力）に対してテキスト変換などのデータ処理をおこなうプログラム.</li>
-<li>名称「sed」は「ストリームエディタ」を意味する英語「stream editor」から.</li>
-</ul>
-<h2 id=gitignoreのdistを削除>
+</h1><ul>
+<li>入力ストリーム（ファイルまたはパイプラインからの入力）に対してテキスト変換などのデータ処理をおこなうプログラム.</li><li>名称「sed」は「ストリームエディタ」を意味する英語「stream editor」から.</li></ul><h2 id=gitignoreのdistを削除>
 .gitignoreの/distを削除
 <a class=anchor href=#gitignore%e3%81%aedist%e3%82%92%e5%89%8a%e9%99%a4>#</a>
-</h2>
-<div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>sed -i -e <span style=color:#2aa198>&#34;/\/dist/d&#34;</span> .gitignore
-<span style=color:#586e75># -i: 上書き保存</span>
-<span style=color:#586e75># -e: 行の削除</span>
-<span style=color:#586e75># d: 行目を表す(上の例だと\distを含む行)</span>
-</code></pre></div><h2 id=初めてのsed>
+</h2><div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>sed -i -e <span style=color:#2aa198>&#34;/\/dist/d&#34;</span> .gitignore
+</span></span><span style=display:flex><span><span style=color:#586e75># -i: 上書き保存</span>
+</span></span><span style=display:flex><span><span style=color:#586e75># -e: 行の削除</span>
+</span></span><span style=display:flex><span><span style=color:#586e75># d: 行目を表す(上の例だと\distを含む行)</span>
+</span></span></code></pre></div><h2 id=初めてのsed>
 初めてのsed
 <a class=anchor href=#%e5%88%9d%e3%82%81%e3%81%a6%e3%81%aesed>#</a>
-</h2>
-<div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>cat names.txt
-&gt; <span style=color:#2aa198>1</span> taguchi
-&gt; <span style=color:#2aa198>2</span> koji
-&gt; <span style=color:#2aa198>3</span> taro
-&gt; <span style=color:#2aa198>4</span> hanako
-&gt; <span style=color:#2aa198>5</span> yasuda
-
-<span style=color:#586e75># 3行目を削除して標準出力する</span>
-sed -e <span style=color:#2aa198>&#39;3d&#39;</span> names.txt
-<span style=color:#586e75># 3dのところが1つしかない場合は-eを省略できる</span>
-sed <span style=color:#2aa198>&#39;3d&#39;</span> names.txt
-&gt; <span style=color:#2aa198>1</span> taguchi
-&gt; <span style=color:#2aa198>2</span> koji
-&gt; <span style=color:#2aa198>4</span> hanako
-&gt; <span style=color:#2aa198>5</span> yasuda
-
-<span style=color:#586e75># sedして上書きしたい場合</span>
-sed -i <span style=color:#2aa198>&#39;3d&#39;</span> names.txt
-
-<span style=color:#586e75># 上記をバックアップを取りながらしたい場合</span>
-sed -i.bak <span style=color:#2aa198>&#39;3d&#39;</span> names.txt
-cat names.txt
-&gt; <span style=color:#2aa198>1</span> taguchi
-&gt; <span style=color:#2aa198>2</span> koji
-&gt; <span style=color:#2aa198>4</span> hanako
-&gt; <span style=color:#2aa198>5</span> yasuda
-
-ls
-&gt; names.txt names.txt.bak
-cat names.txt.bak
-&gt; <span style=color:#2aa198>1</span> taguchi
-&gt; <span style=color:#2aa198>2</span> koji
-&gt; <span style=color:#2aa198>3</span> taro
-&gt; <span style=color:#2aa198>4</span> hanako
-&gt; <span style=color:#2aa198>5</span> yasuda
-mv names.txt.bak names.txt
-ls
-&gt; names.txt
-
-<span style=color:#586e75># ファイルを読み込んでsedする</span>
-vim ex1.sed
-3d <span style=color:#586e75># と書き込む</span>
-:wp
-sed -f ex1.sed names.txt
-&gt; <span style=color:#2aa198>1</span> taguchi
-&gt; <span style=color:#2aa198>2</span> koji
-&gt; <span style=color:#2aa198>4</span> hanako
-&gt; <span style=color:#2aa198>5</span> yasuda
-
-<span style=color:#586e75># パイプとsedを用いてディレクトリ情報の初めの3行を削除して標準出力</span>
-ls -la | sed <span style=color:#2aa198>&#39;1,3d&#39;</span>
-&gt; ディレクトリ情報の初めの3行が削除された形で標準出力される
-
-<span style=color:#586e75># さらにリダイレクト(&gt;)も使って, 上記をファイルに出力する</span>
-ls -la | sed <span style=color:#2aa198>&#39;1,3d&#39;</span> &gt; output.txt
-</code></pre></div><h2 id=パターンスペースについて>
+</h2><div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>cat names.txt
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>1</span> taguchi
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>2</span> koji
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>3</span> taro
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>4</span> hanako
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>5</span> yasuda
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#586e75># 3行目を削除して標準出力する</span>
+</span></span><span style=display:flex><span>sed -e <span style=color:#2aa198>&#39;3d&#39;</span> names.txt
+</span></span><span style=display:flex><span><span style=color:#586e75># 3dのところが1つしかない場合は-eを省略できる</span>
+</span></span><span style=display:flex><span>sed <span style=color:#2aa198>&#39;3d&#39;</span> names.txt
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>1</span> taguchi
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>2</span> koji
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>4</span> hanako
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>5</span> yasuda
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#586e75># sedして上書きしたい場合</span>
+</span></span><span style=display:flex><span>sed -i <span style=color:#2aa198>&#39;3d&#39;</span> names.txt
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#586e75># 上記をバックアップを取りながらしたい場合</span>
+</span></span><span style=display:flex><span>sed -i.bak <span style=color:#2aa198>&#39;3d&#39;</span> names.txt
+</span></span><span style=display:flex><span>cat names.txt
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>1</span> taguchi
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>2</span> koji
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>4</span> hanako
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>5</span> yasuda
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>ls
+</span></span><span style=display:flex><span>&gt; names.txt names.txt.bak
+</span></span><span style=display:flex><span>cat names.txt.bak
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>1</span> taguchi
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>2</span> koji
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>3</span> taro
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>4</span> hanako
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>5</span> yasuda
+</span></span><span style=display:flex><span>mv names.txt.bak names.txt
+</span></span><span style=display:flex><span>ls
+</span></span><span style=display:flex><span>&gt; names.txt
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#586e75># ファイルを読み込んでsedする</span>
+</span></span><span style=display:flex><span>vim ex1.sed
+</span></span><span style=display:flex><span>3d <span style=color:#586e75># と書き込む</span>
+</span></span><span style=display:flex><span>:wp
+</span></span><span style=display:flex><span>sed -f ex1.sed names.txt
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>1</span> taguchi
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>2</span> koji
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>4</span> hanako
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>5</span> yasuda
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#586e75># パイプとsedを用いてディレクトリ情報の初めの3行を削除して標準出力</span>
+</span></span><span style=display:flex><span>ls -la | sed <span style=color:#2aa198>&#39;1,3d&#39;</span>
+</span></span><span style=display:flex><span>&gt; ディレクトリ情報の初めの3行が削除された形で標準出力される
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#586e75># さらにリダイレクト(&gt;)も使って, 上記をファイルに出力する</span>
+</span></span><span style=display:flex><span>ls -la | sed <span style=color:#2aa198>&#39;1,3d&#39;</span> &gt; output.txt
+</span></span></code></pre></div><h2 id=パターンスペースについて>
 パターンスペースについて
 <a class=anchor href=#%e3%83%91%e3%82%bf%e3%83%bc%e3%83%b3%e3%82%b9%e3%83%9a%e3%83%bc%e3%82%b9%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6>#</a>
-</h2>
-<p>sedはパターンスペースを用いて操作を行っている.<br>
+</h2><p>sedはパターンスペースを用いて操作を行っている.<br>
 どういうことかというと,<br>
 <code>sed '3d' names.txt'</code><br>
-は, 3がaddress, dが削除commandの意味で,</p>
-<ol>
-<li>fileから1行目を読み込んでパターンスペースに格納</li>
-<li>addressにマッチする？ → commandを実行</li>
-<li>パターンスペースを表示<br>
-という流れになっている.</li>
-</ol>
-<h2 id=アドレスを使いこなす>
+は, 3がaddress, dが削除commandの意味で,</p><ol>
+<li>fileから1行目を読み込んでパターンスペースに格納</li><li>addressにマッチする？ → commandを実行</li><li>パターンスペースを表示<br>
+という流れになっている.</li></ol><h2 id=アドレスを使いこなす>
 アドレスを使いこなす
 <a class=anchor href=#%e3%82%a2%e3%83%89%e3%83%ac%e3%82%b9%e3%82%92%e4%bd%bf%e3%81%84%e3%81%93%e3%81%aa%e3%81%99>#</a>
-</h2>
-<div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>cat names.txt
-&gt; <span style=color:#2aa198>1</span> taguchi
-&gt; <span style=color:#2aa198>2</span> koji
-&gt; <span style=color:#2aa198>3</span> taro
-&gt; <span style=color:#2aa198>4</span> hanako
-&gt; <span style=color:#2aa198>5</span> yasuda
-
-<span style=color:#586e75># 3行目以外を削除</span>
-sed <span style=color:#2aa198>&#39;3!d&#39;</span> names.txt
-&gt; <span style=color:#2aa198>3</span> taro
-
-<span style=color:#586e75># 1行目と3行目を削除</span>
-sed <span style=color:#2aa198>&#39;1d;3d&#39;</span> names.txt
-&gt; <span style=color:#2aa198>2</span> koji
-&gt; <span style=color:#2aa198>4</span> hanako
-&gt; <span style=color:#2aa198>5</span> yasuda
-
-<span style=color:#586e75># 1行目から3行目までを削除</span>
-sed <span style=color:#2aa198>&#39;1,3d&#39;</span> names.txt
-&gt; <span style=color:#2aa198>4</span> hanako
-&gt; <span style=color:#2aa198>5</span> yasuda
-
-<span style=color:#586e75># 1行目を削除してから2行飛ばしで削除.</span>
-<span style=color:#586e75># つまり, 奇数行目を削除.</span>
-sed <span style=color:#2aa198>&#39;1~2d&#39;</span> names.txt
-&gt; <span style=color:#2aa198>2</span> koji
-&gt; <span style=color:#2aa198>4</span> hanako
-
-<span style=color:#586e75># 最後の行を削除</span>
-sed <span style=color:#2aa198>&#39;$d&#39;</span> names.txt
-&gt; <span style=color:#2aa198>1</span> taguchi
-&gt; <span style=color:#2aa198>2</span> koji
-&gt; <span style=color:#2aa198>3</span> taro
-&gt; <span style=color:#2aa198>4</span> hanako
-
-<span style=color:#586e75># 3行目から最後の行までを削除</span>
-<span style=color:#586e75># $が最後の意味</span>
-sed <span style=color:#2aa198>&#39;3,$d&#39;</span> names.txt
-&gt; <span style=color:#2aa198>1</span> taguchi
-&gt; <span style=color:#2aa198>2</span> koji
-
-<span style=color:#586e75># iで終わる行は削除</span>
-sed <span style=color:#2aa198>&#39;/i$/d&#39;</span> names.txt
-&gt; <span style=color:#2aa198>3</span> taro
-&gt; <span style=color:#2aa198>4</span> hanako
-&gt; <span style=color:#2aa198>5</span> yasuda
-
-<span style=color:#586e75># addressは省略もできるのでaddressを書かないと全削除</span>
-sed <span style=color:#2aa198>&#39;d&#39;</span> names.txt
-</code></pre></div><h2 id=paiコマンドを使う>
+</h2><div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>cat names.txt
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>1</span> taguchi
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>2</span> koji
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>3</span> taro
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>4</span> hanako
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>5</span> yasuda
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#586e75># 3行目以外を削除</span>
+</span></span><span style=display:flex><span>sed <span style=color:#2aa198>&#39;3!d&#39;</span> names.txt
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>3</span> taro
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#586e75># 1行目と3行目を削除</span>
+</span></span><span style=display:flex><span>sed <span style=color:#2aa198>&#39;1d;3d&#39;</span> names.txt
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>2</span> koji
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>4</span> hanako
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>5</span> yasuda
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#586e75># 1行目から3行目までを削除</span>
+</span></span><span style=display:flex><span>sed <span style=color:#2aa198>&#39;1,3d&#39;</span> names.txt
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>4</span> hanako
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>5</span> yasuda
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#586e75># 1行目を削除してから2行飛ばしで削除.</span>
+</span></span><span style=display:flex><span><span style=color:#586e75># つまり, 奇数行目を削除.</span>
+</span></span><span style=display:flex><span>sed <span style=color:#2aa198>&#39;1~2d&#39;</span> names.txt
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>2</span> koji
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>4</span> hanako
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#586e75># 最後の行を削除</span>
+</span></span><span style=display:flex><span>sed <span style=color:#2aa198>&#39;$d&#39;</span> names.txt
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>1</span> taguchi
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>2</span> koji
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>3</span> taro
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>4</span> hanako
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#586e75># 3行目から最後の行までを削除</span>
+</span></span><span style=display:flex><span><span style=color:#586e75># $が最後の意味</span>
+</span></span><span style=display:flex><span>sed <span style=color:#2aa198>&#39;3,$d&#39;</span> names.txt
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>1</span> taguchi
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>2</span> koji
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#586e75># iで終わる行は削除</span>
+</span></span><span style=display:flex><span>sed <span style=color:#2aa198>&#39;/i$/d&#39;</span> names.txt
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>3</span> taro
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>4</span> hanako
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>5</span> yasuda
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#586e75># addressは省略もできるのでaddressを書かないと全削除</span>
+</span></span><span style=display:flex><span>sed <span style=color:#2aa198>&#39;d&#39;</span> names.txt
+</span></span></code></pre></div><h2 id=paiコマンドを使う>
 p/a/iコマンドを使う
 <a class=anchor href=#pai%e3%82%b3%e3%83%9e%e3%83%b3%e3%83%89%e3%82%92%e4%bd%bf%e3%81%86>#</a>
-</h2>
-<div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>cat names.txt
-&gt; <span style=color:#2aa198>1</span> taguchi
-&gt; <span style=color:#2aa198>2</span> koji
-&gt; <span style=color:#2aa198>3</span> taro
-&gt; <span style=color:#2aa198>4</span> hanako
-&gt; <span style=color:#2aa198>5</span> yasuda
-
-<span style=color:#586e75># 3行目を2回表示する</span>
-sed <span style=color:#2aa198>&#39;3p&#39;</span> names.txt
-&gt; <span style=color:#2aa198>1</span> taguchi
-&gt; <span style=color:#2aa198>2</span> koji
-&gt; <span style=color:#2aa198>3</span> taro
-&gt; <span style=color:#2aa198>3</span> taro
-&gt; <span style=color:#2aa198>4</span> hanako
-&gt; <span style=color:#2aa198>5</span> yasuda
-
-<span style=color:#586e75># 3行目だけを表示する</span>
-sed -n <span style=color:#2aa198>&#39;3p&#39;</span> names.txt
-&gt; <span style=color:#2aa198>3</span> taro
-
-<span style=color:#586e75># 3行目で処理を終わる</span>
-sed <span style=color:#2aa198>&#39;3q&#39;</span> names.txt
-&gt; <span style=color:#2aa198>1</span> taguchi
-&gt; <span style=color:#2aa198>2</span> koji
-&gt; <span style=color:#2aa198>3</span> taro
-
-<span style=color:#586e75># 1行目の前に文字列をinsertする</span>
-sed <span style=color:#2aa198>&#39;1i\--- start ---&#39;</span> names.txt
-&gt; --- start ---
-&gt; <span style=color:#2aa198>1</span> taguchi
-&gt; <span style=color:#2aa198>2</span> koji
-&gt; <span style=color:#2aa198>3</span> taro
-&gt; <span style=color:#2aa198>3</span> taro
-&gt; <span style=color:#2aa198>4</span> hanako
-&gt; <span style=color:#2aa198>5</span> yasuda
-
-<span style=color:#586e75># 最終行にも文字列を挿入する</span>
-sed -e <span style=color:#2aa198>&#39;1i\--- start ---&#39;</span> -e <span style=color:#2aa198>&#39;$a\--- end ---&#39;</span> names.txt
-&gt; --- start ---
-&gt; <span style=color:#2aa198>1</span> taguchi
-&gt; <span style=color:#2aa198>2</span> koji
-&gt; <span style=color:#2aa198>3</span> taro
-&gt; <span style=color:#2aa198>3</span> taro
-&gt; <span style=color:#2aa198>4</span> hanako
-&gt; <span style=color:#2aa198>5</span> yasuda
-&gt; --- end ---
-
-<span style=color:#586e75># 最終行の空の文字列を削除する</span>
-<span style=color:#586e75># /^$/ は正規表現で空行を表す</span>
-sed <span style=color:#2aa198>&#39;/^$/d&#39;</span> names.txt
-&gt; <span style=color:#2aa198>1</span> taguchi
-&gt; <span style=color:#2aa198>2</span> koji
-&gt; <span style=color:#2aa198>3</span> taro
-&gt; <span style=color:#2aa198>3</span> taro
-&gt; <span style=color:#2aa198>4</span> hanako
-&gt; <span style=color:#2aa198>5</span> yasuda
-</code></pre></div><h2 id=1文字ずつの文字置換にはyコマンドを使う>
+</h2><div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>cat names.txt
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>1</span> taguchi
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>2</span> koji
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>3</span> taro
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>4</span> hanako
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>5</span> yasuda
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#586e75># 3行目を2回表示する</span>
+</span></span><span style=display:flex><span>sed <span style=color:#2aa198>&#39;3p&#39;</span> names.txt
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>1</span> taguchi
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>2</span> koji
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>3</span> taro
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>3</span> taro
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>4</span> hanako
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>5</span> yasuda
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#586e75># 3行目だけを表示する</span>
+</span></span><span style=display:flex><span>sed -n <span style=color:#2aa198>&#39;3p&#39;</span> names.txt
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>3</span> taro
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#586e75># 3行目で処理を終わる</span>
+</span></span><span style=display:flex><span>sed <span style=color:#2aa198>&#39;3q&#39;</span> names.txt
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>1</span> taguchi
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>2</span> koji
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>3</span> taro
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#586e75># 1行目の前に文字列をinsertする</span>
+</span></span><span style=display:flex><span>sed <span style=color:#2aa198>&#39;1i\--- start ---&#39;</span> names.txt
+</span></span><span style=display:flex><span>&gt; --- start ---
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>1</span> taguchi
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>2</span> koji
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>3</span> taro
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>3</span> taro
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>4</span> hanako
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>5</span> yasuda
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#586e75># 最終行にも文字列を挿入する</span>
+</span></span><span style=display:flex><span>sed -e <span style=color:#2aa198>&#39;1i\--- start ---&#39;</span> -e <span style=color:#2aa198>&#39;$a\--- end ---&#39;</span> names.txt
+</span></span><span style=display:flex><span>&gt; --- start ---
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>1</span> taguchi
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>2</span> koji
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>3</span> taro
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>3</span> taro
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>4</span> hanako
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>5</span> yasuda
+</span></span><span style=display:flex><span>&gt; --- end ---
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#586e75># 最終行の空の文字列を削除する</span>
+</span></span><span style=display:flex><span><span style=color:#586e75># /^$/ は正規表現で空行を表す</span>
+</span></span><span style=display:flex><span>sed <span style=color:#2aa198>&#39;/^$/d&#39;</span> names.txt
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>1</span> taguchi
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>2</span> koji
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>3</span> taro
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>3</span> taro
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>4</span> hanako
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>5</span> yasuda
+</span></span></code></pre></div><h2 id=1文字ずつの文字置換にはyコマンドを使う>
 1文字ずつの文字置換にはyコマンドを使う
 <a class=anchor href=#1%e6%96%87%e5%ad%97%e3%81%9a%e3%81%a4%e3%81%ae%e6%96%87%e5%ad%97%e7%bd%ae%e6%8f%9b%e3%81%ab%e3%81%afy%e3%82%b3%e3%83%9e%e3%83%b3%e3%83%89%e3%82%92%e4%bd%bf%e3%81%86>#</a>
-</h2>
-<div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>cat names.txt
-&gt; <span style=color:#2aa198>1</span> taguchi
-&gt; <span style=color:#2aa198>2</span> koji
-&gt; <span style=color:#2aa198>3</span> taro
-&gt; <span style=color:#2aa198>4</span> hanako
-&gt; <span style=color:#2aa198>5</span> yasuda
-
-<span style=color:#586e75># 1文字置換はyを使い,</span>
-<span style=color:#586e75># tをTに置換する.</span>
-sed <span style=color:#2aa198>&#39;y/t/T/&#39;</span> names.txt
-&gt; <span style=color:#2aa198>1</span> Taguchi
-&gt; <span style=color:#2aa198>2</span> koji
-&gt; <span style=color:#2aa198>3</span> Taro
-&gt; <span style=color:#2aa198>4</span> hanako
-&gt; <span style=color:#2aa198>5</span> yasuda
-
-<span style=color:#586e75># 複数個の文字を1文字ずつ置換する</span>
-<span style=color:#586e75># t -&gt; T, o -&gt; O</span>
-<span style=color:#586e75># という風に1文字ずつ対応して置換してくれる.</span>
-sed<span style=color:#2aa198>&#39;y/to/TO/&#39;</span> names.txt
-&gt; <span style=color:#2aa198>1</span> Taguchi
-&gt; <span style=color:#2aa198>2</span> kOji
-&gt; <span style=color:#2aa198>3</span> TarO
-&gt; <span style=color:#2aa198>4</span> hanakO
-&gt; <span style=color:#2aa198>5</span> yasuda
-</code></pre></div><h2 id=文字列置換にはsコマンドを使う>
+</h2><div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>cat names.txt
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>1</span> taguchi
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>2</span> koji
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>3</span> taro
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>4</span> hanako
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>5</span> yasuda
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#586e75># 1文字置換はyを使い,</span>
+</span></span><span style=display:flex><span><span style=color:#586e75># tをTに置換する.</span>
+</span></span><span style=display:flex><span>sed <span style=color:#2aa198>&#39;y/t/T/&#39;</span> names.txt
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>1</span> Taguchi
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>2</span> koji
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>3</span> Taro
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>4</span> hanako
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>5</span> yasuda
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#586e75># 複数個の文字を1文字ずつ置換する</span>
+</span></span><span style=display:flex><span><span style=color:#586e75># t -&gt; T, o -&gt; O</span>
+</span></span><span style=display:flex><span><span style=color:#586e75># という風に1文字ずつ対応して置換してくれる.</span>
+</span></span><span style=display:flex><span>sed<span style=color:#2aa198>&#39;y/to/TO/&#39;</span> names.txt
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>1</span> Taguchi
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>2</span> kOji
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>3</span> TarO
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>4</span> hanakO
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>5</span> yasuda
+</span></span></code></pre></div><h2 id=文字列置換にはsコマンドを使う>
 文字列置換にはsコマンドを使う
 <a class=anchor href=#%e6%96%87%e5%ad%97%e5%88%97%e7%bd%ae%e6%8f%9b%e3%81%ab%e3%81%afs%e3%82%b3%e3%83%9e%e3%83%b3%e3%83%89%e3%82%92%e4%bd%bf%e3%81%86>#</a>
-</h2>
-<div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>cat items.txt
-&gt; <span style=color:#2aa198>1</span> taguchi Apple, apple, apple, grape
-&gt; <span style=color:#2aa198>2</span> fkoji Banana, apple, Apple, lemon
-&gt; <span style=color:#2aa198>3</span> dotinstall Grape, apple, strawberry
-&gt; <span style=color:#2aa198>4</span> takahashi cherry, pear, kiwi
-&gt; <span style=color:#2aa198>5</span> yasuda cherrry, Cherry
-
-<span style=color:#586e75># 上記のitems.txtのappleをAppleに置換する</span>
-<span style=color:#586e75># ただし, 初めの1つにだけしか効きません</span>
-sed <span style=color:#2aa198>&#39;s/apple/Apple&#39;</span> items.txt
-&gt; <span style=color:#2aa198>1</span> taguchi Apple, Apple, apple, grape
-&gt; <span style=color:#2aa198>2</span> fkoji Banana, apple, Apple, lemon
-&gt; <span style=color:#2aa198>3</span> dotinstall Grape, Apple, strawberry
-&gt; <span style=color:#2aa198>4</span> takahashi cherry, pear, kiwi
-&gt; <span style=color:#2aa198>5</span> yasuda cherrry, Cherry
-
-<span style=color:#586e75># なので, 全てのappleをAppleに変えたいときは</span>
-<span style=color:#586e75># gというフラグを用いる</span>
-sed <span style=color:#2aa198>&#39;s/apple/Apple/g&#39;</span> items.txt
-&gt; <span style=color:#2aa198>1</span> taguchi Apple, Apple, Apple, grape
-&gt; <span style=color:#2aa198>2</span> fkoji Banana, Apple, Apple, lemon
-&gt; <span style=color:#2aa198>3</span> dotinstall Grape, Apple, strawberry
-&gt; <span style=color:#2aa198>4</span> takahashi cherry, pear, kiwi
-&gt; <span style=color:#2aa198>5</span> yasuda cherrry, Cherry
-
-<span style=color:#586e75># 2番目にマッチするものを置換するときは</span>
-<span style=color:#586e75># 2というフラグを用いる</span>
-sed <span style=color:#2aa198>&#39;s/apple/Apple/2&#39;</span> items.txt
-&gt; <span style=color:#2aa198>1</span> taguchi Apple, apple, Apple, grape
-&gt; <span style=color:#2aa198>2</span> fkoji Banana, Apple, Apple, lemon
-&gt; <span style=color:#2aa198>3</span> dotinstall Grape, Apple, strawberry
-&gt; <span style=color:#2aa198>4</span> takahashi cherry, pear, kiwi
-&gt; <span style=color:#2aa198>5</span> yasuda cherrry, Cherry
-
-<span style=color:#586e75># 大文字小文字を区別させないときは</span>
-<span style=color:#586e75># iというフラグを用いる</span>
-<span style=color:#586e75># フラグは組み合わせることもできる</span>
-sed <span style=color:#2aa198>&#39;s/apple/Ringo/ig&#39;</span> items.txt
-&gt; <span style=color:#2aa198>1</span> taguchi Ringo, Ringo, Ringo, grape
-&gt; <span style=color:#2aa198>2</span> fkoji Banana, Ringo, Ringo, lemon
-&gt; <span style=color:#2aa198>3</span> dotinstall Grape, Ringo, strawberry
-&gt; <span style=color:#2aa198>4</span> takahashi cherry, pear, kiwi
-&gt; <span style=color:#2aa198>5</span> yasuda cherrry, Cherry
-
-<span style=color:#586e75># 正規表現も使えます</span>
-sed <span style=color:#2aa198>&#39;s/[aA]pple/Ringo/ig&#39;</span> items.txt
-&gt; <span style=color:#2aa198>1</span> taguchi Ringo, Ringo, Ringo, grape
-&gt; <span style=color:#2aa198>2</span> fkoji Banana, Ringo, Ringo, lemon
-&gt; <span style=color:#2aa198>3</span> dotinstall Grape, Ringo, strawberry
-&gt; <span style=color:#2aa198>4</span> takahashi cherry, pear, kiwi
-&gt; <span style=color:#2aa198>5</span> yasuda cherrry, Cherry
-</code></pre></div><h2 id=や1を使って置換する>
+</h2><div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>cat items.txt
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>1</span> taguchi Apple, apple, apple, grape
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>2</span> fkoji Banana, apple, Apple, lemon
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>3</span> dotinstall Grape, apple, strawberry
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>4</span> takahashi cherry, pear, kiwi
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>5</span> yasuda cherrry, Cherry
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#586e75># 上記のitems.txtのappleをAppleに置換する</span>
+</span></span><span style=display:flex><span><span style=color:#586e75># ただし, 初めの1つにだけしか効きません</span>
+</span></span><span style=display:flex><span>sed <span style=color:#2aa198>&#39;s/apple/Apple&#39;</span> items.txt
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>1</span> taguchi Apple, Apple, apple, grape
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>2</span> fkoji Banana, apple, Apple, lemon
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>3</span> dotinstall Grape, Apple, strawberry
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>4</span> takahashi cherry, pear, kiwi
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>5</span> yasuda cherrry, Cherry
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#586e75># なので, 全てのappleをAppleに変えたいときは</span>
+</span></span><span style=display:flex><span><span style=color:#586e75># gというフラグを用いる</span>
+</span></span><span style=display:flex><span>sed <span style=color:#2aa198>&#39;s/apple/Apple/g&#39;</span> items.txt
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>1</span> taguchi Apple, Apple, Apple, grape
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>2</span> fkoji Banana, Apple, Apple, lemon
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>3</span> dotinstall Grape, Apple, strawberry
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>4</span> takahashi cherry, pear, kiwi
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>5</span> yasuda cherrry, Cherry
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#586e75># 2番目にマッチするものを置換するときは</span>
+</span></span><span style=display:flex><span><span style=color:#586e75># 2というフラグを用いる</span>
+</span></span><span style=display:flex><span>sed <span style=color:#2aa198>&#39;s/apple/Apple/2&#39;</span> items.txt
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>1</span> taguchi Apple, apple, Apple, grape
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>2</span> fkoji Banana, Apple, Apple, lemon
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>3</span> dotinstall Grape, Apple, strawberry
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>4</span> takahashi cherry, pear, kiwi
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>5</span> yasuda cherrry, Cherry
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#586e75># 大文字小文字を区別させないときは</span>
+</span></span><span style=display:flex><span><span style=color:#586e75># iというフラグを用いる</span>
+</span></span><span style=display:flex><span><span style=color:#586e75># フラグは組み合わせることもできる</span>
+</span></span><span style=display:flex><span>sed <span style=color:#2aa198>&#39;s/apple/Ringo/ig&#39;</span> items.txt
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>1</span> taguchi Ringo, Ringo, Ringo, grape
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>2</span> fkoji Banana, Ringo, Ringo, lemon
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>3</span> dotinstall Grape, Ringo, strawberry
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>4</span> takahashi cherry, pear, kiwi
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>5</span> yasuda cherrry, Cherry
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#586e75># 正規表現も使えます</span>
+</span></span><span style=display:flex><span>sed <span style=color:#2aa198>&#39;s/[aA]pple/Ringo/ig&#39;</span> items.txt
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>1</span> taguchi Ringo, Ringo, Ringo, grape
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>2</span> fkoji Banana, Ringo, Ringo, lemon
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>3</span> dotinstall Grape, Ringo, strawberry
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>4</span> takahashi cherry, pear, kiwi
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>5</span> yasuda cherrry, Cherry
+</span></span></code></pre></div><h2 id=や1を使って置換する>
 &や\1を使って置換する
 <a class=anchor href=#%e3%82%841%e3%82%92%e4%bd%bf%e3%81%a3%e3%81%a6%e7%bd%ae%e6%8f%9b%e3%81%99%e3%82%8b>#</a>
-</h2>
-<div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>cat items.txt
-&gt; <span style=color:#2aa198>1</span> taguchi Apple, apple, apple, grape
-&gt; <span style=color:#2aa198>2</span> fkoji Banana, apple, Apple, lemon
-&gt; <span style=color:#2aa198>3</span> dotinstall Grape, apple, strawberry
-&gt; <span style=color:#2aa198>4</span> takahashi cherry, pear, kiwi
-&gt; <span style=color:#2aa198>5</span> yasuda cherrry, Cherry
-
-<span style=color:#586e75># 検索した結果は&amp;に入る</span>
-sed <span style=color:#2aa198>&#39;s/[0-5]/【&amp;】/&#39;</span> items.txt
-&gt; 【1】 taguchi Apple, apple, apple, grape
-&gt; 【2】 fkoji Banana, apple, Apple, lemon
-&gt; 【3】 dotinstall Grape, apple, strawberry
-&gt; 【4】 takahashi cherry, pear, kiwi
-&gt; 【5】 yasuda cherrry, Cherry
-
-<span style=color:#586e75># 複数個検索した結果を用いる場合は</span>
-<span style=color:#586e75># ()で包んでから, \1, \2...を使う</span>
-sed <span style=color:#2aa198>&#39;s/\([0-5]\) \(.*\)/\2 【\1】/&#39;</span> items.txt
-<span style=color:#586e75># 1-5までの数字は\1に, 文字列は\2に入っている</span>
-&gt; taguchi Apple, apple, apple, grape【1】
-&gt; fkoji Banana, apple, Apple, lemon【2】
-&gt; dotinstall Grape, apple, strawberry【3】
-&gt; takahashi cherry, pear, kiwi 【4】
-&gt; yasuda cherrry, Cherry 【5】
-</code></pre></div><h2 id=ホールドスペースを使う>
+</h2><div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>cat items.txt
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>1</span> taguchi Apple, apple, apple, grape
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>2</span> fkoji Banana, apple, Apple, lemon
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>3</span> dotinstall Grape, apple, strawberry
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>4</span> takahashi cherry, pear, kiwi
+</span></span><span style=display:flex><span>&gt; <span style=color:#2aa198>5</span> yasuda cherrry, Cherry
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#586e75># 検索した結果は&amp;に入る</span>
+</span></span><span style=display:flex><span>sed <span style=color:#2aa198>&#39;s/[0-5]/【&amp;】/&#39;</span> items.txt
+</span></span><span style=display:flex><span>&gt; 【1】 taguchi Apple, apple, apple, grape
+</span></span><span style=display:flex><span>&gt; 【2】 fkoji Banana, apple, Apple, lemon
+</span></span><span style=display:flex><span>&gt; 【3】 dotinstall Grape, apple, strawberry
+</span></span><span style=display:flex><span>&gt; 【4】 takahashi cherry, pear, kiwi
+</span></span><span style=display:flex><span>&gt; 【5】 yasuda cherrry, Cherry
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#586e75># 複数個検索した結果を用いる場合は</span>
+</span></span><span style=display:flex><span><span style=color:#586e75># ()で包んでから, \1, \2...を使う</span>
+</span></span><span style=display:flex><span>sed <span style=color:#2aa198>&#39;s/\([0-5]\) \(.*\)/\2 【\1】/&#39;</span> items.txt
+</span></span><span style=display:flex><span><span style=color:#586e75># 1-5までの数字は\1に, 文字列は\2に入っている</span>
+</span></span><span style=display:flex><span>&gt; taguchi Apple, apple, apple, grape【1】
+</span></span><span style=display:flex><span>&gt; fkoji Banana, apple, Apple, lemon【2】
+</span></span><span style=display:flex><span>&gt; dotinstall Grape, apple, strawberry【3】
+</span></span><span style=display:flex><span>&gt; takahashi cherry, pear, kiwi 【4】
+</span></span><span style=display:flex><span>&gt; yasuda cherrry, Cherry 【5】
+</span></span></code></pre></div><h2 id=ホールドスペースを使う>
 ホールドスペースを使う
 <a class=anchor href=#%e3%83%9b%e3%83%bc%e3%83%ab%e3%83%89%e3%82%b9%e3%83%9a%e3%83%bc%e3%82%b9%e3%82%92%e4%bd%bf%e3%81%86>#</a>
-</h2>
-<p>ホールドスペースとはパターンスペースのさらに奥にある裏バッファーのようなもの</p>
-<ul>
-<li>h(hold): パターンスペースの内容をホールドスペースにコピー</li>
-<li>g(get): ホールドスペースの内容をパターンスペースにコピー</li>
-<li>x(exchange): パターンスペースとホールドスペースの内容を交換</li>
-</ul>
-<p>パターンスペースは1行ずつどんどん更新されていく.<br>
+</h2><p>ホールドスペースとはパターンスペースのさらに奥にある裏バッファーのようなもの</p><ul>
+<li>h(hold): パターンスペースの内容をホールドスペースにコピー</li><li>g(get): ホールドスペースの内容をパターンスペースにコピー</li><li>x(exchange): パターンスペースとホールドスペースの内容を交換</li></ul><p>パターンスペースは1行ずつどんどん更新されていく.<br>
 ホールドスペースに一時的に情報を格納しておく.<br>
-そうすることでより複雑な文字列操作を行う.</p>
-<div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>cat style.css
-&gt; main <span style=color:#719e07>{</span>
-&gt;   color: red;
-&gt;   font-weight: bold;
-&gt;   font-size: 14px;
-&gt;   background: green;
-&gt; <span style=color:#719e07>}</span>
-
-vim ex2.sed
-i
-<span style=color:#586e75># color change</span>
-/color: / <span style=color:#719e07>{</span>
-  h // holdが起こり, ホールドスペースに color: red; がコピーされる
-  s/color: /background: / // 置換が起こり, パターンスペースで, color: red; が background: red; に置換される
-  x // exchangeが起こり, ホールドスペースに background: red; が, パターンスペースに color: red; が格納される
-<span style=color:#719e07>}</span> // パターンスペースの color: red; が表示される
-/background: / <span style=color:#719e07>{</span>
-  g // getが起こり, ホールドスペースにある background: red; が, パターンスペースにコピーされる
-<span style=color:#719e07>}</span> // パターンスペースの backgroud: red; が表示される
-ESC
-:wq
-
-sed -f ex2.sed style.css
-&gt; <span style=color:#586e75>#main {</span>
-&gt;   color: red;
-&gt;   font-weight: bold;
-&gt;   font-size: 14px;
-&gt;   background: red;
-&gt; <span style=color:#719e07>}</span>
-</code></pre></div></article>
-<footer class=book-footer>
+そうすることでより複雑な文字列操作を行う.</p><div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>cat style.css
+</span></span><span style=display:flex><span>&gt; main <span style=color:#719e07>{</span>
+</span></span><span style=display:flex><span>&gt;   color: red;
+</span></span><span style=display:flex><span>&gt;   font-weight: bold;
+</span></span><span style=display:flex><span>&gt;   font-size: 14px;
+</span></span><span style=display:flex><span>&gt;   background: green;
+</span></span><span style=display:flex><span>&gt; <span style=color:#719e07>}</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>vim ex2.sed
+</span></span><span style=display:flex><span>i
+</span></span><span style=display:flex><span><span style=color:#586e75># color change</span>
+</span></span><span style=display:flex><span>/color: / <span style=color:#719e07>{</span>
+</span></span><span style=display:flex><span>  h // holdが起こり, ホールドスペースに color: red; がコピーされる
+</span></span><span style=display:flex><span>  s/color: /background: / // 置換が起こり, パターンスペースで, color: red; が background: red; に置換される
+</span></span><span style=display:flex><span>  x // exchangeが起こり, ホールドスペースに background: red; が, パターンスペースに color: red; が格納される
+</span></span><span style=display:flex><span><span style=color:#719e07>}</span> // パターンスペースの color: red; が表示される
+</span></span><span style=display:flex><span>/background: / <span style=color:#719e07>{</span>
+</span></span><span style=display:flex><span>  g // getが起こり, ホールドスペースにある background: red; が, パターンスペースにコピーされる
+</span></span><span style=display:flex><span><span style=color:#719e07>}</span> // パターンスペースの backgroud: red; が表示される
+</span></span><span style=display:flex><span>ESC
+</span></span><span style=display:flex><span>:wq
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>sed -f ex2.sed style.css
+</span></span><span style=display:flex><span>&gt; <span style=color:#586e75>#main {</span>
+</span></span><span style=display:flex><span>&gt;   color: red;
+</span></span><span style=display:flex><span>&gt;   font-weight: bold;
+</span></span><span style=display:flex><span>&gt;   font-size: 14px;
+</span></span><span style=display:flex><span>&gt;   background: red;
+</span></span><span style=display:flex><span>&gt; <span style=color:#719e07>}</span>
+</span></span></code></pre></div></article><footer class=book-footer>
 <div class="flex flex-wrap justify-between">
 <div><a class="flex align-center" href=https://github.com/solareenlo/blog-hugo/commit/bea798d93c9116bad5b5ceb26ca3159b372095e9 title="最終更新者 solareenlo | Mar 20, 2020" target=_blank rel=noopener>
 <img src=/svg/calendar.svg class=book-icon alt=Calendar>
 <span>Mar 20, 2020</span>
 </a>
-</div>
-<div>
+</div><div>
 <a class="flex align-center" href=https://github.com/solareenlo/blog-hugo/edit/main/content/docs/programming/sed.md target=_blank rel=noopener>
 <img src=/svg/edit.svg class=book-icon alt=Edit>
 <span>このページを編集する</span>
 </a>
-</div>
-</div>
-<script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script>
-</footer>
-<div class=book-comments>
-</div>
-<label for=menu-control class="hidden book-menu-overlay"></label>
-</div>
-<aside class=book-toc>
+</div></div><script>(function(){function e(n){const e=window.getSelection(),t=document.createRange();t.selectNodeContents(n),e.removeAllRanges(),e.addRange(t)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+</footer><div class=book-comments>
+</div><label for=menu-control class="hidden book-menu-overlay"></label>
+</div><aside class=book-toc>
 <div class=book-toc-content>
 <nav id=TableOfContents>
 <ul>
 <li><a href=#sedとは>sedとは</a>
 <ul>
-<li><a href=#gitignoreのdistを削除>.gitignoreの/distを削除</a></li>
-<li><a href=#初めてのsed>初めてのsed</a></li>
-<li><a href=#パターンスペースについて>パターンスペースについて</a></li>
-<li><a href=#アドレスを使いこなす>アドレスを使いこなす</a></li>
-<li><a href=#paiコマンドを使う>p/a/iコマンドを使う</a></li>
-<li><a href=#1文字ずつの文字置換にはyコマンドを使う>1文字ずつの文字置換にはyコマンドを使う</a></li>
-<li><a href=#文字列置換にはsコマンドを使う>文字列置換にはsコマンドを使う</a></li>
-<li><a href=#や1を使って置換する>&や\1を使って置換する</a></li>
-<li><a href=#ホールドスペースを使う>ホールドスペースを使う</a></li>
-</ul>
-</li>
-</ul>
-</nav>
-</div>
-</aside>
-</main>
-</body>
-</html>
+<li><a href=#gitignoreのdistを削除>.gitignoreの/distを削除</a></li><li><a href=#初めてのsed>初めてのsed</a></li><li><a href=#パターンスペースについて>パターンスペースについて</a></li><li><a href=#アドレスを使いこなす>アドレスを使いこなす</a></li><li><a href=#paiコマンドを使う>p/a/iコマンドを使う</a></li><li><a href=#1文字ずつの文字置換にはyコマンドを使う>1文字ずつの文字置換にはyコマンドを使う</a></li><li><a href=#文字列置換にはsコマンドを使う>文字列置換にはsコマンドを使う</a></li><li><a href=#や1を使って置換する>&や\1を使って置換する</a></li><li><a href=#ホールドスペースを使う>ホールドスペースを使う</a></li></ul></li></ul></nav></div></aside></main></body></html>
