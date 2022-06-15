@@ -1,269 +1,28 @@
-<!doctype html><html lang=ja dir=ltr>
-<head>
-<meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=description content="TypeScriptとは #   マイクロソフトによって開発されているオープンソースのプログラミング言語のこと. JavaScriptに, 静的型付け・クラスベースオブジェクト指向を加えた. GitHubリポジトリ: https://github.com/Microsoft/TypeScript  初めてのTypeScript #   solareenlo/Typescript-Practice/01_Getting_Started
-インストール #  npm i --save-dev typescript TypeScript + Node.js + Docker + Circle CI #    TypeScript + Node.js プロジェクトのはじめかた2019  TypeScriptでExpress.js開発するときにやることまとめ (docker/lint/format/tsのまま実行/autoreload)  bitjson/typescript-starter  microsoft/TypeScript-Node-Starter  objectのkeyにstringを設定したら, object[key]でエラーになった時の対処法 #   tsconfigに--suppressImplicitAnyIndexErrorsを付け加える. ブラケット記法でプロパティにアクセスした時にany型を許容するのでとっても非推奨.   以下のようにkeyはstring型と明示する. 問題点はkeyが全てstring型になること. interface ISomeObject {  firstKey: string;  secondKey: string;  [key: string]: string; // <-この行を追加!">
-<meta name=theme-color content="#FFFFFF">
-<meta name=color-scheme content="light dark"><meta property="og:title" content>
-<meta property="og:description" content="TypeScriptとは #   マイクロソフトによって開発されているオープンソースのプログラミング言語のこと. JavaScriptに, 静的型付け・クラスベースオブジェクト指向を加えた. GitHubリポジトリ: https://github.com/Microsoft/TypeScript  初めてのTypeScript #   solareenlo/Typescript-Practice/01_Getting_Started
-インストール #  npm i --save-dev typescript TypeScript + Node.js + Docker + Circle CI #    TypeScript + Node.js プロジェクトのはじめかた2019  TypeScriptでExpress.js開発するときにやることまとめ (docker/lint/format/tsのまま実行/autoreload)  bitjson/typescript-starter  microsoft/TypeScript-Node-Starter  objectのkeyにstringを設定したら, object[key]でエラーになった時の対処法 #   tsconfigに--suppressImplicitAnyIndexErrorsを付け加える. ブラケット記法でプロパティにアクセスした時にany型を許容するのでとっても非推奨.   以下のようにkeyはstring型と明示する. 問題点はkeyが全てstring型になること. interface ISomeObject {  firstKey: string;  secondKey: string;  [key: string]: string; // <-この行を追加!">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://solareenlo.com/docs/pl/typescript/"><meta property="article:section" content="docs">
-<meta property="article:modified_time" content="2020-03-20T07:56:42+09:00">
-<title>Typescript | solareenlo</title><link rel=manifest href=/manifest.json>
-<link rel=icon href=/favicon.png type=image/x-icon>
-<link rel=stylesheet href=/book.min.653769dc566cda7e41ad715944b80f4b376884be00ffc7ff135147d99a7a6ca4.css integrity="sha256-ZTdp3FZs2n5BrXFZRLgPSzdohL4A/8f/E1FH2Zp6bKQ=" crossorigin=anonymous>
-<script defer src=/flexsearch.min.js></script>
-<script defer src=/ja.search.min.2ef973b17eb164a3b1d994571b8c0df19f666d3c5ae2c4f159cded0e1c8b2b26.js integrity="sha256-LvlzsX6xZKOx2ZRXG4wN8Z9mbTxa4sTxWc3tDhyLKyY=" crossorigin=anonymous></script>
-</head><body dir=ltr>
-<input type=checkbox class="hidden toggle" id=menu-control>
-<input type=checkbox class="hidden toggle" id=toc-control>
-<main class="container flex">
-<aside class=book-menu>
-<div class=book-menu-content>
-<nav>
-<h2 class=book-brand>
-<a class="flex align-center" href=/><span>solareenlo</span>
-</a>
-</h2><div class=book-search>
-<input type=text id=book-search-input placeholder=検索 aria-label=検索 maxlength=64 data-hotkeys=s/>
-<div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><ul>
-<li>
-<a href=/posts/>
-Blog
-</a>
-</li></ul><ul>
-<li>
-<input type=checkbox id=section-57e58ca5aae968f4961a4036f314a5de class=toggle>
-<label for=section-57e58ca5aae968f4961a4036f314a5de class="flex justify-between">
-<a href=/docs/programming/>Programming</a>
-</label>
-<ul>
-<li>
-<a href=/docs/programming/command/>Command</a>
-</li><li>
-<a href=/docs/programming/fonts/>Fonts</a>
-</li><li>
-<a href=/docs/programming/git/>Git</a>
-</li><li>
-<a href=/docs/programming/github/>Github</a>
-</li><li>
-<a href=/docs/programming/linter-formatter/>Linter Formatter</a>
-</li><li>
-<a href=/docs/programming/password-manager/>Password Manager</a>
-</li><li>
-<a href=/docs/programming/sed/>Sed</a>
-</li><li>
-<a href=/docs/programming/shell-script/>Shell Script</a>
-</li><li>
-<a href=/docs/programming/terminal/>Terminal</a>
-</li><li>
-<a href=/docs/programming/test/>Test</a>
-</li><li>
-<a href=/docs/programming/tmux/>Tmux</a>
-</li><li>
-<a href=/docs/programming/vim/>Vim</a>
-</li><li>
-<a href=/docs/programming/vimium/>Vimium</a>
-</li><li>
-<a href=/docs/programming/wiki/>Wiki</a>
-</li><li>
-<a href=/docs/programming/hhkb/>HHKB</a>
-</li></ul></li><li>
-<input type=checkbox id=section-771d1b18af68e81cd9d3d14cd5f6339b class=toggle checked>
-<label for=section-771d1b18af68e81cd9d3d14cd5f6339b class="flex justify-between">
-<a href=/docs/pl/>Programming Language</a>
-</label>
-<ul>
-<li>
-<a href=/docs/pl/angular/>Angular</a>
-</li><li>
-<a href=/docs/pl/c/>C</a>
-</li><li>
-<a href=/docs/pl/css/>Css</a>
-</li><li>
-<a href=/docs/pl/go/>Go</a>
-</li><li>
-<a href=/docs/pl/haskell/>Haskell</a>
-</li><li>
-<a href=/docs/pl/hugo/>Hugo</a>
-</li><li>
-<a href=/docs/pl/javascript/>Javascript</a>
-</li><li>
-<a href=/docs/pl/nodejs/>Nodejs</a>
-</li><li>
-<a href=/docs/pl/pl-docs/>Pl Docs</a>
-</li><li>
-<a href=/docs/pl/react-static/>React Static</a>
-</li><li>
-<a href=/docs/pl/react/>React</a>
-</li><li>
-<a href=/docs/pl/rust/>Rust</a>
-</li><li>
-<a href=/docs/pl/scala/>Scala</a>
-</li><li>
-<a href=/docs/pl/typescript/ class=active>Typescript</a>
-</li><li>
-<a href=/docs/pl/npm/>npm</a>
-</li></ul></li><li>
-<input type=checkbox id=section-a7bf5468f483fd7222967f135a5003c0 class=toggle>
-<label for=section-a7bf5468f483fd7222967f135a5003c0 class="flex justify-between">
-<a href=/docs/latex/>LaTeX</a>
-</label>
-<ul>
-<li>
-<a href=/docs/latex/platex-book/>Platex Book</a>
-</li><li>
-<a href=/docs/latex/zathura-install/>Zathura Install</a>
-</li></ul></li><li>
-<input type=checkbox id=section-e14f9767e53904cbbdcb3f0bdbe82f2a class=toggle>
-<label for=section-e14f9767e53904cbbdcb3f0bdbe82f2a class="flex justify-between">
-<a href=/docs/vps/>VPS</a>
-</label>
-<ul>
-<li>
-<a href=/docs/vps/alpine-linux/>Alpine Linux</a>
-</li><li>
-<a href=/docs/vps/ubuntu/>Ubuntu</a>
-</li><li>
-<a href=/docs/vps/ssh/>SSH</a>
-</li></ul></li><li>
-<input type=checkbox id=section-99a3d9d52cfe7a0dcbd55cd8c23e4462 class=toggle>
-<label for=section-99a3d9d52cfe7a0dcbd55cd8c23e4462 class="flex justify-between">
-<a href=/docs/db/>DB</a>
-</label>
-<ul>
-<li>
-<a href=/docs/db/redis/>Redis</a>
-</li><li>
-<a href=/docs/db/mongodb/>MongoDB</a>
-</li><li>
-<a href=/docs/db/mysql/>MySQL</a>
-</li></ul></li><li>
-<input type=checkbox id=section-e5a49337b6189bd60f0b5e1d3a4a8539 class=toggle>
-<label for=section-e5a49337b6189bd60f0b5e1d3a4a8539 class="flex justify-between">
-<a href=/docs/cloud/>Cloud</a>
-</label>
-<ul>
-<li>
-<a href=/docs/cloud/aws/>Aws</a>
-</li><li>
-<a href=/docs/cloud/firebase/>Firebase</a>
-</li><li>
-<a href=/docs/cloud/gcp/>Gcp</a>
-</li><li>
-<a href=/docs/cloud/sendgrid/>Sendgrid</a>
-</li><li>
-<a href=/docs/cloud/zeit-now/>Zeit Now</a>
-</li></ul></li><li>
-<input type=checkbox id=section-dfa5c6b6f5f2def7a1fbf289a7570ac2 class=toggle>
-<label for=section-dfa5c6b6f5f2def7a1fbf289a7570ac2 class="flex justify-between">
-<a href=/docs/ci-cd/>CI/CD</a>
-</label>
-<ul>
-<li>
-<a href=/docs/ci-cd/circleci/>Circleci</a>
-</li><li>
-<a href=/docs/ci-cd/jenkins/>Jenkins</a>
-</li><li>
-<a href=/docs/ci-cd/travis-ci/>Travis Ci</a>
-</li></ul></li><li>
-<input type=checkbox id=section-10dd021a58cb696b6cb4f79141ec5ddb class=toggle>
-<label for=section-10dd021a58cb696b6cb4f79141ec5ddb class="flex justify-between">
-<a href=/docs/container/>Conatainer</a>
-</label>
-<ul>
-<li>
-<a href=/docs/container/docker-compose/>Docker Compose</a>
-</li><li>
-<a href=/docs/container/docker-hub/>Docker Hub</a>
-</li><li>
-<a href=/docs/container/docker1/>Docker1</a>
-</li><li>
-<a href=/docs/container/docker2/>Docker2</a>
-</li><li>
-<a href=/docs/container/kubernetes/>Kubernetes</a>
-</li></ul></li><li>
-<input type=checkbox id=section-342a656e10fe011a820c22dda53f7866 class=toggle>
-<label for=section-342a656e10fe011a820c22dda53f7866 class="flex justify-between">
-<a href=/docs/crypto/>Crypto</a>
-</label>
-<ul>
-<li>
-<a href=/docs/crypto/blockchain/>Blockchain</a>
-</li><li>
-<a href=/docs/crypto/crypto-docs/>Crypto Docs</a>
-</li><li>
-<a href=/docs/crypto/ethereum/>Ethereum</a>
-</li><li>
-<a href=/docs/crypto/substrate/>Substrate</a>
-</li><li>
-<a href=/docs/crypto/white-paper/>White Paper</a>
-</li><li>
-<a href=/docs/crypto/bitcoin/>Bitcoin</a>
-</li><li>
-<a href=/docs/crypto/iota/>IOTA</a>
-</li><li>
-<a href=/docs/crypto/nem/>NEM</a>
-</li><li>
-<a href=/docs/crypto/bitcoin-fullnode/>フルノード</a>
-</li></ul></li><li>
-<a href=/docs/tools/>Tools</a>
-<ul>
-</ul></li></ul><ul>
-<li>
-<a href=https://github.com/solareenlo/blog-hugo target=_blank rel=noopener>
-Github
-</a>
-</li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
-</div></aside><div class=book-page>
-<header class=book-header>
-<div class="flex align-center justify-between">
-<label for=menu-control>
-<img src=/svg/menu.svg class=book-icon alt=Menu>
-</label>
+<!doctype html><html lang=ja dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="TypeScriptとは # マイクロソフトによって開発されているオープンソースのプログラミング言語のこと. JavaScriptに, 静的型付け・クラスベースオブジェクト指向を加えた. GitHubリポジトリ: https://github.com/Microsoft/TypeScript 初めてのTypeScript # solareenlo/Typescript-Practice/01_Getting_Started
+インストール # npm i --save-dev typescript TypeScript + Node.js + Docker + Circle CI # TypeScript + Node.js プロジェクトのはじめかた2019 TypeScriptでExpress.js開発するときにやることまとめ (docker/lint/format/tsのまま実行/autoreload) bitjson/typescript-starter microsoft/TypeScript-Node-Starter objectのkeyにstringを設定したら, object[key]でエラーになった時の対処法 # tsconfigに--suppressImplicitAnyIndexErrorsを付け加える. ブラケット記法でプロパティにアクセスした時にany型を許容するのでとっても非推奨. 以下のようにkeyはstring型と明示する. 問題点はkeyが全てstring型になること. interface ISomeObject { firstKey: string; secondKey: string; [key: string]: string; // <-この行を追加! } const obj = { firstKey: &#34;a&#34;, secondKey: &#34;b&#34;, } as ISomeObject; const key: string = 'secondKey'; const secondValue: string = obj[key]; なのでこうする."><meta name=theme-color content="#FFFFFF"><meta name=color-scheme content="light dark"><meta property="og:title" content><meta property="og:description" content="TypeScriptとは # マイクロソフトによって開発されているオープンソースのプログラミング言語のこと. JavaScriptに, 静的型付け・クラスベースオブジェクト指向を加えた. GitHubリポジトリ: https://github.com/Microsoft/TypeScript 初めてのTypeScript # solareenlo/Typescript-Practice/01_Getting_Started
+インストール # npm i --save-dev typescript TypeScript + Node.js + Docker + Circle CI # TypeScript + Node.js プロジェクトのはじめかた2019 TypeScriptでExpress.js開発するときにやることまとめ (docker/lint/format/tsのまま実行/autoreload) bitjson/typescript-starter microsoft/TypeScript-Node-Starter objectのkeyにstringを設定したら, object[key]でエラーになった時の対処法 # tsconfigに--suppressImplicitAnyIndexErrorsを付け加える. ブラケット記法でプロパティにアクセスした時にany型を許容するのでとっても非推奨. 以下のようにkeyはstring型と明示する. 問題点はkeyが全てstring型になること. interface ISomeObject { firstKey: string; secondKey: string; [key: string]: string; // <-この行を追加! } const obj = { firstKey: &#34;a&#34;, secondKey: &#34;b&#34;, } as ISomeObject; const key: string = 'secondKey'; const secondValue: string = obj[key]; なのでこうする."><meta property="og:type" content="article"><meta property="og:url" content="https://solareenlo.com/docs/pl/typescript/"><meta property="article:section" content="docs"><meta property="article:modified_time" content="2020-03-20T07:56:42+09:00"><title>Typescript | solareenlo</title><link rel=manifest href=/manifest.json><link rel=icon href=/favicon.png type=image/x-icon><link rel=stylesheet href=/book.min.653769dc566cda7e41ad715944b80f4b376884be00ffc7ff135147d99a7a6ca4.css integrity="sha256-ZTdp3FZs2n5BrXFZRLgPSzdohL4A/8f/E1FH2Zp6bKQ=" crossorigin=anonymous><script defer src=/flexsearch.min.js></script>
+<script defer src=/ja.search.min.6bef5d18adc3f1e7434148e30fde47853063ba8831714ae7301cb6b67a292d4c.js integrity="sha256-a+9dGK3D8edDQUjjD95HhTBjuogxcUrnMBy2tnopLUw=" crossorigin=anonymous></script></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/><span>solareenlo</span></a></h2><div class=book-search><input type=text id=book-search-input placeholder=検索 aria-label=検索 maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><ul><li><a href=/posts/>Blog</a></li></ul><ul><li><input type=checkbox id=section-57e58ca5aae968f4961a4036f314a5de class=toggle>
+<label for=section-57e58ca5aae968f4961a4036f314a5de class="flex justify-between"><a href=/docs/programming/>Programming</a></label><ul><li><a href=/docs/programming/command/>Command</a></li><li><a href=/docs/programming/fonts/>Fonts</a></li><li><a href=/docs/programming/git/>Git</a></li><li><a href=/docs/programming/github/>Github</a></li><li><a href=/docs/programming/linter-formatter/>Linter Formatter</a></li><li><a href=/docs/programming/password-manager/>Password Manager</a></li><li><a href=/docs/programming/sed/>Sed</a></li><li><a href=/docs/programming/shell-script/>Shell Script</a></li><li><a href=/docs/programming/terminal/>Terminal</a></li><li><a href=/docs/programming/test/>Test</a></li><li><a href=/docs/programming/tmux/>Tmux</a></li><li><a href=/docs/programming/vim/>Vim</a></li><li><a href=/docs/programming/vimium/>Vimium</a></li><li><a href=/docs/programming/wiki/>Wiki</a></li><li><a href=/docs/programming/hhkb/>HHKB</a></li></ul></li><li><input type=checkbox id=section-771d1b18af68e81cd9d3d14cd5f6339b class=toggle checked>
+<label for=section-771d1b18af68e81cd9d3d14cd5f6339b class="flex justify-between"><a href=/docs/pl/>Programming Language</a></label><ul><li><a href=/docs/pl/angular/>Angular</a></li><li><a href=/docs/pl/c/>C</a></li><li><a href=/docs/pl/css/>Css</a></li><li><a href=/docs/pl/go/>Go</a></li><li><a href=/docs/pl/haskell/>Haskell</a></li><li><a href=/docs/pl/hugo/>Hugo</a></li><li><a href=/docs/pl/javascript/>Javascript</a></li><li><a href=/docs/pl/nodejs/>Nodejs</a></li><li><a href=/docs/pl/pl-docs/>Pl Docs</a></li><li><a href=/docs/pl/react-static/>React Static</a></li><li><a href=/docs/pl/react/>React</a></li><li><a href=/docs/pl/rust/>Rust</a></li><li><a href=/docs/pl/scala/>Scala</a></li><li><a href=/docs/pl/typescript/ class=active>Typescript</a></li><li><a href=/docs/pl/npm/>npm</a></li></ul></li><li><input type=checkbox id=section-a7bf5468f483fd7222967f135a5003c0 class=toggle>
+<label for=section-a7bf5468f483fd7222967f135a5003c0 class="flex justify-between"><a href=/docs/latex/>LaTeX</a></label><ul><li><a href=/docs/latex/platex-book/>Platex Book</a></li><li><a href=/docs/latex/zathura-install/>Zathura Install</a></li></ul></li><li><input type=checkbox id=section-e14f9767e53904cbbdcb3f0bdbe82f2a class=toggle>
+<label for=section-e14f9767e53904cbbdcb3f0bdbe82f2a class="flex justify-between"><a href=/docs/vps/>VPS</a></label><ul><li><a href=/docs/vps/alpine-linux/>Alpine Linux</a></li><li><a href=/docs/vps/ubuntu/>Ubuntu</a></li><li><a href=/docs/vps/ssh/>SSH</a></li></ul></li><li><input type=checkbox id=section-99a3d9d52cfe7a0dcbd55cd8c23e4462 class=toggle>
+<label for=section-99a3d9d52cfe7a0dcbd55cd8c23e4462 class="flex justify-between"><a href=/docs/db/>DB</a></label><ul><li><a href=/docs/db/redis/>Redis</a></li><li><a href=/docs/db/mongodb/>MongoDB</a></li><li><a href=/docs/db/mysql/>MySQL</a></li></ul></li><li><input type=checkbox id=section-e5a49337b6189bd60f0b5e1d3a4a8539 class=toggle>
+<label for=section-e5a49337b6189bd60f0b5e1d3a4a8539 class="flex justify-between"><a href=/docs/cloud/>Cloud</a></label><ul><li><a href=/docs/cloud/aws/>Aws</a></li><li><a href=/docs/cloud/firebase/>Firebase</a></li><li><a href=/docs/cloud/gcp/>Gcp</a></li><li><a href=/docs/cloud/sendgrid/>Sendgrid</a></li><li><a href=/docs/cloud/zeit-now/>Zeit Now</a></li></ul></li><li><input type=checkbox id=section-dfa5c6b6f5f2def7a1fbf289a7570ac2 class=toggle>
+<label for=section-dfa5c6b6f5f2def7a1fbf289a7570ac2 class="flex justify-between"><a href=/docs/ci-cd/>CI/CD</a></label><ul><li><a href=/docs/ci-cd/circleci/>Circleci</a></li><li><a href=/docs/ci-cd/jenkins/>Jenkins</a></li><li><a href=/docs/ci-cd/travis-ci/>Travis Ci</a></li></ul></li><li><input type=checkbox id=section-10dd021a58cb696b6cb4f79141ec5ddb class=toggle>
+<label for=section-10dd021a58cb696b6cb4f79141ec5ddb class="flex justify-between"><a href=/docs/container/>Conatainer</a></label><ul><li><a href=/docs/container/docker-compose/>Docker Compose</a></li><li><a href=/docs/container/docker-hub/>Docker Hub</a></li><li><a href=/docs/container/docker1/>Docker1</a></li><li><a href=/docs/container/docker2/>Docker2</a></li><li><a href=/docs/container/kubernetes/>Kubernetes</a></li></ul></li><li><input type=checkbox id=section-342a656e10fe011a820c22dda53f7866 class=toggle>
+<label for=section-342a656e10fe011a820c22dda53f7866 class="flex justify-between"><a href=/docs/crypto/>Crypto</a></label><ul><li><a href=/docs/crypto/blockchain/>Blockchain</a></li><li><a href=/docs/crypto/crypto-docs/>Crypto Docs</a></li><li><a href=/docs/crypto/ethereum/>Ethereum</a></li><li><a href=/docs/crypto/substrate/>Substrate</a></li><li><a href=/docs/crypto/white-paper/>White Paper</a></li><li><a href=/docs/crypto/bitcoin/>Bitcoin</a></li><li><a href=/docs/crypto/iota/>IOTA</a></li><li><a href=/docs/crypto/nem/>NEM</a></li><li><a href=/docs/crypto/bitcoin-fullnode/>フルノード</a></li></ul></li><li><a href=/docs/tools/>Tools</a><ul></ul></li></ul><ul><li><a href=https://github.com/solareenlo/blog-hugo target=_blank rel=noopener>Github</a></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/svg/menu.svg class=book-icon alt=Menu></label>
 <strong>Typescript</strong>
-<label for=toc-control>
-<img src=/svg/toc.svg class=book-icon alt="Table of Contents">
-</label>
-</div><aside class="hidden clearfix">
-<nav id=TableOfContents>
-<ul>
-<li><a href=#typescriptとは>TypeScriptとは</a>
-<ul>
-<li><a href=#初めてのtypescript>初めてのTypeScript</a>
-<ul>
-<li><a href=#インストール>インストール</a></li></ul></li><li><a href=#typescript--nodejs--docker--circle-ci>TypeScript + Node.js + Docker + Circle CI</a></li><li><a href=#objectのkeyにstringを設定したら-objectkeyでエラーになった時の対処法>objectのkeyにstringを設定したら, object[key]でエラーになった時の対処法</a></li></ul></li></ul></nav></aside></header><article class=markdown><h1 id=typescriptとは>
-TypeScriptとは
-<a class=anchor href=#typescript%e3%81%a8%e3%81%af>#</a>
-</h1><ul>
-<li>マイクロソフトによって開発されているオープンソースのプログラミング言語のこと.</li><li>JavaScriptに, 静的型付け・クラスベースオブジェクト指向を加えた.</li><li><strong>GitHubリポジトリ:</strong>
-<a href=https://github.com/Microsoft/TypeScript>https://github.com/Microsoft/TypeScript</a></li></ul><h2 id=初めてのtypescript>
-初めてのTypeScript
-<a class=anchor href=#%e5%88%9d%e3%82%81%e3%81%a6%e3%81%aetypescript>#</a>
-</h2><p>
-<a href=https://github.com/solareenlo/Typescript-Practice/tree/master/01_Getting_Started>solareenlo/Typescript-Practice/01_Getting_Started</a></p><h3 id=インストール>
-インストール
-<a class=anchor href=#%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab>#</a>
-</h3><div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>npm i --save-dev typescript
-</span></span></code></pre></div><h2 id=typescript--nodejs--docker--circle-ci>
-TypeScript + Node.js + Docker + Circle CI
-<a class=anchor href=#typescript--nodejs--docker--circle-ci>#</a>
-</h2><ul>
-<li>
-<a href=https://qiita.com/notakaos/items/3bbd2293e2ff286d9f49>TypeScript + Node.js プロジェクトのはじめかた2019</a></li><li>
-<a href=https://qiita.com/yuukive/items/012bdf1b9ff3881546b3>TypeScriptでExpress.js開発するときにやることまとめ (docker/lint/format/tsのまま実行/autoreload)</a></li><li>
-<a href=https://github.com/bitjson/typescript-starter>bitjson/typescript-starter</a></li><li>
-<a href=https://github.com/Microsoft/TypeScript-Node-Starter>microsoft/TypeScript-Node-Starter</a></li></ul><h2 id=objectのkeyにstringを設定したら-objectkeyでエラーになった時の対処法>
-objectのkeyにstringを設定したら, object[key]でエラーになった時の対処法
-<a class=anchor href=#object%e3%81%aekey%e3%81%abstring%e3%82%92%e8%a8%ad%e5%ae%9a%e3%81%97%e3%81%9f%e3%82%89-objectkey%e3%81%a7%e3%82%a8%e3%83%a9%e3%83%bc%e3%81%ab%e3%81%aa%e3%81%a3%e3%81%9f%e6%99%82%e3%81%ae%e5%af%be%e5%87%a6%e6%b3%95>#</a>
-</h2><ol>
-<li>tsconfigに<code>--suppressImplicitAnyIndexErrors</code>を付け加える.
-ブラケット記法でプロパティにアクセスした時に<code>any</code>型を許容するのでとっても非推奨.</li></ol><ul>
-<li>以下のように<code>key</code>は<code>string</code>型と明示する.
-問題点は<code>key</code>が全て<code>string</code>型になること.
-<div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-typescript data-lang=typescript><span style=display:flex><span><span style=color:#268bd2>interface</span> ISomeObject {
+<label for=toc-control><img src=/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents><ul><li><a href=#typescriptとは>TypeScriptとは</a><ul><li><a href=#初めてのtypescript>初めてのTypeScript</a><ul><li><a href=#インストール>インストール</a></li></ul></li><li><a href=#typescript--nodejs--docker--circle-ci>TypeScript + Node.js + Docker + Circle CI</a></li><li><a href=#objectのkeyにstringを設定したら-objectkeyでエラーになった時の対処法>objectのkeyにstringを設定したら, object[key]でエラーになった時の対処法</a></li></ul></li></ul></nav></aside></header><article class=markdown><h1 id=typescriptとは>TypeScriptとは
+<a class=anchor href=#typescript%e3%81%a8%e3%81%af>#</a></h1><ul><li>マイクロソフトによって開発されているオープンソースのプログラミング言語のこと.</li><li>JavaScriptに, 静的型付け・クラスベースオブジェクト指向を加えた.</li><li><strong>GitHubリポジトリ:</strong>
+<a href=https://github.com/Microsoft/TypeScript>https://github.com/Microsoft/TypeScript</a></li></ul><h2 id=初めてのtypescript>初めてのTypeScript
+<a class=anchor href=#%e5%88%9d%e3%82%81%e3%81%a6%e3%81%aetypescript>#</a></h2><p><a href=https://github.com/solareenlo/Typescript-Practice/tree/master/01_Getting_Started>solareenlo/Typescript-Practice/01_Getting_Started</a></p><h3 id=インストール>インストール
+<a class=anchor href=#%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab>#</a></h3><div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>npm i --save-dev typescript
+</span></span></code></pre></div><h2 id=typescript--nodejs--docker--circle-ci>TypeScript + Node.js + Docker + Circle CI
+<a class=anchor href=#typescript--nodejs--docker--circle-ci>#</a></h2><ul><li><a href=https://qiita.com/notakaos/items/3bbd2293e2ff286d9f49>TypeScript + Node.js プロジェクトのはじめかた2019</a></li><li><a href=https://qiita.com/yuukive/items/012bdf1b9ff3881546b3>TypeScriptでExpress.js開発するときにやることまとめ (docker/lint/format/tsのまま実行/autoreload)</a></li><li><a href=https://github.com/bitjson/typescript-starter>bitjson/typescript-starter</a></li><li><a href=https://github.com/Microsoft/TypeScript-Node-Starter>microsoft/TypeScript-Node-Starter</a></li></ul><h2 id=objectのkeyにstringを設定したら-objectkeyでエラーになった時の対処法>objectのkeyにstringを設定したら, object[key]でエラーになった時の対処法
+<a class=anchor href=#object%e3%81%aekey%e3%81%abstring%e3%82%92%e8%a8%ad%e5%ae%9a%e3%81%97%e3%81%9f%e3%82%89-objectkey%e3%81%a7%e3%82%a8%e3%83%a9%e3%83%bc%e3%81%ab%e3%81%aa%e3%81%a3%e3%81%9f%e6%99%82%e3%81%ae%e5%af%be%e5%87%a6%e6%b3%95>#</a></h2><ol><li>tsconfigに<code>--suppressImplicitAnyIndexErrors</code>を付け加える.
+ブラケット記法でプロパティにアクセスした時に<code>any</code>型を許容するのでとっても非推奨.</li></ol><ul><li>以下のように<code>key</code>は<code>string</code>型と明示する.
+問題点は<code>key</code>が全て<code>string</code>型になること.<div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-typescript data-lang=typescript><span style=display:flex><span><span style=color:#268bd2>interface</span> ISomeObject {
 </span></span><span style=display:flex><span>    firstKey:      <span style=color:#dc322f>string</span>;
 </span></span><span style=display:flex><span>    secondKey:     <span style=color:#dc322f>string</span>;
 </span></span><span style=display:flex><span>    [key: <span style=color:#dc322f>string</span>]<span style=color:#719e07>:</span> <span style=color:#dc322f>string</span>; <span style=color:#586e75>// &lt;-この行を追加!
@@ -277,8 +36,7 @@ objectのkeyにstringを設定したら, object[key]でエラーになった時�
 </span></span><span style=display:flex><span><span style=color:#268bd2>const</span> key: <span style=color:#dc322f>string</span> <span style=color:#719e07>=</span> <span style=color:#2aa198>&#39;secondKey&#39;</span>;
 </span></span><span style=display:flex><span><span style=color:#268bd2>const</span> secondValue: <span style=color:#dc322f>string</span> <span style=color:#719e07>=</span> obj[key];
 </span></span></code></pre></div>なのでこうする.
-が, <code>secondValue</code>の型が<code>string|boolean|number</code>型と複数の型になる.
-<div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-typescript data-lang=typescript><span style=display:flex><span><span style=color:#268bd2>interface</span> ISomeObject {
+が, <code>secondValue</code>の型が<code>string|boolean|number</code>型と複数の型になる.<div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-typescript data-lang=typescript><span style=display:flex><span><span style=color:#268bd2>interface</span> ISomeObject {
 </span></span><span style=display:flex><span>    firstKey:      <span style=color:#dc322f>string</span>;
 </span></span><span style=display:flex><span>    secondKey:     <span style=color:#dc322f>number</span>;
 </span></span><span style=display:flex><span>    thirdKey: <span style=color:#dc322f>boolean</span>
@@ -287,8 +45,7 @@ objectのkeyにstringを設定したら, object[key]でエラーになった時�
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#268bd2>const</span> key: <span style=color:#dc322f>string</span> <span style=color:#719e07>=</span> <span style=color:#2aa198>&#39;secondKey&#39;</span>;
 </span></span><span style=display:flex><span><span style=color:#268bd2>const</span> secondValue <span style=color:#719e07>=</span> obj[key]; <span style=color:#586e75>// secondValue =&gt; string|boolean|number型
-</span></span></span></code></pre></div></li><li><code>keyof</code>を使う.
-<div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-typescript data-lang=typescript><span style=display:flex><span><span style=color:#268bd2>interface</span> ISomeObject {
+</span></span></span></code></pre></div></li><li><code>keyof</code>を使う.<div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-typescript data-lang=typescript><span style=display:flex><span><span style=color:#268bd2>interface</span> ISomeObject {
 </span></span><span style=display:flex><span>  firstKey:      <span style=color:#dc322f>string</span>;
 </span></span><span style=display:flex><span>  secondKey:     <span style=color:#dc322f>number</span>;
 </span></span><span style=display:flex><span>  thirdKey:      <span style=color:#dc322f>boolean</span>;
@@ -302,8 +59,7 @@ objectのkeyにstringを設定したら, object[key]でエラーになった時�
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#268bd2>const</span> key: <span style=color:#dc322f>keyof</span> ISomeObject  <span style=color:#719e07>=</span> <span style=color:#2aa198>&#39;secondKey&#39;</span>; <span style=color:#586e75>// ここを変更
 </span></span></span><span style=display:flex><span><span style=color:#586e75></span><span style=color:#268bd2>const</span> secondValue <span style=color:#719e07>=</span> obj[key]; <span style=color:#586e75>// secondValueがnumber型に!
-</span></span></span></code></pre></div>ジェネリクスを使って、type safeにブラケット記法が使える関数を作ると以下の感じになる.
-<div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-typescript data-lang=typescript><span style=display:flex><span><span style=color:#268bd2>const</span> accessByBracket <span style=color:#719e07>=</span> &lt;<span style=color:#268bd2>S</span>, T extends keyof S&gt;(obj: <span style=color:#dc322f>S</span>, key: <span style=color:#dc322f>T</span>) <span style=color:#719e07>=&gt;</span> {
+</span></span></span></code></pre></div>ジェネリクスを使って、type safeにブラケット記法が使える関数を作ると以下の感じになる.<div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-typescript data-lang=typescript><span style=display:flex><span><span style=color:#268bd2>const</span> accessByBracket <span style=color:#719e07>=</span> &lt;<span style=color:#268bd2>S</span>, T extends keyof S&gt;(obj: <span style=color:#dc322f>S</span>, key: <span style=color:#dc322f>T</span>) <span style=color:#719e07>=&gt;</span> {
 </span></span><span style=display:flex><span>  <span style=color:#719e07>return</span> obj[key];
 </span></span><span style=display:flex><span>};
 </span></span><span style=display:flex><span>
@@ -315,26 +71,6 @@ objectのkeyにstringを設定したら, object[key]でエラーになった時�
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#268bd2>const</span> value <span style=color:#719e07>=</span> accessByBracket(obj, <span style=color:#2aa198>&#39;secondKey&#39;</span>); <span style=color:#586e75>// value =&gt; 2
 </span></span></span></code></pre></div></li></ul><p><strong>Reference:</strong>
-<a href=https://aknow2.hatenablog.com/entry/2018/11/14/143033>Typescript ブラケット記法(Object[key])でno index signatureエラーをtype safeに解決したい。</a></p></article><footer class=book-footer>
-<div class="flex flex-wrap justify-between">
-<div><a class="flex align-center" href=https://github.com/solareenlo/blog-hugo/commit/bea798d93c9116bad5b5ceb26ca3159b372095e9 title="最終更新者 solareenlo | Mar 20, 2020" target=_blank rel=noopener>
-<img src=/svg/calendar.svg class=book-icon alt=Calendar>
-<span>Mar 20, 2020</span>
-</a>
-</div><div>
-<a class="flex align-center" href=https://github.com/solareenlo/blog-hugo/edit/main/content/docs/pl/typescript.md target=_blank rel=noopener>
-<img src=/svg/edit.svg class=book-icon alt=Edit>
-<span>このページを編集する</span>
-</a>
-</div></div><script>(function(){function e(n){const e=window.getSelection(),t=document.createRange();t.selectNodeContents(n),e.removeAllRanges(),e.addRange(t)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
-</footer><div class=book-comments>
-</div><label for=menu-control class="hidden book-menu-overlay"></label>
-</div><aside class=book-toc>
-<div class=book-toc-content>
-<nav id=TableOfContents>
-<ul>
-<li><a href=#typescriptとは>TypeScriptとは</a>
-<ul>
-<li><a href=#初めてのtypescript>初めてのTypeScript</a>
-<ul>
-<li><a href=#インストール>インストール</a></li></ul></li><li><a href=#typescript--nodejs--docker--circle-ci>TypeScript + Node.js + Docker + Circle CI</a></li><li><a href=#objectのkeyにstringを設定したら-objectkeyでエラーになった時の対処法>objectのkeyにstringを設定したら, object[key]でエラーになった時の対処法</a></li></ul></li></ul></nav></div></aside></main></body></html>
+<a href=https://aknow2.hatenablog.com/entry/2018/11/14/143033>Typescript ブラケット記法(Object[key])でno index signatureエラーをtype safeに解決したい。</a></p></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div><a class="flex align-center" href=https://github.com/solareenlo/blog-hugo/commit/bea798d93c9116bad5b5ceb26ca3159b372095e9 title='最終更新者 solareenlo | Mar 20, 2020' target=_blank rel=noopener><img src=/svg/calendar.svg class=book-icon alt=Calendar>
+<span>Mar 20, 2020</span></a></div><div><a class="flex align-center" href=https://github.com/solareenlo/blog-hugo/edit/main/content/docs/pl/typescript.md target=_blank rel=noopener><img src=/svg/edit.svg class=book-icon alt=Edit>
+<span>このページを編集する</span></a></div></div><script>(function(){function e(n){const e=window.getSelection(),t=document.createRange();t.selectNodeContents(n),e.removeAllRanges(),e.addRange(t)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script></footer><div class=book-comments></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#typescriptとは>TypeScriptとは</a><ul><li><a href=#初めてのtypescript>初めてのTypeScript</a><ul><li><a href=#インストール>インストール</a></li></ul></li><li><a href=#typescript--nodejs--docker--circle-ci>TypeScript + Node.js + Docker + Circle CI</a></li><li><a href=#objectのkeyにstringを設定したら-objectkeyでエラーになった時の対処法>objectのkeyにstringを設定したら, object[key]でエラーになった時の対処法</a></li></ul></li></ul></nav></div></aside></main></body></html>

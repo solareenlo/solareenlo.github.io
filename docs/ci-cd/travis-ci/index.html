@@ -1,268 +1,35 @@
-<!doctype html><html lang=ja dir=ltr>
-<head>
-<meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=description content="Travis CIとは #   GitHub上のソフトウェアのビルドやテストを行う, オンラインで分散型の継続的インテグレーション(CI)サービスのこと.  https://travis-ci.org が無料でオープンソースのプロジェクト用, https://travis-ci.com が有料でプライベートリポジトリ用の利用ができる.  Travis CiからAWS Elastic Beanstalkへ #    AWS Elastic Beanstalk Deployment  Dokcerのテストがpassedにならない時の対処法 #  Travis CIでDockerのテストを以下のように設定するとpassedにならないことがある.
-script:  docker run solareenlo/react-test npm run test -- --coverage そんな時は以下のようにテストを設定する.
-script:  docker run -e CI=true solareenlo/react-test npm run test -- --watchAll=falseb 環境変数が設定できない時 #  Travis CIの環境変数を設定する項目では特殊文字(; & ( ) | ^ < > ? * [ ] $ ` &rsquo; &#34; \ !">
-<meta name=theme-color content="#FFFFFF">
-<meta name=color-scheme content="light dark"><meta property="og:title" content>
-<meta property="og:description" content="Travis CIとは #   GitHub上のソフトウェアのビルドやテストを行う, オンラインで分散型の継続的インテグレーション(CI)サービスのこと.  https://travis-ci.org が無料でオープンソースのプロジェクト用, https://travis-ci.com が有料でプライベートリポジトリ用の利用ができる.  Travis CiからAWS Elastic Beanstalkへ #    AWS Elastic Beanstalk Deployment  Dokcerのテストがpassedにならない時の対処法 #  Travis CIでDockerのテストを以下のように設定するとpassedにならないことがある.
-script:  docker run solareenlo/react-test npm run test -- --coverage そんな時は以下のようにテストを設定する.
-script:  docker run -e CI=true solareenlo/react-test npm run test -- --watchAll=falseb 環境変数が設定できない時 #  Travis CIの環境変数を設定する項目では特殊文字(; & ( ) | ^ < > ? * [ ] $ ` &rsquo; &#34; \ !">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://solareenlo.com/docs/ci-cd/travis-ci/"><meta property="article:section" content="docs">
-<meta property="article:modified_time" content="2020-03-20T07:56:42+09:00">
-<title>Travis Ci | solareenlo</title><link rel=manifest href=/manifest.json>
-<link rel=icon href=/favicon.png type=image/x-icon>
-<link rel=stylesheet href=/book.min.653769dc566cda7e41ad715944b80f4b376884be00ffc7ff135147d99a7a6ca4.css integrity="sha256-ZTdp3FZs2n5BrXFZRLgPSzdohL4A/8f/E1FH2Zp6bKQ=" crossorigin=anonymous>
-<script defer src=/flexsearch.min.js></script>
-<script defer src=/ja.search.min.2ef973b17eb164a3b1d994571b8c0df19f666d3c5ae2c4f159cded0e1c8b2b26.js integrity="sha256-LvlzsX6xZKOx2ZRXG4wN8Z9mbTxa4sTxWc3tDhyLKyY=" crossorigin=anonymous></script>
-</head><body dir=ltr>
-<input type=checkbox class="hidden toggle" id=menu-control>
-<input type=checkbox class="hidden toggle" id=toc-control>
-<main class="container flex">
-<aside class=book-menu>
-<div class=book-menu-content>
-<nav>
-<h2 class=book-brand>
-<a class="flex align-center" href=/><span>solareenlo</span>
-</a>
-</h2><div class=book-search>
-<input type=text id=book-search-input placeholder=検索 aria-label=検索 maxlength=64 data-hotkeys=s/>
-<div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><ul>
-<li>
-<a href=/posts/>
-Blog
-</a>
-</li></ul><ul>
-<li>
-<input type=checkbox id=section-57e58ca5aae968f4961a4036f314a5de class=toggle>
-<label for=section-57e58ca5aae968f4961a4036f314a5de class="flex justify-between">
-<a href=/docs/programming/>Programming</a>
-</label>
-<ul>
-<li>
-<a href=/docs/programming/command/>Command</a>
-</li><li>
-<a href=/docs/programming/fonts/>Fonts</a>
-</li><li>
-<a href=/docs/programming/git/>Git</a>
-</li><li>
-<a href=/docs/programming/github/>Github</a>
-</li><li>
-<a href=/docs/programming/linter-formatter/>Linter Formatter</a>
-</li><li>
-<a href=/docs/programming/password-manager/>Password Manager</a>
-</li><li>
-<a href=/docs/programming/sed/>Sed</a>
-</li><li>
-<a href=/docs/programming/shell-script/>Shell Script</a>
-</li><li>
-<a href=/docs/programming/terminal/>Terminal</a>
-</li><li>
-<a href=/docs/programming/test/>Test</a>
-</li><li>
-<a href=/docs/programming/tmux/>Tmux</a>
-</li><li>
-<a href=/docs/programming/vim/>Vim</a>
-</li><li>
-<a href=/docs/programming/vimium/>Vimium</a>
-</li><li>
-<a href=/docs/programming/wiki/>Wiki</a>
-</li><li>
-<a href=/docs/programming/hhkb/>HHKB</a>
-</li></ul></li><li>
-<input type=checkbox id=section-771d1b18af68e81cd9d3d14cd5f6339b class=toggle>
-<label for=section-771d1b18af68e81cd9d3d14cd5f6339b class="flex justify-between">
-<a href=/docs/pl/>Programming Language</a>
-</label>
-<ul>
-<li>
-<a href=/docs/pl/angular/>Angular</a>
-</li><li>
-<a href=/docs/pl/c/>C</a>
-</li><li>
-<a href=/docs/pl/css/>Css</a>
-</li><li>
-<a href=/docs/pl/go/>Go</a>
-</li><li>
-<a href=/docs/pl/haskell/>Haskell</a>
-</li><li>
-<a href=/docs/pl/hugo/>Hugo</a>
-</li><li>
-<a href=/docs/pl/javascript/>Javascript</a>
-</li><li>
-<a href=/docs/pl/nodejs/>Nodejs</a>
-</li><li>
-<a href=/docs/pl/pl-docs/>Pl Docs</a>
-</li><li>
-<a href=/docs/pl/react-static/>React Static</a>
-</li><li>
-<a href=/docs/pl/react/>React</a>
-</li><li>
-<a href=/docs/pl/rust/>Rust</a>
-</li><li>
-<a href=/docs/pl/scala/>Scala</a>
-</li><li>
-<a href=/docs/pl/typescript/>Typescript</a>
-</li><li>
-<a href=/docs/pl/npm/>npm</a>
-</li></ul></li><li>
-<input type=checkbox id=section-a7bf5468f483fd7222967f135a5003c0 class=toggle>
-<label for=section-a7bf5468f483fd7222967f135a5003c0 class="flex justify-between">
-<a href=/docs/latex/>LaTeX</a>
-</label>
-<ul>
-<li>
-<a href=/docs/latex/platex-book/>Platex Book</a>
-</li><li>
-<a href=/docs/latex/zathura-install/>Zathura Install</a>
-</li></ul></li><li>
-<input type=checkbox id=section-e14f9767e53904cbbdcb3f0bdbe82f2a class=toggle>
-<label for=section-e14f9767e53904cbbdcb3f0bdbe82f2a class="flex justify-between">
-<a href=/docs/vps/>VPS</a>
-</label>
-<ul>
-<li>
-<a href=/docs/vps/alpine-linux/>Alpine Linux</a>
-</li><li>
-<a href=/docs/vps/ubuntu/>Ubuntu</a>
-</li><li>
-<a href=/docs/vps/ssh/>SSH</a>
-</li></ul></li><li>
-<input type=checkbox id=section-99a3d9d52cfe7a0dcbd55cd8c23e4462 class=toggle>
-<label for=section-99a3d9d52cfe7a0dcbd55cd8c23e4462 class="flex justify-between">
-<a href=/docs/db/>DB</a>
-</label>
-<ul>
-<li>
-<a href=/docs/db/redis/>Redis</a>
-</li><li>
-<a href=/docs/db/mongodb/>MongoDB</a>
-</li><li>
-<a href=/docs/db/mysql/>MySQL</a>
-</li></ul></li><li>
-<input type=checkbox id=section-e5a49337b6189bd60f0b5e1d3a4a8539 class=toggle>
-<label for=section-e5a49337b6189bd60f0b5e1d3a4a8539 class="flex justify-between">
-<a href=/docs/cloud/>Cloud</a>
-</label>
-<ul>
-<li>
-<a href=/docs/cloud/aws/>Aws</a>
-</li><li>
-<a href=/docs/cloud/firebase/>Firebase</a>
-</li><li>
-<a href=/docs/cloud/gcp/>Gcp</a>
-</li><li>
-<a href=/docs/cloud/sendgrid/>Sendgrid</a>
-</li><li>
-<a href=/docs/cloud/zeit-now/>Zeit Now</a>
-</li></ul></li><li>
-<input type=checkbox id=section-dfa5c6b6f5f2def7a1fbf289a7570ac2 class=toggle checked>
-<label for=section-dfa5c6b6f5f2def7a1fbf289a7570ac2 class="flex justify-between">
-<a href=/docs/ci-cd/>CI/CD</a>
-</label>
-<ul>
-<li>
-<a href=/docs/ci-cd/circleci/>Circleci</a>
-</li><li>
-<a href=/docs/ci-cd/jenkins/>Jenkins</a>
-</li><li>
-<a href=/docs/ci-cd/travis-ci/ class=active>Travis Ci</a>
-</li></ul></li><li>
-<input type=checkbox id=section-10dd021a58cb696b6cb4f79141ec5ddb class=toggle>
-<label for=section-10dd021a58cb696b6cb4f79141ec5ddb class="flex justify-between">
-<a href=/docs/container/>Conatainer</a>
-</label>
-<ul>
-<li>
-<a href=/docs/container/docker-compose/>Docker Compose</a>
-</li><li>
-<a href=/docs/container/docker-hub/>Docker Hub</a>
-</li><li>
-<a href=/docs/container/docker1/>Docker1</a>
-</li><li>
-<a href=/docs/container/docker2/>Docker2</a>
-</li><li>
-<a href=/docs/container/kubernetes/>Kubernetes</a>
-</li></ul></li><li>
-<input type=checkbox id=section-342a656e10fe011a820c22dda53f7866 class=toggle>
-<label for=section-342a656e10fe011a820c22dda53f7866 class="flex justify-between">
-<a href=/docs/crypto/>Crypto</a>
-</label>
-<ul>
-<li>
-<a href=/docs/crypto/blockchain/>Blockchain</a>
-</li><li>
-<a href=/docs/crypto/crypto-docs/>Crypto Docs</a>
-</li><li>
-<a href=/docs/crypto/ethereum/>Ethereum</a>
-</li><li>
-<a href=/docs/crypto/substrate/>Substrate</a>
-</li><li>
-<a href=/docs/crypto/white-paper/>White Paper</a>
-</li><li>
-<a href=/docs/crypto/bitcoin/>Bitcoin</a>
-</li><li>
-<a href=/docs/crypto/iota/>IOTA</a>
-</li><li>
-<a href=/docs/crypto/nem/>NEM</a>
-</li><li>
-<a href=/docs/crypto/bitcoin-fullnode/>フルノード</a>
-</li></ul></li><li>
-<a href=/docs/tools/>Tools</a>
-<ul>
-</ul></li></ul><ul>
-<li>
-<a href=https://github.com/solareenlo/blog-hugo target=_blank rel=noopener>
-Github
-</a>
-</li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
-</div></aside><div class=book-page>
-<header class=book-header>
-<div class="flex align-center justify-between">
-<label for=menu-control>
-<img src=/svg/menu.svg class=book-icon alt=Menu>
-</label>
+<!doctype html><html lang=ja dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Travis CIとは # GitHub上のソフトウェアのビルドやテストを行う, オンラインで分散型の継続的インテグレーション(CI)サービスのこと. https://travis-ci.org が無料でオープンソースのプロジェクト用, https://travis-ci.com が有料でプライベートリポジトリ用の利用ができる. Travis CiからAWS Elastic Beanstalkへ # AWS Elastic Beanstalk Deployment Dokcerのテストがpassedにならない時の対処法 # Travis CIでDockerのテストを以下のように設定するとpassedにならないことがある.
+script: docker run solareenlo/react-test npm run test -- --coverage そんな時は以下のようにテストを設定する.
+script: docker run -e CI=true solareenlo/react-test npm run test -- --watchAll=falseb 環境変数が設定できない時 # Travis CIの環境変数を設定する項目では特殊文字(; & ( ) | ^ < > ? * [ ] $ ` &rsquo; &#34; \ ! { } 改行 タブ スペース)がそのままの入力ではエスケープされないので, シングルクォーテーション(&rsquo;&rsquo;)で囲む必要がある."><meta name=theme-color content="#FFFFFF"><meta name=color-scheme content="light dark"><meta property="og:title" content><meta property="og:description" content="Travis CIとは # GitHub上のソフトウェアのビルドやテストを行う, オンラインで分散型の継続的インテグレーション(CI)サービスのこと. https://travis-ci.org が無料でオープンソースのプロジェクト用, https://travis-ci.com が有料でプライベートリポジトリ用の利用ができる. Travis CiからAWS Elastic Beanstalkへ # AWS Elastic Beanstalk Deployment Dokcerのテストがpassedにならない時の対処法 # Travis CIでDockerのテストを以下のように設定するとpassedにならないことがある.
+script: docker run solareenlo/react-test npm run test -- --coverage そんな時は以下のようにテストを設定する.
+script: docker run -e CI=true solareenlo/react-test npm run test -- --watchAll=falseb 環境変数が設定できない時 # Travis CIの環境変数を設定する項目では特殊文字(; & ( ) | ^ < > ? * [ ] $ ` &rsquo; &#34; \ ! { } 改行 タブ スペース)がそのままの入力ではエスケープされないので, シングルクォーテーション(&rsquo;&rsquo;)で囲む必要がある."><meta property="og:type" content="article"><meta property="og:url" content="https://solareenlo.com/docs/ci-cd/travis-ci/"><meta property="article:section" content="docs"><meta property="article:modified_time" content="2020-03-20T07:56:42+09:00"><title>Travis Ci | solareenlo</title><link rel=manifest href=/manifest.json><link rel=icon href=/favicon.png type=image/x-icon><link rel=stylesheet href=/book.min.653769dc566cda7e41ad715944b80f4b376884be00ffc7ff135147d99a7a6ca4.css integrity="sha256-ZTdp3FZs2n5BrXFZRLgPSzdohL4A/8f/E1FH2Zp6bKQ=" crossorigin=anonymous><script defer src=/flexsearch.min.js></script>
+<script defer src=/ja.search.min.6bef5d18adc3f1e7434148e30fde47853063ba8831714ae7301cb6b67a292d4c.js integrity="sha256-a+9dGK3D8edDQUjjD95HhTBjuogxcUrnMBy2tnopLUw=" crossorigin=anonymous></script></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/><span>solareenlo</span></a></h2><div class=book-search><input type=text id=book-search-input placeholder=検索 aria-label=検索 maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><ul><li><a href=/posts/>Blog</a></li></ul><ul><li><input type=checkbox id=section-57e58ca5aae968f4961a4036f314a5de class=toggle>
+<label for=section-57e58ca5aae968f4961a4036f314a5de class="flex justify-between"><a href=/docs/programming/>Programming</a></label><ul><li><a href=/docs/programming/command/>Command</a></li><li><a href=/docs/programming/fonts/>Fonts</a></li><li><a href=/docs/programming/git/>Git</a></li><li><a href=/docs/programming/github/>Github</a></li><li><a href=/docs/programming/linter-formatter/>Linter Formatter</a></li><li><a href=/docs/programming/password-manager/>Password Manager</a></li><li><a href=/docs/programming/sed/>Sed</a></li><li><a href=/docs/programming/shell-script/>Shell Script</a></li><li><a href=/docs/programming/terminal/>Terminal</a></li><li><a href=/docs/programming/test/>Test</a></li><li><a href=/docs/programming/tmux/>Tmux</a></li><li><a href=/docs/programming/vim/>Vim</a></li><li><a href=/docs/programming/vimium/>Vimium</a></li><li><a href=/docs/programming/wiki/>Wiki</a></li><li><a href=/docs/programming/hhkb/>HHKB</a></li></ul></li><li><input type=checkbox id=section-771d1b18af68e81cd9d3d14cd5f6339b class=toggle>
+<label for=section-771d1b18af68e81cd9d3d14cd5f6339b class="flex justify-between"><a href=/docs/pl/>Programming Language</a></label><ul><li><a href=/docs/pl/angular/>Angular</a></li><li><a href=/docs/pl/c/>C</a></li><li><a href=/docs/pl/css/>Css</a></li><li><a href=/docs/pl/go/>Go</a></li><li><a href=/docs/pl/haskell/>Haskell</a></li><li><a href=/docs/pl/hugo/>Hugo</a></li><li><a href=/docs/pl/javascript/>Javascript</a></li><li><a href=/docs/pl/nodejs/>Nodejs</a></li><li><a href=/docs/pl/pl-docs/>Pl Docs</a></li><li><a href=/docs/pl/react-static/>React Static</a></li><li><a href=/docs/pl/react/>React</a></li><li><a href=/docs/pl/rust/>Rust</a></li><li><a href=/docs/pl/scala/>Scala</a></li><li><a href=/docs/pl/typescript/>Typescript</a></li><li><a href=/docs/pl/npm/>npm</a></li></ul></li><li><input type=checkbox id=section-a7bf5468f483fd7222967f135a5003c0 class=toggle>
+<label for=section-a7bf5468f483fd7222967f135a5003c0 class="flex justify-between"><a href=/docs/latex/>LaTeX</a></label><ul><li><a href=/docs/latex/platex-book/>Platex Book</a></li><li><a href=/docs/latex/zathura-install/>Zathura Install</a></li></ul></li><li><input type=checkbox id=section-e14f9767e53904cbbdcb3f0bdbe82f2a class=toggle>
+<label for=section-e14f9767e53904cbbdcb3f0bdbe82f2a class="flex justify-between"><a href=/docs/vps/>VPS</a></label><ul><li><a href=/docs/vps/alpine-linux/>Alpine Linux</a></li><li><a href=/docs/vps/ubuntu/>Ubuntu</a></li><li><a href=/docs/vps/ssh/>SSH</a></li></ul></li><li><input type=checkbox id=section-99a3d9d52cfe7a0dcbd55cd8c23e4462 class=toggle>
+<label for=section-99a3d9d52cfe7a0dcbd55cd8c23e4462 class="flex justify-between"><a href=/docs/db/>DB</a></label><ul><li><a href=/docs/db/redis/>Redis</a></li><li><a href=/docs/db/mongodb/>MongoDB</a></li><li><a href=/docs/db/mysql/>MySQL</a></li></ul></li><li><input type=checkbox id=section-e5a49337b6189bd60f0b5e1d3a4a8539 class=toggle>
+<label for=section-e5a49337b6189bd60f0b5e1d3a4a8539 class="flex justify-between"><a href=/docs/cloud/>Cloud</a></label><ul><li><a href=/docs/cloud/aws/>Aws</a></li><li><a href=/docs/cloud/firebase/>Firebase</a></li><li><a href=/docs/cloud/gcp/>Gcp</a></li><li><a href=/docs/cloud/sendgrid/>Sendgrid</a></li><li><a href=/docs/cloud/zeit-now/>Zeit Now</a></li></ul></li><li><input type=checkbox id=section-dfa5c6b6f5f2def7a1fbf289a7570ac2 class=toggle checked>
+<label for=section-dfa5c6b6f5f2def7a1fbf289a7570ac2 class="flex justify-between"><a href=/docs/ci-cd/>CI/CD</a></label><ul><li><a href=/docs/ci-cd/circleci/>Circleci</a></li><li><a href=/docs/ci-cd/jenkins/>Jenkins</a></li><li><a href=/docs/ci-cd/travis-ci/ class=active>Travis Ci</a></li></ul></li><li><input type=checkbox id=section-10dd021a58cb696b6cb4f79141ec5ddb class=toggle>
+<label for=section-10dd021a58cb696b6cb4f79141ec5ddb class="flex justify-between"><a href=/docs/container/>Conatainer</a></label><ul><li><a href=/docs/container/docker-compose/>Docker Compose</a></li><li><a href=/docs/container/docker-hub/>Docker Hub</a></li><li><a href=/docs/container/docker1/>Docker1</a></li><li><a href=/docs/container/docker2/>Docker2</a></li><li><a href=/docs/container/kubernetes/>Kubernetes</a></li></ul></li><li><input type=checkbox id=section-342a656e10fe011a820c22dda53f7866 class=toggle>
+<label for=section-342a656e10fe011a820c22dda53f7866 class="flex justify-between"><a href=/docs/crypto/>Crypto</a></label><ul><li><a href=/docs/crypto/blockchain/>Blockchain</a></li><li><a href=/docs/crypto/crypto-docs/>Crypto Docs</a></li><li><a href=/docs/crypto/ethereum/>Ethereum</a></li><li><a href=/docs/crypto/substrate/>Substrate</a></li><li><a href=/docs/crypto/white-paper/>White Paper</a></li><li><a href=/docs/crypto/bitcoin/>Bitcoin</a></li><li><a href=/docs/crypto/iota/>IOTA</a></li><li><a href=/docs/crypto/nem/>NEM</a></li><li><a href=/docs/crypto/bitcoin-fullnode/>フルノード</a></li></ul></li><li><a href=/docs/tools/>Tools</a><ul></ul></li></ul><ul><li><a href=https://github.com/solareenlo/blog-hugo target=_blank rel=noopener>Github</a></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/svg/menu.svg class=book-icon alt=Menu></label>
 <strong>Travis Ci</strong>
-<label for=toc-control>
-<img src=/svg/toc.svg class=book-icon alt="Table of Contents">
-</label>
-</div><aside class="hidden clearfix">
-<nav id=TableOfContents>
-<ul>
-<li><a href=#travis-ciとは>Travis CIとは</a>
-<ul>
-<li><a href=#travis-ciからaws-elastic-beanstalkへ>Travis CiからAWS Elastic Beanstalkへ</a></li><li><a href=#dokcerのテストがpassedにならない時の対処法>Dokcerのテストがpassedにならない時の対処法</a></li><li><a href=#環境変数が設定できない時>環境変数が設定できない時</a></li><li><a href=#秘密情報を暗号化>秘密情報を暗号化</a></li></ul></li></ul></nav></aside></header><article class=markdown><h1 id=travis-ciとは>
-Travis CIとは
-<a class=anchor href=#travis-ci%e3%81%a8%e3%81%af>#</a>
-</h1><ul>
-<li>GitHub上のソフトウェアのビルドやテストを行う, オンラインで分散型の継続的インテグレーション(CI)サービスのこと.</li><li>
-<a href=https://travis-ci.org>https://travis-ci.org</a> が無料でオープンソースのプロジェクト用,
-<a href=https://travis-ci.com>https://travis-ci.com</a> が有料でプライベートリポジトリ用の利用ができる.</li></ul><h2 id=travis-ciからaws-elastic-beanstalkへ>
-Travis CiからAWS Elastic Beanstalkへ
-<a class=anchor href=#travis-ci%e3%81%8b%e3%82%89aws-elastic-beanstalk%e3%81%b8>#</a>
-</h2><ul>
-<li>
-<a href=https://docs.travis-ci.com/user/deployment/elasticbeanstalk/>AWS Elastic Beanstalk Deployment</a></li></ul><h2 id=dokcerのテストがpassedにならない時の対処法>
-Dokcerのテストがpassedにならない時の対処法
-<a class=anchor href=#dokcer%e3%81%ae%e3%83%86%e3%82%b9%e3%83%88%e3%81%8cpassed%e3%81%ab%e3%81%aa%e3%82%89%e3%81%aa%e3%81%84%e6%99%82%e3%81%ae%e5%af%be%e5%87%a6%e6%b3%95>#</a>
-</h2><p>Travis CIでDockerのテストを以下のように設定するとpassedにならないことがある.</p><div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#268bd2>script</span>:
+<label for=toc-control><img src=/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents><ul><li><a href=#travis-ciとは>Travis CIとは</a><ul><li><a href=#travis-ciからaws-elastic-beanstalkへ>Travis CiからAWS Elastic Beanstalkへ</a></li><li><a href=#dokcerのテストがpassedにならない時の対処法>Dokcerのテストがpassedにならない時の対処法</a></li><li><a href=#環境変数が設定できない時>環境変数が設定できない時</a></li><li><a href=#秘密情報を暗号化>秘密情報を暗号化</a></li></ul></li></ul></nav></aside></header><article class=markdown><h1 id=travis-ciとは>Travis CIとは
+<a class=anchor href=#travis-ci%e3%81%a8%e3%81%af>#</a></h1><ul><li>GitHub上のソフトウェアのビルドやテストを行う, オンラインで分散型の継続的インテグレーション(CI)サービスのこと.</li><li><a href=https://travis-ci.org>https://travis-ci.org</a> が無料でオープンソースのプロジェクト用,
+<a href=https://travis-ci.com>https://travis-ci.com</a> が有料でプライベートリポジトリ用の利用ができる.</li></ul><h2 id=travis-ciからaws-elastic-beanstalkへ>Travis CiからAWS Elastic Beanstalkへ
+<a class=anchor href=#travis-ci%e3%81%8b%e3%82%89aws-elastic-beanstalk%e3%81%b8>#</a></h2><ul><li><a href=https://docs.travis-ci.com/user/deployment/elasticbeanstalk/>AWS Elastic Beanstalk Deployment</a></li></ul><h2 id=dokcerのテストがpassedにならない時の対処法>Dokcerのテストがpassedにならない時の対処法
+<a class=anchor href=#dokcer%e3%81%ae%e3%83%86%e3%82%b9%e3%83%88%e3%81%8cpassed%e3%81%ab%e3%81%aa%e3%82%89%e3%81%aa%e3%81%84%e6%99%82%e3%81%ae%e5%af%be%e5%87%a6%e6%b3%95>#</a></h2><p>Travis CIでDockerのテストを以下のように設定するとpassedにならないことがある.</p><div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#268bd2>script</span>:
 </span></span><span style=display:flex><span>  docker run solareenlo/react-test npm run test -- --coverage
 </span></span></code></pre></div><p>そんな時は以下のようにテストを設定する.</p><div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#268bd2>script</span>:
 </span></span><span style=display:flex><span>  docker run -e CI=true solareenlo/react-test npm run test -- --watchAll=falseb
-</span></span></code></pre></div><h2 id=環境変数が設定できない時>
-環境変数が設定できない時
-<a class=anchor href=#%e7%92%b0%e5%a2%83%e5%a4%89%e6%95%b0%e3%81%8c%e8%a8%ad%e5%ae%9a%e3%81%a7%e3%81%8d%e3%81%aa%e3%81%84%e6%99%82>#</a>
-</h2><p>Travis CIの環境変数を設定する項目では特殊文字(; & ( ) | ^ &lt; > ? * [ ] $ ` &rsquo; " \ ! { } 改行 タブ スペース)がそのままの入力ではエスケープされないので, シングルクォーテーション(&rsquo;&rsquo;)で囲む必要がある.</p><div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#586e75># 例</span>
+</span></span></code></pre></div><h2 id=環境変数が設定できない時>環境変数が設定できない時
+<a class=anchor href=#%e7%92%b0%e5%a2%83%e5%a4%89%e6%95%b0%e3%81%8c%e8%a8%ad%e5%ae%9a%e3%81%a7%e3%81%8d%e3%81%aa%e3%81%84%e6%99%82>#</a></h2><p>Travis CIの環境変数を設定する項目では特殊文字(; & ( ) | ^ &lt; > ? * [ ] $ ` &rsquo; " \ ! { } 改行 タブ スペース)がそのままの入力ではエスケープされないので, シングルクォーテーション(&rsquo;&rsquo;)で囲む必要がある.</p><div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#586e75># 例</span>
 </span></span><span style=display:flex><span><span style=color:#719e07>=</span>rrTDKhZYgT2Zm4&amp;TF+D^pyp84Uf9<span style=color:#719e07>[</span>Tw7xZ9Parhx<span style=color:#719e07>[</span><span style=color:#268bd2>$A83QCGRb</span>.NKxAnqUd%7<span style=color:#719e07>(</span>t
 </span></span></code></pre></div><p>を</p><div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#586e75># 例</span>
 </span></span><span style=display:flex><span><span style=color:#2aa198>&#39;=rrTDKhZYgT2Zm4&amp;TF+D^pyp84Uf9[Tw7xZ9Parhx[$A83QCGRb.NKxAnqUd%7(t&#39;</span>
-</span></span></code></pre></div><p>と入力する.</p><h2 id=秘密情報を暗号化>
-秘密情報を暗号化
-<a class=anchor href=#%e7%a7%98%e5%af%86%e6%83%85%e5%a0%b1%e3%82%92%e6%9a%97%e5%8f%b7%e5%8c%96>#</a>
-</h2><p>DockerでTravis CLIを使って送る.</p><div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>docker run -it -v <span style=color:#719e07>$(</span><span style=color:#b58900>pwd</span><span style=color:#719e07>)</span>:/app ruby:2.3 sh
+</span></span></code></pre></div><p>と入力する.</p><h2 id=秘密情報を暗号化>秘密情報を暗号化
+<a class=anchor href=#%e7%a7%98%e5%af%86%e6%83%85%e5%a0%b1%e3%82%92%e6%9a%97%e5%8f%b7%e5%8c%96>#</a></h2><p>DockerでTravis CLIを使って送る.</p><div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>docker run -it -v <span style=color:#719e07>$(</span><span style=color:#b58900>pwd</span><span style=color:#719e07>)</span>:/app ruby:2.3 sh
 </span></span><span style=display:flex><span>gem install travis --no-document
 </span></span><span style=display:flex><span>gem install travis
 </span></span><span style=display:flex><span>travis login
@@ -277,24 +44,6 @@ Dokcerのテストがpassedにならない時の対処法
 </span></span><span style=display:flex><span><span style=color:#586e75># 以下でTravis CIのsolareenlo/multi-k8s-gke用にservice-account.jsonを暗号化するし,</span>
 </span></span><span style=display:flex><span><span style=color:#586e75># Travis CIの当該プロジェクトに登録もする.</span>
 </span></span><span style=display:flex><span>travis encrypt-file service-account.json -r solareenlo/multi-k8s-gke
-</span></span></code></pre></div><p>これで, <code>service-account.json</code>ファイルから暗号化された<code>service-account.json.enc</code>ファイルが作成される.</p></article><footer class=book-footer>
-<div class="flex flex-wrap justify-between">
-<div><a class="flex align-center" href=https://github.com/solareenlo/blog-hugo/commit/bea798d93c9116bad5b5ceb26ca3159b372095e9 title="最終更新者 solareenlo | Mar 20, 2020" target=_blank rel=noopener>
-<img src=/svg/calendar.svg class=book-icon alt=Calendar>
-<span>Mar 20, 2020</span>
-</a>
-</div><div>
-<a class="flex align-center" href=https://github.com/solareenlo/blog-hugo/edit/main/content/docs/ci-cd/travis-ci.md target=_blank rel=noopener>
-<img src=/svg/edit.svg class=book-icon alt=Edit>
-<span>このページを編集する</span>
-</a>
-</div></div><script>(function(){function e(n){const e=window.getSelection(),t=document.createRange();t.selectNodeContents(n),e.removeAllRanges(),e.addRange(t)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
-</footer><div class=book-comments>
-</div><label for=menu-control class="hidden book-menu-overlay"></label>
-</div><aside class=book-toc>
-<div class=book-toc-content>
-<nav id=TableOfContents>
-<ul>
-<li><a href=#travis-ciとは>Travis CIとは</a>
-<ul>
-<li><a href=#travis-ciからaws-elastic-beanstalkへ>Travis CiからAWS Elastic Beanstalkへ</a></li><li><a href=#dokcerのテストがpassedにならない時の対処法>Dokcerのテストがpassedにならない時の対処法</a></li><li><a href=#環境変数が設定できない時>環境変数が設定できない時</a></li><li><a href=#秘密情報を暗号化>秘密情報を暗号化</a></li></ul></li></ul></nav></div></aside></main></body></html>
+</span></span></code></pre></div><p>これで, <code>service-account.json</code>ファイルから暗号化された<code>service-account.json.enc</code>ファイルが作成される.</p></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div><a class="flex align-center" href=https://github.com/solareenlo/blog-hugo/commit/bea798d93c9116bad5b5ceb26ca3159b372095e9 title='最終更新者 solareenlo | Mar 20, 2020' target=_blank rel=noopener><img src=/svg/calendar.svg class=book-icon alt=Calendar>
+<span>Mar 20, 2020</span></a></div><div><a class="flex align-center" href=https://github.com/solareenlo/blog-hugo/edit/main/content/docs/ci-cd/travis-ci.md target=_blank rel=noopener><img src=/svg/edit.svg class=book-icon alt=Edit>
+<span>このページを編集する</span></a></div></div><script>(function(){function e(n){const e=window.getSelection(),t=document.createRange();t.selectNodeContents(n),e.removeAllRanges(),e.addRange(t)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script></footer><div class=book-comments></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#travis-ciとは>Travis CIとは</a><ul><li><a href=#travis-ciからaws-elastic-beanstalkへ>Travis CiからAWS Elastic Beanstalkへ</a></li><li><a href=#dokcerのテストがpassedにならない時の対処法>Dokcerのテストがpassedにならない時の対処法</a></li><li><a href=#環境変数が設定できない時>環境変数が設定できない時</a></li><li><a href=#秘密情報を暗号化>秘密情報を暗号化</a></li></ul></li></ul></nav></div></aside></main></body></html>

@@ -1,268 +1,30 @@
-<!doctype html><html lang=ja dir=ltr>
-<head>
-<meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=description content="Docker Composeとは #   複数のコンテナで構成されるアプリケーションを定義と実行するためのツールのこと. Dockerとは切り離されてる. Composeはアプリケーションのサービスをファイルで定義する. Dockerコマンドと高い親和性があるため, 学習コストが比較的低い. Swarmモードにサービスをデプロイできるオーケストレーション機能もある. Reference: Docker Compose 徹底解説 GitHubリポジトリ: https://github.com/docker/compose  活用場面 #   利用者視点 docker-compose.ymlがあれば, すぐに何でも実行できる. 開発者視点 環境の再構築が簡単 バージョン違いの環境を作りやすい 1つのマシン上に, 複数の環境を立ち上げられやすい  適切に書かれたYAMLファイルさえあれば, 誰でも簡単に環境構築もアプリケーション実行もできるのが強み.
-インストール #    https://docs.docker.com/compose/install/  docker-compose.ymlの書き方 #   services:(使うイメージ), networks:(使うネットワーク), volumes:(使うボリューム)を定義する. docker-compose.ymlの書き方 -> Docker Compose - docker-compose.yml リファレンス  公式Reference #    Compose file version 3 reference  working directory指定 #  working_dirを使う.">
-<meta name=theme-color content="#FFFFFF">
-<meta name=color-scheme content="light dark"><meta property="og:title" content>
-<meta property="og:description" content="Docker Composeとは #   複数のコンテナで構成されるアプリケーションを定義と実行するためのツールのこと. Dockerとは切り離されてる. Composeはアプリケーションのサービスをファイルで定義する. Dockerコマンドと高い親和性があるため, 学習コストが比較的低い. Swarmモードにサービスをデプロイできるオーケストレーション機能もある. Reference: Docker Compose 徹底解説 GitHubリポジトリ: https://github.com/docker/compose  活用場面 #   利用者視点 docker-compose.ymlがあれば, すぐに何でも実行できる. 開発者視点 環境の再構築が簡単 バージョン違いの環境を作りやすい 1つのマシン上に, 複数の環境を立ち上げられやすい  適切に書かれたYAMLファイルさえあれば, 誰でも簡単に環境構築もアプリケーション実行もできるのが強み.
-インストール #    https://docs.docker.com/compose/install/  docker-compose.ymlの書き方 #   services:(使うイメージ), networks:(使うネットワーク), volumes:(使うボリューム)を定義する. docker-compose.ymlの書き方 -> Docker Compose - docker-compose.yml リファレンス  公式Reference #    Compose file version 3 reference  working directory指定 #  working_dirを使う.">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://solareenlo.com/docs/container/docker-compose/"><meta property="article:section" content="docs">
-<meta property="article:modified_time" content="2020-03-20T07:56:42+09:00">
-<title>Docker Compose | solareenlo</title><link rel=manifest href=/manifest.json>
-<link rel=icon href=/favicon.png type=image/x-icon>
-<link rel=stylesheet href=/book.min.653769dc566cda7e41ad715944b80f4b376884be00ffc7ff135147d99a7a6ca4.css integrity="sha256-ZTdp3FZs2n5BrXFZRLgPSzdohL4A/8f/E1FH2Zp6bKQ=" crossorigin=anonymous>
-<script defer src=/flexsearch.min.js></script>
-<script defer src=/ja.search.min.2ef973b17eb164a3b1d994571b8c0df19f666d3c5ae2c4f159cded0e1c8b2b26.js integrity="sha256-LvlzsX6xZKOx2ZRXG4wN8Z9mbTxa4sTxWc3tDhyLKyY=" crossorigin=anonymous></script>
-</head><body dir=ltr>
-<input type=checkbox class="hidden toggle" id=menu-control>
-<input type=checkbox class="hidden toggle" id=toc-control>
-<main class="container flex">
-<aside class=book-menu>
-<div class=book-menu-content>
-<nav>
-<h2 class=book-brand>
-<a class="flex align-center" href=/><span>solareenlo</span>
-</a>
-</h2><div class=book-search>
-<input type=text id=book-search-input placeholder=検索 aria-label=検索 maxlength=64 data-hotkeys=s/>
-<div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><ul>
-<li>
-<a href=/posts/>
-Blog
-</a>
-</li></ul><ul>
-<li>
-<input type=checkbox id=section-57e58ca5aae968f4961a4036f314a5de class=toggle>
-<label for=section-57e58ca5aae968f4961a4036f314a5de class="flex justify-between">
-<a href=/docs/programming/>Programming</a>
-</label>
-<ul>
-<li>
-<a href=/docs/programming/command/>Command</a>
-</li><li>
-<a href=/docs/programming/fonts/>Fonts</a>
-</li><li>
-<a href=/docs/programming/git/>Git</a>
-</li><li>
-<a href=/docs/programming/github/>Github</a>
-</li><li>
-<a href=/docs/programming/linter-formatter/>Linter Formatter</a>
-</li><li>
-<a href=/docs/programming/password-manager/>Password Manager</a>
-</li><li>
-<a href=/docs/programming/sed/>Sed</a>
-</li><li>
-<a href=/docs/programming/shell-script/>Shell Script</a>
-</li><li>
-<a href=/docs/programming/terminal/>Terminal</a>
-</li><li>
-<a href=/docs/programming/test/>Test</a>
-</li><li>
-<a href=/docs/programming/tmux/>Tmux</a>
-</li><li>
-<a href=/docs/programming/vim/>Vim</a>
-</li><li>
-<a href=/docs/programming/vimium/>Vimium</a>
-</li><li>
-<a href=/docs/programming/wiki/>Wiki</a>
-</li><li>
-<a href=/docs/programming/hhkb/>HHKB</a>
-</li></ul></li><li>
-<input type=checkbox id=section-771d1b18af68e81cd9d3d14cd5f6339b class=toggle>
-<label for=section-771d1b18af68e81cd9d3d14cd5f6339b class="flex justify-between">
-<a href=/docs/pl/>Programming Language</a>
-</label>
-<ul>
-<li>
-<a href=/docs/pl/angular/>Angular</a>
-</li><li>
-<a href=/docs/pl/c/>C</a>
-</li><li>
-<a href=/docs/pl/css/>Css</a>
-</li><li>
-<a href=/docs/pl/go/>Go</a>
-</li><li>
-<a href=/docs/pl/haskell/>Haskell</a>
-</li><li>
-<a href=/docs/pl/hugo/>Hugo</a>
-</li><li>
-<a href=/docs/pl/javascript/>Javascript</a>
-</li><li>
-<a href=/docs/pl/nodejs/>Nodejs</a>
-</li><li>
-<a href=/docs/pl/pl-docs/>Pl Docs</a>
-</li><li>
-<a href=/docs/pl/react-static/>React Static</a>
-</li><li>
-<a href=/docs/pl/react/>React</a>
-</li><li>
-<a href=/docs/pl/rust/>Rust</a>
-</li><li>
-<a href=/docs/pl/scala/>Scala</a>
-</li><li>
-<a href=/docs/pl/typescript/>Typescript</a>
-</li><li>
-<a href=/docs/pl/npm/>npm</a>
-</li></ul></li><li>
-<input type=checkbox id=section-a7bf5468f483fd7222967f135a5003c0 class=toggle>
-<label for=section-a7bf5468f483fd7222967f135a5003c0 class="flex justify-between">
-<a href=/docs/latex/>LaTeX</a>
-</label>
-<ul>
-<li>
-<a href=/docs/latex/platex-book/>Platex Book</a>
-</li><li>
-<a href=/docs/latex/zathura-install/>Zathura Install</a>
-</li></ul></li><li>
-<input type=checkbox id=section-e14f9767e53904cbbdcb3f0bdbe82f2a class=toggle>
-<label for=section-e14f9767e53904cbbdcb3f0bdbe82f2a class="flex justify-between">
-<a href=/docs/vps/>VPS</a>
-</label>
-<ul>
-<li>
-<a href=/docs/vps/alpine-linux/>Alpine Linux</a>
-</li><li>
-<a href=/docs/vps/ubuntu/>Ubuntu</a>
-</li><li>
-<a href=/docs/vps/ssh/>SSH</a>
-</li></ul></li><li>
-<input type=checkbox id=section-99a3d9d52cfe7a0dcbd55cd8c23e4462 class=toggle>
-<label for=section-99a3d9d52cfe7a0dcbd55cd8c23e4462 class="flex justify-between">
-<a href=/docs/db/>DB</a>
-</label>
-<ul>
-<li>
-<a href=/docs/db/redis/>Redis</a>
-</li><li>
-<a href=/docs/db/mongodb/>MongoDB</a>
-</li><li>
-<a href=/docs/db/mysql/>MySQL</a>
-</li></ul></li><li>
-<input type=checkbox id=section-e5a49337b6189bd60f0b5e1d3a4a8539 class=toggle>
-<label for=section-e5a49337b6189bd60f0b5e1d3a4a8539 class="flex justify-between">
-<a href=/docs/cloud/>Cloud</a>
-</label>
-<ul>
-<li>
-<a href=/docs/cloud/aws/>Aws</a>
-</li><li>
-<a href=/docs/cloud/firebase/>Firebase</a>
-</li><li>
-<a href=/docs/cloud/gcp/>Gcp</a>
-</li><li>
-<a href=/docs/cloud/sendgrid/>Sendgrid</a>
-</li><li>
-<a href=/docs/cloud/zeit-now/>Zeit Now</a>
-</li></ul></li><li>
-<input type=checkbox id=section-dfa5c6b6f5f2def7a1fbf289a7570ac2 class=toggle>
-<label for=section-dfa5c6b6f5f2def7a1fbf289a7570ac2 class="flex justify-between">
-<a href=/docs/ci-cd/>CI/CD</a>
-</label>
-<ul>
-<li>
-<a href=/docs/ci-cd/circleci/>Circleci</a>
-</li><li>
-<a href=/docs/ci-cd/jenkins/>Jenkins</a>
-</li><li>
-<a href=/docs/ci-cd/travis-ci/>Travis Ci</a>
-</li></ul></li><li>
-<input type=checkbox id=section-10dd021a58cb696b6cb4f79141ec5ddb class=toggle checked>
-<label for=section-10dd021a58cb696b6cb4f79141ec5ddb class="flex justify-between">
-<a href=/docs/container/>Conatainer</a>
-</label>
-<ul>
-<li>
-<a href=/docs/container/docker-compose/ class=active>Docker Compose</a>
-</li><li>
-<a href=/docs/container/docker-hub/>Docker Hub</a>
-</li><li>
-<a href=/docs/container/docker1/>Docker1</a>
-</li><li>
-<a href=/docs/container/docker2/>Docker2</a>
-</li><li>
-<a href=/docs/container/kubernetes/>Kubernetes</a>
-</li></ul></li><li>
-<input type=checkbox id=section-342a656e10fe011a820c22dda53f7866 class=toggle>
-<label for=section-342a656e10fe011a820c22dda53f7866 class="flex justify-between">
-<a href=/docs/crypto/>Crypto</a>
-</label>
-<ul>
-<li>
-<a href=/docs/crypto/blockchain/>Blockchain</a>
-</li><li>
-<a href=/docs/crypto/crypto-docs/>Crypto Docs</a>
-</li><li>
-<a href=/docs/crypto/ethereum/>Ethereum</a>
-</li><li>
-<a href=/docs/crypto/substrate/>Substrate</a>
-</li><li>
-<a href=/docs/crypto/white-paper/>White Paper</a>
-</li><li>
-<a href=/docs/crypto/bitcoin/>Bitcoin</a>
-</li><li>
-<a href=/docs/crypto/iota/>IOTA</a>
-</li><li>
-<a href=/docs/crypto/nem/>NEM</a>
-</li><li>
-<a href=/docs/crypto/bitcoin-fullnode/>フルノード</a>
-</li></ul></li><li>
-<a href=/docs/tools/>Tools</a>
-<ul>
-</ul></li></ul><ul>
-<li>
-<a href=https://github.com/solareenlo/blog-hugo target=_blank rel=noopener>
-Github
-</a>
-</li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
-</div></aside><div class=book-page>
-<header class=book-header>
-<div class="flex align-center justify-between">
-<label for=menu-control>
-<img src=/svg/menu.svg class=book-icon alt=Menu>
-</label>
+<!doctype html><html lang=ja dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Docker Composeとは # 複数のコンテナで構成されるアプリケーションを定義と実行するためのツールのこと. Dockerとは切り離されてる. Composeはアプリケーションのサービスをファイルで定義する. Dockerコマンドと高い親和性があるため, 学習コストが比較的低い. Swarmモードにサービスをデプロイできるオーケストレーション機能もある. Reference: Docker Compose 徹底解説 GitHubリポジトリ: https://github.com/docker/compose 活用場面 # 利用者視点 docker-compose.ymlがあれば, すぐに何でも実行できる. 開発者視点 環境の再構築が簡単 バージョン違いの環境を作りやすい 1つのマシン上に, 複数の環境を立ち上げられやすい 適切に書かれたYAMLファイルさえあれば, 誰でも簡単に環境構築もアプリケーション実行もできるのが強み.
+インストール # https://docs.docker.com/compose/install/ docker-compose.ymlの書き方 # services:(使うイメージ), networks:(使うネットワーク), volumes:(使うボリューム)を定義する. docker-compose.ymlの書き方 -> Docker Compose - docker-compose.yml リファレンス 公式Reference # Compose file version 3 reference working directory指定 # working_dirを使う.
+version: '3' services: angular: image: angular-first-app ports: - &#34;4200:4200&#34; volumes: - .:/usr/src/app working_dir: /usr/src/app/first-app command: ng serve --host=0."><meta name=theme-color content="#FFFFFF"><meta name=color-scheme content="light dark"><meta property="og:title" content><meta property="og:description" content="Docker Composeとは # 複数のコンテナで構成されるアプリケーションを定義と実行するためのツールのこと. Dockerとは切り離されてる. Composeはアプリケーションのサービスをファイルで定義する. Dockerコマンドと高い親和性があるため, 学習コストが比較的低い. Swarmモードにサービスをデプロイできるオーケストレーション機能もある. Reference: Docker Compose 徹底解説 GitHubリポジトリ: https://github.com/docker/compose 活用場面 # 利用者視点 docker-compose.ymlがあれば, すぐに何でも実行できる. 開発者視点 環境の再構築が簡単 バージョン違いの環境を作りやすい 1つのマシン上に, 複数の環境を立ち上げられやすい 適切に書かれたYAMLファイルさえあれば, 誰でも簡単に環境構築もアプリケーション実行もできるのが強み.
+インストール # https://docs.docker.com/compose/install/ docker-compose.ymlの書き方 # services:(使うイメージ), networks:(使うネットワーク), volumes:(使うボリューム)を定義する. docker-compose.ymlの書き方 -> Docker Compose - docker-compose.yml リファレンス 公式Reference # Compose file version 3 reference working directory指定 # working_dirを使う.
+version: '3' services: angular: image: angular-first-app ports: - &#34;4200:4200&#34; volumes: - .:/usr/src/app working_dir: /usr/src/app/first-app command: ng serve --host=0."><meta property="og:type" content="article"><meta property="og:url" content="https://solareenlo.com/docs/container/docker-compose/"><meta property="article:section" content="docs"><meta property="article:modified_time" content="2020-03-20T07:56:42+09:00"><title>Docker Compose | solareenlo</title><link rel=manifest href=/manifest.json><link rel=icon href=/favicon.png type=image/x-icon><link rel=stylesheet href=/book.min.653769dc566cda7e41ad715944b80f4b376884be00ffc7ff135147d99a7a6ca4.css integrity="sha256-ZTdp3FZs2n5BrXFZRLgPSzdohL4A/8f/E1FH2Zp6bKQ=" crossorigin=anonymous><script defer src=/flexsearch.min.js></script>
+<script defer src=/ja.search.min.6bef5d18adc3f1e7434148e30fde47853063ba8831714ae7301cb6b67a292d4c.js integrity="sha256-a+9dGK3D8edDQUjjD95HhTBjuogxcUrnMBy2tnopLUw=" crossorigin=anonymous></script></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/><span>solareenlo</span></a></h2><div class=book-search><input type=text id=book-search-input placeholder=検索 aria-label=検索 maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><ul><li><a href=/posts/>Blog</a></li></ul><ul><li><input type=checkbox id=section-57e58ca5aae968f4961a4036f314a5de class=toggle>
+<label for=section-57e58ca5aae968f4961a4036f314a5de class="flex justify-between"><a href=/docs/programming/>Programming</a></label><ul><li><a href=/docs/programming/command/>Command</a></li><li><a href=/docs/programming/fonts/>Fonts</a></li><li><a href=/docs/programming/git/>Git</a></li><li><a href=/docs/programming/github/>Github</a></li><li><a href=/docs/programming/linter-formatter/>Linter Formatter</a></li><li><a href=/docs/programming/password-manager/>Password Manager</a></li><li><a href=/docs/programming/sed/>Sed</a></li><li><a href=/docs/programming/shell-script/>Shell Script</a></li><li><a href=/docs/programming/terminal/>Terminal</a></li><li><a href=/docs/programming/test/>Test</a></li><li><a href=/docs/programming/tmux/>Tmux</a></li><li><a href=/docs/programming/vim/>Vim</a></li><li><a href=/docs/programming/vimium/>Vimium</a></li><li><a href=/docs/programming/wiki/>Wiki</a></li><li><a href=/docs/programming/hhkb/>HHKB</a></li></ul></li><li><input type=checkbox id=section-771d1b18af68e81cd9d3d14cd5f6339b class=toggle>
+<label for=section-771d1b18af68e81cd9d3d14cd5f6339b class="flex justify-between"><a href=/docs/pl/>Programming Language</a></label><ul><li><a href=/docs/pl/angular/>Angular</a></li><li><a href=/docs/pl/c/>C</a></li><li><a href=/docs/pl/css/>Css</a></li><li><a href=/docs/pl/go/>Go</a></li><li><a href=/docs/pl/haskell/>Haskell</a></li><li><a href=/docs/pl/hugo/>Hugo</a></li><li><a href=/docs/pl/javascript/>Javascript</a></li><li><a href=/docs/pl/nodejs/>Nodejs</a></li><li><a href=/docs/pl/pl-docs/>Pl Docs</a></li><li><a href=/docs/pl/react-static/>React Static</a></li><li><a href=/docs/pl/react/>React</a></li><li><a href=/docs/pl/rust/>Rust</a></li><li><a href=/docs/pl/scala/>Scala</a></li><li><a href=/docs/pl/typescript/>Typescript</a></li><li><a href=/docs/pl/npm/>npm</a></li></ul></li><li><input type=checkbox id=section-a7bf5468f483fd7222967f135a5003c0 class=toggle>
+<label for=section-a7bf5468f483fd7222967f135a5003c0 class="flex justify-between"><a href=/docs/latex/>LaTeX</a></label><ul><li><a href=/docs/latex/platex-book/>Platex Book</a></li><li><a href=/docs/latex/zathura-install/>Zathura Install</a></li></ul></li><li><input type=checkbox id=section-e14f9767e53904cbbdcb3f0bdbe82f2a class=toggle>
+<label for=section-e14f9767e53904cbbdcb3f0bdbe82f2a class="flex justify-between"><a href=/docs/vps/>VPS</a></label><ul><li><a href=/docs/vps/alpine-linux/>Alpine Linux</a></li><li><a href=/docs/vps/ubuntu/>Ubuntu</a></li><li><a href=/docs/vps/ssh/>SSH</a></li></ul></li><li><input type=checkbox id=section-99a3d9d52cfe7a0dcbd55cd8c23e4462 class=toggle>
+<label for=section-99a3d9d52cfe7a0dcbd55cd8c23e4462 class="flex justify-between"><a href=/docs/db/>DB</a></label><ul><li><a href=/docs/db/redis/>Redis</a></li><li><a href=/docs/db/mongodb/>MongoDB</a></li><li><a href=/docs/db/mysql/>MySQL</a></li></ul></li><li><input type=checkbox id=section-e5a49337b6189bd60f0b5e1d3a4a8539 class=toggle>
+<label for=section-e5a49337b6189bd60f0b5e1d3a4a8539 class="flex justify-between"><a href=/docs/cloud/>Cloud</a></label><ul><li><a href=/docs/cloud/aws/>Aws</a></li><li><a href=/docs/cloud/firebase/>Firebase</a></li><li><a href=/docs/cloud/gcp/>Gcp</a></li><li><a href=/docs/cloud/sendgrid/>Sendgrid</a></li><li><a href=/docs/cloud/zeit-now/>Zeit Now</a></li></ul></li><li><input type=checkbox id=section-dfa5c6b6f5f2def7a1fbf289a7570ac2 class=toggle>
+<label for=section-dfa5c6b6f5f2def7a1fbf289a7570ac2 class="flex justify-between"><a href=/docs/ci-cd/>CI/CD</a></label><ul><li><a href=/docs/ci-cd/circleci/>Circleci</a></li><li><a href=/docs/ci-cd/jenkins/>Jenkins</a></li><li><a href=/docs/ci-cd/travis-ci/>Travis Ci</a></li></ul></li><li><input type=checkbox id=section-10dd021a58cb696b6cb4f79141ec5ddb class=toggle checked>
+<label for=section-10dd021a58cb696b6cb4f79141ec5ddb class="flex justify-between"><a href=/docs/container/>Conatainer</a></label><ul><li><a href=/docs/container/docker-compose/ class=active>Docker Compose</a></li><li><a href=/docs/container/docker-hub/>Docker Hub</a></li><li><a href=/docs/container/docker1/>Docker1</a></li><li><a href=/docs/container/docker2/>Docker2</a></li><li><a href=/docs/container/kubernetes/>Kubernetes</a></li></ul></li><li><input type=checkbox id=section-342a656e10fe011a820c22dda53f7866 class=toggle>
+<label for=section-342a656e10fe011a820c22dda53f7866 class="flex justify-between"><a href=/docs/crypto/>Crypto</a></label><ul><li><a href=/docs/crypto/blockchain/>Blockchain</a></li><li><a href=/docs/crypto/crypto-docs/>Crypto Docs</a></li><li><a href=/docs/crypto/ethereum/>Ethereum</a></li><li><a href=/docs/crypto/substrate/>Substrate</a></li><li><a href=/docs/crypto/white-paper/>White Paper</a></li><li><a href=/docs/crypto/bitcoin/>Bitcoin</a></li><li><a href=/docs/crypto/iota/>IOTA</a></li><li><a href=/docs/crypto/nem/>NEM</a></li><li><a href=/docs/crypto/bitcoin-fullnode/>フルノード</a></li></ul></li><li><a href=/docs/tools/>Tools</a><ul></ul></li></ul><ul><li><a href=https://github.com/solareenlo/blog-hugo target=_blank rel=noopener>Github</a></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/svg/menu.svg class=book-icon alt=Menu></label>
 <strong>Docker Compose</strong>
-<label for=toc-control>
-<img src=/svg/toc.svg class=book-icon alt="Table of Contents">
-</label>
-</div><aside class="hidden clearfix">
-<nav id=TableOfContents>
-<ul>
-<li><a href=#docker-composeとは>Docker Composeとは</a>
-<ul>
-<li><a href=#活用場面>活用場面</a></li><li><a href=#インストール>インストール</a></li><li><a href=#docker-composeymlの書き方>docker-compose.ymlの書き方</a>
-<ul>
-<li><a href=#公式reference>公式Reference</a></li><li><a href=#working-directory指定>working directory指定</a></li></ul></li><li><a href=#起動と停止>起動と停止</a></li><li><a href=#nginxとhttpd>nginxとhttpd</a></li><li><a href=#drupalとpostgresql>DrupalとPostgreSQL</a></li><li><a href=#nodejsとredix>Node.jsとRedix</a></li><li><a href=#複数のイメージを作る>複数のイメージを作る</a></li><li><a href=#dockerfileでカスタムイメージを作成しつつdocker-composeで動かす>dockerfileでカスタムイメージを作成しつつdocker-composeで動かす</a></li><li><a href=#テストを行う>テストを行う</a></li><li><a href=#環境変数>環境変数</a></li><li><a href=#volumes>volumes</a></li><li><a href=#awsで動かした例>AWSで動かした例</a></li><li><a href=#nodejsを動かした例>Node.jsを動かした例</a></li></ul></li></ul></nav></aside></header><article class=markdown><h1 id=docker-composeとは>
-Docker Composeとは
-<a class=anchor href=#docker-compose%e3%81%a8%e3%81%af>#</a>
-</h1><ul>
-<li>複数のコンテナで構成されるアプリケーションを定義と実行するためのツールのこと.</li><li>Dockerとは切り離されてる.</li><li>Composeはアプリケーションのサービスをファイルで定義する.</li><li>Dockerコマンドと高い親和性があるため, 学習コストが比較的低い.</li><li>Swarmモードにサービスをデプロイできるオーケストレーション機能もある.</li><li><strong>Reference:</strong>
+<label for=toc-control><img src=/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents><ul><li><a href=#docker-composeとは>Docker Composeとは</a><ul><li><a href=#活用場面>活用場面</a></li><li><a href=#インストール>インストール</a></li><li><a href=#docker-composeymlの書き方>docker-compose.ymlの書き方</a><ul><li><a href=#公式reference>公式Reference</a></li><li><a href=#working-directory指定>working directory指定</a></li></ul></li><li><a href=#起動と停止>起動と停止</a></li><li><a href=#nginxとhttpd>nginxとhttpd</a></li><li><a href=#drupalとpostgresql>DrupalとPostgreSQL</a></li><li><a href=#nodejsとredix>Node.jsとRedix</a></li><li><a href=#複数のイメージを作る>複数のイメージを作る</a></li><li><a href=#dockerfileでカスタムイメージを作成しつつdocker-composeで動かす>dockerfileでカスタムイメージを作成しつつdocker-composeで動かす</a></li><li><a href=#テストを行う>テストを行う</a></li><li><a href=#環境変数>環境変数</a></li><li><a href=#volumes>volumes</a></li><li><a href=#awsで動かした例>AWSで動かした例</a></li><li><a href=#nodejsを動かした例>Node.jsを動かした例</a></li></ul></li></ul></nav></aside></header><article class=markdown><h1 id=docker-composeとは>Docker Composeとは
+<a class=anchor href=#docker-compose%e3%81%a8%e3%81%af>#</a></h1><ul><li>複数のコンテナで構成されるアプリケーションを定義と実行するためのツールのこと.</li><li>Dockerとは切り離されてる.</li><li>Composeはアプリケーションのサービスをファイルで定義する.</li><li>Dockerコマンドと高い親和性があるため, 学習コストが比較的低い.</li><li>Swarmモードにサービスをデプロイできるオーケストレーション機能もある.</li><li><strong>Reference:</strong>
 <a href=https://www.slideshare.net/zembutsu/docker-compose-guidebook>Docker Compose 徹底解説</a></li><li><strong>GitHubリポジトリ:</strong>
-<a href=https://github.com/docker/compose>https://github.com/docker/compose</a></li></ul><h2 id=活用場面>
-活用場面
-<a class=anchor href=#%e6%b4%bb%e7%94%a8%e5%a0%b4%e9%9d%a2>#</a>
-</h2><ul>
-<li>利用者視点</li><li><code>docker-compose.yml</code>があれば, すぐに何でも実行できる.</li><li>開発者視点</li><li>環境の再構築が簡単</li><li>バージョン違いの環境を作りやすい</li><li>1つのマシン上に, 複数の環境を立ち上げられやすい</li></ul><p>適切に書かれたYAMLファイルさえあれば, 誰でも簡単に環境構築もアプリケーション実行もできるのが強み.</p><h2 id=インストール>
-インストール
-<a class=anchor href=#%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab>#</a>
-</h2><ul>
-<li>
-<a href=https://docs.docker.com/compose/install/>https://docs.docker.com/compose/install/</a></li></ul><h2 id=docker-composeymlの書き方>
-docker-compose.ymlの書き方
-<a class=anchor href=#docker-composeyml%e3%81%ae%e6%9b%b8%e3%81%8d%e6%96%b9>#</a>
-</h2><ul>
-<li><strong>services:</strong>(使うイメージ), <strong>networks:</strong>(使うネットワーク), <strong>volumes:</strong>(使うボリューム)を定義する.</li><li>docker-compose.ymlの書き方 ->
-<a href=https://qiita.com/zembutsu/items/9e9d80e05e36e882caaa>Docker Compose - docker-compose.yml リファレンス</a></li></ul><h3 id=公式reference>
-公式Reference
-<a class=anchor href=#%e5%85%ac%e5%bc%8freference>#</a>
-</h3><ul>
-<li>
-<a href=https://docs.docker.com/compose/compose-file/>Compose file version 3 reference</a></li></ul><h3 id=working-directory指定>
-working directory指定
-<a class=anchor href=#working-directory%e6%8c%87%e5%ae%9a>#</a>
-</h3><p><code>working_dir</code>を使う.</p><div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#268bd2>version</span>: <span style=color:#2aa198>&#39;3&#39;</span>
+<a href=https://github.com/docker/compose>https://github.com/docker/compose</a></li></ul><h2 id=活用場面>活用場面
+<a class=anchor href=#%e6%b4%bb%e7%94%a8%e5%a0%b4%e9%9d%a2>#</a></h2><ul><li>利用者視点</li><li><code>docker-compose.yml</code>があれば, すぐに何でも実行できる.</li><li>開発者視点</li><li>環境の再構築が簡単</li><li>バージョン違いの環境を作りやすい</li><li>1つのマシン上に, 複数の環境を立ち上げられやすい</li></ul><p>適切に書かれたYAMLファイルさえあれば, 誰でも簡単に環境構築もアプリケーション実行もできるのが強み.</p><h2 id=インストール>インストール
+<a class=anchor href=#%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab>#</a></h2><ul><li><a href=https://docs.docker.com/compose/install/>https://docs.docker.com/compose/install/</a></li></ul><h2 id=docker-composeymlの書き方>docker-compose.ymlの書き方
+<a class=anchor href=#docker-composeyml%e3%81%ae%e6%9b%b8%e3%81%8d%e6%96%b9>#</a></h2><ul><li><strong>services:</strong>(使うイメージ), <strong>networks:</strong>(使うネットワーク), <strong>volumes:</strong>(使うボリューム)を定義する.</li><li>docker-compose.ymlの書き方 ->
+<a href=https://qiita.com/zembutsu/items/9e9d80e05e36e882caaa>Docker Compose - docker-compose.yml リファレンス</a></li></ul><h3 id=公式reference>公式Reference
+<a class=anchor href=#%e5%85%ac%e5%bc%8freference>#</a></h3><ul><li><a href=https://docs.docker.com/compose/compose-file/>Compose file version 3 reference</a></li></ul><h3 id=working-directory指定>working directory指定
+<a class=anchor href=#working-directory%e6%8c%87%e5%ae%9a>#</a></h3><p><code>working_dir</code>を使う.</p><div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#268bd2>version</span>: <span style=color:#2aa198>&#39;3&#39;</span>
 </span></span><span style=display:flex><span><span style=color:#268bd2>services</span>:
 </span></span><span style=display:flex><span>  <span style=color:#268bd2>angular</span>:
 </span></span><span style=display:flex><span>    <span style=color:#268bd2>image</span>: angular-first-app
@@ -272,10 +34,8 @@ working directory指定
 </span></span><span style=display:flex><span>      - .:/usr/src/app
 </span></span><span style=display:flex><span>    <span style=color:#268bd2>working_dir</span>: /usr/src/app/first-app
 </span></span><span style=display:flex><span>    <span style=color:#268bd2>command</span>: ng serve --host=0.0.0.0
-</span></span></code></pre></div><h2 id=起動と停止>
-起動と停止
-<a class=anchor href=#%e8%b5%b7%e5%8b%95%e3%81%a8%e5%81%9c%e6%ad%a2>#</a>
-</h2><div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#586e75># 起動</span>
+</span></span></code></pre></div><h2 id=起動と停止>起動と停止
+<a class=anchor href=#%e8%b5%b7%e5%8b%95%e3%81%a8%e5%81%9c%e6%ad%a2>#</a></h2><div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#586e75># 起動</span>
 </span></span><span style=display:flex><span>docker-compose up
 </span></span><span style=display:flex><span><span style=color:#586e75># ビルドして起動</span>
 </span></span><span style=display:flex><span>docker-compose up --build
@@ -285,10 +45,8 @@ working directory指定
 </span></span><span style=display:flex><span>docker-compose down
 </span></span><span style=display:flex><span><span style=color:#586e75># ボリュームも削除しつつ停止</span>
 </span></span><span style=display:flex><span>docker-compose down -v
-</span></span></code></pre></div><h2 id=nginxとhttpd>
-nginxとhttpd
-<a class=anchor href=#nginx%e3%81%a8httpd>#</a>
-</h2><p><code>docker-compose</code>を以下の様に書く.</p><div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#586e75># docker-compose.yml</span>
+</span></span></code></pre></div><h2 id=nginxとhttpd>nginxとhttpd
+<a class=anchor href=#nginx%e3%81%a8httpd>#</a></h2><p><code>docker-compose</code>を以下の様に書く.</p><div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#586e75># docker-compose.yml</span>
 </span></span><span style=display:flex><span><span style=color:#268bd2>version</span>: <span style=color:#2aa198>&#39;3&#39;</span>
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#268bd2>services</span>:
@@ -324,10 +82,8 @@ nginxとhttpd
 </span></span><span style=display:flex><span>&gt; compose-sample-2_web_1     httpd-foreground       Up      80/tcp
 </span></span><span style=display:flex><span>docker-compose down <span style=color:#586e75># コンテナ群を停止する</span>
 </span></span></code></pre></div><p><strong>コード例:</strong>
-<a href=https://github.com/solareenlo/udemy-docker-mastery/tree/master/compose-sample-2>solareenlo/udemy-docker-mastery/compose-sample-2</a></p><h2 id=drupalとpostgresql>
-DrupalとPostgreSQL
-<a class=anchor href=#drupal%e3%81%a8postgresql>#</a>
-</h2><p><code>docker-compose.yml</code>に以下を記述する.</p><div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#586e75># Drupal with PostgreSQL</span>
+<a href=https://github.com/solareenlo/udemy-docker-mastery/tree/master/compose-sample-2>solareenlo/udemy-docker-mastery/compose-sample-2</a></p><h2 id=drupalとpostgresql>DrupalとPostgreSQL
+<a class=anchor href=#drupal%e3%81%a8postgresql>#</a></h2><p><code>docker-compose.yml</code>に以下を記述する.</p><div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#586e75># Drupal with PostgreSQL</span>
 </span></span><span style=display:flex><span><span style=color:#586e75>#</span>
 </span></span><span style=display:flex><span><span style=color:#586e75># Access via &#34;http://localhost:8081&#34;</span>
 </span></span><span style=display:flex><span><span style=color:#586e75>#   (or &#34;http://$(docker-machine ip):8081&#34; if using docker-machine)</span>
@@ -371,8 +127,7 @@ DrupalとPostgreSQL
 </span></span><span style=display:flex><span>&gt; -----------------------------------------------------------------------------------------------
 </span></span><span style=display:flex><span>&gt; compose-assignment-1_drupal_1     docker-php-entrypoint apac ...   Up      0.0.0.0:8081-&gt;80/tcp
 </span></span><span style=display:flex><span>&gt; compose-assignment-1_postgres_1   docker-entrypoint.sh postgres    Up      5432/tcp
-</span></span></code></pre></div><p>任意のブラウザで<code>localhost:8081</code>を開くとDrupalが立ち上がってる.<br>
-設定値は以下.</p><div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>Database type: PostgreSQL
+</span></span></code></pre></div><p>任意のブラウザで<code>localhost:8081</code>を開くとDrupalが立ち上がってる.<br>設定値は以下.</p><div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>Database type: PostgreSQL
 </span></span><span style=display:flex><span>Database name: postgres
 </span></span><span style=display:flex><span>Database username: postgres
 </span></span><span style=display:flex><span>Database password: passwd
@@ -380,10 +135,8 @@ DrupalとPostgreSQL
 </span></span><span style=display:flex><span>ADVANCED OPTIONS; Database port: <span style=color:#2aa198>5432</span>
 </span></span></code></pre></div><p>そして, 停止する.</p><div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>docker-compose down -v <span style=color:#586e75># volumeも一緒に削除.</span>
 </span></span></code></pre></div><p><strong>コード例:</strong>
-<a href=https://github.com/solareenlo/udemy-docker-mastery/tree/master/compose-assignment-1>solareenlo/udemy-docker-mastery/compose-assignment-1</a></p><h2 id=nodejsとredix>
-Node.jsとRedix
-<a class=anchor href=#nodejs%e3%81%a8redix>#</a>
-</h2><p><code>docker-compose.yml</code>に以下の様に書く.</p><div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#586e75># docker-compose.yml</span>
+<a href=https://github.com/solareenlo/udemy-docker-mastery/tree/master/compose-assignment-1>solareenlo/udemy-docker-mastery/compose-assignment-1</a></p><h2 id=nodejsとredix>Node.jsとRedix
+<a class=anchor href=#nodejs%e3%81%a8redix>#</a></h2><p><code>docker-compose.yml</code>に以下の様に書く.</p><div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#586e75># docker-compose.yml</span>
 </span></span><span style=display:flex><span><span style=color:#268bd2>version</span>: <span style=color:#2aa198>&#39;3&#39;</span>
 </span></span><span style=display:flex><span><span style=color:#268bd2>services</span>:
 </span></span><span style=display:flex><span>  <span style=color:#268bd2>redis-server</span>:
@@ -406,10 +159,8 @@ Node.jsとRedix
 </span></span><span style=display:flex><span><span style=color:#586e75># 任意のブラウザでlobalhost:8082を訪れると訪問回数を表示するサイトが表示される</span>
 </span></span><span style=display:flex><span>docker-compose down
 </span></span></code></pre></div><p><strong>コード例:</strong>
-<a href=https://github.com/solareenlo/visits-docker-nodejs>solareenlo/visits-docker-nodejs</a></p><h2 id=複数のイメージを作る>
-複数のイメージを作る
-<a class=anchor href=#%e8%a4%87%e6%95%b0%e3%81%ae%e3%82%a4%e3%83%a1%e3%83%bc%e3%82%b8%e3%82%92%e4%bd%9c%e3%82%8b>#</a>
-</h2><p>Dockerfileからカスタムnginxイメージを作成しつつ, カスタムnginxコンテナとhttpdコンテナを動かしている.</p><div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>git clone git@github.com:solareenlo/udemy-docker-mastery.git
+<a href=https://github.com/solareenlo/visits-docker-nodejs>solareenlo/visits-docker-nodejs</a></p><h2 id=複数のイメージを作る>複数のイメージを作る
+<a class=anchor href=#%e8%a4%87%e6%95%b0%e3%81%ae%e3%82%a4%e3%83%a1%e3%83%bc%e3%82%b8%e3%82%92%e4%bd%9c%e3%82%8b>#</a></h2><p>Dockerfileからカスタムnginxイメージを作成しつつ, カスタムnginxコンテナとhttpdコンテナを動かしている.</p><div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>git clone git@github.com:solareenlo/udemy-docker-mastery.git
 </span></span><span style=display:flex><span><span style=color:#b58900>cd</span> udemy-docker-mastery/compose-sample-3
 </span></span></code></pre></div><p><code>docker-compose.yml</code>の中身は以下.</p><div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#268bd2>version</span>: <span style=color:#2aa198>&#39;2&#39;</span>
 </span></span><span style=display:flex><span><span style=color:#268bd2>services</span>:
@@ -437,15 +188,11 @@ Node.jsとRedix
 </span></span><span style=display:flex><span>		<span style=color:#719e07>proxy_set_header</span>   <span style=color:#2aa198>X-Forwarded-Host</span> <span style=color:#268bd2>$server_name</span>;
 </span></span><span style=display:flex><span>	}
 </span></span><span style=display:flex><span>}
-</span></span></code></pre></div><p>webコンテナで使っているhtmlディレクトリの中身は<code>https://startbootstrap.com/template-overviews/agency/</code>です.<br>
-そして, 起動する.</p><div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>docker-compose up -d
-</span></span></code></pre></div><p><code>localhost:80</code>を開くとサイトが見られる.<br>
-そして, 停止する.</p><div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>docker-compose down --rmi <span style=color:#b58900>local</span>
+</span></span></code></pre></div><p>webコンテナで使っているhtmlディレクトリの中身は<code>https://startbootstrap.com/template-overviews/agency/</code>です.<br>そして, 起動する.</p><div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>docker-compose up -d
+</span></span></code></pre></div><p><code>localhost:80</code>を開くとサイトが見られる.<br>そして, 停止する.</p><div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>docker-compose down --rmi <span style=color:#b58900>local</span>
 </span></span></code></pre></div><p><strong>コード例:</strong>
-<a href=https://github.com/solareenlo/udemy-docker-mastery/tree/master/compose-sample-3>solareenlo/udemy-docker-mastery/compose-sample-3</a></p><h2 id=dockerfileでカスタムイメージを作成しつつdocker-composeで動かす>
-dockerfileでカスタムイメージを作成しつつdocker-composeで動かす
-<a class=anchor href=#dockerfile%e3%81%a7%e3%82%ab%e3%82%b9%e3%82%bf%e3%83%a0%e3%82%a4%e3%83%a1%e3%83%bc%e3%82%b8%e3%82%92%e4%bd%9c%e6%88%90%e3%81%97%e3%81%a4%e3%81%a4docker-compose%e3%81%a7%e5%8b%95%e3%81%8b%e3%81%99>#</a>
-</h2><p><code>Dockerfile</code>に下記を記入する.</p><div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-dockerfile data-lang=dockerfile><span style=display:flex><span><span style=color:#719e07>FROM</span><span style=color:#2aa198> drupal:8-apache</span>
+<a href=https://github.com/solareenlo/udemy-docker-mastery/tree/master/compose-sample-3>solareenlo/udemy-docker-mastery/compose-sample-3</a></p><h2 id=dockerfileでカスタムイメージを作成しつつdocker-composeで動かす>dockerfileでカスタムイメージを作成しつつdocker-composeで動かす
+<a class=anchor href=#dockerfile%e3%81%a7%e3%82%ab%e3%82%b9%e3%82%bf%e3%83%a0%e3%82%a4%e3%83%a1%e3%83%bc%e3%82%b8%e3%82%92%e4%bd%9c%e6%88%90%e3%81%97%e3%81%a4%e3%81%a4docker-compose%e3%81%a7%e5%8b%95%e3%81%8b%e3%81%99>#</a></h2><p><code>Dockerfile</code>に下記を記入する.</p><div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-dockerfile data-lang=dockerfile><span style=display:flex><span><span style=color:#719e07>FROM</span><span style=color:#2aa198> drupal:8-apache</span>
 </span></span><span style=display:flex><span><span style=color:#719e07>RUN</span> apt-get update <span style=color:#719e07>&amp;&amp;</span> apt-get install -y git <span style=color:#cb4b16>\
 </span></span></span><span style=display:flex><span><span style=color:#cb4b16></span>    <span style=color:#719e07>&amp;&amp;</span> rm -rf /var/lib/apt/lists/*
 </span></span><span style=display:flex><span><span style=color:#719e07>WORKDIR</span><span style=color:#2aa198> /var/www/html/themes</span>
@@ -495,20 +242,16 @@ dockerfileでカスタムイメージを作成しつつdocker-composeで動か�
 </span></span><span style=display:flex><span>  <span style=color:#268bd2>drupal-sites</span>:
 </span></span><span style=display:flex><span>  <span style=color:#268bd2>drupal-data</span>:
 </span></span></code></pre></div><p>そして, 下記を実行する.</p><div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>dokcer-compose up -d
-</span></span></code></pre></div><p>すると, 任意のブラウザで<code>localhost:8081</code>を開くとDrupalが走っていて,<br>
-設定値は以下を入力して,</p><div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>Database type: PostgreSQL
+</span></span></code></pre></div><p>すると, 任意のブラウザで<code>localhost:8081</code>を開くとDrupalが走っていて,<br>設定値は以下を入力して,</p><div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>Database type: PostgreSQL
 </span></span><span style=display:flex><span>Database name: postgres
 </span></span><span style=display:flex><span>Database username: postgres
 </span></span><span style=display:flex><span>Database password: passwd
 </span></span><span style=display:flex><span>ADVANCED OPTIONS; Database host: postgres
 </span></span><span style=display:flex><span>ADVANCED OPTIONS; Database port: <span style=color:#2aa198>5432</span>
-</span></span></code></pre></div><p>ページのテーマをDockerfileで設定してダウンロードしてきたBootstrapに変えてみる.<br>
-停止するには,</p><div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>docker-compose down
+</span></span></code></pre></div><p>ページのテーマをDockerfileで設定してダウンロードしてきたBootstrapに変えてみる.<br>停止するには,</p><div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>docker-compose down
 </span></span></code></pre></div><p><strong>コード例:</strong>
-<a href=https://github.com/solareenlo/udemy-docker-mastery/tree/master/compose-assignment-2>solareenlo/udemy-docker-mastery/compose-assignment-2</a></p><h2 id=テストを行う>
-テストを行う
-<a class=anchor href=#%e3%83%86%e3%82%b9%e3%83%88%e3%82%92%e8%a1%8c%e3%81%86>#</a>
-</h2><p>以下のように<code>docker-compose.yml</code>に<code>tests</code>項目を追加する.</p><div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#586e75># docker-compose.ymlの中身</span>
+<a href=https://github.com/solareenlo/udemy-docker-mastery/tree/master/compose-assignment-2>solareenlo/udemy-docker-mastery/compose-assignment-2</a></p><h2 id=テストを行う>テストを行う
+<a class=anchor href=#%e3%83%86%e3%82%b9%e3%83%88%e3%82%92%e8%a1%8c%e3%81%86>#</a></h2><p>以下のように<code>docker-compose.yml</code>に<code>tests</code>項目を追加する.</p><div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#586e75># docker-compose.ymlの中身</span>
 </span></span><span style=display:flex><span><span style=color:#268bd2>version</span>: <span style=color:#2aa198>&#39;3&#39;</span>
 </span></span><span style=display:flex><span><span style=color:#268bd2>services</span>:
 </span></span><span style=display:flex><span>  <span style=color:#268bd2>web</span>:
@@ -541,56 +284,19 @@ dockerfileでカスタムイメージを作成しつつdocker-composeで動か�
 </span></span><span style=display:flex><span><span style=color:#719e07>CMD</span> [<span style=color:#2aa198>&#34;npm&#34;</span>, <span style=color:#2aa198>&#34;run&#34;</span>, <span style=color:#2aa198>&#34;start&#34;</span>]
 </span></span></code></pre></div><p>そして, 以下でビルドし, 実行する.</p><div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>docker-compose up --build
 </span></span></code></pre></div><p>テスト用のコードを変更すると, 標準出力で結果が出てくる.</p><p><strong>コード例:</strong>
-<a href=https://github.com/solareenlo/frontend-docker-react>frontend-docker-react</a></p><h2 id=環境変数>
-環境変数
-<a class=anchor href=#%e7%92%b0%e5%a2%83%e5%a4%89%e6%95%b0>#</a>
-</h2><p>以下のように<code>variabeleName=value</code>と書けばコンテナの中で有効な環境変数になる.</p><div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>environment:
+<a href=https://github.com/solareenlo/frontend-docker-react>frontend-docker-react</a></p><h2 id=環境変数>環境変数
+<a class=anchor href=#%e7%92%b0%e5%a2%83%e5%a4%89%e6%95%b0>#</a></h2><p>以下のように<code>variabeleName=value</code>と書けばコンテナの中で有効な環境変数になる.</p><div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>environment:
 </span></span><span style=display:flex><span>  - <span style=color:#268bd2>REDIS_HOST</span><span style=color:#719e07>=</span>redis
 </span></span><span style=display:flex><span>  - <span style=color:#268bd2>REDIS_PORT</span><span style=color:#719e07>=</span><span style=color:#2aa198>6378</span>
 </span></span></code></pre></div><p>以下のように<code>variableName</code>とだけ書けばホストから環境変数を取ってきてコンテナの中で有効な環境変数になる.</p><div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>environment:
 </span></span><span style=display:flex><span>  - REDIS_HOST
-</span></span></code></pre></div><ul>
-<li><strong>Referece:</strong></li><li>
-<a href=https://qiita.com/kimullaa/items/f556431b8103e686f356>Docker-Compose の変数定義について</a></li></ul><h2 id=volumes>
-volumes
-<a class=anchor href=#volumes>#</a>
-</h2><p>以下のようにパスを<code>volumes</code>に指定するとボリュームとしてマウントしてくれる.</p><div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span>volumes
+</span></span></code></pre></div><ul><li><strong>Referece:</strong></li><li><a href=https://qiita.com/kimullaa/items/f556431b8103e686f356>Docker-Compose の変数定義について</a></li></ul><h2 id=volumes>volumes
+<a class=anchor href=#volumes>#</a></h2><p>以下のようにパスを<code>volumes</code>に指定するとボリュームとしてマウントしてくれる.</p><div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span>volumes
 </span></span><span style=display:flex><span>  - /path/to/filename
 </span></span></code></pre></div><p>以下のように<code>ホストのパス:コンテナのパス</code>と書くとホストをマウントしてくれる.</p><div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span>volumes
 </span></span><span style=display:flex><span>  - host/path:./path/to/test
-</span></span></code></pre></div><ul>
-<li><strong>References:</strong></li><li>
-<a href=https://qiita.com/gounx2/items/23b0dc8b8b95cc629f32>Docker、ボリューム(Volume)について真面目に調べた</a></li><li>
-<a href=https://qiita.com/zembutsu/items/9e9d80e05e36e882caaa>Docker Compose - docker-compose.yml リファレンス</a></li></ul><h2 id=awsで動かした例>
-AWSで動かした例
-<a class=anchor href=#aws%e3%81%a7%e5%8b%95%e3%81%8b%e3%81%97%e3%81%9f%e4%be%8b>#</a>
-</h2><ul>
-<li>
-<a href=https://github.com/solareenlo/complex-docker>solareenlo/complex-docker</a></li></ul><h2 id=nodejsを動かした例>
-Node.jsを動かした例
-<a class=anchor href=#nodejs%e3%82%92%e5%8b%95%e3%81%8b%e3%81%97%e3%81%9f%e4%be%8b>#</a>
-</h2><ul>
-<li>
-<a href=https://github.com/BretFisher/node-docker-good-defaults>BretFisher/node-docker-good-defaults</a></li></ul></article><footer class=book-footer>
-<div class="flex flex-wrap justify-between">
-<div><a class="flex align-center" href=https://github.com/solareenlo/blog-hugo/commit/bea798d93c9116bad5b5ceb26ca3159b372095e9 title="最終更新者 solareenlo | Mar 20, 2020" target=_blank rel=noopener>
-<img src=/svg/calendar.svg class=book-icon alt=Calendar>
-<span>Mar 20, 2020</span>
-</a>
-</div><div>
-<a class="flex align-center" href=https://github.com/solareenlo/blog-hugo/edit/main/content/docs/container/docker-compose.md target=_blank rel=noopener>
-<img src=/svg/edit.svg class=book-icon alt=Edit>
-<span>このページを編集する</span>
-</a>
-</div></div><script>(function(){function e(n){const e=window.getSelection(),t=document.createRange();t.selectNodeContents(n),e.removeAllRanges(),e.addRange(t)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
-</footer><div class=book-comments>
-</div><label for=menu-control class="hidden book-menu-overlay"></label>
-</div><aside class=book-toc>
-<div class=book-toc-content>
-<nav id=TableOfContents>
-<ul>
-<li><a href=#docker-composeとは>Docker Composeとは</a>
-<ul>
-<li><a href=#活用場面>活用場面</a></li><li><a href=#インストール>インストール</a></li><li><a href=#docker-composeymlの書き方>docker-compose.ymlの書き方</a>
-<ul>
-<li><a href=#公式reference>公式Reference</a></li><li><a href=#working-directory指定>working directory指定</a></li></ul></li><li><a href=#起動と停止>起動と停止</a></li><li><a href=#nginxとhttpd>nginxとhttpd</a></li><li><a href=#drupalとpostgresql>DrupalとPostgreSQL</a></li><li><a href=#nodejsとredix>Node.jsとRedix</a></li><li><a href=#複数のイメージを作る>複数のイメージを作る</a></li><li><a href=#dockerfileでカスタムイメージを作成しつつdocker-composeで動かす>dockerfileでカスタムイメージを作成しつつdocker-composeで動かす</a></li><li><a href=#テストを行う>テストを行う</a></li><li><a href=#環境変数>環境変数</a></li><li><a href=#volumes>volumes</a></li><li><a href=#awsで動かした例>AWSで動かした例</a></li><li><a href=#nodejsを動かした例>Node.jsを動かした例</a></li></ul></li></ul></nav></div></aside></main></body></html>
+</span></span></code></pre></div><ul><li><strong>References:</strong></li><li><a href=https://qiita.com/gounx2/items/23b0dc8b8b95cc629f32>Docker、ボリューム(Volume)について真面目に調べた</a></li><li><a href=https://qiita.com/zembutsu/items/9e9d80e05e36e882caaa>Docker Compose - docker-compose.yml リファレンス</a></li></ul><h2 id=awsで動かした例>AWSで動かした例
+<a class=anchor href=#aws%e3%81%a7%e5%8b%95%e3%81%8b%e3%81%97%e3%81%9f%e4%be%8b>#</a></h2><ul><li><a href=https://github.com/solareenlo/complex-docker>solareenlo/complex-docker</a></li></ul><h2 id=nodejsを動かした例>Node.jsを動かした例
+<a class=anchor href=#nodejs%e3%82%92%e5%8b%95%e3%81%8b%e3%81%97%e3%81%9f%e4%be%8b>#</a></h2><ul><li><a href=https://github.com/BretFisher/node-docker-good-defaults>BretFisher/node-docker-good-defaults</a></li></ul></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div><a class="flex align-center" href=https://github.com/solareenlo/blog-hugo/commit/bea798d93c9116bad5b5ceb26ca3159b372095e9 title='最終更新者 solareenlo | Mar 20, 2020' target=_blank rel=noopener><img src=/svg/calendar.svg class=book-icon alt=Calendar>
+<span>Mar 20, 2020</span></a></div><div><a class="flex align-center" href=https://github.com/solareenlo/blog-hugo/edit/main/content/docs/container/docker-compose.md target=_blank rel=noopener><img src=/svg/edit.svg class=book-icon alt=Edit>
+<span>このページを編集する</span></a></div></div><script>(function(){function e(n){const e=window.getSelection(),t=document.createRange();t.selectNodeContents(n),e.removeAllRanges(),e.addRange(t)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script></footer><div class=book-comments></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#docker-composeとは>Docker Composeとは</a><ul><li><a href=#活用場面>活用場面</a></li><li><a href=#インストール>インストール</a></li><li><a href=#docker-composeymlの書き方>docker-compose.ymlの書き方</a><ul><li><a href=#公式reference>公式Reference</a></li><li><a href=#working-directory指定>working directory指定</a></li></ul></li><li><a href=#起動と停止>起動と停止</a></li><li><a href=#nginxとhttpd>nginxとhttpd</a></li><li><a href=#drupalとpostgresql>DrupalとPostgreSQL</a></li><li><a href=#nodejsとredix>Node.jsとRedix</a></li><li><a href=#複数のイメージを作る>複数のイメージを作る</a></li><li><a href=#dockerfileでカスタムイメージを作成しつつdocker-composeで動かす>dockerfileでカスタムイメージを作成しつつdocker-composeで動かす</a></li><li><a href=#テストを行う>テストを行う</a></li><li><a href=#環境変数>環境変数</a></li><li><a href=#volumes>volumes</a></li><li><a href=#awsで動かした例>AWSで動かした例</a></li><li><a href=#nodejsを動かした例>Node.jsを動かした例</a></li></ul></li></ul></nav></div></aside></main></body></html>
