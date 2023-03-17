@@ -3,7 +3,9 @@
 <link rel=alternate type=application/rss+xml href=https://solareenlo.com/posts/index.xml title=solareenlo></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
 <input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/><span>solareenlo</span></a></h2><div class=book-search><input type=text id=book-search-input placeholder=検索 aria-label=検索 maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><ul><li><a href=/posts/>Blog</a></li></ul><ul><li class=book-section-flat><a href=/docs/tools/>Tools</a><ul></ul></li><li class=book-section-flat><a href=/docs/books/>Books</a><ul></ul></li><li class=book-section-flat><a href=/docs/documents/>Docs</a><ul></ul></li><li class=book-section-flat><a href=/docs/game/>Game</a><ul></ul></li><li class=book-section-flat><a href=/docs/tech/>Tech</a><ul></ul></li></ul><ul><li><a href=https://github.com/solareenlo/blog-hugo target=_blank rel=noopener>Source code</a></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/svg/menu.svg class=book-icon alt=Menu></label>
 <strong>Blog</strong>
-<label for=toc-control><img src=/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav><ul><li class=book-section-flat><strong>Categories</strong><ul><li class="flex justify-between"><a href=/categories/42Tokyo/>42Tokyo</a>
+<label for=toc-control><img src=/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav><ul><li class=book-section-flat><strong>Categories</strong><ul><li class="flex justify-between"><a href=/categories/ChatGPL/>ChatGPL</a>
+<span>1</span></li><li class="flex justify-between"><a href=/categories/LLM/>LLM</a>
+<span>1</span></li><li class="flex justify-between"><a href=/categories/42Tokyo/>42Tokyo</a>
 <span>1</span></li><li class="flex justify-between"><a href=/categories/fintech/>fintech</a>
 <span>1</span></li><li class="flex justify-between"><a href=/categories/meetup/>meetup</a>
 <span>8</span></li><li class="flex justify-between"><a href=/categories/Blockchain/>Blockchain</a>
@@ -18,7 +20,9 @@
 <span>1</span></li><li class="flex justify-between"><a href=/categories/Docker/>Docker</a>
 <span>2</span></li><li class="flex justify-between"><a href=/categories/app/>app</a>
 <span>1</span></li><li class="flex justify-between"><a href=/categories/DockerHub/>DockerHub</a>
-<span>1</span></li></ul></li><li class=book-section-flat><strong>Tags</strong><ul><li class="flex justify-between"><a href=/tags/piscine/>piscine</a>
+<span>1</span></li></ul></li><li class=book-section-flat><strong>Tags</strong><ul><li class="flex justify-between"><a href=/tags/evolutionary-biology/>evolutionary biology</a>
+<span>1</span></li><li class="flex justify-between"><a href=/tags/human/>human</a>
+<span>1</span></li><li class="flex justify-between"><a href=/tags/piscine/>piscine</a>
 <span>1</span></li><li class="flex justify-between"><a href=/tags/Lapras/>Lapras</a>
 <span>1</span></li><li class="flex justify-between"><a href=/tags/shimaya/>shimaya</a>
 <span>1</span></li><li class="flex justify-between"><a href=/tags/Hands-on/>Hands-on</a>
@@ -33,7 +37,15 @@
 <span>1</span></li><li class="flex justify-between"><a href=/tags/Rust/>Rust</a>
 <span>1</span></li><li class="flex justify-between"><a href=/tags/Substrate/>Substrate</a>
 <span>1</span></li><li class="flex justify-between"><a href=/tags/hugo/>hugo</a>
-<span>1</span></li></ul></li></ul></nav></aside></header><article class="markdown book-post"><h2><a href=/posts/how-to-make-this-site/>このサイトの作り方</a></h2><h5>Apr 16, 2019</h5><div><a href=/tags/hugo/>hugo</a></div><p>Macユーザー用
+<span>1</span></li></ul></li></ul></nav></aside></header><article class="markdown book-post"><h2><a href=/posts/bitcoind/>bitcoindへのアクセス方法</a></h2><h5>Apr 17, 2019</h5><div><a href=/categories/Blockchain/>Blockchain</a></div><div><a href=/tags/Bitcoin/>Bitcoin</a></div><p>bitcoindへのアクセス方法3選(bitcoin-cli, curl, POST). 3つとも JSON-RPCで通信してる.
+bitcoindとは, 名前の通りunixのデーモンとして動作する事を目的とするBitcoinのクライアントで, JSON-RPCで開発者向けのAPIを提供する. したがって, Webサービスとして動作するBitcoinウォレットのバックエンドとしてや, マイニングプールのサーバーとして使われる.
+Reference: Bitcoinウォレットの比較
+1. bitcoin-cliを使ってアクセスする. # bitcoin-cliとは, bitcoindへJSON-RPCを使ってアクセスするツールのこと.
+bitcoindを使ってBitcoinのフルノードを立ち上げて,
+bitcoin-cli getblockchaininfo とか.
+2. cURLを使ってアクセスする. # 下記curlを行う要件.
+ネットワーク: mainnet 接続環境: ローカル ポート番号: 8332 ユーザーの名前: user-name パスワード: user-password 投げつけているbitcoin-cliのメソッド: getblockchaininfo curl --data-binary '{"jsonrpc":"1.0","id":"curltext","method":"getblockchaininfo","params":[]}' -H 'content-type:text/plain;' http://user-name:user-password@127.0.0.1:8332/ | jq 3. 自作プログラムでPOSTしてアクセスする. # bitcoindはHTTPリクエストメソッドのPOSTに対応しているので, JSON-RPCをPOSTで投げつける. 以下のプログラムはNode.jsを使った例.
+https://github.com/solareenlo/bc-json-rpc</p></article><article class="markdown book-post"><h2><a href=/posts/how-to-make-this-site/>このサイトの作り方</a></h2><h5>Apr 16, 2019</h5><div><a href=/tags/hugo/>hugo</a></div><p>Macユーザー用
 ものすごい初歩からこのサイトの作り方を説明しています. この手順で作成するとGitHubに全ての内容/更新履歴/更新内容が公開されますので, 適宜読み替えてください.
 Macにgitをインストールする # https://git-scm.com/download/mac
 GitHubにアカウントを作成する # https://github.com
@@ -41,7 +53,9 @@ MacにHomebrewをインストールする # /usr/bin/ruby -e "$(curl -fsSL https
 # hugo_latest.sh # Find the latest Hugo from GitHub echo '🐹 Starting Hugo Install / Update 🐹' echo ' Note: Please be sure to have curl and grep installed' echo '' url=$(curl -s "https://api.github.com/repositories/11180687/releases/latest" | grep -o 'https://.*hugo_extended.*_macOS-64bit.tar.gz') echo '✅ Found latest version' curl -s $url -L -o hugo_latest.
 <a href=/posts/how-to-make-this-site/>...</a></p></article><article class="markdown book-post"><h2><a href=/posts/hello-world/>Hello World!</a></h2><h5>Apr 14, 2019</h5><p>Hello World!</p></article><ul class="pagination pagination-default"><li class=page-item><a href=/posts/ aria-label=First class=page-link role=button><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/posts/page/2/ aria-label=Previous class=page-link role=button><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a href=/posts/ aria-label="Page 1" class=page-link role=button>1</a></li><li class=page-item><a href=/posts/page/2/ aria-label="Page 2" class=page-link role=button>2</a></li><li class="page-item active"><a aria-current=page aria-label="Page 3" class=page-link role=button>3</a></li><li class="page-item disabled"><a aria-disabled=true aria-label=Next class=page-link role=button tabindex=-1><span aria-hidden=true>&#187;</span></a></li><li class="page-item disabled"><a aria-disabled=true aria-label=Last class=page-link role=button tabindex=-1><span aria-hidden=true>&#187;&#187;</span></a></li></ul><footer class=book-footer><div class="flex flex-wrap justify-between"><div><a class="flex align-center" href=https://github.com/solareenlo/blog-hugo/commit/bea798d93c9116bad5b5ceb26ca3159b372095e9 title='最終更新者 solareenlo | Mar 20, 2020' target=_blank rel=noopener><img src=/svg/calendar.svg class=book-icon alt=Calendar>
 <span>Mar 20, 2020</span></a></div><div><a class="flex align-center" href=https://github.com/solareenlo/blog-hugo/edit/main/content/posts/_index.md target=_blank rel=noopener><img src=/svg/edit.svg class=book-icon alt=Edit>
-<span>このページを編集する</span></a></div></div><script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script></footer><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav><ul><li class=book-section-flat><strong>Categories</strong><ul><li class="flex justify-between"><a href=/categories/42Tokyo/>42Tokyo</a>
+<span>このページを編集する</span></a></div></div><script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script></footer><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav><ul><li class=book-section-flat><strong>Categories</strong><ul><li class="flex justify-between"><a href=/categories/ChatGPL/>ChatGPL</a>
+<span>1</span></li><li class="flex justify-between"><a href=/categories/LLM/>LLM</a>
+<span>1</span></li><li class="flex justify-between"><a href=/categories/42Tokyo/>42Tokyo</a>
 <span>1</span></li><li class="flex justify-between"><a href=/categories/fintech/>fintech</a>
 <span>1</span></li><li class="flex justify-between"><a href=/categories/meetup/>meetup</a>
 <span>8</span></li><li class="flex justify-between"><a href=/categories/Blockchain/>Blockchain</a>
@@ -56,7 +70,9 @@ MacにHomebrewをインストールする # /usr/bin/ruby -e "$(curl -fsSL https
 <span>1</span></li><li class="flex justify-between"><a href=/categories/Docker/>Docker</a>
 <span>2</span></li><li class="flex justify-between"><a href=/categories/app/>app</a>
 <span>1</span></li><li class="flex justify-between"><a href=/categories/DockerHub/>DockerHub</a>
-<span>1</span></li></ul></li><li class=book-section-flat><strong>Tags</strong><ul><li class="flex justify-between"><a href=/tags/piscine/>piscine</a>
+<span>1</span></li></ul></li><li class=book-section-flat><strong>Tags</strong><ul><li class="flex justify-between"><a href=/tags/evolutionary-biology/>evolutionary biology</a>
+<span>1</span></li><li class="flex justify-between"><a href=/tags/human/>human</a>
+<span>1</span></li><li class="flex justify-between"><a href=/tags/piscine/>piscine</a>
 <span>1</span></li><li class="flex justify-between"><a href=/tags/Lapras/>Lapras</a>
 <span>1</span></li><li class="flex justify-between"><a href=/tags/shimaya/>shimaya</a>
 <span>1</span></li><li class="flex justify-between"><a href=/tags/Hands-on/>Hands-on</a>
